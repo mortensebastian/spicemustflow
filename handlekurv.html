@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handlekurv</title>
+
+  <!-- Vi laster fontene til BEGGE temaene, siden vi ikke vet på forhånd
+       hvilken front kunden kom fra. Riktig tema-CSS legges til av
+       handlekurv.js ut fra ?butikk= i adressen. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Bare felles struktur her. Tema-CSS legges til av JavaScript. -->
+  <link rel="stylesheet" href="style-felles.css">
+</head>
+
+<!-- data-storefront settes av handlekurv.js når siden åpnes -->
+<body>
+
+  <!-- ===== Toppmeny =====
+       Logoen viser butikknavnet (settes av JS via .store-name) -->
+  <header class="site-header">
+    <div class="container">
+      <span class="logo store-name">Handlekurv</span>
+      <nav class="nav-links">
+        <a class="cart-link">
+          Handlekurv <span id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Selve kurven ===== -->
+  <main class="cart-page">
+    <div class="container">
+
+      <!-- Lenke tilbake til riktig front (settes av JS) -->
+      <a id="back-to-store" href="#">← Tilbake</a>
+
+      <h1>Din handlekurv</h1>
+
+      <!-- Her tegner handlekurv.js inn én rad per vare -->
+      <div id="cart-items"></div>
+
+      <!-- Totalsum -->
+      <div class="cart-summary">
+        <span>Totalt</span>
+        <span id="cart-total">0 kr</span>
+      </div>
+
+      <!-- ===== Kasse (leveringsinfo) =====
+           Skjemaet sender ikke noe sted ennå. Betaling kobles på senere. -->
+      <section class="checkout">
+        <h2>Levering</h2>
+
+        <form id="checkout-form">
+          <div class="form-field">
+            <label for="name">Navn</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-post</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="address">Adresse</label>
+            <input type="text" id="address" name="address" required>
+          </div>
+
+          <div class="form-field">
+            <label for="zip">Postnummer og sted</label>
+            <input type="text" id="zip" name="zip" required>
+          </div>
+
+          <button type="submit" class="button">Gå til betaling</button>
+          <p class="checkout-note">Betaling (Vipps/Stripe/Klarna) kobles på senere.</p>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Rekkefølge: innstillinger → data → kurv-logikk → handlekurv-siden -->
+  <script src="config.js"></script>
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="handlekurv.js"></script>
+</body>
+</html>

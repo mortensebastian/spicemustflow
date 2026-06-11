@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Safran i glasskrukke">
+  <!-- Midlertidig bilde. Bytt ut med ekte foto senere. -->
+  <rect width="400" height="300" fill="#34201a"/>
+  <!-- Krukke -->
+  <rect x="160" y="90" width="80" height="120" rx="10" fill="#241511" stroke="#c9a24a" stroke-width="2"/>
+  <!-- Lokk i gull -->
+  <rect x="168" y="74" width="64" height="22" rx="6" fill="#c9a24a"/>
+  <!-- Safrantråder -->
+  <path d="M186 140 q10 18 -2 42" stroke="#d98b2b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M204 134 q-8 20 4 44" stroke="#e0a23d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M220 142 q10 16 0 40" stroke="#d98b2b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="200" y="258" text-anchor="middle" font-family="serif" font-size="18" fill="#c9a24a">Safran i glasskrukke</text>
+</svg>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpiceFlow – safran til hverdagen</title>
+
+  <!-- Font for SpiceFlow: Hanken Grotesk (moderne sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Først felles struktur, så SpiceFlow sitt tema (farger/fonter) -->
+  <link rel="stylesheet" href="style-felles.css">
+  <link rel="stylesheet" href="style-spiceflow.css">
+</head>
+
+<!-- data-storefront forteller koden hvilke produkter som skal vises her -->
+<body data-storefront="hverdag">
+
+  <!-- ===== Toppmeny ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="spiceflow.html">SpiceFlow</a>
+      <nav class="nav-links">
+        <a href="spiceflow.html">Hjem</a>
+        <!-- Kurv-lenken tar med ?butikk=hverdag så kurven får riktig tema -->
+        <a class="cart-link" href="handlekurv.html?butikk=hverdag">
+          Handlekurv <span id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <h1>Safran til hverdagen</h1>
+      <p>Ekte safran i forseglet pose – perfekt til lussekatter, risotto og hverdagsmat.</p>
+      <a class="button" href="#produkter">Se safran</a>
+    </div>
+  </section>
+
+  <!-- ===== Produkter (vises når butikken er på) ===== -->
+  <section class="products" id="produkter">
+    <div class="container">
+      <h2 class="section-title">Vårt utvalg</h2>
+      <!-- JavaScript (shop.js) fyller dette rutenettet med produktkort -->
+      <div class="product-grid" id="product-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Venteliste (vises når butikken er av) =====
+       Tom beholder. waitlist.js fyller den med påmeldingsskjemaet. -->
+  <section class="waitlist" id="waitlist"></section>
+
+  <!-- ===== Bunntekst ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>SpiceFlow – safran til hverdagen.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: innstillinger → data → kurv → butikk → venteliste -->
+  <script src="config.js"></script>
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="shop.js"></script>
+  <script src="waitlist.js"></script>
+</body>
+</html>
