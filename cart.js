@@ -23,7 +23,14 @@ function getCart() {
     return [];
   }
   // JSON.parse gjør teksten om til en ekte liste igjen.
-  return JSON.parse(savedText);
+  // Skulle lagringen være ødelagt (ugyldig tekst), kaster JSON.parse en
+  // feil som ellers ville stoppet ALL kode på siden. Vi fanger den og
+  // starter med tom kurv i stedet, så siden fortsatt virker.
+  try {
+    return JSON.parse(savedText);
+  } catch {
+    return [];
+  }
 }
 
 /* Lagrer kurven tilbake til localStorage.
