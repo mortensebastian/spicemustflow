@@ -581,8 +581,8 @@ body::before {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 95%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 95%);
   pointer-events: none;
 }
 
@@ -608,6 +608,12 @@ body::before {
 
 .recipe-page .hero p {
   color: var(--text);
+}
+
+/* Litt ekstra luft under heroen på oppskriftssider, så teksten ikke sitter
+   midt i den hardeste delen av bilde-uttoningen. */
+.recipe-page .hero {
+  padding-bottom: 110px;
 }
 
 /* #2 Ingredienser og fremgangsmåte som "kort": en lys, lett frostet boks løfter
