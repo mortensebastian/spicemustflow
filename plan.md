@@ -183,6 +183,147 @@ samme mønster som i `lussekatter.html`.
 
 ---
 
+## Oppskrifter klare til bygging
+
+Ferdige oppskrifter for de neste sidene, skrevet for å bygges direkte med `recipe.js`.
+Hver ingrediens har **mengde**, **enhet** og **tetthet** (g per ml – brukes til
+dl↔g-konvertering). `data-base-yield` settes til porsjonstallet i kolonneoverskriften.
+Ingredienser i `g`/`stk` trenger ikke tetthet. Sett `data-units` til de enhetene det
+gir mening å bytte mellom for hver ingrediens (volum-ingredienser: f.eks. `dl,ml,g`).
+
+> Mengdene er standard, velprøvde forhold – juster gjerne etter smak før publisering.
+> Hver side avsluttes med en CTA til butikken: «Du trenger ekte safran – kjøp den her».
+
+### Paella (`data-base-yield="4"`)
+
+| Mengde | Enhet | Tetthet | Ingrediens |
+|--------|-------|---------|------------|
+| 3 | dl | 0.85 | paellaris (rundkornet) |
+| 6 | dl | 1.0 | varm kyllingkraft |
+| 0,5 | g | – | safran |
+| 300 | g | – | kyllinglår i biter |
+| 200 | g | – | scampi/reker |
+| 150 | g | – | blåskjell (valgfritt) |
+| 1 | stk | – | rød paprika i strimler |
+| 1 | stk | – | løk, finhakket |
+| 2 | stk | – | hvitløksfedd |
+| 2 | ss | 0.92 | olivenolje |
+| 1 | ts | 0.5 | røkt paprikapulver |
+| 100 | g | – | frosne erter |
+| 1 | ts | 1.2 | salt |
+
+**Slik gjør du:** 1) Legg safran i den varme kraften så den trekker. 2) Brun kylling
+i olivenolje i en vid panne, ta opp. 3) Surr løk, hvitløk og paprika myk; rør inn
+paprikapulver. 4) Tilsett ris og la den bli blank. 5) Hell over safrankraften, fordel
+kyllingen og la putre uten omrøring ~15 min. 6) Legg på scampi, blåskjell og erter de
+siste 5 min til risen er mør og skjellene har åpnet seg. 7) Hvil 5 min, server med sitron.
+
+### Fiskesuppe med safran (`data-base-yield="4"`)
+
+| Mengde | Enhet | Tetthet | Ingrediens |
+|--------|-------|---------|------------|
+| 1 | stk | – | løk, finhakket |
+| 0,5 | stk | – | fennikel, i skiver |
+| 2 | stk | – | hvitløksfedd |
+| 2 | ss | 0.92 | olivenolje |
+| 0,5 | g | – | safran |
+| 1 | ss | – | tomatpuré |
+| 1 | dl | 0.99 | hvitvin |
+| 8 | dl | 1.0 | fiskekraft |
+| 4 | dl | 1.0 | kremfløte |
+| 500 | g | – | hvit fisk (torsk) i biter |
+| 200 | g | – | reker |
+| 1 | ts | 1.2 | salt |
+
+**Slik gjør du:** 1) Surr løk, fennikel og hvitløk myke i olje. 2) Rør inn tomatpuré
+og safran, la frese et halvt minutt. 3) Slå på hvitvin og kok inn til halvparten.
+4) Tilsett kraft og fløte, la småkoke 10 min. 5) Legg i fisken og trekk på svak varme
+4–5 min til den er akkurat gjennom. 6) Vend inn rekene helt til slutt, smak til med
+salt. Server med godt brød.
+
+### Safranrisotto (Risotto alla Milanese) (`data-base-yield="4"`)
+
+| Mengde | Enhet | Tetthet | Ingrediens |
+|--------|-------|---------|------------|
+| 3 | dl | 0.85 | risottoris (arborio/carnaroli) |
+| 1 | stk | – | løk, finhakket |
+| 2 | ss | 0.92 | olivenolje |
+| 1 | dl | 0.99 | hvitvin |
+| 9 | dl | 1.0 | varm kyllingkraft |
+| 0,5 | g | – | safran |
+| 50 | g | – | smør |
+| 50 | g | – | revet parmesan |
+| 1 | ts | 1.2 | salt |
+
+**Slik gjør du:** 1) Legg safran i en øse av den varme kraften. 2) Surr løk blank i olje
+uten å brune. 3) Tilsett risen og rør 1–2 min til kantene er gjennomsiktige. 4) Hell på
+hvitvinen og rør til den er trukket inn. 5) Tilsett kraft én øse om gangen, rør jevnt og
+vent til væsken er nesten borte før neste øse – inkludert safrankraften – i ca. 18 min.
+6) Trekk av varmen, rør inn smør og parmesan til risottoen er kremet. Smak til med salt.
+
+### Bouillabaisse (`data-base-yield="4"`)
+
+| Mengde | Enhet | Tetthet | Ingrediens |
+|--------|-------|---------|------------|
+| 3 | ss | 0.92 | olivenolje |
+| 1 | stk | – | løk, i skiver |
+| 0,5 | stk | – | fennikel, i skiver |
+| 3 | stk | – | hvitløksfedd |
+| 400 | g | – | hermetiske tomater |
+| 1 | dl | 0.99 | hvitvin |
+| 10 | dl | 1.0 | fiskekraft |
+| 0,5 | g | – | safran |
+| 2 | stk | – | strimler appelsinskall |
+| 800 | g | – | fast hvit fisk i biter |
+| 200 | g | – | reker eller blåskjell |
+| 1 | ts | 1.2 | salt |
+
+**Slik gjør du:** 1) Surr løk, fennikel og hvitløk myke i olje. 2) Tilsett tomater og
+la frese noen minutter. 3) Slå på hvitvin, kok inn litt. 4) Hell i fiskekraft, safran og
+appelsinskall; la suppen putre 15–20 min. 5) Legg i den faste fisken først, skalldyr de
+siste minuttene, og trekk til alt er gjennomvarmt. 6) Smak til med salt. Server med
+ristet brød og rouille (hvitløksmajones).
+
+### Persisk safranris og safrankylling (`data-base-yield="4"`)
+
+| Mengde | Enhet | Tetthet | Ingrediens |
+|--------|-------|---------|------------|
+| 3 | dl | 0.85 | basmatiris |
+| 0,5 | g | – | safran (oppløst i 2 ss varmt vann) |
+| 600 | g | – | kyllinglår, uten skinn |
+| 1 | stk | – | løk, revet |
+| 2 | ss | 0.92 | olje |
+| 1 | ss | – | sitronsaft |
+| 50 | g | – | smør |
+| 1 | ts | 1.2 | salt |
+
+**Slik gjør du:** 1) Skyll risen til vannet er klart, og kok den nesten mør i godt
+saltet vann. Hell av. 2) Bland revet løk, halve safranvannet, sitronsaft, olje og salt,
+og mariner kyllingen 20 min. 3) Stek eller grill kyllingen til gylden og gjennomstekt.
+4) Damp risen ferdig på svak varme med smør under lokk til den blir luftig. 5) Vend det
+resterende safranvannet inn i en del av risen for en gyllen topp. Server kyllingen på
+safranrisen.
+
+### Safraniskrem (persisk bastani) (`data-base-yield="6"`)
+
+| Mengde | Enhet | Tetthet | Ingrediens |
+|--------|-------|---------|------------|
+| 5 | dl | 1.0 | kremfløte |
+| 2,5 | dl | 1.03 | helmelk |
+| 1,5 | dl | 0.85 | sukker |
+| 0,5 | g | – | safran (oppløst i 1 ss varmt vann) |
+| 4 | stk | – | eggeplommer |
+| 1 | ts | 0.5 | malt kardemomme |
+| 50 | g | – | pistasjnøtter, grovhakket (valgfritt) |
+
+**Slik gjør du:** 1) Varm fløte, melk, kardemomme og safranvann til like under kokepunktet.
+2) Pisk eggeplommer og sukker lyst, og spe forsiktig med den varme blandingen under omrøring.
+3) Varm alt tilbake i kjelen på svak varme til kremen tykner litt (til ~82 °C) – ikke kok.
+4) Avkjøl helt, gjerne over natten. 5) Kjør i iskremmaskin, eller frys og rør hvert 30. min
+til den er fast. Vend inn pistasj mot slutten. Server med ekstra safrantråder på toppen.
+
+---
+
 ## SEO-plan (detaljert)
 
 Strategi og konkret implementeringsplan for SEO, basert på markedsresearch for
