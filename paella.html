@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paella med safran – enkel oppskrift steg for steg | Safranoppskrifter</title>
+  <meta name="description" content="Klassisk spansk paella med ekte safran, kylling og scampi. Enkel oppskrift steg for steg – juster mengdene etter antall porsjoner.">
+
+  <!-- Nøytralt oppskriftsutseende (standardvariablene i style-felles.css).
+       Fonter fra Google Fonts; ellers brukes reservefonter. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+  <!-- Recipe-schema: gjør siden kvalifisert for oppskriftskort i Google.
+       Hold den i samsvar med det som faktisk står på siden. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Paella med safran",
+    "description": "Klassisk spansk paella med ekte safran, kylling og scampi.",
+    "recipeCategory": "Hovedrett",
+    "recipeCuisine": "Spansk",
+    "keywords": "paella, safran, kylling, scampi",
+    "recipeYield": "4 porsjoner",
+    "prepTime": "PT20M",
+    "cookTime": "PT30M",
+    "totalTime": "PT50M",
+    "recipeIngredient": [
+      "3 dl paellaris (rundkornet)",
+      "6 dl varm kyllingkraft",
+      "0,5 g safran",
+      "300 g kyllinglår i biter",
+      "200 g scampi/reker",
+      "150 g blåskjell (valgfritt)",
+      "1 rød paprika i strimler",
+      "1 løk, finhakket",
+      "2 hvitløksfedd",
+      "2 ss olivenolje",
+      "1 ts røkt paprikapulver",
+      "100 g frosne erter",
+      "1 ts salt"
+    ],
+    "recipeInstructions": [
+      {"@type": "HowToStep", "text": "Legg safran i den varme kraften så den trekker farge og aroma."},
+      {"@type": "HowToStep", "text": "Brun kyllingen i olivenolje i en vid panne, og ta den opp."},
+      {"@type": "HowToStep", "text": "Surr løk, hvitløk og paprika myke, og rør inn paprikapulver."},
+      {"@type": "HowToStep", "text": "Tilsett risen og la den bli blank et par minutter."},
+      {"@type": "HowToStep", "text": "Hell over safrankraften, fordel kyllingen og la putre uten omrøring i ca. 15 minutter."},
+      {"@type": "HowToStep", "text": "Legg på scampi, blåskjell og erter de siste 5 minuttene til risen er mør."},
+      {"@type": "HowToStep", "text": "La paellaen hvile 5 minutter, og server med sitron."}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ===== Toppmeny ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Safranoppskrifter</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <h1>Paella med safran</h1>
+      <p>Den spanske klassikeren der ekte safran gir farge, duft og dybde. Enkel å lage i én panne.</p>
+    </div>
+  </section>
+
+  <!-- ===== Oppskrift ===== -->
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du paella</h2>
+      <p class="recipe-intro">En rustikk paella med kylling og scampi. Oppskriften gir 4 porsjoner – juster antallet, så regnes mengdene om automatisk.</p>
+
+      <!-- Skaler oppskriften. data-base-yield="4" forteller recipe.js at
+           grunnoppskriften er 4 porsjoner. -->
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="4" min="2" max="12" step="2" data-base-yield="4">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div class="recipe-layout">
+
+        <!-- Ingredienser. Hver mengde har data-amount/data-unit (verdien for
+             4 porsjoner) + data-density for volum↔vekt-omregning. Ingredienser
+             med en <select> kan byttes mellom måleenheter; recipe.js gjør jobben. -->
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients">
+            <li class="ingredient" data-amount="3" data-unit="dl" data-density="0.85" data-units="dl,ml,g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">3</span>
+                <select class="unit-select" aria-label="Måleenhet for ris">
+                  <option value="dl" selected>dl</option>
+                  <option value="ml">ml</option>
+                  <option value="g">g</option>
+                </select>
+              </span>
+              paellaris (rundkornet)
+            </li>
+            <li class="ingredient" data-amount="6" data-unit="dl" data-density="1" data-units="dl,ml">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">6</span>
+                <select class="unit-select" aria-label="Måleenhet for kraft">
+                  <option value="dl" selected>dl</option>
+                  <option value="ml">ml</option>
+                </select>
+              </span>
+              varm kyllingkraft
+            </li>
+            <li class="ingredient" data-amount="0.5" data-unit="g" data-units="g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">0,5</span>
+                <span class="unit-label">g</span>
+              </span>
+              safran
+            </li>
+            <li class="ingredient" data-amount="300" data-unit="g" data-units="g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">300</span>
+                <span class="unit-label">g</span>
+              </span>
+              kyllinglår i biter
+            </li>
+            <li class="ingredient" data-amount="200" data-unit="g" data-units="g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">200</span>
+                <span class="unit-label">g</span>
+              </span>
+              scampi/reker
+            </li>
+            <li class="ingredient" data-amount="150" data-unit="g" data-units="g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">150</span>
+                <span class="unit-label">g</span>
+              </span>
+              blåskjell (valgfritt)
+            </li>
+            <li class="ingredient" data-amount="1" data-unit="stk" data-units="stk">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">1</span>
+                <span class="unit-label">stk</span>
+              </span>
+              rød paprika i strimler
+            </li>
+            <li class="ingredient" data-amount="1" data-unit="stk" data-units="stk">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">1</span>
+                <span class="unit-label">stk</span>
+              </span>
+              løk, finhakket
+            </li>
+            <li class="ingredient" data-amount="2" data-unit="stk" data-units="stk">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">2</span>
+                <span class="unit-label">stk</span>
+              </span>
+              hvitløksfedd
+            </li>
+            <li class="ingredient" data-amount="2" data-unit="ss" data-density="0.92" data-units="ss,ts,ml,g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">2</span>
+                <select class="unit-select" aria-label="Måleenhet for olivenolje">
+                  <option value="ss" selected>ss</option>
+                  <option value="ts">ts</option>
+                  <option value="ml">ml</option>
+                  <option value="g">g</option>
+                </select>
+              </span>
+              olivenolje
+            </li>
+            <li class="ingredient" data-amount="1" data-unit="ts" data-density="0.5" data-units="ts,g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">1</span>
+                <select class="unit-select" aria-label="Måleenhet for paprikapulver">
+                  <option value="ts" selected>ts</option>
+                  <option value="g">g</option>
+                </select>
+              </span>
+              røkt paprikapulver
+            </li>
+            <li class="ingredient" data-amount="100" data-unit="g" data-units="g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">100</span>
+                <span class="unit-label">g</span>
+              </span>
+              frosne erter
+            </li>
+            <li class="ingredient" data-amount="1" data-unit="ts" data-density="1.2" data-units="ts,g">
+              <span class="ingredient-qty">
+                <span class="ingredient-amount">1</span>
+                <select class="unit-select" aria-label="Måleenhet for salt">
+                  <option value="ts" selected>ts</option>
+                  <option value="g">g</option>
+                </select>
+              </span>
+              salt
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fremgangsmåte -->
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps">
+            <li>Legg safranen i den varme kyllingkraften så farge og aroma trekker ut mens du gjør klar resten.</li>
+            <li>Brun kyllingbitene i olivenolje i en vid panne, og ta dem opp.</li>
+            <li>Surr løk, hvitløk og paprika myke i samme panne, og rør inn paprikapulveret.</li>
+            <li>Tilsett risen og rør et par minutter til kornene er blanke.</li>
+            <li>Hell over safrankraften, legg kyllingen tilbake, og la putre uten omrøring i ca. 15 minutter.</li>
+            <li>Fordel scampi, blåskjell og erter over de siste 5 minuttene, til risen er mør og skjellene har åpnet seg.</li>
+            <li>La paellaen hvile 5 minutter under et klede. Smak til med salt og server med sitronbåter.</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <!-- Kjøp-safran-CTA. Foreløpig en tekst uten lenke, siden butikken kjører
+           i bakgrunnen og ikke skal være trykkbar ennå. Ved lansering: bytt
+           <span> under med <a class="button" href="spiceflow.html">Kjøp ekte safran</a>. -->
+      <div class="recipe-cta">
+        <p>Ekte safran er det som gir paellaen farge og smak. Safranbutikken vår åpner snart.</p>
+        <span class="button" aria-disabled="true" style="opacity: 0.55;">Kjøp ekte safran (kommer snart)</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Bunntekst ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Safranoppskrifter – ekte safran til både hverdag og fest.</p>
+    </div>
+  </footer>
+
+  <!-- Oppskriftssiden trenger bare skaleringslogikken. -->
+  <script src="recipe.js"></script>
+</body>
+</html>

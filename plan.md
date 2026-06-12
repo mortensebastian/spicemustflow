@@ -165,8 +165,13 @@ samme mønster som i `lussekatter.html`.
 - [x] 2. Gjort om `index.html` til oppskriftshub med kort. Lussekatter er live;
       paella/risotto/fiskesuppe vises som «kommer snart» (ikke klikkbare).
       SpiceFlow-butikken lenkes IKKE herfra ennå.
-- [ ] 3. Legg til paella som første nye oppskrift (test malen på en ekte rett).
-- [ ] 4. Verifiser scaler + CTA + SEO på paella, juster malen.
+- [x] 3. Lagt til paella (`paella.html`) som første nye oppskrift. Oppskrift-malen
+      er nå generalisert: oppskrift-layouten flyttet til `style-felles.css` (delt),
+      paella bruker standardtemaet, og kortet på `index.html` er klikkbart.
+- [x] 4. Verifisert paella-skalering + enhetsbytte i JavaScriptCore (11/11 PASS;
+      statiske grunnverdier matcher recipe.js). CTA er foreløpig ikke-lenket
+      («kommer snart») til butikken er klar – kommentar i HTML viser hvordan den
+      gjøres til lenke ved lansering.
 - [ ] 5. Rull ut resten (fiskesuppe, risotto, …) med samme mal.
 - [ ] 6. Knytt alt sammen med intern lenking: hub ↔ oppskrift ↔ butikk.
 
