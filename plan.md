@@ -1,12 +1,88 @@
-# SEO-plan – safran-nettbutikk (SpiceFlow + Lussekatter)
+# Prosjektplan – safran-nettsted (SpiceFlow + Lussekatter)
+
+Helhetlig **levende dokument** for prosjektet: retning/strategi, hva som er gjort
+til nå, veien videre, og en detaljert SEO-plan. Kryss av og oppdater etter hvert.
+
+> **Domene ikke bestemt ennå.** SEO-researchen bruker `lussekatter.no` som
+> eksempel. Du vurderer `paeja.no`. Erstatt domenet i alle eksempler når valget
+> er tatt. Flere domener kan peke til samme nettsted (README → «Struktur og repoer»).
+
+---
+
+## Retning og strategi
+
+**Beslutning (juni 2026):** Prosjektet bygges som en **oppskriftsdrevet
+safran-side**. Lussekatter er første oppskrift; flere safranretter (paella,
+risotto m.m.) kan komme senere for å bryte sesongavhengigheten. Oppskriftene er
+gratis-innholdet som trekker folk inn via søk – og **safransalget er det vi
+tjener på**. Oppskrift og salg er ikke konkurrenter: oppskriften er det beste
+salgsverktøyet for safranen (folk som baker lussekatter trenger safran).
+
+**Inntektsmodell – vurdert og prioritert:**
+
+| Vei | Rolle | Vurdering |
+|-----|-------|-----------|
+| **Salg av safran** | Primær inntekt | Ekte penger raskest; krever lager, betaling (Vipps), frakt, backend |
+| **Oppskrift + SEO** | Trafikkmotor | Gratis innhold som driver salget via intern lenking oppskrift → produkt |
+| **Reklame** | Mulig bonus *senere* | IKKE fundament. Krever stor, jevn trafikk (50–100k visninger/mnd for gode nettverk). Sesongtoppen i desember gir tynne måneder ellers. Realistisk inntekt er måneder–år unna. |
+| **AI-dialog under matlaging** | Mulig differensiator *senere* | En **kostnad** (API-penger), ikke en inntekt. Kul funksjon, men må betales av salg/abonnement. Vent til trafikken er bevist. |
+
+**Konsekvens for arbeidet:** Bygg på salg + oppskriftsdrevet SEO. Reklame og
+AI-dialog er ting vi *vurderer når trafikken er der*, ikke noe vi bygger
+forretningen på nå.
+
+---
+
+## Status – hva vi har gjort til nå
+
+**Plattform:** Statisk nettsted (ren HTML/CSS/JS, ingen rammeverk/byggesteg),
+hostet via GitHub-repoet `mortensebastian/spicemustflow`. Kjører i bakgrunnen med
+`orderingEnabled = false` – butikken er bevisst ikke kjøpbar ennå; ventelisten vises.
+
+Gjort:
+- [x] Koblet lokal mappe til GitHub-repoet og fått push/pull til å virke (token i Keychain).
+- [x] To fronter (SpiceFlow/hverdag, Lussekatter/jul) med delt motor (`cart.js`, `products.js`).
+- [x] Embedet YouTube-video i lussekatter-oppskriften. *(NB: video gir «Feil 153» –
+      eieren har slått av innbygging. Må byttes til en innbyggbar/egen video.)*
+- [x] Hardnet kurv-lagringen mot ødelagt `localStorage` (try/catch i `cart.js`).
+- [x] Skrevet `README.md` (oversikt + veikart) og `plan.md` (denne).
+- [x] Opprettet `CLAUDE.md` (arkitektur-kontekst for fremtidige AI-økter).
+- [x] Bestemt retning: oppskriftsdrevet safran-side, salg som primær inntekt.
+
+---
+
+## Veien videre – helhetlig veikart
+
+Rekkefølgen er grov; SEO-detaljene står i egen seksjon lenger ned.
+
+**Nå (innhold + grunnmur, krever ikke domene):**
+- [ ] Bytt ut lussekatt-videoen med en som tillater innbygging (eller egen video).
+- [ ] Bestem domene (`paeja.no`?).
+- [ ] Lett SEO-grunnmur: `lang="no"` → `lang="nb"`, `<meta name="description">` per side.
+- [ ] Ekte produktbilder i `bilder/` (erstatt SVG-plassholderne).
+
+**Før sesong (innhold som driver trafikk):**
+- [ ] Flere safranoppskrifter (vurder paella/risotto for å bryte sesong).
+- [ ] FAQ/guide-innhold (treffer de ~60 % som ikke vet hvilket krydder – se SEO 3.1).
+- [ ] Full SEO-implementering (JSON-LD, sitemap, robots.txt, Open Graph) – se under.
+- [ ] Google Search Console: verifiser, send sitemap, request indexing.
+
+**Når butikken skal åpne (salg = primær inntekt):**
+- [ ] Backend for betaling (Vipps) – krever server/database.
+- [ ] Flytt evt. ventelisten fra Web3Forms til egen database samtidig (README).
+- [ ] Sett `waitlistAccessKey` (midlertidig) / `orderingEnabled = true` ved lansering.
+
+**Senere / vurderes når trafikken er bevist:**
+- [ ] Reklame (kun hvis jevn, stor trafikk – ellers ikke verdt det).
+- [ ] AI-dialog under matlaging (trenger inntektsmodell under seg først).
+- [ ] Vurder å dele i flere repoer KUN hvis frontene slutter å dele motor.
+
+---
+
+## SEO-plan (detaljert)
 
 Strategi og konkret implementeringsplan for SEO, basert på markedsresearch for
-norsk safran-/lussekatt-salg. Dette er et **levende dokument** – kryss av og
-oppdater etter hvert som ting gjøres.
-
-> **Domene ikke bestemt ennå.** Researchen bruker `lussekatter.no` som eksempel.
-> Du vurderer `paeja.no`. Erstatt domenet i alle eksempler under når valget er
-> tatt. Flere domener kan peke til samme nettsted (se README → «Struktur og repoer»).
+norsk safran-/lussekatt-salg.
 
 ---
 
