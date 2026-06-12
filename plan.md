@@ -3,9 +3,10 @@
 Helhetlig **levende dokument** for prosjektet: retning/strategi, hva som er gjort
 til nå, veien videre, og en detaljert SEO-plan. Kryss av og oppdater etter hvert.
 
-> **Domene ikke bestemt ennå.** SEO-researchen bruker `lussekatter.no` som
-> eksempel. Du vurderer `paeja.no`. Erstatt domenet i alle eksempler når valget
-> er tatt. Flere domener kan peke til samme nettsted (README → «Struktur og repoer»).
+> **Domene:** ett av `safranoppskrifter.no` / `safrantilfolket.no` (endelig valg
+> gjenstår). SEO-researchen bruker `lussekatter.no` som eksempel – erstatt domenet
+> i alle eksempler når valget er tatt. Flere domener kan peke til samme nettsted
+> (README → «Struktur og repoer»).
 
 ---
 
@@ -135,15 +136,14 @@ gir delt struktur/utseende.
       (samme HTML-struktur per oppskrift: intro → skalering → ingredienser → steg
       → «kjøp safran»-CTA).
 
-**Foreslått filstruktur (statisk, én fil per oppskrift):**
+**Filstruktur (statisk, én fil per oppskrift):**
 ```
-index.html              Forside (vurder: gjør om til oppskrift-fokus)
-oppskrifter.html        NY: hub som lister alle safranoppskriftene
-lussekatter.html        Oppskrift 1 (finnes)
+index.html              Oppskriftshub – lister alle safranoppskriftene (BESLUTTET)
+lussekatter.html        Oppskrift 1 (finnes) – bare én av grenene
 paella.html             NY oppskrift 2
 risotto.html            NY oppskrift 3
 fiskesuppe.html         NY oppskrift 4 ...
-spiceflow.html          Butikk-front (selger safran)
+spiceflow.html          Butikkside – står tom foreløpig, IKKE lenket fra index ennå
 handlekurv.html         Kasse (felles)
 ```
 Hver oppskriftsside: deler `style-felles.css` + tema + `recipe.js`, og har egen
@@ -151,14 +151,21 @@ SEO (`<title>`, `<meta description>`, Recipe JSON-LD) + CTA til butikken.
 
 **Byggerekkefølge (én oppskrift om gangen, iterativt):**
 - [ ] 1. Refaktorer `recipe.js` (konfigurerbart grunntall) + lag oppskrift-malen.
-- [ ] 2. Lag `oppskrifter.html` (hub) med kort som lenker til hver oppskrift.
+- [ ] 2. Gjør om `index.html` til oppskriftshub med kort som lenker til hver
+      oppskrift. SpiceFlow-butikken lenkes IKKE herfra ennå (står tom).
 - [ ] 3. Legg til paella som første nye oppskrift (test malen på en ekte rett).
 - [ ] 4. Verifiser scaler + CTA + SEO på paella, juster malen.
 - [ ] 5. Rull ut resten (fiskesuppe, risotto, …) med samme mal.
 - [ ] 6. Knytt alt sammen med intern lenking: hub ↔ oppskrift ↔ butikk.
 
-**Åpne valg å ta underveis:**
-- Hva blir `index.html` – oppskrift-hub eller fortsatt «velg butikk»-forside?
+**Besluttede valg (juni 2026):**
+- `index.html` blir **oppskriftshub** (ikke «velg butikk»-forside). Lussekatter er
+  bare én av oppskriftsgrenene.
+- Domene: **`safranoppskrifter.no`** eller **`safrantilfolket.no`** (ett av disse).
+- **SpiceFlow** = butikkside som står tom foreløpig og er **ikke trykkbar fra
+  `index.html`** ennå (butikken kjører fortsatt i bakgrunnen).
+
+**Fortsatt åpent:**
 - Beholder vi to visuelle temaer (SpiceFlow/Lussekatter), eller ett felles
   oppskrift-tema med jule-variant for lussekatter? *(Påvirker CSS-strukturen.)*
 
