@@ -1,0 +1,243 @@
+# SEO-plan – safran-nettbutikk (SpiceFlow + Lussekatter)
+
+Strategi og konkret implementeringsplan for SEO, basert på markedsresearch for
+norsk safran-/lussekatt-salg. Dette er et **levende dokument** – kryss av og
+oppdater etter hvert som ting gjøres.
+
+> **Domene ikke bestemt ennå.** Researchen bruker `lussekatter.no` som eksempel.
+> Du vurderer `paeja.no`. Erstatt domenet i alle eksempler under når valget er
+> tatt. Flere domener kan peke til samme nettsted (se README → «Struktur og repoer»).
+
+---
+
+## TL;DR – strategien i fem punkter
+
+1. **Vinn på long-tail kjøps- og oppskriftssøk, ikke hovedord.** Et nytt domene
+   slår ikke matprat.no/tine.no på «lussekatter oppskrift». Men det kan ranke på
+   lavkonkurranse-fraser med kjøpsintensjon: «kjøpe safran til lussekatter»,
+   «safran på nett», «safran julegave» – pluss en oppskriftsside med Recipe-markup
+   som kan gi «rich result» (oppskriftskort med bilde/tid) i Google.
+2. **Alt må være publisert og indeksert innen sept–tidlig okt.** Interessen for
+   lussekatter/safran stiger i slutten av oktober og topper i **uke 49–50** (før
+   Lucia, 13. desember). Et nytt domene trenger måneder på å bli «modent», og
+   indeksering tar dager til uker. Live i september – ikke november.
+3. **Den statiske stacken er en SEO-fordel.** Håndkodet HTML på GitHub Pages er
+   raskt og stabilt (bra Core Web Vitals). Men du må **manuelt** legge til det et
+   rammeverk ellers ville generert: title/meta, JSON-LD, sitemap.xml, robots.txt,
+   Open Graph, språksignal og Search Console-verifisering.
+4. **Hver side er en egen inngang fra Google.** Vi gir hver HTML-side sine egne
+   tagger, tilpasset akkurat det innholdet. Lussekatter-oppskriften er en av de
+   sterkeste mulighetene fordi du har ekte oppskriftsinnhold der.
+5. **År én = grunnmur.** Regn med lite organisk trafikk første sesong; suppler
+   med sosiale medier og evt. litt Google Ads på kjøpsord i nov–des.
+
+---
+
+## Hvordan dette kobles til våre faktiske filer
+
+Researchen antar fem URL-er. Vi har i dag fire sider. Slik mapper vi det:
+
+| Vår fil | Rolle i SEO | Primært søkeord (eksempel) |
+|---------|-------------|----------------------------|
+| `index.html` | Merkevare / velg butikk | merkenavn (f.eks. «paeja safran») |
+| `spiceflow.html` | Hverdagsbutikk – kjøp safran | `kjøpe safran på nett`, `safran nettbutikk` |
+| `lussekatter.html` | Julebutikk **+ oppskrift** | `lussekatter med ekte safran`, `safran til lussekatter`, `safran julegave` |
+| `handlekurv.html` | Kasse | **ingen** – skal IKKE i Google (se 2.2) |
+
+> Lussekatter-siden bærer to roller (produkt + oppskrift). Det er greit nå, men
+> hvis oppskriftssøk blir viktig kan oppskriften få sin egen URL senere
+> (f.eks. `oppskrift/lussekatter-med-safran`) for renere targeting.
+
+---
+
+## FASE 1 – GJØR NÅ (før lansering, helst ferdig sent i september)
+
+**Hvorfor fristen:** Google kan bruke dager–uker på å indeksere et nytt domene,
+og domenet trenger måneder på å bygge tillit. For å fange topp i uke 49–50 må
+sidene være live, indeksert og «modnet» i god tid før.
+
+### 1.1 Søkeordskart (ett primært søkeord per side)
+Hold ett tydelig primærord per side, så sidene ikke konkurrerer med hverandre
+(«keyword cannibalization»).
+
+- **`index.html`** – primært: merkenavn. Sekundært: `ekte safran`, `julekrydder`.
+- **`spiceflow.html`** – primært: `kjøpe safran på nett`. Sekundært:
+  `safran nettbutikk`, `safran pris`, `safrantråder`, `safran til matlaging`.
+- **`lussekatter.html`** – primært: `safran til lussekatter`. Sekundært:
+  `lussekatter med ekte safran`, `safran julegave`, `hvor mye safran i lussekatter`,
+  `hvilket krydder i lussekatter`, `safran eller gurkemeie`.
+
+**Realistiske long-tail-ord å bygge innhold rundt (lav konkurranse):**
+`kjøpe safran til lussekatter`, `hvor mye safran til lussekatter`,
+`hvor kjøpe ekte safran`, `safran pris Norge`, `safran på nett fri frakt`,
+`safran julegave matelsker`, `hvilket krydder i lussekatter`,
+`safran eller gurkemeie`, `slik bruker du safran`.
+
+**For konkurransesterkt til år én** (vent): bare `lussekatter`, bare
+`lussekatter oppskrift`, bare `safran`, `julebaking`.
+
+### 1.2 On-page-elementer (konkrete norske eksempler)
+
+**Title tag** (~50–60 tegn, primærord først, merke til slutt) – én per side:
+- `index.html`: `Ekte safran til lussekatter og hverdagsmat | Paeja`
+- `spiceflow.html`: `Safran på nett – kjøp ekte safran til god pris | Paeja`
+- `lussekatter.html`: `Lussekatter med ekte safran – oppskrift til Lucia | Paeja`
+
+**Meta description** (~150–160 tegn; påvirker ikke ranking direkte, men driver klikk):
+- `lussekatter.html`: `Slik baker du saftige lussekatter med ekte safran til Luciadagen 13. desember. Enkel oppskrift steg for steg – og hvor mye safran du trenger.`
+- `spiceflow.html`: `Kjøp ekte safran i forseglet pose. Håndplukket kvalitet, rask levering i hele Norge. Perfekt til lussekatter, risotto og hverdagsmat.`
+
+**Overskrifter:** Én `<h1>` per side med primærordet. `<h2>` for seksjoner, f.eks.
+`Hvorfor ekte safran?`, `Hvor mye safran til lussekatter?`, `Frakt og levering`.
+
+**Bilde-alt-tekst** (beskriv bildet, inkluder søkeord naturlig):
+- `alt="Pose med ekte safrantråder til lussekatter"`
+- `alt="Nybakte lussekatter med safran pyntet med rosiner"`
+- Bruk også beskrivende filnavn: `safran-til-lussekatter.jpg`, ikke `IMG_3920.jpg`.
+
+**Intern lenking** (lenker mellom egne sider – sprer rankingsignal + hjelper bruker):
+- Oppskriften lenker til produktet («Du trenger ekte safran – kjøp den her»).
+- Produktet lenker til oppskriften («Se vår oppskrift på lussekatter med safran»).
+- Bruk beskrivende lenketekst («ekte safran til lussekatter»), ikke «klikk her».
+
+### 1.3 Strukturert data (JSON-LD) – limes inn i `<head>`
+JSON-LD er et lite script som forteller Google nøyaktig hva siden er. Usynlig for
+besøkende, ideelt for statiske sider. **Valider hver blokk i Googles Rich Results
+Test før lansering**, og merk kun opp innhold som faktisk vises på siden.
+
+- **Recipe-schema** på `lussekatter.html` – kan gi oppskriftskort med foto/tid/stjerner.
+  (`@type: Recipe` med name, image, recipeIngredient, recipeInstructions, prepTime osv.)
+- **Product-schema** på produktene – kan gi pris/tilgjengelighet i søk.
+  Pris må være rent tall (`"99.00"`, ikke `"99 kr"`). Hold `availability` korrekt.
+- **Organization-schema** på `index.html` – styrker merkevareidentitet (name, url, logo, sameAs).
+
+> Konkrete kodeblokker ligger i researchen (SEO Action Plan). Når domenet er valgt
+> og vi skal implementere, henter vi dem inn og fyller med ekte verdier.
+> `aggregateRating` legges til **først når du har ekte anmeldelser** – aldri dikt opp.
+
+### 1.4 Språk og region (Norge)
+- Sett `<html lang="nb">` (nb = bokmål) på **alle** sider. *(I dag står det `lang="no"` –
+  bør endres til `nb`.)*
+- **hreflang trengs ikke** – det gjelder bare ved flere språk-/landsversjoner.
+- Forsterk norsk intensjon: norsk innhold, NOK-priser, `.no`-domene, norsk
+  fraktinfo og norsk adresse/telefon i footer.
+- Legg til `<meta property="og:locale" content="nb_NO">`.
+
+### 1.5 Open Graph (deling i Facebook/Instagram/Messenger/iMessage)
+Et sesong-/gaveprodukt deles sosialt; OG-tagger styrer forhåndsvisningen. Unike
+tagger per side i `<head>`, absolutte https-bilde-URL-er, bilde 1200×630 px:
+`og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:site_name`,
+`og:locale`. Kjør hver side gjennom Facebook Sharing Debugger etter lansering.
+
+---
+
+## FASE 2 – RUNDT LANSERING
+
+### 2.1 `robots.txt` (i repo-roten, serveres på /robots.txt)
+```
+User-agent: *
+Allow: /
+Sitemap: https://DITT-DOMENE.no/sitemap.xml
+```
+
+### 2.2 `sitemap.xml` (i repo-roten)
+Lister sidene så Google finner dem. Vi har få sider – skriv den for hånd.
+**Ta IKKE med `handlekurv.html`** (kassesider skal ikke indekseres). Inkluder
+`index.html`, `spiceflow.html`, `lussekatter.html`.
+Sjekk at begge filene laster i nettleser uten 404. For GitHub Pages med eget
+domene: legg en `CNAME`-fil i repoet og skru på «Enforce HTTPS».
+
+### 2.3 Google Search Console (GSC)
+1. Legg til domenet som property.
+2. Verifiser eierskap – for eget domene er DNS TXT-record reneste metode.
+3. Send inn sitemap-URL under «Sitemaps».
+4. Bruk «URL Inspection → Request indexing» for hver nøkkelside.
+5. Valgfritt: importer til Bing Webmaster Tools (ett klikk fra GSC).
+
+### 2.4 Sidehastighet / Core Web Vitals (mest allerede vunnet)
+Statisk HTML er raskt by default. For å holde CWV i «good»:
+- Komprimer/skaler bilder, server WebP (største spaken – LCP).
+- Sett eksplisitt `width`/`height` på `<img>` (hindrer layout-hopp → CLS).
+- Hold JavaScript minimalt; `defer` på ikke-kritiske scripts (INP).
+- `loading="lazy"` på bilder under «folden».
+- Test i PageSpeed Insights. Sjekk mobilvennlighet (de fleste julesøk er mobil).
+
+---
+
+## FASE 3 – LØPENDE (lansering → desember og videre)
+
+### 3.1 Innholdskalender (publisér i god tid – alt live innen oktober)
+- **Pilar-oppskrift:** «Lussekatter med ekte safran – steg for steg».
+- **Kjøpsguide/FAQ** (treffer long-tail + de ~60 % som ikke vet hvilket krydder):
+  - «Hvor mye safran trenger du til lussekatter?»
+  - «Safran eller gurkemeie – hva er forskjellen?»
+  - «Hvorfor er safran så dyrt? (verdens dyreste krydder)»
+  - «Hvor kan du kjøpe ekte safran i Norge?»
+- **Gavevinkel:** «Safran som julegave til matelskeren» / «matgaver til den som har alt».
+- **Sesonghub:** «Julebaking med safran» som lenker oppskrift + produkter + guider.
+
+### 3.2 Bygg autoritet (det trege, men avgjørende arbeidet)
+- Bli nevnt/lenket av norske matbloggere, lokale Lucia-/julemarkedssider, nisjekataloger.
+- Aktiv på Instagram/Facebook med oppskrift- og livsstilsbilder.
+- Oppfordre til ekte kundeanmeldelser (legg så til `aggregateRating`).
+- Vurder lite Google Ads-budsjett på kjøpsord («kjøpe safran») i nov–des.
+
+### 3.3 Mål og juster
+- Følg GSC «Performance»: hvilke søk gir visninger/klikk – doble ned på long-tail
+  du faktisk ranker på.
+- Har du visninger men få klikk → skriv om title/meta description.
+- Frisk opp oppskrift/guider hvert år (oppdater datoer) før sesongen.
+
+---
+
+## Avkrysningsliste (kort)
+
+**Fase 1 – før lansering**
+- [ ] Velg domene, oppdater alle eksempler i denne planen
+- [ ] `<title>` per side (index, spiceflow, lussekatter)
+- [ ] `<meta name="description">` per side
+- [ ] Endre `lang="no"` → `lang="nb"` på alle sider
+- [ ] `<h1>` med primærord per side
+- [ ] Beskrivende `alt`-tekst + filnavn på bilder
+- [ ] Intern lenking oppskrift ↔ produkt
+- [ ] JSON-LD: Recipe (lussekatter), Product (produkter), Organization (index)
+- [ ] Open Graph-tagger per side
+- [ ] Valider all JSON-LD i Rich Results Test
+
+**Fase 2 – rundt lansering**
+- [ ] `robots.txt`
+- [ ] `sitemap.xml` (uten handlekurv)
+- [ ] `CNAME` + «Enforce HTTPS» på GitHub Pages
+- [ ] Search Console: verifiser, send sitemap, request indexing
+- [ ] Bilder → WebP, `width`/`height`, `loading="lazy"`
+- [ ] PageSpeed Insights-sjekk
+
+**Fase 3 – løpende**
+- [ ] Pilar-oppskrift + 3–5 FAQ-/guideartikler
+- [ ] Sosiale medier i gang
+- [ ] 5–10 ekte norske omtaler/lenker
+- [ ] Følg GSC, juster title/meta etter data
+
+---
+
+## Forbehold (fra researchen)
+
+- **Ingen offentlige søkevolum.** Eksakte norske månedstall finnes ikke gratis –
+  hent live fra Google Keyword Planner (geo = Norge). Sesongsnitt undervurderer
+  desembertoppen kraftig. Alle volum her er retningsgivende.
+- **Trends-mønsteret** (stiger sent okt, topper uke 49–50) er sterkt antydet fra
+  MatPrats «Norsk Juleindeks» og undersøkelser, ikke en publisert ukekurve.
+  Bekreft med live Google Trends (geo = Norge; «lussekatter», «safran»).
+- **Ranking-tidslinjer er sannsynligheter.** ~3–6 mnd for lavkonkurranse,
+  6–12+ mnd for konkurransesterke ord. Regn år én som grunnmur.
+- **Rich results er ikke garantert.** Gyldig schema gjør deg *kvalifisert*; Google
+  bestemmer om det vises.
+- **Andelen som baker lussekatter** varierer 15 %–28 % mellom undersøkelser –
+  behandle som et spenn.
+- **Safranpriser varierer mye** (≈40 000–180 000 kr/kg, per-gram 59–358 kr) –
+  bruk som kontekst, ikke fast markedspris.
+
+---
+
+*Kilde: intern SEO-research (Norwegian Saffron & Julebaking). Oppdater denne
+planen når domenet velges og når sidene faktisk får SEO-taggene implementert.*
