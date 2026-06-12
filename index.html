@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safran – velg butikk</title>
+  <title>Safranoppskrifter – lussekatter, paella, risotto og mer</title>
+  <meta name="description" content="Samling av oppskrifter med ekte safran – fra lussekatter til paella, risotto og safraniskrem. Enkle oppskrifter steg for steg.">
 
   <!-- Fonter fra Google Fonts. Trenger internett; ellers brukes reservefonter. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Bare felles grunnstil her. Ingen tema, siden dette er "inngangen". -->
+  <!-- Bare felles grunnstil her. Huben er nøytral (ingen butikk-tema). -->
   <link rel="stylesheet" href="style-felles.css">
 </head>
 <body>
 
-  <!-- ===== Forside: velg butikk ===== -->
+  <!-- ===== Oppskriftshub: velg en safranrett =====
+       Dette er forsiden. Hver oppskrift er sin egen side (gren). Lussekatter er
+       laget; resten kommer. SpiceFlow-butikken lenkes IKKE herfra ennå – den
+       står tom og kjører i bakgrunnen. -->
   <main class="landing">
-    <h1>Safran</h1>
-    <p>Ekte safran til hverdag og fest. Velg butikken som passer deg.</p>
+    <h1>Safranoppskrifter</h1>
+    <p>Ekte safran løfter både hverdag og fest. Velg en rett og kom i gang – mengdene justeres etter hvor mange du lager til.</p>
 
-    <!-- To valg-kort som lenker videre til hver sin front -->
     <div class="store-choices">
 
-      <a class="store-choice" href="spiceflow.html">
-        <h2>SpiceFlow</h2>
-        <p>Safran til hverdagen – for baking og matlaging. Enkelt og rimelig.</p>
-      </a>
-
+      <!-- Live oppskrift -->
       <a class="store-choice" href="lussekatter.html">
         <h2>Lussekatter</h2>
-        <p>Safran til jul – som gave eller til julebaksten. Premium kvalitet, vakkert pakket.</p>
+        <p>Den norske juleklassikeren – myke, gylne boller med safran. Til Lucia og julebaksten.</p>
       </a>
+
+      <!-- Kommer snart: ikke-klikkbare kort som viser hvor vi skal.
+           Når oppskriften er laget, gjøres kortet om til en <a href="..."> som over. -->
+      <div class="store-choice" aria-disabled="true" style="opacity: 0.55;">
+        <h2>Paella</h2>
+        <p>Den spanske klassikeren der safran gir farge og aroma. <em>Kommer snart.</em></p>
+      </div>
+
+      <div class="store-choice" aria-disabled="true" style="opacity: 0.55;">
+        <h2>Safranrisotto</h2>
+        <p>Risotto alla Milanese – kremet ris der safran er selve poenget. <em>Kommer snart.</em></p>
+      </div>
+
+      <div class="store-choice" aria-disabled="true" style="opacity: 0.55;">
+        <h2>Fiskesuppe med safran</h2>
+        <p>Norsk favoritt løftet med safran. <em>Kommer snart.</em></p>
+      </div>
 
     </div>
   </main>

@@ -6,8 +6,6 @@
 //     enhet i nedtrekksmenyen ved siden av en ingrediens
 
 document.addEventListener('DOMContentLoaded', function () {
-  const BASE_COUNT = 24; // grunnoppskriften gir 24 stykker
-
   // Hvor mange milliliter én av hver volumenhet er.
   const ML_PER_UNIT = { dl: 100, ss: 15, ts: 5, ml: 1 };
 
@@ -17,6 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const ingredients = document.querySelectorAll('.recipe-ingredients .ingredient[data-amount]');
 
   if (!scaleInput || ingredients.length === 0) return;
+
+  // Grunnoppskriftens mengde (f.eks. 24 lussekatter eller 4 porsjoner paella).
+  // Leses fra data-base-yield på antall-feltet, slik at hver oppskrift kan ha
+  // sitt eget utgangspunkt. Mangler attributtet, bruker vi feltets startverdi,
+  // og som siste utvei 24 (så gamle sider fortsatt virker).
+  const BASE_COUNT =
+    parseFloat(scaleInput.dataset.baseYield) ||
+    parseFloat(scaleInput.value) ||
+    24;
 
   // Gjør om en mengde til gram. "stk" og "g" er allerede en vekt/antall,
   // og trenger ikke regnes om via tetthet.

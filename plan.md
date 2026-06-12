@@ -49,6 +49,10 @@ Gjort:
 - [x] Skrevet `README.md` (oversikt + veikart) og `plan.md` (denne).
 - [x] Opprettet `CLAUDE.md` (arkitektur-kontekst for fremtidige AI-økter).
 - [x] Bestemt retning: oppskriftsdrevet safran-side, salg som primær inntekt.
+- [x] Gjort `recipe.js` konfigurerbar (`data-base-yield`) så skaleringen virker
+      for porsjonsbaserte retter, ikke bare 24 lussekatter.
+- [x] Gjort om `index.html` til oppskriftshub (`lang="nb"`, meta description,
+      kort til lussekatter + «kommer snart»-retter). SpiceFlow ikke lenket herfra.
 
 ---
 
@@ -149,10 +153,18 @@ handlekurv.html         Kasse (felles)
 Hver oppskriftsside: deler `style-felles.css` + tema + `recipe.js`, og har egen
 SEO (`<title>`, `<meta description>`, Recipe JSON-LD) + CTA til butikken.
 
+**Krav til ALLE oppskrifter:** ingredienslistene skal ha **justerbare måleenheter**
+(dl → gram → ss osv.) på samme måte som lussekatter-oppskriften. Dette er allerede
+innebygd i `recipe.js`; det krever bare at hver ingrediens bygges med
+`data-amount`/`data-unit`/`data-density` + `<select class="unit-select">` etter
+samme mønster som i `lussekatter.html`.
+
 **Byggerekkefølge (én oppskrift om gangen, iterativt):**
-- [ ] 1. Refaktorer `recipe.js` (konfigurerbart grunntall) + lag oppskrift-malen.
-- [ ] 2. Gjør om `index.html` til oppskriftshub med kort som lenker til hver
-      oppskrift. SpiceFlow-butikken lenkes IKKE herfra ennå (står tom).
+- [x] 1. Refaktorer `recipe.js` (konfigurerbart grunntall via `data-base-yield`).
+      *(Oppskrift-malen generaliseres når vi lager paella i steg 3.)*
+- [x] 2. Gjort om `index.html` til oppskriftshub med kort. Lussekatter er live;
+      paella/risotto/fiskesuppe vises som «kommer snart» (ikke klikkbare).
+      SpiceFlow-butikken lenkes IKKE herfra ennå.
 - [ ] 3. Legg til paella som første nye oppskrift (test malen på en ekte rett).
 - [ ] 4. Verifiser scaler + CTA + SEO på paella, juster malen.
 - [ ] 5. Rull ut resten (fiskesuppe, risotto, …) med samme mal.
