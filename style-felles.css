@@ -548,6 +548,36 @@ body {
 }
 
 
+/* ===== Oppskrift-bakgrunn (delt) =====
+   Et bilde av retten øverst på siden som toner GRADVIS UT til gjennomsiktig
+   nedover, slik at sidefargen overtar. Hver oppskriftsside setter variabelen
+   --recipe-image på <body>, f.eks.:
+       <body style="--recipe-image: url('bilder/paella.jpg')">
+   Sider uten variabelen (forsiden, kassen) får ingen bakgrunn – da er
+   background-image "none" og ingenting vises.
+
+   Slik virker uttoningen: bildet legges som et fast lag bak innholdet, og en
+   "mask" (en gradient fra synlig øverst til gjennomsiktig nedover) bestemmer
+   hvor mye av bildet som vises. Nederst er masken gjennomsiktig, så bildet
+   forsvinner helt og sidefargen står igjen. */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-image: var(--recipe-image, none);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+
 /* ===== Oppskrift (delt struktur) =====
    Layout for ALLE oppskriftssider (lussekatter, paella, risotto …). Bruker bare
    CSS-variabler, så hver side får sine egne farger fra temaet sitt (eller fra

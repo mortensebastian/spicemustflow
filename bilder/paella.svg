@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <!-- MIDLERTIDIG placeholder for paella-bakgrunn. Bytt ut med ekte foto
+       (bilder/paella.jpg) når det er klart – ingen kodeendring trengs ellers. -->
+  <defs>
+    <radialGradient id="pan" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#e8a13a"/>
+      <stop offset="45%" stop-color="#cf7a22"/>
+      <stop offset="100%" stop-color="#8a4516"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#pan)"/>
+  <!-- Antydning av ris/safranfarge og noen ingredienser, helt abstrakt -->
+  <g opacity="0.5" fill="#f6d27a">
+    <circle cx="300" cy="250" r="6"/><circle cx="360" cy="300" r="5"/>
+    <circle cx="480" cy="220" r="6"/><circle cx="620" cy="280" r="5"/>
+    <circle cx="760" cy="240" r="6"/><circle cx="880" cy="300" r="5"/>
+    <circle cx="540" cy="360" r="6"/><circle cx="700" cy="380" r="5"/>
+  </g>
+  <g opacity="0.55" fill="#c63b2a">
+    <ellipse cx="420" cy="330" rx="34" ry="16"/>
+    <ellipse cx="820" cy="360" rx="34" ry="16"/>
+    <ellipse cx="640" cy="200" rx="30" ry="14"/>
+  </g>
+  <g opacity="0.4" fill="#3c6b34">
+    <circle cx="500" cy="420" r="14"/><circle cx="760" cy="440" r="12"/>
+    <circle cx="380" cy="430" r="11"/>
+  </g>
+</svg>

@@ -140,6 +140,19 @@ gir delt struktur/utseende.
       (samme HTML-struktur per oppskrift: intro → skalering → ingredienser → steg
       → «kjøp safran»-CTA).
 
+**Design – bakgrunnsbilde per oppskrift (delt mekanisme):**
+Hver oppskriftsside har et bilde av retten øverst som **toner gradvis ut til
+gjennomsiktig** nedover, så sidefargen overtar. Mekanismen ligger i
+`style-felles.css` (`body::before` med en mask-gradient) og styres per side med
+variabelen `--recipe-image` på `<body>`:
+```html
+<body style="--recipe-image: url('bilder/paella.jpg')">
+```
+- [x] Mekanismen bygget og demonstrert på paella (med midlertidig SVG-placeholder).
+- [ ] **Ekte rett-foto** for hver side (bytter ut placeholderne – kun én linje per
+      side). Henger sammen med veikartets «ekte produktbilder»-punkt.
+- [ ] Sett `--recipe-image` på lussekatter og hver nye oppskrift når foto finnes.
+
 **Filstruktur (statisk, én fil per oppskrift):**
 ```
 index.html              Oppskriftshub – lister alle safranoppskriftene (BESLUTTET)
