@@ -62,7 +62,9 @@ Rekkefølgen er grov; SEO-detaljene står i egen seksjon lenger ned.
 - [ ] Ekte produktbilder i `bilder/` (erstatt SVG-plassholderne).
 
 **Før sesong (innhold som driver trafikk):**
-- [ ] Flere safranoppskrifter (vurder paella/risotto for å bryte sesong).
+- [ ] Bygg ut til oppskriftshub + undersider per rett (se «Utviklingsplan for
+      oppskriftssidene» og «Domene- og oppskriftsarkitektur»).
+- [ ] Flere safranoppskrifter: paella, fiskesuppe, risotto m.fl. (bryter sesong).
 - [ ] FAQ/guide-innhold (treffer de ~60 % som ikke vet hvilket krydder – se SEO 3.1).
 - [ ] Full SEO-implementering (JSON-LD, sitemap, robots.txt, Open Graph) – se under.
 - [ ] Google Search Console: verifiser, send sitemap, request indexing.
@@ -76,6 +78,89 @@ Rekkefølgen er grov; SEO-detaljene står i egen seksjon lenger ned.
 - [ ] Reklame (kun hvis jevn, stor trafikk – ellers ikke verdt det).
 - [ ] AI-dialog under matlaging (trenger inntektsmodell under seg først).
 - [ ] Vurder å dele i flere repoer KUN hvis frontene slutter å dele motor.
+
+---
+
+## Domene- og oppskriftsarkitektur (besluttet juni 2026)
+
+**Beslutning: ett hoveddomene med oppskriftene som undersider – IKKE ett domene
+per oppskrift.** Begrunnelse:
+
+- SEO-styrke (lenker, intern lenking, «emneautoritet» – at Google ser deg som
+  ekspert på safranmat) bygger seg opp på **én** adresse over tid. Sprer du
+  innsatsen over fem domener, starter alle fem på null og ingen blir sterke.
+- Du jobber alene: fem domener = fem sett sitemap, robots.txt, Search Console og
+  vedlikehold. Ett domene holder alt samlet.
+
+**Modell:** Én hovedside (domene TBD – `paeja.no` / `safrantilfolket.no`) med:
+- En **oppskriftshub** som lister alle safranoppskriftene.
+- **Én underside per oppskrift**, hver godt optimalisert (`/paella`, `/risotto`, …).
+- Hver oppskrift lenker tilbake til butikken («du trenger ekte safran – kjøp her»).
+
+**Vil du ha et kult, delbart domene** (f.eks. `paella.no`) og det er ledig/billig:
+kjøp det, men sett opp **301-redirect** (permanent videresending) til undersiden,
+f.eks. `paella.no → hoveddomene/paella`. Da får du den kule adressen uten å
+splitte SEO-styrken. Entusiasme uten å skyte deg selv i foten.
+
+### Oppskrifter å bygge (rangert etter styrke for norsk publikum)
+
+1. **Lussekatter** – allerede laget. Sterkest sesong (Lucia/jul).
+2. **Paella** – mest kjente safranretten, lett gjenkjennelig. God «kul domene»-kandidat.
+3. **Fiskesuppe med safran** – sterkeste lokale vinkel; nordmenn elsker fiskesuppe.
+4. **Risotto alla Milanese** (safranrisotto) – klassiker, safran er selve poenget.
+5. **Bouillabaisse** – fransk fiskegryte der safran er essensielt.
+6. **Persisk safranris + safrankylling** – vakkert, «gave-verdig» visuelt.
+7. **Safraniskrem** (persisk bastani / indisk kulfi) – dessert, bra for jul/gave.
+
+Retter som *blir bedre* med safran men ikke krever det (senere, lavere prioritet):
+kremsauser til fisk/skalldyr, marokkansk tagine, skalldyrgryter (cioppino, zarzuela).
+
+---
+
+## Utviklingsplan for oppskriftssidene
+
+Hvordan vi teknisk bygger om fra dagens to-front-oppsett til en oppskriftsdrevet
+side. Statisk stack beholdes (ingen rammeverk/byggesteg).
+
+**Gjenbruk vi allerede har:** `recipe.js` er **allerede generisk** – den skalerer
+hvilken som helst ingrediensliste via `data-amount`/`data-unit`/`data-density`.
+Nye oppskriftssider kan bruke den rett. `style-felles.css` + lussekatter-temaet
+gir delt struktur/utseende.
+
+**Nødvendig refaktor før flere oppskrifter:**
+- [ ] `recipe.js` har `BASE_COUNT = 24` hardkodet (24 lussekatter). Andre retter
+      teller i porsjoner, ikke 24 stk. Gjør grunntallet konfigurerbart, f.eks. les
+      `data-base-yield` fra oppskrift-elementet i stedet for fast 24.
+- [ ] Trekk oppskrift-markupen ut av `lussekatter.html` til et gjenbrukbart mønster
+      (samme HTML-struktur per oppskrift: intro → skalering → ingredienser → steg
+      → «kjøp safran»-CTA).
+
+**Foreslått filstruktur (statisk, én fil per oppskrift):**
+```
+index.html              Forside (vurder: gjør om til oppskrift-fokus)
+oppskrifter.html        NY: hub som lister alle safranoppskriftene
+lussekatter.html        Oppskrift 1 (finnes)
+paella.html             NY oppskrift 2
+risotto.html            NY oppskrift 3
+fiskesuppe.html         NY oppskrift 4 ...
+spiceflow.html          Butikk-front (selger safran)
+handlekurv.html         Kasse (felles)
+```
+Hver oppskriftsside: deler `style-felles.css` + tema + `recipe.js`, og har egen
+SEO (`<title>`, `<meta description>`, Recipe JSON-LD) + CTA til butikken.
+
+**Byggerekkefølge (én oppskrift om gangen, iterativt):**
+- [ ] 1. Refaktorer `recipe.js` (konfigurerbart grunntall) + lag oppskrift-malen.
+- [ ] 2. Lag `oppskrifter.html` (hub) med kort som lenker til hver oppskrift.
+- [ ] 3. Legg til paella som første nye oppskrift (test malen på en ekte rett).
+- [ ] 4. Verifiser scaler + CTA + SEO på paella, juster malen.
+- [ ] 5. Rull ut resten (fiskesuppe, risotto, …) med samme mal.
+- [ ] 6. Knytt alt sammen med intern lenking: hub ↔ oppskrift ↔ butikk.
+
+**Åpne valg å ta underveis:**
+- Hva blir `index.html` – oppskrift-hub eller fortsatt «velg butikk»-forside?
+- Beholder vi to visuelle temaer (SpiceFlow/Lussekatter), eller ett felles
+  oppskrift-tema med jule-variant for lussekatter? *(Påvirker CSS-strukturen.)*
 
 ---
 

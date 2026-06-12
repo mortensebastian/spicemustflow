@@ -21,6 +21,15 @@ are at best a *later bonus* (needs large, steady traffic), and an AI cooking-cha
 feature is a *cost, not revenue* — defer both until traffic is proven. Don't build
 the business around ads or AI chat. See `plan.md` for the full strategy and roadmap.
 
+**Target architecture (being built toward):** one domain with a **recipe hub** and
+**one subpage per recipe** (`/paella`, `/risotto`, …) — NOT one domain per recipe
+(splits SEO authority). Vanity domains, if bought, should 301-redirect to the
+subpage. Each recipe page reuses `recipe.js` and links to the shop. Note
+`recipe.js` currently hardcodes `BASE_COUNT = 24` (lussekatter buns); this must
+become configurable (e.g. a `data-base-yield` attribute) before other recipes can
+reuse the scaler. The recipe markup in `lussekatter.html` is the template to
+generalize. See `plan.md` → "Utviklingsplan for oppskriftssidene".
+
 ## The single most important concept: two storefronts, one engine
 
 The shop presents **two fronts that share one codebase**:
