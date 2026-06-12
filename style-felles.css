@@ -589,6 +589,31 @@ body::before {
   border-bottom-color: rgba(0, 0, 0, 0.06);
 }
 
+/* #1 Lesbarhet på hero-teksten: tittel og ingress ligger oppå bildet. En myk
+   lys glød (text-shadow) bak teksten holder den lett å lese uansett hva som er
+   under, og vi gjør ingressen litt mørkere for bedre kontrast. */
+.recipe-page .hero h1,
+.recipe-page .hero p {
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.75);
+}
+
+.recipe-page .hero p {
+  color: var(--text);
+}
+
+/* #2 Ingredienser og fremgangsmåte som "kort": en lys, lett frostet boks løfter
+   innholdet vekk fra bakgrunnen og gjør det mer lesbart. Gjelder de to spaltene
+   i oppskrift-layouten (ingredienser til venstre, steg til høyre). */
+.recipe-page .recipe-layout > div {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+}
+
 
 /* ===== Oppskrift (delt struktur) =====
    Layout for ALLE oppskriftssider (lussekatter, paella, risotto …). Bruker bare
