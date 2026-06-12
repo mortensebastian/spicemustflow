@@ -813,6 +813,19 @@ body::before {
   margin-bottom: 16px;
 }
 
+/* "Kommer snart"-merke i stedet for en falmet knapp. Full opasitet og en
+   diskré stiplet ramme gjør at det ser bevisst ut – ikke som en feil. Når
+   butikken åpner, byttes dette ut med <a class="button" href="...">. */
+.recipe-cta-soon {
+  display: inline-block;
+  padding: 11px 22px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  color: var(--muted);
+  font-size: 15px;
+}
+
 @media (max-width: 600px) {
   .recipe-layout {
     grid-template-columns: 1fr;
