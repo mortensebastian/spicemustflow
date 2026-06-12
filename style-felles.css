@@ -548,6 +548,15 @@ body {
 }
 
 
+/* Liten, diskré fotokreditering i footeren på oppskriftssider. */
+.photo-credit {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+
 /* ===== Oppskrift-bakgrunn (delt) =====
    Et bilde av retten øverst på siden som toner GRADVIS UT til gjennomsiktig
    nedover, slik at sidefargen overtar. Hver oppskriftsside setter variabelen
