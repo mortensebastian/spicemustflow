@@ -365,27 +365,41 @@ retten rebalanseres automatisk (salt, syre, sødme) også når noe *fjernes*.
    porsjoner?»** (Ja / Nei).
 6. Behold **«Tilbakestill»**, men vis den bare når minst én endring er gjort.
 
-### B. Balanselogikk – natrium-budsjett (erstatter hardkodede `adjust`)
-- Regn ut **total natrium** fra alle aktive ingredienser
-  (`sodiumPer100g` × mengde i gram, via `RecipeUnits` for omregning).
-- Lagre grunnoppskriftens totale natrium som **mål**.
-- Dytt **`salt_added`** opp/ned så totalen treffer målet igjen:
-  - Bytter inn noe salt (chorizo) → mindre tilsatt salt.
-  - Fjerner noe salt (skjell/clams) → mer tilsatt salt.
-  - Med en nedre/øvre grense så det ikke blir absurd, og alltid «smak til».
-- Vis rolig melding som forklarer justeringen.
-- *Fjerner behovet for `adjust`-blokkene i `paella-data.js`* (kan slettes, eller
-  beholdes som valgfri manuell overstyring – avgjøres under bygging).
+### B. Smaksbalanse-motor (de fem grunnsmakene) – GJENBRUKBAR
+Besluttet: balansen bygges som en **generell motor rundt de fem grunnsmakene**
+(salt, søtt, surt, bittert, umami), ikke en paella-spesifikk saltregel. Den skal
+gjenbrukes av hundrevis av framtidige oppskrifter, så den bør bo i en egen,
+rett-uavhengig fil (forslag: `recipe-balance.js`) og lese et **smaksprofil-felt**
+på hver ingrediens.
 
-### C. Syre og sødme
-- **Syre/friskhet (finnes i dataene):** behold `isPrimaryAcid`/`onRemove`-tipset
-  ved fjerning av tomat; fremhev sitron-tipset når retten blir saltere.
-- **Sødme (finnes IKKE i dataene i dag):** for å balansere sødme må vi merke
-  ingredienser med f.eks. `sweetness: "low|med|high"` eller en `role: "sweet"`.
-  *Åpent valg:* legge til sødme-tagger nå, eller skoper vi det ut til paella
-  ikke har søte komponenter? (Paella har i praksis ingen søt ingrediens – syre
-  er det relevante her. Forslag: bygg syre/salt nå, legg sødme-rammeverket til
-  når en rett som faktisk trenger det kommer, f.eks. en tagine/dessert.)
+**Datamodell – `taste` per ingrediens (valgfritt felt):**
+```js
+taste: { salt: 0-3, sweet: 0-3, sour: 0-3, bitter: 0-3, umami: 0-3 }
+```
+- Tallene er **relativ intensitet per 100 g/ml** (0 = ingenting, 3 = sterkt).
+- Faktisk bidrag = `intensitet × mengde i gram` (via `RecipeUnits`), så å fjerne
+  en stor, salt ingrediens slår mer ut enn en liten.
+- Ingredienser uten `taste` teller som nøytrale (alle 0). Vi kan utlede salt fra
+  eksisterende `sodiumPer100g` som start, men `taste` er den nye, generelle veien.
+
+**Slik balanserer motoren:**
+1. Regn ut grunnoppskriftens **mål-profil** (sum per akse for standardretten).
+2. Etter hver endring (bytte/fjerning): regn ut **ny profil**.
+3. For akser som har en **justerings-ingrediens (lever)**, dytt den mot målet:
+   - **salt → `salt_added`** (finnes), **søtt → sukker**, **surt → sitron/eddik**,
+     osv. Leveren defineres per oppskrift (hvilken ingrediens som regulerer aksen).
+4. For akser **uten** lever (ofte bittert/umami): ingen automatisk justering – vis
+   i stedet et rolig **tips** («retten blir mindre umami – vurder litt ekstra …»).
+5. Alltid med nedre/øvre grenser og «smak til». Vis kort melding som forklarer.
+
+For paella er i praksis bare **salt** (lever: `salt_added`) og **surt** (lever:
+sitron/tomat) aktive; resten er 0. Men motoren og `taste`-feltet er på plass for
+alle framtidige retter (tagine, dessert, gryter …) uten ny kode – bare ny data.
+
+### C. Syre-spesifikt (utover motoren)
+- Behold `isPrimaryAcid`/`onRemove`-tipset ved fjerning av tomat (kompleks).
+- For enkel/medium uten syre-ingrediens: behold sitron-tipset, fremhevet når
+  salt-aksen øker. Dette blir et spesialtilfelle av sur-aksen i motoren.
 
 ### D. «Juster opp de andre» ved fjerning (maintain yield)
 - Definer **bulk-roller** som utgjør «mengden mat»: `rice`, `liquid`, `protein`,
@@ -395,25 +409,29 @@ retten rebalanseres automatisk (salt, syre, sødme) også når noe *fjernes*.
   = `total_bulk_før / total_bulk_etter_fjerning`. Krydder/salt (`nonlinear`)
   følger fortsatt sin egen dempede skalering + natrium-budsjettet.
 - Ved «Nei»: la de andre stå (mindre rett / færre reelle porsjoner).
-- *Åpent valg:* skal kompensasjon gjelde ALLE bulk-roller, eller bare samme rolle
-  som det fjernede (f.eks. fjerne en sjømat → øk annen sjømat, ikke risen)?
-  Forslag: **samme rolle først**, fall tilbake til all bulk hvis rollen blir tom.
+- **Besluttet: samme rolle først.** Fjerner du en sjømat → øk annen sjømat (ikke
+  risen). Fall tilbake til all bulk bare hvis rollen blir tom.
 
 ### E. Kodeendringer per fil
-- `paella.html`: fjern toggle-markup (behold messages + reset-knapp).
+- **`recipe-balance.js` (NY, gjenbrukbar):** smaksbalanse-motoren – regner
+  mål-profil, ny profil og justerer leverne (rett-uavhengig; brukes av alle
+  framtidige oppskrifter).
 - `recipe-adapter.js`: alltid-synlig per-ingrediens-knapp; «åpen panel»-tilstand
-  (hvilken slot er åpen); fjern-med-valg-flyt; natrium-budsjett-funksjon;
-  kompensasjonsfaktor; vis reset kun ved endringer.
-- `paella-data.js`: (valgfritt) fjern `adjust`-blokker når budsjettet overtar;
-  evt. legg til sødme-tagger hvis vi tar med sødme nå.
+  (hvilken slot er åpen); fjern-med-valg-flyt (maintain yield, samme rolle først);
+  kaller `recipe-balance.js`; vis reset kun ved endringer.
+- `paella-data.js`: legg til `taste`-profil på ingrediensene; definer hvilke
+  ingredienser som er **levere** per akse; fjern `adjust`-blokker når motoren overtar.
+- `paella.html`: fjern toggle-markup (behold messages + reset-knapp); last
+  `recipe-balance.js`.
 - `style-felles.css`: diskré endre-knapp + hover, tooltip, inline-panel, ja/nei-valg.
 
 ### F. Byggesteg (iterativt, test i nettleser mellom hvert)
 1. Bytt global bryter → **diskré per-ingrediens-knapp + tooltip** (panel åpner/lukker).
 2. Panel med **bytte + fjern**.
 3. **Fjern → Ja/Nei «juster opp de andre»** (maintain yield).
-4. **Natrium-budsjett** erstatter `adjust` (test: fjern salt skjell → mer salt;
-   bytt inn chorizo → mindre salt).
+4. **Smaksbalanse-motoren** (`recipe-balance.js`) + `taste`-data erstatter
+   `adjust` (test: fjern salt skjell → mer salt; bytt inn chorizo → mindre salt;
+   akser uten lever gir tips i stedet).
 5. Finpuss syre-tips; reset vises kun ved endringer.
 
 ---
