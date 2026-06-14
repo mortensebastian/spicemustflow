@@ -838,3 +838,193 @@ body::before {
     gap: 24px;
   }
 }
+
+
+/* ===== Tilpass oppskriften =====
+   Kontroller for kompleksitetsvelger, porsjons-/tilpasningsmodus, samt
+   bytte-/fjern-kontroller og balansemeldinger. Brukes på oppskriftssider som
+   drives av recipe-adapter.js (paella). */
+
+/* Kompleksitetsvelger: segmenterte knapper. */
+.recipe-complexity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.recipe-complexity-label {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.complexity-selector {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.complexity-button {
+  border: none;
+  background-color: var(--surface);
+  color: var(--text);
+  padding: 9px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  border-right: 1px solid var(--border);
+}
+
+.complexity-button:last-child {
+  border-right: none;
+}
+
+.complexity-button.active {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Av/på-bryter for tilpasning + tilbakestill. */
+.recipe-customize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.customize-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.reset-recipe {
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.reset-recipe:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Balansemeldinger (salt redusert, friskhet-tips). */
+.recipe-messages {
+  max-width: 640px;
+  margin: 0 auto 24px;
+}
+
+.recipe-message {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.recipe-message-strong {
+  color: var(--text);
+  border-left-width: 4px;
+}
+
+/* Ingrediensrad med navn + tilpasningskontroller. Navnet tar resten av plassen
+   så kontrollene legger seg pent til høyre / under på smal skjerm. */
+.recipe-ingredients li.ingredient {
+  flex-wrap: wrap;
+}
+
+.ingredient-name {
+  flex: 1 1 40%;
+}
+
+.ingredient-note {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.ingredient-removed {
+  opacity: 0.55;
+}
+
+.ingredient-removed .ingredient-name,
+.ingredient-removed .ingredient-amount {
+  text-decoration: line-through;
+}
+
+.ingredient-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-basis: 100%;
+  margin-top: 4px;
+}
+
+.ingredient-swap {
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ingredient-remove {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ingredient-remove:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Tradisjon-merke ved byttede/valgbare ingredienser (ærlig merking). */
+.tradition-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.tradition-traditional {
+  background-color: #e3efe1;
+  color: #2f6b34;
+}
+
+.tradition-regional {
+  background-color: #eee9dd;
+  color: #7a6230;
+}
+
+.tradition-non-traditional {
+  background-color: #f3e2d6;
+  color: #9a4d22;
+}

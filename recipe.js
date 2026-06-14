@@ -1,56 +1,69 @@
-// ===== Lussekatt-oppskrift: skalering og måleenheter =====
-// Hver ingrediens i lussekatter.html har data-amount/data-unit som gjelder
-// for 24 stykker (oppskriftens grunnoppskrift). Denne filen:
-//  1. regner om alle mengder når brukeren endrer "Antall lussekatter"
-//  2. regner om mellom måleenheter (dl/ss/ts/ml/g) når brukeren bytter
-//     enhet i nedtrekksmenyen ved siden av en ingrediens
+// ===== Oppskrift: skalering og måleenheter =====
+// Brukes på oppskriftssider med en statisk ingrediensliste (f.eks.
+// lussekatter.html). Hver ingrediens har data-amount/data-unit som gjelder for
+// grunnoppskriften (data-base-yield på antall-feltet), og kan ha data-density
+// (g per ml) for å regne om mellom volum (dl/ss/ts) og vekt (g).
+//
+// Omregnings-funksjonene eksponeres også på window.RecipeUnits, slik at andre
+// filer (f.eks. recipe-adapter.js på paella) kan GJENBRUKE samme omregning i
+// stedet for å lage en ny.
+
+// Hvor mange milliliter én av hver volumenhet er.
+var ML_PER_UNIT = { dl: 100, ss: 15, ts: 5, ml: 1 };
+
+// Gjør om en mengde til gram. "stk"/"g" (og ukjente enheter) er allerede en
+// vekt/antall og trenger ikke regnes om via tetthet.
+function toGrams(amount, unit, density) {
+  if (unit === 'g' || unit === 'stk' || !ML_PER_UNIT[unit]) return amount;
+  return amount * ML_PER_UNIT[unit] * density;
+}
+
+// Det motsatte av toGrams: gram tilbake til ønsket enhet.
+function fromGrams(grams, unit, density) {
+  if (unit === 'g' || unit === 'stk' || !ML_PER_UNIT[unit]) return grams;
+  return grams / density / ML_PER_UNIT[unit];
+}
+
+// Runder pent til norsk visning: små mengder til nærmeste kvart, store mengder
+// til nærmeste hele. Bruker komma som desimaltegn.
+function formatAmount(value) {
+  var rounded = value < 10
+    ? Math.round(value * 4) / 4
+    : Math.round(value);
+
+  return rounded
+    .toFixed(2)
+    .replace(/0+$/, '')
+    .replace(/\.$/, '')
+    .replace('.', ',');
+}
+
+// Gjør omregningen tilgjengelig for andre filer.
+window.RecipeUnits = {
+  ML_PER_UNIT: ML_PER_UNIT,
+  toGrams: toGrams,
+  fromGrams: fromGrams,
+  formatAmount: formatAmount
+};
+
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Hvor mange milliliter én av hver volumenhet er.
-  const ML_PER_UNIT = { dl: 100, ss: 15, ts: 5, ml: 1 };
-
   const scaleInput = document.getElementById('recipe-scale-input');
   const decreaseButton = document.getElementById('scale-decrease');
   const increaseButton = document.getElementById('scale-increase');
   const ingredients = document.querySelectorAll('.recipe-ingredients .ingredient[data-amount]');
 
+  // Ingen statisk ingrediensliste (f.eks. paella, der adapteren rendrer listen
+  // selv) – da gjør auto-skaleringen ingenting, og adapteren overtar.
   if (!scaleInput || ingredients.length === 0) return;
 
-  // Grunnoppskriftens mengde (f.eks. 24 lussekatter eller 4 porsjoner paella).
-  // Leses fra data-base-yield på antall-feltet, slik at hver oppskrift kan ha
-  // sitt eget utgangspunkt. Mangler attributtet, bruker vi feltets startverdi,
-  // og som siste utvei 24 (så gamle sider fortsatt virker).
+  // Grunnoppskriftens mengde (f.eks. 24 lussekatter eller 4 porsjoner).
+  // Leses fra data-base-yield på antall-feltet, ellers feltets startverdi,
+  // og som siste utvei 24.
   const BASE_COUNT =
     parseFloat(scaleInput.dataset.baseYield) ||
     parseFloat(scaleInput.value) ||
     24;
-
-  // Gjør om en mengde til gram. "stk" og "g" er allerede en vekt/antall,
-  // og trenger ikke regnes om via tetthet.
-  function toGrams(amount, unit, density) {
-    if (unit === 'g' || unit === 'stk') return amount;
-    return amount * ML_PER_UNIT[unit] * density;
-  }
-
-  // Det motsatte av toGrams: gram tilbake til ønsket enhet.
-  function fromGrams(grams, unit, density) {
-    if (unit === 'g' || unit === 'stk') return grams;
-    return grams / density / ML_PER_UNIT[unit];
-  }
-
-  // Runder pent til norsk visning: små mengder til nærmeste kvart,
-  // store mengder til nærmeste hele. Bruker komma som dessimaltegn.
-  function formatAmount(value) {
-    const rounded = value < 10
-      ? Math.round(value * 4) / 4
-      : Math.round(value);
-
-    return rounded
-      .toFixed(2)
-      .replace(/0+$/, '')
-      .replace(/\.$/, '')
-      .replace('.', ',');
-  }
 
   function updateIngredient(li) {
     const baseAmount = parseFloat(li.dataset.amount);
@@ -78,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ingredients.forEach(updateIngredient);
   }
 
-  // Hver ingrediens med en nedtrekksmeny regner seg selv om når
-  // brukeren bytter måleenhet (f.eks. fra ss til g).
+  // Hver ingrediens med en nedtrekksmeny regner seg selv om når brukeren
+  // bytter måleenhet (f.eks. fra ss til g).
   ingredients.forEach(function (li) {
     const select = li.querySelector('.unit-select');
     if (select) {
@@ -89,8 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Antall-feltet: skriver brukeren et nytt tall, regnes alle
-  // ingrediensene om på nytt ut fra grunnoppskriften (24 stykker).
+  // Antall-feltet: nytt tall → alle ingrediensene regnes om.
   scaleInput.addEventListener('input', updateAll);
 
   function step(direction) {

@@ -185,6 +185,11 @@ samme mønster som i `lussekatter.html`.
       statiske grunnverdier matcher recipe.js). CTA er foreløpig ikke-lenket
       («kommer snart») til butikken er klar – kommentar i HTML viser hvordan den
       gjøres til lenke ved lansering.
+- [x] 4b. Bygget «Tilpass oppskriften» på paella: kompleksitetsvelger
+      (enkel/medium/kompleks), bytt/fjern-ingredienser med automatisk salt-
+      reduksjon og friskhet-tips. Data i `paella-data.js`, logikk i
+      `recipe-adapter.js`, omregning gjenbrukt fra `recipe.js` (`window.RecipeUnits`).
+      Logikk verifisert i JSC (13/14; salt-reduksjon vises avrundet til kvart).
 - [ ] 5. Rull ut resten (fiskesuppe, risotto, …) med samme mal.
 - [ ] 6. Knytt alt sammen med intern lenking: hub ↔ oppskrift ↔ butikk.
 
