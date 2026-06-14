@@ -160,3 +160,48 @@ const servedAcid = {
   label: "Sitronbåter", when: "ved servering",
   tip: "Server med sitronbåter for friskhet – ekstra viktig hvis du legger til noe salt (f.eks. chorizo eller mer skjell)."
 };
+
+/* ===== Config som recipe-adapter.js leser (window.RECIPE) =====
+   Samler oppskrifter, bytter og de rett-spesifikke oppslagene motoren trenger. */
+window.RECIPE = {
+  id: "paella",
+  recipes: paellaRecipes,
+  swapOptions: swapOptions,
+  servedAcid: servedAcid,
+
+  // Tetthet (g per ml) for ingredienser der vi tilbyr g-omregning.
+  density: {
+    rice: 0.85, stock: 1, fish_stock: 1, veg_stock: 1,
+    olive_oil: 0.92, smoked_paprika: 0.5, sweet_paprika: 0.5,
+    salt_added: 1.2, tomato: 1, turmeric_paprika: 0.5
+  },
+  // Omtrentlig vekt (g) per stk – for «juster opp de andre».
+  pieceWeight: { red_pepper: 120, onion: 110, garlic: 5 },
+  // Hvilke enheter man kan bytte mellom per ingrediens.
+  unitOptions: {
+    rice: ["dl", "ml", "g"],
+    stock: ["dl", "ml"], fish_stock: ["dl", "ml"], veg_stock: ["dl", "ml"],
+    olive_oil: ["ss", "ts", "ml", "g"],
+    smoked_paprika: ["ts", "g"], sweet_paprika: ["ts", "g"],
+    turmeric_paprika: ["ts", "g"], salt_added: ["ts", "g"]
+  },
+  // Roller som teller som «mengde mat» ved kompensasjon.
+  bulkRoles: ["rice", "liquid", "protein", "seafood", "vegetable"],
+  // Selvjusterende balanse-ingredienser. Paella regulerer bare salt.
+  levers: [{ axis: "salt", id: "salt_added" }],
+  // Roller retten må ha for å være i balanse.
+  requireRoles: ["acid"],
+  // Inline-tips ved fjerning (etter ingrediensens sterkeste grunnsmak).
+  tasteMessages: {
+    sour: "Retten blir mindre frisk/syrlig – server gjerne med rikelig sitron.",
+    umami: "Retten blir mindre fyldig (umami) – vurder litt ekstra kraft, tomat eller skalldyr.",
+    sweet: "Retten blir mindre søt – litt mer løk eller paprika kan balansere."
+  },
+  // Melding når en lever justeres automatisk.
+  leverMessages: {
+    salt: {
+      down: "Retten ble saltere – vi har automatisk redusert tilsatt salt. Smak til på slutten.",
+      up: "Du tok bort noe salt – vi har automatisk økt tilsatt salt litt. Smak til på slutten."
+    }
+  }
+};

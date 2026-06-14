@@ -455,7 +455,7 @@ mal**, generaliserer vi:
 - `recipe-adapter.js` leser `window.RECIPE` i stedet for globale paella-navn og
   hardkodede oppslag. Ingen funksjonell endring for paella (samme verdier flyttes
   inn i `paella-data.js`).
-- [ ] Refaktorer adapter + `paella-data.js`; verifiser at paella er uendret (JSC).
+- [x] Refaktorert adapter + `paella-data.js` (window.RECIPE); paella verifisert uendret (JSC 6/6).
 
 ### Steg 1 — `fiskesuppe-data.js` (tre rungs fra fiskesuppe.md)
 Tre grunnoppskrifter på «stige»-modellen (fiskesuppe.md §4):
@@ -470,9 +470,9 @@ Tre grunnoppskrifter på «stige»-modellen (fiskesuppe.md §4):
 Roller (Kokebok §2): `liquid`(kraft), `protein`/`seafood`, `fat`(fløte/smør),
 `acid`(vinegar/vin/sitron/tomat), `sweet`(sukker), `aromatic`(løk/dill/fennikel),
 `vegetable`/`rice`-bulk (potet/rotgrønt), `seasoning`(salt).
-- [ ] Skriv ingredienser med `role`, `scaling`, `sodiumPer100g`, `taste`
+- [x] Skrevet ingredienser med `role`, `scaling`, `sodiumPer100g`, `taste`
   `{sweet,sour,bitter,umami}`, `removable`, `onRemove` (for syre), `tradition`.
-- [ ] `swapOptions` (kuratert, fiskesuppe.md §5): fisk etter teksturklasse
+- [x] `swapOptions` (kuratert, fiskesuppe.md §5): fisk etter teksturklasse
   (lean-firm ↔ lean-flaky, advar ved kryssing/oljefisk); fløte ↔ crème fraîche ↔
   kokosmelk (dairy-free, advar lavfett curdler); vin → kraft + sitron; dill ↔
   persille; safran-tilsetting.
@@ -484,20 +484,21 @@ Roller (Kokebok §2): `liquid`(kraft), `protein`/`seafood`, `fat`(fløte/smør),
   slutt, ellers blir suppa flat»).
 - **Sweet-sour-paret:** vinegar (`sour`) + sukker (`sweet`) er begge justerbare
   ingredienser brukeren kan endre; motoren gir tips hvis balansen skeier ut.
-  *(Auto-lever for sour/sweet er en mulig senere utvidelse — nå holder vi salt
-  auto + tips for resten, som i paella.)*
+  **Besluttet: auto-lever for sur + søt nå** (ikke bare salt). Motoren
+  generaliseres til en liste av levere `[{axis,id}]`; hver akse løses mot sitt
+  mål (salt via `sodiumPer100g`, sur/søt via `taste`-intensitet).
 - **Anti-curdle** (fiskesuppe.md §3) som faste notater på fløte/steg: «ikke kok
   etter fløte; temperér; bruk crème fraîche/helfløte; tilsett syre i små mengder».
-- [ ] Verifiser salt-budsjett + syre-guard i JSC mot fiskesuppe-data.
+- [x] Verifisert salt + sur + søt-levere i JSC (9/9) mot fiskesuppe-data.
 
 ### Steg 3 — `fiskesuppe.html` fra paella-malen
-- [ ] Kopier paella.html-strukturen; bytt tittel, meta description, Recipe
+- [x] Laget fiskesuppe.html fra paella-malen (tittel, meta, Recipe
   JSON-LD (medium-versjonen), `--recipe-image: url('bilder/fiskesuppe.jpg')`,
   og last `fiskesuppe-data.js` i stedet for `paella-data.js`.
-- [ ] Gjør fiskesuppe-kortet på `index.html` klikkbart.
+- [x] Fiskesuppe-kortet på `index.html` er klikkbart.
 
 ### Steg 4 — Verifiser
-- [ ] JSC-sjekk av skalering, salt-budsjett, syre-guard, maintain-yield.
+- [x] JSC-sjekk bestått; gjenstår: nettlesertest av interaksjon.
 - [ ] Be bruker teste i nettleser (de 8 interaksjonsstegene fra paella).
 
 ### Notater mot skill/agent-målet

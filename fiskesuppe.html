@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiskesuppe – kremet oppskrift steg for steg | Safranoppskrifter</title>
+  <meta name="description" content="Kremet norsk fiskesuppe med den klassiske søt-sure balansen. Velg nivå (enkel/medium/kompleks), juster porsjoner, og tilpass fisk og sjømat.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+  <!-- Recipe-schema for Google. Speiler medium-versjonen (standardvalget). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Kremet fiskesuppe",
+    "description": "Kremet norsk fiskesuppe med torsk, laks og reker, med den klassiske søt-sure balansen.",
+    "recipeCategory": "Suppe",
+    "recipeCuisine": "Norsk",
+    "keywords": "fiskesuppe, bergensk fiskesuppe, kremet fiskesuppe",
+    "recipeYield": "4 porsjoner",
+    "prepTime": "PT20M",
+    "cookTime": "PT25M",
+    "totalTime": "PT45M",
+    "recipeIngredient": [
+      "10 dl fiskekraft (fumet)",
+      "250 g torsk i terninger",
+      "150 g laks i terninger",
+      "150 g reker (pillet)",
+      "1 purre",
+      "2 gulrøtter",
+      "150 g sellerirot",
+      "1 ss smør",
+      "1 ss hvetemel",
+      "3 dl fløte eller crème fraîche",
+      "1 ts hvitvinseddik",
+      "1 ts sukker",
+      "1 ts salt",
+      "frisk dill"
+    ],
+    "recipeInstructions": [
+      {"@type": "HowToStep", "text": "Smelt smøret og surr purre, gulrot og sellerirot blanke uten å brune."},
+      {"@type": "HowToStep", "text": "Hell over fiskekraften og småkok rotgrønnsakene møre, ca. 8–10 minutter."},
+      {"@type": "HowToStep", "text": "Visp melet inn i fløten, rør det i suppa og la den så vidt tykne."},
+      {"@type": "HowToStep", "text": "Legg i torsk, så laks og reker, og trekk til fisken akkurat flaker – ikke kok."},
+      {"@type": "HowToStep", "text": "Smak til med eddik og sukker til en subtil søt-sur balanse, og juster salt."},
+      {"@type": "HowToStep", "text": "Rør inn frisk dill og server straks."}
+    ]
+  }
+  </script>
+</head>
+
+<!-- --recipe-image gir siden et rett-bilde øverst som toner ut nedover. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/fiskesuppe.jpg');">
+
+  <!-- ===== Toppmeny ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Safranoppskrifter</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <h1>Kremet fiskesuppe</h1>
+      <p>Den norske klassikeren – ren fiskekraft, sjømat og en mild søt-sur fløtebalanse. Hev den gjerne med safran.</p>
+    </div>
+  </section>
+
+  <!-- ===== Oppskrift =====
+       Ingredienser og fremgangsmåte rendres av recipe-adapter.js fra
+       fiskesuppe-data.js. Velg nivå, juster porsjoner, og bruk «endre» ved en
+       ingrediens for å bytte/fjerne – resten balanserer seg selv. -->
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du fiskesuppe</h2>
+      <p class="recipe-intro">Velg hvor avansert du vil ha den, juster antall porsjoner, og tilpass gjerne fisk og sjømat. Grunnoppskriften er for 4 porsjoner.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="4" min="2" max="12" step="2" data-base-yield="4">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div class="recipe-customize">
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <!-- Kjøp-safran-CTA. Foreløpig uten lenke (butikken kjører i bakgrunnen).
+           Ved lansering: bytt <span> med <a class="button" href="spiceflow.html">. -->
+      <div class="recipe-cta">
+        <p>Hev fiskesuppa til en safran-sjømatsuppe med ekte safran.</p>
+        <span class="recipe-cta-soon">Safranbutikken vår åpner snart</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Bunntekst ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Safranoppskrifter – ekte safran til både hverdag og fest.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="fiskesuppe-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+</body>
+</html>
