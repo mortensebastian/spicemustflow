@@ -960,13 +960,13 @@ body::before {
   margin-top: 2px;
 }
 
-.ingredient-removed {
-  opacity: 0.55;
-}
-
+/* Fjernet rad: vi demper bare den overstrøkne teksten (ikke hele raden), slik at
+   et eventuelt tips i boksen forblir tydelig. */
 .ingredient-removed .ingredient-name,
-.ingredient-removed .ingredient-amount {
+.ingredient-removed .ingredient-amount,
+.ingredient-removed .unit-label {
   text-decoration: line-through;
+  color: var(--muted);
 }
 
 .ingredient-controls {
@@ -1051,6 +1051,55 @@ body::before {
   border-color: var(--border);
 }
 
+/* Egen hover-tooltip (erstatter nettleserens lille title-boble). Større, lesbar
+   tekst som tåler å bryte over flere linjer. Brukes på «endre»-knappen og på
+   ingrediensnavn (forklaring + hva man kan bytte med). */
+.has-tip {
+  position: relative;
+}
+
+.has-tip:hover::after,
+.has-tip:focus-visible::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transform: translateY(-6px);
+  width: max-content;
+  max-width: 280px;
+  white-space: normal;
+  background-color: var(--text);
+  color: var(--bg);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  padding: 9px 12px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* Ingrediensnavn med tooltip markeres diskré så man skjønner at det er mer info. */
+.ingredient-name.has-tip {
+  cursor: help;
+  text-decoration: underline dotted var(--border);
+  text-underline-offset: 3px;
+}
+
+/* Tips som vises i den fjernede ingrediensens egen boks. */
+.ingredient-removed-tip {
+  flex-basis: 100%;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--accent);
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 1; /* tipset skal være tydelig selv om raden er nedtonet */
+}
+
 /* Inline-panel under en ingrediens (bytte/fjern). Tar full bredde i raden. */
 .ingredient-panel {
   flex-basis: 100%;
@@ -1089,10 +1138,21 @@ body::before {
   cursor: pointer;
 }
 
-.panel-remove:hover,
-.panel-restore:hover {
+.panel-remove:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* «Legg til igjen» skal være tydelig – fylt aksentknapp, ikke grå som «Fjern». */
+.panel-restore {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.panel-restore:hover {
+  opacity: 0.9;
 }
 
 /* «Juster opp de andre?»-valget som vises etter fjerning. */

@@ -104,6 +104,38 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function isEditable(ing) { return !!swapOptions[ing.slotId] || ing.removable; }
 
+  // Trygt innhold i HTML-attributter (data-tip).
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // Hover-forklaring for en ingrediens: kort beskrivelse + hva den kan byttes med.
+  function ingredientTip(ing) {
+    const parts = [];
+    if (ing.note) parts.push(ing.note);
+    const sw = swapOptions[ing.slotId];
+    if (sw && sw.length) parts.push('Kan byttes med: ' + sw.map(function (o) { return o.label; }).join(', '));
+    return parts.join(' — ');
+  }
+
+  // Tips knyttet til en FJERNET ingrediens (vises i dens egen boks):
+  // bruk onRemove-tipset hvis det finnes, ellers et tips basert på hvilken
+  // grunnsmak ingrediensen bidro mest med.
+  function removedTip(ing) {
+    if (!removed[ing.slotId]) return '';
+    let text = '';
+    if (ing.onRemove && ing.onRemove.tip) text = ing.onRemove.tip;
+    else {
+      const t = ing.taste || {};
+      if ((t.sour || 0) >= 2) text = TASTE_MESSAGES.sour;
+      else if ((t.umami || 0) >= 2) text = TASTE_MESSAGES.umami;
+      else if ((t.sweet || 0) >= 2) text = TASTE_MESSAGES.sweet;
+    }
+    if (!text) return '';
+    return '<span class="ingredient-removed-tip">' + text + '</span>';
+  }
+
   /* ----- Gram (lineær bulk) ved gjeldende porsjoner ----- */
   function gramsAt(ing) {
     const amt = ing.amount * (currentServings() / baseServings());
@@ -254,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
             '<button type="button" class="compensate-yes' + (compensate[ing.slotId] ? ' active' : '') + '" data-slot="' + ing.slotId + '">Ja</button>' +
             '<button type="button" class="compensate-no' + (!compensate[ing.slotId] ? ' active' : '') + '" data-slot="' + ing.slotId + '">Nei</button>' +
           '</div>' +
-          '<button type="button" class="panel-restore" data-slot="' + ing.slotId + '">Legg tilbake</button>' +
+          '<button type="button" class="panel-restore" data-slot="' + ing.slotId + '">Legg til igjen</button>' +
         '</div>';
       }
     }
@@ -263,8 +295,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function editButton(ing) {
     if (!isEditable(ing)) return '';
     const open = openSlot === ing.slotId ? ' open' : '';
-    return '<button type="button" class="ingredient-edit-btn' + open + '" data-slot="' + ing.slotId +
-      '" title="' + TOOLTIP + '" aria-label="' + TOOLTIP + '">endre</button>';
+    return '<button type="button" class="ingredient-edit-btn has-tip' + open + '" data-slot="' + ing.slotId +
+      '" data-tip="' + esc(TOOLTIP) + '" aria-label="' + esc(TOOLTIP) + '">endre</button>';
   }
 
   function renderIngredients(comp, balance) {
@@ -273,13 +305,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const da = displayAmount(ing, comp, balance);
       const removedClass = removed[ing.slotId] ? ' ingredient-removed' : '';
       const hasUnitSelect = UNIT_OPTIONS[ing.effId] && UNIT_OPTIONS[ing.effId].length > 1;
+      const tip = ingredientTip(ing);
+      const nameClass = tip ? 'ingredient-name has-tip' : 'ingredient-name';
+      const nameAttr = tip ? ' data-tip="' + esc(tip) + '"' : '';
       return '<li class="ingredient' + removedClass + '">' +
         '<span class="ingredient-qty">' +
           '<span class="ingredient-amount">' + da.text + '</span>' +
           (hasUnitSelect ? unitMarkup(ing) : '<span class="unit-label">' + da.unit + '</span>') +
         '</span>' +
-        '<span class="ingredient-name">' + ing.label + traditionBadge(ing) + noteMarkup(ing) + '</span>' +
-        editButton(ing) + panelMarkup(ing) +
+        '<span class="' + nameClass + '"' + nameAttr + '>' + ing.label + traditionBadge(ing) + noteMarkup(ing) + '</span>' +
+        editButton(ing) + removedTip(ing) + panelMarkup(ing) +
       '</li>';
     }).join('');
   }
@@ -292,12 +327,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const box = document.getElementById('recipe-messages');
     if (!box) return;
     const msgs = [];
+    // Salt-meldingen er global (ikke knyttet til én ingrediens) → vises øverst.
+    // Smaks-tips ved fjerning vises inline ved den fjernede ingrediensen.
     if (balance.leverChanged === 'down') {
       msgs.push('Retten ble saltere – vi har automatisk redusert tilsatt salt. Smak til på slutten.');
     } else if (balance.leverChanged === 'up') {
       msgs.push('Du tok bort noe salt – vi har automatisk økt tilsatt salt litt. Smak til på slutten.');
     }
-    balance.tips.forEach(function (t) { msgs.push(t); });
     box.innerHTML = msgs.map(function (m) { return '<p class="recipe-message">' + m + '</p>'; }).join('');
   }
 
