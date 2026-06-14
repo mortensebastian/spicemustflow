@@ -347,6 +347,77 @@ til den er fast. Vend inn pistasj mot slutten. Server med ekstra safrantråder p
 
 ---
 
+## Plan: inline tilpasning per ingrediens + balanse ved fjerning
+
+Videreutvikling av «Tilpass oppskriften» på paella (se `recipe-adapter.js`).
+Mål: ingen global av/på-bryter – tilpasning skjer rett ved hver ingrediens, og
+retten rebalanseres automatisk (salt, syre, sødme) også når noe *fjernes*.
+
+### A. UX-endringer
+1. **Fjern den globale «Tilpass oppskriften»-bryteren** (`#customize-toggle`).
+2. Hver **utbyttbar/fjernbar** ingrediens får en alltid-synlig, **diskré grå
+   knapp** etter seg (liten, utydelig til man hover-er – f.eks. «endre» / «⋯»).
+3. **Hover** → tooltip: «Trykk her for å bytte eller fjerne ingrediens, resten av
+   oppskriften tilpasser seg automatisk».
+4. **Klikk** → åpner en liten inline-panel under ingrediensen med: bytte-nedtrekk
+   (som nå) + **«Fjern ingrediens»**. Bare én panel åpen om gangen.
+5. Ved **Fjern** → vis et lite valg: **«Juster opp de andre så det rekker til N
+   porsjoner?»** (Ja / Nei).
+6. Behold **«Tilbakestill»**, men vis den bare når minst én endring er gjort.
+
+### B. Balanselogikk – natrium-budsjett (erstatter hardkodede `adjust`)
+- Regn ut **total natrium** fra alle aktive ingredienser
+  (`sodiumPer100g` × mengde i gram, via `RecipeUnits` for omregning).
+- Lagre grunnoppskriftens totale natrium som **mål**.
+- Dytt **`salt_added`** opp/ned så totalen treffer målet igjen:
+  - Bytter inn noe salt (chorizo) → mindre tilsatt salt.
+  - Fjerner noe salt (skjell/clams) → mer tilsatt salt.
+  - Med en nedre/øvre grense så det ikke blir absurd, og alltid «smak til».
+- Vis rolig melding som forklarer justeringen.
+- *Fjerner behovet for `adjust`-blokkene i `paella-data.js`* (kan slettes, eller
+  beholdes som valgfri manuell overstyring – avgjøres under bygging).
+
+### C. Syre og sødme
+- **Syre/friskhet (finnes i dataene):** behold `isPrimaryAcid`/`onRemove`-tipset
+  ved fjerning av tomat; fremhev sitron-tipset når retten blir saltere.
+- **Sødme (finnes IKKE i dataene i dag):** for å balansere sødme må vi merke
+  ingredienser med f.eks. `sweetness: "low|med|high"` eller en `role: "sweet"`.
+  *Åpent valg:* legge til sødme-tagger nå, eller skoper vi det ut til paella
+  ikke har søte komponenter? (Paella har i praksis ingen søt ingrediens – syre
+  er det relevante her. Forslag: bygg syre/salt nå, legg sødme-rammeverket til
+  når en rett som faktisk trenger det kommer, f.eks. en tagine/dessert.)
+
+### D. «Juster opp de andre» ved fjerning (maintain yield)
+- Definer **bulk-roller** som utgjør «mengden mat»: `rice`, `liquid`, `protein`,
+  `seafood`, `vegetable`.
+- Ved «Ja, juster opp»: regn fjernet bulk-andel, og skaler gjenværende
+  bulk-ingredienser opp med en **kompensasjonsfaktor**
+  = `total_bulk_før / total_bulk_etter_fjerning`. Krydder/salt (`nonlinear`)
+  følger fortsatt sin egen dempede skalering + natrium-budsjettet.
+- Ved «Nei»: la de andre stå (mindre rett / færre reelle porsjoner).
+- *Åpent valg:* skal kompensasjon gjelde ALLE bulk-roller, eller bare samme rolle
+  som det fjernede (f.eks. fjerne en sjømat → øk annen sjømat, ikke risen)?
+  Forslag: **samme rolle først**, fall tilbake til all bulk hvis rollen blir tom.
+
+### E. Kodeendringer per fil
+- `paella.html`: fjern toggle-markup (behold messages + reset-knapp).
+- `recipe-adapter.js`: alltid-synlig per-ingrediens-knapp; «åpen panel»-tilstand
+  (hvilken slot er åpen); fjern-med-valg-flyt; natrium-budsjett-funksjon;
+  kompensasjonsfaktor; vis reset kun ved endringer.
+- `paella-data.js`: (valgfritt) fjern `adjust`-blokker når budsjettet overtar;
+  evt. legg til sødme-tagger hvis vi tar med sødme nå.
+- `style-felles.css`: diskré endre-knapp + hover, tooltip, inline-panel, ja/nei-valg.
+
+### F. Byggesteg (iterativt, test i nettleser mellom hvert)
+1. Bytt global bryter → **diskré per-ingrediens-knapp + tooltip** (panel åpner/lukker).
+2. Panel med **bytte + fjern**.
+3. **Fjern → Ja/Nei «juster opp de andre»** (maintain yield).
+4. **Natrium-budsjett** erstatter `adjust` (test: fjern salt skjell → mer salt;
+   bytt inn chorizo → mindre salt).
+5. Finpuss syre-tips; reset vises kun ved endringer.
+
+---
+
 ## SEO-plan (detaljert)
 
 Strategi og konkret implementeringsplan for SEO, basert på markedsresearch for
