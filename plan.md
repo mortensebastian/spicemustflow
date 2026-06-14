@@ -430,10 +430,10 @@ alle framtidige retter (tagine, dessert, gryter …) uten ny kode – bare ny da
 2. [x] Panel med **bytte + fjern**.
 3. [x] **Fjern → Ja/Nei «juster opp de andre»** (maintain yield, samme rolle
    først). Kompensasjon verifisert i JSC (5/5).
-4. **Smaksbalanse-motoren** (`recipe-balance.js`) + `taste`-data erstatter
-   `adjust` (test: fjern salt skjell → mer salt; bytt inn chorizo → mindre salt;
-   akser uten lever gir tips i stedet).
-5. Finpuss syre-tips; reset vises kun ved endringer.
+4. [x] **Smaksbalanse-motoren** (`recipe-balance.js`) + `taste`-data erstatter
+   `adjust`. Salt løses fra natrium-budsjett (fjern skjell → mer salt; chorizo →
+   mindre salt); søtt/surt/bittert/umami gir tips når de faller. Verifisert i JSC (8/8).
+5. [x] Syre/umami-tips drevet av motoren; reset vises kun ved endringer.
 
 ---
 
