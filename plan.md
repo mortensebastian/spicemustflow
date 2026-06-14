@@ -426,9 +426,10 @@ alle framtidige retter (tagine, dessert, gryter …) uten ny kode – bare ny da
 - `style-felles.css`: diskré endre-knapp + hover, tooltip, inline-panel, ja/nei-valg.
 
 ### F. Byggesteg (iterativt, test i nettleser mellom hvert)
-1. Bytt global bryter → **diskré per-ingrediens-knapp + tooltip** (panel åpner/lukker).
-2. Panel med **bytte + fjern**.
-3. **Fjern → Ja/Nei «juster opp de andre»** (maintain yield).
+1. [x] Bytt global bryter → **diskré per-ingrediens-knapp + tooltip** (panel åpner/lukker).
+2. [x] Panel med **bytte + fjern**.
+3. [x] **Fjern → Ja/Nei «juster opp de andre»** (maintain yield, samme rolle
+   først). Kompensasjon verifisert i JSC (5/5).
 4. **Smaksbalanse-motoren** (`recipe-balance.js`) + `taste`-data erstatter
    `adjust` (test: fjern salt skjell → mer salt; bytt inn chorizo → mindre salt;
    akser uten lever gir tips i stedet).

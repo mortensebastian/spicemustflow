@@ -1028,3 +1028,100 @@ body::before {
   background-color: #f3e2d6;
   color: #9a4d22;
 }
+
+/* Diskré «endre»-knapp etter redigerbare ingredienser. Grå/utydelig til man
+   hover-er; da blir den tydeligere. Tooltip vises via title-attributtet. */
+.ingredient-edit-btn {
+  border: 1px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.ingredient-edit-btn:hover,
+.ingredient-edit-btn.open {
+  opacity: 1;
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+/* Inline-panel under en ingrediens (bytte/fjern). Tar full bredde i raden. */
+.ingredient-panel {
+  flex-basis: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.panel-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.panel-remove,
+.panel-restore {
+  align-self: flex-start;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.panel-remove:hover,
+.panel-restore:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* «Juster opp de andre?»-valget som vises etter fjerning. */
+.compensate-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compensate-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.compensate-yes,
+.compensate-no {
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.compensate-yes.active,
+.compensate-no.active {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}

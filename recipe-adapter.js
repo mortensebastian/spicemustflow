@@ -2,12 +2,13 @@
    Rendrer ingredienser og fremgangsmåte fra paella-data.js, og gir brukeren:
      1) en kompleksitetsvelger (enkel/medium/kompleks, standard medium) som
         bytter HELE grunnoppskriften,
-     2) et «Tilpass oppskriften»-lag (av som standard) der man kan bytte eller
-        fjerne ingredienser fra godkjente lister, mens retten holdes i balanse
-        (salt reduseres automatisk, friskhet foreslås).
+     2) en diskré «endre»-knapp ved hver utbyttbar/fjernbar ingrediens, som
+        åpner en liten panel der man kan bytte eller fjerne ingrediensen,
+     3) ved fjerning: valget om å justere opp de andre ingrediensene (samme
+        rolle først) så retten fortsatt rekker til antall porsjoner.
 
-   Skaleringen GJENBRUKER omregningen i recipe.js via window.RecipeUnits –
-   vi lager ingen ny enhetslogikk her. */
+   Skaleringen GJENBRUKER omregningen i recipe.js via window.RecipeUnits.
+   (Smaksbalanse-motoren – salt/syre/sødme – kommer i steg 4 som egen fil.) */
 
 document.addEventListener('DOMContentLoaded', function () {
   // Kjør bare på sider som har både datamodellen og adapter-beholderne.
@@ -20,17 +21,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ----- Hjelpe-oppslag som hører til visningen (ikke datamodellen) ----- */
 
-  // Tetthet (g per ml) for ingredienser der vi tilbyr g-omregning. Ligger her,
-  // ikke i datamodellen, så dataene holdes rene. Mangler en ingrediens her,
-  // brukes 1 (og da tilbyr vi uansett bare volum↔volum, som ikke trenger tetthet).
+  // Tetthet (g per ml) for ingredienser der vi tilbyr g-omregning.
   const DENSITY = {
     rice: 0.85, stock: 1, fish_stock: 1, veg_stock: 1,
     olive_oil: 0.92, smoked_paprika: 0.5, sweet_paprika: 0.5,
     salt_added: 1.2, tomato: 1, turmeric_paprika: 0.5
   };
 
+  // Omtrentlig vekt (g) per stk, slik at «juster opp de andre» kan regne i gram.
+  const PIECE_WEIGHT = { red_pepper: 120, onion: 110, garlic: 5 };
+
+  // Hvilke roller som utgjør «mengden mat» (bulk) ved kompensasjon.
+  const BULK_ROLES = ['rice', 'liquid', 'protein', 'seafood', 'vegetable'];
+
   // Hvilke måleenheter man kan bytte mellom for en gitt ingrediens (etter id).
-  // Ingredienser som ikke står her får ingen enhetsveksler (fast enhet).
   const UNIT_OPTIONS = {
     rice: ['dl', 'ml', 'g'],
     stock: ['dl', 'ml'], fish_stock: ['dl', 'ml'], veg_stock: ['dl', 'ml'],
@@ -46,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
     'non-traditional': 'ikke tradisjonell'
   };
 
+  const TOOLTIP = 'Trykk her for å bytte eller fjerne ingrediens, resten av oppskriften tilpasser seg automatisk';
+
   function addStageText(stage) {
     if (stage === 'end') return 'tilsettes mot slutten';
     if (stage === 'serve') return 'ved servering';
@@ -54,15 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ----- Tilstand ----- */
   let complexity = 'medium';     // valgt kompleksitet
-  let customizeOn = false;       // er redigeringsmodus på?
-  const removed = {};            // { slotId: true } for fjernede ingredienser
-  const swaps = {};              // { slotId: swapOption } for byttede ingredienser
+  const removed = {};            // { slotId: true } fjernede ingredienser
+  const compensate = {};         // { slotId: true } juster opp de andre for denne
+  const swaps = {};              // { slotId: swapOption } byttede ingredienser
   const unitState = {};          // { slotId: valgt enhet }
+  let openSlot = null;           // hvilken ingrediens har åpen panel (én om gangen)
 
   function activeRecipe() { return paellaRecipes[complexity]; }
   function baseServings() { return activeRecipe().servings; }
 
-  // Antall-feltet (gjenbrukes fra den eksisterende skaleringen).
   const scaleInput = document.getElementById('recipe-scale-input');
   function currentServings() {
     return parseFloat(scaleInput && scaleInput.value) || baseServings();
@@ -73,8 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return activeRecipe().ingredients.map(function (base) {
       const swap = swaps[base.id];
       if (swap) {
-        // Behold rolle/skalering/stadium/essensiell fra «slotten», men bytt ut
-        // det byttet bestemmer (navn, mengde, enhet, natrium, tradisjon, note).
         return {
           slotId: base.id, effId: swap.id, label: swap.label,
           amount: swap.amount, unit: swap.unit,
@@ -96,6 +100,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function originalLabel(slotId) {
+    return activeRecipe().ingredients.filter(function (i) { return i.id === slotId; })[0].label;
+  }
+
+  function isEditable(ing) {
+    return !!swapOptions[ing.slotId] || ing.removable;
+  }
+
   /* ----- Salt-/krydder-justering fra aktive bytter (kun på mål som finnes) ----- */
   function computeAdjustments() {
     const mult = {}, setv = {};
@@ -104,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const sw = swaps[slotId];
       if (!sw.adjust) return;
       sw.adjust.forEach(function (rule) {
-        if (ids.indexOf(rule.target) === -1) return; // målet finnes ikke nå
+        if (ids.indexOf(rule.target) === -1) return;
         if (rule.op === 'multiply') mult[rule.target] = (mult[rule.target] || 1) * rule.value;
         else if (rule.op === 'set') setv[rule.target] = rule.value;
       });
@@ -112,11 +124,51 @@ document.addEventListener('DOMContentLoaded', function () {
     return { mult: mult, setv: setv };
   }
 
+  /* ----- «Juster opp de andre» (maintain yield, samme rolle først) ----- */
+  function gramsAt(ing) {
+    const ratio = currentServings() / baseServings();
+    const amt = ing.amount * ratio; // bulk er lineær
+    if (ing.unit === 'stk') return amt * (PIECE_WEIGHT[ing.effId] || 100);
+    return U.toGrams(amt, ing.unit, DENSITY[ing.effId] || 1);
+  }
+
+  function computeCompensation() {
+    const items = effectiveIngredients();
+    const roleFactor = {};
+    let orphan = 0;
+
+    BULK_ROLES.forEach(function (role) {
+      let remaining = 0, comp = 0;
+      items.forEach(function (ing) {
+        if (ing.role !== role) return;
+        if (removed[ing.slotId]) { if (compensate[ing.slotId]) comp += gramsAt(ing); }
+        else remaining += gramsAt(ing);
+      });
+      if (comp > 0) {
+        if (remaining > 0) roleFactor[role] = (remaining + comp) / remaining;
+        else orphan += comp; // hele rollen fjernet → fordeles på all annen bulk
+      }
+    });
+
+    let globalFactor = 1;
+    if (orphan > 0) {
+      let pool = 0;
+      items.forEach(function (ing) {
+        if (removed[ing.slotId]) return;
+        if (BULK_ROLES.indexOf(ing.role) === -1) return;
+        if (roleFactor[ing.role]) return;
+        pool += gramsAt(ing);
+      });
+      if (pool > 0) globalFactor = (pool + orphan) / pool;
+    }
+    return { roleFactor: roleFactor, globalFactor: globalFactor };
+  }
+
   /* ----- Mengdeberegning ----- */
   function scaleByType(amount, scaling, ratio) {
-    if (scaling === 'fixed') return amount;            // f.eks. rosmarinkvist
-    if (scaling === 'nonlinear') return amount * (1 + (ratio - 1) * 0.5); // hold igjen
-    return amount * ratio;                             // linear
+    if (scaling === 'fixed') return amount;
+    if (scaling === 'nonlinear') return amount * (1 + (ratio - 1) * 0.5);
+    return amount * ratio;
   }
 
   function convert(amount, fromUnit, toUnit, density) {
@@ -124,10 +176,17 @@ document.addEventListener('DOMContentLoaded', function () {
     return U.fromGrams(U.toGrams(amount, fromUnit, density), toUnit, density);
   }
 
-  function displayAmount(ing, adj) {
+  function displayAmount(ing, adj, comp) {
     const ratio = currentServings() / baseServings();
     let amt = scaleByType(ing.amount, ing.scaling, ratio);
-    // Juster (salt/krydder) etter aktive bytter
+
+    // Kompensasjon for gjenværende bulk-ingredienser når noe er fjernet med «Ja».
+    if (!removed[ing.slotId] && BULK_ROLES.indexOf(ing.role) !== -1) {
+      if (comp.roleFactor[ing.role]) amt *= comp.roleFactor[ing.role];
+      else if (comp.globalFactor !== 1) amt *= comp.globalFactor;
+    }
+
+    // Salt/krydder-justering fra aktive bytter.
     if (Object.prototype.hasOwnProperty.call(adj.setv, ing.slotId)) amt = adj.setv[ing.slotId];
     else if (Object.prototype.hasOwnProperty.call(adj.mult, ing.slotId)) amt *= adj.mult[ing.slotId];
 
@@ -140,9 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function unitMarkup(ing) {
     const opts = UNIT_OPTIONS[ing.effId];
     const current = unitState[ing.slotId] || ing.unit;
-    if (!opts || opts.length < 2) {
-      return '<span class="unit-label">' + ing.unit + '</span>';
-    }
+    if (!opts || opts.length < 2) return '<span class="unit-label">' + ing.unit + '</span>';
     let html = '<select class="unit-select" data-slot="' + ing.slotId + '" aria-label="Måleenhet for ' + ing.label + '">';
     opts.forEach(function (u) {
       html += '<option value="' + u + '"' + (u === current ? ' selected' : '') + '>' + u + '</option>';
@@ -152,75 +209,83 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function traditionBadge(ing) {
-    if (!ing.tradition) return '';
-    if (!(ing.swapped || customizeOn)) return '';
-    return ' <span class="tradition-badge tradition-' + ing.tradition + '">' +
-      TRADITION_TEXT[ing.tradition] + '</span>';
-  }
-
-  function swapMarkup(ing) {
-    const options = swapOptions[ing.slotId];
-    if (!options) return '';
-    let html = '<select class="ingredient-swap" data-slot="' + ing.slotId + '" aria-label="Bytt ' + ing.label + '">';
-    html += '<option value="">Standard: ' + activeRecipe().ingredients
-      .filter(function (i) { return i.id === ing.slotId; })[0].label + '</option>';
-    options.forEach(function (opt) {
-      const trad = opt.tradition ? ' (' + TRADITION_TEXT[opt.tradition] + ')' : '';
-      const sel = (swaps[ing.slotId] && swaps[ing.slotId].id === opt.id) ? ' selected' : '';
-      html += '<option value="' + opt.id + '"' + sel + '>' + opt.label + trad + '</option>';
-    });
-    html += '</select>';
-    return html;
-  }
-
-  function controlsMarkup(ing) {
-    if (!customizeOn) return '';
-    let html = '<div class="ingredient-controls">';
-    html += swapMarkup(ing);
-    if (ing.removable) {
-      const isRemoved = removed[ing.slotId];
-      html += '<button type="button" class="ingredient-remove" data-slot="' + ing.slotId + '">' +
-        (isRemoved ? 'Legg tilbake' : 'Fjern') + '</button>';
-    }
-    html += '</div>';
-    return html;
+    if (!ing.tradition || !ing.swapped) return '';
+    return ' <span class="tradition-badge tradition-' + ing.tradition + '">' + TRADITION_TEXT[ing.tradition] + '</span>';
   }
 
   function noteMarkup(ing) {
     const bits = [];
     if (ing.scaling === 'nonlinear') bits.push('smak til');
-    if (ing.swapped) {
-      bits.push(addStageText(ing.addStage));
-      if (ing.note) bits.push(ing.note);
-    } else if (ing.note) {
-      bits.push(ing.note);
-    }
+    if (ing.swapped) { bits.push(addStageText(ing.addStage)); if (ing.note) bits.push(ing.note); }
+    else if (ing.note) bits.push(ing.note);
     if (!bits.length) return '';
     return '<span class="ingredient-note">' + bits.join(' · ') + '</span>';
   }
 
-  function renderIngredients(adj) {
+  function panelMarkup(ing) {
+    if (openSlot !== ing.slotId) return '';
+    let html = '<div class="ingredient-panel">';
+
+    // Bytte-nedtrekk (hvis det finnes godkjente bytter for slotten).
+    if (swapOptions[ing.slotId]) {
+      html += '<label class="panel-row"><span class="panel-label">Bytt til</span>' +
+        '<select class="ingredient-swap" data-slot="' + ing.slotId + '">' +
+        '<option value="">Standard: ' + originalLabel(ing.slotId) + '</option>';
+      swapOptions[ing.slotId].forEach(function (opt) {
+        const trad = opt.tradition ? ' (' + TRADITION_TEXT[opt.tradition] + ')' : '';
+        const sel = (swaps[ing.slotId] && swaps[ing.slotId].id === opt.id) ? ' selected' : '';
+        html += '<option value="' + opt.id + '"' + sel + '>' + opt.label + trad + '</option>';
+      });
+      html += '</select></label>';
+    }
+
+    // Fjern / legg tilbake + «juster opp de andre»-valg.
+    if (ing.removable) {
+      if (!removed[ing.slotId]) {
+        html += '<button type="button" class="panel-remove" data-slot="' + ing.slotId + '">Fjern ingrediens</button>';
+      } else {
+        html += '<div class="compensate-choice">' +
+          '<span class="panel-label">Juster opp de andre så det rekker til ' + currentServings() + ' porsjoner?</span>' +
+          '<div class="compensate-buttons">' +
+            '<button type="button" class="compensate-yes' + (compensate[ing.slotId] ? ' active' : '') + '" data-slot="' + ing.slotId + '">Ja</button>' +
+            '<button type="button" class="compensate-no' + (!compensate[ing.slotId] ? ' active' : '') + '" data-slot="' + ing.slotId + '">Nei</button>' +
+          '</div>' +
+          '<button type="button" class="panel-restore" data-slot="' + ing.slotId + '">Legg tilbake</button>' +
+        '</div>';
+      }
+    }
+
+    html += '</div>';
+    return html;
+  }
+
+  function editButton(ing) {
+    if (!isEditable(ing)) return '';
+    const open = openSlot === ing.slotId ? ' open' : '';
+    return '<button type="button" class="ingredient-edit-btn' + open + '" data-slot="' + ing.slotId +
+      '" title="' + TOOLTIP + '" aria-label="' + TOOLTIP + '">endre</button>';
+  }
+
+  function renderIngredients(adj, comp) {
     const items = effectiveIngredients();
     listEl.innerHTML = items.map(function (ing) {
-      const da = displayAmount(ing, adj);
+      const da = displayAmount(ing, adj, comp);
       const removedClass = removed[ing.slotId] ? ' ingredient-removed' : '';
+      const hasUnitSelect = UNIT_OPTIONS[ing.effId] && UNIT_OPTIONS[ing.effId].length > 1;
       return '<li class="ingredient' + removedClass + '">' +
         '<span class="ingredient-qty">' +
           '<span class="ingredient-amount">' + da.text + '</span>' +
-          (UNIT_OPTIONS[ing.effId] && UNIT_OPTIONS[ing.effId].length > 1
-            ? unitMarkup(ing)
-            : '<span class="unit-label">' + da.unit + '</span>') +
+          (hasUnitSelect ? unitMarkup(ing) : '<span class="unit-label">' + da.unit + '</span>') +
         '</span>' +
         '<span class="ingredient-name">' + ing.label + traditionBadge(ing) + noteMarkup(ing) + '</span>' +
-        controlsMarkup(ing) +
+        editButton(ing) +
+        panelMarkup(ing) +
       '</li>';
     }).join('');
   }
 
   function renderSteps() {
-    stepsEl.innerHTML = activeRecipe().steps.map(function (s) {
-      return '<li>' + s + '</li>';
-    }).join('');
+    stepsEl.innerHTML = activeRecipe().steps.map(function (s) { return '<li>' + s + '</li>'; }).join('');
   }
 
   function anySaltySwap() {
@@ -235,12 +300,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!box) return;
     const msgs = [];
 
-    // Salt (automatisk): vis rolig melding når et salt bytte har redusert salt.
     if (adj.mult.salt_added && adj.mult.salt_added < 1) {
       msgs.push({ cls: 'recipe-message', text: 'Et salt bytte er lagt til – vi har automatisk redusert tilsatt salt. Smak til på slutten.' });
     }
 
-    // Friskhet (forslag).
     if (complexity === 'kompleks') {
       if (removed.tomato) {
         const tomato = activeRecipe().ingredients.filter(function (i) { return i.id === 'tomato'; })[0];
@@ -251,25 +314,29 @@ document.addEventListener('DOMContentLoaded', function () {
       msgs.push({ cls: 'recipe-message' + (strong ? ' recipe-message-strong' : ''), text: servedAcid.tip });
     }
 
-    box.innerHTML = msgs.map(function (m) {
-      return '<p class="' + m.cls + '">' + m.text + '</p>';
-    }).join('');
+    box.innerHTML = msgs.map(function (m) { return '<p class="' + m.cls + '">' + m.text + '</p>'; }).join('');
+  }
+
+  function hasChanges() {
+    return Object.keys(swaps).length > 0 || Object.keys(removed).length > 0;
   }
 
   function render() {
     const adj = computeAdjustments();
-    renderIngredients(adj);
+    const comp = computeCompensation();
+    renderIngredients(adj, comp);
     renderSteps();
     renderMessages(adj);
     const resetBtn = document.getElementById('reset-recipe');
-    if (resetBtn) resetBtn.style.display = customizeOn ? 'inline-block' : 'none';
+    if (resetBtn) resetBtn.style.display = hasChanges() ? 'inline-block' : 'none';
   }
 
   /* ----- Tilbakestill tilpasninger (uten å bytte kompleksitet) ----- */
   function clearCustomizations() {
-    Object.keys(removed).forEach(function (k) { delete removed[k]; });
-    Object.keys(swaps).forEach(function (k) { delete swaps[k]; });
-    Object.keys(unitState).forEach(function (k) { delete unitState[k]; });
+    [removed, compensate, swaps, unitState].forEach(function (obj) {
+      Object.keys(obj).forEach(function (k) { delete obj[k]; });
+    });
+    openSlot = null;
   }
 
   /* ----- Kompleksitetsvelger (segmenterte knapper) ----- */
@@ -286,62 +353,65 @@ document.addEventListener('DOMContentLoaded', function () {
   function setComplexity(level) {
     if (!paellaRecipes[level] || level === complexity) return;
     complexity = level;
-    clearCustomizations();              // nullstill tilpasninger til nytt trinn
-    if (scaleInput) scaleInput.value = baseServings(); // start på nytt trinns porsjoner
+    clearCustomizations();
+    if (scaleInput) scaleInput.value = baseServings();
     buildComplexitySelector();
     render();
   }
 
   /* ----- Hendelser ----- */
-  document.getElementById('complexity-selector').addEventListener('click', function (e) {
-    const btn = e.target.closest('.complexity-button');
-    if (btn) setComplexity(btn.dataset.level);
-  });
-
-  const toggle = document.getElementById('customize-toggle');
-  if (toggle) {
-    toggle.addEventListener('change', function () {
-      customizeOn = toggle.checked;
-      render();
+  const selectorHost = document.getElementById('complexity-selector');
+  if (selectorHost) {
+    selectorHost.addEventListener('click', function (e) {
+      const btn = e.target.closest('.complexity-button');
+      if (btn) setComplexity(btn.dataset.level);
     });
   }
 
   const resetBtn = document.getElementById('reset-recipe');
   if (resetBtn) {
-    resetBtn.addEventListener('click', function () {
-      clearCustomizations();
-      render();
-    });
+    resetBtn.addEventListener('click', function () { clearCustomizations(); render(); });
   }
 
-  // Bytt / fjern / enhetsbytte – via delegering, robust over re-rendering.
+  // Klikk i ingredienslista (delegering).
+  listEl.addEventListener('click', function (e) {
+    const edit = e.target.closest('.ingredient-edit-btn');
+    if (edit) {
+      const slot = edit.dataset.slot;
+      openSlot = (openSlot === slot) ? null : slot; // åpne denne, lukk andre
+      render();
+      return;
+    }
+    const remove = e.target.closest('.panel-remove');
+    if (remove) { removed[remove.dataset.slot] = true; compensate[remove.dataset.slot] = true; render(); return; }
+
+    const restore = e.target.closest('.panel-restore');
+    if (restore) { delete removed[restore.dataset.slot]; delete compensate[restore.dataset.slot]; render(); return; }
+
+    const yes = e.target.closest('.compensate-yes');
+    if (yes) { compensate[yes.dataset.slot] = true; render(); return; }
+
+    const no = e.target.closest('.compensate-no');
+    if (no) { compensate[no.dataset.slot] = false; render(); return; }
+  });
+
+  // Bytte / enhetsbytte (delegering).
   listEl.addEventListener('change', function (e) {
     const swapSel = e.target.closest('.ingredient-swap');
     if (swapSel) {
       const slot = swapSel.dataset.slot;
       const val = swapSel.value;
-      if (!val) { delete swaps[slot]; }
+      if (!val) delete swaps[slot];
       else {
         const opt = (swapOptions[slot] || []).filter(function (o) { return o.id === val; })[0];
         if (opt) swaps[slot] = opt;
       }
-      delete unitState[slot];   // enhet kan ha endret seg ved bytte
+      delete unitState[slot];
       render();
       return;
     }
     const unitSel = e.target.closest('.unit-select');
-    if (unitSel) {
-      unitState[unitSel.dataset.slot] = unitSel.value;
-      render();
-    }
-  });
-
-  listEl.addEventListener('click', function (e) {
-    const btn = e.target.closest('.ingredient-remove');
-    if (!btn) return;
-    const slot = btn.dataset.slot;
-    if (removed[slot]) delete removed[slot]; else removed[slot] = true;
-    render();
+    if (unitSel) { unitState[unitSel.dataset.slot] = unitSel.value; render(); }
   });
 
   // Antall-feltet og +/- (egen stepper her, siden adapteren eier paella-lista).
