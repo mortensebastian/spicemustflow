@@ -437,6 +437,76 @@ alle framtidige retter (tagine, dessert, gryter …) uten ny kode – bare ny da
 
 ---
 
+## Plan: fiskesuppe.html (gjenbruk av tilpasnings-/balansemotoren)
+
+Lag `fiskesuppe.html` med samme funksjonalitet som paella (kompleksitetsvelger,
+porsjoner, inline bytt/fjern, maintain-yield, smaksbalanse), basert på
+kunnskapen i `Kokebok.md` + `fiskesuppe.md`. Bildet `bilder/fiskesuppe.jpg`
+finnes allerede (optimalisert).
+
+### Steg 0 (forutsetning) — Gjør motoren data-drevet
+I dag har `recipe-adapter.js` paella-navn (`paellaRecipes`, `swapOptions`,
+`servedAcid`) og oppslag (`DENSITY`, `PIECE_WEIGHT`, `UNIT_OPTIONS`, `SALT_LEVER`,
+`TASTE_MESSAGES`) hardkodet. For at en ny rett skal være **ren data + HTML fra
+mal**, generaliserer vi:
+- Hver datafil eksponerer ETT objekt, f.eks. `window.RECIPE = { id, recipes,
+  swapOptions, servedAcid, density, pieceWeight, unitOptions, saltLever,
+  requireRoles, tasteMessages, bulkRoles }`.
+- `recipe-adapter.js` leser `window.RECIPE` i stedet for globale paella-navn og
+  hardkodede oppslag. Ingen funksjonell endring for paella (samme verdier flyttes
+  inn i `paella-data.js`).
+- [ ] Refaktorer adapter + `paella-data.js`; verifiser at paella er uendret (JSC).
+
+### Steg 1 — `fiskesuppe-data.js` (tre rungs fra fiskesuppe.md)
+Tre grunnoppskrifter på «stige»-modellen (fiskesuppe.md §4):
+- **enkel** = hverdags/lohikeitto-stil: terningkraft, én fisk (laks eller torsk),
+  fløte, dill, fin vinegar+sukker. Få komponenter.
+- **medium** = bergensk hjemmeversjon: god fumet, 2–3 sjømat (torsk+laks+reker),
+  rotgrønnsaker, fløte/crème fraîche + mel-slurry, vinegar+sukker balansert.
+- **kompleks** = elevert safran-sjømatsuppe: skalldyrkraft, stegede sjømat-
+  komponenter, **safran (blomstret)**, eggeplomme/fløte-liaison eller picada,
+  tomat/fennikel-base, sitron til slutt.
+
+Roller (Kokebok §2): `liquid`(kraft), `protein`/`seafood`, `fat`(fløte/smør),
+`acid`(vinegar/vin/sitron/tomat), `sweet`(sukker), `aromatic`(løk/dill/fennikel),
+`vegetable`/`rice`-bulk (potet/rotgrønt), `seasoning`(salt).
+- [ ] Skriv ingredienser med `role`, `scaling`, `sodiumPer100g`, `taste`
+  `{sweet,sour,bitter,umami}`, `removable`, `onRemove` (for syre), `tradition`.
+- [ ] `swapOptions` (kuratert, fiskesuppe.md §5): fisk etter teksturklasse
+  (lean-firm ↔ lean-flaky, advar ved kryssing/oljefisk); fløte ↔ crème fraîche ↔
+  kokosmelk (dairy-free, advar lavfett curdler); vin → kraft + sitron; dill ↔
+  persille; safran-tilsetting.
+
+### Steg 2 — Balanse tilpasset fiskesuppe
+- **Salt-lever** = tilsatt salt (som paella).
+- **Syre er kritisk her** og finnes som ingrediens (vinegar/sitron). `requireRoles`
+  inkluderer `acid`; fjernes syren → `onRemove`-tips («tilsett sitron/eddik til
+  slutt, ellers blir suppa flat»).
+- **Sweet-sour-paret:** vinegar (`sour`) + sukker (`sweet`) er begge justerbare
+  ingredienser brukeren kan endre; motoren gir tips hvis balansen skeier ut.
+  *(Auto-lever for sour/sweet er en mulig senere utvidelse — nå holder vi salt
+  auto + tips for resten, som i paella.)*
+- **Anti-curdle** (fiskesuppe.md §3) som faste notater på fløte/steg: «ikke kok
+  etter fløte; temperér; bruk crème fraîche/helfløte; tilsett syre i små mengder».
+- [ ] Verifiser salt-budsjett + syre-guard i JSC mot fiskesuppe-data.
+
+### Steg 3 — `fiskesuppe.html` fra paella-malen
+- [ ] Kopier paella.html-strukturen; bytt tittel, meta description, Recipe
+  JSON-LD (medium-versjonen), `--recipe-image: url('bilder/fiskesuppe.jpg')`,
+  og last `fiskesuppe-data.js` i stedet for `paella-data.js`.
+- [ ] Gjør fiskesuppe-kortet på `index.html` klikkbart.
+
+### Steg 4 — Verifiser
+- [ ] JSC-sjekk av skalering, salt-budsjett, syre-guard, maintain-yield.
+- [ ] Be bruker teste i nettleser (de 8 interaksjonsstegene fra paella).
+
+### Notater mot skill/agent-målet
+Etter steg 0 er en ny rett = `<rett>-data.js` (ren data) + `<rett>.html` (mal med
+4 felt endret) + et bilde. Det er nøyaktig inputen en `/ny-oppskrift`-skill
+trenger, gitt research som `fiskesuppe.md`.
+
+---
+
 ## SEO-plan (detaljert)
 
 Strategi og konkret implementeringsplan for SEO, basert på markedsresearch for
