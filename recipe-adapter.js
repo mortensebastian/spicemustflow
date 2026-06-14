@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   const PIECE_WEIGHT = { red_pepper: 120, onion: 110, garlic: 5 };
   const BULK_ROLES = ['rice', 'liquid', 'protein', 'seafood', 'vegetable'];
-  const AXES = ['sweet', 'sour', 'bitter', 'umami'];
 
   const UNIT_OPTIONS = {
     rice: ['dl', 'ml', 'g'],
@@ -176,35 +175,26 @@ document.addEventListener('DOMContentLoaded', function () {
     return 1;
   }
 
-  /* ----- Smaksbalanse (salt-budsjett + tips), via recipe-balance.js ----- */
+  /* ----- Saltbalanse (natrium-budsjett), via recipe-balance.js ----- */
   function computeBalance(comp) {
     const def = activeRecipe().ingredients;
     const items = effectiveIngredients();
 
-    // Mål: standardrettens natrium + smaksprofil (ingen endringer), nå-porsjoner.
+    // Mål: standardrettens natrium (ingen endringer), ved nå-porsjoner.
     let targetSodium = 0;
-    const targetProfile = { sweet: 0, sour: 0, bitter: 0, umami: 0 };
-    def.forEach(function (ing) {
-      const g = gramsAt(ing);
-      targetSodium += (ing.sodiumPer100g || 0) / 100 * g;
-      AXES.forEach(function (a) { targetProfile[a] += ((ing.taste && ing.taste[a]) || 0) * g; });
-    });
+    def.forEach(function (ing) { targetSodium += (ing.sodiumPer100g || 0) / 100 * gramsAt(ing); });
 
-    // Faktisk: gjeldende ingredienser (med kompensasjon), uten de fjernede.
+    // Faktisk natrium fra alt ANNET enn leveren (med kompensasjon, uten fjernede).
     let actualNonLever = 0;
-    const curProfile = { sweet: 0, sour: 0, bitter: 0, umami: 0 };
     items.forEach(function (ing) {
-      if (removed[ing.slotId]) return;
-      const g = gramsAt(ing) * compFactorFor(ing, comp);
-      if (ing.slotId !== SALT_LEVER) actualNonLever += (ing.sodiumPer100g || 0) / 100 * g;
-      AXES.forEach(function (a) { curProfile[a] += ((ing.taste && ing.taste[a]) || 0) * g; });
+      if (removed[ing.slotId] || ing.slotId === SALT_LEVER) return;
+      actualNonLever += (ing.sodiumPer100g || 0) / 100 * (gramsAt(ing) * compFactorFor(ing, comp));
     });
 
     // Løs salt-leveren mot målet.
     const leverIng = def.filter(function (i) { return i.id === SALT_LEVER; })[0];
     const leverGrams = B.leverGrams(targetSodium, actualNonLever, leverIng.sodiumPer100g);
-    const leverDensity = DENSITY[SALT_LEVER] || 1;
-    let leverAmount = U.fromGrams(leverGrams, leverIng.unit, leverDensity);
+    let leverAmount = U.fromGrams(leverGrams, leverIng.unit, DENSITY[SALT_LEVER] || 1);
     leverAmount = Math.max(0, Math.min(2 * leverIng.amount, leverAmount)); // rimelige grenser
 
     const defaultLeverGrams = gramsAt(leverIng);
@@ -212,8 +202,44 @@ document.addEventListener('DOMContentLoaded', function () {
     if (leverGrams < defaultLeverGrams * 0.95) leverChanged = 'down';
     else if (leverGrams > defaultLeverGrams * 1.05) leverChanged = 'up';
 
-    const tips = B.tasteTips(curProfile, targetProfile, TASTE_MESSAGES);
-    return { leverId: SALT_LEVER, leverUnit: leverIng.unit, leverAmount: leverAmount, leverChanged: leverChanged, tips: tips };
+    return { leverId: SALT_LEVER, leverUnit: leverIng.unit, leverAmount: leverAmount, leverChanged: leverChanged };
+  }
+
+  /* ----- Syrebalanse (rolle-vakt + tips) -----
+     Syre er den viktigste rollen å beskytte ved fjerning. To tilfeller:
+       1) Retten har en syre-ingrediens (f.eks. tomat) som fjernes → tipset
+          vises inline ved ingrediensen (onRemove). Mangler et slikt inline-tips,
+          gir vi en global advarsel her.
+       2) Retten er bygd uten syre-ingrediens (enkel/medium) → stående
+          «server med sitron»-tips, fremhevet når et fett/salt-bytte er lagt til. */
+  const REQUIRE_ROLES = ['acid'];
+
+  function presentRoles() {
+    const roles = {};
+    effectiveIngredients().forEach(function (ing) { if (!removed[ing.slotId]) roles[ing.role] = true; });
+    return Object.keys(roles);
+  }
+  function recipeDesignHasAcid() {
+    return activeRecipe().ingredients.some(function (i) { return i.role === 'acid'; });
+  }
+  function anyRichSwap() {
+    return Object.keys(swaps).some(function (s) { return (swaps[s].sodiumPer100g || 0) > 250; });
+  }
+  function acidMessage() {
+    const missingAcid = B.missingRoles(presentRoles(), REQUIRE_ROLES).length > 0;
+    if (recipeDesignHasAcid() && missingAcid) {
+      // Syre-ingrediensen er fjernet. Har den et eget inline-tips, lar vi det stå
+      // alene; ellers gir vi en tydelig global advarsel.
+      const hasInline = activeRecipe().ingredients.some(function (i) {
+        return i.role === 'acid' && removed[i.id] && i.onRemove && i.onRemove.tip;
+      });
+      if (!hasInline) return { text: 'Retten mistet syren sin – server med rikelig sitron, ellers blir den flat og tung.', strong: true };
+      if (anyRichSwap()) return { text: servedAcid.tip, strong: true };
+      return null;
+    }
+    if (!recipeDesignHasAcid()) return { text: servedAcid.tip, strong: anyRichSwap() };
+    if (anyRichSwap()) return { text: servedAcid.tip, strong: true };
+    return null;
   }
 
   /* ----- Mengdeberegning ----- */
@@ -328,13 +354,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!box) return;
     const msgs = [];
     // Salt-meldingen er global (ikke knyttet til én ingrediens) → vises øverst.
-    // Smaks-tips ved fjerning vises inline ved den fjernede ingrediensen.
+    // Umami/smaks-tips ved fjerning vises inline ved den fjernede ingrediensen.
     if (balance.leverChanged === 'down') {
-      msgs.push('Retten ble saltere – vi har automatisk redusert tilsatt salt. Smak til på slutten.');
+      msgs.push({ text: 'Retten ble saltere – vi har automatisk redusert tilsatt salt. Smak til på slutten.', strong: false });
     } else if (balance.leverChanged === 'up') {
-      msgs.push('Du tok bort noe salt – vi har automatisk økt tilsatt salt litt. Smak til på slutten.');
+      msgs.push({ text: 'Du tok bort noe salt – vi har automatisk økt tilsatt salt litt. Smak til på slutten.', strong: false });
     }
-    box.innerHTML = msgs.map(function (m) { return '<p class="recipe-message">' + m + '</p>'; }).join('');
+
+    // Syre-vern: stående/fremhevet sitron-tips, eller advarsel om syren er borte.
+    const acid = acidMessage();
+    if (acid) msgs.push(acid);
+
+    box.innerHTML = msgs.map(function (m) {
+      return '<p class="recipe-message' + (m.strong ? ' recipe-message-strong' : '') + '">' + m.text + '</p>';
+    }).join('');
   }
 
   function hasChanges() { return Object.keys(swaps).length > 0 || Object.keys(removed).length > 0; }

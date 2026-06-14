@@ -25,6 +25,15 @@ window.RecipeBalance = {
     return need / (leverIntensityPer100g / 100);
   },
 
+  /* Rolle-vakt (gjenbrukbar): hvilke påkrevde roller mangler i retten nå?
+     - present:  liste med roller som finnes i retten akkurat nå
+     - required: liste med roller retten må ha for å være i balanse (f.eks. 'acid')
+     Returnerer de påkrevde rollene som mangler. Kalleren bestemmer om det skal
+     gi en advarsel, et tips, eller blokkere. */
+  missingRoles: function (present, required) {
+    return required.filter(function (r) { return present.indexOf(r) === -1; });
+  },
+
   /* Tips for kvalitative akser som har falt merkbart under målet.
      - current/target: { sweet, sour, bitter, umami } (sum av intensitet × gram)
      - messages:       { <akse>: "tekst" } – kun akser med en melding vurderes
