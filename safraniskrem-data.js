@@ -106,8 +106,8 @@ window.RECIPE = {
   },
   pieceWeight: { egg_yolk: 18 },
   unitOptions: {
-    cream: ["dl", "ml"], milk: ["dl", "ml"], condensed_milk: ["dl", "ml"],
-    sugar: ["dl", "ml", "g"], cardamom: ["ts", "g"]
+    cream: ["dl", "ml", "g"], milk: ["dl", "ml", "g"], condensed_milk: ["dl", "ml"],
+    sugar: ["dl", "ml", "g"], cardamom: ["ts", "g"], rosewater: ["ss", "g"], salep: ["ss", "g"]
   },
   bulkRoles: ["fat", "liquid"],
   levers: [],              // INGEN auto-balanse: sukker er strukturelt, ikke en lever

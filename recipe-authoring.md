@@ -121,5 +121,15 @@ ting (mel, sukker, hevemiddel, væske) = `linear`; rene smakstilsetninger
 → **Fem retter på tvers av format (hovedrett, suppe, dessert, to bakst), de tre
   siste uten en eneste motorendring. Motoren er moden – klar til å skrive skillen.**
 
+**"Nøyaktig" (gram)-bryter** (først på safraniskrem, kompleks-nivå) — liten
+motorendring (`formatAmountPrecise` i `recipe.js`, en bryter + `unitState`-
+override i `recipe-adapter.js`). For at en kompleks-rett skal kunne vise alt
+i gram, må **alle ingredienser som ikke allerede er `g`/`stk`** ha både
+`density` og `"g"` i `unitOptions`. `stk`-ingredienser (egg) holdes utenfor
+med vilje – "6,7 stk" gir ikke mening. Sjekkliste for neste kompleks-rett som
+skal støtte dette: gå gjennom `kompleks.ingredients`, og for hver med enhet
+`dl`/`ss`/`ts`/`ml`, sørg for `density[id]` og legg `"g"` til
+`unitOptions[id]`.
+
 
 

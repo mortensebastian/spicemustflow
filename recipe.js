@@ -38,12 +38,25 @@ function formatAmount(value) {
     .replace('.', ',');
 }
 
+// "Nøyaktig"-visning (kun kompleks-nivå): runder til nærmeste 0,1 uansett
+// størrelse, slik at gram/ml ikke avrundes bort til nærmeste kvart/hele.
+function formatAmountPrecise(value) {
+  var rounded = Math.round(value * 10) / 10;
+
+  return rounded
+    .toFixed(2)
+    .replace(/0+$/, '')
+    .replace(/\.$/, '')
+    .replace('.', ',');
+}
+
 // Gjør omregningen tilgjengelig for andre filer.
 window.RecipeUnits = {
   ML_PER_UNIT: ML_PER_UNIT,
   toGrams: toGrams,
   fromGrams: fromGrams,
-  formatAmount: formatAmount
+  formatAmount: formatAmount,
+  formatAmountPrecise: formatAmountPrecise
 };
 
 

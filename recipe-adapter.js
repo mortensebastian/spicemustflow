@@ -49,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const compensate = {};
   const swaps = {};
   const unitState = {};
+  const preciseUnits = {};
   let openSlot = null;
+  let precise = false;
 
   function activeRecipe() { return R.recipes[complexity]; }
   function baseServings() { return activeRecipe().servings; }
@@ -226,16 +228,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (fromUnit === toUnit) return amount;
     return U.fromGrams(U.toGrams(amount, fromUnit, density), toUnit, density);
   }
+  function fmt(value) {
+    return precise ? U.formatAmountPrecise(value) : U.formatAmount(value);
+  }
   function displayAmount(ing, comp, balance) {
     const density = (R.density && R.density[ing.effId]) || 1;
     const targetUnit = unitState[ing.slotId] || ing.unit;
     const lev = balance.levers[ing.slotId];
     if (lev) {
-      return { text: U.formatAmount(convert(lev.amount, ing.unit, targetUnit, density)), unit: targetUnit };
+      return { text: fmt(convert(lev.amount, ing.unit, targetUnit, density)), unit: targetUnit };
     }
     let amt = scaleByType(ing.amount, ing.scaling, currentServings() / baseServings());
     amt *= compFactorFor(ing, comp);
-    return { text: U.formatAmount(convert(amt, ing.unit, targetUnit, density)), unit: targetUnit };
+    return { text: fmt(convert(amt, ing.unit, targetUnit, density)), unit: targetUnit };
   }
 
   /* ----- Rendering ----- */
@@ -348,9 +353,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function clearCustomizations() {
-    [removed, compensate, swaps, unitState].forEach(function (obj) {
+    [removed, compensate, swaps, unitState, preciseUnits].forEach(function (obj) {
       Object.keys(obj).forEach(function (k) { delete obj[k]; });
     });
+    precise = false;
     openSlot = null;
   }
 
@@ -370,7 +376,41 @@ document.addEventListener('DOMContentLoaded', function () {
     clearCustomizations();
     if (scaleInput) scaleInput.value = baseServings();
     buildComplexitySelector();
+    buildPrecisionToggle();
     render();
+  }
+
+  /* ----- "Nøyaktig" (gram) - kun synlig på kompleks ----- */
+  function applyPreciseUnits() {
+    effectiveIngredients().forEach(function (ing) {
+      const opts = R.unitOptions && R.unitOptions[ing.effId];
+      if (opts && opts.indexOf('g') !== -1 && ing.unit !== 'g' && ing.unit !== 'stk') {
+        unitState[ing.slotId] = 'g';
+        preciseUnits[ing.slotId] = true;
+      }
+    });
+  }
+  function clearPreciseUnits() {
+    Object.keys(preciseUnits).forEach(function (id) {
+      delete unitState[id];
+      delete preciseUnits[id];
+    });
+  }
+  function buildPrecisionToggle() {
+    const host = document.getElementById('precision-toggle');
+    if (!host) return;
+    if (complexity !== 'kompleks') {
+      host.innerHTML = '';
+      return;
+    }
+    host.innerHTML = '<label class="customize-switch"><input type="checkbox" id="precision-checkbox"' +
+      (precise ? ' checked' : '') + '> Nøyaktig (gram)</label>';
+    document.getElementById('precision-checkbox').addEventListener('change', function (e) {
+      precise = e.target.checked;
+      if (precise) applyPreciseUnits();
+      else clearPreciseUnits();
+      render();
+    });
   }
 
   /* ----- Hendelser ----- */
@@ -382,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   const resetBtn = document.getElementById('reset-recipe');
-  if (resetBtn) resetBtn.addEventListener('click', function () { clearCustomizations(); render(); });
+  if (resetBtn) resetBtn.addEventListener('click', function () { clearCustomizations(); buildPrecisionToggle(); render(); });
 
   listEl.addEventListener('click', function (e) {
     const edit = e.target.closest('.ingredient-edit-btn');
@@ -428,5 +468,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ----- Start ----- */
   buildComplexitySelector();
+  buildPrecisionToggle();
   render();
 });

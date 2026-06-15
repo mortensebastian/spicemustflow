@@ -903,6 +903,7 @@ body::before {
   gap: 8px;
   font-size: 15px;
   cursor: pointer;
+  accent-color: var(--accent);
 }
 
 .reset-recipe {
