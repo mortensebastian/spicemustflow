@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sjokoladekake – saftig oppskrift steg for steg | Safranoppskrifter</title>
+  <meta name="description" content="Saftig norsk sjokoladekake i tre nivåer – fra enkel rørekake til mørk sjokolade med kaffe og appelsin. Juster antall og tilpass (glutenfritt, melkefritt).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Saftig sjokoladekake",
+    "description": "Saftig norsk sjokoladekake med smør og kaffe.",
+    "recipeCategory": "Dessert",
+    "recipeCuisine": "Norsk",
+    "keywords": "sjokoladekake, saftig sjokoladekake, kakao kake",
+    "recipeYield": "12 stykker",
+    "prepTime": "PT15M",
+    "cookTime": "PT35M",
+    "totalTime": "PT60M",
+    "recipeIngredient": [
+      "3 dl hvetemel",
+      "3 dl sukker",
+      "1,5 dl kakao",
+      "2 ts bakepulver",
+      "3 egg",
+      "150 g smeltet smør",
+      "2 dl melk",
+      "1 ts vaniljesukker",
+      "0,5 ts salt"
+    ],
+    "recipeInstructions": [
+      {"@type": "HowToStep", "text": "Sett ovnen på 175 °C og smør en kakeform."},
+      {"@type": "HowToStep", "text": "Bland det tørre: mel, sukker, kakao, bakepulver og salt."},
+      {"@type": "HowToStep", "text": "Visp inn egg, smeltet smør, melk og vanilje til en glatt røre."},
+      {"@type": "HowToStep", "text": "Stek ca. 35–40 minutter til kakepinnen er ren. Avkjøl."}
+    ]
+  }
+  </script>
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/sjokoladekake.jpg så vises det øverst. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/sjokoladekake.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Safranoppskrifter</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Saftig sjokoladekake</h1>
+      <p>Den norske favoritten – fra enkel rørekake til en mørk sjokoladekake med kaffe og appelsin.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du sjokoladekake</h2>
+      <p class="recipe-intro">Velg nivå, juster antall stykker, og tilpass gjerne (glutenfritt mel, melkefri melk). Grunnoppskriften gir 12 stykker.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall stykker</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre stykker">−</button>
+          <input type="number" id="recipe-scale-input" value="12" min="6" max="24" step="2" data-base-yield="12">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere stykker">+</button>
+        </div>
+      </div>
+
+      <div class="recipe-customize">
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <p>Utforsk flere safranoppskrifter på forsiden.</p>
+        <span class="recipe-cta-soon">Safranbutikken vår åpner snart</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Safranoppskrifter – ekte safran til både hverdag og fest.</p>
+    </div>
+  </footer>
+
+  <script src="sjokoladekake-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+</body>
+</html>

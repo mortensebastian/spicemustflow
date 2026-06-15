@@ -111,6 +111,15 @@ er bare vanlige `swapOptions`-oppføringer. Lærdom:
 - Diett/allergi-bytter trenger ingen egen mekanisme – kuraterte bytter dekker det.
   (Hvis vi senere vil *filtrere* på diett, er det et eget lag, ikke balanse.)
 
-<!-- Neste: sjokoladekake — fyll inn hva den lærte oss. Deretter: skriv skillen. -->
+**sjokoladekake** (femte rett, bakst) — **ingen motorendring.** Bekreftet
+forholdsbasert bakst: hevemiddel (bakepulver) og kakao må ha `scaling: "linear"`
+så de følger melet – ren smaks-«hold igjen» (`nonlinear`) ville vært feil for
+hevemiddel. Lærdom for skillen: *velg `scaling` etter funksjon* – strukturelle
+ting (mel, sukker, hevemiddel, væske) = `linear`; rene smakstilsetninger
+(krydder, salt, vanilje, sitronskall) = `nonlinear`; engangsting (1 kvist) = `fixed`.
+
+→ **Fem retter på tvers av format (hovedrett, suppe, dessert, to bakst), de tre
+  siste uten en eneste motorendring. Motoren er moden – klar til å skrive skillen.**
+
 
 
