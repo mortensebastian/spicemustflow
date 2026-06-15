@@ -102,5 +102,15 @@ maintain-yield» når `levers: []` og `requireRoles: []`. Lærdom for skillen:
 → Konklusjon: motoren er moden nok for skillen etter to retter til på ulike
   «format» (pannekake, sjokoladekake) for å bekrefte bake-/forhold-baserte retter.
 
-<!-- Neste: pannekake + sjokoladekake (bakst/forhold) — fyll inn hva de lærte oss. -->
+**pannekake** (fjerde rett, bakst/antall-basert) — **ingen motorendring.**
+Bekreftet: antall-basert skalering (`data-base-yield` i stk pannekaker) virker
+gjennom hele adapteren, og diett-bytter (glutenfritt mel, havremelk, linfrø-egg)
+er bare vanlige `swapOptions`-oppføringer. Lærdom:
+- «porsjoner» vs «antall stk» er bare en etikett (`<label>` + `data-base-yield`);
+  motoren bryr seg ikke.
+- Diett/allergi-bytter trenger ingen egen mekanisme – kuraterte bytter dekker det.
+  (Hvis vi senere vil *filtrere* på diett, er det et eget lag, ikke balanse.)
+
+<!-- Neste: sjokoladekake — fyll inn hva den lærte oss. Deretter: skriv skillen. -->
+
 

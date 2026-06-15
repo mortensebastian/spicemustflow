@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safranpannekaker – tynne norske pannekaker | Safranoppskrifter</title>
+  <meta name="description" content="Tynne norske pannekaker i tre nivåer – fra grunnrøre til safranpannekaker med brunet smør. Juster antall og tilpass (glutenfritt, melkefritt).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Safranpannekaker",
+    "description": "Tynne norske pannekaker, her med safran, kardemomme og brunet smør.",
+    "recipeCategory": "Dessert",
+    "recipeCuisine": "Norsk",
+    "keywords": "pannekaker, norske pannekaker, safranpannekaker",
+    "recipeYield": "12 pannekaker",
+    "prepTime": "PT10M",
+    "cookTime": "PT20M",
+    "totalTime": "PT50M",
+    "recipeIngredient": [
+      "3 dl hvetemel",
+      "5 dl melk",
+      "4 egg",
+      "1 ss sukker",
+      "0,5 ts malt kardemomme",
+      "0,5 ts salt",
+      "2 ss smør til steking"
+    ],
+    "recipeInstructions": [
+      {"@type": "HowToStep", "text": "Visp mel, sukker, kardemomme og salt sammen."},
+      {"@type": "HowToStep", "text": "Spe med halvparten av melken til en klumpfri røre, og visp inn egg og resten av melken."},
+      {"@type": "HowToStep", "text": "La røren hvile 20–30 minutter."},
+      {"@type": "HowToStep", "text": "Stek tynne pannekaker i smør, gylne på begge sider."}
+    ]
+  }
+  </script>
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/pannekake.jpg så vises det øverst. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/pannekake.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Safranoppskrifter</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Safranpannekaker</h1>
+      <p>Tynne norske pannekaker – fra enkel grunnrøre til safranpannekaker med brunet smør og kardemomme.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du pannekaker</h2>
+      <p class="recipe-intro">Velg nivå, juster antall pannekaker, og tilpass gjerne (glutenfritt mel, melkefri melk, eggfritt). Grunnoppskriften gir 12 pannekaker.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall pannekaker</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre pannekaker">−</button>
+          <input type="number" id="recipe-scale-input" value="12" min="4" max="32" step="4" data-base-yield="12">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere pannekaker">+</button>
+        </div>
+      </div>
+
+      <div class="recipe-customize">
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <p>Safran gir pannekakene gyllen farge og en fin aroma.</p>
+        <span class="recipe-cta-soon">Safranbutikken vår åpner snart</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Safranoppskrifter – ekte safran til både hverdag og fest.</p>
+    </div>
+  </footer>
+
+  <script src="pannekake-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+</body>
+</html>
