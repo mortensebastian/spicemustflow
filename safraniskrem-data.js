@@ -18,7 +18,8 @@ const swapOptions = {
     { id: "coconut_milk", label: "Kokosmelk (uten melk)", amount: 2.5, unit: "dl", taste: { sweet: 1 }, note: "Melkefri base." }
   ],
   pistachio: [
-    { id: "almonds", label: "Mandler, grovhakket", amount: 50, unit: "g", note: "Mildere enn pistasj." }
+    { id: "almonds", label: "Mandler, grovhakket", amount: 50, unit: "g", note: "Mildere enn pistasj.",
+      allergens: ["nuts"] }
   ],
   cardamom: [
     { id: "vanilla", label: "Vanilje", amount: 1, unit: "ts", note: "Rundere, mindre krydret enn kardemomme." }
@@ -32,11 +33,11 @@ const safraniskremRecipes = {
   enkel: {
     label: "Enkel", servings: 6,
     ingredients: [
-      { id: "cream",         label: "Kremfløte",            amount: 5, unit: "dl", role: "fat",       scaling: "linear",    addStage: "early", removable: false, note: "Piskes til myke topper." },
-      { id: "condensed_milk",label: "Søtet kondensert melk", amount: 2, unit: "dl", role: "sweet",     scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 3 }, note: "Gir både sødme og kremet, frysbar base (no-churn)." },
+      { id: "cream",         label: "Kremfløte",            amount: 5, unit: "dl", role: "fat",       scaling: "linear",    addStage: "early", removable: false, note: "Piskes til myke topper.", allergens: ["dairy"], incompatible: ["vegan"] },
+      { id: "condensed_milk",label: "Søtet kondensert melk", amount: 2, unit: "dl", role: "sweet",     scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 3 }, note: "Gir både sødme og kremet, frysbar base (no-churn).", allergens: ["dairy"], incompatible: ["vegan", "sugarfree"] },
       { id: "saffron",       label: "Safran (blomstret)",   amount: 0.5, unit: "g", role: "saffron",   scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 }, note: "Bløtlegg i 1 ss varmt vann ~15 min; gir farge og aroma." },
       { id: "cardamom",      label: "Malt kardemomme",      amount: 1, unit: "ts", role: "aromatic",   scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 } },
-      { id: "pistachio",     label: "Pistasj, grovhakket",  amount: 50, unit: "g", role: "aromatic",   scaling: "linear",    addStage: "serve", removable: true }
+      { id: "pistachio",     label: "Pistasj, grovhakket",  amount: 50, unit: "g", role: "aromatic",   scaling: "linear",    addStage: "serve", removable: true,  allergens: ["nuts"] }
     ],
     steps: [
       "Bløtlegg safran i 1 ss varmt vann i ~15 minutter.",
@@ -51,13 +52,13 @@ const safraniskremRecipes = {
   medium: {
     label: "Medium", servings: 6,
     ingredients: [
-      { id: "cream",     label: "Kremfløte",            amount: 5, unit: "dl",  role: "fat",      scaling: "linear",    addStage: "early", removable: false },
-      { id: "milk",      label: "Helmelk",              amount: 2.5, unit: "dl", role: "liquid",   scaling: "linear",    addStage: "early", removable: false, note: "Sammen med fløten danner den base for vaniljesausen." },
-      { id: "sugar",     label: "Sukker",               amount: 1.5, unit: "dl", role: "sweet",    scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 3 }, note: "Strukturelt for frysing – hold mengden ganske stabil." },
-      { id: "egg_yolk",  label: "Eggeplommer",          amount: 4, unit: "stk", role: "fat",      scaling: "linear",    addStage: "early", removable: false, note: "Tykner sausen; ikke kok over ~82 °C." },
+      { id: "cream",     label: "Kremfløte",            amount: 5, unit: "dl",  role: "fat",      scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] },
+      { id: "milk",      label: "Helmelk",              amount: 2.5, unit: "dl", role: "liquid",   scaling: "linear",    addStage: "early", removable: false, note: "Sammen med fløten danner den base for vaniljesausen.", allergens: ["dairy"], incompatible: ["vegan"] },
+      { id: "sugar",     label: "Sukker",               amount: 1.5, unit: "dl", role: "sweet",    scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 3 }, note: "Strukturelt for frysing – hold mengden ganske stabil.", incompatible: ["sugarfree"] },
+      { id: "egg_yolk",  label: "Eggeplommer",          amount: 4, unit: "stk", role: "fat",      scaling: "linear",    addStage: "early", removable: false, note: "Tykner sausen; ikke kok over ~82 °C.", allergens: ["egg"], incompatible: ["vegan", "pregnancy"] },
       { id: "saffron",   label: "Safran (blomstret)",   amount: 0.5, unit: "g", role: "saffron",  scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 }, note: "Bløtlegg i litt varm (ikke kokende) melk ~15 min." },
       { id: "cardamom",  label: "Malt kardemomme",      amount: 1, unit: "ts",  role: "aromatic", scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 } },
-      { id: "pistachio", label: "Pistasj, grovhakket",  amount: 50, unit: "g",  role: "aromatic", scaling: "linear",    addStage: "serve", removable: true }
+      { id: "pistachio", label: "Pistasj, grovhakket",  amount: 50, unit: "g",  role: "aromatic", scaling: "linear",    addStage: "serve", removable: true,  allergens: ["nuts"] }
     ],
     steps: [
       "Varm fløte, melk, kardemomme og blomstret safran til like under kokepunktet.",
@@ -72,15 +73,15 @@ const safraniskremRecipes = {
   kompleks: {
     label: "Kompleks", servings: 6,
     ingredients: [
-      { id: "cream",     label: "Kremfløte",            amount: 5, unit: "dl",  role: "fat",      scaling: "linear",    addStage: "early", removable: false },
-      { id: "milk",      label: "Helmelk",              amount: 2.5, unit: "dl", role: "liquid",   scaling: "linear",    addStage: "early", removable: false },
-      { id: "sugar",     label: "Sukker",               amount: 1.5, unit: "dl", role: "sweet",    scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 3 }, note: "Strukturelt for frysing." },
-      { id: "egg_yolk",  label: "Eggeplommer",          amount: 5, unit: "stk", role: "fat",      scaling: "linear",    addStage: "early", removable: false, note: "Litt flere for en rikere base." },
+      { id: "cream",     label: "Kremfløte",            amount: 5, unit: "dl",  role: "fat",      scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] },
+      { id: "milk",      label: "Helmelk",              amount: 2.5, unit: "dl", role: "liquid",   scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] },
+      { id: "sugar",     label: "Sukker",               amount: 1.5, unit: "dl", role: "sweet",    scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 3 }, note: "Strukturelt for frysing.", incompatible: ["sugarfree"] },
+      { id: "egg_yolk",  label: "Eggeplommer",          amount: 5, unit: "stk", role: "fat",      scaling: "linear",    addStage: "early", removable: false, note: "Litt flere for en rikere base.", allergens: ["egg"], incompatible: ["vegan", "pregnancy"] },
       { id: "saffron",   label: "Safran (ristet, blomstret)", amount: 0.6, unit: "g", role: "saffron", scaling: "nonlinear", addStage: "early", removable: true, taste: { bitter: 1 }, note: "Rist lett, knus, bløtlegg i varm melk." },
       { id: "cardamom",  label: "Malt kardemomme",      amount: 1, unit: "ts",  role: "aromatic", scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 } },
       { id: "rosewater", label: "Rosenvann",            amount: 1, unit: "ss",  role: "aromatic", scaling: "nonlinear", addStage: "end",   removable: true,  note: "Tradisjonelt persisk; tilsett etter avkjøling så aromaen ikke koker bort." },
       { id: "salep",     label: "Salep / maisstivelse", amount: 1, unit: "ss",  role: "seasoning", scaling: "linear",   addStage: "early", removable: true,  note: "Gir den seige, tyggbare bastani-teksturen. Røres ut i litt kald melk." },
-      { id: "pistachio", label: "Pistasj, grovhakket",  amount: 60, unit: "g",  role: "aromatic", scaling: "linear",    addStage: "serve", removable: true }
+      { id: "pistachio", label: "Pistasj, grovhakket",  amount: 60, unit: "g",  role: "aromatic", scaling: "linear",    addStage: "serve", removable: true,  allergens: ["nuts"] }
     ],
     steps: [
       "Rør salep/maisstivelse ut i litt av den kalde melken.",

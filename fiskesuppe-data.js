@@ -19,20 +19,28 @@
 const swapOptions = {
   salmon: [
     { id: "cod", label: "Torsk (mager, flakete)", amount: 400, unit: "g", sodiumPer100g: 70, taste: { umami: 1 },
+      allergens: ["fish"], incompatible: ["vegan","vegetarian"],
       tradition: "traditional", note: "Magrere enn laks – vurder en liten skvett ekstra fløte/smør for fylde." },
-    { id: "trout", label: "Ørret", amount: 400, unit: "g", sodiumPer100g: 60, taste: { umami: 2 }, note: "Som laks; fet og fyldig." }
+    { id: "trout", label: "Ørret", amount: 400, unit: "g", sodiumPer100g: 60, taste: { umami: 2 },
+      allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Som laks; fet og fyldig." }
   ],
   cod: [
-    { id: "haddock", label: "Hyse (flakete)", amount: 250, unit: "g", sodiumPer100g: 70, taste: { umami: 1 }, tradition: "traditional" },
-    { id: "saithe", label: "Sei (flakete)", amount: 250, unit: "g", sodiumPer100g: 70, taste: { umami: 1 }, tradition: "traditional", note: "Tradisjonell i bergensk fiskesuppe." },
-    { id: "monkfish", label: "Breiflabb (fast)", amount: 250, unit: "g", sodiumPer100g: 70, taste: { umami: 1 }, note: "Fast – holder formen, tåler litt lengre koking." }
+    { id: "haddock", label: "Hyse (flakete)", amount: 250, unit: "g", sodiumPer100g: 70, taste: { umami: 1 },
+      allergens: ["fish"], incompatible: ["vegan","vegetarian"], tradition: "traditional" },
+    { id: "saithe", label: "Sei (flakete)", amount: 250, unit: "g", sodiumPer100g: 70, taste: { umami: 1 },
+      allergens: ["fish"], incompatible: ["vegan","vegetarian"], tradition: "traditional", note: "Tradisjonell i bergensk fiskesuppe." },
+    { id: "monkfish", label: "Breiflabb (fast)", amount: 250, unit: "g", sodiumPer100g: 70, taste: { umami: 1 },
+      allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Fast – holder formen, tåler litt lengre koking." }
   ],
   shrimp: [
-    { id: "mussels", label: "Blåskjell", amount: 200, unit: "g", sodiumPer100g: 285, taste: { umami: 2 }, note: "Slipper salt skjellkraft i suppa." },
-    { id: "scallops", label: "Kamskjell", amount: 150, unit: "g", sodiumPer100g: 160, taste: { umami: 2 }, note: "Mild og søt; trekkes helt til slutt." }
+    { id: "mussels", label: "Blåskjell", amount: 200, unit: "g", sodiumPer100g: 285, taste: { umami: 2 },
+      incompatible: ["vegan","vegetarian"], note: "Slipper salt skjellkraft i suppa." },
+    { id: "scallops", label: "Kamskjell", amount: 150, unit: "g", sodiumPer100g: 160, taste: { umami: 2 },
+      incompatible: ["vegan","vegetarian"], note: "Mild og søt; trekkes helt til slutt." }
   ],
   cream: [
-    { id: "creme_fraiche", label: "Crème fraîche", amount: 2.5, unit: "dl", taste: { sour: 1 }, tradition: "traditional",
+    { id: "creme_fraiche", label: "Crème fraîche", amount: 2.5, unit: "dl", taste: { sour: 1 },
+      allergens: ["dairy"], incompatible: ["vegan"], tradition: "traditional",
       note: "Mer stabil mot curdling og gir norsk syrlig tone." },
     { id: "coconut", label: "Kokosmelk (uten melk)", amount: 2.5, unit: "dl", taste: { sweet: 1 },
       note: "Melkefri; litt søtlig – passer fint med safran." }
@@ -45,7 +53,8 @@ const swapOptions = {
     { id: "chives", label: "Gressløk", amount: 1, unit: "ss" }
   ],
   wine: [
-    { id: "extra_stock", label: "Mer kraft + sitron", amount: 1.5, unit: "dl", taste: { sour: 1 }, note: "Mister litt aromadybde; tilsett en skvett sitron til slutt." }
+    { id: "extra_stock", label: "Mer kraft + sitron", amount: 1.5, unit: "dl", taste: { sour: 1 },
+      allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Mister litt aromadybde; tilsett en skvett sitron til slutt." }
   ]
 };
 
@@ -56,15 +65,15 @@ const fiskesuppeRecipes = {
   enkel: {
     label: "Enkel", servings: 4,
     ingredients: [
-      { id: "stock",      label: "Fiskekraft (terning)", amount: 8, unit: "dl", role: "liquid",  scaling: "linear", addStage: "early", sodiumPer100g: 300, removable: false, taste: { umami: 1 } },
-      { id: "salmon",     label: "Laks i terninger",     amount: 400, unit: "g", role: "protein", scaling: "linear", addStage: "end",   sodiumPer100g: 60,  removable: false, taste: { umami: 2 }, note: "Oljefisk – gir farge og fylde. Trekkes mot slutten, ikke kok." },
+      { id: "stock",      label: "Fiskekraft (terning)", amount: 8, unit: "dl", role: "liquid",  scaling: "linear", addStage: "early", sodiumPer100g: 300, removable: false, taste: { umami: 1 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"] },
+      { id: "salmon",     label: "Laks i terninger",     amount: 400, unit: "g", role: "protein", scaling: "linear", addStage: "end",   sodiumPer100g: 60,  removable: false, taste: { umami: 2 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Oljefisk – gir farge og fylde. Trekkes mot slutten, ikke kok." },
       { id: "potato",     label: "Potet i terninger",    amount: 300, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: true },
       { id: "carrot",     label: "Gulrot",               amount: 2, unit: "stk", role: "vegetable", scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
       { id: "leek",       label: "Purre",                amount: 1, unit: "stk", role: "aromatic",  scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
-      { id: "cream",      label: "Fløte",                amount: 2.5, unit: "dl", role: "fat",      scaling: "linear", addStage: "end",   removable: false, note: "Tilsett mot slutten; ikke la suppa koke etter fløten." },
+      { id: "cream",      label: "Fløte",                amount: 2.5, unit: "dl", role: "fat",      scaling: "linear", addStage: "end",   removable: false, allergens: ["dairy"], incompatible: ["vegan"], note: "Tilsett mot slutten; ikke la suppa koke etter fløten." },
       { id: "vinegar",    label: "Hvitvinseddik",        amount: 1, unit: "ts",  role: "acid",     scaling: "nonlinear", addStage: "serve", removable: true, taste: { sour: 3 },
         onRemove: { tip: "Eddiken er suppas syre og «løft». Uten den blir den flat og tung – tilsett litt sitron til slutt i stedet." } },
-      { id: "sugar",      label: "Sukker",               amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "serve", removable: true, taste: { sweet: 3 }, note: "Balanserer eddiken til en mild søt-sur tone." },
+      { id: "sugar",      label: "Sukker",               amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "serve", removable: true, taste: { sweet: 3 }, incompatible: ["sugarfree"], note: "Balanserer eddiken til en mild søt-sur tone." },
       { id: "salt_added", label: "Salt",                 amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "end",   sodiumPer100g: 38800, removable: false, note: "Justeres automatisk; smak til etter fløten." },
       { id: "dill",       label: "Frisk dill",           amount: 1, unit: "ss",  role: "aromatic",  scaling: "linear", addStage: "serve", removable: true }
     ],
@@ -82,19 +91,19 @@ const fiskesuppeRecipes = {
   medium: {
     label: "Medium", servings: 4,
     ingredients: [
-      { id: "stock",      label: "Fiskekraft (fumet)",   amount: 10, unit: "dl", role: "liquid",  scaling: "linear", addStage: "early", sodiumPer100g: 200, removable: false, taste: { umami: 1 }, note: "Bruk gjerne hjemmelaget av magre fiskebein; ikke kok hardt." },
-      { id: "cod",        label: "Torsk i terninger",    amount: 250, unit: "g", role: "protein", scaling: "linear", addStage: "end",   sodiumPer100g: 70,  removable: false, taste: { umami: 1 }, tradition: "traditional", note: "Flakete – legges i først av fisken." },
-      { id: "salmon",     label: "Laks i terninger",     amount: 150, unit: "g", role: "protein", scaling: "linear", addStage: "end",   sodiumPer100g: 60,  removable: true,  taste: { umami: 2 }, note: "Gir farge og fylde." },
-      { id: "shrimp",     label: "Reker (pillet)",       amount: 150, unit: "g", role: "seafood", scaling: "linear", addStage: "end",   sodiumPer100g: 120, removable: true,  taste: { umami: 2 }, note: "Vendes inn helt til slutt." },
+      { id: "stock",      label: "Fiskekraft (fumet)",   amount: 10, unit: "dl", role: "liquid",  scaling: "linear", addStage: "early", sodiumPer100g: 200, removable: false, taste: { umami: 1 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Bruk gjerne hjemmelaget av magre fiskebein; ikke kok hardt." },
+      { id: "cod",        label: "Torsk i terninger",    amount: 250, unit: "g", role: "protein", scaling: "linear", addStage: "end",   sodiumPer100g: 70,  removable: false, taste: { umami: 1 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"], tradition: "traditional", note: "Flakete – legges i først av fisken." },
+      { id: "salmon",     label: "Laks i terninger",     amount: 150, unit: "g", role: "protein", scaling: "linear", addStage: "end",   sodiumPer100g: 60,  removable: true,  taste: { umami: 2 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Gir farge og fylde." },
+      { id: "shrimp",     label: "Reker (pillet)",       amount: 150, unit: "g", role: "seafood", scaling: "linear", addStage: "end",   sodiumPer100g: 120, removable: true,  taste: { umami: 2 }, allergens: ["shellfish"], incompatible: ["vegan","vegetarian"], note: "Vendes inn helt til slutt." },
       { id: "leek",       label: "Purre",                amount: 1, unit: "stk", role: "aromatic",  scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
       { id: "carrot",     label: "Gulrot",               amount: 2, unit: "stk", role: "vegetable", scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
       { id: "celeriac",   label: "Sellerirot",           amount: 150, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
-      { id: "butter",     label: "Smør",                 amount: 1, unit: "ss",  role: "fat",      scaling: "nonlinear", addStage: "early", removable: false },
-      { id: "flour",      label: "Hvetemel",             amount: 1, unit: "ss",  role: "seasoning", scaling: "linear", addStage: "end",   removable: true, note: "Visp i fløten – jevner og stabiliserer mot curdling." },
-      { id: "cream",      label: "Fløte / crème fraîche", amount: 3, unit: "dl", role: "fat",      scaling: "linear", addStage: "end",   removable: false, note: "Tilsett mot slutten; ikke kok etter fløten. Crème fraîche tåler varme/syre best." },
+      { id: "butter",     label: "Smør",                 amount: 1, unit: "ss",  role: "fat",      scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] },
+      { id: "flour",      label: "Hvetemel",             amount: 1, unit: "ss",  role: "seasoning", scaling: "linear", addStage: "end",   removable: true, allergens: ["gluten"], note: "Visp i fløten – jevner og stabiliserer mot curdling." },
+      { id: "cream",      label: "Fløte / crème fraîche", amount: 3, unit: "dl", role: "fat",      scaling: "linear", addStage: "end",   removable: false, allergens: ["dairy"], incompatible: ["vegan"], note: "Tilsett mot slutten; ikke kok etter fløten. Crème fraîche tåler varme/syre best." },
       { id: "vinegar",    label: "Hvitvinseddik",        amount: 1, unit: "ts",  role: "acid",     scaling: "nonlinear", addStage: "serve", removable: true, taste: { sour: 3 },
         onRemove: { tip: "Eddiken gir den bergenske søt-sure tonen. Uten den blir suppa flat – tilsett sitron til slutt i stedet." } },
-      { id: "sugar",      label: "Sukker",               amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "serve", removable: true, taste: { sweet: 3 }, note: "Balanserer eddiken; sikt mot subtil søt-sur." },
+      { id: "sugar",      label: "Sukker",               amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "serve", removable: true, taste: { sweet: 3 }, incompatible: ["sugarfree"], note: "Balanserer eddiken; sikt mot subtil søt-sur." },
       { id: "salt_added", label: "Salt",                 amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "end",   sodiumPer100g: 38800, removable: false, note: "Justeres automatisk; salt etter at fløten er i." },
       { id: "dill",       label: "Frisk dill",           amount: 1, unit: "ss",  role: "aromatic",  scaling: "linear", addStage: "serve", removable: true }
     ],
@@ -112,7 +121,7 @@ const fiskesuppeRecipes = {
   kompleks: {
     label: "Kompleks", servings: 4,
     ingredients: [
-      { id: "stock",        label: "Skalldyrkraft",        amount: 12, unit: "dl", role: "liquid", scaling: "linear", addStage: "early", sodiumPer100g: 150, removable: false, taste: { umami: 1 }, note: "Lag av ristede reke-/krabbeskall for dyp sjøsmak." },
+      { id: "stock",        label: "Skalldyrkraft",        amount: 12, unit: "dl", role: "liquid", scaling: "linear", addStage: "early", sodiumPer100g: 150, removable: false, taste: { umami: 1 }, allergens: ["shellfish"], incompatible: ["vegan","vegetarian"], note: "Lag av ristede reke-/krabbeskall for dyp sjøsmak." },
       { id: "olive_oil",    label: "Olivenolje",           amount: 2, unit: "ss",  role: "fat",     scaling: "nonlinear", addStage: "early", removable: false },
       { id: "onion",        label: "Løk, finhakket",       amount: 1, unit: "stk", role: "aromatic", scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
       { id: "fennel",       label: "Fennikel, i skiver",   amount: 1, unit: "stk", role: "aromatic", scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
@@ -120,13 +129,13 @@ const fiskesuppeRecipes = {
       { id: "tomato_paste", label: "Tomatpuré",            amount: 1, unit: "ss",  role: "seasoning", scaling: "linear", addStage: "early", removable: true, taste: { umami: 1 } },
       { id: "tomato",       label: "Hakkede tomater",      amount: 200, unit: "g", role: "acid",    scaling: "linear", addStage: "early", removable: true, isPrimaryAcid: true, taste: { sour: 2, sweet: 1, umami: 2 },
         onRemove: { tip: "Tomaten gir syre, sødme og dybde til basen – uten den blir suppa flatere. Server med rikelig sitron." } },
-      { id: "wine",         label: "Hvitvin",              amount: 1.5, unit: "dl", role: "acid",   scaling: "linear", addStage: "early", removable: true, taste: { sour: 2 },
+      { id: "wine",         label: "Hvitvin",              amount: 1.5, unit: "dl", role: "acid",   scaling: "linear", addStage: "early", removable: true, taste: { sour: 2 }, incompatible: ["pregnancy","childfriendly"],
         onRemove: { tip: "Vinen gir syre og aroma. Erstatt med mer kraft + en skvett sitron til slutt." } },
       { id: "saffron",      label: "Safran (blomstret)",   amount: 0.5, unit: "g", role: "saffron", scaling: "nonlinear", addStage: "early", removable: true, taste: { bitter: 1 }, note: "Bløtlegg i litt varm (ikke kokende) kraft ~15 min; bitter/aromatisk motvekt til søt sjømat." },
-      { id: "monkfish",     label: "Breiflabb (fast)",     amount: 200, unit: "g", role: "protein", scaling: "linear", addStage: "end", sodiumPer100g: 70, removable: false, taste: { umami: 1 }, note: "Fast fisk – legges i først." },
-      { id: "cod",          label: "Torsk (flakete)",      amount: 150, unit: "g", role: "protein", scaling: "linear", addStage: "end", sodiumPer100g: 70, removable: true, taste: { umami: 1 } },
-      { id: "mussels",      label: "Blåskjell",            amount: 200, unit: "g", role: "seafood", scaling: "linear", addStage: "end", sodiumPer100g: 285, removable: true, taste: { umami: 2 } },
-      { id: "shrimp",       label: "Scampi",               amount: 150, unit: "g", role: "seafood", scaling: "linear", addStage: "end", sodiumPer100g: 120, removable: true, taste: { umami: 2 }, note: "Helt til slutt, ~1–2 min." },
+      { id: "monkfish",     label: "Breiflabb (fast)",     amount: 200, unit: "g", role: "protein", scaling: "linear", addStage: "end", sodiumPer100g: 70, removable: false, taste: { umami: 1 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"], note: "Fast fisk – legges i først." },
+      { id: "cod",          label: "Torsk (flakete)",      amount: 150, unit: "g", role: "protein", scaling: "linear", addStage: "end", sodiumPer100g: 70, removable: true, taste: { umami: 1 }, allergens: ["fish"], incompatible: ["vegan","vegetarian"] },
+      { id: "mussels",      label: "Blåskjell",            amount: 200, unit: "g", role: "seafood", scaling: "linear", addStage: "end", sodiumPer100g: 285, removable: true, taste: { umami: 2 }, incompatible: ["vegan","vegetarian"] },
+      { id: "shrimp",       label: "Scampi",               amount: 150, unit: "g", role: "seafood", scaling: "linear", addStage: "end", sodiumPer100g: 120, removable: true, taste: { umami: 2 }, allergens: ["shellfish"], incompatible: ["vegan","vegetarian"], note: "Helt til slutt, ~1–2 min." },
       { id: "lemon",        label: "Sitron (til slutt)",   amount: 1, unit: "stk", role: "acid",    scaling: "fixed",  addStage: "serve", removable: true, taste: { sour: 2 }, note: "Frisk syre ved servering." },
       { id: "salt_added",   label: "Salt",                 amount: 1, unit: "ts",  role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 38800, removable: false, note: "Justeres automatisk; smak til på slutten." },
       { id: "parsley",      label: "Persille / fennikeltopp", amount: 1, unit: "ss", role: "aromatic", scaling: "linear", addStage: "serve", removable: true }

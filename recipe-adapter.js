@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const preciseUnits = {};
   let openSlot = null;
   let precise = false;
+  const activeAllergens = new Set();
+  const activeDiets = new Set();
 
   function activeRecipe() { return R.recipes[complexity]; }
   function baseServings() { return activeRecipe().servings; }
@@ -64,6 +66,28 @@ document.addEventListener('DOMContentLoaded', function () {
     return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
   function leverIds() { return (R.levers || []).map(function (l) { return l.id; }); }
+
+  const FILTER_LABELS = {
+    dairy: 'Meieri/laktose', egg: 'Egg', gluten: 'Gluten',
+    shellfish: 'Skalldyr', fish: 'Fisk', nuts: 'Nøtter',
+    vegan: 'Vegan', vegetarian: 'Vegetar', pescetarian: 'Pesketarian',
+    pregnancy: 'Gravid', sugarfree: 'Sukkerfri', childfriendly: 'Barnevennlig'
+  };
+  function violations(ing) {
+    var v = [];
+    (ing.allergens || []).forEach(function (a) { if (activeAllergens.has(a)) v.push(FILTER_LABELS[a]); });
+    (ing.incompatible || []).forEach(function (d) { if (activeDiets.has(d)) v.push(FILTER_LABELS[d]); });
+    return v;
+  }
+  function compatibleSwaps(slotId) {
+    return (R.swapOptions[slotId] || []).filter(function (opt) {
+      var ok = true;
+      (opt.allergens || []).forEach(function (a) { if (activeAllergens.has(a)) ok = false; });
+      (opt.incompatible || []).forEach(function (d) { if (activeDiets.has(d)) ok = false; });
+      return ok;
+    });
+  }
+
   function strengthOf(ing, axis) {
     return axis === 'salt' ? (ing.sodiumPer100g || 0) : ((ing.taste && ing.taste[axis]) || 0);
   }
@@ -76,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
           slotId: base.id, effId: swap.id, label: swap.label, amount: swap.amount, unit: swap.unit,
           role: base.role, scaling: base.scaling, addStage: base.addStage,
           essential: base.essential, removable: base.removable, sodiumPer100g: swap.sodiumPer100g,
-          taste: swap.taste, tradition: swap.tradition, note: swap.note, swapped: true
+          taste: swap.taste, tradition: swap.tradition, note: swap.note, swapped: true,
+          allergens: swap.allergens, incompatible: swap.incompatible
         };
       }
       return {
@@ -84,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
         role: base.role, scaling: base.scaling, addStage: base.addStage,
         essential: base.essential, removable: base.removable, sodiumPer100g: base.sodiumPer100g,
         taste: base.taste, tradition: base.tradition, note: base.note, swapped: false,
-        onRemove: base.onRemove, isPrimaryAcid: base.isPrimaryAcid
+        onRemove: base.onRemove, isPrimaryAcid: base.isPrimaryAcid,
+        allergens: base.allergens, incompatible: base.incompatible
       };
     });
   }
@@ -268,15 +294,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (openSlot !== ing.slotId) return '';
     let html = '<div class="ingredient-panel">';
     if (R.swapOptions[ing.slotId]) {
-      html += '<label class="panel-row"><span class="panel-label">Bytt til</span>' +
-        '<select class="ingredient-swap" data-slot="' + ing.slotId + '">' +
-        '<option value="">Standard: ' + originalLabel(ing.slotId) + '</option>';
-      R.swapOptions[ing.slotId].forEach(function (opt) {
-        const trad = opt.tradition ? ' (' + TRADITION_TEXT[opt.tradition] + ')' : '';
-        const sel = (swaps[ing.slotId] && swaps[ing.slotId].id === opt.id) ? ' selected' : '';
-        html += '<option value="' + opt.id + '"' + sel + '>' + opt.label + trad + '</option>';
-      });
-      html += '</select></label>';
+      const compat = compatibleSwaps(ing.slotId);
+      if (compat.length === 0) {
+        html += '<p class="panel-no-swaps">Ingen bytter passer de valgte filtrene.</p>';
+      } else {
+        html += '<label class="panel-row"><span class="panel-label">Bytt til</span>' +
+          '<select class="ingredient-swap" data-slot="' + ing.slotId + '">' +
+          '<option value="">Standard: ' + originalLabel(ing.slotId) + '</option>';
+        compat.forEach(function (opt) {
+          const trad = opt.tradition ? ' (' + TRADITION_TEXT[opt.tradition] + ')' : '';
+          const sel = (swaps[ing.slotId] && swaps[ing.slotId].id === opt.id) ? ' selected' : '';
+          html += '<option value="' + opt.id + '"' + sel + '>' + opt.label + trad + '</option>';
+        });
+        html += '</select></label>';
+      }
     }
     if (ing.removable) {
       if (!removed[ing.slotId]) {
@@ -305,17 +336,22 @@ document.addEventListener('DOMContentLoaded', function () {
     listEl.innerHTML = effectiveIngredients().map(function (ing) {
       const da = displayAmount(ing, comp, balance);
       const removedClass = removed[ing.slotId] ? ' ingredient-removed' : '';
+      const vList = removed[ing.slotId] ? [] : violations(ing);
+      const flagClass = vList.length ? ' ingredient-flagged' : '';
       const hasUnitSelect = R.unitOptions && R.unitOptions[ing.effId] && R.unitOptions[ing.effId].length > 1;
       const tip = ingredientTip(ing);
       const nameClass = tip ? 'ingredient-name has-tip' : 'ingredient-name';
       const nameAttr = tip ? ' data-tip="' + esc(tip) + '"' : '';
-      return '<li class="ingredient' + removedClass + '">' +
+      const flagBadge = vList.length
+        ? '<span class="ingredient-flag-badge">' + esc(vList.join(', ')) + '</span>'
+        : '';
+      return '<li class="ingredient' + removedClass + flagClass + '">' +
         '<span class="ingredient-qty">' +
           '<span class="ingredient-amount">' + da.text + '</span>' +
           (hasUnitSelect ? unitMarkup(ing) : '<span class="unit-label">' + da.unit + '</span>') +
         '</span>' +
         '<span class="' + nameClass + '"' + nameAttr + '>' + ing.label + traditionBadge(ing) + noteMarkup(ing) + '</span>' +
-        editButton(ing) + removedTip(ing) + panelMarkup(ing) +
+        flagBadge + editButton(ing) + removedTip(ing) + panelMarkup(ing) +
       '</li>';
     }).join('');
   }
@@ -358,6 +394,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     precise = false;
     openSlot = null;
+  }
+
+  /* ----- Allergi- og diettfilter ----- */
+  function buildDietFilter() {
+    var host = document.getElementById('diet-filter');
+    if (!host) return;
+    var allergenItems = [
+      { id: 'dairy',     label: 'Meieri/laktose' },
+      { id: 'egg',       label: 'Egg' },
+      { id: 'gluten',    label: 'Gluten' },
+      { id: 'shellfish', label: 'Skalldyr' },
+      { id: 'fish',      label: 'Fisk' },
+      { id: 'nuts',      label: 'Nøtter' }
+    ];
+    var dietItems = [
+      { id: 'vegan',         label: 'Vegan' },
+      { id: 'vegetarian',    label: 'Vegetar' },
+      { id: 'pescetarian',   label: 'Pesketarian' },
+      { id: 'pregnancy',     label: 'Gravid' },
+      { id: 'sugarfree',     label: 'Sukkerfri' },
+      { id: 'childfriendly', label: 'Barnevennlig' }
+    ];
+    function col(title, items, type) {
+      return '<div><p class="filter-column-title">' + title + '</p>' +
+        items.map(function (item) {
+          var checked = (type === 'allergen' ? activeAllergens : activeDiets).has(item.id) ? ' checked' : '';
+          return '<label class="filter-check"><input type="checkbox" data-filter-type="' + type +
+            '" data-filter-id="' + item.id + '"' + checked + '> ' + item.label + '</label>';
+        }).join('') +
+      '</div>';
+    }
+    host.innerHTML = '<div class="diet-filter"><div class="diet-filter-grid">' +
+      col('Allergi', allergenItems, 'allergen') +
+      col('Annet', dietItems, 'diet') +
+      '</div></div>';
   }
 
   /* ----- Kompleksitetsvelger ----- */
@@ -424,6 +495,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const resetBtn = document.getElementById('reset-recipe');
   if (resetBtn) resetBtn.addEventListener('click', function () { clearCustomizations(); buildPrecisionToggle(); render(); });
 
+  const dietFilterHost = document.getElementById('diet-filter');
+  if (dietFilterHost) {
+    dietFilterHost.addEventListener('change', function (e) {
+      const cb = e.target.closest('input[type="checkbox"][data-filter-id]');
+      if (!cb) return;
+      const type = cb.dataset.filterType, id = cb.dataset.filterId;
+      if (type === 'allergen') {
+        if (cb.checked) activeAllergens.add(id); else activeAllergens.delete(id);
+      } else {
+        if (cb.checked) activeDiets.add(id); else activeDiets.delete(id);
+      }
+      render();
+    });
+  }
+
   listEl.addEventListener('click', function (e) {
     const edit = e.target.closest('.ingredient-edit-btn');
     if (edit) { const slot = edit.dataset.slot; openSlot = (openSlot === slot) ? null : slot; render(); return; }
@@ -469,5 +555,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ----- Start ----- */
   buildComplexitySelector();
   buildPrecisionToggle();
+  buildDietFilter();
   render();
 });

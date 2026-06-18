@@ -1101,6 +1101,69 @@ body::before {
   opacity: 1; /* tipset skal være tydelig selv om raden er nedtonet */
 }
 
+/* Allergi- og diettfilter: to-kolonnevisning over ingredienslisten. */
+.diet-filter {
+  margin-bottom: 20px;
+}
+.diet-filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 24px 12px;
+}
+.filter-column-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+}
+.filter-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 0;
+  accent-color: var(--accent);
+}
+
+/* Ingrediens som kolliderer med valgte filtre. */
+.ingredient-flagged {
+  border-left: 3px solid #c07a00;
+  padding-left: 8px;
+  margin-left: -11px;
+}
+.ingredient-flagged .ingredient-name {
+  opacity: .7;
+}
+.ingredient-flag-badge {
+  display: inline-block;
+  background: #fff6e0;
+  border: 1px solid #e0b84a;
+  color: #7a4e00;
+  border-radius: 4px;
+  font-size: 11.5px;
+  padding: 2px 7px;
+  margin-left: 6px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Melding i byttepanel når ingen bytter er kompatible med aktive filtre. */
+.panel-no-swaps {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0 8px;
+  font-style: italic;
+}
+
 /* Inline-panel under en ingrediens (bytte/fjern). Tar full bredde i raden. */
 .ingredient-panel {
   flex-basis: 100%;
