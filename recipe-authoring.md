@@ -76,6 +76,48 @@ window.RECIPE = {
 
 ---
 
+## Allergi- og diettfilter
+
+Filteret vises automatisk på alle sider med `<div id="diet-filter"></div>` i HTML-en.
+Det er **ingen motorendring** nødvendig for nye retter — bare tagging i datafilen.
+
+### Ingrediens-felt (tillegg)
+| Felt | Forklaring |
+|---|---|
+| `allergens` | `["dairy","egg","gluten","shellfish","fish","nuts"]` — ingrediensens faktiske allergener. Mangler feltet: ingen advarsel vises. |
+| `incompatible` | `["vegan","vegetarian","pescetarian","pregnancy","sugarfree","childfriendly"]` — kostholdsvalg som er uforenlige. |
+
+Samme felt settes også på **byttalternativer** i `swapOptions`.
+
+### Taggingsprinsipper
+| Hvem spiser hva | Ikke kompatibel med |
+|---|---|
+| Meieri (fløte/smør/melk/ost) | `vegan` |
+| Egg | `vegan` |
+| Fisk | `vegan`, `vegetarian` |
+| Skalldyr | `vegan`, `vegetarian` |
+| Bløtdyr (blåskjell/kamskjell/blekksprut) | `vegan`, `vegetarian` — men *ikke* `allergens: ["shellfish"]` (eget allergen i EU-lov) |
+| Kjøtt/fjærkre/vilt | `vegan`, `vegetarian`, `pescetarian` |
+| Alkohol | `pregnancy`, `childfriendly` |
+| Sukker/honning/sirup | `sugarfree` |
+| Hvetemel | `allergens: ["gluten"]` |
+| Nøtter | `allergens: ["nuts"]` |
+
+### Sjekkliste for allergi i en ny rett
+- [ ] `<div id="diet-filter"></div>` lagt til i HTML-malen (før `.recipe-customize`)
+- [ ] Alle fisk-ingredienser tagget `allergens: ["fish"], incompatible: ["vegan","vegetarian"]`
+- [ ] Alle skalldyr tagget `allergens: ["shellfish"], incompatible: ["vegan","vegetarian"]`
+- [ ] Alle meieri-ingredienser tagget `allergens: ["dairy"], incompatible: ["vegan"]`
+- [ ] Alle kjøtt/fjærkre tagget `incompatible: ["vegan","vegetarian","pescetarian"]`
+- [ ] Sukker/søtning tagget `incompatible: ["sugarfree"]` der det er relevant
+- [ ] Alkohol tagget `incompatible: ["pregnancy","childfriendly"]`
+- [ ] Samme tagging gjort på relevante **byttalternativer** i `swapOptions`
+
+> **Uten tagging er filteret stille, ikke feil** — advarsler vises bare for taggede
+> ingredienser. En rett med null tags fungerer teknisk, men gir ingen nyttige advarsler.
+
+---
+
 ## Lærdom-logg (oppdateres per rett)
 
 **paella** (første rett) — etablerte mønsteret: tre kompleksiteter, kuraterte
@@ -120,6 +162,14 @@ ting (mel, sukker, hevemiddel, væske) = `linear`; rene smakstilsetninger
 
 → **Fem retter på tvers av format (hovedrett, suppe, dessert, to bakst), de tre
   siste uten en eneste motorendring. Motoren er moden – klar til å skrive skillen.**
+
+**Allergi- og diettfilter** (alle 5 sider samtidig) — liten motorendring
+(`activeAllergens`/`activeDiets`-Set, `violations()`, `compatibleSwaps()`,
+`buildDietFilter()` i `recipe-adapter.js`). Filteret er **generisk og datafil-drevet**:
+en ny rett trenger kun `allergens`/`incompatible`-felt i datafilen + én `<div id="diet-filter">` i HTML.
+Uten tagging er filteret stille (ingen feil). Bløtdyr (blåskjell/kamskjell) tagges
+kun `incompatible: ["vegan","vegetarian"]`, ikke `allergens: ["shellfish"]` —
+de er eget allergen i EU-lov (bløtdyr ≠ krepsdyr).
 
 **"Nøyaktig" (gram)-bryter** (først på safraniskrem, kompleks-nivå) — liten
 motorendring (`formatAmountPrecise` i `recipe.js`, en bryter + `unitState`-
