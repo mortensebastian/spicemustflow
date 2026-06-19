@@ -210,15 +210,21 @@ auto-tilpasning; store kostholdsomlegginger gjør det ikke — de endrer hva ret
 skal fjerne både reker og blåskjell/kamskjell/blekksprut, så alle får
 `allergens: ["shellfish"]`.
 
-**"Nøyaktig" (gram)-bryter** (først på safraniskrem, kompleks-nivå) — liten
+**"Nøyaktig" (gram)-bryter** (nå på alle fem retter, kompleks-nivå) — liten
 motorendring (`formatAmountPrecise` i `recipe.js`, en bryter + `unitState`-
 override i `recipe-adapter.js`). For at en kompleks-rett skal kunne vise alt
 i gram, må **alle ingredienser som ikke allerede er `g`/`stk`** ha både
-`density` og `"g"` i `unitOptions`. `stk`-ingredienser (egg) holdes utenfor
-med vilje – "6,7 stk" gir ikke mening. Sjekkliste for neste kompleks-rett som
-skal støtte dette: gå gjennom `kompleks.ingredients`, og for hver med enhet
-`dl`/`ss`/`ts`/`ml`, sørg for `density[id]` og legg `"g"` til
-`unitOptions[id]`.
+`density` og `"g"` i `unitOptions`. `stk`-ingredienser (egg, sitron) holdes
+utenfor med vilje – "6,7 stk" gir ikke mening; rene «smak til»-garnityr i
+`kvist`/herbe-enheter forblir også som de er. Sjekkliste for neste kompleks-rett
+som skal støtte dette: gå gjennom `kompleks.ingredients`, og for hver med enhet
+`dl`/`ss`/`ts`/`ml`, sørg for `density[id]` og legg `"g"` til `unitOptions[id]`.
+Husk også `<div id="precision-toggle"></div>` i `.recipe-customize` i HTML-en.
+
+Utrullingen til de andre fire: bare data + HTML, ingen motorendring. Nye `g`:
+paella `stock`/`fish_stock`/`veg_stock`; fiskesuppe `stock`/`wine`/`olive_oil`/
+`tomato_paste`; pannekake `milk`/`cardamom`; sjokoladekake `coffee` +
+`baking_powder` (ny `density: 0.9`).
 
 
 

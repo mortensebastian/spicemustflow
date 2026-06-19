@@ -105,13 +105,14 @@ window.RECIPE = {
   servedAcid: null,
 
   density: {
-    flour: 0.55, gf_flour: 0.55, sugar: 0.85, cocoa: 0.45,
+    flour: 0.55, gf_flour: 0.55, sugar: 0.85, cocoa: 0.45, baking_powder: 0.9,
     milk: 1.03, coffee: 1, plant_milk: 1.03, oil: 0.92, butter: 0.95, dark_chocolate: 1
   },
   pieceWeight: { egg: 55 },
   unitOptions: {
     flour: ["dl", "ml", "g"], sugar: ["dl", "ml", "g"], cocoa: ["dl", "ml", "g"],
-    milk: ["dl", "ml"], coffee: ["dl", "ml"], oil: ["dl", "ml", "ss"]
+    milk: ["dl", "ml"], coffee: ["dl", "ml", "g"], oil: ["dl", "ml", "ss"],
+    baking_powder: ["ts", "g"]
   },
   bulkRoles: ["bulk", "liquid", "binder"],
   levers: [],          // bakst styres av forhold, ikke smakslevere

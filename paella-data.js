@@ -186,7 +186,7 @@ window.RECIPE = {
   // Hvilke enheter man kan bytte mellom per ingrediens.
   unitOptions: {
     rice: ["dl", "ml", "g"],
-    stock: ["dl", "ml"], fish_stock: ["dl", "ml"], veg_stock: ["dl", "ml"],
+    stock: ["dl", "ml", "g"], fish_stock: ["dl", "ml", "g"], veg_stock: ["dl", "ml", "g"],
     olive_oil: ["ss", "ts", "ml", "g"],
     smoked_paprika: ["ts", "g"], sweet_paprika: ["ts", "g"],
     turmeric_paprika: ["ts", "g"], salt_added: ["ts", "g"]

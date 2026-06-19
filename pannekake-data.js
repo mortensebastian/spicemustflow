@@ -105,8 +105,9 @@ window.RECIPE = {
   },
   pieceWeight: { egg: 55 },
   unitOptions: {
-    flour: ["dl", "ml", "g"], milk: ["dl", "ml"],
-    sugar: ["ss", "ts", "g"], butter: ["ss", "g"], brown_butter: ["ss", "g"]
+    flour: ["dl", "ml", "g"], milk: ["dl", "ml", "g"],
+    sugar: ["ss", "ts", "g"], butter: ["ss", "g"], brown_butter: ["ss", "g"],
+    cardamom: ["ts", "g"]
   },
   bulkRoles: ["bulk", "liquid", "binder"],
   levers: [],          // ingen auto-balanse – bakst styres av forhold, ikke smakslevere
