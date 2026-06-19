@@ -1,33 +1,63 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lussekatter – safran og julekrydder</title>
+  <title>Lussekatter – myke safranboller steg for steg | Velkomponert</title>
+  <meta name="description" content="Myke, gylne lussekatter med safran i tre nivåer – fra klassisk grunnoppskrift til brunet smør og appelsinskall. Juster antall og tilpass (glutenfritt, melkefritt, eggfritt).">
 
-  <!-- Fonter for Lussekatter: Fraunces (overskrifter) + EB Garamond (brødtekst) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
-
-  <!-- Først felles struktur, så Lussekatter sitt tema (farger/fonter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style-felles.css">
   <link rel="stylesheet" href="style-lussekatter.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Lussekatter",
+    "description": "Myke, gylne safranboller – den norske juleklassikeren til Lucia og julebaksten.",
+    "recipeCategory": "Baking",
+    "recipeCuisine": "Norsk",
+    "keywords": "lussekatter, safranboller, julebakst, lucia, safran",
+    "recipeYield": "24 stykker",
+    "prepTime": "PT30M",
+    "cookTime": "PT10M",
+    "totalTime": "PT2H",
+    "recipeIngredient": [
+      "5 dl helmelk",
+      "150 g smør",
+      "1 g safran",
+      "50 g fersk gjær",
+      "1,5 dl sukker",
+      "0,5 ts malt kardemomme",
+      "1 ts vaniljesukker",
+      "1 ts salt",
+      "2 egg",
+      "14 dl hvetemel",
+      "50 g rosiner til pynt"
+    ],
+    "recipeInstructions": [
+      {"@type": "HowToStep", "text": "Smelt smøret i melken, varm til fingervarmt og bløtlegg safranen."},
+      {"@type": "HowToStep", "text": "Smuldre gjæren i den lune safranmelken."},
+      {"@type": "HowToStep", "text": "Tilsett sukker, kardemomme, vanilje, salt og egg. Arbeid inn melet til en smidig deig."},
+      {"@type": "HowToStep", "text": "La heve til dobbel størrelse, ca. 45–60 minutter."},
+      {"@type": "HowToStep", "text": "Form til S-er, trykk rosin i krøllene og etterhev ~20 minutter."},
+      {"@type": "HowToStep", "text": "Pensle med egg og stek på 220 °C i 8–10 minutter til gylne."}
+    ]
+  }
+  </script>
 </head>
 
-<!-- data-storefront="lussekatter" → bare julebutikkens produkter vises her -->
-<body data-storefront="lussekatter">
+<!-- --recipe-image gir siden et rett-bilde øverst som toner ut nedover. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/lussekatter.jpg');">
 
   <!-- ===== Toppmeny ===== -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="lussekatter.html">Lussekatter</a>
+      <a class="logo" href="index.html">Velkomponert</a>
       <nav class="nav-links">
-        <a href="lussekatter.html">Hjem</a>
-        <a href="#oppskrift">Oppskrift</a>
-        <!-- ?butikk=lussekatter gir kurven det julete temaet -->
-        <a class="cart-link" href="handlekurv.html?butikk=lussekatter">
-          Handlekurv <span id="cart-count">0</span>
-        </a>
+        <a href="index.html">Alle oppskrifter</a>
       </nav>
     </div>
   </header>
@@ -35,179 +65,76 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="container">
-      <h1>Ekte safran til jul</h1>
-      <p>Ren safran til julebaksten – og som gave. Vakkert pakket, klart til høytiden.</p>
-      <a class="button" href="#produkter">Se utvalget</a>
+      <h1>Lussekatter</h1>
+      <p>Den norske juleklassikeren – myke, gylne safranboller til Lucia og julebaksten. Prøv brunet smør og appelsinskall på kompleks-nivå.</p>
     </div>
   </section>
 
   <!-- ===== Oppskrift =====
-       En tydelig lussekatt-oppskrift, med plassholder for video øverst.
-       Denne vises uansett – den er innhold, ikke et produkt. -->
+       Ingredienser og fremgangsmåte rendres av recipe-adapter.js fra
+       lussekatter-data.js. Velg nivå, juster antall, og bruk «endre» ved en
+       ingrediens for å bytte/fjerne. -->
   <section class="recipe" id="oppskrift">
     <div class="container">
-      <h2 class="section-title">Lussekatter med safran</h2>
-      <p class="recipe-intro">Den norske juleklassikeren – myke, gylne boller med safran. Oppskriften gir rundt 24 stykker.</p>
+      <h2 class="section-title">Slik lager du lussekatter</h2>
+      <p class="recipe-intro">Velg nivå, juster antall, og tilpass gjerne (glutenfritt mel, melkefri melk, eggfritt). Grunnoppskriften gir 24 lussekatter.</p>
 
-      <!-- Skaler oppskriften: recipe.js regner om mengdene under når
-           antallet endres. 24 stykker er utgangspunktet (data-amount-verdiene). -->
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
       <div class="recipe-scale">
         <label for="recipe-scale-input">Antall lussekatter</label>
         <div class="scale-controls">
           <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre lussekatter">−</button>
-          <input type="number" id="recipe-scale-input" value="24" min="6" max="96" step="6" data-base-yield="24">
+          <input type="number" id="recipe-scale-input" value="24" min="12" max="48" step="12" data-base-yield="24">
           <button type="button" class="scale-button" id="scale-increase" aria-label="Flere lussekatter">+</button>
         </div>
       </div>
 
-      <div class="recipe-video">
-        <iframe src="https://www.youtube.com/embed/O4n1idqdHyY" title="Lussekatter-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
       </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
 
       <div class="recipe-layout">
-
-        <!-- Ingredienser
-             Hver mengde har data-amount/data-unit (verdien for 24 stykker)
-             og data-units (måleenheter man kan bytte mellom). data-density
-             er hvor mange gram én milliliter veier, og brukes til å regne
-             om mellom volum (dl/ss/ts) og vekt (g). recipe.js gjør jobben. -->
         <div>
           <h3>Ingredienser</h3>
-          <ul class="recipe-ingredients">
-            <li class="ingredient" data-amount="5" data-unit="dl" data-density="1.03" data-units="dl,ml,g">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">5</span>
-                <select class="unit-select" aria-label="Måleenhet for melk">
-                  <option value="dl" selected>dl</option>
-                  <option value="ml">ml</option>
-                  <option value="g">g</option>
-                </select>
-              </span>
-              melk
-            </li>
-            <li class="ingredient" data-amount="150" data-unit="g" data-density="0.95" data-units="g,dl,ss,ts">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">150</span>
-                <select class="unit-select" aria-label="Måleenhet for smør">
-                  <option value="g" selected>g</option>
-                  <option value="dl">dl</option>
-                  <option value="ss">ss</option>
-                  <option value="ts">ts</option>
-                </select>
-              </span>
-              smør
-            </li>
-            <li class="ingredient" data-amount="1" data-unit="g" data-units="g">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">1</span>
-                <span class="unit-label">g</span>
-              </span>
-              safran (1 pose)
-            </li>
-            <li class="ingredient" data-amount="50" data-unit="g" data-density="1" data-units="g,dl">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">50</span>
-                <select class="unit-select" aria-label="Måleenhet for gjær">
-                  <option value="g" selected>g</option>
-                  <option value="dl">dl</option>
-                </select>
-              </span>
-              gjær
-            </li>
-            <li class="ingredient" data-amount="1.5" data-unit="dl" data-density="0.85" data-units="dl,g,ss">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">1,5</span>
-                <select class="unit-select" aria-label="Måleenhet for sukker">
-                  <option value="dl" selected>dl</option>
-                  <option value="g">g</option>
-                  <option value="ss">ss</option>
-                </select>
-              </span>
-              sukker
-            </li>
-            <li class="ingredient" data-amount="1" data-unit="ts" data-density="1.2" data-units="ts,g">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">1</span>
-                <select class="unit-select" aria-label="Måleenhet for salt">
-                  <option value="ts" selected>ts</option>
-                  <option value="g">g</option>
-                </select>
-              </span>
-              salt
-            </li>
-            <li class="ingredient" data-amount="1" data-unit="stk" data-units="stk">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">1</span>
-                <span class="unit-label">stk</span>
-              </span>
-              egg
-            </li>
-            <li class="ingredient" data-amount="14" data-unit="dl" data-density="0.6" data-units="dl,g">
-              <span class="ingredient-qty">
-                <span class="ingredient-prefix">ca.</span>
-                <span class="ingredient-amount">14</span>
-                <select class="unit-select" aria-label="Måleenhet for hvetemel">
-                  <option value="dl" selected>dl</option>
-                  <option value="g">g</option>
-                </select>
-              </span>
-              hvetemel
-            </li>
-            <li class="ingredient ingredient-static">Rosiner til pynt</li>
-            <li class="ingredient" data-amount="1" data-unit="stk" data-units="stk">
-              <span class="ingredient-qty">
-                <span class="ingredient-amount">1</span>
-                <span class="unit-label">stk</span>
-              </span>
-              egg til pensling
-            </li>
-          </ul>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
         </div>
-
-        <!-- Fremgangsmåte -->
         <div>
           <h3>Slik gjør du</h3>
-          <ol class="recipe-steps">
-            <li>Smelt smøret i en kjele, hell i melken og varm til fingervarmt. Smuldre safranen oppi, så farge og aroma trekker ut.</li>
-            <li>Løs opp gjæren i den lune melkeblandingen.</li>
-            <li>Rør inn sukker, salt og egg. Tilsett melet litt etter litt og elt til en smidig, blank deig. Spar igjen litt mel så deigen ikke blir for fast.</li>
-            <li>La deigen heve under et klede til dobbel størrelse, ca. 45 minutter.</li>
-            <li>Del deigen i emner, rull hver til en pølse og form til en S. Trykk en rosin i hver krøll.</li>
-            <li>Etterhev på stekebrett i ca. 20 minutter, og pensle med sammenvispet egg.</li>
-            <li>Stek midt i ovnen på 220 °C i 8–10 minutter til de er gylne. Avkjøl på rist.</li>
-          </ol>
+          <ol class="recipe-steps" id="step-list"></ol>
         </div>
-
       </div>
+
+      <div class="recipe-cta">
+        <p>Prøv kompleks-nivå for brunet smør og appelsinskall – lussekatter som imponerer.</p>
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
     </div>
   </section>
-
-  <!-- ===== Produkter (vises når butikken er på) ===== -->
-  <section class="products" id="produkter">
-    <div class="container">
-      <h2 class="section-title">Safran og julekrydder</h2>
-      <!-- shop.js fyller dette rutenettet med produktene merket "lussekatter" -->
-      <div class="product-grid" id="product-grid"></div>
-    </div>
-  </section>
-
-  <!-- ===== Venteliste (vises når butikken er av) =====
-       Tom beholder. waitlist.js fyller den med påmeldingsskjemaet. -->
-  <section class="waitlist" id="waitlist"></section>
 
   <!-- ===== Bunntekst ===== -->
   <footer class="site-footer">
     <div class="container">
-      <p>Lussekatter – ekte safran til julen.</p>
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
     </div>
   </footer>
 
-  <!-- Rekkefølge: innstillinger → data → kurv → butikk → venteliste → oppskrift -->
-  <script src="config.js"></script>
-  <script src="products.js"></script>
-  <script src="cart.js"></script>
-  <script src="shop.js"></script>
-  <script src="waitlist.js"></script>
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="lussekatter-data.js"></script>
   <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
 </body>
 </html>
