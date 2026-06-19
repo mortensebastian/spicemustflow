@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lussekatter – safran og julekrydder</title>
+  <title>Lussekatter med safran – oppskrift steg for steg</title>
 
-  <!-- Fonter for Lussekatter: Fraunces (overskrifter) + EB Garamond (brødtekst) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
 
-  <!-- Først felles struktur, så Lussekatter sitt tema (farger/fonter) -->
   <link rel="stylesheet" href="style-felles.css">
   <link rel="stylesheet" href="style-lussekatter.css">
 </head>
+<body>
 
-<!-- data-storefront="lussekatter" → bare julebutikkens produkter vises her -->
-<body data-storefront="lussekatter">
-
-  <!-- ===== Toppmeny ===== -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="lussekatter.html">Lussekatter</a>
+      <a class="logo" href="index.html">Oppskrifter</a>
       <nav class="nav-links">
-        <a href="lussekatter.html">Hjem</a>
+        <a href="index.html">Alle oppskrifter</a>
         <a href="#oppskrift">Oppskrift</a>
-        <!-- ?butikk=lussekatter gir kurven det julete temaet -->
-        <a class="cart-link" href="handlekurv.html?butikk=lussekatter">
-          Handlekurv <span id="cart-count">0</span>
-        </a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="container">
-      <h1>Ekte safran til jul</h1>
-      <p>Ren safran til julebaksten – og som gave. Vakkert pakket, klart til høytiden.</p>
-      <a class="button" href="#produkter">Se utvalget</a>
+      <h1>Lussekatter med safran</h1>
+      <p>Den norske juleklassikeren – myke, gylne boller med ekte safran. Til Lucia og julebaksten.</p>
+      <a class="button" href="#oppskrift">Se oppskriften</a>
     </div>
   </section>
 
@@ -182,32 +172,12 @@
     </div>
   </section>
 
-  <!-- ===== Produkter (vises når butikken er på) ===== -->
-  <section class="products" id="produkter">
-    <div class="container">
-      <h2 class="section-title">Safran og julekrydder</h2>
-      <!-- shop.js fyller dette rutenettet med produktene merket "lussekatter" -->
-      <div class="product-grid" id="product-grid"></div>
-    </div>
-  </section>
-
-  <!-- ===== Venteliste (vises når butikken er av) =====
-       Tom beholder. waitlist.js fyller den med påmeldingsskjemaet. -->
-  <section class="waitlist" id="waitlist"></section>
-
-  <!-- ===== Bunntekst ===== -->
   <footer class="site-footer">
     <div class="container">
-      <p>Lussekatter – ekte safran til julen.</p>
+      <p>Lussekatter – den norske juleklassikeren med safran.</p>
     </div>
   </footer>
 
-  <!-- Rekkefølge: innstillinger → data → kurv → butikk → venteliste → oppskrift -->
-  <script src="config.js"></script>
-  <script src="products.js"></script>
-  <script src="cart.js"></script>
-  <script src="shop.js"></script>
-  <script src="waitlist.js"></script>
   <script src="recipe.js"></script>
 </body>
 </html>
