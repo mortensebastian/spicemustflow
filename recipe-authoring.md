@@ -116,6 +116,32 @@ Samme felt settes også på **byttalternativer** i `swapOptions`.
 > **Uten tagging er filteret stille, ikke feil** — advarsler vises bare for taggede
 > ingredienser. En rett med null tags fungerer teknisk, men gir ingen nyttige advarsler.
 
+### Slik oppfører filteret seg (dynamisk tilpasning)
+Når et filter krysses av, transformerer motoren oppskriften automatisk. For hver
+konfliktingrediens, i denne rekkefølgen:
+1. **Bytt** til første kompatible alternativ i `swapOptions` (f.eks. vegan:
+   fløte → kokoskrem, kyllingkraft → grønnsakskraft).
+2. Hvis ingen kompatibel bytte finnes, men `removable: true` → **fjern + juster
+   opp de andre** (gjenbruker maintain-yield-kompensasjonen).
+3. Hvis `removable: false` og ingen kompatibel bytte → ingrediensen blir stående
+   **flagget**, med en ærlig melding («retten kan ikke gjøres helt vegansk»).
+
+**Konsekvens for datakvalitet:** hvor god tilpasningen blir avhenger helt av
+`swapOptions`. Vil du at en rett skal kunne bli vegansk/vegetarisk, må du legge
+inn et **kompatibelt bytte** for hver ikke-fjernbar konfliktingrediens (typisk
+proteinet og kraften). Eksempel (paella): `chicken` fikk et `chickpeas`-bytte
+uten `incompatible`, og `stock` har `veg_stock`, slik at vegan-paella faktisk
+blir en komplett rett. En fiskesuppe har derimot ingen vegansk fiskekraft → den
+flagges ærlig som ikke-veganiserbar.
+
+**Relevante avkrysninger vises kun:** motoren regner ut hvilke tags som faktisk
+finnes i retten (alle nivåer + alle bytter) og viser bare de avkrysningene. Egg
+dukker ikke opp på en fiskesuppe.
+
+**Manuelle overstyringer respekteres:** bytter/fjerner brukeren en konkret
+ingrediens selv, «pinnes» den og auto-tilpasningen lar den være. «Tilbakestill»
+nullstiller brukerens egne valg; filteret utleder på nytt.
+
 ---
 
 ## Lærdom-logg (oppdateres per rett)
@@ -170,6 +196,15 @@ en ny rett trenger kun `allergens`/`incompatible`-felt i datafilen + én `<div i
 Uten tagging er filteret stille (ingen feil). Bløtdyr (blåskjell/kamskjell) tagges
 kun `incompatible: ["vegan","vegetarian"]`, ikke `allergens: ["shellfish"]` —
 de er eget allergen i EU-lov (bløtdyr ≠ krepsdyr).
+
+**Dynamisk tilpasning** (oppfølging) — filteret gikk fra passiv advarsel til
+aktiv transformasjon: bytt → fjern+kompenser → flagg (ufiksbart). Motorendring i
+`recipe-adapter.js` (`applyDietAdaptations()`, `relevantFilters()`, pinning av
+manuelle valg). Ren data-drevet og generell — ingen rett-spesifikk logikk. Eneste
+datatillegg: ett `chickpeas`-bytte i paella så vegan-paella blir komplett.
+Lærdom: kvaliteten på auto-tilpasningen = kvaliteten på `swapOptions`. Skal en
+rett kunne bli vegan/vegetar, legg inn kompatible bytter for ikke-fjernbare
+proteiner/krafter.
 
 **"Nøyaktig" (gram)-bryter** (først på safraniskrem, kompleks-nivå) — liten
 motorendring (`formatAmountPrecise` i `recipe.js`, en bryter + `unitState`-

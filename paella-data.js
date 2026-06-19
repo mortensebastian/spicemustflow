@@ -27,7 +27,10 @@ const swapOptions = {
     { id: "chorizo", label: "Chorizo", amount: 250, unit: "g",
       sodiumPer100g: 1235, tradition: "non-traditional", taste: { umami: 2 },
       note: "Salt og fet, ikke tradisjonell. Veldig salt, så tilsatt salt justeres ned automatisk. Stekes tidlig for paprikaolje.",
-      incompatible: ["vegan", "vegetarian", "pescetarian"] }
+      incompatible: ["vegan", "vegetarian", "pescetarian"] },
+    { id: "chickpeas", label: "Kikerter (plantebasert)", amount: 250, unit: "g",
+      sodiumPer100g: 25, tradition: "non-traditional", taste: { umami: 1 },
+      note: "Plantebasert proteinkilde; gir fylde uten kjøtt. Vendes inn med risen." }
   ],
 
   prawns: [

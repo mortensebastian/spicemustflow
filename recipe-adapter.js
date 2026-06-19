@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let precise = false;
   const activeAllergens = new Set();
   const activeDiets = new Set();
+  const pinned = {};                 // slots brukeren har tatt eksplisitt kontroll over
+  let dietActions = { swapped: [], removed: [], unfixable: [] };
 
   function activeRecipe() { return R.recipes[complexity]; }
   function baseServings() { return activeRecipe().servings; }
@@ -362,6 +364,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const box = document.getElementById('recipe-messages');
     if (!box) return;
     const msgs = [];
+
+    // Diett-tilpasninger først (mest relevant for brukeren akkurat nå).
+    if (dietActions.swapped.length) {
+      msgs.push({ text: 'Tilpasset: byttet ' + dietActions.swapped.map(function (s) {
+        return s.from + ' → ' + s.to;
+      }).join(', ') + '.', strong: false });
+    }
+    if (dietActions.removed.length) {
+      msgs.push({ text: 'Tilpasset: fjernet ' + dietActions.removed.join(', ') +
+        ' og justerte opp resten.', strong: false });
+    }
+    dietActions.unfixable.forEach(function (u) {
+      const why = u.why.join('/');
+      msgs.push({ text: u.label + ' passer ikke ' + why + ' og kan ikke byttes ut – ' +
+        'retten kan ikke gjøres helt ' + why.toLowerCase() + '.', strong: true });
+    });
+
     const lm = R.leverMessages || {};
     Object.keys(balance.levers).forEach(function (id) {
       const lev = balance.levers[id];
@@ -376,9 +395,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
   }
 
-  function hasChanges() { return Object.keys(swaps).length > 0 || Object.keys(removed).length > 0; }
+  // Kun brukerens egne (pinnede) endringer teller for «Tilbakestill» – diett-
+  // drevne bytter/fjerninger styres av avkrysningene, ikke reset-knappen.
+  function hasChanges() { return Object.keys(pinned).length > 0; }
 
   function render() {
+    applyDietAdaptations();
     const comp = computeCompensation();
     const balance = computeBalance(comp);
     renderIngredients(comp, balance);
@@ -389,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function clearCustomizations() {
-    [removed, compensate, swaps, unitState, preciseUnits].forEach(function (obj) {
+    [removed, compensate, swaps, unitState, preciseUnits, pinned].forEach(function (obj) {
       Object.keys(obj).forEach(function (k) { delete obj[k]; });
     });
     precise = false;
@@ -397,9 +419,59 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ----- Allergi- og diettfilter ----- */
+
+  // Hvilke filtre er relevante for DENNE retten? Union av allergens/incompatible
+  // over alle kompleksiteter + alle bytter, slik at avkrysningene er stabile på
+  // tvers av nivåbytte og vi skjuler filtre retten aldri kan utløse (f.eks. egg
+  // i en fiskesuppe).
+  function relevantFilters() {
+    var rel = {};
+    function collect(obj) {
+      (obj.allergens || []).forEach(function (a) { rel[a] = true; });
+      (obj.incompatible || []).forEach(function (d) { rel[d] = true; });
+    }
+    Object.keys(R.recipes).forEach(function (key) {
+      (R.recipes[key].ingredients || []).forEach(collect);
+    });
+    Object.keys(R.swapOptions || {}).forEach(function (slot) {
+      (R.swapOptions[slot] || []).forEach(collect);
+    });
+    return rel;
+  }
+
+  // Aktiv tilpasning: for hver konfliktingrediens, bytt til første kompatible
+  // alternativ, ellers fjern + kompenser, ellers la den stå flagget (essensiell,
+  // ingen erstatning). Pinnede slots (brukerens egne valg) røres ikke.
+  function applyDietAdaptations() {
+    dietActions = { swapped: [], removed: [], unfixable: [] };
+    // Rydd vekk forrige rundes diett-drevne (ikke-pinnede) endringer.
+    Object.keys(swaps).forEach(function (id) { if (!pinned[id]) delete swaps[id]; });
+    Object.keys(removed).forEach(function (id) {
+      if (!pinned[id]) { delete removed[id]; delete compensate[id]; }
+    });
+    if (activeAllergens.size === 0 && activeDiets.size === 0) return;
+
+    activeRecipe().ingredients.forEach(function (base) {
+      if (pinned[base.id]) return;                  // brukeren styrer denne selv
+      if (violations(base).length === 0) return;
+      var compat = compatibleSwaps(base.id);
+      if (compat.length) {
+        swaps[base.id] = compat[0];
+        dietActions.swapped.push({ from: base.label, to: compat[0].label });
+      } else if (base.removable) {
+        removed[base.id] = true;
+        compensate[base.id] = true;
+        dietActions.removed.push(base.label);
+      } else {
+        dietActions.unfixable.push({ label: base.label, why: violations(base) });
+      }
+    });
+  }
+
   function buildDietFilter() {
     var host = document.getElementById('diet-filter');
     if (!host) return;
+    var rel = relevantFilters();
     var allergenItems = [
       { id: 'dairy',     label: 'Meieri/laktose' },
       { id: 'egg',       label: 'Egg' },
@@ -407,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { id: 'shellfish', label: 'Skalldyr' },
       { id: 'fish',      label: 'Fisk' },
       { id: 'nuts',      label: 'Nøtter' }
-    ];
+    ].filter(function (i) { return rel[i.id]; });
     var dietItems = [
       { id: 'vegan',         label: 'Vegan' },
       { id: 'vegetarian',    label: 'Vegetar' },
@@ -415,8 +487,12 @@ document.addEventListener('DOMContentLoaded', function () {
       { id: 'pregnancy',     label: 'Gravid' },
       { id: 'sugarfree',     label: 'Sukkerfri' },
       { id: 'childfriendly', label: 'Barnevennlig' }
-    ];
+    ].filter(function (i) { return rel[i.id]; });
+
+    if (!allergenItems.length && !dietItems.length) { host.innerHTML = ''; return; }
+
     function col(title, items, type) {
+      if (!items.length) return '';
       return '<div><p class="filter-column-title">' + title + '</p>' +
         items.map(function (item) {
           var checked = (type === 'allergen' ? activeAllergens : activeDiets).has(item.id) ? ' checked' : '';
@@ -514,18 +590,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const edit = e.target.closest('.ingredient-edit-btn');
     if (edit) { const slot = edit.dataset.slot; openSlot = (openSlot === slot) ? null : slot; render(); return; }
     const remove = e.target.closest('.panel-remove');
-    if (remove) { removed[remove.dataset.slot] = true; compensate[remove.dataset.slot] = true; render(); return; }
+    if (remove) { const s = remove.dataset.slot; pinned[s] = true; removed[s] = true; compensate[s] = true; render(); return; }
     const restore = e.target.closest('.panel-restore');
-    if (restore) { delete removed[restore.dataset.slot]; delete compensate[restore.dataset.slot]; render(); return; }
+    if (restore) { const s = restore.dataset.slot; pinned[s] = true; delete removed[s]; delete compensate[s]; render(); return; }
     const yes = e.target.closest('.compensate-yes');
-    if (yes) { compensate[yes.dataset.slot] = true; render(); return; }
+    if (yes) { const s = yes.dataset.slot; pinned[s] = true; compensate[s] = true; render(); return; }
     const no = e.target.closest('.compensate-no');
-    if (no) { compensate[no.dataset.slot] = false; render(); return; }
+    if (no) { const s = no.dataset.slot; pinned[s] = true; compensate[s] = false; render(); return; }
   });
   listEl.addEventListener('change', function (e) {
     const swapSel = e.target.closest('.ingredient-swap');
     if (swapSel) {
       const slot = swapSel.dataset.slot, val = swapSel.value;
+      pinned[slot] = true;
       if (!val) delete swaps[slot];
       else { const opt = (R.swapOptions[slot] || []).filter(function (o) { return o.id === val; })[0]; if (opt) swaps[slot] = opt; }
       delete unitState[slot];
