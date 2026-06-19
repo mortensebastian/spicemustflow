@@ -1101,20 +1101,19 @@ body::before {
   opacity: 1; /* tipset skal være tydelig selv om raden er nedtonet */
 }
 
-/* Allergi- og diettfilter: to-kolonnevisning over ingredienslisten. */
+/* Allergifilter: liten boks med avkryssbare allergener over ingredienslisten. */
 .diet-filter {
-  margin-bottom: 20px;
+  max-width: 480px;
+  margin: 0 auto 20px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 24px 10px;
 }
 .diet-filter-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 32px;
-  max-width: 480px;
-  margin: 0 auto;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 24px 12px;
 }
 .filter-column-title {
   margin: 0 0 8px;

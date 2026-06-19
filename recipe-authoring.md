@@ -76,67 +76,69 @@ window.RECIPE = {
 
 ---
 
-## Allergi- og diettfilter
+## Allergifilter
 
 Filteret vises automatisk på alle sider med `<div id="diet-filter"></div>` i HTML-en.
 Det er **ingen motorendring** nødvendig for nye retter — bare tagging i datafilen.
 
+> **Avgrenset til allergier med vilje.** Diett (vegan/vegetar/pesketar/lavkarbo)
+> er *ikke* en del av filteret. Store kostholdsomlegginger endrer hva retten
+> *er* (vegansk fiskesuppe = grønnsakssuppe), og halv-automatisk transformasjon
+> gir mat ingen har smakt på. Slike varianter lager vi heller som **egne,
+> håndskrevne oppskrifter** (egen `*-data.js`), på linje med enkel/medium/kompleks.
+
 ### Ingrediens-felt (tillegg)
 | Felt | Forklaring |
 |---|---|
-| `allergens` | `["dairy","egg","gluten","shellfish","fish","nuts"]` — ingrediensens faktiske allergener. Mangler feltet: ingen advarsel vises. |
-| `incompatible` | `["vegan","vegetarian","pescetarian","pregnancy","sugarfree","childfriendly"]` — kostholdsvalg som er uforenlige. |
+| `allergens` | `["dairy","egg","gluten","shellfish","fish","nuts"]` — ingrediensens faktiske allergener. Mangler feltet: ingen advarsel/tilpasning. |
 
 Samme felt settes også på **byttalternativer** i `swapOptions`.
 
 ### Taggingsprinsipper
-| Hvem spiser hva | Ikke kompatibel med |
+| Ingrediens | Tag |
 |---|---|
-| Meieri (fløte/smør/melk/ost) | `vegan` |
-| Egg | `vegan` |
-| Fisk | `vegan`, `vegetarian` |
-| Skalldyr | `vegan`, `vegetarian` |
-| Bløtdyr (blåskjell/kamskjell/blekksprut) | `vegan`, `vegetarian` — men *ikke* `allergens: ["shellfish"]` (eget allergen i EU-lov) |
-| Kjøtt/fjærkre/vilt | `vegan`, `vegetarian`, `pescetarian` |
-| Alkohol | `pregnancy`, `childfriendly` |
-| Sukker/honning/sirup | `sugarfree` |
+| Meieri (fløte/smør/melk/ost) | `allergens: ["dairy"]` |
+| Egg / eggeplomme | `allergens: ["egg"]` |
 | Hvetemel | `allergens: ["gluten"]` |
-| Nøtter | `allergens: ["nuts"]` |
+| Fisk (laks/torsk/kraft av fisk) | `allergens: ["fish"]` |
+| Krepsdyr (reker/scampi/krabbe) | `allergens: ["shellfish"]` |
+| Bløtdyr (blåskjell/kamskjell/blekksprut/clams) | `allergens: ["shellfish"]` |
+| Nøtter (pistasj/mandel) | `allergens: ["nuts"]` |
+
+> **Om «Skalldyr»:** EU skiller krepsdyr og bløtdyr som to allergener, men i
+> dagligtale dekker «skalldyr» begge, og folk med skalldyrallergi unngår som
+> regel begge. Vi bruker derfor **én** `shellfish`-tag på både reker *og*
+> blåskjell/kamskjell/blekksprut, slik at «Skalldyr»-filteret fjerner alt.
 
 ### Sjekkliste for allergi i en ny rett
 - [ ] `<div id="diet-filter"></div>` lagt til i HTML-malen (før `.recipe-customize`)
-- [ ] Alle fisk-ingredienser tagget `allergens: ["fish"], incompatible: ["vegan","vegetarian"]`
-- [ ] Alle skalldyr tagget `allergens: ["shellfish"], incompatible: ["vegan","vegetarian"]`
-- [ ] Alle meieri-ingredienser tagget `allergens: ["dairy"], incompatible: ["vegan"]`
-- [ ] Alle kjøtt/fjærkre tagget `incompatible: ["vegan","vegetarian","pescetarian"]`
-- [ ] Sukker/søtning tagget `incompatible: ["sugarfree"]` der det er relevant
-- [ ] Alkohol tagget `incompatible: ["pregnancy","childfriendly"]`
+- [ ] Alle fisk-ingredienser tagget `allergens: ["fish"]`
+- [ ] Alle skall-/bløtdyr tagget `allergens: ["shellfish"]`
+- [ ] Alle meieri-ingredienser tagget `allergens: ["dairy"]`
+- [ ] Egg, hvetemel og nøtter tagget tilsvarende
 - [ ] Samme tagging gjort på relevante **byttalternativer** i `swapOptions`
 
-> **Uten tagging er filteret stille, ikke feil** — advarsler vises bare for taggede
-> ingredienser. En rett med null tags fungerer teknisk, men gir ingen nyttige advarsler.
+> **Uten tagging er filteret stille, ikke feil** — tilpasning skjer bare for
+> taggede ingredienser.
 
 ### Slik oppfører filteret seg (dynamisk tilpasning)
-Når et filter krysses av, transformerer motoren oppskriften automatisk. For hver
-konfliktingrediens, i denne rekkefølgen:
-1. **Bytt** til første kompatible alternativ i `swapOptions` (f.eks. vegan:
-   fløte → kokoskrem, kyllingkraft → grønnsakskraft).
-2. Hvis ingen kompatibel bytte finnes, men `removable: true` → **fjern + juster
-   opp de andre** (gjenbruker maintain-yield-kompensasjonen).
-3. Hvis `removable: false` og ingen kompatibel bytte → ingrediensen blir stående
-   **flagget**, med en ærlig melding («retten kan ikke gjøres helt vegansk»).
+Når et allergen krysses av, transformerer motoren oppskriften automatisk. For
+hver ingrediens som inneholder allergenet, i denne rekkefølgen:
+1. **Bytt** til første allergivennlige alternativ i `swapOptions` (f.eks.
+   skalldyr: skalldyrkraft → fiskekraft/grønnsakskraft).
+2. Ingen trygt bytte, men `removable: true` → **fjern + juster opp de andre**
+   (gjenbruker maintain-yield-kompensasjonen).
+3. `removable: false` og ingen trygt bytte → ingrediensen blir stående
+   **flagget**, med en ærlig melding («… kan ikke byttes ut – retten passer ikke
+   ved …-allergi»).
 
-**Konsekvens for datakvalitet:** hvor god tilpasningen blir avhenger helt av
-`swapOptions`. Vil du at en rett skal kunne bli vegansk/vegetarisk, må du legge
-inn et **kompatibelt bytte** for hver ikke-fjernbar konfliktingrediens (typisk
-proteinet og kraften). Eksempel (paella): `chicken` fikk et `chickpeas`-bytte
-uten `incompatible`, og `stock` har `veg_stock`, slik at vegan-paella faktisk
-blir en komplett rett. En fiskesuppe har derimot ingen vegansk fiskekraft → den
-flagges ærlig som ikke-veganiserbar.
+**Konsekvens for datakvalitet:** hvor god tilpasningen blir avhenger av
+`swapOptions`. Skal en rett kunne bli f.eks. skalldyrfri uten å bli fjernet helt,
+legg inn et trygt bytte for den ikke-fjernbare ingrediensen (typisk kraften).
 
-**Relevante avkrysninger vises kun:** motoren regner ut hvilke tags som faktisk
-finnes i retten (alle nivåer + alle bytter) og viser bare de avkrysningene. Egg
-dukker ikke opp på en fiskesuppe.
+**Bare relevante avkrysninger vises:** motoren regner ut hvilke allergener som
+faktisk finnes i retten (alle nivåer + alle bytter) og viser kun dem. Egg dukker
+ikke opp på en fiskesuppe.
 
 **Manuelle overstyringer respekteres:** bytter/fjerner brukeren en konkret
 ingrediens selv, «pinnes» den og auto-tilpasningen lar den være. «Tilbakestill»
@@ -189,22 +191,24 @@ ting (mel, sukker, hevemiddel, væske) = `linear`; rene smakstilsetninger
 → **Fem retter på tvers av format (hovedrett, suppe, dessert, to bakst), de tre
   siste uten en eneste motorendring. Motoren er moden – klar til å skrive skillen.**
 
-**Allergi- og diettfilter** (alle 5 sider samtidig) — liten motorendring
-(`activeAllergens`/`activeDiets`-Set, `violations()`, `compatibleSwaps()`,
-`buildDietFilter()` i `recipe-adapter.js`). Filteret er **generisk og datafil-drevet**:
-en ny rett trenger kun `allergens`/`incompatible`-felt i datafilen + én `<div id="diet-filter">` i HTML.
-Uten tagging er filteret stille (ingen feil). Bløtdyr (blåskjell/kamskjell) tagges
-kun `incompatible: ["vegan","vegetarian"]`, ikke `allergens: ["shellfish"]` —
-de er eget allergen i EU-lov (bløtdyr ≠ krepsdyr).
+**Allergifilter** (alle 5 sider samtidig) — liten motorendring (`activeAllergens`,
+`violations()`, `compatibleSwaps()`, `relevantFilters()`, `applyDietAdaptations()`,
+pinning av manuelle valg i `recipe-adapter.js`). Filteret er **generisk og
+datafil-drevet**: en ny rett trenger kun `allergens`-felt i datafilen + én
+`<div id="diet-filter">` i HTML. Krysser man av et allergen, transformeres retten
+automatisk: bytt → fjern+kompenser → flagg (ufiksbart). Bare allergener som
+finnes i retten vises som avkrysning.
 
-**Dynamisk tilpasning** (oppfølging) — filteret gikk fra passiv advarsel til
-aktiv transformasjon: bytt → fjern+kompenser → flagg (ufiksbart). Motorendring i
-`recipe-adapter.js` (`applyDietAdaptations()`, `relevantFilters()`, pinning av
-manuelle valg). Ren data-drevet og generell — ingen rett-spesifikk logikk. Eneste
-datatillegg: ett `chickpeas`-bytte i paella så vegan-paella blir komplett.
-Lærdom: kvaliteten på auto-tilpasningen = kvaliteten på `swapOptions`. Skal en
-rett kunne bli vegan/vegetar, legg inn kompatible bytter for ikke-fjernbare
-proteiner/krafter.
+**Først bygget med diett også (vegan/vegetar/pesketar/gravid/sukkerfri/barnevennlig),
+så fjernet med vilje.** Lærdom: små 1:1-bytter (allergier) egner seg for
+auto-tilpasning; store kostholdsomlegginger gjør det ikke — de endrer hva retten
+*er*, og motoren leverer da mat ingen har smakt på. Slike varianter skal være
+**egne, håndskrevne oppskrifter**, ikke en filterbryter. `incompatible`-feltet og
+«Annet»-kolonnen ble derfor luket ut igjen.
+
+**Skalldyr = krepsdyr + bløtdyr (én tag).** EU skiller dem, men «Skalldyr»-filteret
+skal fjerne både reker og blåskjell/kamskjell/blekksprut, så alle får
+`allergens: ["shellfish"]`.
 
 **"Nøyaktig" (gram)-bryter** (først på safraniskrem, kompleks-nivå) — liten
 motorendring (`formatAmountPrecise` i `recipe.js`, en bryter + `unitState`-

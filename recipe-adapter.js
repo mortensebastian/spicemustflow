@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let openSlot = null;
   let precise = false;
   const activeAllergens = new Set();
-  const activeDiets = new Set();
   const pinned = {};                 // slots brukeren har tatt eksplisitt kontroll over
   let dietActions = { swapped: [], removed: [], unfixable: [] };
 
@@ -71,21 +70,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const FILTER_LABELS = {
     dairy: 'Meieri/laktose', egg: 'Egg', gluten: 'Gluten',
-    shellfish: 'Skalldyr', fish: 'Fisk', nuts: 'Nøtter',
-    vegan: 'Vegan', vegetarian: 'Vegetar', pescetarian: 'Pesketarian',
-    pregnancy: 'Gravid', sugarfree: 'Sukkerfri', childfriendly: 'Barnevennlig'
+    shellfish: 'Skalldyr', fish: 'Fisk', nuts: 'Nøtter'
   };
   function violations(ing) {
     var v = [];
     (ing.allergens || []).forEach(function (a) { if (activeAllergens.has(a)) v.push(FILTER_LABELS[a]); });
-    (ing.incompatible || []).forEach(function (d) { if (activeDiets.has(d)) v.push(FILTER_LABELS[d]); });
     return v;
   }
   function compatibleSwaps(slotId) {
     return (R.swapOptions[slotId] || []).filter(function (opt) {
       var ok = true;
       (opt.allergens || []).forEach(function (a) { if (activeAllergens.has(a)) ok = false; });
-      (opt.incompatible || []).forEach(function (d) { if (activeDiets.has(d)) ok = false; });
       return ok;
     });
   }
@@ -103,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
           role: base.role, scaling: base.scaling, addStage: base.addStage,
           essential: base.essential, removable: base.removable, sodiumPer100g: swap.sodiumPer100g,
           taste: swap.taste, tradition: swap.tradition, note: swap.note, swapped: true,
-          allergens: swap.allergens, incompatible: swap.incompatible
+          allergens: swap.allergens
         };
       }
       return {
@@ -112,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         essential: base.essential, removable: base.removable, sodiumPer100g: base.sodiumPer100g,
         taste: base.taste, tradition: base.tradition, note: base.note, swapped: false,
         onRemove: base.onRemove, isPrimaryAcid: base.isPrimaryAcid,
-        allergens: base.allergens, incompatible: base.incompatible
+        allergens: base.allergens
       };
     });
   }
@@ -365,20 +360,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!box) return;
     const msgs = [];
 
-    // Diett-tilpasninger først (mest relevant for brukeren akkurat nå).
+    // Allergitilpasninger først (mest relevant for brukeren akkurat nå).
     if (dietActions.swapped.length) {
-      msgs.push({ text: 'Tilpasset: byttet ' + dietActions.swapped.map(function (s) {
+      msgs.push({ text: 'Byttet ut for allergi: ' + dietActions.swapped.map(function (s) {
         return s.from + ' → ' + s.to;
       }).join(', ') + '.', strong: false });
     }
     if (dietActions.removed.length) {
-      msgs.push({ text: 'Tilpasset: fjernet ' + dietActions.removed.join(', ') +
-        ' og justerte opp resten.', strong: false });
+      msgs.push({ text: 'Fjernet på grunn av allergi: ' + dietActions.removed.join(', ') +
+        ' (justerte opp resten).', strong: false });
     }
     dietActions.unfixable.forEach(function (u) {
       const why = u.why.join('/');
-      msgs.push({ text: u.label + ' passer ikke ' + why + ' og kan ikke byttes ut – ' +
-        'retten kan ikke gjøres helt ' + why.toLowerCase() + '.', strong: true });
+      msgs.push({ text: u.label + ' inneholder ' + why + ' og kan ikke byttes ut – ' +
+        'denne retten passer ikke ved ' + why.toLowerCase() + '-allergi.', strong: true });
     });
 
     const lm = R.leverMessages || {};
@@ -418,17 +413,16 @@ document.addEventListener('DOMContentLoaded', function () {
     openSlot = null;
   }
 
-  /* ----- Allergi- og diettfilter ----- */
+  /* ----- Allergifilter ----- */
 
-  // Hvilke filtre er relevante for DENNE retten? Union av allergens/incompatible
-  // over alle kompleksiteter + alle bytter, slik at avkrysningene er stabile på
-  // tvers av nivåbytte og vi skjuler filtre retten aldri kan utløse (f.eks. egg
-  // i en fiskesuppe).
+  // Hvilke allergener er relevante for DENNE retten? Union over alle
+  // kompleksiteter + alle bytter, slik at avkrysningene er stabile på tvers av
+  // nivåbytte og vi skjuler allergener retten aldri inneholder (f.eks. egg i en
+  // fiskesuppe).
   function relevantFilters() {
     var rel = {};
     function collect(obj) {
       (obj.allergens || []).forEach(function (a) { rel[a] = true; });
-      (obj.incompatible || []).forEach(function (d) { rel[d] = true; });
     }
     Object.keys(R.recipes).forEach(function (key) {
       (R.recipes[key].ingredients || []).forEach(collect);
@@ -439,17 +433,18 @@ document.addEventListener('DOMContentLoaded', function () {
     return rel;
   }
 
-  // Aktiv tilpasning: for hver konfliktingrediens, bytt til første kompatible
-  // alternativ, ellers fjern + kompenser, ellers la den stå flagget (essensiell,
-  // ingen erstatning). Pinnede slots (brukerens egne valg) røres ikke.
+  // Aktiv tilpasning: for hver ingrediens med et avhuket allergen, bytt til
+  // første allergivennlige alternativ, ellers fjern + kompenser, ellers la den
+  // stå flagget (essensiell, ingen erstatning). Pinnede slots (brukerens egne
+  // valg) røres ikke.
   function applyDietAdaptations() {
     dietActions = { swapped: [], removed: [], unfixable: [] };
-    // Rydd vekk forrige rundes diett-drevne (ikke-pinnede) endringer.
+    // Rydd vekk forrige rundes filter-drevne (ikke-pinnede) endringer.
     Object.keys(swaps).forEach(function (id) { if (!pinned[id]) delete swaps[id]; });
     Object.keys(removed).forEach(function (id) {
       if (!pinned[id]) { delete removed[id]; delete compensate[id]; }
     });
-    if (activeAllergens.size === 0 && activeDiets.size === 0) return;
+    if (activeAllergens.size === 0) return;
 
     activeRecipe().ingredients.forEach(function (base) {
       if (pinned[base.id]) return;                  // brukeren styrer denne selv
@@ -480,30 +475,17 @@ document.addEventListener('DOMContentLoaded', function () {
       { id: 'fish',      label: 'Fisk' },
       { id: 'nuts',      label: 'Nøtter' }
     ].filter(function (i) { return rel[i.id]; });
-    var dietItems = [
-      { id: 'vegan',         label: 'Vegan' },
-      { id: 'vegetarian',    label: 'Vegetar' },
-      { id: 'pescetarian',   label: 'Pesketarian' },
-      { id: 'pregnancy',     label: 'Gravid' },
-      { id: 'sugarfree',     label: 'Sukkerfri' },
-      { id: 'childfriendly', label: 'Barnevennlig' }
-    ].filter(function (i) { return rel[i.id]; });
 
-    if (!allergenItems.length && !dietItems.length) { host.innerHTML = ''; return; }
+    if (!allergenItems.length) { host.innerHTML = ''; return; }
 
-    function col(title, items, type) {
-      if (!items.length) return '';
-      return '<div><p class="filter-column-title">' + title + '</p>' +
-        items.map(function (item) {
-          var checked = (type === 'allergen' ? activeAllergens : activeDiets).has(item.id) ? ' checked' : '';
-          return '<label class="filter-check"><input type="checkbox" data-filter-type="' + type +
-            '" data-filter-id="' + item.id + '"' + checked + '> ' + item.label + '</label>';
-        }).join('') +
-      '</div>';
-    }
-    host.innerHTML = '<div class="diet-filter"><div class="diet-filter-grid">' +
-      col('Allergi', allergenItems, 'allergen') +
-      col('Annet', dietItems, 'diet') +
+    host.innerHTML = '<div class="diet-filter">' +
+      '<p class="filter-column-title">Filtrer bort allergener</p>' +
+      '<div class="diet-filter-grid">' +
+      allergenItems.map(function (item) {
+        var checked = activeAllergens.has(item.id) ? ' checked' : '';
+        return '<label class="filter-check"><input type="checkbox" data-filter-id="' +
+          item.id + '"' + checked + '> ' + item.label + '</label>';
+      }).join('') +
       '</div></div>';
   }
 
@@ -576,12 +558,8 @@ document.addEventListener('DOMContentLoaded', function () {
     dietFilterHost.addEventListener('change', function (e) {
       const cb = e.target.closest('input[type="checkbox"][data-filter-id]');
       if (!cb) return;
-      const type = cb.dataset.filterType, id = cb.dataset.filterId;
-      if (type === 'allergen') {
-        if (cb.checked) activeAllergens.add(id); else activeAllergens.delete(id);
-      } else {
-        if (cb.checked) activeDiets.add(id); else activeDiets.delete(id);
-      }
+      const id = cb.dataset.filterId;
+      if (cb.checked) activeAllergens.add(id); else activeAllergens.delete(id);
       render();
     });
   }

@@ -34,10 +34,10 @@ const pannekakeRecipes = {
     label: "Enkel", servings: 12,
     ingredients: [
       { id: "flour",  label: "Hvetemel",        amount: 3, unit: "dl", role: "bulk",   scaling: "linear",    addStage: "early", removable: false, allergens: ["gluten"] },
-      { id: "milk",   label: "Melk",            amount: 5, unit: "dl", role: "liquid", scaling: "linear",    addStage: "early", removable: false, note: "Spe litt etter litt for en klumpfri røre.", allergens: ["dairy"], incompatible: ["vegan"] },
-      { id: "egg",    label: "Egg",             amount: 3, unit: "stk", role: "binder", scaling: "linear",    addStage: "early", removable: false, allergens: ["egg"], incompatible: ["vegan"] },
+      { id: "milk",   label: "Melk",            amount: 5, unit: "dl", role: "liquid", scaling: "linear",    addStage: "early", removable: false, note: "Spe litt etter litt for en klumpfri røre.", allergens: ["dairy"] },
+      { id: "egg",    label: "Egg",             amount: 3, unit: "stk", role: "binder", scaling: "linear",    addStage: "early", removable: false, allergens: ["egg"] },
       { id: "salt",   label: "Salt",            amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: false },
-      { id: "butter", label: "Smør til steking", amount: 2, unit: "ss", role: "fat",   scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] }
+      { id: "butter", label: "Smør til steking", amount: 2, unit: "ss", role: "fat",   scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] }
     ],
     steps: [
       "Visp sammen mel og halvparten av melken til en jevn, tykk røre uten klumper.",
@@ -52,12 +52,12 @@ const pannekakeRecipes = {
     label: "Medium", servings: 12,
     ingredients: [
       { id: "flour",    label: "Hvetemel",        amount: 3, unit: "dl", role: "bulk",   scaling: "linear",    addStage: "early", removable: false, allergens: ["gluten"] },
-      { id: "milk",     label: "Melk",            amount: 5, unit: "dl", role: "liquid", scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] },
-      { id: "egg",      label: "Egg",             amount: 4, unit: "stk", role: "binder", scaling: "linear",    addStage: "early", removable: false, note: "Et ekstra egg gir fyldigere pannekaker.", allergens: ["egg"], incompatible: ["vegan"] },
-      { id: "sugar",    label: "Sukker",          amount: 1, unit: "ss", role: "sweet",  scaling: "linear",    addStage: "early", removable: true, taste: { sweet: 2 }, incompatible: ["sugarfree"] },
+      { id: "milk",     label: "Melk",            amount: 5, unit: "dl", role: "liquid", scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"] },
+      { id: "egg",      label: "Egg",             amount: 4, unit: "stk", role: "binder", scaling: "linear",    addStage: "early", removable: false, note: "Et ekstra egg gir fyldigere pannekaker.", allergens: ["egg"] },
+      { id: "sugar",    label: "Sukker",          amount: 1, unit: "ss", role: "sweet",  scaling: "linear",    addStage: "early", removable: true, taste: { sweet: 2 } },
       { id: "cardamom", label: "Malt kardemomme", amount: 0.5, unit: "ts", role: "aromatic", scaling: "nonlinear", addStage: "early", removable: true, taste: { bitter: 1 } },
       { id: "salt",     label: "Salt",            amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: false },
-      { id: "butter",   label: "Smør til steking", amount: 2, unit: "ss", role: "fat",   scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] }
+      { id: "butter",   label: "Smør til steking", amount: 2, unit: "ss", role: "fat",   scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] }
     ],
     steps: [
       "Visp mel, sukker, kardemomme og salt sammen.",
@@ -72,13 +72,13 @@ const pannekakeRecipes = {
     label: "Kompleks", servings: 12,
     ingredients: [
       { id: "flour",    label: "Hvetemel",          amount: 3, unit: "dl", role: "bulk",   scaling: "linear",    addStage: "early", removable: false, allergens: ["gluten"] },
-      { id: "milk",     label: "Melk",              amount: 5, unit: "dl", role: "liquid", scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"], incompatible: ["vegan"] },
-      { id: "egg",      label: "Egg",               amount: 4, unit: "stk", role: "binder", scaling: "linear",    addStage: "early", removable: false, allergens: ["egg"], incompatible: ["vegan"] },
+      { id: "milk",     label: "Melk",              amount: 5, unit: "dl", role: "liquid", scaling: "linear",    addStage: "early", removable: false, allergens: ["dairy"] },
+      { id: "egg",      label: "Egg",               amount: 4, unit: "stk", role: "binder", scaling: "linear",    addStage: "early", removable: false, allergens: ["egg"] },
       { id: "saffron",  label: "Safran (blomstret)", amount: 0.4, unit: "g", role: "saffron", scaling: "nonlinear", addStage: "early", removable: true, taste: { bitter: 1 }, note: "Bløtlegg i 2 ss varm melk ~15 min; gir farge og aroma." },
-      { id: "sugar",    label: "Sukker",            amount: 1.5, unit: "ss", role: "sweet", scaling: "linear",    addStage: "early", removable: true, taste: { sweet: 2 }, incompatible: ["sugarfree"] },
+      { id: "sugar",    label: "Sukker",            amount: 1.5, unit: "ss", role: "sweet", scaling: "linear",    addStage: "early", removable: true, taste: { sweet: 2 } },
       { id: "cardamom", label: "Malt kardemomme",   amount: 0.5, unit: "ts", role: "aromatic", scaling: "nonlinear", addStage: "early", removable: true, taste: { bitter: 1 } },
       { id: "salt",     label: "Salt",              amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: false },
-      { id: "brown_butter", label: "Brunet smør",   amount: 2, unit: "ss", role: "fat",   scaling: "nonlinear", addStage: "early", removable: false, note: "Brun smøret til det dufter nøtteaktig; rør litt i røren og bruk resten til steking.", allergens: ["dairy"], incompatible: ["vegan"] }
+      { id: "brown_butter", label: "Brunet smør",   amount: 2, unit: "ss", role: "fat",   scaling: "nonlinear", addStage: "early", removable: false, note: "Brun smøret til det dufter nøtteaktig; rør litt i røren og bruk resten til steking.", allergens: ["dairy"] }
     ],
     steps: [
       "Brun smøret til det er gyllent og nøtteaktig, og avkjøl litt.",
