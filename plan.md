@@ -12,25 +12,21 @@ til nå, veien videre, og en detaljert SEO-plan. Kryss av og oppdater etter hver
 
 ## Retning og strategi
 
-**Beslutning (juni 2026):** Prosjektet bygges som en **oppskriftsdrevet
-safran-side**. Lussekatter er første oppskrift; flere safranretter (paella,
-risotto m.m.) kan komme senere for å bryte sesongavhengigheten. Oppskriftene er
-gratis-innholdet som trekker folk inn via søk – og **safransalget er det vi
-tjener på**. Oppskrift og salg er ikke konkurrenter: oppskriften er det beste
-salgsverktøyet for safranen (folk som baker lussekatter trenger safran).
+**Oppdatert beslutning (juni 2026):** Prosjektet er en **ren oppskriftsside med
+reklameinntekter**. Safransalg er droppet. Målet er å bygge en library av
+kvalitetsoppskrifter, drive organisk søketrafikk, og tjene på displayreklame.
 
-**Inntektsmodell – vurdert og prioritert:**
+**Inntektsmodell:**
 
 | Vei | Rolle | Vurdering |
 |-----|-------|-----------|
-| **Salg av safran** | Primær inntekt | Ekte penger raskest; krever lager, betaling (Vipps), frakt, backend |
-| **Oppskrift + SEO** | Trafikkmotor | Gratis innhold som driver salget via intern lenking oppskrift → produkt |
-| **Reklame** | Mulig bonus *senere* | IKKE fundament. Krever stor, jevn trafikk (50–100k visninger/mnd for gode nettverk). Sesongtoppen i desember gir tynne måneder ellers. Realistisk inntekt er måneder–år unna. |
-| **AI-dialog under matlaging** | Mulig differensiator *senere* | En **kostnad** (API-penger), ikke en inntekt. Kul funksjon, men må betales av salg/abonnement. Vent til trafikken er bevist. |
+| **Reklame (display)** | Primær inntekt | Krever stor, jevn trafikk (50–100k visninger/mnd for gode nettverk). Realistisk inntekt er måneder–år unna etter lansering. |
+| **Oppskrift + SEO** | Trafikkmotor | Gratis innhold som trekker folk via søk. Mange oppskrifter = mer trafikk = mer annonseinntekt. |
+| **AI-dialog under matlaging** | Mulig *senere* | En **kostnad** (API-penger), ikke en inntekt. Kun aktuelt hvis trafikken er bevist og det finnes en klar betalingsmodell. |
 
-**Konsekvens for arbeidet:** Bygg på salg + oppskriftsdrevet SEO. Reklame og
-AI-dialog er ting vi *vurderer når trafikken er der*, ikke noe vi bygger
-forretningen på nå.
+**Konsekvens for arbeidet:** Bygg oppskriftsbiblioteket og SEO-grunnmuren.
+Reklame settes opp når trafikken er stabil nok til å kvalifisere for et
+annonsenettverk. AI-dialog ventes til da.
 
 ---
 

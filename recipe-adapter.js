@@ -613,9 +613,126 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inc) inc.addEventListener('click', function () { step(1); });
   }
 
+  /* ----- Lagrede varianter ----- */
+  var SAVE_KEY = 'savedRecipes';
+  var NOTES_KEY = 'recipeNotes:' + R.id;
+
+  function loadSaved() {
+    try { return JSON.parse(localStorage.getItem(SAVE_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function storeSaved(arr) {
+    try { localStorage.setItem(SAVE_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+
+  function buildSavedVariants() {
+    var host = document.getElementById('saved-variants');
+    if (!host) return;
+    var all = loadSaved();
+    var mine = all.filter(function (v) { return v.recipeId === R.id; });
+    var saveBtn = '<button type="button" class="save-variant-btn" id="save-variant">Lagre denne varianten</button>';
+    if (!mine.length) {
+      host.innerHTML = '<div class="saved-variants-wrap">' + saveBtn + '</div>';
+      return;
+    }
+    host.innerHTML = '<div class="saved-variants-wrap">' + saveBtn +
+      '<details class="saved-variants-list"><summary class="saved-variants-summary">' +
+      'Mine lagrede varianter <span class="saved-variants-count">' + mine.length + '</span></summary>' +
+      '<ul class="saved-variants-ul">' +
+      mine.map(function (v) {
+        return '<li class="saved-variant-item">' +
+          '<span class="saved-variant-label">' + v.label + '</span>' +
+          '<span class="saved-variant-date">' + v.savedAt + '</span>' +
+          '<button type="button" class="saved-variant-load" data-variant-id="' + v.id + '">Last inn</button>' +
+          '<button type="button" class="saved-variant-del" data-variant-id="' + v.id + '">Slett</button>' +
+          '</li>';
+      }).join('') +
+      '</ul></details></div>';
+  }
+
+  function saveCurrentVariant() {
+    var rec = activeRecipe();
+    var portions = scaleInput ? scaleInput.value : baseServings();
+    var label = rec.label + ' – ' + portions + ' porsjoner';
+    var entry = {
+      id: Date.now(),
+      recipeId: R.id,
+      recipeName: (document.querySelector('h1') || {}).textContent || R.id,
+      label: label,
+      complexity: complexity,
+      portions: parseInt(portions, 10),
+      swaps: JSON.parse(JSON.stringify(swaps)),
+      removed: JSON.parse(JSON.stringify(removed)),
+      allergens: Array.from(activeAllergens),
+      savedAt: new Date().toLocaleDateString('nb-NO')
+    };
+    var arr = loadSaved();
+    arr.push(entry);
+    storeSaved(arr);
+    buildSavedVariants();
+  }
+
+  function loadVariant(id) {
+    var entry = loadSaved().filter(function (v) { return v.id === id; })[0];
+    if (!entry) return;
+    clearCustomizations();
+    activeAllergens.clear();
+    complexity = entry.complexity;
+    if (scaleInput) scaleInput.value = entry.portions;
+    var s = entry.swaps || {};
+    Object.keys(s).forEach(function (k) { swaps[k] = s[k]; });
+    var r = entry.removed || {};
+    Object.keys(r).forEach(function (k) { removed[k] = true; compensate[k] = true; });
+    (entry.allergens || []).forEach(function (a) { activeAllergens.add(a); });
+    buildComplexitySelector();
+    buildPrecisionToggle();
+    buildDietFilter();
+    buildSavedVariants();
+    render();
+  }
+
+  function deleteVariant(id) {
+    storeSaved(loadSaved().filter(function (v) { return v.id !== id; }));
+    buildSavedVariants();
+  }
+
+  var savedHost = document.getElementById('saved-variants');
+  if (savedHost) {
+    savedHost.addEventListener('click', function (e) {
+      if (e.target.closest('#save-variant')) { saveCurrentVariant(); return; }
+      var lb = e.target.closest('.saved-variant-load');
+      if (lb) { loadVariant(parseInt(lb.dataset.variantId, 10)); return; }
+      var db = e.target.closest('.saved-variant-del');
+      if (db) { deleteVariant(parseInt(db.dataset.variantId, 10)); return; }
+    });
+  }
+
+  /* ----- Notater ----- */
+  function buildRecipeNotes() {
+    var host = document.getElementById('recipe-notes');
+    if (!host) return;
+    var saved = '';
+    try { saved = localStorage.getItem(NOTES_KEY) || ''; } catch (e) {}
+    host.innerHTML = '<div class="recipe-notes-wrap">' +
+      '<label class="recipe-notes-label" for="recipe-notes-input">Dine notater</label>' +
+      '<textarea id="recipe-notes-input" class="recipe-notes-input" ' +
+      'placeholder="Skriv dine egne notater her – huskes til neste besøk.">' +
+      saved.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</textarea></div>';
+    var ta = document.getElementById('recipe-notes-input');
+    if (!ta) return;
+    var t;
+    ta.addEventListener('input', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        try { localStorage.setItem(NOTES_KEY, ta.value); } catch (e) {}
+      }, 500);
+    });
+  }
+
   /* ----- Start ----- */
   buildComplexitySelector();
   buildPrecisionToggle();
   buildDietFilter();
+  buildSavedVariants();
+  buildRecipeNotes();
   render();
 });

@@ -3,47 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safranoppskrifter – lussekatter, paella, risotto og mer</title>
-  <meta name="description" content="Samling av oppskrifter med ekte safran – fra lussekatter til paella, risotto og safraniskrem. Enkle oppskrifter steg for steg.">
+  <title>Oppskrifter – trinn for trinn med justerbare mengder</title>
+  <meta name="description" content="Samling av oppskrifter med justerbare mengder og ingredienser. Velg nivå og antall porsjoner – enkelt og fleksibelt.">
 
-  <!-- Fonter fra Google Fonts. Trenger internett; ellers brukes reservefonter. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Bare felles grunnstil her. Huben er nøytral (ingen butikk-tema). -->
   <link rel="stylesheet" href="style-felles.css">
 </head>
 <body>
 
-  <!-- ===== Oppskriftshub: velg en safranrett =====
-       Dette er forsiden. Hver oppskrift er sin egen side (gren). Lussekatter er
-       laget; resten kommer. SpiceFlow-butikken lenkes IKKE herfra ennå – den
-       står tom og kjører i bakgrunnen. -->
   <main class="landing">
-    <h1>Safranoppskrifter</h1>
-    <p>Ekte safran løfter både hverdag og fest. Velg en rett og kom i gang – mengdene justeres etter hvor mange du lager til.</p>
+    <h1>Oppskrifter</h1>
+    <p>Velg en rett og tilpass den etter smak og antall. Mengdene justeres automatisk – du velger nivå og porsjoner.</p>
+
+    <!-- Mine lagrede varianter – vises kun om localStorage har data -->
+    <div id="my-variants-section" class="my-variants-section" style="display:none;">
+      <h2>Mine lagrede varianter</h2>
+      <ul class="my-variants-ul" id="my-variants-list"></ul>
+    </div>
 
     <div class="store-choices">
 
-      <!-- Live oppskrift -->
       <a class="store-choice" href="lussekatter.html">
         <h2>Lussekatter</h2>
         <p>Den norske juleklassikeren – myke, gylne boller med safran. Til Lucia og julebaksten.</p>
       </a>
 
-      <!-- Live oppskrift -->
       <a class="store-choice" href="paella.html">
         <h2>Paella</h2>
         <p>Den spanske klassikeren der safran gir farge og aroma. Med kylling og scampi.</p>
       </a>
 
-      <!-- Kommer snart: ikke-klikkbare kort som viser hvor vi skal (sortert etter
-           hvor sterke de er for norsk publikum). Når en oppskrift er laget,
-           gjøres kortet om til en <a href="..."> slik som lussekatter/paella over. -->
-
       <a class="store-choice" href="fiskesuppe.html">
         <h2>Fiskesuppe med safran</h2>
         <p>Norsk favoritt med kremet søt-sur balanse – løftet med safran. Tre nivåer.</p>
+      </a>
+
+      <a class="store-choice" href="safraniskrem.html">
+        <h2>Safraniskrem</h2>
+        <p>Persisk bastani – kremet iskrem med safran, kardemomme og pistasj. Tre nivåer.</p>
+      </a>
+
+      <a class="store-choice" href="pannekake.html">
+        <h2>Pannekaker</h2>
+        <p>Tynne norske pannekaker – fra grunnrøre til safranpannekaker med brunet smør.</p>
+      </a>
+
+      <a class="store-choice" href="sjokoladekake.html">
+        <h2>Sjokoladekake</h2>
+        <p>Saftig norsk sjokoladekake – fra enkel rørekake til mørk sjokolade med kaffe og appelsin.</p>
       </a>
 
       <div class="store-choice" aria-disabled="true" style="opacity: 0.55;">
@@ -58,26 +66,34 @@
 
       <div class="store-choice" aria-disabled="true" style="opacity: 0.55;">
         <h2>Persisk safranris og safrankylling</h2>
-        <p>Safran er hjertet i persisk mat – vakkert og gave-verdig. <em>Kommer snart.</em></p>
+        <p>Safran er hjertet i persisk mat – vakkert og gavegivende. <em>Kommer snart.</em></p>
       </div>
-
-      <a class="store-choice" href="safraniskrem.html">
-        <h2>Safraniskrem</h2>
-        <p>Persisk bastani – kremet iskrem med safran, kardemomme og pistasj. Tre nivåer.</p>
-      </a>
-
-      <a class="store-choice" href="pannekake.html">
-        <h2>Safranpannekaker</h2>
-        <p>Tynne norske pannekaker – fra grunnrøre til safranpannekaker med brunet smør.</p>
-      </a>
-
-      <a class="store-choice" href="sjokoladekake.html">
-        <h2>Sjokoladekake</h2>
-        <p>Saftig norsk sjokoladekake – fra enkel rørekake til mørk sjokolade med kaffe og appelsin.</p>
-      </a>
 
     </div>
   </main>
+
+  <script>
+  (function () {
+    var saved;
+    try { saved = JSON.parse(localStorage.getItem('savedRecipes') || '[]'); } catch (e) { return; }
+    if (!saved.length) return;
+    var sec = document.getElementById('my-variants-section');
+    var list = document.getElementById('my-variants-list');
+    if (!sec || !list) return;
+    var pages = {
+      paella: 'paella.html', fiskesuppe: 'fiskesuppe.html',
+      pannekake: 'pannekake.html', sjokoladekake: 'sjokoladekake.html',
+      safraniskrem: 'safraniskrem.html', lussekatter: 'lussekatter.html'
+    };
+    list.innerHTML = saved.slice().reverse().map(function (v) {
+      var href = pages[v.recipeId] || (v.recipeId + '.html');
+      var name = v.recipeName ? v.recipeName + ' – ' : '';
+      return '<li><a href="' + href + '">' + name + v.label + '</a>' +
+        '<span class="my-variant-date">' + v.savedAt + '</span></li>';
+    }).join('');
+    sec.style.display = '';
+  })();
+  </script>
 
 </body>
 </html>

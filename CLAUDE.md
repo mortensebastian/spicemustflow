@@ -11,54 +11,46 @@ directly in a browser to run it. There is nothing to compile or install.
 Comments and user-facing text are in **Norwegian**; variable/function names are
 in **English**.
 
-## Product direction (decided June 2026)
+## Product direction (updated June 2026)
 
-This is a **recipe-led saffron site**. The lussekatter recipe (and, later, other
-saffron dishes like paella/risotto to reduce seasonality) is free content that
-pulls in search traffic; **selling saffron is the intended primary revenue**, and
-the recipe is the main sales tool for it (internal links recipe → product). Ads
-are at best a *later bonus* (needs large, steady traffic), and an AI cooking-chat
-feature is a *cost, not revenue* — defer both until traffic is proven. Don't build
-the business around ads or AI chat. See `plan.md` for the full strategy and roadmap.
+This is a **recipe site with ad revenue**. The goal is to build a library of
+high-quality Norwegian recipes, drive organic search traffic, and monetise via
+display advertising. Saffron sales have been dropped as a focus. AI chat is a
+cost, not revenue — defer until traffic is proven. See `plan.md` for the roadmap.
 
-**Target architecture (being built toward):** one domain (`safranoppskrifter.no`
-or `safrantilfolket.no`, TBD) with a **recipe hub** and **one subpage per recipe**
-(`/paella`, `/risotto`, …) — NOT one domain per recipe (splits SEO authority).
-Decided: **`index.html` becomes the recipe hub** (lussekatter is just one recipe
-branch among many). The **SpiceFlow shop page stays empty for now and is NOT
-linked from `index.html` yet** (shop still runs in the background). Vanity domains,
-if bought, should 301-redirect to the subpage. Each recipe page reuses `recipe.js`
-and links to the shop. Note
-`recipe.js` currently hardcodes `BASE_COUNT = 24` (lussekatter buns); this must
-become configurable (e.g. a `data-base-yield` attribute) before other recipes can
-reuse the scaler. The recipe markup in `lussekatter.html` is the template to
-generalize. See `plan.md` → "Utviklingsplan for oppskriftssidene".
+**Target architecture:** one domain (TBD) with a **recipe hub** (`index.html`)
+and **one subpage per recipe** (`/paella`, `/risotto`, …) — NOT one domain per
+recipe (splits SEO authority). `index.html` is the recipe hub. Vanity domains, if
+bought, should 301-redirect to the subpage. SpiceFlow/handlekurv exist in the
+repo but are not linked from `index.html` and are not part of the active product.
 
-## The single most important concept: two storefronts, one engine
+## The recipe engine (the main active product)
 
-The shop presents **two fronts that share one codebase**:
+The active product is the recipe hub (`index.html`) and individual recipe pages.
+Each recipe page uses the shared engine:
 
-- **SpiceFlow** (`spiceflow.html`, `data-storefront="hverdag"`) — everyday shop, light theme.
-- **Lussekatter** (`lussekatter.html`, `data-storefront="lussekatter"`) — Christmas shop, premium green/gold theme, and it also hosts a scalable recipe.
+- `recipe.js` — unit conversion and scaling (window.RecipeUnits)
+- `recipe-balance.js` — taste balance engine (window.RecipeBalance)
+- `recipe-adapter.js` — reads `window.RECIPE` config from a per-recipe data file
+  and renders complexity selector, portioning, swap/remove controls, allergen
+  filter, precision toggle, saved variants, and notes.
+- `<rett>-data.js` — pure data file per recipe, exports `window.RECIPE`
 
-`index.html` is a landing page that just links to the two fronts.
+SpiceFlow (`spiceflow.html`) and the cart/checkout infrastructure remain in the
+repo but are **inactive and not linked** from the recipe hub.
 
-How a front knows which products to show: `<body data-storefront="...">` is read
-by `shop.js`. A product appears on a front if its `storefront` field matches, or
-is `"begge"` (both). All product data lives in **one place**: `products.js`.
+## localStorage (user data, no backend)
 
-## The on/off switch (read this before changing front behavior)
+Recipe pages persist user data in localStorage — no login, no server:
 
-`config.js` has `orderingEnabled`:
+- `savedRecipes` — JSON array of saved recipe variants (all recipes combined).
+  Each entry: `{ id, recipeId, recipeName, label, complexity, portions, swaps,
+  removed, allergens, savedAt }`. Managed by `recipe-adapter.js`.
+- `recipeNotes:<recipeId>` — freetext notes per recipe (e.g. `recipeNotes:paella`).
+  Auto-saved on input (500 ms debounce). Managed by `recipe-adapter.js`.
 
-- `false` (current state) → products and cart are **hidden**; `waitlist.js` shows
-  an email signup form instead (submitted to Web3Forms). The shop runs "in the
-  background", intentionally not yet shoppable.
-- `true` → normal shop: `shop.js` renders products, cart is active.
-
-Every page's startup code checks this flag and branches. When changing how a
-front behaves, account for **both** states. `waitlistAccessKey` in `config.js` is
-still a placeholder — the waitlist will not deliver until a real key is added.
+`index.html` reads `savedRecipes` via an inline `<script>` and renders a
+"Mine varianter" section if any entries exist.
 
 ## Script load order matters
 

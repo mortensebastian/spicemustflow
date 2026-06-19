@@ -1283,3 +1283,152 @@ details.diet-filter[open] > .diet-filter-summary::after {
   color: var(--accent-text);
   border-color: var(--accent);
 }
+
+/* ===== Lagrede varianter ===== */
+.saved-variants-wrap {
+  max-width: 640px;
+  margin: 28px auto 0;
+  text-align: left;
+}
+.save-variant-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.save-variant-btn:hover { background: var(--accent); color: var(--accent-text, #fff); }
+
+.saved-variants-list {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.saved-variants-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  user-select: none;
+}
+.saved-variants-summary::-webkit-details-marker { display: none; }
+.saved-variants-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: var(--accent);
+  color: var(--accent-text, #fff);
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.saved-variants-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 18px 12px;
+}
+.saved-variant-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+.saved-variant-label { flex: 1; font-weight: 500; min-width: 120px; }
+.saved-variant-date { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.saved-variant-load,
+.saved-variant-del {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.saved-variant-load:hover { border-color: var(--accent); color: var(--accent); }
+.saved-variant-del:hover  { border-color: #c00; color: #c00; }
+
+/* ===== Notater ===== */
+.recipe-notes-wrap {
+  max-width: 640px;
+  margin: 28px auto 40px;
+}
+.recipe-notes-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.recipe-notes-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-family: inherit;
+  font-size: 14px;
+  color: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.recipe-notes-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* ===== Mine varianter (index.html) ===== */
+.my-variants-section {
+  max-width: 680px;
+  margin: 0 auto 40px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.my-variants-section h2 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.my-variants-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.my-variants-ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+.my-variants-ul li:first-child { border-top: none; padding-top: 0; }
+.my-variants-ul a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.my-variants-ul a:hover { text-decoration: underline; }
+.my-variant-date { font-size: 12px; color: var(--muted); margin-left: auto; white-space: nowrap; }
