@@ -1101,27 +1101,62 @@ body::before {
   opacity: 1; /* tipset skal være tydelig selv om raden er nedtonet */
 }
 
-/* Allergifilter: liten boks med avkryssbare allergener over ingredienslisten. */
+/* Allergifilter: sammenleggbar boks over ingredienslisten. */
 .diet-filter {
   max-width: 480px;
   margin: 0 auto 20px;
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 24px 10px;
+  padding: 0;
 }
-.diet-filter-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 32px;
-}
-.filter-column-title {
-  margin: 0 0 8px;
+.diet-filter-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.diet-filter-summary::-webkit-details-marker { display: none; }
+.diet-filter-summary::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--muted);
+}
+details.diet-filter[open] > .diet-filter-summary::after {
+  content: '−';
+}
+.filter-active-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1;
+}
+.diet-filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+  padding: 2px 20px 14px;
 }
 .filter-check {
   display: flex;

@@ -478,15 +478,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!allergenItems.length) { host.innerHTML = ''; return; }
 
-    host.innerHTML = '<div class="diet-filter">' +
-      '<p class="filter-column-title">Filtrer bort allergener</p>' +
+    var activeCount = allergenItems.filter(function (i) { return activeAllergens.has(i.id); }).length;
+    var openAttr = activeCount > 0 ? ' open' : '';
+    var badge = activeCount > 0
+      ? ' <span class="filter-active-badge">' + activeCount + '</span>'
+      : '';
+
+    host.innerHTML = '<details class="diet-filter"' + openAttr + '>' +
+      '<summary class="diet-filter-summary">Allergener' + badge + '</summary>' +
       '<div class="diet-filter-grid">' +
       allergenItems.map(function (item) {
         var checked = activeAllergens.has(item.id) ? ' checked' : '';
         return '<label class="filter-check"><input type="checkbox" data-filter-id="' +
           item.id + '"' + checked + '> ' + item.label + '</label>';
       }).join('') +
-      '</div></div>';
+      '</div></details>';
   }
 
   /* ----- Kompleksitetsvelger ----- */
