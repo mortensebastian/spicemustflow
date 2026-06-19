@@ -487,6 +487,215 @@ body {
 }
 
 
+/* ===== Oppskriftshub (index.html) ===== */
+
+/* Hero med filosofi */
+.hub-hero {
+  text-align: center;
+  padding: 72px 24px 48px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hub-hero h1 {
+  font-family: var(--font-display);
+  font-size: 52px;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+.hub-hero .hub-tagline {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+/* Tre pillers */
+.hub-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 8px;
+}
+.hub-pillar {
+  text-align: center;
+  padding: 4px 8px;
+}
+.hub-pillar-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.hub-pillar-text {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+@media (max-width: 560px) {
+  .hub-hero h1 { font-size: 38px; }
+  .hub-pillars { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* Verktøylinje: søk + kategorifilter */
+.hub-controls {
+  max-width: 1080px;
+  margin: 40px auto 24px;
+  padding: 0 24px;
+}
+.hub-search {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: inherit;
+  box-sizing: border-box;
+}
+.hub-search:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.hub-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.hub-cat-btn {
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.hub-cat-btn:hover { border-color: var(--accent); }
+.hub-cat-btn.active {
+  background: var(--accent);
+  color: var(--accent-text, #fff);
+  border-color: var(--accent);
+}
+
+/* Oppskriftsrutenett */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+.hub-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 0;
+  font-style: italic;
+}
+
+/* Oppskriftskort */
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform .15s, border-color .15s, box-shadow .15s;
+}
+.recipe-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+.recipe-card-media {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+}
+.recipe-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Plassholder når foto mangler ennå */
+.recipe-card-noimg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent) 0%, #b8860b 100%);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 22px;
+  text-align: center;
+  padding: 12px;
+  opacity: .9;
+}
+.recipe-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+.recipe-card-body h2 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  margin: 0;
+}
+.recipe-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.recipe-card-chip {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 700;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.recipe-card-levels {
+  font-size: 12px;
+  color: var(--muted);
+}
+.recipe-card-body p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
+}
+/* Kommer snart-kort */
+.recipe-card.is-soon {
+  cursor: default;
+  opacity: .6;
+}
+.recipe-card.is-soon:hover { transform: none; border-color: var(--border); }
+.recipe-card-soon-badge {
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+
 /* ===== Venteliste =====
    Vises bare når butikken er "av" (orderingEnabled = false i config.js).
    Beholderen er skjult som standard; waitlist.js viser den når den trengs. */
