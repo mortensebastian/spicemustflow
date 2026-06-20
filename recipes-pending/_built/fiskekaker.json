@@ -1,0 +1,152 @@
+{
+  "_comment": "Staging-objekt for fiskekaker (norske fiskekaker av hvit fisk). research-recipe skrev dette; build-recipe splicer indexEntry inn i recipes-index.js og lager datafil + HTML + sitemap.",
+
+  "indexEntry": {
+    "id": "fiskekaker",
+    "slug": "fiskekaker.html",
+    "status": "live",
+    "shortName": "Fiskekaker",
+    "name": "Hjemmelagde fiskekaker",
+    "tagline": "Saftige norske fiskekaker av hvit fisk – sprø ute, myke inne.",
+    "description": "Hjemmelagde fiskekaker av hvit fisk som ikke sprekker. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    "image": "fiskekaker.jpg",
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Norsk",
+    "keywords": "fiskekaker, hjemmelagde fiskekaker, fiskekaker oppskrift",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT20M", "cook": "PT15M", "total": "PT35M" },
+    "search": "fiskekaker hjemmelaget norsk hvit fisk sei torsk muskat potetmel",
+    "faq": [
+      { "q": "Hvilken fisk er best til fiskekaker?", "a": "Mager hvit fisk gir best resultat – sei, torsk, hyse (kolje) eller lyr. Hysa er en klassiker fordi den binder godt og har mild smak. Fersk fisk gir bedre binding enn frossen." },
+      { "q": "Hvorfor sprekker fiskekakene mine?", "a": "Nesten alltid fordi farsen ble for varm. Hold fisk, melk og redskaper iskalde, kjør farsen så kort som mulig i kjøkkenmaskinen, og spe melken litt om gangen så hver omgang er innarbeidet før neste. Da blir farsen seig og holder formen." },
+      { "q": "Hvordan får jeg fiskefarsen til å binde seg?", "a": "Salt er nøkkelen: kjør fisken med saltet først til den blir fast og seig før du sper med væske. Saltet trekker ut proteinene som binder farsen. Potetmel og egg hjelper også, men saltet gjør mesteparten av jobben." },
+      { "q": "Skal jeg bruke melk eller fløte i fiskekaker?", "a": "Begge deler fungerer. Melk gir en lettere farse, mens en blanding av melk og fløte (gjerne halvt om halvt) gir saftigere og rundere kaker. Spe væsken litt om gangen til farsen er passe fast." },
+      { "q": "Hvilke krydder skal i fiskekaker?", "a": "Salt og hvit pepper er grunnlaget. Det klassiske krydderet som løfter norske fiskekaker er revet muskat – en liten klype er nok. Finhakket gressløk gir friskhet hvis du vil ha mer smak." },
+      { "q": "Kan jeg fryse fiskekaker?", "a": "Ja. Frys dem ferdigstekte i lufttett boks i opptil et halvt år, og varm dem forsiktig i panne – på samme måte som frosne kjøttboller. Du kan også fryse rå farse." },
+      { "q": "Hva passer til fiskekaker?", "a": "Klassisk tilbehør er kokte poteter, smeltet smør eller hvit saus (gjerne med gressløk), og kokte grønnsaker som gulrot og erter. Mange spiser dem også som pålegg på brød med remulade." },
+      { "q": "Hvor lenge skal fiskekaker stekes?", "a": "Stek dem 3–4 minutter på hver side på middels varme til de er gylne og gjennomstekte. For svak varme gir bleke kaker, for sterk gir brent overflate og rå kjerne." }
+    ]
+  },
+
+  "seo": {
+    "title": "Hjemmelagde fiskekaker – saftig oppskrift som ikke sprekker | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Ekte norske fiskekaker av hvit fisk, sprø på utsiden og myke inni – og en farse som faktisk holder seg sammen i panna.",
+    "bodyIntro": "Hemmeligheten bak gode fiskekaker ligger ikke i en lang ingrediensliste, men i farsen. Når du kjører den ferske fisken med salt først, trekkes proteinene ut og binder farsen så den blir fast og seig før du sper med væske. Hold alt iskaldt underveis, så unngår du den vanligste tabben: en varm farse som blir kornete og sprekker i panna.\n\nHer får du tre nivåer. Den enkle er en rask hverdagsfarse av sei eller torsk med potetmel og melk. Medium legger til egg og revet muskat – det krydderet som gir fiskekaker den umiskjennelige norske smaken – og en blanding av melk og fløte for saftigere kaker. Den komplekse bruker hyse, finhakket gressløk og litt mer omhu med kverningen, for kaker på restaurantnivå.\n\nFordi mengdene henger sammen i en justerbar oppskrift, kan du trygt skru porsjonene opp eller ned, bytte fiskeslag eller droppe egget – resten balanserer seg selv. Salt er den ene tingen du ikke bør kutte for hardt: det er både smak og lim. Smak deg fram, men gi farsen nok salt til å binde."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "tine.no", "meny.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «fiskekaker» er hardt – matprat, tine og meny eier topp-3 med oppskriftskarusell. Angrip long-tail først via FAQ-vinkler (sprekker, hvilken fisk, melk vs fløte, binding, fryse), og bygg autoritet mot hodeordet over 6–12 mnd."
+  },
+
+  "recipe": {
+    "id": "fiskekaker",
+    "bulkRoles": ["protein", "liquid"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "umami": "Retten blir litt mildere – litt ekstra salt eller en skvett fiskekraft løfter smaken.",
+      "sweet": "Mindre søtlig dybde fra løken – litt revet muskat balanserer."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak til (husk at salt også binder farsen).",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Salt er det som binder farsen, så ikke kutt for hardt."
+      }
+    },
+    "density": { "milk": 1.03, "cream": 1, "potato_flour": 0.6, "salt_added": 1.2, "butter": 0.95 },
+    "pieceWeight": { "egg": 55, "onion": 110 },
+    "unitOptions": { "milk": ["dl", "ml", "g"], "cream": ["dl", "ml", "g"], "potato_flour": ["ss", "ts", "g"], "butter": ["ss", "g"], "salt_added": ["ts", "g"] },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "fish", "label": "Hvit fisk (sei eller torsk), uten skinn og bein", "amount": 600, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 70, "removable": false, "taste": { "umami": 2 }, "allergens": ["fish"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 2, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "salt_added", "label": "Salt", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Skjær den iskalde fisken i biter, ha den i kjøkkenmaskinen med saltet, og kjør til farsen er fast og seig.",
+          "Tilsett potetmel, og spe med melken litt om gangen så hver omgang er innarbeidet før neste. Krydre med litt hvit pepper.",
+          "Form kaker med en skje eller fuktige hender, og stek dem 3–4 minutter på hver side i smør på middels varme til de er gylne og gjennomstekte."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "fish", "label": "Hvit fisk (sei, torsk eller hyse), uten skinn og bein", "amount": 600, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 70, "removable": false, "taste": { "umami": 2 }, "allergens": ["fish"] },
+          { "id": "egg", "label": "Egg", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "allergens": ["egg"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1.5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "cream", "label": "Matfløte", "amount": 0.5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": true, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finrevet", "amount": 0.5, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "nutmeg", "label": "Revet muskat", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "butter", "label": "Smør (til steking)", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "salt_added", "label": "Salt", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Hold alt iskaldt. Skjær fisken i biter, kjør den med saltet i kjøkkenmaskinen til farsen er fast og seig.",
+          "Tilsett egg, potetmel, finrevet løk og muskat, og kjør kort. Spe med melk og fløte litt om gangen til farsen er passe fast. Krydre med hvit pepper.",
+          "Form jevne kaker, og press dem litt flate.",
+          "Stek kakene i smør på middels varme, 3–4 minutter på hver side, til de er gylne og gjennomstekte. Server med kokte poteter og smeltet smør eller hvit saus."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "fish", "label": "Hyse (kolje), helt fersk, uten skinn og bein", "amount": 650, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 70, "removable": false, "taste": { "umami": 2 }, "allergens": ["fish"] },
+          { "id": "egg", "label": "Egg", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "allergens": ["egg"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "cream", "label": "Fløte", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": true, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finrevet", "amount": 0.5, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "chives", "label": "Gressløk, finhakket", "amount": 3, "unit": "ss", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "nutmeg", "label": "Revet muskat", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "butter", "label": "Smør (til steking)", "amount": 3, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "salt_added", "label": "Salt", "amount": 2.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Hold fisk, melk, fløte og bolle iskaldt – legg gjerne bollen i fryseren først. Skjær fisken i biter.",
+          "Kjør fisken med saltet til farsen er blank, fast og seig. Tilsett egg, potetmel, finrevet løk og muskat, og kjør kort.",
+          "Spe med melk og fløte i små porsjoner, og la hver omgang bli helt innarbeidet før neste. Vend til slutt inn gressløken for hånd. Krydre med hvit pepper.",
+          "La farsen hvile kaldt 15–20 minutter. Form jevne kaker.",
+          "Stek kakene i smør på middels varme til de er gyllenbrune og gjennomstekte, ca. 4 minutter på hver side. Server med kokte poteter, smeltet smør og kokte grønnsaker."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "fish": [
+        { "id": "salmon", "label": "Laks (rosa, saftigere)", "amount": 600, "unit": "g", "sodiumPer100g": 75, "taste": { "umami": 2 }, "tradition": "non-traditional", "note": "Gir rosa, saftige kaker; litt fetere smak.", "allergens": ["fish"] },
+        { "id": "pollock", "label": "Lyr (mager hvit fisk)", "amount": 600, "unit": "g", "sodiumPer100g": 70, "taste": { "umami": 2 }, "tradition": "regional", "note": "Mild og fin; binder godt som sei og hyse.", "allergens": ["fish"] }
+      ],
+      "egg": [
+        { "id": "extra_potato_flour", "label": "Ekstra potetmel (eggfritt)", "amount": 1, "unit": "ss", "tradition": "non-traditional", "note": "Binder uten egg; saltet gjør mesteparten av jobben." }
+      ],
+      "milk": [
+        { "id": "oat_milk", "label": "Havredrikk (melkefri)", "amount": 2, "unit": "dl", "sodiumPer100g": 20, "note": "Nøytral, melkefri base.", "tradition": "non-traditional" }
+      ],
+      "cream": [
+        { "id": "oat_cream", "label": "Havrefløte (melkefri)", "amount": 1, "unit": "dl", "sodiumPer100g": 15, "note": "Melkefritt alternativ til fløte.", "tradition": "non-traditional" }
+      ],
+      "butter": [
+        { "id": "rapeseed_oil", "label": "Rapsolje (melkefri steking)", "amount": 2, "unit": "ss", "sodiumPer100g": 0, "note": "Nøytral olje til steking uten meieri.", "tradition": "non-traditional" }
+      ]
+    }
+  }
+}

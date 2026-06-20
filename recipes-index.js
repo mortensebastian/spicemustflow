@@ -148,6 +148,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "fiskekaker", slug: "fiskekaker.html", status: "live",
+    shortName: "Fiskekaker", name: "Hjemmelagde fiskekaker",
+    tagline: "Saftige norske fiskekaker av hvit fisk – sprø ute, myke inne.",
+    description: "Hjemmelagde fiskekaker av hvit fisk som ikke sprekker. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    keywords: "fiskekaker, hjemmelagde fiskekaker, fiskekaker oppskrift",
+    recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT15M", total: "PT35M" },
+    search: "fiskekaker hjemmelaget norsk hvit fisk sei torsk muskat potetmel",
+    faq: [
+      { q: "Hvilken fisk er best til fiskekaker?", a: "Mager hvit fisk gir best resultat – sei, torsk, hyse (kolje) eller lyr. Hysa er en klassiker fordi den binder godt og har mild smak. Fersk fisk gir bedre binding enn frossen." },
+      { q: "Hvorfor sprekker fiskekakene mine?", a: "Nesten alltid fordi farsen ble for varm. Hold fisk, melk og redskaper iskalde, kjør farsen så kort som mulig i kjøkkenmaskinen, og spe melken litt om gangen så hver omgang er innarbeidet før neste. Da blir farsen seig og holder formen." },
+      { q: "Hvordan får jeg fiskefarsen til å binde seg?", a: "Salt er nøkkelen: kjør fisken med saltet først til den blir fast og seig før du sper med væske. Saltet trekker ut proteinene som binder farsen. Potetmel og egg hjelper også, men saltet gjør mesteparten av jobben." },
+      { q: "Skal jeg bruke melk eller fløte i fiskekaker?", a: "Begge deler fungerer. Melk gir en lettere farse, mens en blanding av melk og fløte (gjerne halvt om halvt) gir saftigere og rundere kaker. Spe væsken litt om gangen til farsen er passe fast." },
+      { q: "Hvilke krydder skal i fiskekaker?", a: "Salt og hvit pepper er grunnlaget. Det klassiske krydderet som løfter norske fiskekaker er revet muskat – en liten klype er nok. Finhakket gressløk gir friskhet hvis du vil ha mer smak." },
+      { q: "Kan jeg fryse fiskekaker?", a: "Ja. Frys dem ferdigstekte i lufttett boks i opptil et halvt år, og varm dem forsiktig i panne – på samme måte som frosne kjøttboller. Du kan også fryse rå farse." },
+      { q: "Hva passer til fiskekaker?", a: "Klassisk tilbehør er kokte poteter, smeltet smør eller hvit saus (gjerne med gressløk), og kokte grønnsaker som gulrot og erter. Mange spiser dem også som pålegg på brød med remulade." },
+      { q: "Hvor lenge skal fiskekaker stekes?", a: "Stek dem 3–4 minutter på hver side på middels varme til de er gylne og gjennomstekte. For svak varme gir bleke kaker, for sterk gir brent overflate og rå kjerne." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

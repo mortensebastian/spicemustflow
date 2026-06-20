@@ -262,5 +262,14 @@ PAA-spørsmål (sprekking, melk vs vann, vs karbonader, uten egg). Lærdom:
   `addStage:"end"`) modellerer brun saus fint; hvetemel tagget `allergens:["gluten"]`
   med et glutenfritt potetmel-bytte, slik at allergenfilteret og bytter henger sammen.
 
+**fiskekaker** (åttende rett, tredje via skill-ene) — **ingen kjernemotorendring.**
+Long-tail-navn «Hjemmelagde fiskekaker», `allergens:["fish"]` på fisken og alle
+fiske-bytter. Salt er bevisst høyt (~2 ts/600 g) fordi det *binder* farsen, og
+`leverMessages.salt.up` advarer mot å kutte for hardt – levermeldingene kan bære
+matlagings-kontekst, ikke bare «vi justerte». Lærdom:
+- **Paritetssjekk fanget en ekte feil i review:** `butter` lå i `density` men
+  manglet i `unitOptions`. Regelen «hver g-omregnbar id i begge» er verdt å kjøre
+  som node-assert før bygging (`Object.keys(density)` vs `Object.keys(unitOptions)`).
+
 
 

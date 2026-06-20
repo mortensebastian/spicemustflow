@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hjemmelagde fiskekaker – saftig oppskrift som ikke sprekker | Velkomponert</title>
+  <meta name="description" content="Hjemmelagde fiskekaker av hvit fisk som ikke sprekker. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.">
+  <link rel="canonical" href="https://velkomponert.no/fiskekaker.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Hjemmelagde fiskekaker – saftig oppskrift som ikke sprekker">
+  <meta property="og:description" content="Hjemmelagde fiskekaker av hvit fisk som ikke sprekker. Velg nivå, juster porsjoner og tilpass ingrediensene.">
+  <meta property="og:url" content="https://velkomponert.no/fiskekaker.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/fiskekaker.jpg så vises det øverst. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/fiskekaker.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Hjemmelagde fiskekaker</h1>
+      <p>Ekte norske fiskekaker av hvit fisk, sprø på utsiden og myke inni – og en farse som faktisk holder seg sammen i panna.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du fiskekaker</h2>
+      <p class="recipe-intro">Hemmeligheten bak gode fiskekaker ligger ikke i en lang ingrediensliste, men i farsen. Når du kjører den ferske fisken med salt først, trekkes proteinene ut og binder farsen så den blir fast og seig før du sper med væske. Hold alt iskaldt underveis, så unngår du den vanligste tabben: en varm farse som blir kornete og sprekker i panna.</p>
+      <p>Her får du tre nivåer. Den enkle er en rask hverdagsfarse av sei eller torsk med potetmel og melk. Medium legger til egg og revet muskat – det krydderet som gir fiskekaker den umiskjennelige norske smaken – og en blanding av melk og fløte for saftigere kaker. Den komplekse bruker hyse, finhakket gressløk og litt mer omhu med kverningen, for kaker på restaurantnivå.</p>
+      <p>Fordi mengdene henger sammen i en justerbar oppskrift, kan du trygt skru porsjonene opp eller ned, bytte fiskeslag eller droppe egget – resten balanserer seg selv. Salt er den ene tingen du ikke bør kutte for hardt: det er både smak og lim. Smak deg fram, men gi farsen nok salt til å binde.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="4" min="2" max="12" step="2" data-base-yield="4">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <p>Se alle oppskrifter på forsiden.</p>
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <script src="fiskekaker-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
