@@ -67,7 +67,8 @@ Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</las
 
 ## Steg 5 – valider (viktigst – ingen testrammeverk)
 - [ ] `node --check <slug>-data.js` og `node --check recipes-index.js` (gyldig JS)
-- [ ] `node -e "require('./recipes-index.js')"` – manifestet laster, ny `id` finnes
+- [ ] Manifest laster + ny `id` finnes (window-shim, fila setter `window.*`):
+      `node -e "global.window={};require('./recipes-index.js');console.log(!!window.RecipesIndex.byId('<slug>'))"`
 - [ ] `recipe.id` === `indexEntry.id`; `indexEntry.slug` === `<slug>.html`
 - [ ] `category`-slugs finnes i `RECIPE_CATEGORIES`
 - [ ] `medium` finnes; tre nivåer har `ingredients[]` + `steps[]`

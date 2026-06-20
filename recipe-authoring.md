@@ -238,5 +238,18 @@ paella `stock`/`fish_stock`/`veg_stock`; fiskesuppe `stock`/`wine`/`olive_oil`/
 `tomato_paste`; pannekake `milk`/`cardamom`; sjokoladekake `coffee` +
 `baking_powder` (ny `density: 0.9`).
 
+**safranrisotto** (sjette rett, første bygd gjennom skill-ene) — **ingen
+kjernemotorendring.** Hele flyten `/research-recipe → review → /build-recipe`
+fungerte mot den nye infrastrukturen: ett staging-objekt → datafil +
+manifestoppføring (soon→live) + HTML fra mal + sitemap-linje. Kort, relaterte,
+Recipe-/Breadcrumb-/FAQPage-schema og synlig FAQ kom automatisk. Lærdom:
+- **Manifestet er sannheten for SEO**, ikke HTML-en: `faq` legges på
+  `RECIPES_INDEX`-oppføringen, og `recipe-schema.js` rendrer både synlig FAQ og
+  FAQPage fra samme liste (`renderFaq` + `buildFaqLd`).
+- Validér manifestet i Node med en window-shim: `global.window={}` før
+  `require('./recipes-index.js')` (fila setter `window.*` på toppnivå).
+- Wine som `role:"acid"` + `isPrimaryAcid` + `onRemove.tip` gir riktig
+  «fjernet syre»-tips uten å sette `requireRoles:["acid"]` (risotto krever den ikke).
+
 
 

@@ -107,14 +107,26 @@ window.RECIPES_INDEX = [
     search: "lussekatter jul lucia safran boller", season: "des"
   },
 
-  /* ── Kommer snart ── */
   {
-    id: "safranrisotto", slug: "safranrisotto.html", status: "soon",
+    id: "safranrisotto", slug: "safranrisotto.html", status: "live",
     shortName: "Safranrisotto", name: "Safranrisotto (Risotto alla Milanese)",
-    tagline: "Risotto alla Milanese – kremet ris der safran er poenget.",
-    image: null, category: ["middag"], recipeCategory: "Hovedrett",
-    search: "risotto safranrisotto milanese"
+    tagline: "Kremet milanesisk risotto der ekte safran gir farge, duft og dybde.",
+    description: "Kremet safranrisotto (Risotto alla Milanese) med arborio, hvitvin og parmesan. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Italiensk",
+    keywords: "safranrisotto, risotto alla milanese, risotto med safran",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT30M", total: "PT45M" },
+    search: "safranrisotto risotto milanese safran arborio parmesan",
+    faq: [
+      { q: "Hvilken ris bruker jeg til risotto?", a: "Rundkornet ris med høyt stivelsesinnhold – arborio eller carnaroli. Stivelsen er det som gir den kremede konsistensen, så ikke skyll risen." },
+      { q: "Må jeg røre hele tiden?", a: "Rør jevnlig, men ikke helt konstant. Røringen frigjør stivelse og gjør risottoen kremet; spe med én øse varm kraft om gangen og la den suge til seg før neste." },
+      { q: "Hvorfor blir risottoen klissete eller grøtete?", a: "Som regel for kald kraft eller for høy varme. Bruk varm kraft og la det småkoke – kald kraft bremser kokingen og kan gjøre risen klissete." },
+      { q: "Kan jeg lage safranrisotto uten vin?", a: "Ja. Dropp vinen og spe med litt ekstra kraft, og ha i en skvett sitron til slutt for samme friskhet." },
+      { q: "Kan jeg varme opp risotto dagen etter?", a: "Ja – varm den forsiktig og spe med litt kraft eller vann så den blir kremet igjen. Den blir aldri helt som nylaget, men fungerer fint." }
+    ]
   },
+
+  /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
     shortName: "Bouillabaisse", name: "Bouillabaisse",
