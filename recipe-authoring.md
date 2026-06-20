@@ -251,5 +251,16 @@ Recipe-/Breadcrumb-/FAQPage-schema og synlig FAQ kom automatisk. Lærdom:
 - Wine som `role:"acid"` + `isPrimaryAcid` + `onRemove.tip` gir riktig
   «fjernet syre»-tips uten å sette `requireRoles:["acid"]` (risotto krever den ikke).
 
+**kjøttkaker** (syvende rett, andre via skill-ene) — **ingen kjernemotorendring.**
+Hodeord «kjøttkaker» er hardt (matprat/tine/godt eier topp-3 med karusell), så
+navnet ble long-tail-vinklet «Kjøttkaker i brun saus» og FAQ-en bygd på ekte
+PAA-spørsmål (sprekking, melk vs vann, vs karbonader, uten egg). Lærdom:
+- **Hold `tasteMessages` til nøklene adapteren faktisk leser** (`sour`/`umami`/
+  `sweet`, og bare ved `taste.*>=2`). Tomme `""`-felt eller en ubrukt `bitter`-
+  nøkkel er død data – ta dem ut. Build-skillet luket dem ut etter serialisering.
+- Jevning med to ingredienser (smør `role:"fat"` + hvetemel `role:"seasoning"`,
+  `addStage:"end"`) modellerer brun saus fint; hvetemel tagget `allergens:["gluten"]`
+  med et glutenfritt potetmel-bytte, slik at allergenfilteret og bytter henger sammen.
+
 
 

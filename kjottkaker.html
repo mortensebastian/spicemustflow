@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kjøttkaker i brun saus – hjemmelaget oppskrift steg for steg | Velkomponert</title>
+  <meta name="description" content="Hjemmelagde kjøttkaker i brun saus. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.">
+  <link rel="canonical" href="https://velkomponert.no/kjottkaker.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Kjøttkaker i brun saus – hjemmelaget oppskrift steg for steg">
+  <meta property="og:description" content="Hjemmelagde kjøttkaker i brun saus. Velg nivå, juster porsjoner og tilpass ingrediensene.">
+  <meta property="og:url" content="https://velkomponert.no/kjottkaker.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/kjottkaker.jpg så vises det øverst. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/kjottkaker.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Kjøttkaker i brun saus</h1>
+      <p>Norsk husmannskost på sitt beste: møre kjøttkaker som holder formen, badet i en blank, brun saus.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du kjøttkaker</h2>
+      <p class="recipe-intro">Gode kjøttkaker handler om mer enn kjøttet. Nøkkelen er bindingen: arbeider du saltet godt inn i deigen og sper væsken – melk eller vann – litt om gangen, blir farsen seig og smidig, og kakene sprekker ikke i panna. Litt potetmel hjelper farsen å holde på fuktigheten, så resultatet blir saftig tvers igjennom.</p>
+      <p>Smaken kommer fra to krydder folk ofte glemmer: muskat og malt ingefær. Sammen med salt og pepper gir de den umiskjennelig norske tonen som skiller en hjemmelaget kjøttkake fra en anonym kjøttbolle. Den brune sausen bygger du på en smørjevning du lar få farge før du sper med kraft – det er fargen på jevningen som avgjør om sausen blir lys og mild eller dyp og fyldig.</p>
+      <p>Her får du tre nivåer. Enkel er hverdagsrask med ett kjøttslag og en kjapp saus; medium blander okse og svin og surrer løken myk først; kompleks bruker grovkvernet kjøtt og hjemmelaget kraft for en mørkere, rikere saus. Juster porsjoner og bytt ingredienser fritt – salt og mengder følger med automatisk, så du alltid får en balansert rett. Server med kokte poteter, ertestuing eller kålstuing og tyttebær.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="4" min="2" max="12" step="2" data-base-yield="4">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <p>Se alle oppskrifter på forsiden.</p>
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <script src="kjottkaker-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>

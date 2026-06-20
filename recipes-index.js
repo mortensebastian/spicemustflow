@@ -126,6 +126,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "kjottkaker", slug: "kjottkaker.html", status: "live",
+    shortName: "Kjøttkaker", name: "Kjøttkaker i brun saus",
+    tagline: "Møre, norske kjøttkaker som ikke sprekker, i blank brun saus.",
+    description: "Hjemmelagde kjøttkaker i brun saus. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    keywords: "kjøttkaker, kjøttkaker i brun saus, hjemmelagde kjøttkaker",
+    recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT30M", total: "PT50M" },
+    search: "kjøttkaker brun saus norsk hjemmelaget muskat ingefær",
+    faq: [
+      { q: "Hvorfor sprekker kjøttkakene mine?", a: "Som regel for løs farse eller for varm panne. Arbeid saltet godt inn så farsen blir seig, bind med potetmel og spe væsken litt om gangen, la farsen hvile, og brun kakene på middels varme." },
+      { q: "Hva er forskjellen på kjøttkaker og karbonader?", a: "De er nært i slekt, men karbonader stekes ferdig i panna og er flatere, mens kjøttkaker brunes først og trekker ferdig i saus. Karbonader lages oftest av karbonadedeig (magrere), kjøttkaker av kjøttdeig." },
+      { q: "Skal jeg bruke melk eller vann i kjøttkaker?", a: "Begge fungerer som binding. Melk gir en litt mildere, rundere smak; vann gir nøytral farse. Spe væsken litt om gangen og arbeid den godt inn før du tilsetter mer." },
+      { q: "Hvilke krydder skal i kjøttkaker?", a: "Salt og pepper er grunnlaget. De to krydderne som virkelig løfter norske kjøttkaker er muskat og malt ingefær – litt av hver gir den klassiske smaken." },
+      { q: "Kan jeg fryse kjøttkaker?", a: "Ja. Frys dem ferdigstekte, gjerne med saus, i lufttett boks i opptil 3 måneder, og varm forsiktig opp igjen. Stekte kjøttkaker holder seg også et par dager i kjøleskapet." },
+      { q: "Hvor lenge skal kjøttkaker steke?", a: "Brun dem 2–3 minutter på hver side til de får fin skorpe, og la dem deretter trekke ferdig i sausen i 10–15 minutter." },
+      { q: "Kan jeg lage kjøttkaker uten egg?", a: "Ja – mange tradisjonelle oppskrifter er eggfrie. Bytt egget mot litt ekstra potetmel og spe med litt mer melk eller vann for binding." },
+      { q: "Hva passer til kjøttkaker i brun saus?", a: "Klassisk tilbehør er kokte poteter, brun saus, ertestuing eller kålstuing, gjerne gulrøtter, og tyttebær eller tyttebærsyltetøy ved siden av." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

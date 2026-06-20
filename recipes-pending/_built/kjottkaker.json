@@ -1,0 +1,188 @@
+{
+  "_comment": "Staging-objekt for kjøttkaker i brun saus. Skrevet av research-recipe. build-recipe splicer indexEntry inn i recipes-index.js og genererer datafil, HTML og sitemap. SEO-tall er relative (høy/middels/lav), ikke eksakte volum.",
+
+  "indexEntry": {
+    "id": "kjottkaker",
+    "slug": "kjottkaker.html",
+    "status": "live",
+    "shortName": "Kjøttkaker",
+    "name": "Kjøttkaker i brun saus",
+    "tagline": "Møre, norske kjøttkaker som ikke sprekker, i blank brun saus.",
+    "description": "Hjemmelagde kjøttkaker i brun saus. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    "image": "kjottkaker.jpg",
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Norsk",
+    "keywords": "kjøttkaker, kjøttkaker i brun saus, hjemmelagde kjøttkaker",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT20M", "cook": "PT30M", "total": "PT50M" },
+    "search": "kjøttkaker brun saus norsk hjemmelaget muskat ingefær",
+    "faq": [
+      { "q": "Hvorfor sprekker kjøttkakene mine?", "a": "Som regel for løs farse eller for varm panne. Arbeid saltet godt inn så farsen blir seig, bind med potetmel og spe væsken litt om gangen, la farsen hvile, og brun kakene på middels varme." },
+      { "q": "Hva er forskjellen på kjøttkaker og karbonader?", "a": "De er nært i slekt, men karbonader stekes ferdig i panna og er flatere, mens kjøttkaker brunes først og trekker ferdig i saus. Karbonader lages oftest av karbonadedeig (magrere), kjøttkaker av kjøttdeig." },
+      { "q": "Skal jeg bruke melk eller vann i kjøttkaker?", "a": "Begge fungerer som binding. Melk gir en litt mildere, rundere smak; vann gir nøytral farse. Spe væsken litt om gangen og arbeid den godt inn før du tilsetter mer." },
+      { "q": "Hvilke krydder skal i kjøttkaker?", "a": "Salt og pepper er grunnlaget. De to krydderne som virkelig løfter norske kjøttkaker er muskat og malt ingefær – litt av hver gir den klassiske smaken." },
+      { "q": "Kan jeg fryse kjøttkaker?", "a": "Ja. Frys dem ferdigstekte, gjerne med saus, i lufttett boks i opptil 3 måneder, og varm forsiktig opp igjen. Stekte kjøttkaker holder seg også et par dager i kjøleskapet." },
+      { "q": "Hvor lenge skal kjøttkaker steke?", "a": "Brun dem 2–3 minutter på hver side til de får fin skorpe, og la dem deretter trekke ferdig i sausen i 10–15 minutter." },
+      { "q": "Kan jeg lage kjøttkaker uten egg?", "a": "Ja – mange tradisjonelle oppskrifter er eggfrie. Bytt egget mot litt ekstra potetmel og spe med litt mer melk eller vann for binding." },
+      { "q": "Hva passer til kjøttkaker i brun saus?", "a": "Klassisk tilbehør er kokte poteter, brun saus, ertestuing eller kålstuing, gjerne gulrøtter, og tyttebær eller tyttebærsyltetøy ved siden av." }
+    ]
+  },
+
+  "seo": {
+    "title": "Kjøttkaker i brun saus – hjemmelaget oppskrift steg for steg | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Norsk husmannskost på sitt beste: møre kjøttkaker som holder formen, badet i en blank, brun saus.",
+    "bodyIntro": "Gode kjøttkaker handler om mer enn kjøttet. Nøkkelen er bindingen: arbeider du saltet godt inn i deigen og sper væsken – melk eller vann – litt om gangen, blir farsen seig og smidig, og kakene sprekker ikke i panna. Litt potetmel hjelper farsen å holde på fuktigheten, så resultatet blir saftig tvers igjennom.\n\nSmaken kommer fra to krydder folk ofte glemmer: muskat og malt ingefær. Sammen med salt og pepper gir de den umiskjennelig norske tonen som skiller en hjemmelaget kjøttkake fra en anonym kjøttbolle. Den brune sausen bygger du på en smørjevning du lar få farge før du sper med kraft – det er fargen på jevningen som avgjør om sausen blir lys og mild eller dyp og fyldig.\n\nHer får du tre nivåer. Enkel er hverdagsrask med ett kjøttslag og en kjapp saus; medium blander okse og svin og surrer løken myk først; kompleks bruker grovkvernet kjøtt og hjemmelaget kraft for en mørkere, rikere saus. Juster porsjoner og bytt ingredienser fritt – salt og mengder følger med automatisk, så du alltid får en balansert rett. Server med kokte poteter, ertestuing eller kålstuing og tyttebær."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "tine.no", "godt.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «kjøttkaker» er svært hardt – matprat, tine, godt og meny eier topp 3 med oppskriftskarusell. Angrip long-tail via FAQ-vinkler (sprekking, melk vs vann, muskat/ingefær, uten egg, vs karbonader, tilbehør) der konkurransen er tynnere; bygg autoritet og ta hodeordet over 6–12 mnd."
+  },
+
+  "recipe": {
+    "id": "kjottkaker",
+    "bulkRoles": ["protein", "liquid", "aromatic"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "umami": "Retten blir mindre fyldig – vurder litt ekstra kraft for dybde.",
+      "sweet": "Mindre søtlig dybde – litt brunet løk balanserer.",
+      "sour": "",
+      "bitter": ""
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak til.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Smak til."
+      }
+    },
+    "density": {
+      "milk": 1.03,
+      "stock": 1,
+      "potato_flour": 0.6,
+      "wheat_flour": 0.55,
+      "butter": 0.95,
+      "salt_added": 1.2,
+      "nutmeg": 0.5,
+      "ginger": 0.4,
+      "pepper": 0.45
+    },
+    "pieceWeight": { "egg": 55, "onion": 110 },
+    "unitOptions": {
+      "milk": ["dl", "ml", "g"],
+      "stock": ["dl", "ml", "g"],
+      "potato_flour": ["ss", "g"],
+      "wheat_flour": ["ss", "g"],
+      "butter": ["ss", "g"],
+      "salt_added": ["ts", "g"],
+      "nutmeg": ["ts", "g"],
+      "ginger": ["ts", "g"],
+      "pepper": ["ts", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Kjøttdeig", "amount": 500, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 1.5, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk (eller vann)", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "nutmeg", "label": "Revet muskat", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 } },
+          { "id": "stock", "label": "Oksekraft (til saus)", "amount": 4, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 1 } },
+          { "id": "butter", "label": "Smør (til steking og saus)", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "wheat_flour", "label": "Hvetemel (til jevning)", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "removable": false, "allergens": ["gluten"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Arbeid salt godt inn i kjøttdeigen til den blir seig. Bland inn potetmel, muskat og litt pepper.",
+          "Spe med melk litt om gangen, og arbeid farsen jevn og smidig. La hvile 10 minutter.",
+          "Form kaker, og brun dem i smør 2–3 minutter på hver side. Ta dem opp.",
+          "Lag en lys smørjevning av smøret og hvetemelet, spe med varm kraft til blank saus.",
+          "Legg kakene tilbake og la dem trekke 10–15 minutter. Smak til og server med kokte poteter."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Kjøttdeig av okse", "amount": 400, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "pork", "label": "Svinedeig", "amount": 100, "unit": "g", "role": "protein", "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": true, "taste": { "umami": 1 } },
+          { "id": "egg", "label": "Egg", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "allergens": ["egg"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 1.5, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "nutmeg", "label": "Revet muskat", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 } },
+          { "id": "ginger", "label": "Malt ingefær", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 } },
+          { "id": "stock", "label": "Oksekraft", "amount": 5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 1 } },
+          { "id": "butter", "label": "Smør (til steking og saus)", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "wheat_flour", "label": "Hvetemel (til jevning)", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "removable": false, "allergens": ["gluten"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Surr løken myk og blank i litt smør, og avkjøl.",
+          "Arbeid salt inn i okse- og svinedeigen til farsen blir seig. Bland inn egg, potetmel, muskat, ingefær og pepper.",
+          "Spe med melk litt om gangen, vend inn den avkjølte løken, og la farsen hvile 10 minutter.",
+          "Form kaker, og brun dem i smør til gyllen skorpe. Ta dem opp.",
+          "Lag en gyllen smørjevning av smøret og hvetemelet, spe med varm kraft til blank saus.",
+          "La kjøttkakene trekke 12–15 minutter i sausen. Smak til og server med poteter og tyttebær."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Høyrygg, grovkvernet", "amount": 350, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "pork", "label": "Svinenakke, grovkvernet", "amount": 150, "unit": "g", "role": "protein", "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": true, "taste": { "umami": 1 } },
+          { "id": "egg", "label": "Egg", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "allergens": ["egg"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Helmelk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "nutmeg", "label": "Revet muskat", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 } },
+          { "id": "ginger", "label": "Malt ingefær", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 }, "tradition": "traditional" },
+          { "id": "pepper", "label": "Sort pepper, nykvernet", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 } },
+          { "id": "stock", "label": "Hjemmelaget oksekraft", "amount": 6, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 150, "removable": false, "taste": { "umami": 2 } },
+          { "id": "butter", "label": "Smør (til steking og saus)", "amount": 3, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "wheat_flour", "label": "Hvetemel (til jevning)", "amount": 2.5, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "removable": false, "allergens": ["gluten"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Kvern kjøttet selv eller be slakteren grovkverne. Hold alt kaldt.",
+          "Surr løken gyllen i litt smør, og avkjøl helt.",
+          "Arbeid salt inn i farsen til den blir seig og blank. Elt inn egg, potetmel, muskat, ingefær og pepper, og spe med melk litt om gangen.",
+          "Vend inn den avkjølte løken, og la farsen hvile kaldt 30 minutter.",
+          "Form kaker, og brun dem i smør til mørk skorpe. Ta dem opp.",
+          "Lag en mørk smørjevning av smøret og hvetemelet i samme panne, spe med varm kraft, og kok sausen blank.",
+          "La kjøttkakene trekke 15–20 minutter. Smak til og server med kokte poteter, ertestuing og tyttebær."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "beef": [
+        { "id": "elk", "label": "Elgdeig (vilt)", "amount": 400, "unit": "g", "sodiumPer100g": 55, "taste": { "umami": 2 }, "tradition": "regional", "note": "Magrere og mer smakfullt; tilsett litt ekstra smør for saftighet." },
+        { "id": "chicken_mince", "label": "Kyllingkjøttdeig (lettere)", "amount": 400, "unit": "g", "sodiumPer100g": 70, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Mildere og lettere; stek litt kortere så kakene ikke blir tørre." }
+      ],
+      "egg": [
+        { "id": "extra_potato_flour", "label": "Ekstra potetmel (eggfritt)", "amount": 1, "unit": "ss", "tradition": "traditional", "note": "Binder uten egg; spe med litt mer melk eller vann." }
+      ],
+      "milk": [
+        { "id": "oat_milk", "label": "Havremelk (melkefri)", "amount": 1, "unit": "dl", "note": "Nøytral, melkefri base.", "allergens": [] },
+        { "id": "water", "label": "Vann (melkefritt)", "amount": 1, "unit": "dl", "note": "Helt nøytral binding, slik mange tradisjonelle oppskrifter bruker.", "allergens": [] }
+      ],
+      "wheat_flour": [
+        { "id": "potato_flour_thickener", "label": "Potetmel (glutenfri jevning)", "amount": 1, "unit": "ss", "tradition": "non-traditional", "note": "Rør ut i litt kald kraft og spe i sausen; gir glutenfri, blank saus.", "allergens": [] }
+      ]
+    }
+  }
+}
