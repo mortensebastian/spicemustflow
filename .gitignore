@@ -2,4 +2,6 @@
 .DS_Store
 
 # Editor-/verktøyrot
-.claude/
+.claude/*
+# …men del prosjekt-skillene (versjonert, brukes av web-økter og teamet)
+!.claude/skills/

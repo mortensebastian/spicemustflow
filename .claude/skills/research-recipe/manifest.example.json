@@ -1,0 +1,147 @@
+{
+  "_comment": "Eksempel staging-objekt (kjøttkaker). research-recipe skriver dette til recipes-pending/<slug>.json; build-recipe splicer indexEntry inn i recipes-index.js og lager resten. Tallene er illustrative.",
+
+  "indexEntry": {
+    "id": "kjottkaker",
+    "slug": "kjottkaker.html",
+    "status": "live",
+    "shortName": "Kjøttkaker",
+    "name": "Kjøttkaker i brun saus",
+    "tagline": "Saftige norske kjøttkaker som ikke sprekker, i blank brun saus.",
+    "description": "Saftige norske kjøttkaker i brun saus. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    "image": "kjottkaker.jpg",
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Norsk",
+    "keywords": "kjøttkaker, kjøttkaker i brun saus, hjemmelagde kjøttkaker",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT20M", "cook": "PT25M", "total": "PT45M" },
+    "search": "kjøttkaker brun saus norsk hjemmelaget"
+  },
+
+  "seo": {
+    "title": "Kjøttkaker i brun saus – saftig oppskrift steg for steg | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Den norske husmannskosten på sitt beste: møre kjøttkaker som ikke sprekker, i en blank brun saus.",
+    "bodyIntro": "Hemmeligheten bak saftige kjøttkaker er ikke kjøttet alene, men bindingen: litt potetmel og melk gjør farsen smidig så kakene holder formen i panna. Her får du tre nivåer – fra hverdagsraskt til en helgeversjon med ekte kraft i sausen. Juster porsjoner og bytt ingredienser fritt; resten av oppskriften balanserer seg selv."
+  },
+
+  "faq": [
+    { "q": "Hvorfor sprekker kjøttkakene mine?", "a": "Som regel for lite binding eller for varm panne. Bland inn potetmel og melk, la farsen hvile 10 minutter, og stek på middels varme." },
+    { "q": "Kan jeg fryse kjøttkaker?", "a": "Ja. Frys dem ferdigstekte med saus i lufttett boks i opptil 3 måneder, og varm forsiktig opp igjen." },
+    { "q": "Hvor lenge steker man kjøttkaker?", "a": "Brun dem 2–3 minutter på hver side, og la dem trekke ferdig i sausen i 10–15 minutter." },
+    { "q": "Kan jeg lage kjøttkaker uten egg?", "a": "Ja – bytt egget mot en ekstra spiseskje potetmel og litt mer melk for binding." }
+  ],
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "tine.no", "godt.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet er hardt (matprat/tine topp 3). Angrip long-tail først via FAQ-vinkler (sprekking, uten egg, steketid); ta hodeordet over 6–12 mnd."
+  },
+
+  "recipe": {
+    "id": "kjottkaker",
+    "bulkRoles": ["protein", "liquid", "vegetable"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "umami": "Retten blir mindre fyldig – vurder litt ekstra kraft eller soya.",
+      "sweet": "Mindre søtlig dybde – litt brunet løk balanserer."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak til.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Smak til."
+      }
+    },
+    "density": { "milk": 1.03, "stock": 1, "potato_flour": 0.6, "salt_added": 1.2, "butter": 0.95 },
+    "pieceWeight": { "egg": 55, "onion": 110 },
+    "unitOptions": { "milk": ["dl", "ml", "g"], "stock": ["dl", "ml", "g"], "salt_added": ["ts", "g"] },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Kjøttdeig (karbonadedeig)", "amount": 500, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 1, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "stock", "label": "Oksekraft (til saus)", "amount": 4, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 1 } },
+          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Bland kjøttdeig, potetmel, melk, salt og litt pepper til en smidig farse. La hvile 10 minutter.",
+          "Form kaker, og brun dem 2–3 minutter på hver side i smør.",
+          "Hell over kraft, og la kjøttkakene trekke 10–15 minutter. Smak til sausen og server med poteter."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Karbonadedeig", "amount": 400, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "pork", "label": "Svinedeig", "amount": 100, "unit": "g", "role": "protein", "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": true, "taste": { "umami": 1 } },
+          { "id": "egg", "label": "Egg", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "allergens": ["egg"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 1, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "stock", "label": "Oksekraft", "amount": 5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 1 } },
+          { "id": "butter", "label": "Smør (til bruning og saus)", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Bland kjøttdeig og svinedeig med egg, potetmel, melk, salt og pepper. La farsen hvile 10 minutter.",
+          "Surr løken myk i litt smør, og avkjøl før den vendes inn i farsen.",
+          "Form kaker, og brun dem i smør til gyllen skorpe.",
+          "Lag en lys jevning av smør og litt mel, spe med kraft til blank saus.",
+          "La kjøttkakene trekke 12–15 minutter i sausen. Smak til og server."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Høyrygg, kvernet grovt", "amount": 350, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "pork", "label": "Ribbe/nakke, kvernet", "amount": 150, "unit": "g", "role": "protein", "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": true, "taste": { "umami": 1 } },
+          { "id": "egg", "label": "Egg", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "allergens": ["egg"] },
+          { "id": "potato_flour", "label": "Potetmel", "amount": 1.5, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Helmelk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "ginger", "label": "Malt ingefær", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 }, "tradition": "traditional" },
+          { "id": "stock", "label": "Hjemmelaget oksekraft", "amount": 6, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 150, "removable": false, "taste": { "umami": 2 } },
+          { "id": "butter", "label": "Smør", "amount": 3, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Kvern kjøttet selv, eller be slakteren grovkverne. Hold alt kaldt.",
+          "Elt farsen med egg, potetmel, melk, ingefær, salt og pepper til den blir seig og blank. Hvil kaldt 30 minutter.",
+          "Surr løken gyllen, og vend den avkjølt inn i farsen.",
+          "Brun kakene i smør til mørk skorpe, og ta dem opp.",
+          "Lag en mørk smørjevning i samme panne, spe med kraft, og kok sausen blank.",
+          "La kjøttkakene trekke 15–20 minutter. Smak til og server med kokte poteter og tyttebær."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "beef": [
+        { "id": "elk", "label": "Elgdeig (vilt)", "amount": 400, "unit": "g", "sodiumPer100g": 55, "taste": { "umami": 2 }, "tradition": "regional", "note": "Magrere; tilsett litt ekstra smør." },
+        { "id": "chicken_mince", "label": "Kyllingdeig (lettere)", "amount": 400, "unit": "g", "sodiumPer100g": 70, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Mildere; stek litt kortere." }
+      ],
+      "egg": [
+        { "id": "extra_potato_flour", "label": "Ekstra potetmel (eggfritt)", "amount": 1, "unit": "ss", "tradition": "non-traditional", "note": "Binder uten egg; spe med litt mer melk." }
+      ],
+      "milk": [
+        { "id": "oat_milk", "label": "Havremelk (melkefri)", "amount": 1, "unit": "dl", "note": "Nøytral, melkefri base." }
+      ]
+    }
+  }
+}
