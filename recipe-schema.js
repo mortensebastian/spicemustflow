@@ -1,7 +1,9 @@
 /* ===== Velkomponert – schema-generator for oppskriftssider =====
-   Bygger Recipe- og BreadcrumbList-JSON-LD fra <rett>-data.js (window.RECIPE) +
-   manifestet (recipes-index.js), og injiserer dem i <head>. Da finnes schema
-   alltid og kan aldri komme i utakt med dataene – uansett hvor mange retter.
+   Bygger Recipe-, BreadcrumbList- og (om retten har spørsmål) FAQPage-JSON-LD fra
+   <rett>-data.js (window.RECIPE) + manifestet (recipes-index.js), og injiserer dem
+   i <head>. Da finnes schema alltid og kan aldri komme i utakt med dataene –
+   uansett hvor mange retter. Den synlige FAQ-en rendres fra samme faq-liste i
+   manifestet (inn i <div id="recipe-faq">), så schema og tekst alltid samsvarer.
 
    Speiler «medium»-varianten (standardvalget på siden). Lussekatter har egen,
    statisk schema og laster ikke denne (den bruker ikke window.RECIPE).
@@ -21,6 +23,10 @@
     var amt = fmtAmount(ing.amount);
     if (ing.unit === "stk") return amt + " " + ing.label;
     return amt + " " + ing.unit + " " + ing.label;
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
   function defaultVariant(recipe) {
@@ -69,6 +75,21 @@
              "itemListElement": items };
   }
 
+  /* Pure: bygg FAQPage-JSON-LD fra manifestets faq-liste (kan være tom). */
+  function buildFaqLd(faq) {
+    return {
+      "@context": "https://schema.org/",
+      "@type": "FAQPage",
+      "mainEntity": (faq || []).map(function (item) {
+        return {
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": { "@type": "Answer", "text": item.a }
+        };
+      })
+    };
+  }
+
   function inject(obj) {
     if (window.vkInjectJsonLd) return window.vkInjectJsonLd(obj);
     var s = document.createElement("script");
@@ -92,6 +113,21 @@
       '<div class="hub-grid related-grid">' + related.map(window.vkCardHtml).join("") + '</div>';
   }
 
+  /* Synlig FAQ fra manifestet – samme kilde som FAQPage-schema, så de aldri
+     kommer i utakt. Rendres kun hvis siden har en <div id="recipe-faq"> og
+     retten har spørsmål. */
+  function renderFaq(meta) {
+    var host = document.getElementById("recipe-faq");
+    if (!host || !meta.faq || !meta.faq.length) return;
+    host.innerHTML =
+      '<h2 class="section-title">Vanlige spørsmål</h2>' +
+      '<div class="faq-list">' +
+      meta.faq.map(function (item) {
+        return '<details class="faq-item"><summary>' + escHtml(item.q) +
+               '</summary><p>' + escHtml(item.a) + '</p></details>';
+      }).join("") + '</div>';
+  }
+
   function run() {
     if (!window.RECIPE || !window.RecipesIndex) return;
     var meta = window.RecipesIndex.byId(window.RECIPE.id);
@@ -99,6 +135,8 @@
     var category = window.RecipesIndex.categoryBySlug((meta.category || [])[0]);
     inject(buildRecipeLd(window.RECIPE, meta));
     inject(buildBreadcrumbLd(meta, category));
+    if (meta.faq && meta.faq.length) inject(buildFaqLd(meta.faq));
+    renderFaq(meta);
     renderRelated(meta);
   }
 
@@ -112,6 +150,6 @@
 
   if (typeof module !== "undefined" && module.exports) {
     module.exports = { buildRecipeLd: buildRecipeLd, buildBreadcrumbLd: buildBreadcrumbLd,
-                       ingredientLine: ingredientLine };
+                       buildFaqLd: buildFaqLd, ingredientLine: ingredientLine };
   }
 })();

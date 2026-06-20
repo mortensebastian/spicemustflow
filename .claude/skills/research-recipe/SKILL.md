@@ -41,9 +41,10 @@ genereres av `recipe-schema.js` + `site.js` fra `<rett>-data.js` + manifestet.
    `indexEntry.slug` (= `<id>.html`), `indexEntry.name`, `indexEntry.shortName`.
    Hva *skriver* folk? («kjøttkaker» vs «kjøttkaker i brun saus»). Kilde: autocomplete.
 2. **Long-tail + «Folk spør også» (PAA)** → `indexEntry.keywords`, `indexEntry.search`,
-   og `faq`. **Viktigst for et ungt domene** – du vinner long-tail, ikke hodeordet.
-   Samle 5–10 **ekte** spørsmål (PAA + relaterte søk + autocomplete) → `faq[]`.
-   *(faq er «senere»-feltet i kontrakten – vi tar det nå; build rendrer det synlig.)*
+   og `indexEntry.faq`. **Viktigst for et ungt domene** – du vinner long-tail, ikke
+   hodeordet. Samle 5–10 **ekte** spørsmål (PAA + relaterte søk + autocomplete) →
+   `indexEntry.faq[]` (`{q,a}`). `recipe-schema.js` rendrer både synlig FAQ og
+   FAQPage-schema fra denne lista – én kilde.
 3. **Søkeintensjon** → `serp.intent` (`recipe`/`info`/`mixed`). Bekreft oppskrift-intensjon.
 4. **Konkurranse / SERP-bilde** → `serp.topCompetitors`, `serp.hasRecipeCarousel`,
    `serp.competition`. Inkognito-søk på norsk Google.
@@ -73,10 +74,9 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
   "indexEntry": { ...nøyaktig RECIPES_INDEX-form: id, slug, status:"live",
                   shortName, name, tagline, description, image, category[],
                   badge, recipeCategory, cuisine, keywords, recipeYield,
-                  times:{prep,cook,total}, search, (season?) },
+                  times:{prep,cook,total}, search, faq:[{q,a}], (season?) },
   "seo":  { title },                 // <title>; resten av <head> avledes av build
   "body": { heroIntro, bodyIntro },  // synlig prosa på siden
-  "faq":  [ { q, a } ],              // 5–10 ekte spørsmål
   "serp": { intent, volume, competition, topCompetitors, hasRecipeCarousel, strategy },
   "recipe": { ...window.RECIPE: recipes{enkel,medium,kompleks}, swapOptions,
               servedAcid, density, pieceWeight, unitOptions, bulkRoles, levers,

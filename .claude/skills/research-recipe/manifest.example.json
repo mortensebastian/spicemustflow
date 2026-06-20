@@ -17,7 +17,13 @@
     "keywords": "kjøttkaker, kjøttkaker i brun saus, hjemmelagde kjøttkaker",
     "recipeYield": "4 porsjoner",
     "times": { "prep": "PT20M", "cook": "PT25M", "total": "PT45M" },
-    "search": "kjøttkaker brun saus norsk hjemmelaget"
+    "search": "kjøttkaker brun saus norsk hjemmelaget",
+    "faq": [
+      { "q": "Hvorfor sprekker kjøttkakene mine?", "a": "Som regel for lite binding eller for varm panne. Bland inn potetmel og melk, la farsen hvile 10 minutter, og stek på middels varme." },
+      { "q": "Kan jeg fryse kjøttkaker?", "a": "Ja. Frys dem ferdigstekte med saus i lufttett boks i opptil 3 måneder, og varm forsiktig opp igjen." },
+      { "q": "Hvor lenge steker man kjøttkaker?", "a": "Brun dem 2–3 minutter på hver side, og la dem trekke ferdig i sausen i 10–15 minutter." },
+      { "q": "Kan jeg lage kjøttkaker uten egg?", "a": "Ja – bytt egget mot en ekstra spiseskje potetmel og litt mer melk for binding." }
+    ]
   },
 
   "seo": {
@@ -28,13 +34,6 @@
     "heroIntro": "Den norske husmannskosten på sitt beste: møre kjøttkaker som ikke sprekker, i en blank brun saus.",
     "bodyIntro": "Hemmeligheten bak saftige kjøttkaker er ikke kjøttet alene, men bindingen: litt potetmel og melk gjør farsen smidig så kakene holder formen i panna. Her får du tre nivåer – fra hverdagsraskt til en helgeversjon med ekte kraft i sausen. Juster porsjoner og bytt ingredienser fritt; resten av oppskriften balanserer seg selv."
   },
-
-  "faq": [
-    { "q": "Hvorfor sprekker kjøttkakene mine?", "a": "Som regel for lite binding eller for varm panne. Bland inn potetmel og melk, la farsen hvile 10 minutter, og stek på middels varme." },
-    { "q": "Kan jeg fryse kjøttkaker?", "a": "Ja. Frys dem ferdigstekte med saus i lufttett boks i opptil 3 måneder, og varm forsiktig opp igjen." },
-    { "q": "Hvor lenge steker man kjøttkaker?", "a": "Brun dem 2–3 minutter på hver side, og la dem trekke ferdig i sausen i 10–15 minutter." },
-    { "q": "Kan jeg lage kjøttkaker uten egg?", "a": "Ja – bytt egget mot en ekstra spiseskje potetmel og litt mer melk for binding." }
-  ],
 
   "serp": {
     "intent": "recipe",

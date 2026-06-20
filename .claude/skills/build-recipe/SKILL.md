@@ -42,7 +42,10 @@ Endre **kun** Lag 1-feltene:
 5. `<body class="recipe-page" style="--recipe-image: url('bilder/<image>');">`.
 6. Hero: `<h1>` = `indexEntry.name`, ingress = `body.heroIntro`.
 7. **Brødtekst:** `body.bodyIntro` (2–4 `<p>`) i intro-området over oppskriften.
-8. **FAQ-seksjon** fra `faq[]` (se under).
+8. **FAQ-vert:** legg en tom `<section class="recipe-faq"><div class="container">
+   <div id="recipe-faq"></div></div></section>` etter oppskriften. `recipe-schema.js`
+   fyller den (synlig FAQ + FAQPage-schema) fra `indexEntry.faq` – ikke skriv
+   spørsmål/svar eller FAQPage-JSON-LD for hånd.
 
 **Behold uendret:** alle DOM-kroker (`#complexity-selector`, `#recipe-scale-input`
 med `data-base-yield`, `#diet-filter`, `#precision-toggle`, `#reset-recipe`,
@@ -52,21 +55,11 @@ med `data-base-yield`, `#diet-filter`, `#precision-toggle`, `#reset-recipe`,
 `recipes-index.js` → `site.js` → `recipe-schema.js` → `consent.js`.
 **Ingen inline JSON-LD** – `recipe-schema.js` injiserer Recipe + Breadcrumb.
 
-### FAQ
-Synlig seksjon (H2 + spørsmål/svar) etter oppskriften:
-```html
-<section class="recipe-faq" id="faq">
-  <div class="container">
-    <h2 class="section-title">Vanlige spørsmål</h2>
-    <!-- per faq[]: <h3>q</h3><p>a</p> (eller <details>) -->
-  </div>
-</section>
-```
-FAQPage-schema bør genereres **sentralt** (av `recipe-schema.js` fra
-`indexEntry.faq`), ikke skrives inline – det holder schema i utakt-sikkert, slik
-Recipe-schema allerede er. Legg `faq` på manifestoppføringen, og hvis
-`recipe-schema.js` ennå ikke emitterer FAQPage: noter det som neste steg (ikke
-hardkod JSON-LD i HTML-en).
+### FAQ (rendres sentralt)
+`indexEntry.faq` driver **både** synlig FAQ og FAQPage-schema via `recipe-schema.js`
+(`renderFaq` + `buildFaqLd`). Bygg-jobben er derfor bare: (1) ha `faq` på
+manifestoppføringen, (2) sette inn den tomme `<div id="recipe-faq">`-verten.
+Ikke skriv Q&A-markup eller FAQPage-JSON-LD i HTML – da unngår vi utakt.
 
 ## Steg 4 – `sitemap.xml`
 Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</lastmod></url>`.

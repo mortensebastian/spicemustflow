@@ -1,10 +1,15 @@
 # Forfatterguide for oppskriftssider (utkast til skill)
 
 Dette dokumentet beskriver **hvordan man lager en ny oppskriftsside** med den
-delte motoren (`recipe.js` + `recipe-balance.js` + `recipe-adapter.js`). Det er
-et **levende dokument**: hver gang vi bygger en ny rett, oppdaterer vi skjemaet,
-konvensjonene og «lærdom»-loggen nederst. Når vi har nok erfaring, blir dette
-innholdet i en `/ny-oppskrift`-skill.
+delte motoren (`recipe.js` + `recipe-balance.js` + `recipe-adapter.js`) og den
+sentrale SEO-infrastrukturen (`recipes-index.js` + `site.js` + `recipe-schema.js`).
+Det er et **levende dokument**: hver gang vi bygger en ny rett, oppdaterer vi
+skjemaet, konvensjonene og «lærdom»-loggen nederst.
+
+> **Skill-ene gjør dette nå.** `/ny-rett` orkestrerer `/research-recipe`
+> (mat + SEO → `recipes-pending/<slug>.json`) og `/build-recipe` (datafil +
+> manifestoppføring + HTML + sitemap). Dette dokumentet er kontrakten skill-ene
+> følger – hold dem i synk.
 
 > Mål: en ny rett skal være **ren data + én HTML fra mal + ett bilde** — ingen
 > endring i motoren. Hver gang vi *må* endre motoren for en ny rett, er det en
@@ -13,14 +18,18 @@ innholdet i en `/ny-oppskrift`-skill.
 ---
 
 ## Hva en ny rett består av
-1. `<rett>-data.js` — oppskriftsdata + `window.RECIPE`-config.
-2. `<rett>.html` — kopi av en eksisterende oppskriftsside (paella/fiskesuppe),
-   med 4–5 felt endret (se sjekkliste).
-3. `bilder/<rett>.jpg` — web-optimalisert bilde (≤ ~1920 px, < ~500 KB).
-4. Ett klikkbart kort på `index.html`.
+1. `<rett>-data.js` — oppskriftsdata + `window.RECIPE`-config (`id` = sluggen).
+2. **Én oppføring i `recipes-index.js`** (`window.RECIPES_INDEX`) — manifestet.
+   Dette ene gir AUTOMATISK: kort på `index.html`, kort på kategorisiden,
+   «Relaterte oppskrifter», Recipe-/BreadcrumbList-/FAQPage-schema og synlig FAQ.
+3. `<rett>.html` — kopi av en fersk oppskriftsside (`paella.html`), med kun
+   mal-feltene endret (se sjekkliste). **Ingen inline JSON-LD** og **ingen
+   håndskrevne kort** — det genereres.
+4. `bilder/<rett>.jpg` — web-optimalisert bilde (≤ ~1920 px, < ~500 KB).
+5. Én `<url>`-linje i `sitemap.xml`.
 
 Felles og UENDRET: `recipe.js`, `recipe-balance.js`, `recipe-adapter.js`,
-`style-felles.css`.
+`recipes-index.js`-hjelperne, `site.js`, `recipe-schema.js`, `style-felles.css`.
 
 ---
 
@@ -67,12 +76,15 @@ window.RECIPE = {
 - `levers: []` er gyldig → retten har ingen auto-balanse (kun skalering + bytter).
 
 ## Sjekkliste for `<rett>.html` (fra mal)
-- [ ] `<title>` + `<meta name="description">`
-- [ ] Recipe JSON-LD (speil medium-versjonen)
+- [ ] `<title>` (primærsøkeord først + `| Velkomponert`) + `<meta name="description">`
+- [ ] `<link rel="canonical">` + Open Graph/Twitter-tagger
 - [ ] `<body class="recipe-page" style="--recipe-image: url('bilder/<rett>.jpg')">`
-- [ ] Hero `<h1>` + ingress
-- [ ] `<script src="<rett>-data.js">` (resten av script-taggene likt)
-- [ ] Kort på `index.html` gjort klikkbart
+- [ ] Hero `<h1>` + ingress, og `body.bodyIntro`-prosa over oppskriften
+- [ ] Alle DOM-kroker, `<div id="related-recipes">`, og `<div id="recipe-faq">`
+- [ ] Script-rekkefølge: `<rett>-data.js` → `recipe.js` → `recipe-balance.js` →
+      `recipe-adapter.js` → `recipes-index.js` → `site.js` → `recipe-schema.js` → `consent.js`
+- [ ] **Ingen** inline JSON-LD, **ingen** håndskrevet FAQ/kort (genereres)
+- [ ] Oppføring lagt i `recipes-index.js` (`status:"live"`, `faq[]` fylt) + sitemap-linje
 
 ---
 
