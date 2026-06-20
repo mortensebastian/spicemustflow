@@ -20,46 +20,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style-felles.css">
 
-  <!-- Recipe-schema for Google. Speiler medium-versjonen (standardvalget). -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Recipe",
-    "name": "Kremet fiskesuppe",
-    "description": "Kremet norsk fiskesuppe med torsk, laks og reker, med den klassiske søt-sure balansen.",
-    "recipeCategory": "Suppe",
-    "recipeCuisine": "Norsk",
-    "keywords": "fiskesuppe, bergensk fiskesuppe, kremet fiskesuppe",
-    "recipeYield": "4 porsjoner",
-    "prepTime": "PT20M",
-    "cookTime": "PT25M",
-    "totalTime": "PT45M",
-    "recipeIngredient": [
-      "10 dl fiskekraft (fumet)",
-      "250 g torsk i terninger",
-      "150 g laks i terninger",
-      "150 g reker (pillet)",
-      "1 purre",
-      "2 gulrøtter",
-      "150 g sellerirot",
-      "1 ss smør",
-      "1 ss hvetemel",
-      "3 dl fløte eller crème fraîche",
-      "1 ts hvitvinseddik",
-      "1 ts sukker",
-      "1 ts salt",
-      "frisk dill"
-    ],
-    "recipeInstructions": [
-      {"@type": "HowToStep", "text": "Smelt smøret og surr purre, gulrot og sellerirot blanke uten å brune."},
-      {"@type": "HowToStep", "text": "Hell over fiskekraften og småkok rotgrønnsakene møre, ca. 8–10 minutter."},
-      {"@type": "HowToStep", "text": "Visp melet inn i fløten, rør det i suppa og la den så vidt tykne."},
-      {"@type": "HowToStep", "text": "Legg i torsk, så laks og reker, og trekk til fisken akkurat flaker – ikke kok."},
-      {"@type": "HowToStep", "text": "Smak til med eddik og sukker til en subtil søt-sur balanse, og juster salt."},
-      {"@type": "HowToStep", "text": "Rør inn frisk dill og server straks."}
-    ]
-  }
-  </script>
 </head>
 
 <!-- --recipe-image gir siden et rett-bilde øverst som toner ut nedover. -->
@@ -138,6 +98,11 @@
   </section>
 
   <!-- ===== Bunntekst ===== -->
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
   <footer class="site-footer">
     <div class="container">
       <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
@@ -149,5 +114,9 @@
   <script src="recipe.js"></script>
   <script src="recipe-balance.js"></script>
   <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
 </body>
 </html>

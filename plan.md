@@ -572,6 +572,24 @@ Etter domenekjøp: verifiser → send `sitemap.xml` → følg ukentlig.
 8. **Første kategorisider** (middag, suppe, dessert, baking) + intern lenking.
 9. Begynn å bygge høyvolums hverdagsretter fra §6 i jevnt tempo.
 
+**Status (implementert juni 2026):**
+- [x] Steg 1–3: safran-rester ryddet, titler/H1 avsafranifisert, lussekatter fikset.
+- [x] Steg 4: manifest `recipes-index.js` (+ `RECIPE_CATEGORIES`); forsidens
+      rutenett og «relaterte» rendres fra det via `site.js`.
+- [x] Steg 5: `recipe-schema.js` genererer Recipe + BreadcrumbList fra
+      `window.RECIPE` + manifest; statisk JSON-LD fjernet fra de 5 adapter-sidene
+      (lussekatter beholder sin egen, siden den ikke bruker adapteren).
+- [x] Steg 6: canonical + Open Graph/Twitter på alle sider.
+- [x] Steg 7: `robots.txt` + `sitemap.xml` (statisk; build-skillet vedlikeholder).
+- [x] Steg 8: kategorisider (`middag/suppe/dessert/baking/jul.html`) med
+      CollectionPage/ItemList + breadcrumb, lenket fra forsiden.
+- [ ] Steg 9: bygg høyvolums hverdagsretter (pågår løpende).
+
+**SEO-kontrakt for skill-ene** (se topp av `recipes-index.js`): `research.recipe`
+produserer Lag 3 (slug, name, description, keywords, category, recipeCategory,
+cuisine, times, badge, search) som ett objekt i manifestet; `build.recipesite` +
+`recipe-schema.js` lager Lag 1 (mal) og Lag 2 (avledet schema) automatisk.
+
 ### Lenkebygging
 - Internt: hub ↔ kategori ↔ oppskrift ↔ relaterte (genereres fra manifest).
 - Eksternt: bli nevnt av norske matbloggere/lokale medier — nye domener trenger

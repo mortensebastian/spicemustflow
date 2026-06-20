@@ -19,36 +19,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style-felles.css">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Recipe",
-    "name": "Pannekaker",
-    "description": "Tynne norske pannekaker, her med safran, kardemomme og brunet smør.",
-    "recipeCategory": "Dessert",
-    "recipeCuisine": "Norsk",
-    "keywords": "pannekaker, norske pannekaker, safranpannekaker",
-    "recipeYield": "12 pannekaker",
-    "prepTime": "PT10M",
-    "cookTime": "PT20M",
-    "totalTime": "PT50M",
-    "recipeIngredient": [
-      "3 dl hvetemel",
-      "5 dl melk",
-      "4 egg",
-      "1 ss sukker",
-      "0,5 ts malt kardemomme",
-      "0,5 ts salt",
-      "2 ss smør til steking"
-    ],
-    "recipeInstructions": [
-      {"@type": "HowToStep", "text": "Visp mel, sukker, kardemomme og salt sammen."},
-      {"@type": "HowToStep", "text": "Spe med halvparten av melken til en klumpfri røre, og visp inn egg og resten av melken."},
-      {"@type": "HowToStep", "text": "La røren hvile 20–30 minutter."},
-      {"@type": "HowToStep", "text": "Stek tynne pannekaker i smør, gylne på begge sider."}
-    ]
-  }
-  </script>
 </head>
 
 <!-- --recipe-image: legg et foto på bilder/pannekake.jpg så vises det øverst. -->
@@ -120,6 +90,11 @@
     </div>
   </section>
 
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
   <footer class="site-footer">
     <div class="container">
       <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
@@ -130,5 +105,9 @@
   <script src="recipe.js"></script>
   <script src="recipe-balance.js"></script>
   <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
 </body>
 </html>
