@@ -89,7 +89,11 @@ Ferdige:
 - [x] Pannekaker
 - [x] Sjokoladekake
 
-Neste (prioritert etter norsk søkevolum og sesong):
+Neste (prioritert etter norsk søkevolum og sesong — se SEO-plan §6):
+> **Merk:** safran nedtones (eierføring). De påbegynte safranrettene under kan
+> fullføres som lavkonkurranse-bonus, men *vekstmotoren* er høyvolums norske
+> hverdags- og bakeklassikere (kjøttkaker, taco, lasagne, kylling, vafler, boller,
+> kanelboller, skolebrød …). Bygg disse parallelt og prioritert.
 - [ ] Safranrisotto (Risotto alla Milanese)
 - [ ] Bouillabaisse
 - [ ] Persisk safranris og safrankylling
@@ -421,52 +425,171 @@ trenger, gitt research som `fiskesuppe.md`.
 
 ---
 
-## SEO-plan
+## SEO-plan (revidert juni 2026)
 
-Velkomponert er en ren innholdsside — SEO er den primære trafikkmotoren.
+Velkomponert er en ren innholdsside — SEO er den primære trafikkmotoren. Denne
+planen erstatter den forrige «safran-pilar»-strategien etter to føringer fra eier:
 
-### Grunnmur per side
-- `<title>` — primærsøkeord først, sitenavn til slutt (`| Velkomponert`)
-- `<meta name="description">` — ~155 tegn, beskriver siden spesifikt
-- `<h1>` — én per side, primærsøkeord naturlig inkludert
-- `lang="nb"` på alle sider (allerede satt)
-- Recipe JSON-LD på alle oppskriftssider (allerede satt på 5 av 6)
+> **Føring 1 — safran nedtones.** Safran var en midlertidig forretningsidé vi går
+> bort fra. Det er helt greit at safran står i retter som faktisk bruker det
+> (lussekatter, paella, bastani …), men safran skal **ikke** være SEO-vinkelen:
+> ikke et primærsøkeord, ikke et merkevaregrep, og **ingen safran-pilarside**.
+>
+> **Føring 2 — bygg for skala.** Arkitekturen må tåle å vokse fra 6 til kanskje
+> **~500 av de mest brukte norske oppskriftene**. Alt som gjøres for hånd per side
+> i dag (JSON-LD, hub-kort, sitemap) må gjøres **data-drevet** før biblioteket
+> vokser, ellers blir det uoverkommelig og full av feil.
 
-### Teknisk
-- `robots.txt` og `sitemap.xml` — lag når domenet er kjøpt
-- `CNAME` + HTTPS på GitHub Pages
-- `loading="lazy"` og `width`/`height` på bilder (CLS)
-- Bildene i WebP-format når de er klare
+### 0. Hva som endrer seg fra forrige plan
+- **Safran-pilaren utgår.** Den tematiske autoriteten skal bygges på **kategori- og
+  kolleksjonssider** (middag, suppe, dessert, baking, kylling, fisk, vegetar,
+  rask hverdagsmat …), ikke på safran.
+- **Ikke led titler/H1 med «med safran».** Researchen foreslo f.eks. «Fiskesuppe
+  med safran» og «Paella med safran» som titler — det gjør vi **ikke**. Led med
+  rettens egentlige primærsøkeord; nevn safran i brødteksten der det hører hjemme.
+- **Schema og sitemap genereres fra data**, ikke skrives for hånd per fil.
 
-### Søkeord å ta etter rett
-Typisk mønster: `[rettens navn] oppskrift`, `enkel [rettens navn]`, `[rettens navn] [antall porsjoner]`.
-Fiskesuppe og lussekatter har høyest norsk volum. Safranrettene treffer nisje-søk med høy intensjon.
+### 1. Differensiator (erstatter safran som «vinkel»)
+Det som skiller Velkomponert fra matprat/tine/godt er ikke en råvare, men at hver
+oppskrift er **interaktiv og velkomponert**: tre nivåer (enkel/medium/kompleks),
+skalerbare porsjoner, bytt/fjern ingredienser med automatisk smaksbalanse,
+allergenfilter. Dette gir også en *reell SEO-fordel*: hver side har unikt,
+funksjonelt innhold → lav risiko for «tynt/duplisert innhold» når biblioteket blir
+stort (se §9). Selg dette i meta/innhold: «juster porsjoner og bytt ingredienser».
+
+### 2. Informasjonsarkitektur som skalerer (hub → kategori → oppskrift)
+Tre nivåer, der **kategorisidene er de nye pilarene**:
+1. **Hub** (`index.html`) — lenker til kategorisider + utvalgte/nye oppskrifter.
+   Kan ikke vise 500 håndkodede kort; griddet må genereres fra manifestet (§2.4).
+2. **Kategori-/kolleksjonssider** (nye) — f.eks. `/middag`, `/suppe`, `/dessert`,
+   `/baking`, `/kylling`, `/fisk`, `/vegetar`, `/rask-hverdagsmat`. Hver er en
+   indekserbar side som rangerer på «[kategori] oppskrifter» og samler internlenker.
+   Kolleksjoner kan også være tema/råvare («kyllingoppskrifter», «oppskrifter med
+   torsk», «middag på 30 minutter»). Dette er ryggraden i intern lenking ved skala.
+3. **Oppskriftssider** — én per rett, lenker opp til sin(e) kategori(er) og til
+   3–6 relaterte oppskrifter (genereres fra samme kategori i manifestet).
+
+**2.4 Manifest som én kilde til sannhet — `recipes-index.js` (NY).**
+Ett array som beskriver hver rett: `{ id, slug, name, category[], image,
+description, status: 'live'|'soon', published }`. Brukes til å generere: hub-grid,
+kategorisider, «relaterte oppskrifter», `sitemap.xml` og interne lenker. Uten dette
+skalerer ingenting. I dag er kortene hardkodet i `index.html` — migrer til manifest.
+
+**2.5 URL-/slug-konvensjon (lås nå, før 500 filer).**
+- Flat, små bokstaver, bindestrek, = primærsøkeordet: `kjottkaker.html`,
+  `kylling-tikka-masala.html`. Slug endres aldri etter publisering (ellers
+  redirect-gjeld). Vurder mappe (`/oppskrift/<slug>`) hvis flat rot blir uoversiktlig.
+- Vanity-domener (f.eks. `paella.no`) → **301** til `velkomponert.no/<slug>`.
+
+### 3. Strukturert data generert fra data (ikke håndskrevet per side)
+I dag dupliseres Recipe-JSON-LD manuelt i hver HTML — og `lussekatter.html` mangler
+det helt. Det holder ikke til 500 sider. Mål: **én kilde (datafila), generert markup.**
+- **Recipe JSON-LD** bygges fra `window.RECIPE` (av `recipe-adapter.js` eller en
+  liten delt `recipe-schema.js`) og injiseres i `<head>`. Da kan en side aldri ha
+  ingredienser i dataene men feil/manglende schema. *Avveiing:* Google leser
+  JS-generert JSON-LD, men server-rendret er tryggest. Siden vi ikke har byggesteg,
+  er runtime-injeksjon det pragmatiske valget nå; et lite valgfritt Node-skript som
+  skriver statisk JSON-LD kan komme senere.
+- **BreadcrumbList** på hver oppskrift (Hjem › Kategori › Rett) — også fra manifest.
+- **FAQPage** på sider som har FAQ-seksjon (bruk PAA-spørsmålene, se §6).
+- **WebSite** (+ `SearchAction`) og **ItemList/CollectionPage** på hub/kategorisider.
+- **Organization** (navn, logo) én gang.
+- `aggregateRating` legges til **kun** når ekte anmeldelser finnes (aldri fabrikkert).
+- Valider i Googles Rich Results Test ved hver malendring.
+
+### 4. On-page-standard per oppskrift (sjekkliste — gjelder ALLE sider)
+- `<title>`: `Primærsøkeord – kort kvalifikator | Velkomponert` (≤ ~60 tegn).
+- `<meta name="description">`: ~155 tegn, spesifikk, nevner «juster porsjoner / bytt
+  ingredienser» der det passer.
+- Én `<h1>` = retten med primærsøkeord. H2-er fra PAA/long-tail (§6).
+- `lang="nb"` (satt), `<link rel="canonical">` (mangler i dag — legg til overalt).
+- **Open Graph + Twitter-kort** (mangler i dag): `og:title/description/image/type`,
+  `og:url`, `twitter:card=summary_large_image`. Viktig for deling og CTR.
+- Bilder: beskrivende `alt`, `loading="lazy"`, eksplisitt `width`/`height` (CLS), WebP.
+- FAQ-seksjon nederst der det er naturlig (mater FAQPage-schema + PAA-trafikk).
+
+### 5. Teknisk SEO
+- **`robots.txt`** (mangler) — tillat alt + peker til sitemap.
+- **`sitemap.xml`** (mangler) — **generert fra manifestet**, ikke håndholdt. Et lite
+  skript (kan kjøres lokalt og committes) skriver alle live-URL-er.
+- `CNAME` + HTTPS på GitHub Pages når domenet er kjøpt.
+- Ytelse/Core Web Vitals: lazy-load, bildedimensjoner, WebP, minimer font-blokkering.
+- Konsistent intern lenking (3–6 kontekstuelle lenker/side, beskrivende ankertekst).
+
+### 6. Søkeordstrategi for ~500 retter (long-tail først, ikke hodeord)
+Nytt domene rangerer ikke på «pannekaker»/«kjøttkaker» på 6–12 mnd. Strategien per
+rett (gjelder generisk for hele biblioteket):
+- **Primært:** `[rett] oppskrift`. **Vinnbart raskt:** spørsmål/long-tail fra «Folk
+  spør også» → bli H2/FAQ: «hvor mange pannekaker av 1 liter melk», «enkel
+  fiskesuppe med torsk», «hvor lenge steke …», «[rett] uten egg», «[rett] til X porsjoner».
+- **Bygg bredt og høyt volum først.** Trafikken kommer fra norske hverdags-/
+  bakeklassikere, ikke fra safran-nisjen. Prioritert byggeliste (verifiser volum i
+  Keyword Planner, geo = Norge): **kjøttkaker, taco, lasagne, kyllinggryte/-form,
+  fiskekaker, vafler, boller/hveteboller, kanelboller, skolebrød, gjærbakst,
+  kjøttdeig-middager, lapskaus, suppe-varianter, grøt, pizza, wok, ovnsbakt laks,
+  pasta carbonara/bolognese, brownies, gulrotkake, eplekake** … (fyll ut mot
+  Keyword Planner + Trends). Sesongretter (fårikål, fastelavnsboller, pinnekjøtt,
+  17. mai-kaker) timer du etter §7.
+- **Safranrettene beholdes som de er** — lavkonkurranse «quick wins» som rangerer
+  lett og er fine å ha. Men de er en **bonus**, ikke fokus, og får ingen egen pilar.
+
+### 7. Sesongkalender (timing av publisering)
+Norske matsøk har skarpe, gjentakende sesongtopper. Publiser og indekser **uker før**
+toppen. Faste kroker å eie: **lussekatter / julebakst** (uke 49–50, ferdig i
+okt/nov), **fastelavnsboller** (feb/mars), **fårikål** (siste torsdag i sept),
+**pinnekjøtt/ribbe** (des), **17. mai-kaker** (mai), **påskebakst** (mars/april),
+**grillmat** (sommer). Hold en enkel innholdskalender i dette dokumentet.
+
+### 8. Skaleringsarbeidsflyt (gjør 500 retter operasjonelt mulig)
+En ny rett skal være: `<slug>-data.js` (ren data) + `<slug>.html` (mal, 4 felt
+endret) + bilde + **én linje i manifestet**. Schema, hub-kort, sitemap-oppføring og
+relaterte-lenker faller da ut automatisk. Dette er nøyaktig inputen en
+`/ny-oppskrift`-skill trenger (jf. notatene i fiskesuppe-seksjonen). Konsistent mal =
+gyldig schema og SEO-standard på alle 500 uten manuelt arbeid per side.
+
+### 9. Kvalitetsrisiko ved volum
+Google straffer tynt/duplisert masseinnhold. Vern: (a) den interaktive motoren gir
+hver side unik funksjon og tekst; (b) ekte, egne bilder; (c) reell brødtekst og FAQ
+per rett (ikke bare ingrediensliste); (d) publiser i jevnt tempo, ikke 500 på én dag.
+
+### 10. Måling (Search Console)
+Etter domenekjøp: verifiser → send `sitemap.xml` → følg ukentlig.
+- Inntrykk opp, klikk uteblir → forbedre titler/meta + schema.
+- Long-tail i topp 10 innen 3–4 mnd → fremskynd angrep på hodeord.
+- Ingenting rangerer etter 12 mnd → innholdskvalitet/teknisk/lenker, ikke «sandkasse».
+
+### Strakstiltak (rekkefølge — ikke avhengig av domenekjøp)
+1. **Rydd safran-rester:** fjern `spiceflow.html`/«Kjøp ekte safran»-CTA-en og den
+   ødelagte kommentaren i `paella.html`; mykne kortcopy som leder mot safran
+   (f.eks. «… helt til safranpannekaker» i `index.html`).
+2. **Fiks `lussekatter.html`:** legg til meta description, `| Velkomponert` i tittel,
+   canonical og Recipe JSON-LD (mangler helt i dag).
+3. **Avsafranifiser titler/H1** der safran er brukt som vinkel (behold safran i body).
+4. **Manifest (`recipes-index.js`)** + migrer hub-grid og «relaterte» til det.
+5. **Schema-generator fra `window.RECIPE`** (Recipe + BreadcrumbList) → alle sider.
+6. **Canonical + Open Graph/Twitter** på alle sider (via malen).
+7. **`robots.txt` + generert `sitemap.xml`** fra manifestet.
+8. **Første kategorisider** (middag, suppe, dessert, baking) + intern lenking.
+9. Begynn å bygge høyvolums hverdagsretter fra §6 i jevnt tempo.
 
 ### Lenkebygging
-- Intern lenking: hub ↔ oppskrift (allerede: "← Se alle oppskrifter" på alle sider)
-- Ekstern: bli nevnt av norske matbloggere, lokale matnyheter
-- Oppfordre til ekte brukeranmeldelser (legg til `aggregateRating` i JSON-LD når det finnes)
+- Internt: hub ↔ kategori ↔ oppskrift ↔ relaterte (genereres fra manifest).
+- Eksternt: bli nevnt av norske matbloggere/lokale medier — nye domener trenger
+  tillitssignaler for å modne raskere.
+- Ekte brukeranmeldelser → `aggregateRating` (aldri fabrikkert).
 
-### Search Console
-Etter domenekjøp: verifiser → send sitemap → "URL Inspection → Request indexing" per side.
 ## Forbehold (fra researchen)
 
 - **Ingen offentlige søkevolum.** Eksakte norske månedstall finnes ikke gratis –
-  hent live fra Google Keyword Planner (geo = Norge). Sesongsnitt undervurderer
-  desembertoppen kraftig. Alle volum her er retningsgivende.
-- **Trends-mønsteret** (stiger sent okt, topper uke 49–50) er sterkt antydet fra
-  MatPrats «Norsk Juleindeks» og undersøkelser, ikke en publisert ukekurve.
-  Bekreft med live Google Trends (geo = Norge; «lussekatter», «safran»).
+  hent live fra Google Keyword Planner (geo = Norge). Alle volum er retningsgivende.
 - **Ranking-tidslinjer er sannsynligheter.** ~3–6 mnd for lavkonkurranse,
   6–12+ mnd for konkurransesterke ord. Regn år én som grunnmur.
 - **Rich results er ikke garantert.** Gyldig schema gjør deg *kvalifisert*; Google
   bestemmer om det vises.
-- **Andelen som baker lussekatter** varierer 15 %–28 % mellom undersøkelser –
-  behandle som et spenn.
-- **Safranpriser varierer mye** (≈40 000–180 000 kr/kg, per-gram 59–358 kr) –
-  bruk som kontekst, ikke fast markedspris.
+- **Sesongkurver** bør bekreftes live i Google Trends (geo = Norge, 5 år).
 
 ---
 
-*Kilde: intern SEO-research (Norwegian Saffron & Julebaking). Oppdater denne
-planen når domenet velges og når sidene faktisk får SEO-taggene implementert.*
+*Kilde: intern SEO-research, tilpasset etter eierføring (safran nedtones; bygg for
+~500 retter). Oppdater denne planen når domenet velges og når sidene faktisk får
+SEO-taggene implementert.*
