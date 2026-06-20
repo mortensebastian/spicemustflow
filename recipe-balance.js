@@ -8,8 +8,9 @@
      1) Kvantitativ akse med en «lever»-ingrediens (typisk SALT, regulert av
         tilsatt salt). Vi løser hvor mye av leveren som trengs for å treffe
         rettens mål-nivå igjen.
-     2) Kvalitative akser (søtt/surt/bittert/umami) uten enkel lever. Vi
-        sammenligner profilen mot målet og gir et tips når en akse faller mye. */
+     2) Kvalitative akser (søtt/surt/bittert/umami) har ingen enkel lever og
+        autokorrigeres ikke. Tips for disse genereres av kalleren
+        (recipe-adapter.js) ut fra ingrediensens egen smaksprofil. */
 
 window.RecipeBalance = {
 
@@ -32,22 +33,5 @@ window.RecipeBalance = {
      gi en advarsel, et tips, eller blokkere. */
   missingRoles: function (present, required) {
     return required.filter(function (r) { return present.indexOf(r) === -1; });
-  },
-
-  /* Tips for kvalitative akser som har falt merkbart under målet.
-     - current/target: { sweet, sour, bitter, umami } (sum av intensitet × gram)
-     - messages:       { <akse>: "tekst" } – kun akser med en melding vurderes
-     - threshold:      andel av målet under hvilken vi varsler (standard 0,6)
-     Returnerer en liste med tekster. */
-  tasteTips: function (current, target, messages, threshold) {
-    var t = (typeof threshold === 'number') ? threshold : 0.6;
-    var tips = [];
-    ['sweet', 'sour', 'bitter', 'umami'].forEach(function (axis) {
-      if (!messages[axis]) return;
-      var goal = target[axis] || 0;
-      var now = current[axis] || 0;
-      if (goal > 0 && now < goal * t) tips.push(messages[axis]);
-    });
-    return tips;
   }
 };
