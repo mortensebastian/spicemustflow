@@ -67,6 +67,62 @@ Rekkefølgen er grov; SEO-detaljene står i egen seksjon lenger ned.
 - [ ] Sett opp annonsenettverk (Google AdSense eller Ezoic) når trafikken kvalifiserer.
 - [ ] AI-dialog vurderes kun hvis det finnes en klar inntektsmodell under det.
 
+**Personvern/GDPR (forutsetning for AdSense – se egen seksjon under):**
+- [x] `personvern.html`, `om.html`, footer-lenker og samtykkebanner på plass.
+- [ ] Fyll inn ekte behandlingsansvarlig + kontakt-e-post (plassholdere i dag).
+- [ ] Aktiver Googles CMP i AdSense når annonser skrus på (se seksjon).
+
+---
+
+## Personvern, cookies og samtykke (GDPR)
+
+AdSense og norsk/EØS-trafikk krever en personvernerklæring og gyldig
+cookie-samtykke. Viktig nyanse: **siden har i dag ingen annonse- eller
+sporings-cookies** – kun funksjonell førsteparts `localStorage` som brukeren selv
+utløser (lagrede varianter/notater + samtykkevalget). Samtykke for cookies blir
+*påkrevd* først når AdSense (eller analyse) faktisk skrus på. Vi har likevel lagt
+banneret på plass nå, klart til å «gate» annonse-/analyse-scripts.
+
+**Arkitektur (passer ingen-build, 13+ sider, skalerer til ~500):**
+`consent.js` er en selvstendig modul som lastes med én `<script>`-tag på alle
+sider. Den injiserer egen CSS, samtykkebanneret, felles footer-lenker
+(Personvern · Om · Endre samtykke) og en liten API:
+`VKConsent.whenConsented('ads', fn)`, `VKConsent.has(cat)`, `VKConsent.reopen()`.
+Valget lagres i `localStorage` under `vkConsent`
+(`{ necessary, ads, analytics, ts }`). Ingen avhengighet til `style-felles.css`
+eller `site.js`, så den virker også på avvikende sider (lussekatter,
+motoren-forklart).
+
+**Gjort nå:**
+- [x] `personvern.html` – personvernerklæring (localStorage, cookies, tredjeparter
+      Google Fonts/GitHub Pages/AdSense-fremtidig, GDPR-rettigheter, Datatilsynet).
+- [x] `om.html` – om-side + kontakt (Google vil se at siden er «ekte»).
+- [x] `consent.js` – samtykkebanner («Godta alle» / «Bare nødvendige», likeverdige
+      knapper) + footer-lenker + API, lastet på alle sider.
+- [x] `.legal`-stiler i `style-felles.css`; `om.html`/`personvern.html` i sitemap.
+- [x] Footer-lenke «Endre samtykke» lar brukeren trekke tilbake/endre når som helst.
+
+**Gjenstår (du / ved AdSense-oppstart):**
+- [ ] Erstatt plassholderne `[ditt navn / virksomhet]` og `[din e-post]` i
+      `personvern.html` og `om.html` med ekte behandlingsansvarlig + kontakt.
+- [ ] Når AdSense er godkjent: aktiver Googles innebygde CMP i AdSense-dashbordet
+      («Privacy & messaging» / Funding Choices). Merk: Googles CMP er ikke en snutt
+      du limer inn selv – den konfigureres i dashbordet og serveres automatisk når
+      AdSense-koden er på siden. Det du limer inn på alle sider er selve
+      AdSense-script-taggen (`adsbygoogle.js` med din publisher-ID).
+- [ ] Beslutt om vi beholder vårt eget banner eller lar Googles CMP overta når
+      AdSense er på. Velger vi Googles CMP, kan `consent.js`-banneret skrus av og
+      kun API-en/gatingen beholdes.
+- [ ] Gate annonse-/analyse-lasting på samtykke:
+      `VKConsent.whenConsented('ads', () => { /* last adsbygoogle.js */ })`.
+- [ ] Test: banner vises ved første besøk, valg huskes, annonser lastes først
+      *etter* samtykke, og «Endre samtykke» åpner banneret igjen.
+
+**Personvern-forbedring (vurder):** Google Fonts lastes i dag fra Googles servere,
+som dermed mottar brukerens IP. Mest personvernvennlig er å **self-hoste fontene**
+(last ned og server fra `bilder/`/egen mappe) for å unngå tredjeparts-overføring –
+da kan Google Fonts fjernes fra tredjepartslisten i personvernerklæringen.
+
 ---
 
 ## Arkitektur
