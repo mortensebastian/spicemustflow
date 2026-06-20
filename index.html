@@ -5,6 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velkomponert – gode oppskrifter i tre nivåer, trinn for trinn</title>
   <meta name="description" content="Velkomponert er oppskrifter som er balanserte og tilpassbare. Velg nivå, juster antall porsjoner og bytt ingredienser – mengdene følger med automatisk.">
+  <link rel="canonical" href="https://velkomponert.no/">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Velkomponert – gode oppskrifter i tre nivåer">
+  <meta property="og:description" content="Balanserte, tilpassbare oppskrifter. Velg nivå, juster porsjoner og bytt ingredienser – mengdene følger med automatisk.">
+  <meta property="og:url" content="https://velkomponert.no/">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Nettsted- og organisasjonsdata for Google. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "Velkomponert",
+    "url": "https://velkomponert.no/",
+    "description": "Balanserte, tilpassbare norske oppskrifter i tre nivåer.",
+    "inLanguage": "nb-NO",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://velkomponert.no/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Velkomponert",
+      "url": "https://velkomponert.no/"
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -66,137 +97,14 @@
     </div>
   </div>
 
+  <!-- Kategorisider (intern lenking) -->
+  <nav class="hub-category-links" id="hub-category-links" aria-label="Kategorier"></nav>
+
   <!-- ===== Oppskriftsrutenett =====
        Hvert kort har data-kategori (mellomromseparert) og data-navn for
        filtrering/søk. Live-oppskrifter er <a>; «kommer snart» er <div>. -->
   <div class="hub-grid" id="hub-grid">
-
-    <a class="recipe-card" href="fiskesuppe.html" data-kategori="suppe" data-navn="fiskesuppe kremet norsk">
-      <div class="recipe-card-media">
-        <img src="bilder/fiskesuppe.jpg" alt="Kremet fiskesuppe i en dyp tallerken" loading="lazy">
-      </div>
-      <div class="recipe-card-body">
-        <h2>Fiskesuppe</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Suppe</span>
-          <span class="recipe-card-levels">3 nivåer</span>
-        </div>
-        <p>Kremet norsk favoritt med en mild søt-sur balanse.</p>
-      </div>
-    </a>
-
-    <a class="recipe-card" href="paella.html" data-kategori="middag" data-navn="paella spansk kylling scampi">
-      <div class="recipe-card-media">
-        <img src="bilder/paella.jpg" alt="Paella med kylling og scampi i panne" loading="lazy">
-      </div>
-      <div class="recipe-card-body">
-        <h2>Paella</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Middag</span>
-          <span class="recipe-card-levels">3 nivåer</span>
-        </div>
-        <p>Den spanske klassikeren med kylling, scampi og safran.</p>
-      </div>
-    </a>
-
-    <a class="recipe-card" href="sjokoladekake.html" data-kategori="baking" data-navn="sjokoladekake kake kakao">
-      <div class="recipe-card-media">
-        <div class="recipe-card-noimg">Sjokoladekake</div>
-      </div>
-      <div class="recipe-card-body">
-        <h2>Sjokoladekake</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Baking</span>
-          <span class="recipe-card-levels">3 nivåer</span>
-        </div>
-        <p>Saftig rørekake – fra enkel til mørk sjokolade med kaffe.</p>
-      </div>
-    </a>
-
-    <a class="recipe-card" href="pannekake.html" data-kategori="dessert" data-navn="pannekaker pannekake">
-      <div class="recipe-card-media">
-        <div class="recipe-card-noimg">Pannekaker</div>
-      </div>
-      <div class="recipe-card-body">
-        <h2>Pannekaker</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Dessert</span>
-          <span class="recipe-card-levels">3 nivåer</span>
-        </div>
-        <p>Tynne norske pannekaker – helt til safranpannekaker.</p>
-      </div>
-    </a>
-
-    <a class="recipe-card" href="safraniskrem.html" data-kategori="dessert" data-navn="safraniskrem bastani iskrem persisk">
-      <div class="recipe-card-media">
-        <div class="recipe-card-noimg">Safraniskrem</div>
-      </div>
-      <div class="recipe-card-body">
-        <h2>Safraniskrem</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Dessert</span>
-          <span class="recipe-card-levels">3 nivåer</span>
-        </div>
-        <p>Persisk bastani med safran, kardemomme og pistasj.</p>
-      </div>
-    </a>
-
-    <a class="recipe-card" href="lussekatter.html" data-kategori="baking jul" data-navn="lussekatter jul lucia safran boller">
-      <div class="recipe-card-media">
-        <img src="bilder/lussekatter.jpg" alt="Nybakte lussekatter med rosiner" loading="lazy">
-      </div>
-      <div class="recipe-card-body">
-        <h2>Lussekatter</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Jul</span>
-          <span class="recipe-card-levels">Juleklassiker</span>
-        </div>
-        <p>Myke, gylne safranboller til Lucia og julebaksten.</p>
-      </div>
-    </a>
-
-    <!-- Kommer snart -->
-    <div class="recipe-card is-soon" data-kategori="middag" data-navn="risotto safranrisotto milanese">
-      <div class="recipe-card-media">
-        <div class="recipe-card-noimg">Safranrisotto</div>
-      </div>
-      <div class="recipe-card-body">
-        <h2>Safranrisotto</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Middag</span>
-          <span class="recipe-card-soon-badge">Kommer snart</span>
-        </div>
-        <p>Risotto alla Milanese – kremet ris der safran er poenget.</p>
-      </div>
-    </div>
-
-    <div class="recipe-card is-soon" data-kategori="suppe" data-navn="bouillabaisse fransk fiskegryte">
-      <div class="recipe-card-media">
-        <div class="recipe-card-noimg">Bouillabaisse</div>
-      </div>
-      <div class="recipe-card-body">
-        <h2>Bouillabaisse</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Suppe</span>
-          <span class="recipe-card-soon-badge">Kommer snart</span>
-        </div>
-        <p>Fransk fiskegryte med safran, servert med rouille.</p>
-      </div>
-    </div>
-
-    <div class="recipe-card is-soon" data-kategori="middag" data-navn="persisk safranris safrankylling kylling">
-      <div class="recipe-card-media">
-        <div class="recipe-card-noimg">Persisk safranris</div>
-      </div>
-      <div class="recipe-card-body">
-        <h2>Persisk safranris</h2>
-        <div class="recipe-card-meta">
-          <span class="recipe-card-chip">Middag</span>
-          <span class="recipe-card-soon-badge">Kommer snart</span>
-        </div>
-        <p>Safranris og safrankylling – vakkert og gavegivende.</p>
-      </div>
-    </div>
+    <!-- Kortene rendres fra recipes-index.js av site.js (vkRenderGrid). -->
 
     <p class="hub-empty" id="hub-empty" style="display:none;">Ingen oppskrifter passer søket ditt ennå.</p>
 
@@ -208,6 +116,9 @@
       <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
     </div>
   </footer>
+
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
 
   <script>
   /* ----- Mine lagrede varianter ----- */
@@ -230,40 +141,6 @@
         '<span class="my-variant-date">' + v.savedAt + '</span></li>';
     }).join('');
     sec.style.display = '';
-  })();
-
-  /* ----- Søk + kategorifilter ----- */
-  (function () {
-    var cards = Array.prototype.slice.call(document.querySelectorAll('.recipe-card'));
-    var catBtns = document.querySelectorAll('.hub-cat-btn');
-    var search = document.getElementById('hub-search');
-    var empty = document.getElementById('hub-empty');
-    var activeCat = 'alle';
-
-    function apply() {
-      var q = (search.value || '').trim().toLowerCase();
-      var visible = 0;
-      cards.forEach(function (card) {
-        var cats = (card.getAttribute('data-kategori') || '').split(' ');
-        var navn = (card.getAttribute('data-navn') || '');
-        var matchCat = activeCat === 'alle' || cats.indexOf(activeCat) !== -1;
-        var matchSearch = !q || navn.indexOf(q) !== -1;
-        var show = matchCat && matchSearch;
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
-      });
-      empty.style.display = visible ? 'none' : '';
-    }
-
-    catBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        catBtns.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        activeCat = btn.getAttribute('data-cat');
-        apply();
-      });
-    });
-    search.addEventListener('input', apply);
   })();
   </script>
 

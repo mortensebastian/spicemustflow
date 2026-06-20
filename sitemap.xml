@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Statisk inntil videre. Når oppskriftsbiblioteket vokser bør denne
+     genereres fra recipes-index.js (se SEO-plan §2.4 / §5 i plan.md). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://velkomponert.no/</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/middag.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/suppe.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/dessert.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/baking.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/jul.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/fiskesuppe.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/paella.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/sjokoladekake.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/pannekake.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/safraniskrem.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://velkomponert.no/lussekatter.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+</urlset>

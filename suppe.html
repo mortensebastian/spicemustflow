@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suppeoppskrifter – kremede og klare supper | Velkomponert</title>
+  <meta name="description" content="Suppeoppskrifter i tre nivåer. Velg nivå, juster porsjoner og bytt ingredienser – mengdene regnes om automatisk.">
+  <link rel="canonical" href="https://velkomponert.no/suppe.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Suppeoppskrifter – kremede og klare supper">
+  <meta property="og:description" content="Suppeoppskrifter i tre nivåer. Velg nivå, juster porsjoner og bytt ingredienser – mengdene regnes om automatisk.">
+  <meta property="og:url" content="https://velkomponert.no/suppe.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+</head>
+<body>
+
+  <!-- ===== Toppmeny ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hub-hero">
+    <nav class="breadcrumb" aria-label="Brødsmuler">
+      <a href="index.html">Hjem</a> › <span>Suppe</span>
+    </nav>
+    <h1>Suppeoppskrifter – kremede og klare supper</h1>
+    <p class="hub-tagline">Suppeoppskrifter i tre nivåer. Velg nivå, juster porsjoner og bytt ingredienser – mengdene regnes om automatisk.</p>
+  </section>
+
+  <!-- Rutenettet rendres fra recipes-index.js av site.js (filtrert på data-cat). -->
+  <div class="hub-grid" id="cat-grid" data-cat="suppe">
+    <p class="hub-empty">Ingen oppskrifter i denne kategorien ennå.</p>
+  </div>
+
+  <!-- ===== Bunntekst ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

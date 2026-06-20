@@ -4,42 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pannekaker – tynne norske pannekaker | Velkomponert</title>
-  <meta name="description" content="Tynne norske pannekaker i tre nivåer – fra grunnrøre til safranpannekaker med brunet smør. Juster antall og tilpass (glutenfritt, melkefritt).">
+  <meta name="description" content="Tynne norske pannekaker i tre nivåer – fra enkel grunnrøre til mer forseggjorte varianter med brunet smør. Juster antall og tilpass (glutenfritt, melkefritt).">
+  <link rel="canonical" href="https://velkomponert.no/pannekake.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Pannekaker – tynne norske pannekaker">
+  <meta property="og:description" content="Tynne norske pannekaker i tre nivåer. Juster antall og tilpass (glutenfritt, melkefritt).">
+  <meta property="og:url" content="https://velkomponert.no/pannekake.html">
+  <meta name="twitter:card" content="summary">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style-felles.css">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Recipe",
-    "name": "Pannekaker",
-    "description": "Tynne norske pannekaker, her med safran, kardemomme og brunet smør.",
-    "recipeCategory": "Dessert",
-    "recipeCuisine": "Norsk",
-    "keywords": "pannekaker, norske pannekaker, safranpannekaker",
-    "recipeYield": "12 pannekaker",
-    "prepTime": "PT10M",
-    "cookTime": "PT20M",
-    "totalTime": "PT50M",
-    "recipeIngredient": [
-      "3 dl hvetemel",
-      "5 dl melk",
-      "4 egg",
-      "1 ss sukker",
-      "0,5 ts malt kardemomme",
-      "0,5 ts salt",
-      "2 ss smør til steking"
-    ],
-    "recipeInstructions": [
-      {"@type": "HowToStep", "text": "Visp mel, sukker, kardemomme og salt sammen."},
-      {"@type": "HowToStep", "text": "Spe med halvparten av melken til en klumpfri røre, og visp inn egg og resten av melken."},
-      {"@type": "HowToStep", "text": "La røren hvile 20–30 minutter."},
-      {"@type": "HowToStep", "text": "Stek tynne pannekaker i smør, gylne på begge sider."}
-    ]
-  }
-  </script>
 </head>
 
 <!-- --recipe-image: legg et foto på bilder/pannekake.jpg så vises det øverst. -->
@@ -111,6 +90,11 @@
     </div>
   </section>
 
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
   <footer class="site-footer">
     <div class="container">
       <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
@@ -121,5 +105,9 @@
   <script src="recipe.js"></script>
   <script src="recipe-balance.js"></script>
   <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
 </body>
 </html>
