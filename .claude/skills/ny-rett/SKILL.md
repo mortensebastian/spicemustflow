@@ -25,9 +25,10 @@ manifestet og SEO-kontrakten alt bygger på.
    - **Plassering/navn:** `bilder/<slug>.jpg` – nøyaktig det navnet `--recipe-image`,
      `og:image` og `Recipe.image` allerede peker på. Ligger bildet et annet sted (egen
      gren, annet navn, opplastet til main «løst»), hent/kopier og døp det om hit.
-   - **Optimaliser (SEO/Core Web Vitals):** skaler til ~1600 px bredde og komprimer til
-     **< 300 KB** (gjerne WebP). Store originaler (flere MB / 20–45 MP) gir treg LCP og
-     svekker rangering – ikke commit råfilen.
+   - **Optimaliser (SEO/Core Web Vitals):** skaler til **1920 px lang side** og
+     komprimer til **< 400 KB** (gjerne WebP) – samme konvensjon som de øvrige
+     bildene i `bilder/`. Store originaler (flere MB / 20–45 MP) gir treg LCP og
+     svekker rangering – ikke commit råfilen. Strip EXIF.
    - **Manifest:** sett `indexEntry.image = "<slug>.jpg"` (ikke `null`) når fila finnes,
      så schema/OG/forsidekort får bildet. `null` kun hvis bildet ennå ikke er skaffet.
    - **Få det på `main`:** bildet er en publiseringsklar ressurs, ikke kode under review –
