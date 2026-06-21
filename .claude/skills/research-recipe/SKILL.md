@@ -63,9 +63,34 @@ Følg `recipe-authoring.md`. Tre nivåer `enkel`/`medium`/`kompleks` (`medium` =
 standard, og det `recipe-schema.js` speiler). Per ingrediens: `id`/`label`/`amount`/
 `unit`/`role`/`scaling`/`addStage`/`sodiumPer100g`/`taste`/`removable`/`allergens`.
 Salt-lever = `sodiumPer100g ~38800` + `levers:[{axis:"salt",id:"salt_added"}]`.
-Bytter trenger `sodiumPer100g` + `allergens`. g-omregnbare id-er → både `density`
-og `unitOptions`. **`recipe.id` MÅ være lik `indexEntry.id`** (schema-generatoren
-slår opp på den).
+**`recipe.id` MÅ være lik `indexEntry.id`** (schema-generatoren slår opp på den).
+
+### Standardbytter – basis kokkekunst (vurder ALLTID, ikke bare ad hoc)
+Kuraterte bytter er ikke valgfri pynt. Gå **systematisk** gjennom ingrediensene og
+legg inn det opplagte kjøkkenbyttet for hver – en hjemmekokk forventer dem, og det
+er disse som gjør allergifilteret komplett. Minimumssett å vurdere per rolle:
+- **Kraft/fond** ↔ buljong (terning, raskere) ↔ hjemmelaget (mer dybde).
+- **Smør** ↔ margarin / nøytral olje (melkefri steking).
+- **Melk/fløte** ↔ plantedrikk / plantefløte / vann (melkefri).
+- **Hvetemel (binding/jevning)** ↔ potetmel / maizena (glutenfri) – OG potetmel ↔ hvetemel.
+- **Egg (binding)** ↔ ekstra bindemiddel (eggfri).
+- **Hard ost (parmesan)** ↔ grana padano / vegansk parmesan.
+- **Ris/korn/protein** ↔ nære slektninger (arborio↔carnaroli, okse↔vilt/kylling, …).
+
+**Allergi-dekningsregel:** hver allergi retten *kan* inneholde (meieri/gluten/egg/
+…) skal kunne løses ENTEN via et trygt bytte ELLER via fjerning på **HVER**
+ingrediens som bærer allergenet. Pass spesielt på par som begge bærer samme
+allergen (f.eks. `smør` *og* `melk` = meieri) – da trenger BEGGE et melkefritt
+bytte, ellers flagges retten som «passer ikke ved …-allergi» selv om den ene ble
+byttet.
+
+### Krav til hver bytte-oppføring
+`sodiumPer100g` (om den salter) + `allergens`. **Hvert bytte med volum-enhet
+(`dl`/`ml`/`ss`/`ts`) MÅ legges inn i BÅDE `density` og `unitOptions`** – motoren
+slår disse opp på bytte-id-en (`effId`), ikke på slot-en. Glemmer du det, mister
+ingrediensen enhets-nedtrekksmenyen og «Nøyaktig (gram)» så snart byttet velges.
+`stk`/`kvist` trenger ingen av delene. Speil enheter/tetthet fra slot-en byttet
+erstatter.
 
 ## Staging-skjema (`recipes-pending/<slug>.json`)
 Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
@@ -92,7 +117,11 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
 - [ ] 5–10 **ekte** FAQ-spørsmål fra PAA/autocomplete (ikke oppfunnet)
 - [ ] `season` satt kun hvis retten faktisk har en topp
 - [ ] Tre nivåer; `medium` finnes; salt-lever har `sodiumPer100g ~38800` der den brukes
+- [ ] Standardbytter vurdert (kraft↔buljong, smør↔margarin/olje, melk↔plantedrikk,
+      hvetemel↔potetmel, egg↔bindemiddel, ost↔alternativ) – se Standardbytter over
+- [ ] Hver allergi retten kan ha (meieri/gluten/egg) er løsbar (bytte ELLER fjerning)
+      på HVER ingrediens som bærer den – ingen essensiell ingrediens blir «unfixable»
 - [ ] Hver `swapOptions`-oppføring har `sodiumPer100g` + `allergens` (der relevant)
-- [ ] Alle g-omregnbare id-er er i både `density` og `unitOptions`
+- [ ] Hver g-omregnbar id – **også bytte-id-ene** – er i både `density` og `unitOptions`
 - [ ] Allergener tagget på ingredienser **og** bytter
 - [ ] `body.bodyIntro` er original prosa

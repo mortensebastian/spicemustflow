@@ -37,7 +37,15 @@ window.RECIPE = {
     "salt_added": 1.2,
     "nutmeg": 0.5,
     "ginger": 0.4,
-    "pepper": 0.45
+    "pepper": 0.45,
+    "oat_milk": 1.03,
+    "water": 1,
+    "extra_potato_flour": 0.6,
+    "potato_flour_thickener": 0.6,
+    "wheat_flour_binder": 0.55,
+    "margarine": 0.95,
+    "rapeseed_oil": 0.92,
+    "bouillon": 1
   },
   "pieceWeight": {
     "egg": 55,
@@ -80,6 +88,41 @@ window.RECIPE = {
     ],
     "pepper": [
       "ts",
+      "g"
+    ],
+    "oat_milk": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "water": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "extra_potato_flour": [
+      "ss",
+      "g"
+    ],
+    "potato_flour_thickener": [
+      "ss",
+      "g"
+    ],
+    "wheat_flour_binder": [
+      "ss",
+      "g"
+    ],
+    "margarine": [
+      "ss",
+      "g"
+    ],
+    "rapeseed_oil": [
+      "ss",
+      "g"
+    ],
+    "bouillon": [
+      "dl",
+      "ml",
       "g"
     ]
   },
@@ -617,6 +660,56 @@ window.RECIPE = {
         "tradition": "non-traditional",
         "note": "Rør ut i litt kald kraft og spe i sausen; gir glutenfri, blank saus.",
         "allergens": []
+      }
+    ],
+    "stock": [
+      {
+        "id": "bouillon",
+        "label": "Buljong (terning, raskere)",
+        "amount": 5,
+        "unit": "dl",
+        "sodiumPer100g": 350,
+        "taste": {
+          "umami": 1
+        },
+        "tradition": "non-traditional",
+        "note": "Løs en oksebuljongterning i varmt vann. Buljong er salt – smak til før du har i mer salt.",
+        "allergens": []
+      }
+    ],
+    "butter": [
+      {
+        "id": "margarine",
+        "label": "Margarin (melkefri)",
+        "amount": 2,
+        "unit": "ss",
+        "sodiumPer100g": 0,
+        "tradition": "non-traditional",
+        "note": "Melkefri steking og saus; gir nøytral, rund smak.",
+        "allergens": []
+      },
+      {
+        "id": "rapeseed_oil",
+        "label": "Rapsolje (melkefri steking)",
+        "amount": 2,
+        "unit": "ss",
+        "sodiumPer100g": 0,
+        "tradition": "non-traditional",
+        "note": "Nøytral olje til steking uten meieri; bruk gjerne litt margarin i sausen for fylde.",
+        "allergens": []
+      }
+    ],
+    "potato_flour": [
+      {
+        "id": "wheat_flour_binder",
+        "label": "Hvetemel (binding)",
+        "amount": 2,
+        "unit": "ss",
+        "tradition": "traditional",
+        "note": "Vanlig binding der man ikke bruker potetmel; spe da med litt mindre væske.",
+        "allergens": [
+          "gluten"
+        ]
       }
     ]
   }

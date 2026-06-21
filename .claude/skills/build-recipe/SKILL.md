@@ -74,12 +74,28 @@ Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</las
 - [ ] `medium` finnes; tre nivåer har `ingredients[]` + `steps[]`
 - [ ] Salt-lever ⇒ `salt_added` m/ `sodiumPer100g ~38800` i hvert nivå som bruker den
 - [ ] `requireRoles:["acid"]` ⇒ en ingrediens har `role:"acid"`; ellers `servedAcid`/`null`
-- [ ] Hver g-omregnbar id i både `density` og `unitOptions`; `stk`/`kvist` utenfor
-- [ ] Allergener tagget på ingredienser **og** bytter
+- [ ] Hver g-omregnbar id – ingredienser **og alle bytte-id-er** med `dl/ml/ss/ts` – i
+      både `density` og `unitOptions` (`stk`/`kvist` utenfor). Kjør bytte-snutten under.
+- [ ] Allergener tagget på ingredienser **og** bytter; hver allergi retten kan ha er
+      løsbar (bytte/fjerning) på HVER bærende ingrediens – ingen essensiell «unfixable»
 - [ ] HTML: alle DOM-kroker, `#related-recipes`, riktig script-rekkefølge, **ingen inline JSON-LD**
 - [ ] canonical + OG + `<title>` (primærsøkeord først + `| Velkomponert`)
 - [ ] sitemap-linje lagt til
 - [ ] Bilde i `bilder/<slug>.jpg` (ellers flagg – `image:null` til det skaffes)
+
+**Bytte-paritet (kjør denne – fanger den vanligste byggefeilen):**
+```bash
+node -e 'global.window={};require("./<slug>-data.js");var R=window.RECIPE,V=["dl","ml","ss","ts"],bad=[];
+Object.keys(R.swapOptions||{}).forEach(function(s){(R.swapOptions[s]||[]).forEach(function(o){
+if(V.indexOf(o.unit)<0)return;
+if(!(R.density&&R.density[o.id]!=null)||!(R.unitOptions&&R.unitOptions[o.id]))bad.push(s+"->"+o.id);});});
+console.log(bad.length?"MANGLER density/unitOptions for bytte-id: "+bad.join(", "):"bytte-paritet OK");'
+```
+
+**Allergi-dekning (ingen essensiell ingrediens skal bli «unfixable»):** for hvert
+allergen retten kan inneholde, sjekk at hver bærende ingrediens enten har et
+allergivennlig bytte eller er `removable:true`. (Typisk feil: `smør` *og* `melk`
+bærer begge meieri, men bare `melk` fikk melkefritt bytte.)
 
 ## Etter bygging
 - Oppdater **lærdom-loggen** i `recipe-authoring.md` (én linje; spesielt hvis du var

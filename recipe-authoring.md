@@ -231,6 +231,9 @@ utenfor med vilje – "6,7 stk" gir ikke mening; rene «smak til»-garnityr i
 `kvist`/herbe-enheter forblir også som de er. Sjekkliste for neste kompleks-rett
 som skal støtte dette: gå gjennom `kompleks.ingredients`, og for hver med enhet
 `dl`/`ss`/`ts`/`ml`, sørg for `density[id]` og legg `"g"` til `unitOptions[id]`.
+**Dette gjelder også hver `swapOptions`-id med volum-enhet** – motoren slår opp på
+`effId` (bytte-id-en), så et bytte uten `density`/`unitOptions` mister enhetsvalg
+og gram-visning idet det velges.
 Husk også `<div id="precision-toggle"></div>` i `.recipe-customize` i HTML-en.
 
 Utrullingen til de andre fire: bare data + HTML, ingen motorendring. Nye `g`:
@@ -270,6 +273,21 @@ matlagings-kontekst, ikke bare «vi justerte». Lærdom:
 - **Paritetssjekk fanget en ekte feil i review:** `butter` lå i `density` men
   manglet i `unitOptions`. Regelen «hver g-omregnbar id i begge» er verdt å kjøre
   som node-assert før bygging (`Object.keys(density)` vs `Object.keys(unitOptions)`).
+
+**review-runde (kjøttkaker + safranrisotto)** — review fanget to mønsterfeil som
+gjaldt *bytter*, ikke ingredienser, og som de tidlige byggene gjentok:
+- **Paritetsregelen gjelder også bytte-id-er.** Motoren slår opp `density`/
+  `unitOptions` på `effId` (= bytte-id-en når et bytte er valgt), ikke på slot-en.
+  Volum-bytter som manglet dem (`oat_milk`, `carnaroli`, `no_wine`, `vermouth`,
+  `olive_oil_only`, …) mistet enhets-nedtrekk og «Nøyaktig (gram)» ved bytte.
+  Paritets-snutten må derfor iterere over `swapOptions`, ikke bare ingredienslista
+  (lagt inn i `/build-recipe` steg 5).
+- **Manglende standardbytter ga falsk «passer ikke ved allergi».** Kjøttkaker hadde
+  melkefritt bytte på `melk`, men ikke på `smør` – begge bærer meieri, så
+  meieri-filteret flagget retten som uegnet selv om melken ble byttet. Dessuten
+  manglet opplagte kjøkkenbytter (oksekraft↔buljong, potetmel↔hvetemel). Lærdom:
+  kuraterte bytter må følge en **systematisk standardbytte-liste** per rolle
+  (kraft/fett/væske/mel/egg/ost), ikke ad hoc skjønn – lagt inn i `/research-recipe`.
 
 
 

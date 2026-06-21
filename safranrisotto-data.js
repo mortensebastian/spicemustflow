@@ -40,7 +40,10 @@ window.RECIPE = {
     "parmesan": 0.4,
     "grana_padano": 0.4,
     "vegan_parm": 0.4,
-    "salt_added": 1.2
+    "salt_added": 1.2,
+    "carnaroli": 0.85,
+    "no_wine": 1,
+    "olive_oil_only": 0.92
   },
   "pieceWeight": {
     "onion": 110,
@@ -85,6 +88,25 @@ window.RECIPE = {
     ],
     "salt_added": [
       "ts",
+      "g"
+    ],
+    "carnaroli": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "vermouth": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "no_wine": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "olive_oil_only": [
+      "ss",
       "g"
     ]
   },
