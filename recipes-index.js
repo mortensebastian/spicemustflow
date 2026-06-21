@@ -175,7 +175,7 @@ window.RECIPES_INDEX = [
     shortName: "Risgrøt", name: "Risgrøt (risengrynsgrøt)",
     tagline: "Kremet, tradisjonell risgrøt med smørøye, sukker og kanel.",
     description: "Kremet, tradisjonell risgrøt (risengrynsgrøt) med smørøye, sukker og kanel. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
-    image: null, category: ["middag", "jul"], badge: "3 nivåer",
+    image: "risgrot.jpg", category: ["middag", "jul"], badge: "3 nivåer",
     recipeCategory: "Hovedrett", cuisine: "Norsk",
     keywords: "risgrøt, risengrynsgrøt, risgrøt oppskrift",
     recipeYield: "4 porsjoner", times: { prep: "PT5M", cook: "PT50M", total: "PT55M" },
