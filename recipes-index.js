@@ -170,6 +170,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "risgrot", slug: "risgrot.html", status: "live",
+    shortName: "Risgrøt", name: "Risgrøt (risengrynsgrøt)",
+    tagline: "Kremet, tradisjonell risgrøt med smørøye, sukker og kanel.",
+    description: "Kremet, tradisjonell risgrøt (risengrynsgrøt) med smørøye, sukker og kanel. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["middag", "jul"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    keywords: "risgrøt, risengrynsgrøt, risgrøt oppskrift",
+    recipeYield: "4 porsjoner", times: { prep: "PT5M", cook: "PT50M", total: "PT55M" },
+    search: "risgrøt risengrynsgrøt grøt grøtris melk kanel smørøye jul", season: "des",
+    faq: [
+      { q: "Hvilken ris bruker jeg til risgrøt?", a: "Rundkornet grøtris (risengryn) gir den kremede konsistensen, fordi det runde kornet slipper ut mye stivelse. Jasminris fungerer også, men gir en litt løsere grøt. Ikke skyll risen – stivelsen er det som binder grøten." },
+      { q: "Hva er forholdet mellom ris, melk og vann i risgrøt?", a: "En god tommelfingerregel for fire porsjoner er ca. 2,5 dl grøtris, 5 dl vann og 1 liter melk. Risen kokes først mør i vannet, så sper du med melken. Vil du ha tykkere grøt, bruker du litt mindre ris enn pakken foreslår." },
+      { q: "Hvorfor blir ikke risgrøten min tykk?", a: "Som regel trenger den bare mer tid. Grøten tykner først mot slutten, og den tykner ytterligere når den hviler. La den småkoke på svak varme til risen er helt mør, og rør jevnlig så den koker jevnt." },
+      { q: "Hvordan unngår jeg klumper og at grøten svir seg?", a: "Bruk en tykkbunnet gryte, hold svak varme, og rør ofte – særlig mot slutten når grøten tykner. Sper du melken litt etter at risen har kokt i vann, blir grøten jevn og fin." },
+      { q: "Kan jeg lage risgrøt i ovnen?", a: "Ja. Kok opp ris, vann og melk på platen, sett så gryta med lokk i ovnen på ca. 100–120 °C i 1,5–2 timer. Da slipper du å stå og røre, og grøten kan nesten ikke svi seg. Rør gjerne en gang underveis." },
+      { q: "Kan jeg lage risgrøt uten melk eller laktosefritt?", a: "Ja. Bytt melken med havredrikk eller annen plantedrikk – velg gjerne en barista-variant for kremethet. Bruk melkefritt smør/margarin som smørøye, så blir hele grøten melkefri." },
+      { q: "Hva er forskjellen på risgrøt og riskrem?", a: "Riskrem er avkjølt risgrøt vendt sammen med pisket krem (og ofte vanilje), servert kald med rød saus – den klassiske juledesserten. Risgrøt spises varm med smørøye, sukker og kanel." },
+      { q: "Hva serverer man til risgrøt?", a: "Klassisk er en klatt smør som smelter i midten (smørøye), sukker og kanel på toppen. Mange har også saft eller rød saft-saus ved siden av, og i julen gjemmer man en mandel i grøten." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

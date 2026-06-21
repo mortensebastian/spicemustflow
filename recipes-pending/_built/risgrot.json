@@ -1,0 +1,177 @@
+{
+  "_comment": "Staging-objekt for risgrøt. /build-recipe splicer indexEntry inn i recipes-index.js og lager datafil + HTML + sitemap. Skrevet av /research-recipe (ny-rett).",
+
+  "indexEntry": {
+    "id": "risgrot",
+    "slug": "risgrot.html",
+    "status": "live",
+    "shortName": "Risgrøt",
+    "name": "Risgrøt (risengrynsgrøt)",
+    "tagline": "Kremet, tradisjonell risgrøt med smørøye, sukker og kanel.",
+    "description": "Kremet, tradisjonell risgrøt (risengrynsgrøt) med smørøye, sukker og kanel. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    "image": null,
+    "category": ["middag", "jul"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Norsk",
+    "keywords": "risgrøt, risengrynsgrøt, risgrøt oppskrift",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT5M", "cook": "PT50M", "total": "PT55M" },
+    "search": "risgrøt risengrynsgrøt grøt grøtris melk kanel smørøye jul",
+    "season": "des",
+    "faq": [
+      { "q": "Hvilken ris bruker jeg til risgrøt?", "a": "Rundkornet grøtris (risengryn) gir den kremede konsistensen, fordi det runde kornet slipper ut mye stivelse. Jasminris fungerer også, men gir en litt løsere grøt. Ikke skyll risen – stivelsen er det som binder grøten." },
+      { "q": "Hva er forholdet mellom ris, melk og vann i risgrøt?", "a": "En god tommelfingerregel for fire porsjoner er ca. 2,5 dl grøtris, 5 dl vann og 1 liter melk. Risen kokes først mør i vannet, så sper du med melken. Vil du ha tykkere grøt, bruker du litt mindre ris enn pakken foreslår." },
+      { "q": "Hvorfor blir ikke risgrøten min tykk?", "a": "Som regel trenger den bare mer tid. Grøten tykner først mot slutten, og den tykner ytterligere når den hviler. La den småkoke på svak varme til risen er helt mør, og rør jevnlig så den koker jevnt." },
+      { "q": "Hvordan unngår jeg klumper og at grøten svir seg?", "a": "Bruk en tykkbunnet gryte, hold svak varme, og rør ofte – særlig mot slutten når grøten tykner. Sper du melken litt etter at risen har kokt i vann, blir grøten jevn og fin." },
+      { "q": "Kan jeg lage risgrøt i ovnen?", "a": "Ja. Kok opp ris, vann og melk på platen, sett så gryta med lokk i ovnen på ca. 100–120 °C i 1,5–2 timer. Da slipper du å stå og røre, og grøten kan nesten ikke svi seg. Rør gjerne en gang underveis." },
+      { "q": "Kan jeg lage risgrøt uten melk eller laktosefritt?", "a": "Ja. Bytt melken med havredrikk eller annen plantedrikk – velg gjerne en barista-variant for kremethet. Bruk melkefritt smør/margarin som smørøye, så blir hele grøten melkefri." },
+      { "q": "Hva er forskjellen på risgrøt og riskrem?", "a": "Riskrem er avkjølt risgrøt vendt sammen med pisket krem (og ofte vanilje), servert kald med rød saus – den klassiske juledesserten. Risgrøt spises varm med smørøye, sukker og kanel." },
+      { "q": "Hva serverer man til risgrøt?", "a": "Klassisk er en klatt smør som smelter i midten (smørøye), sukker og kanel på toppen. Mange har også saft eller rød saft-saus ved siden av, og i julen gjemmer man en mandel i grøten." }
+    ]
+  },
+
+  "seo": {
+    "title": "Risgrøt (risengrynsgrøt) – kremet oppskrift steg for steg | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Den kremete norske klassikeren: grøtris kokt langsomt i melk, servert med smørøye, sukker og kanel.",
+    "bodyIntro": "Hemmeligheten bak kremet risgrøt er ikke fløte, men risen og tiden: rundkornet grøtris kokes først mørt i vann, så sper du med melk og lar grøten småkoke rolig til stivelsen binder den. Rør ofte mot slutten, så blir den jevn og fløyelsmyk uten å svi seg. Her får du tre nivåer – fra en rask hverdagsgrøt til en rikere helge- og juleversjon med fløte og vanilje. Juster porsjoner og bytt ingredienser fritt; resten av oppskriften balanserer seg selv, og vil du ha den melkefri, finnes byttene rett i listen."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "tine.no", "meny.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «risgrøt» eies av matprat/tine/meny med oppskriftskarusell. Angrip long-tail først via FAQ-vinkler (forhold ris/melk/vann, blir ikke tykk, ovnsmetode, uten melk, vs riskrem) og den justerbare 3-nivå-vinklingen. Sesongtopp i desember (julegrøt) – vurder jul-kategori for ekstra synlighet."
+  },
+
+  "recipe": {
+    "id": "risgrot",
+    "bulkRoles": ["rice", "liquid"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "sweet": "Mindre søtt – dryss på mer sukker eller kanelsukker ved servering."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak til.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Smak til."
+      }
+    },
+    "density": {
+      "rice": 0.85,
+      "water": 1,
+      "milk": 1.03,
+      "cream": 1,
+      "butter": 0.95,
+      "sugar": 0.85,
+      "cinnamon": 0.45,
+      "salt_added": 1.2,
+      "oat_milk": 1.03,
+      "plant_cream": 1,
+      "margarine": 0.95,
+      "jasmine_rice": 0.85
+    },
+    "pieceWeight": {},
+    "unitOptions": {
+      "rice": ["dl", "ml", "g"],
+      "water": ["dl", "ml", "g"],
+      "milk": ["dl", "ml", "g"],
+      "cream": ["dl", "ml", "g"],
+      "butter": ["ss", "g"],
+      "sugar": ["ss", "g"],
+      "cinnamon": ["ts", "g"],
+      "salt_added": ["ts", "g"],
+      "oat_milk": ["dl", "ml", "g"],
+      "plant_cream": ["dl", "ml", "g"],
+      "margarine": ["ss", "g"],
+      "jasmine_rice": ["dl", "ml", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "rice", "label": "Grøtris", "amount": 2.5, "unit": "dl", "role": "rice", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 0, "removable": false, "note": "Rundkornet grøtris gir kremen – ikke skyll risen." },
+          { "id": "water", "label": "Vann", "amount": 5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "note": "Risen kokes først mør i vannet." },
+          { "id": "milk", "label": "Helmelk", "amount": 10, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 50, "removable": false, "allergens": ["dairy"] },
+          { "id": "salt_added", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false, "note": "Litt salt løfter smaken." },
+          { "id": "butter", "label": "Smørøye (til servering)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "serve", "removable": true, "allergens": ["dairy"], "note": "En klatt smør som smelter i midten." },
+          { "id": "sugar", "label": "Sukker (til servering)", "amount": 2, "unit": "ss", "role": "sweet", "scaling": "nonlinear", "addStage": "serve", "removable": true, "taste": { "sweet": 2 } },
+          { "id": "cinnamon", "label": "Kanel (til servering)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Kok opp grøtris og vann i en tykkbunnet gryte, og la det småkoke til vannet er nesten kokt inn, ca. 10 minutter.",
+          "Spe med melken, rør godt, og kok opp igjen.",
+          "Skru ned varmen og la grøten småkoke på svak varme i 40–45 minutter til risen er mør. Rør ofte, særlig mot slutten, så den ikke svir seg.",
+          "Smak til med salt. Server med en klatt smør, sukker og kanel."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "rice", "label": "Grøtris", "amount": 2.5, "unit": "dl", "role": "rice", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 0, "removable": false, "note": "Ikke skyll risen – stivelsen gir kremen." },
+          { "id": "water", "label": "Vann", "amount": 5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Helmelk", "amount": 9, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 50, "removable": false, "allergens": ["dairy"] },
+          { "id": "cream", "label": "Fløte", "amount": 1, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "end", "sodiumPer100g": 38, "removable": true, "allergens": ["dairy"], "taste": { "sweet": 1 }, "note": "Gir en rundere, kremet grøt; røres inn mot slutten." },
+          { "id": "salt_added", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "butter", "label": "Smørøye (til servering)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "serve", "removable": true, "allergens": ["dairy"], "note": "En klatt smør i midten." },
+          { "id": "sugar", "label": "Sukker (til servering)", "amount": 2, "unit": "ss", "role": "sweet", "scaling": "nonlinear", "addStage": "serve", "removable": true, "taste": { "sweet": 2 } },
+          { "id": "cinnamon", "label": "Kanel (til servering)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Kok opp grøtris og vann i en tykkbunnet gryte, og la det småkoke til vannet er nesten kokt inn, ca. 10 minutter.",
+          "Spe med melken, kok opp, og skru ned til svak varme.",
+          "La grøten småkoke i 40–45 minutter til risen er mør. Rør ofte mot slutten.",
+          "Rør inn fløten de siste minuttene, og smak til med salt.",
+          "Server med en klatt smør, sukker og kanel."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "rice", "label": "Grøtris", "amount": 2.5, "unit": "dl", "role": "rice", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 0, "removable": false, "note": "Ikke skyll risen." },
+          { "id": "water", "label": "Vann", "amount": 5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Helmelk", "amount": 8, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 50, "removable": false, "allergens": ["dairy"] },
+          { "id": "cream", "label": "Fløte", "amount": 2, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "end", "sodiumPer100g": 38, "removable": true, "allergens": ["dairy"], "taste": { "sweet": 1 }, "note": "Mer fløte gir en rikere grøt." },
+          { "id": "vanilla", "label": "Vaniljestang, frøene", "amount": 0.5, "unit": "stk", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true, "tradition": "traditional", "note": "Del stangen og skrap ut frøene." },
+          { "id": "salt_added", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "butter", "label": "Smørøye (til servering)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "serve", "removable": true, "allergens": ["dairy"], "note": "En klatt smør i midten." },
+          { "id": "sugar", "label": "Sukker (til servering)", "amount": 2, "unit": "ss", "role": "sweet", "scaling": "nonlinear", "addStage": "serve", "removable": true, "taste": { "sweet": 2 } },
+          { "id": "cinnamon", "label": "Kanel (til servering)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Kok opp grøtris og vann i en tykkbunnet gryte, og la det småkoke til vannet er nesten kokt inn, ca. 10 minutter.",
+          "Spe med melken, tilsett vaniljefrøene, og kok opp.",
+          "Skru ned til svak varme og la grøten småkoke i 45–55 minutter til risen er helt mør og grøten kremet. Rør ofte. (Alternativt: sett gryta med lokk i ovnen på ca. 110 °C i 1,5–2 timer.)",
+          "Rør inn fløten de siste minuttene, og smak til med salt.",
+          "Server med en klatt smør, sukker og kanel. For ekte julegrøt: gjem en skåldet mandel i grøten – den som finner den, vinner marsipangrisen."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "rice": [
+        { "id": "jasmine_rice", "label": "Jasminris", "amount": 2.5, "unit": "dl", "sodiumPer100g": 0, "tradition": "non-traditional", "note": "Fungerer fint; gir en litt løsere grøt enn grøtris." }
+      ],
+      "milk": [
+        { "id": "oat_milk", "label": "Havredrikk (melkefri)", "amount": 9, "unit": "dl", "sodiumPer100g": 40, "allergens": [], "tradition": "non-traditional", "note": "Melkefri grøt; velg gjerne barista-variant for kremethet." }
+      ],
+      "cream": [
+        { "id": "plant_cream", "label": "Plantefløte (melkefri)", "amount": 1, "unit": "dl", "sodiumPer100g": 30, "allergens": [], "tradition": "non-traditional", "note": "Havre- eller soyafløte gir kremethet uten melk." }
+      ],
+      "butter": [
+        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 1, "unit": "ss", "sodiumPer100g": 0, "allergens": [], "tradition": "non-traditional", "note": "Melkefritt smørøye." }
+      ]
+    }
+  }
+}

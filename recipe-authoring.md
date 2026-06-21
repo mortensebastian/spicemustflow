@@ -289,5 +289,16 @@ gjaldt *bytter*, ikke ingredienser, og som de tidlige byggene gjentok:
   kuraterte bytter må følge en **systematisk standardbytte-liste** per rolle
   (kraft/fett/væske/mel/egg/ost), ikke ad hoc skjønn – lagt inn i `/research-recipe`.
 
+**risgrøt** (niende rett, fjerde via skill-ene) — **ingen kjernemotorendring.** Grøt
+som format: sukker, kanel og smørøye er **serverings-topping** (`addStage:"serve"`,
+`scaling:"nonlinear"`, `removable:true`), ikke levere – «sødme» bor i serveringen og
+auto-balanseres ikke (samme prinsipp som safraniskrem). Lærdom:
+- Den nye **standardbytte-lista** (fra forrige review) traff på første forsøk:
+  melk↔havredrikk, fløte↔plantefløte, smør↔margarin, grøtris↔jasminris ga **full
+  meieri-dekning** på alle nivåer uten «unfixable». Bytte-paritet-snutten var grønn
+  med en gang. Skill-herdingen virker etter hensikten.
+- `fløte` som `role:"fat"` (ikke `liquid`) holder den utenfor `bulkRoles`, så «juster
+  opp de andre» ikke skalerer risen når fløten byttes/fjernes.
+
 
 
