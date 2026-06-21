@@ -21,8 +21,22 @@ manifestet og SEO-kontrakten alt bygger på.
    før brukeren har sett over staging-objektet.**
 3. **Bygg** – kjør `build-recipe` for `<slug>`: datafil + manifestoppføring + HTML
    fra mal + sitemap-linje, og valider. Kort, relaterte og JSON-LD kommer automatisk.
-4. **Avslutt** – rapporter nye/endrede filer, manglende bilde (`bilder/<slug>.jpg`
-   skaffes manuelt), og neste SEO-steg.
+4. **Bilde → main** – sørg for at retten har et foto før den regnes som ferdig:
+   - **Plassering/navn:** `bilder/<slug>.jpg` – nøyaktig det navnet `--recipe-image`,
+     `og:image` og `Recipe.image` allerede peker på. Ligger bildet et annet sted (egen
+     gren, annet navn, opplastet til main «løst»), hent/kopier og døp det om hit.
+   - **Optimaliser (SEO/Core Web Vitals):** skaler til ~1600 px bredde og komprimer til
+     **< 300 KB** (gjerne WebP). Store originaler (flere MB / 20–45 MP) gir treg LCP og
+     svekker rangering – ikke commit råfilen.
+   - **Manifest:** sett `indexEntry.image = "<slug>.jpg"` (ikke `null`) når fila finnes,
+     så schema/OG/forsidekort får bildet. `null` kun hvis bildet ennå ikke er skaffet.
+   - **Få det på `main`:** bildet er en publiseringsklar ressurs, ikke kode under review –
+     commit `bilder/<slug>.jpg` og **få det inn på `main`** (samme gren som resten av
+     retten merges fra, eller direkte til `main` om det er mønsteret for bilder), slik at
+     den publiserte siden faktisk serverer fotoet. La aldri en «live» rett peke på et
+     bilde som ikke finnes på `main`.
+5. **Avslutt** – rapporter nye/endrede filer, bildestatus (på `main`? optimalisert?),
+   og neste SEO-steg.
 
 ## Hvorfor to fagskill + staging-objekt
 Research er fuzzy og token-tung; bygging er presis og schema-bundet. Staging-fila
