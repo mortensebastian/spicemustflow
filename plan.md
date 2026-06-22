@@ -150,6 +150,10 @@ Neste (prioritert etter norsk søkevolum og sesong — se SEO-plan §6):
 > fullføres som lavkonkurranse-bonus, men *vekstmotoren* er høyvolums norske
 > hverdags- og bakeklassikere (kjøttkaker, taco, lasagne, kylling, vafler, boller,
 > kanelboller, skolebrød …). Bygg disse parallelt og prioritert.
+
+> **Vedlikeholdes av `/trend-recipe`** (oppskriftsspeideren): den legger til maks
+> én ny rett per døgn her ut fra trender + sesong, og logger i
+> `recipes-pending/trend-log.md`. Kan schedules daglig. Bygg en rett med `/ny-rett`.
 - [ ] Safranrisotto (Risotto alla Milanese)
 - [ ] Bouillabaisse
 - [ ] Persisk safranris og safrankylling
