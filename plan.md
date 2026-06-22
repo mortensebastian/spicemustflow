@@ -158,6 +158,7 @@ Neste (prioritert etter norsk søkevolum og sesong — se SEO-plan §6):
 - [ ] Bouillabaisse
 - [ ] Persisk safranris og safrankylling
 - [ ] Tagine med safran
+- [ ] Taco (fredagstaco) — Norges mest populære hverdagsmiddag og aktivt i vinden i 2026 (nye varianter/«swicy»); §6-hodeord, passer motoren (nivåer mild/medium/sterk, bytte kjøtt↔fisk↔vegetar). Søkevolum høy, konkurranse høy — vinn på long-tail + justerbar vinkel (trend-speider 2026-06-22)
 
 ---
 
