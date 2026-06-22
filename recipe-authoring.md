@@ -361,5 +361,25 @@ Sprøstekt/ølfritert fisketaco fra Baja California, med kylling som likestilt a
   nivåer siden id-en er felles), løftet i navn/tagline/keywords (`baja chicken tacos`),
   body-tekst, egen FAQ og byttenotat. Motoren trengte ingen endring.
 
+**spagetti med kjøttsaus / bolognese** (fjortende rett) — **ingen kjernemotorendring.**
+Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
+- **To selvjusterende levere i samme rett:** `salt` (`salt_added`, sodium 38800) **og**
+  `sweet` (`sugar`) – sukkeret balanserer tomatsyren og auto-justeres når porsjoner/nivå
+  endres. `tasteMessages` dekker `umami/sour/sweet`, `leverMessages` dekker `salt/sweet`.
+- **`requireRoles:["acid"]` dekket av hovedingrediens, ikke egen syre-lever:** hermetiske
+  tomater/passata er `role:"acid"` i alle nivåer (vin i medium/kompleks), så `missingRoles`
+  er tom uten å trenge en på/av-syre. `servedAcid:null`.
+- **ts-krydder holdes utenfor `density`/`unitOptions` (som stk/kvist).** `herbs` (`role:"seasoning"`,
+  `scaling:"nonlinear"`, «etter smak») skal IKKE i density/unitOptions – samme mønster som
+  marry-me-chicken (`italian_herbs`/`thyme`/`pepper`). Den offisielle bytte-paritet-snutten
+  sjekker bare `swapOptions`; en streng «alle ingredienser»-variant gir falsk positiv på slike
+  krydder. Bare `salt_added`/`sugar` (lever-/gram-sporet) hører hjemme i density selv om de er ts.
+- **«Stille bytte» = motsatt av «likestilt»:** brukeren valgte vegetar som stille bytte. Byttene
+  (`lentils_mushroom`, `plant_mince` på `beef`) beholdes i «Tilpass», men fjernet det dedikerte
+  body-avsnittet, vegetar-FAQ-en og vegetar fra `keywords`/`search` – data uten SEO-løft.
+- **Slug-/hodeord-valg endte på norsk:** brukeren valgte `spagetti-kjottsaus` (norsk hodeord
+  «spagetti med kjøttsaus») framfor engelsk `spaghetti-bolognese`; bolognese beholdt sekundært
+  i tittel/navn/keywords. Husk: ASCII-slug uten æøå, men hodeordet kan likevel være norsk.
+
 
 

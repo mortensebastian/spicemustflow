@@ -283,6 +283,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "spagetti-kjottsaus", slug: "spagetti-kjottsaus.html", status: "live",
+    shortName: "Spagetti med kjøttsaus", name: "Spagetti med kjøttsaus (bolognese)",
+    tagline: "Den evige familiefavoritten: spagetti med en rik, mør kjøttsaus av tomat og kjøttdeig.",
+    description: "Spagetti med kjøttsaus (bolognese) – rik saus av kjøttdeig og tomat. Velg nivå, juster porsjoner og tilpass ingrediensene til allergier.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Italiensk",
+    keywords: "spagetti med kjøttsaus, spagetti bolognese, kjøttsaus oppskrift, pasta bolognese, ragù",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT45M", total: "PT60M" },
+    search: "spagetti med kjøttsaus spagetti bolognese kjøttsaus oppskrift kjøttdeig pasta bolognese ragu ragù alla bolognese tomatsaus parmesan familiemiddag hverdagsmiddag pancetta soffritto",
+    faq: [
+      { q: "Hvor lenge bør kjøttsausen koke?", a: "En enkel hverdagssaus blir god etter 15–20 minutter, men kjøttsaus blir bedre jo lenger den får putre. En ekte ragù alla bolognese koker på svak varme i 2–4 timer, slik at smakene blir runde og kjøttet mørt. Putrer du lenge, spe med litt vann eller kraft underveis så sausen ikke tørker ut. Har du dårlig tid, gir selv 30–40 minutter på lav varme et tydelig løft i smak." },
+      { q: "Hva er forskjellen på bolognese og kjøttsaus?", a: "I praksis er det samme rett – «spagetti med kjøttsaus» er det norske hverdagsnavnet, mens «bolognese» (etter byen Bologna) er det italienske. Den ekte italienske ragù alla bolognese er litt annerledes enn den norske: den bruker soffritto av løk, gulrot og selleri, ofte pancetta, vin og en skvett melk, mindre tomat, og koker svært lenge. Den norske varianten er gjerne tomatrikere og raskere." },
+      { q: "Hvorfor ha melk i bolognese?", a: "Melk er et klassisk italiensk triks. En liten skvett melk eller fløte tilsatt mot slutten runder av syren fra tomatene og gjør sausen mildere og mer kremet. I den autentiske ragùen tilsettes melken tidlig, før vin og tomat, og får koke inn i kjøttet – det gir et mørt, fyldig resultat. Du trenger ikke mye; et par spiseskjeer er nok." },
+      { q: "Kan jeg lage spagetti bolognese uten vin?", a: "Ja. Vinen gir syrlig dybde, men er ikke nødvendig. Dropp den, eller erstatt med litt ekstra kraft eller buljong og en liten skvett balsamico eller eddik for friskheten. Lager du retten til barn, er det vanlig å droppe vinen helt – alkoholen koker stort sett bort uansett, men sausen blir like god uten." },
+      { q: "Hvor mye kjøttdeig trenger jeg per person?", a: "Regn rundt 100–125 g kjøttdeig per voksen til en god kjøttsaus, altså cirka 400–500 g til fire porsjoner. Til pastaen regner du rundt 80–100 g tørr spagetti per person. Vil du strekke kjøttet, kan du erstatte en del av kjøttdeigen med ekstra revet gulrot, sopp eller linser uten at retten taper seg." },
+      { q: "Kan jeg fryse kjøttsaus?", a: "Ja, kjøttsaus egner seg veldig godt til frysing, og mange lager dobbel porsjon med vilje. Avkjøl sausen, fordel den i porsjonsbokser, og frys i opptil 3 måneder. Tin i kjøleskap og varm forsiktig opp igjen, gjerne med en skvett vann. Frys bare sausen – kok fersk pasta når du skal servere." },
+      { q: "Hvilken kjøttdeig er best i bolognese?", a: "Vanlig kjøttdeig av storfe fungerer fint, men en blanding av okse- og svinekjøtt gir saftigere og rundere smak – svinekjøttet tilfører fett og mildhet. Vil du nærme deg det italienske, kan du grovkverne kjøttet selv og bruke litt pancetta eller bacon i bunnen for ekstra dybde. Velg gjerne en deig med litt fett, ikke den aller magreste, for best smak." },
+      { q: "Hvordan får jeg sausen til å feste seg på pastaen?", a: "Hemmeligheten er pastavann. Spar en kopp av det stivelsesrike kokevannet, og vend den nykokte spagettien rett i kjøttsausen i panna med en skvett av vannet. Stivelsen binder saus og pasta sammen, og det smaker langt bedre enn å øse saus over en haug naken spagetti på tallerkenen." },
+      { q: "Kan jeg lage spagetti bolognese glutenfri?", a: "Ja. Selve kjøttsausen er naturlig glutenfri – bytt bare ut spagettien med glutenfri pasta. Sjekk eventuell buljong eller ferdig kraft for hvete, og bruk en glutenfri variant om du er følsom. Da er hele retten trygg ved cøliaki uten å miste smak." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
