@@ -381,5 +381,20 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   «spagetti med kjøttsaus») framfor engelsk `spaghetti-bolognese`; bolognese beholdt sekundært
   i tittel/navn/keywords. Husk: ASCII-slug uten æøå, men hodeordet kan likevel være norsk.
 
+**Review-runde etter #13/#14 — KJERNEMOTORENDRING (bevisst, godkjent):**
+- **Diett-filteret støtter nå alle 14 lovpålagte allergengruppene (EU/Norge).** Tidligere var
+  bare 6 hardkodet (`dairy, egg, gluten, shellfish, fish, nuts`), og listen var *duplisert* i
+  `FILTER_LABELS` og i `buildDietFilter` – som drev fra hverandre. Spagetti #14 tagget `celery`
+  (selleri) som ikke var blant de 6 → taggen ble **inert** (ingen avkrysning rendret), selv om
+  validering sa «OK» (den sjekket bare removable/bytte, ikke at allergenet fantes i motoren).
+  Fiks: **én felles `ALLERGENS`-liste** i `recipe-adapter.js` driver både etiketter og UI;
+  utvidet til alle 14 (la til `molluscs, peanuts, soy, sesame, celery, mustard, sulphites,
+  lupin`). `relevantFilters()` viser fortsatt **bare** allergener retten faktisk inneholder, så
+  ingen tom støy per side. Build-skillet fikk en ny sjekk som flagger allergen-id utenfor lista.
+- **Lærdom:** når en ny rett trenger et allergen, legg det til i den ene `ALLERGENS`-lista –
+  aldri to steder. Et allergen som ikke står der, virker ikke i filteret uansett data.
+- **Småplukk samtidig:** nøytraliserte «likestilt»-ordlyden i spagetti-vegetarbyttet (var i
+  utakt med «stille bytte»-beslutningen).
+
 
 

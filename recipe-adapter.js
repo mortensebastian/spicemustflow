@@ -68,10 +68,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function leverIds() { return (R.levers || []).map(function (l) { return l.id; }); }
 
-  const FILTER_LABELS = {
-    dairy: 'Meieri/laktose', egg: 'Egg', gluten: 'Gluten',
-    shellfish: 'Skalldyr', fish: 'Fisk', nuts: 'Nøtter'
-  };
+  // Felles kilde for allergifilteret: EUs/Norges 14 lovpålagte allergengrupper.
+  // ÉN liste driver både etiketter (FILTER_LABELS) og avkrysningene i UI-et
+  // (buildDietFilter) – så de aldri kan drifte fra hverandre. Bare allergener
+  // som faktisk finnes i retten vises (se relevantFilters/buildDietFilter).
+  const ALLERGENS = [
+    { id: 'gluten',    label: 'Gluten' },
+    { id: 'dairy',     label: 'Meieri/laktose' },
+    { id: 'egg',       label: 'Egg' },
+    { id: 'fish',      label: 'Fisk' },
+    { id: 'shellfish', label: 'Skalldyr' },
+    { id: 'molluscs',  label: 'Bløtdyr' },
+    { id: 'nuts',      label: 'Nøtter' },
+    { id: 'peanuts',   label: 'Peanøtter' },
+    { id: 'soy',       label: 'Soya' },
+    { id: 'sesame',    label: 'Sesam' },
+    { id: 'celery',    label: 'Selleri' },
+    { id: 'mustard',   label: 'Sennep' },
+    { id: 'sulphites', label: 'Sulfitt' },
+    { id: 'lupin',     label: 'Lupin' }
+  ];
+  const FILTER_LABELS = ALLERGENS.reduce(function (m, a) { m[a.id] = a.label; return m; }, {});
   function violations(ing) {
     var v = [];
     (ing.allergens || []).forEach(function (a) { if (activeAllergens.has(a)) v.push(FILTER_LABELS[a]); });
@@ -467,14 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var host = document.getElementById('diet-filter');
     if (!host) return;
     var rel = relevantFilters();
-    var allergenItems = [
-      { id: 'dairy',     label: 'Meieri/laktose' },
-      { id: 'egg',       label: 'Egg' },
-      { id: 'gluten',    label: 'Gluten' },
-      { id: 'shellfish', label: 'Skalldyr' },
-      { id: 'fish',      label: 'Fisk' },
-      { id: 'nuts',      label: 'Nøtter' }
-    ].filter(function (i) { return rel[i.id]; });
+    var allergenItems = ALLERGENS.filter(function (i) { return rel[i.id]; });
 
     if (!allergenItems.length) { host.innerHTML = ''; return; }
 

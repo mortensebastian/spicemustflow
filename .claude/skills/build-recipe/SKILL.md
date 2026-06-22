@@ -78,6 +78,9 @@ Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</las
       både `density` og `unitOptions` (`stk`/`kvist` utenfor). Kjør bytte-snutten under.
 - [ ] Allergener tagget på ingredienser **og** bytter; hver allergi retten kan ha er
       løsbar (bytte/fjerning) på HVER bærende ingrediens – ingen essensiell «unfixable»
+- [ ] **Hvert allergen-id finnes i motorens `ALLERGENS`-liste** (`recipe-adapter.js`). Ellers
+      er taggen inert i diett-filteret (ingen avkrysning rendres). Kjør allergen-snutten under.
+      Trenger retten et allergen som mangler, er det en bevisst kjernemotorendring + lærdom.
 - [ ] HTML: alle DOM-kroker, `#related-recipes`, riktig script-rekkefølge, **ingen inline JSON-LD**
 - [ ] canonical + OG + `<title>` (primærsøkeord først + `| Velkomponert`)
 - [ ] sitemap-linje lagt til
@@ -96,6 +99,17 @@ console.log(bad.length?"MANGLER density/unitOptions for bytte-id: "+bad.join(", 
 allergen retten kan inneholde, sjekk at hver bærende ingrediens enten har et
 allergivennlig bytte eller er `removable:true`. (Typisk feil: `smør` *og* `melk`
 bærer begge meieri, men bare `melk` fikk melkefritt bytte.)
+
+**Allergen-id mot motoren (fanger inerte tagger):**
+```bash
+node -e 'var ad=require("fs").readFileSync("recipe-adapter.js","utf8");
+var sup=new Set((ad.match(/id:\s*.(gluten|dairy|egg|fish|shellfish|molluscs|nuts|peanuts|soy|sesame|celery|mustard|sulphites|lupin)./g)||[]).map(function(s){return s.replace(/.*id:\s*.|.$/g,"");}));
+global.window={};require("./<slug>-data.js");var R=window.RECIPE,bad=new Set();
+function c(g){(g.allergens||[]).forEach(function(a){if(!sup.has(a))bad.add(a);});}
+Object.values(R.recipes).forEach(function(L){L.ingredients.forEach(c);});
+Object.values(R.swapOptions||{}).forEach(function(a){a.forEach(c);});
+console.log(bad.size?"INERTE allergen-id (mangler i ALLERGENS-lista): "+[...bad].join(", "):"allergen-id OK");'
+```
 
 ## Etter bygging
 - Oppdater **lærdom-loggen** i `recipe-authoring.md` (én linje; spesielt hvis du var

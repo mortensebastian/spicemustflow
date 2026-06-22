@@ -18,7 +18,7 @@
 const swapOptions = {
   beef: [
     { id: "beef_pork_mix", label: "Blanding okse og svin (saftigere)", amount: 500, unit: "g", sodiumPer100g: 60, taste: {"umami":2}, tradition: "traditional", note: "Svinekjøttet gir fett og mildhet – nærmere den ekte ragùen." },
-    { id: "lentils_mushroom", label: "Røde linser og sopp (vegetarisk)", amount: 450, unit: "g", sodiumPer100g: 5, taste: {"umami":2}, tradition: "non-traditional", note: "Likestilt vegetarisk alternativ – finhakket sopp + linser gir en fyldig, kjøttaktig saus. Spe med litt ekstra kraft." },
+    { id: "lentils_mushroom", label: "Røde linser og sopp (vegetarisk)", amount: 450, unit: "g", sodiumPer100g: 5, taste: {"umami":2}, tradition: "non-traditional", note: "Vegetarisk alternativ – finhakket sopp + linser gir en fyldig, kjøttaktig saus. Spe med litt ekstra kraft." },
     { id: "plant_mince", label: "Plantebasert farse (vegansk)", amount: 450, unit: "g", sodiumPer100g: 400, taste: {"umami":1}, tradition: "non-traditional", note: "Vegansk; bruner som kjøttdeig. Salt justeres automatisk." }
   ],
   olive_oil: [
