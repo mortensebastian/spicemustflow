@@ -192,6 +192,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "thai-fiskesuppe", slug: "thai-fiskesuppe.html", status: "live",
+    shortName: "Thai fiskesuppe", name: "Thailandsk fiskesuppe",
+    tagline: "Kremet kokos- og currysuppe med fisk, lime og frisk koriander.",
+    description: "Kremet thailandsk fiskesuppe med kokosmelk, rød curry og lime – naturlig melkefri. Velg nivå, juster porsjoner og tilpass ingrediensene; mengdene følger med.",
+    image: "thai-fiskesuppe.jpg", category: ["suppe", "middag"], badge: "3 nivåer",
+    recipeCategory: "Suppe", cuisine: "Thai",
+    keywords: "thai fiskesuppe, thailandsk fiskesuppe, fiskesuppe med kokosmelk, thaisuppe med fisk",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT20M", total: "PT35M" },
+    search: "thai fiskesuppe thailandsk kokosmelk rød curry laks torsk reker lime koriander galangal",
+    faq: [
+      { q: "Hvilken fisk passer best i thai fiskesuppe?", a: "Både fet og mager fisk fungerer. Laks gir farge og fylde, torsk og sei er magrere og flaketere, mens fast fisk som breiflabb holder formen best. Legg fisken i mot slutten og la den så vidt trekke – kok den aldri hardt, da blir den tørr og faller fra hverandre." },
+      { q: "Hva er forskjellen på rød og grønn currypaste?", a: "Rød paste er laget av tørket rød chili og gir en dyp, rund og litt søtlig varme. Grønn paste bruker fersk grønn chili og er som regel skarpere og friskere. Begge passer i fiskesuppe – velg etter hvor sterk du vil ha den. Mange pastaer inneholder rekepasta, så sjekk innholdet om du skal lage den skalldyrfri." },
+      { q: "Er thai fiskesuppe melkefri?", a: "Ja. Kremetheten kommer fra kokosmelk, ikke fløte, så suppa er naturlig melkefri og laktosefri. Bruk fiskesaus eller soyasaus til salt i stedet for noe meieri, så er hele retten fri for melk." },
+      { q: "Kan jeg lage thai fiskesuppe uten fiskesaus?", a: "Ja. Fiskesaus gir salt og umami, men du kan bytte den mot lys soyasaus eller bare smake til med salt. Soyasaus gir litt mindre dybde, så tilsett gjerne en ekstra skvett lime og litt sukker for å holde balansen mellom salt, surt og søtt." },
+      { q: "Hvorfor skiller kokosmelken seg i suppa?", a: "Som regel fordi den har kokt for hardt. Tilsett kokosmelken etter at kraften er smakssatt, og la suppa bare så vidt småkoke – aldri fosskoke. Rør forsiktig, og ta gryta av varmen før du smaker til med lime, så holder kokosmelken seg jevn og kremet." },
+      { q: "Hva er galangal, og kan jeg bruke ingefær i stedet?", a: "Galangal er en thailandsk rot i ingefærfamilien, men med en skarpere, mer sitrus- og furuaktig smak. Den er ikke det samme som ingefær, men har du den ikke, gir frisk ingefær en mildere, men god erstatning. Bruk litt mindre ingefær enn galangal, for ingefæren er søtere." },
+      { q: "Kan jeg fryse thai fiskesuppe?", a: "Kokosbasen tåler frysing greit, men fisk og sjømat blir lett tørr og melen etter en runde i fryseren. Frys derfor heller suppebasen uten fisken, og kok inn fersk fisk og reker når du varmer den opp igjen. Varm forsiktig opp uten å koke." },
+      { q: "Hva serverer man til thai fiskesuppe?", a: "Klassisk tilbehør er dampet jasminris eller risnudler i bunnen av skåla, så suppa øses over. Topp med frisk koriander, vårløk og en limebåt, og ha gjerne ekstra chili eller fiskesaus på bordet så hver gjest kan justere styrke og salt selv." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

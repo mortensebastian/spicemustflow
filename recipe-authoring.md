@@ -300,5 +300,22 @@ auto-balanseres ikke (samme prinsipp som safraniskrem). Lærdom:
 - `fløte` som `role:"fat"` (ikke `liquid`) holder den utenfor `bulkRoles`, så «juster
   opp de andre» ikke skalerer risen når fløten byttes/fjernes.
 
+**thailandsk fiskesuppe** (tiende rett, femte via skill-ene) — **ingen kjernemotorendring.**
+Thai salt–sur–søt-balanse modellert som tre levere mot rettens egne ingredienser, ikke
+mot tilsatt bordsalt. Lærdom:
+- **Salt-leveren trenger ikke være rent salt.** `fiskesaus` (sodiumPer100g ~7800) ER
+  rettens naturlige saltkilde, og fungerer fint som `axis:"salt"`-lever – motoren løser
+  relativt mot mål-natrium, så `~38800` er bare konvensjonen for bordsalt, ikke et krav.
+  Bekreftet i Node: `missingRoles` tom (lime dekker `acid`), `leverGrams` gir fornuftig
+  fiskesaus-mengde og klampes til 0 ved nok salt. Sjekket at motoren ikke hardkoder
+  `salt_added`/`38800` – leverne er fullt data-drevet.
+- **Skalldyr-dekning via standardbytte på en ikke-fjernbar ingrediens.** Rød currypaste
+  (`removable:false`) bærer skalldyr (rekepasta), men et `veg_curry_paste`-bytte
+  (rekefri/vegansk) gjør hele retten skalldyrfri – kombinert med at reker/scampi er
+  `removable`. **Fisk forblir bevisst «unfixable»** (kraft/fisk/fiskesaus): en fiskesuppe
+  *kan* ikke gjøres fiskefri, akkurat som `fiskesuppe` – ærlig flagging er riktig her.
+- **Naturlig melkefri** (kokosmelk i stedet for fløte) er både et SEO-poeng og gir null
+  meieri-ingredienser å dekke. `coconut` regnes ikke som nøtt-allergen.
+
 
 
