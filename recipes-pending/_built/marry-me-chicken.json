@@ -1,0 +1,206 @@
+{
+  "indexEntry": {
+    "id": "marry-me-chicken",
+    "slug": "marry-me-chicken.html",
+    "status": "live",
+    "shortName": "Marry me chicken",
+    "name": "Marry me chicken",
+    "tagline": "Den virale TikTok-favoritten: kremet kylling med soltørkede tomater og parmesan.",
+    "description": "Marry me chicken – saftig kylling i kremet fløtesaus med soltørkede tomater og parmesan. Velg nivå, juster porsjoner og tilpass ingrediensene.",
+    "image": "marry-me-chicken.jpg",
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Amerikansk-italiensk",
+    "keywords": "marry me chicken, marry me chicken oppskrift, kremet kylling, marry me chicken pasta",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT15M", "cook": "PT25M", "total": "PT40M" },
+    "search": "marry me chicken kremet kylling fløtesaus soltørkede tomater parmesan tiktok",
+    "faq": [
+      { "q": "Hvorfor heter det marry me chicken?", "a": "Navnet stammer fra USA, der retten ble så hyllet at noen angivelig utbrøt «I'd marry you for that chicken». Tanken er at den kremede kyllingen er så god at den kan få noen til å fri – derav «marry me chicken». Den ble en viral favoritt på TikTok og er nå en av de mest delte kyllingrettene." },
+      { "q": "Hvilken kylling bruker man i marry me chicken?", "a": "Klassisk brukes hele kyllingbrystfileter som bankes lett flate så de blir jevntykke og møre og steker likt. Du kan også bruke kyllingens indrefilet. Vil du ha saftigere og mer smaksrikt kjøtt, fungerer kyllinglårfilet utmerket – det tåler litt lengre steketid i sausen." },
+      { "q": "Hva server man til marry me chicken?", "a": "Du trenger noe som fanger opp den fyldige sausen. Det vanligste er pasta (gjerne tagliatelle eller penne), kokte eller most poteter, eller ris. Et stykke godt brød til å tørke opp sausen er også klassisk, og en enkel grønn salat eller litt dampet brokkoli friskner opp tallerkenen." },
+      { "q": "Hvordan får jeg sausen tykk og kremet?", "a": "La fløten få et lite oppkok og småkoke noen minutter så den reduserer og tykner, og rør deretter inn nyrevet parmesan utenfor sterkeste varmen – osten både smaker til og binder sausen. Bruk ekte parmesan du river selv; ferdigrevet ost med antiklumpemiddel blir lett grynete. Vil du ha den enda tykkere, la den koke litt lenger." },
+      { "q": "Kan jeg lage marry me chicken uten fløte / melkefri?", "a": "Ja. Bytt fløten til plantefløte (soya- eller havrebasert), smør til margarin eller olje, og parmesan til en vegansk hardost. Da blir retten helt melkefri uten å miste den kremede karakteren. I oppskriften vår ligger disse byttene klare, og mengdene justeres automatisk." },
+      { "q": "Hva er soltørkede tomater, og kan jeg erstatte dem?", "a": "Soltørkede tomater er tomater som er tørket til de blir søte og intense i smaken, ofte lagt i olje. De gir marry me chicken sin karakteristiske syrlig-søte dybde. Har du dem ikke, kan en god rød pesto fungere som snarvei – men da får du litt annen smak, og pestoen inneholder ofte ost og nøtter." },
+      { "q": "Kan jeg lage marry me chicken som pasta i én panne?", "a": "Ja, en populær variant er å koke pastaen og vende den inn i sausen til slutt, eller å koke pastaen rett i sausen med litt ekstra kraft. Lag sausen som i oppskriften, og spe med mer kraft eller pastavann til du har ønsket konsistens før du blander inn pastaen." },
+      { "q": "Hvor lenge holder marry me chicken, og kan den fryses?", "a": "Rester holder seg 2–3 dager i kjøleskap i tett boks. Du kan fryse retten i opptil 2–3 måneder, men fløtesauser kan skille seg litt ved tining – varm den forsiktig opp igjen og rør godt, eventuelt med en skvett ekstra fløte eller kraft for å samle sausen." },
+      { "q": "Er marry me chicken sterk?", "a": "Nei, den er mild og kremet. Chiliflakene gir bare et hint av varme som balanserer fløten og parmesanen. Vil du ha den helt mild, kan du droppe chilien; vil du ha mer futt, øker du mengden." }
+    ]
+  },
+  "seo": {
+    "title": "Marry me chicken – kremet kylling i fløtesaus | Velkomponert"
+  },
+  "body": {
+    "heroIntro": "Den virale kyllingretten som angivelig er så god at den frir for deg: møre kyllingfileter i en silkemyk fløtesaus med soltørkede tomater, hvitløk og parmesan.",
+    "bodyIntro": "Marry me chicken ble en TikTok-følsomasjon av en grunn: det er en rett som ser ut og smaker som restaurantmat, men som lages i én panne på under en halvtime. Hemmeligheten er kontrasten mellom det milde, saftige kyllingkjøttet og en fløtesaus som er på samme tid kremet, salt fra parmesan og syrlig-søt fra de soltørkede tomatene. Et lite dryss chiliflak løfter det hele uten å gjøre retten sterk.\n\nDen viktigste teknikken er enkel, men avgjørende: brun kyllingen godt i smør og olje først, så den får farge og smak, og ta den ut mens du bygger sausen i den samme panna. Da får du med deg alle stekeskorpene, og kyllingen blir ikke overkokt. Til slutt lar du fløten redusere noen minutter og rører inn nyrevet parmesan utenfor sterkeste varmen – det er osten som både smaker til og binder sausen blank og fyldig. Bruk ekte parmesan du river selv; ferdigrevet ost gir en grynete saus.\n\nHer får du tre nivåer av samme rett. Den enkle steker kyllingen i biter for en rask hverdagsmiddag, medium følger den klassiske oppskriften med hele bankede fileter og løk, og den komplekse løfter sausen med hvitvin, mascarpone og litt sitronskall for ekstra friskhet og dybde. Retten er naturlig glutenfri, og trenger du den melkefri, ligger byttene klare i listen. Juster porsjoner og bytt ingredienser fritt – resten av oppskriften regner seg om selv."
+  },
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "høy",
+    "topCompetitors": ["matprat.no", "meny.no", "rema.no", "gladkokken.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «marry me chicken» eies av de store kjedene/matportalene (matprat, meny, rema, gladkokken) med oppskriftskarusell – vanskelig for et ungt domene. Vinn long-tail og PAA i stedet: «hvorfor heter det marry me chicken», «marry me chicken uten fløte/melkefri», «hva server man til marry me chicken», «marry me chicken pasta», «hvilken kylling». Vår justerbare 3-nivå-versjon + melkefri/glutenfri-vinkel + komplett FAQ er differensieringen. Lett feb-spiss rundt valentinsdagen (romantisk vinkel), men retten er en helårs hverdagsfavoritt – ingen season-tag."
+  },
+  "recipe": {
+    "id": "marry-me-chicken",
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "chicken_breast", "label": "Kyllingfilet, i biter", "amount": 600, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 1 }, "note": "Skjær i jevne biter for rask steking." },
+          { "id": "olive_oil", "label": "Olivenolje", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "butter", "label": "Smør", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "garlic", "label": "Hvitløk", "amount": 2, "unit": "fedd", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true },
+          { "id": "sun_dried_tomato", "label": "Soltørkede tomater, i strimler", "amount": 75, "unit": "g", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "umami": 1, "sweet": 1 } },
+          { "id": "italian_herbs", "label": "Tørket oregano/italiensk krydder", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "chili_flakes", "label": "Chiliflak", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "stock", "label": "Kyllingkraft", "amount": 1.5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 1 } },
+          { "id": "cream", "label": "Matfløte/kremfløte", "amount": 3, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["dairy"] },
+          { "id": "parmesan", "label": "Nyrevet parmesan", "amount": 50, "unit": "g", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "sodiumPer100g": 1500, "removable": true, "allergens": ["dairy"], "taste": { "umami": 2 } },
+          { "id": "salt_added", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "pepper", "label": "Pepper", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "fresh_basil", "label": "Frisk basilikum, til servering", "amount": 10, "unit": "blader", "role": "aromatic", "scaling": "fixed", "addStage": "end", "removable": true }
+        ],
+        "steps": [
+          "Krydre kyllingbitene med salt og pepper. Varm olje og smør i en vid panne, og brun bitene raskt på alle sider til de er gylne. Ta dem eventuelt ut mens du lager sausen.",
+          "Stek hvitløk og soltørkede tomater i samme panne et minutt, og rør inn oregano og chiliflak.",
+          "Hell i kyllingkraften og la den koke inn et par minutter. Tilsett fløten, og la sausen småkoke til den tykner litt.",
+          "Rør inn parmesan utenfor sterkeste varmen til sausen blir blank. Legg kyllingen tilbake og varm gjennom.",
+          "Smak til, dryss over frisk basilikum, og server med pasta, poteter eller godt brød."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "chicken_breast", "label": "Kyllingfilet, hele", "amount": 600, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 1 }, "note": "Bank filetene lett flate så de blir jevntykke." },
+          { "id": "paprika_powder", "label": "Paprikapulver", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "olive_oil", "label": "Olivenolje", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "butter", "label": "Smør", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "garlic", "label": "Hvitløk", "amount": 3, "unit": "fedd", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true },
+          { "id": "sun_dried_tomato", "label": "Soltørkede tomater, i strimler", "amount": 100, "unit": "g", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "umami": 1, "sweet": 1 } },
+          { "id": "italian_herbs", "label": "Tørket oregano/italiensk krydder", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "thyme", "label": "Timian", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "chili_flakes", "label": "Chiliflak", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "stock", "label": "Kyllingkraft", "amount": 2, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 1 } },
+          { "id": "cream", "label": "Kremfløte", "amount": 3, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["dairy"] },
+          { "id": "parmesan", "label": "Nyrevet parmesan", "amount": 60, "unit": "g", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "sodiumPer100g": 1500, "removable": true, "allergens": ["dairy"], "taste": { "umami": 2 } },
+          { "id": "salt_added", "label": "Salt", "amount": 0.75, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "pepper", "label": "Pepper", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "fresh_basil", "label": "Frisk basilikum, til servering", "amount": 15, "unit": "blader", "role": "aromatic", "scaling": "fixed", "addStage": "end", "removable": true }
+        ],
+        "steps": [
+          "Bank kyllingfiletene lett flate, og krydre dem med salt, pepper og paprikapulver. Varm olje og smør i en vid panne, og brun filetene gylne på begge sider. Ta dem ut.",
+          "Surr løk og hvitløk blanke i samme panne, og tilsett soltørkede tomater, oregano, timian og chiliflak.",
+          "Hell i kyllingkraften og skrap løs stekeskorpene. La det koke inn et par minutter, tilsett fløten, og la sausen småkoke til den tykner.",
+          "Rør inn parmesan utenfor sterkeste varmen til sausen blir blank og fyldig. Legg filetene tilbake, og la dem trekke ferdig i sausen 3–4 minutter til de er gjennomstekte.",
+          "Smak til, dryss over frisk basilikum, og server med pasta, most poteter eller godt brød."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "chicken_breast", "label": "Kyllingfilet, hele", "amount": 700, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 1 }, "note": "Bank filetene jevntykke; kyllinglårfilet kan byttes inn for saftigere kjøtt." },
+          { "id": "paprika_powder", "label": "Paprikapulver", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "olive_oil", "label": "Olivenolje", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "butter", "label": "Smør", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "shallot", "label": "Sjalottløk, finhakket", "amount": 2, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "garlic", "label": "Hvitløk", "amount": 4, "unit": "fedd", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true },
+          { "id": "sun_dried_tomato", "label": "Soltørkede tomater, i strimler", "amount": 120, "unit": "g", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "umami": 1, "sweet": 1 } },
+          { "id": "white_wine", "label": "Hvitvin", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "removable": true, "note": "Koker ut alkoholen og gir syrlig dybde." },
+          { "id": "stock", "label": "Hjemmelaget kyllingkraft", "amount": 2, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "sodiumPer100g": 150, "removable": false, "taste": { "umami": 2 } },
+          { "id": "cream", "label": "Kremfløte", "amount": 3, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["dairy"] },
+          { "id": "mascarpone", "label": "Mascarpone", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "end", "removable": true, "allergens": ["dairy"], "note": "Gir en ekstra fyldig, silkemyk saus." },
+          { "id": "parmesan", "label": "Nyrevet parmesan", "amount": 75, "unit": "g", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "sodiumPer100g": 1500, "removable": true, "allergens": ["dairy"], "taste": { "umami": 2 } },
+          { "id": "italian_herbs", "label": "Tørket oregano/italiensk krydder", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "thyme", "label": "Frisk timian", "amount": 1, "unit": "kvist", "role": "seasoning", "scaling": "fixed", "addStage": "early", "removable": true },
+          { "id": "chili_flakes", "label": "Chiliflak", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "lemon_zest", "label": "Revet sitronskall", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "removable": true, "note": "Frisker opp den fyldige sausen." },
+          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "pepper", "label": "Pepper", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "fresh_basil", "label": "Frisk basilikum, til servering", "amount": 20, "unit": "blader", "role": "aromatic", "scaling": "fixed", "addStage": "end", "removable": true }
+        ],
+        "steps": [
+          "Bank kyllingfiletene jevntykke, og krydre med salt, pepper og paprikapulver. Brun dem gylne i olje og smør i en vid panne, og ta dem ut.",
+          "Surr sjalottløk og hvitløk mykt i samme panne, og tilsett soltørkede tomater, oregano, timian og chiliflak.",
+          "Hell i hvitvinen og kok den nesten inn. Tilsett kraften og kok et par minutter, før du rører inn fløte og mascarpone og lar sausen småkoke til den tykner.",
+          "Rør inn parmesan utenfor sterkeste varmen til sausen blir blank og silkemyk. Legg filetene tilbake, og la dem trekke ferdig 4–5 minutter til de er gjennomstekte.",
+          "Smak til med sitronskall, salt og pepper. Dryss over frisk basilikum, og server med pasta, kremet potetmos eller godt brød."
+        ]
+      }
+    },
+    "swapOptions": {
+      "chicken_breast": [
+        { "id": "chicken_thigh", "label": "Kyllinglårfilet (saftigere)", "amount": 700, "unit": "g", "sodiumPer100g": 75, "taste": { "umami": 2 }, "note": "Mørkere, saftigere kjøtt; stek litt lenger." },
+        { "id": "chicken_inner_fillet", "label": "Kyllingfilet, indrefilet", "amount": 600, "unit": "g", "sodiumPer100g": 60, "note": "Små, møre biter; stek kort." }
+      ],
+      "butter": [
+        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 1, "unit": "ss", "note": "Melkefri steking." },
+        { "id": "rapeseed_oil", "label": "Rapsolje (melkefri)", "amount": 1, "unit": "ss", "note": "Nøytral olje til bruning." }
+      ],
+      "cream": [
+        { "id": "plant_cream", "label": "Plantefløte (melkefri)", "amount": 3, "unit": "dl", "note": "Soya- eller havrebasert; melkefri og kremet." },
+        { "id": "creme_fraiche", "label": "Crème fraîche (fyldigere)", "amount": 3, "unit": "dl", "allergens": ["dairy"], "note": "Tykkere, litt syrligere saus." },
+        { "id": "matfloete", "label": "Matfløte (lettere)", "amount": 3, "unit": "dl", "allergens": ["dairy"], "note": "Lettere saus; kok forsiktig så den ikke skiller seg." }
+      ],
+      "parmesan": [
+        { "id": "grana_padano", "label": "Grana Padano", "amount": 50, "unit": "g", "sodiumPer100g": 600, "allergens": ["dairy"], "taste": { "umami": 2 }, "note": "Mildere, rimeligere hardost." },
+        { "id": "vegan_parmesan", "label": "Vegansk parmesan (melkefri)", "amount": 50, "unit": "g", "sodiumPer100g": 700, "taste": { "umami": 1 }, "note": "Melkefri; salt – salt justeres automatisk." }
+      ],
+      "stock": [
+        { "id": "bouillon", "label": "Kyllingbuljong (terning)", "amount": 1.5, "unit": "dl", "sodiumPer100g": 350, "taste": { "umami": 1 }, "note": "Raskere; saltere – salt justeres automatisk." },
+        { "id": "homemade_stock", "label": "Hjemmelaget kyllingkraft", "amount": 1.5, "unit": "dl", "sodiumPer100g": 120, "taste": { "umami": 2 }, "note": "Mer dybde og rundere smak." }
+      ],
+      "sun_dried_tomato": [
+        { "id": "red_pesto", "label": "Rød pesto (snarvei)", "amount": 3, "unit": "ss", "sodiumPer100g": 700, "allergens": ["dairy", "nuts"], "taste": { "umami": 1, "sweet": 1 }, "note": "Rask smaksbombe; inneholder ofte ost og pinjekjerner." }
+      ],
+      "onion": [
+        { "id": "shallot", "label": "Sjalottløk (mildere)", "amount": 2, "unit": "stk", "taste": { "sweet": 1 }, "note": "Mildere og søtere enn vanlig løk." }
+      ],
+      "white_wine": [
+        { "id": "stock_extra", "label": "Ekstra kraft (alkoholfritt)", "amount": 1, "unit": "dl", "sodiumPer100g": 200, "taste": { "umami": 1 }, "note": "Alkoholfritt; tilsett en skvett sitron for friskhet." }
+      ],
+      "mascarpone": [
+        { "id": "vegan_cream_cheese", "label": "Vegansk flødeost (melkefri)", "amount": 1, "unit": "ss", "note": "Melkefri fylde i sausen." }
+      ]
+    },
+    "servedAcid": null,
+    "density": {
+      "olive_oil": 0.92, "butter": 0.95, "margarine": 0.95, "rapeseed_oil": 0.92,
+      "stock": 1, "bouillon": 1, "homemade_stock": 1, "stock_extra": 1, "white_wine": 0.99,
+      "cream": 1, "plant_cream": 1, "creme_fraiche": 1, "matfloete": 1,
+      "parmesan": 0.4, "grana_padano": 0.4, "vegan_parmesan": 0.4,
+      "mascarpone": 0.95, "vegan_cream_cheese": 0.95,
+      "sun_dried_tomato": 0.55, "red_pesto": 0.95, "salt_added": 1.2
+    },
+    "pieceWeight": { "onion": 110, "shallot": 30, "garlic": 5 },
+    "unitOptions": {
+      "olive_oil": ["ss", "ts", "ml", "g"], "butter": ["ss", "g"], "margarine": ["ss", "g"], "rapeseed_oil": ["ss", "ts", "ml", "g"],
+      "stock": ["dl", "ml", "g"], "bouillon": ["dl", "ml", "g"], "homemade_stock": ["dl", "ml", "g"], "stock_extra": ["dl", "ml", "g"], "white_wine": ["dl", "ml", "g"],
+      "cream": ["dl", "ml", "g"], "plant_cream": ["dl", "ml", "g"], "creme_fraiche": ["dl", "ml", "g"], "matfloete": ["dl", "ml", "g"],
+      "parmesan": ["g", "dl"], "grana_padano": ["g", "dl"], "vegan_parmesan": ["g", "dl"],
+      "mascarpone": ["ss", "g"], "vegan_cream_cheese": ["ss", "g"],
+      "sun_dried_tomato": ["g"], "red_pesto": ["ss", "g"], "salt_added": ["ts", "g"]
+    },
+    "bulkRoles": ["protein", "liquid", "vegetable"],
+    "levers": [
+      { "axis": "salt", "id": "salt_added" }
+    ],
+    "requireRoles": [],
+    "tasteMessages": {
+      "umami": "Retten blir mindre fyldig – vurder litt ekstra parmesan eller kraft.",
+      "sweet": "Mindre søtlig dybde – litt mer soltørket tomat eller brunet løk balanserer."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak til på slutten.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Smak til på slutten."
+      }
+    }
+  }
+}

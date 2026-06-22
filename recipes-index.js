@@ -236,6 +236,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "marry-me-chicken", slug: "marry-me-chicken.html", status: "live",
+    shortName: "Marry me chicken", name: "Marry me chicken",
+    tagline: "Den virale TikTok-favoritten: kremet kylling med soltørkede tomater og parmesan.",
+    description: "Marry me chicken – saftig kylling i kremet fløtesaus med soltørkede tomater og parmesan. Velg nivå, juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Amerikansk-italiensk",
+    keywords: "marry me chicken, marry me chicken oppskrift, kremet kylling, marry me chicken pasta",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT25M", total: "PT40M" },
+    search: "marry me chicken kremet kylling fløtesaus soltørkede tomater parmesan tiktok",
+    faq: [
+      { q: "Hvorfor heter det marry me chicken?", a: "Navnet stammer fra USA, der retten ble så hyllet at noen angivelig utbrøt «I'd marry you for that chicken». Tanken er at den kremede kyllingen er så god at den kan få noen til å fri – derav «marry me chicken». Den ble en viral favoritt på TikTok og er nå en av de mest delte kyllingrettene." },
+      { q: "Hvilken kylling bruker man i marry me chicken?", a: "Klassisk brukes hele kyllingbrystfileter som bankes lett flate så de blir jevntykke og møre og steker likt. Du kan også bruke kyllingens indrefilet. Vil du ha saftigere og mer smaksrikt kjøtt, fungerer kyllinglårfilet utmerket – det tåler litt lengre steketid i sausen." },
+      { q: "Hva server man til marry me chicken?", a: "Du trenger noe som fanger opp den fyldige sausen. Det vanligste er pasta (gjerne tagliatelle eller penne), kokte eller most poteter, eller ris. Et stykke godt brød til å tørke opp sausen er også klassisk, og en enkel grønn salat eller litt dampet brokkoli friskner opp tallerkenen." },
+      { q: "Hvordan får jeg sausen tykk og kremet?", a: "La fløten få et lite oppkok og småkoke noen minutter så den reduserer og tykner, og rør deretter inn nyrevet parmesan utenfor sterkeste varmen – osten både smaker til og binder sausen. Bruk ekte parmesan du river selv; ferdigrevet ost med antiklumpemiddel blir lett grynete. Vil du ha den enda tykkere, la den koke litt lenger." },
+      { q: "Kan jeg lage marry me chicken uten fløte / melkefri?", a: "Ja. Bytt fløten til plantefløte (soya- eller havrebasert), smør til margarin eller olje, og parmesan til en vegansk hardost. Da blir retten helt melkefri uten å miste den kremede karakteren. I oppskriften vår ligger disse byttene klare, og mengdene justeres automatisk." },
+      { q: "Hva er soltørkede tomater, og kan jeg erstatte dem?", a: "Soltørkede tomater er tomater som er tørket til de blir søte og intense i smaken, ofte lagt i olje. De gir marry me chicken sin karakteristiske syrlig-søte dybde. Har du dem ikke, kan en god rød pesto fungere som snarvei – men da får du litt annen smak, og pestoen inneholder ofte ost og nøtter." },
+      { q: "Kan jeg lage marry me chicken som pasta i én panne?", a: "Ja, en populær variant er å koke pastaen og vende den inn i sausen til slutt, eller å koke pastaen rett i sausen med litt ekstra kraft. Lag sausen som i oppskriften, og spe med mer kraft eller pastavann til du har ønsket konsistens før du blander inn pastaen." },
+      { q: "Hvor lenge holder marry me chicken, og kan den fryses?", a: "Rester holder seg 2–3 dager i kjøleskap i tett boks. Du kan fryse retten i opptil 2–3 måneder, men fløtesauser kan skille seg litt ved tining – varm den forsiktig opp igjen og rør godt, eventuelt med en skvett ekstra fløte eller kraft for å samle sausen." },
+      { q: "Er marry me chicken sterk?", a: "Nei, den er mild og kremet. Chiliflakene gir bare et hint av varme som balanserer fløten og parmesanen. Vil du ha den helt mild, kan du droppe chilien; vil du ha mer futt, øker du mengden." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

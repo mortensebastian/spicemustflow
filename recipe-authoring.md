@@ -330,5 +330,21 @@ kjøttkaker-mønsteret (kjøttfarse + binding + brun saus) med kål som wrapper.
   lar brukeren slå av risen for den rent tradisjonelle norske varianten (skiller den fra
   svensk kåldolmar) – et data-valg, ikke en motor-bryter.
 
+**marry me chicken** (tolvte rett, syvende via skill-ene) — **ingen kjernemotorendring.**
+Kremet fløtesaus-rett (kylling + soltørket tomat + parmesan). Lærdom:
+- **Naturlig glutenfri = null gluten å dekke.** Sausen tykner via fløte-reduksjon +
+  revet parmesan, ikke roux/mel – så retten har *ingen* gluten-bærer. Verdt en egen
+  SEO-vinkel («naturlig glutenfri»), på linje med thai-fiskesuppe sin «naturlig melkefri».
+- **Ett allergen (meieri) på flere bærere:** `smør` + `fløte` + `parmesan` (+ `mascarpone`
+  i kompleks). Hver må løses – `smør→margarin/olje`, `fløte→plantefløte`, `parmesan→vegansk`,
+  `mascarpone` er `removable`. NB: et slot kan ha *flere* bytter der bare ett er
+  allergenfritt (`fløte` har også `crème fraîche`/`matfløte` som *fortsatt* er meieri) –
+  allergi-snutten må finne det melkefrie byttet, ikke bare «et bytte».
+- **Live uten foto:** ingen opplastet bilde → fulgte `fiskekaker`/`safraniskrem`-mønsteret:
+  `image:null` i manifestet, droppet `og:image`/`twitter:image`, `twitter:card:"summary"`,
+  og lot `--recipe-image`-variabelen peke på den framtidige stien (manglende CSS-bakgrunn
+  vises som ingenting, ikke knust-ikon). Aldri la en «live» rett ha `image` mot en fil som
+  ikke finnes på `main`.
+
 
 
