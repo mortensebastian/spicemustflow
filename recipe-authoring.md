@@ -346,5 +346,20 @@ Kremet fløtesaus-rett (kylling + soltørket tomat + parmesan). Lærdom:
   vises som ingenting, ikke knust-ikon). Aldri la en «live» rett ha `image` mot en fil som
   ikke finnes på `main`.
 
+**baja fish tacos** (trettende rett) — **ingen kjernemotorendring.**
+Sprøstekt/ølfritert fisketaco fra Baja California, med kylling som likestilt alternativ. Lærdom:
+- **`requireRoles:["acid"]` uten egen syre-lever:** lime er `role:"acid"` og `essential` i
+  alle tre nivåer, så `missingRoles` er tom og motoren får friskheten den krever – men vi
+  trenger ingen auto-syre-lever (ingen ren syre-ingrediens å skru på/av). `servedAcid:null`.
+- **Fire allergener i én rett (fisk/gluten/egg/meieri), alle løst med data:** fisk via
+  `white_fish→chicken` (fiskefritt), gluten via `wheat_flour→gf_flour` + `beer→sparkling_water`
+  + `wheat_tortilla↔corn_tortilla`, egg via `mayo→vegan_mayo`, meieri via
+  `sour_cream`/`creme_fraiche→plant_creme`. Merk **toveis tortilla-bytte** (mais↔hvete) så
+  gluten er løsbart uansett hvilket nivå/standardvalg.
+- **«Likestilt alternativ» = data + kopi, ikke ny motor-mekanikk.** Brukeren ville ha kylling
+  likestilt med fisk. Løst uten ny variant-bryter: kylling-byttet på `white_fish` (gjelder alle
+  nivåer siden id-en er felles), løftet i navn/tagline/keywords (`baja chicken tacos`),
+  body-tekst, egen FAQ og byttenotat. Motoren trengte ingen endring.
+
 
 

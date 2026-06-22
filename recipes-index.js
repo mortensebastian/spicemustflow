@@ -259,6 +259,30 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "baja-fish-tacos", slug: "baja-fish-tacos.html", status: "live",
+    shortName: "Baja fish tacos", name: "Baja fish tacos (sprøstekt fisketaco)",
+    tagline: "Sprøstekt, ølfritert fisk eller kylling i myke tortillas med frisk kålslaw, chipotlekrem og lime.",
+    description: "Baja fish tacos – sprøstekt fisk eller kylling i myke tortillas med kålslaw, chipotlekrem og lime. Velg nivå, juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Mexicansk",
+    keywords: "baja fish tacos, fisketacos, baja chicken tacos, sprøstekt fisketaco",
+    recipeYield: "4 porsjoner", times: { prep: "PT25M", cook: "PT15M", total: "PT40M" },
+    search: "baja fish tacos fisketacos kyllingtacos baja chicken tacos sprøstekt fisk kylling ølrøre kålslaw chipotle lime majstortilla torsk fredagstaco",
+    faq: [
+      { q: "Hva er baja fish tacos?", a: "Det er fisketacoen fra Baja California i Mexico: strimler av sprøstekt, ølfritert hvit fisk i en myk majstortilla, toppet med frisk, syrlig kålslaw og en røkt chipotlekrem, med en god klem lime over. Kombinasjonen av varm, sprø fisk, kald og frisk slaw og kremet, røkt saus er det som gjør den så populær." },
+      { q: "Hvilken fisk passer best i fisketacos?", a: "Fast, mager hvit fisk er best fordi den holder formen og blir saftig under den sprø panering. Torsk er klassikeren, men hyse (kolje), sei og lyr fungerer like godt. Vil du ha en fetere variant, kan du bruke laks. Skjær fisken i jevne strimler så de steker likt." },
+      { q: "Hvordan får jeg sprø panering på fisken?", a: "Hemmeligheten er en kald ølrøre som lages rett før fritering – kullsyren i ølet gir en lett og luftig skorpe. Bland gjerne litt maizena i melet for ekstra sprøhet, hold røren kald, og friter i olje på 175–180 °C til fisken er gyllen, bare ett par minutter på hver side. Ikke ha for mye fisk i gryta om gangen, så holder oljen temperaturen." },
+      { q: "Hvilken tortilla bruker man til fisketacos?", a: "Autentiske Baja fish tacos lages med små majstortillas (majstortilla), som er naturlig glutenfrie og gir den ekte smaken. I Norge er myke hvetetortillas mer vanlig og fungerer fint. Varm tortillaene i tørr panne eller over flammen så de blir myke og smidige før du fyller dem." },
+      { q: "Kan jeg lage fisketacos uten fritering, i ovn eller airfryer?", a: "Ja. For en lettere variant kan du vende fisken i krydret mel og panstekte den sprø i litt olje, eller steke den i ovn på 220 °C eller i airfryer til den er gyllen. Du mister litt av den boblende ølrøre-skorpa, men får en mindre fettrik taco som passer fint til hverdags." },
+      { q: "Hva er chipotle, og hva kan jeg bruke i stedet?", a: "Chipotle er røkt og tørket jalapeño, ofte solgt i en krydret adobosaus på boks eller som paste. Den gir fisketacoen sin karakteristiske røkte varme. Får du ikke tak i den, kan du blande røkt paprikapulver med litt sterk saus eller chiliflak – du får en mildere, men liknende røksmak." },
+      { q: "Hvilket tilbehør passer til fisketacos?", a: "Klassisk topping er en frisk kålslaw (gjerne av rødkål), chipotle- eller limekrem, friske limebåter og rikelig med koriander. Mange har også pico de gallo (frisk tomatsalsa), guacamole eller avokado, og syltet rødløk. Server gjerne med ris og bønner ved siden av for et fullt måltid." },
+      { q: "Kan jeg lage fisketacos glutenfri?", a: "Ja. Bytt hvetemelet i røren mot en glutenfri melblanding eller ren maizena, bruk glutenfritt øl eller sprudlevann i røren, og velg majstortilla, som er naturlig glutenfri. Da blir hele tacoen glutenfri uten at den mister sprøheten." },
+      { q: "Kan jeg bruke frossen fisk til fisketacos?", a: "Ja, frossen hvit fisk fungerer godt. Tin den helt, og klapp den godt tørr med kjøkkenpapir før du panerer – overflødig vann gjør at panering ikke fester seg og at oljen spruter. Tørr fisk gir den sprøeste skorpa." },
+      { q: "Kan jeg lage baja tacos med kylling i stedet for fisk?", a: "Ja – baja chicken tacos er like populært. Skjær kyllingfilet i strimler, og enten friter dem i samme ølrøre eller stek dem sprø i krydret mel. Alt det andre er likt: rødkålslaw, chipotlekrem, lime og tortilla. Pass bare på at kyllingen er gjennomstekt. I oppskriften vår ligger kylling klar som likestilt alternativ til fisken, og mengdene justeres automatisk." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
