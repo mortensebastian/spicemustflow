@@ -137,22 +137,81 @@ splitte SEO-styrken.
 
 ### Oppskrifter å bygge
 
-Ferdige:
+Ferdige (17 — fasit er `recipes-index.js`, denne lista speiler den):
 - [x] Lussekatter
 - [x] Paella
 - [x] Fiskesuppe
 - [x] Safraniskrem
 - [x] Pannekaker
 - [x] Sjokoladekake
+- [x] Safranrisotto (Risotto alla Milanese)
+- [x] Kjøttkaker i brun saus
+- [x] Fiskekaker
+- [x] Risgrøt
+- [x] Thai fiskesuppe
+- [x] Kålruletter
+- [x] Marry Me Chicken
+- [x] Baja fish tacos
+- [x] Spagetti med kjøttsaus
+- [x] Bouillabaisse
+- [x] Persisk safranris og safrankylling
 
-Neste (prioritert etter norsk søkevolum og sesong — se SEO-plan §6):
-> **Merk:** safran nedtones (eierføring). De påbegynte safranrettene under kan
-> fullføres som lavkonkurranse-bonus, men *vekstmotoren* er høyvolums norske
-> hverdags- og bakeklassikere (kjøttkaker, taco, lasagne, kylling, vafler, boller,
-> kanelboller, skolebrød …). Bygg disse parallelt og prioritert.
-- [ ] Safranrisotto (Risotto alla Milanese)
-- [ ] Bouillabaisse
-- [ ] Persisk safranris og safrankylling
+Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvolum):
+> **Slik leses lista:** rekkefølgen = prioritet. `/rett-pulje` plukker de tre
+> *øverste ubygde* (kryssjekker mot bygde retter, så et glemt kryss skader ikke).
+> Format: `rett — sesong — belegg`. Safran er nedtonet (eierføring); vekstmotoren
+> er disse høyvolums norske hverdags- og bakeklassikerne.
+- [x] 1. Pannekaker — Hele året — Dokumentert (MatPrat #1)
+- [ ] 2. Vafler / vaffelrøre — Hele året — Dokumentert (topp 10)
+- [ ] 3. Taco (fredagstaco) — Hele året — Estimat, svært høyt — NB: kjøttdeig-fredagstaco, distinkt fra bygde `baja-fish-tacos`
+- [ ] 4. Pizzadeig / pizza — Hele året — Estimat
+- [ ] 5. Lasagne — Hele året — Dokumentert (MatPrat topp)
+- [ ] 6. Kanelboller — Hele året — Estimat
+- [ ] 7. Boller (hvete/kardemomme) — Hele året — Estimat
+- [x] 8. Kjøttkaker i brun saus — Hele året — Estimat
+- [x] 9. Sjokoladekake — Hele året — Dokumentert (melk #2)
+- [ ] 10. Eplekake — Høst-topp — Dokumentert (melk #1)
+- [ ] 11. Hjemmelaget brød / grovbrød — Hele året — Estimat
+- [ ] 12. Focaccia — Hele året — Dokumentert (trend → evergreen)
+- [ ] 13. Pasta carbonara — Hele året — Estimat
+- [ ] 14. Gulrotkake — Hele året — Estimat
+- [ ] 15. Kyllingfilet / kylling i ovn — Hele året — Estimat
+- [x] 16. Fiskekaker — Hele året — Estimat
+- [ ] 17. Muffins — Hele året — Estimat
+- [ ] 18. Brownie — Hele året — Estimat
+- [ ] 19. Banankake — Hele året — Dokumentert (melk #3)
+- [ ] 20. Kjøttdeiggryte / gryterett — Hele året — Estimat
+- [ ] 21. Scones — Hele året — Estimat
+- [ ] 22. Kyllingwok — Hele året — Estimat
+- [ ] 23. Tomatsuppe / suppe — Vinter-topp — Estimat
+- [ ] 24. Chili con carne — Hele året — Dokumentert (MatPrat nevnt)
+- [ ] 25. Fiskegrateng — Hele året — Estimat
+- [ ] 26. Ostekake (cheesecake) — Hele året — Estimat
+- [ ] 27. Pulled pork — Hele året — Estimat
+- [ ] 28. Hjemmelaget burger — Sommer-topp — Estimat
+- [ ] 29. Kylling tikka masala / curry — Hele året — Estimat
+- [ ] 30. Pavlova — Fest — Estimat
+- [ ] 31. Risotto — Hele året — Estimat — NB: generisk risotto, distinkt fra bygde `safranrisotto`
+- [ ] 32. Verdens beste (kvæfjordkake) — 17. mai/fest — Estimat
+- [ ] 33. Bløtkake — Fest/17. mai — Estimat
+- [ ] 34. Sjokoladekake i langpanne — Hele året — Estimat
+- [ ] 35. Kremet kyllingpasta — Hele året — Estimat
+- [ ] 36. Ribbe — Jul — Dokumentert (MatPrat #5)
+- [ ] 37. Pinnekjøtt — Jul — Estimat, høyt i sesong
+- [ ] 38. Fårikål — Høst — Dokumentert (MatPrat nevnt)
+- [ ] 39. Lammelår — Påske — Dokumentert (Google 2025 #1-trend)
+- [ ] 40. Pepperkaker — Jul — Estimat
+- [x] 41. Lussekatter — Jul/Lucia — Estimat, relevant for deg
+- [ ] 42. Julekaker (7 slag) — Jul — Estimat
+- [ ] 43. Riskrem — Jul — Estimat — NB: kald dessert, distinkt fra bygde `risgrot`
+- [ ] 44. Kransekake — Jul/17. mai/fest — Estimat
+- [ ] 45. Marsipankake — Jul/fest — Estimat
+- [ ] 46. Fastelavnsboller — Februar — Dokumentert (Google 2025-trend)
+- [ ] 47. Lutefisk — Jul — Estimat
+- [ ] 48. Rabarbrasaft / -kompott — Vår/sommer — Dokumentert (Google 2025-trend)
+- [ ] 49. Jordbærkake — Sommer/17. mai — Estimat
+
+Restkandidat fra forrige plan (lavkonkurranse-bonus, ikke prioritert):
 - [ ] Tagine med safran
 
 ---
