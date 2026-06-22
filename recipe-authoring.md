@@ -317,5 +317,18 @@ mot tilsatt bordsalt. Lærdom:
 - **Naturlig melkefri** (kokosmelk i stedet for fløte) er både et SEO-poeng og gir null
   meieri-ingredienser å dekke. `coconut` regnes ikke som nøtt-allergen.
 
+**kålruletter** (ellevte rett, sjette via skill-ene) — **ingen kjernemotorendring.** Bygd på
+kjøttkaker-mønsteret (kjøttfarse + binding + brun saus) med kål som wrapper. Lærdom:
+- **Full trippel allergi-dekning** (melkefri + eggfri + glutenfri) falt naturlig ut av den
+  systematiske standardbytte-lista: `melk→havredrikk`, `smør→margarin/rapsolje`,
+  `fløte→plantefløte`, `egg→ekstra potetmel`, og **jevningen** (`flour`, hvetemel) er både
+  `removable:true` OG har glutenfri bytter (`potetmel`/`maizena`). Allergen-snutten meldte
+  null uløselige – verdt å huske at *saus-jevning* er en skjult gluten-kilde som må dekkes.
+- **Wrapper-ingrediens:** kålbladet er `removable:false`, uten allergen, og selve retten –
+  `pieceWeight` i stk + tekstur-bytter (savoy/spisskål) som `tradition:"regional"`.
+- **Ny rolle `grain`** (kokt ris) lagt i `bulkRoles` uten kodeendring; `removable:true`
+  lar brukeren slå av risen for den rent tradisjonelle norske varianten (skiller den fra
+  svensk kåldolmar) – et data-valg, ikke en motor-bryter.
+
 
 

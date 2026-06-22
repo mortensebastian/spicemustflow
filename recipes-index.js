@@ -214,6 +214,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "kalruletter", slug: "kalruletter.html", status: "live",
+    shortName: "Kålruletter", name: "Kålruletter i brun saus",
+    tagline: "Tradisjonsmat: kjøttfylte kålruletter i blank brun saus med tyttebær.",
+    description: "Tradisjonelle kålruletter med saftig kjøttfyll i brun saus. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: "kalruletter.jpg", category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    keywords: "kålruletter, kålruletter oppskrift, tradisjonelle kålruletter, kålruletter i brun saus",
+    recipeYield: "4 porsjoner", times: { prep: "PT30M", cook: "PT30M", total: "PT60M" },
+    search: "kålruletter brun saus tradisjonell norsk kjøttdeig kål tyttebær allehånde muskat",
+    faq: [
+      { q: "Hvilken kål passer best til kålruletter?", a: "Vanlig hodekål er det tradisjonelle valget – store, faste blader som tåler å rulles. Spisskål og savoykål er litt mørere og lette å brette, mens kinakål er aller enklest å rulle og holder grønnfargen, men gir tynnere ruletter. Velg store, hele blader uansett kåltype." },
+      { q: "Skal det være ris i kålruletter?", a: "Det er valgfritt. De mest tradisjonelle norske kålrulettene er rent kjøttfyll uten ris, mens en del oppskrifter (og de svenske kåldolmarene) har kokt ris i farsen for å gjøre den saftigere og drøyere. Her er risen med fra medium-nivået og kan fjernes om du vil ha den helt tradisjonelle versjonen." },
+      { q: "Hvordan får jeg kålbladene myke uten at de revner?", a: "Forvell hele bladene i lettsaltet, kokende vann i 1–2 minutter til de er bøyelige, og avkjøl dem i kaldt vann. Skjær bort den tykkeste delen av stilken så bladet blir lett å rulle. Et triks er å fryse hele kålhodet og tine det – da blir bladene myke uten koking." },
+      { q: "Hvilke krydder skal i kålruletter?", a: "Salt og pepper er grunnlaget. De klassiske krydderne som gir kålruletter den tradisjonelle smaken er revet muskat og malt allehånde, og mange har også litt malt ingefær. Bruk litt av hver – krydderet skal løfte kjøttet, ikke ta over." },
+      { q: "Hvordan unngår jeg at kålrulettene løsner under koking?", a: "Brett inn sidene før du ruller, pakk dem stramt, og legg dem med skjøten ned i gryta eller formen så vekten holder dem igjen. Ligger de tett inntil hverandre, holder de formen. Er du usikker, kan du feste hver rulett med en tannpirker eller litt kjøkkenhyssing." },
+      { q: "Kan jeg lage kålruletter på forhånd og fryse dem?", a: "Ja. Kålruletter egner seg godt til å lages i forveien. Frys dem gjerne ferdigstekte, med eller uten saus, i lufttett boks i opptil 3 måneder, og varm dem forsiktig opp igjen. De holder seg også et par dager i kjøleskapet." },
+      { q: "Hva serverer man til kålruletter?", a: "Klassisk tilbehør er kokte poteter, en blank brun saus av kraften, og tyttebær eller rørte tyttebær ved siden av. Noen serverer dem også med en lysere fløtesaus. Litt kokte gulrøtter eller annet grønt passer fint til." },
+      { q: "Hva er forskjellen på kålruletter og kåldolmar?", a: "De er nære slektninger. Kåldolmar er den svenske varianten og har nesten alltid kokt ris i kjøttfyllet, og serveres tradisjonelt med fløtesaus og tyttebær. Norske kålruletter er ofte rent kjøttfyll og serveres gjerne med brun saus, men forskjellene er små og oppskriftene flyter over i hverandre." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
