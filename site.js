@@ -67,11 +67,26 @@
   }
   window.vkInjectJsonLd = injectJsonLd;
 
+  /* Sesong-løft: retter med en `season` som matcher inneværende måned løftes
+     øverst på forsiden (f.eks. jul i desember). Aldri skjuling – bare rekkefølge,
+     og kun i sesong; ellers beholdes manifest-rekkefølgen. Generelt for alle
+     retter (ingen rett-spesialtilfeller). */
+  var SEASON_MONTH = { jan: 1, feb: 2, mar: 3, apr: 4, mai: 5, jun: 6,
+                       jul: 7, aug: 8, sep: 9, okt: 10, nov: 11, des: 12 };
+  function inSeason(r) {
+    return !!(r.season && SEASON_MONTH[r.season] === (new Date().getMonth() + 1));
+  }
+  function seasonOrdered(entries) {
+    var boosted = entries.filter(inSeason);
+    if (!boosted.length) return entries;            // utenfor sesong: uendret
+    return boosted.concat(entries.filter(function (r) { return !inSeason(r); }));
+  }
+
   /* ---- Forsidens rutenett: render fra manifest + søk/kategorifilter ---- */
   function initHub() {
     var grid = document.getElementById("hub-grid");
     if (!grid || !window.RECIPES_INDEX) return;
-    renderGrid(grid, window.RECIPES_INDEX);
+    renderGrid(grid, seasonOrdered(window.RECIPES_INDEX));
 
     var cards = Array.prototype.slice.call(grid.querySelectorAll(".recipe-card"));
     var catBtns = document.querySelectorAll(".hub-cat-btn");

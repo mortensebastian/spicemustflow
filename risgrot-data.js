@@ -252,9 +252,6 @@ window.RECIPE = {
           "allergens": [
             "dairy"
           ],
-          "taste": {
-            "sweet": 1
-          },
           "note": "Gir en rundere, kremet grøt; røres inn mot slutten."
         },
         {
@@ -368,9 +365,6 @@ window.RECIPE = {
           "allergens": [
             "dairy"
           ],
-          "taste": {
-            "sweet": 1
-          },
           "note": "Mer fløte gir en rikere grøt."
         },
         {
@@ -382,7 +376,6 @@ window.RECIPE = {
           "scaling": "fixed",
           "addStage": "early",
           "removable": true,
-          "tradition": "traditional",
           "note": "Del stangen og skrap ut frøene."
         },
         {
@@ -459,7 +452,7 @@ window.RECIPE = {
       {
         "id": "oat_milk",
         "label": "Havredrikk (melkefri)",
-        "amount": 9,
+        "amount": 10,
         "unit": "dl",
         "sodiumPer100g": 40,
         "allergens": [],
