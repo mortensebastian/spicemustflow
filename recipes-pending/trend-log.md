@@ -6,4 +6,4 @@ speideren over (maks én rett per døgn). Ikke rediger for hånd uten grunn.
 
 | Dato | Rett | Søkevolum (relativt) | Begrunnelse / signal |
 |------|------|----------------------|----------------------|
-| 2026-06-22 | Taco (fredagstaco) | høy | Norges mest populære hverdagsmiddag; 2026-mattrender (bygrenland.no, byavisatonsberg.no) fremhever nye taco-varianter/«swicy». §6-hodeord, passer motoren. Konkurranse høy → long-tail + justerbar vinkel. |
+| 2026-06-22 | Marry Me Chicken | stigende | Viral TikTok/Instagram-rett med norsk fotfeste (matprat/meny/rema + norske creators). Fersk trend, konkurranse middels → rid bølgen med justerbar versjon. Forkastet taco/kjøttkaker o.l.: evergreen-storselgere, ikke trend. |

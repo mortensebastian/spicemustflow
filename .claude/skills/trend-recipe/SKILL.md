@@ -40,25 +40,37 @@ av dette (sjekk både slug/id og rettens vanlige norske navn + nære synonymer):
 - Rettene i `plan.md` → «Oppskrifter klare til bygging».
 - Alle filer i `recipes-pending/` (staging-objekter som venter på bygging).
 
-### 3. Finn dagens kandidat (trend + sesong + strategi)
-Mål: høyt norsk søkevolum / stigende interesse, og i tråd med eierføringen i
-`plan.md` (§6: bygg **høyvolums norske hverdags- og bakeklassikere** først; safran
-nedtones; sesong times etter §7).
-- Bruk `WebSearch`/`WebFetch` mot **norsk** Google (geo = Norge): Google Trends
-  (stigende matsøk siste 7–30 dager), «Folk spør også», norske matsider og
-  sesongsignaler. Eksakte volum er ikke gratis (`plan.md` → Forbehold) → bruk
-  **høy/middels/lav** + en kort begrunnelse, ikke tall.
-- Vekt kandidatene slik (i prioritert rekkefølge):
-  1. **Sesongtreff nå/snart** (§7-kalenderen, publiser uker før toppen). Er vi
-     innenfor et 4–8 ukers vindu før en kjent topp, foretrekk den sesongretten.
-  2. **Høyt, stabilt hverdags-/bakevolum** (§6-lista: kjøttkaker-klassen,
-     taco, lasagne, kylling, vafler, boller, kanelboller, gryter, pasta …).
-  3. **Stigende/virale matsøk** som passer profilen (justerbar, tre nivåer).
-- **Velg ÉN** kandidat som ikke er i «kjent»-settet. Foretrekk lav/middels
-  konkurranse der volumet er likt (ungt domene vinner long-tail først, §6).
-- Ved ekte tvil mellom to gode kandidater (f.eks. en sesongrett vs. et hodeord):
-  bruk `AskUserQuestion`. Ellers velg selv og begrunn kort – ikke spør i en
-  schedulert/ubemannet kjøring.
+### 3. Finn dagens kandidat — jakt på det som STIGER, ikke evergreen-volum
+**Dette er hele poenget med speideren.** Eieren har allerede popularitetslista (de
+stabile høyvolums-klassikerne i `plan.md` §6: taco, lasagne, kjøttkaker, vafler,
+boller …). Speideren skal **ikke** gjenforeslå slike etablerte storselgere – de
+fanges av den manuelle byggeplanen uansett. Jobben din er å finne **retter på vei
+opp**: virale/stigende søk der vi kan rangere *før* konkurransen rekker å bygge ut.
+
+Mål: en rett som **trender nå** (stigende kurve, viral på sosiale medier, eller en
+skarp sesongtopp på vei), passer motoren (justerbar, tre nivåer), og som vi ikke
+har. Tenk «Marry Me Chicken», feta-pasta, cottage cheese-retter, Dubai-sjokolade,
+gnocchi-traybake – ikke «taco» eller «kjøttkaker».
+
+Slik finner du den (`WebSearch`/`WebFetch`, norsk geo der mulig):
+- **Sosiale mattrender:** TikTok/Instagram-virale retter med norsk fotfeste (norske
+  creators, lagt ut på matprat/meny/rema = signal på at trenden har truffet Norge).
+- **Stigende søk:** Google Trends «rising»/«breakout» for mat siste 7–30 dager;
+  matnyhet-/trendartikler fra norske medier og kjeder (MENY-trender, Findus,
+  dagligvare-nyheter).
+- **Skarp sesongtopp på vei (§7):** en sesongrett innen 4–8 uker før toppen teller
+  også som «stigende» og er et gyldig valg.
+
+Utvelgelse:
+- **Velg ÉN** kandidat med tydelig *stigende* signal som ikke er i «kjent»-settet.
+- **Forkast** etablerte evergreen-storselgere (popularitetslista) – noter kort at
+  de ble forkastet fordi de ikke er en *trend*.
+- Vei inn at vi vinner raskest når **konkurransen ennå er tynn**: en fersk trend
+  der få norske sider har en god, justerbar versjon, slår en moden trend alle har.
+- Eksakte volum er ikke gratis (`plan.md` → Forbehold) → bruk **høy/middels/lav**
+  + det konkrete trendsignalet (hvilken plattform/kilde, hvor ferskt), ikke tall.
+- Ved ekte tvil mellom to like sterke trender: bruk `AskUserQuestion`. Ellers velg
+  selv og begrunn kort – ikke spør i en schedulert/ubemannet kjøring.
 
 ### 4. Legg retten i byggelista
 I `plan.md`, under «### Oppskrifter å bygge» → «Neste (prioritert …)»-lista, legg
