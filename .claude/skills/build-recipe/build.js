@@ -145,6 +145,7 @@ ${introPs}
       <div id="diet-filter"></div>
 
       <div class="recipe-customize">
+        <div id="budget-toggle"></div>
         <div id="precision-toggle"></div>
         <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
       </div>

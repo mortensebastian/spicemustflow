@@ -5,6 +5,10 @@
    Mengdene gjelder 4 porsjoner. Feltene er forklart i byggeprompten:
    role, essential, scaling (linear/nonlinear/fixed), addStage (early/end/serve),
    sodiumPer100g, removable, isPrimaryAcid/onRemove, tradition.
+   cost (valgfri): 1 = rimelig, 2 = middels (standard når uoppgitt), 3 = dyr.
+   «Budsjett (rimeligere)» bytter dyre ingredienser til billigste passende bytte
+   (kun enkel/medium). I paella: safran → gurkemeie+paprika, reker → blekksprut,
+   kraft → grønnsakskraft.
 
    Smaksbalanse (recipe-balance.js):
    - SALT balanseres kvantitativt via sodiumPer100g. salt_added er «leveren» og
@@ -32,7 +36,7 @@ const swapOptions = {
 
   prawns: [
     { id: "squid", label: "Blekksprutringer", amount: 200, unit: "g",
-      sodiumPer100g: 45, taste: { umami: 1 }, note: "Mildt salt; surres kort tidlig.",
+      sodiumPer100g: 45, taste: { umami: 1 }, cost: 2, note: "Mildt salt; surres kort tidlig.",
       allergens: ["shellfish"] },
     { id: "more_mussels", label: "Mer blåskjell", amount: 300, unit: "g",
       sodiumPer100g: 285, taste: { umami: 2 }, note: "Slipper salt skjellkraft i risen.",
@@ -48,12 +52,12 @@ const swapOptions = {
       sodiumPer100g: 200, taste: { umami: 1 }, note: "Passer sjømatversjon.",
       allergens: ["fish", "shellfish"] },
     { id: "veg_stock", label: "Grønnsakskraft", amount: 6, unit: "dl",
-      sodiumPer100g: 150, taste: { umami: 1 }, note: "Passer vegetar; gi sofritoen ekstra smak." }
+      sodiumPer100g: 150, taste: { umami: 1 }, cost: 1, note: "Passer vegetar; gi sofritoen ekstra smak." }
   ],
 
   saffron: [
     { id: "turmeric_paprika", label: "Gurkemeie + paprika (kun farge)",
-      amount: 1, unit: "ts", taste: { bitter: 1 }, note: "Gir farge, men ikke safranens aroma." }
+      amount: 1, unit: "ts", taste: { bitter: 1 }, cost: 1, note: "Gir farge, men ikke safranens aroma." }
   ],
 
   smoked_paprika: [
@@ -79,9 +83,9 @@ const paellaRecipes = {
     ingredients: [
       { id: "rice",          label: "Paellaris (rundkornet)", amount: 3, unit: "dl", role: "rice",     essential: true, scaling: "linear",    addStage: "early", sodiumPer100g: 0,   removable: false },
       { id: "stock",         label: "Kyllingkraft (ferdig)",  amount: 6, unit: "dl", role: "liquid",                    scaling: "linear",    addStage: "early", sodiumPer100g: 200, removable: false, taste: { umami: 1 } },
-      { id: "saffron",       label: "Safran",                 amount: 0.5, unit: "g", role: "saffron",                  scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 } },
+      { id: "saffron",       label: "Safran",                 amount: 0.5, unit: "g", role: "saffron",                  scaling: "nonlinear", addStage: "early", removable: true,  cost: 3, taste: { bitter: 1 } },
       { id: "chicken",       label: "Kyllinglår i biter",     amount: 300, unit: "g", role: "protein",                  scaling: "linear",    addStage: "early", sodiumPer100g: 75,  removable: false, tradition: "traditional", taste: { umami: 1 } },
-      { id: "prawns",        label: "Reker (ferdig pillet)",  amount: 200, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 120, removable: true,  taste: { umami: 2 }, allergens: ["shellfish"] },
+      { id: "prawns",        label: "Reker (ferdig pillet)",  amount: 200, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 120, removable: true,  cost: 3, taste: { umami: 2 }, allergens: ["shellfish"] },
       { id: "garlic",        label: "Hvitløksfedd",           amount: 2, unit: "stk", role: "aromatic",                 scaling: "linear",    addStage: "early", removable: true },
       { id: "olive_oil",     label: "Olivenolje",             amount: 2, unit: "ss",  role: "fat",     essential: true, scaling: "nonlinear", addStage: "early", removable: false },
       { id: "smoked_paprika",label: "Røkt paprikapulver",     amount: 1, unit: "ts",  role: "seasoning",                scaling: "nonlinear", addStage: "early", removable: false, taste: { bitter: 1 } },
@@ -101,9 +105,9 @@ const paellaRecipes = {
     ingredients: [
       { id: "rice",          label: "Paellaris (rundkornet)", amount: 3, unit: "dl", role: "rice",     essential: true, scaling: "linear",    addStage: "early", sodiumPer100g: 0,   removable: false, note: "Bomba/Calasparra gir best resultat; ikke skyll risen." },
       { id: "stock",         label: "Varm kyllingkraft",      amount: 6, unit: "dl", role: "liquid",                    scaling: "linear",    addStage: "early", sodiumPer100g: 200, removable: false, taste: { umami: 1 }, note: "Bruk gjerne usaltet, så styrer du saltet selv." },
-      { id: "saffron",       label: "Safran",                 amount: 0.5, unit: "g", role: "saffron",                  scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 }, note: "Bløtlegg i varm (ikke kokende) kraft." },
+      { id: "saffron",       label: "Safran",                 amount: 0.5, unit: "g", role: "saffron",                  scaling: "nonlinear", addStage: "early", removable: true,  cost: 3, taste: { bitter: 1 }, note: "Bløtlegg i varm (ikke kokende) kraft." },
       { id: "chicken",       label: "Kyllinglår i biter",     amount: 300, unit: "g", role: "protein",                  scaling: "linear",    addStage: "early", sodiumPer100g: 75,  removable: false, tradition: "traditional", taste: { umami: 1 } },
-      { id: "prawns",        label: "Scampi/reker",           amount: 200, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 120, removable: true,  taste: { umami: 2 }, note: "Fryst/behandlet reke kan ha mye mer natrium (opptil ~560).", allergens: ["shellfish"] },
+      { id: "prawns",        label: "Scampi/reker",           amount: 200, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 120, removable: true,  cost: 3, taste: { umami: 2 }, note: "Fryst/behandlet reke kan ha mye mer natrium (opptil ~560).", allergens: ["shellfish"] },
       { id: "mussels",       label: "Blåskjell (valgfritt)",  amount: 150, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 285, removable: true,  taste: { umami: 2 }, note: "Slipper salt kraft når de åpner seg.", allergens: ["shellfish"] },
       { id: "red_pepper",    label: "Rød paprika i strimler", amount: 1, unit: "stk", role: "vegetable",                scaling: "linear",    addStage: "early", removable: true,  taste: { sweet: 1 } },
       { id: "onion",         label: "Løk, finhakket",         amount: 1, unit: "stk", role: "aromatic",                 scaling: "linear",    addStage: "early", removable: true,  tradition: "regional", taste: { sweet: 1 }, note: "Mange utelater løk i ekte Valenciana fordi den gjør risen våt." },
@@ -130,10 +134,10 @@ const paellaRecipes = {
     ingredients: [
       { id: "rice",          label: "Paellaris (bomba)",          amount: 3, unit: "dl", role: "rice",     essential: true, scaling: "linear",    addStage: "early", sodiumPer100g: 0,   removable: false },
       { id: "stock",         label: "Hjemmelaget skalldyrkraft",  amount: 7, unit: "dl", role: "liquid",                    scaling: "linear",    addStage: "early", sodiumPer100g: 150, removable: false, taste: { umami: 1 }, note: "Laget av rekeskall; usaltet.", allergens: ["shellfish"] },
-      { id: "saffron",       label: "Safran (ristet)",            amount: 0.5, unit: "g", role: "saffron",                  scaling: "nonlinear", addStage: "early", removable: true,  taste: { bitter: 1 }, note: "Rist lett, knus, og bløtlegg i varm kraft." },
+      { id: "saffron",       label: "Safran (ristet)",            amount: 0.5, unit: "g", role: "saffron",                  scaling: "nonlinear", addStage: "early", removable: true,  cost: 3, taste: { bitter: 1 }, note: "Rist lett, knus, og bløtlegg i varm kraft." },
       { id: "chicken",       label: "Kyllinglår i biter",         amount: 250, unit: "g", role: "protein",                  scaling: "linear",    addStage: "early", sodiumPer100g: 75,  removable: false, tradition: "traditional", taste: { umami: 1 } },
       { id: "rabbit",        label: "Kanin i biter (tradisjonell)", amount: 200, unit: "g", role: "protein",                scaling: "linear",    addStage: "early", sodiumPer100g: 50,  removable: true,  tradition: "traditional", taste: { umami: 1 } },
-      { id: "prawns",        label: "Scampi med skall",           amount: 250, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 120, removable: true,  taste: { umami: 2 }, allergens: ["shellfish"] },
+      { id: "prawns",        label: "Scampi med skall",           amount: 250, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 120, removable: true,  cost: 3, taste: { umami: 2 }, allergens: ["shellfish"] },
       { id: "mussels",       label: "Blåskjell",                  amount: 200, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 285, removable: true,  taste: { umami: 2 }, allergens: ["shellfish"] },
       { id: "clams",         label: "Skjell (clams)",             amount: 150, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "end",   sodiumPer100g: 600, removable: true,  taste: { umami: 2 }, allergens: ["shellfish"] },
       { id: "squid",         label: "Blekksprut",                 amount: 150, unit: "g", role: "seafood",                  scaling: "linear",    addStage: "early", sodiumPer100g: 45,  removable: true,  taste: { umami: 1 }, note: "Surres kort.", allergens: ["shellfish"] },
