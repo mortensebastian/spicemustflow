@@ -487,5 +487,16 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - Meieri dukker bare opp via et *valgfritt* bytte (olje→smør). Diett-filteret viser dermed dairy
   fordi et bytte bærer det — riktig (brukeren kan filtrere det bort), og basen er melkefri.
 
+**Retrospektiv etter pulje #3 (eplekake/focaccia/grovbrød):**
+- **[VERIFISERT]** yieldNoun dekker nå alle tre tellemåter (porsjoner/stykker/brød) — generatoren
+  satte riktig etikett automatisk på alle tre. Søsken-regelen (research-recipe) virket forebyggende
+  (focaccia/grovbrød/pizza distinkte uten korrigering). Begge forrige puljers fikser holder.
+- **Ingen [MOTOR]-funn** for tredje pulje på rad. 9 retter bygd over 3 puljer, kun ÉN motorendring
+  totalt (yieldNoun), og den kom fra et reelt gjentakende behov. Motoren er nå moden for
+  hverdags-/bake-/brød-repertoaret.
+- **[LOGG]** Mulig fremtidig vurdering (ikke en feil): allergen som bare finnes via et *valgfritt*
+  bytte (grovbrød olje→smør) vises i filteret. Det er riktig i dag; hvis det blir forvirrende kan
+  man senere skille «iboende» vs «kun-ved-bytte»-allergener. Ingen handling nå.
+
 
 

@@ -170,9 +170,9 @@ Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvol
 - [x] 7. Boller (hvete/kardemomme) — Hele året — Estimat
 - [x] 8. Kjøttkaker i brun saus — Hele året — Estimat
 - [x] 9. Sjokoladekake — Hele året — Dokumentert (melk #2)
-- [ ] 10. Eplekake — Høst-topp — Dokumentert (melk #1)
-- [ ] 11. Hjemmelaget brød / grovbrød — Hele året — Estimat
-- [ ] 12. Focaccia — Hele året — Dokumentert (trend → evergreen)
+- [x] 10. Eplekake — Høst-topp — Dokumentert (melk #1)
+- [x] 11. Hjemmelaget brød / grovbrød — Hele året — Estimat
+- [x] 12. Focaccia — Hele året — Dokumentert (trend → evergreen)
 - [ ] 13. Pasta carbonara — Hele året — Estimat
 - [ ] 14. Gulrotkake — Hele året — Estimat
 - [ ] 15. Kyllingfilet / kylling i ovn — Hele året — Estimat
