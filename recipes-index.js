@@ -329,6 +329,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "taco", slug: "taco.html", status: "live",
+    shortName: "Taco", name: "Taco (fredagstaco)",
+    tagline: "Den norske fredagsklassikeren med krydret kjøttdeig og alt tilbehøret.",
+    description: "Norsk fredagstaco med krydret kjøttdeig, frisk salsa og tilbehør. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Tex-Mex",
+    keywords: "taco, fredagstaco, taco med kjøttdeig, hjemmelaget taco, hjemmelaget tacokrydder",
+    recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT20M", total: "PT40M" },
+    search: "taco fredagstaco kjøttdeig tacokrydder hjemmelaget",
+    faq: [
+      { q: "Hvordan lager jeg hjemmelaget tacokrydder?", a: "Bland 2 ts spisskummen, 2 ts paprikapulver, 1 ts malt koriander, 0,5–1 ts chilipulver (etter styrke), 1 ts tørket oregano, 1 ts hvitløkspulver, 1 ts løkpulver og 1 ts salt. Det tilsvarer omtrent én pose ferdigkrydder og rekker til 400–500 g kjøttdeig. Stek krydderet med kjøttet og spe med en dl vann." },
+      { q: "Hvor mye kjøttdeig trenger jeg per person til taco?", a: "Regn omtrent 100–150 g kjøttdeig per voksen, altså 400–600 g til fire. Til barn holder det med mindre kjøtt og mer av tilbehøret som mais, ost og salat." },
+      { q: "Hvordan lager jeg glutenfri taco?", a: "Bytt hvetetortilla mot maistortilla eller glutenfrie lefser, og bruk hjemmelaget tacokrydder – mange ferdigblandinger inneholder hvete. Mais, ost, rømme, salsa og grønnsaker er naturlig glutenfrie." },
+      { q: "Hva passer til taco?", a: "Klassisk tilbehør er revet ost, mais, hakket tomat og agurk, isbergsalat, rømme, salsa og guacamole. Mange har også jalapeño, vårløk, sort bønner eller ris ved siden av. Server alt i skåler så alle kan bygge sin egen." },
+      { q: "Hvilken kjøttdeig er best til taco?", a: "Vanlig storfekjøttdeig (kvernet storfe) gir mest smak og en saftig taco. Magrere karbonadedeig fungerer også, men da bør du steke litt forsiktigere så kjøttet ikke blir tørt. Kyllingkjøttdeig gir en lettere variant." },
+      { q: "Er taco det samme som ekte meksikansk mat?", a: "Nei. Den norske fredagstacoen er en tex-mex-variant med ferdigkrydder, mais, revet ost og rømme i myk hvetetortilla. Ekte meksikanske tacos bruker små maistortillaer, friske salsaer, lime og koriander, og som regel langtidskrydret kjøtt uten ost og rømme." },
+      { q: "Hvordan lager jeg taco til mange?", a: "Skaler oppskriften opp og stek kjøttdeigen i flere omganger så pannen ikke blir for full – da damper kjøttet i stedet for å brune. Sett alt tilbehør i skåler på bordet, og hold tortillaene varme i folie eller en ren klut til servering." },
+      { q: "Hvordan får jeg sterkere eller mildere taco?", a: "Styrken sitter i chilien. Lager du krydderet selv, justerer du chilipulveret opp eller ned – eller dropper det helt for de minste. Frisk eller syltet jalapeño på toppen gir varme til dem som vil ha det, uten å gjøre hele retten sterk." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

@@ -1,0 +1,248 @@
+{
+  "_comment": "Staging-objekt for taco (norsk fredagstaco med storfekjøttdeig). Distinkt fra baja-fish-tacos (sprøstekt fisketaco). research-recipe skrev dette; build-recipe konsumerer det.",
+
+  "indexEntry": {
+    "id": "taco",
+    "slug": "taco.html",
+    "status": "live",
+    "shortName": "Taco",
+    "name": "Taco (fredagstaco)",
+    "tagline": "Den norske fredagsklassikeren med krydret kjøttdeig og alt tilbehøret.",
+    "description": "Norsk fredagstaco med krydret kjøttdeig, frisk salsa og tilbehør. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    "image": null,
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Tex-Mex",
+    "keywords": "taco, fredagstaco, taco med kjøttdeig, hjemmelaget taco, hjemmelaget tacokrydder",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT20M", "cook": "PT20M", "total": "PT40M" },
+    "search": "taco fredagstaco kjøttdeig tacokrydder hjemmelaget",
+    "faq": [
+      { "q": "Hvordan lager jeg hjemmelaget tacokrydder?", "a": "Bland 2 ts spisskummen, 2 ts paprikapulver, 1 ts malt koriander, 0,5–1 ts chilipulver (etter styrke), 1 ts tørket oregano, 1 ts hvitløkspulver, 1 ts løkpulver og 1 ts salt. Det tilsvarer omtrent én pose ferdigkrydder og rekker til 400–500 g kjøttdeig. Stek krydderet med kjøttet og spe med en dl vann." },
+      { "q": "Hvor mye kjøttdeig trenger jeg per person til taco?", "a": "Regn omtrent 100–150 g kjøttdeig per voksen, altså 400–600 g til fire. Til barn holder det med mindre kjøtt og mer av tilbehøret som mais, ost og salat." },
+      { "q": "Hvordan lager jeg glutenfri taco?", "a": "Bytt hvetetortilla mot maistortilla eller glutenfrie lefser, og bruk hjemmelaget tacokrydder – mange ferdigblandinger inneholder hvete. Mais, ost, rømme, salsa og grønnsaker er naturlig glutenfrie." },
+      { "q": "Hva passer til taco?", "a": "Klassisk tilbehør er revet ost, mais, hakket tomat og agurk, isbergsalat, rømme, salsa og guacamole. Mange har også jalapeño, vårløk, sort bønner eller ris ved siden av. Server alt i skåler så alle kan bygge sin egen." },
+      { "q": "Hvilken kjøttdeig er best til taco?", "a": "Vanlig storfekjøttdeig (kvernet storfe) gir mest smak og en saftig taco. Magrere karbonadedeig fungerer også, men da bør du steke litt forsiktigere så kjøttet ikke blir tørt. Kyllingkjøttdeig gir en lettere variant." },
+      { "q": "Er taco det samme som ekte meksikansk mat?", "a": "Nei. Den norske fredagstacoen er en tex-mex-variant med ferdigkrydder, mais, revet ost og rømme i myk hvetetortilla. Ekte meksikanske tacos bruker små maistortillaer, friske salsaer, lime og koriander, og som regel langtidskrydret kjøtt uten ost og rømme." },
+      { "q": "Hvordan lager jeg taco til mange?", "a": "Skaler oppskriften opp og stek kjøttdeigen i flere omganger så pannen ikke blir for full – da damper kjøttet i stedet for å brune. Sett alt tilbehør i skåler på bordet, og hold tortillaene varme i folie eller en ren klut til servering." },
+      { "q": "Hvordan får jeg sterkere eller mildere taco?", "a": "Styrken sitter i chilien. Lager du krydderet selv, justerer du chilipulveret opp eller ned – eller dropper det helt for de minste. Frisk eller syltet jalapeño på toppen gir varme til dem som vil ha det, uten å gjøre hele retten sterk." }
+    ]
+  },
+
+  "seo": {
+    "title": "Taco (fredagstaco) – med kjøttdeig og hjemmelaget tacokrydder | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Den norske fredagsklassikeren: krydret storfekjøttdeig, frisk salsa og alt det gode tilbehøret du bygger din egen taco av.",
+    "bodyIntro": "Få middager er så norske som fredagstacoen. Den kom til landet på 90-tallet og ble raskt fast inventar – en uformell, sosial rett der alle bygger sin egen porsjon ved bordet. Hjertet er en krydret kjøttdeig av storfe, men det er tilbehøret som gjør den: mais, revet ost, frisk salsa, isbergsalat, rømme og gjerne guacamole.\n\nDet største løftet du kan gi tacoen er å lage tacokrydderet selv. En ferdigpose er grei, men en blanding av spisskummen, paprika, chili, oregano og hvitløk gir dypere smak – og du bestemmer selv hvor sterkt det blir. Steker du kjøttet godt før du tilsetter krydderet og litt vann, får du den saftige, fyldige kjøttdeigen som bærer hele retten.\n\nHer får du tre nivåer. Den enkle bruker ferdig tacokrydder og ferdig salsa for travle fredager. Medium er fasiten: hjemmelaget krydder og en frisk salsa rørt på minutter. Den komplekse tar steget videre med langtidskrydret kjøtt, ekte pico de gallo og hjemmelaget guacamole. Juster porsjoner og bytt ingredienser fritt – mengdene regner seg om selv, og allergifilteret gjør retten glutenfri eller melkefri med ett klikk."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "meny.no", "tine.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «taco» er enormt men hardt (matprat/meny/tine eier topp-3 med karusell); vinn long-tail først via hjemmelaget tacokrydder, justerbar styrke/3 nivåer og allergivennlig (glutenfri/melkefri) – FAQ-vinkler folk faktisk søker (mengde per person, hva passer til, tex-mex vs ekte)."
+  },
+
+  "recipe": {
+    "id": "taco",
+    "servedAcid": null,
+    "bulkRoles": ["protein", "vegetable", "starch", "dairy"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+
+    "tasteMessages": {
+      "umami": "Mindre dybde i kjøttet – litt ekstra tacokrydder eller en skvett soya hjelper.",
+      "sour": "Mindre friskhet – en ekstra klem lime eller litt mer salsa over toppen balanserer.",
+      "heat": "Mindre varme – litt ekstra chili i krydderet eller frisk jalapeño på toppen løfter den."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak til.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Smak til."
+      }
+    },
+
+    "density": {
+      "spice_mix": 0.5,
+      "cumin": 0.5,
+      "paprika_powder": 0.5,
+      "chili_powder": 0.5,
+      "oregano": 0.3,
+      "garlic_powder": 0.55,
+      "oil": 0.92,
+      "water": 1,
+      "salsa": 1.05,
+      "tomato_paste": 1.1,
+      "lime": 1,
+      "sour_cream": 1,
+      "salt_added": 1.2,
+      "chicken_spice_mix": 0.5,
+      "rapeseed_oil": 0.92,
+      "fresh_salsa": 1.05,
+      "plant_creme": 1,
+      "creme_fraiche": 1
+    },
+    "pieceWeight": {
+      "onion": 110,
+      "garlic": 5,
+      "red_onion": 110,
+      "tomato": 90,
+      "bell_pepper": 150,
+      "lime": 70,
+      "avocado": 200,
+      "jalapeno": 15,
+      "wheat_tortilla": 35,
+      "corn_tortilla": 30,
+      "gf_lefse": 40
+    },
+    "unitOptions": {
+      "spice_mix": ["ss", "ts", "g"],
+      "cumin": ["ts", "ss", "g"],
+      "paprika_powder": ["ts", "ss", "g"],
+      "chili_powder": ["ts", "ss", "g"],
+      "oregano": ["ts", "ss", "g"],
+      "garlic_powder": ["ts", "ss", "g"],
+      "oil": ["ss", "ts", "ml", "g"],
+      "water": ["dl", "ml", "g"],
+      "salsa": ["dl", "ml", "g"],
+      "tomato_paste": ["ss", "ts", "ml", "g"],
+      "sour_cream": ["dl", "ss", "ml", "g"],
+      "salt_added": ["ts", "g"],
+      "chicken_spice_mix": ["ss", "ts", "g"],
+      "rapeseed_oil": ["ss", "ts", "ml", "g"],
+      "fresh_salsa": ["dl", "ml", "g"],
+      "plant_creme": ["dl", "ss", "ml", "g"],
+      "creme_fraiche": ["dl", "ss", "ml", "g"]
+    },
+
+    "swapOptions": {
+      "beef": [
+        { "id": "chicken_mince", "label": "Kyllingkjøttdeig (lettere)", "amount": 500, "unit": "g", "sodiumPer100g": 70, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Mildere og magrere; stek til gjennomstekt og spe gjerne med litt ekstra olje." },
+        { "id": "pork_mince", "label": "Svinekjøttdeig (saftigere)", "amount": 500, "unit": "g", "sodiumPer100g": 60, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Litt fetere og mildere enn storfe." },
+        { "id": "plant_mince", "label": "Vegansk farse (kjøttfri)", "amount": 450, "unit": "g", "sodiumPer100g": 400, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Vegansk; bruner som kjøttdeig. Salt justeres automatisk." }
+      ],
+      "spice_mix": [
+        { "id": "chicken_spice_mix", "label": "Hjemmelaget tacokrydder (glutenfritt)", "amount": 2, "unit": "ss", "sodiumPer100g": 9000, "taste": { "heat": 1 }, "tradition": "traditional", "note": "Spisskummen, paprika, chili, oregano og hvitløkspulver – glutenfri og uten tilsetninger. Se medium-nivået for mengder." }
+      ],
+      "salsa": [
+        { "id": "fresh_salsa", "label": "Hjemmelaget frisk salsa", "amount": 2, "unit": "dl", "sodiumPer100g": 200, "taste": { "sour": 1, "sweet": 1 }, "tradition": "traditional", "note": "Hakket tomat, rødløk, lime og litt chili – friskere enn ferdigsalsa." }
+      ],
+      "oil": [
+        { "id": "rapeseed_oil", "label": "Rapsolje (nøytral)", "amount": 1, "unit": "ss", "note": "Nøytral steking; tåler høy varme." }
+      ],
+      "wheat_tortilla": [
+        { "id": "corn_tortilla", "label": "Maistortilla, små (glutenfri)", "amount": 10, "unit": "stk", "tradition": "traditional", "note": "Naturlig glutenfri og mer autentisk; varm dem godt så de ikke sprekker." },
+        { "id": "gf_lefse", "label": "Glutenfri lefse/tortilla", "amount": 8, "unit": "stk", "tradition": "non-traditional", "note": "Glutenfritt alternativ i samme størrelse som hvetetortilla." }
+      ],
+      "cheese": [
+        { "id": "vegan_cheese", "label": "Vegansk revet ost (melkefri)", "amount": 150, "unit": "g", "sodiumPer100g": 600, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Melkefri; smelter litt mindre, men gir samme funksjon." }
+      ],
+      "sour_cream": [
+        { "id": "creme_fraiche", "label": "Crème fraîche (litt syrligere)", "amount": 2, "unit": "dl", "sodiumPer100g": 40, "allergens": ["dairy"], "taste": { "sour": 1 }, "note": "Litt fastere og syrligere enn rømme." },
+        { "id": "plant_creme", "label": "Vegansk rømme (melkefri)", "amount": 2, "unit": "dl", "sodiumPer100g": 40, "taste": { "sour": 1 }, "tradition": "non-traditional", "note": "Soya- eller havrebasert; melkefri og kremet." }
+      ]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Storfekjøttdeig", "amount": 500, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "oil", "label": "Nøytral olje (til steking)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "spice_mix", "label": "Tacokrydder (ferdigpose)", "amount": 1, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 9000, "removable": false, "taste": { "heat": 1 }, "allergens": ["gluten"] },
+          { "id": "water", "label": "Vann (til kjøttdeigen)", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "salsa", "label": "Tacosaus/salsa (ferdig)", "amount": 2, "unit": "dl", "role": "vegetable", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 350, "removable": true, "taste": { "sour": 1, "sweet": 1 } },
+          { "id": "corn", "label": "Mais (hermetisk)", "amount": 1, "unit": "boks", "role": "vegetable", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 200, "removable": true, "taste": { "sweet": 1 } },
+          { "id": "iceberg", "label": "Isbergsalat, strimlet", "amount": 0.5, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true },
+          { "id": "cheese", "label": "Revet ost", "amount": 150, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 700, "removable": true, "allergens": ["dairy"], "taste": { "umami": 1 } },
+          { "id": "sour_cream", "label": "Rømme", "amount": 2, "unit": "dl", "role": "dairy", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 40, "removable": true, "allergens": ["dairy"], "taste": { "sour": 1 } },
+          { "id": "wheat_tortilla", "label": "Hvetetortilla/lefse, små", "amount": 8, "unit": "stk", "role": "starch", "essential": true, "scaling": "linear", "addStage": "serve", "removable": false, "allergens": ["gluten"] },
+          { "id": "salt_added", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Finhakk løken. Varm olje i en panne, og brun kjøttdeigen godt mens du deler den opp – la den få farge, ikke bare bli grå. Stek løken med.",
+          "Strø over tacokrydderet, hell i vannet, og la det putre et par minutter til en saftig, krydret kjøttdeig. Smak til med salt.",
+          "Sett mais, revet ost, strimlet salat, salsa og rømme i hver sin skål på bordet.",
+          "Varm tortillaene, og la alle bygge sin egen taco med kjøttdeig og tilbehør."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Storfekjøttdeig", "amount": 500, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "oil", "label": "Nøytral olje (til steking)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "garlic", "label": "Hvitløk", "amount": 2, "unit": "stk", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "cumin", "label": "Spisskummen (malt)", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false, "taste": { "umami": 1 } },
+          { "id": "paprika_powder", "label": "Paprikapulver", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "chili_powder", "label": "Chilipulver (etter styrke)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "heat": 2 } },
+          { "id": "oregano", "label": "Tørket oregano", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "garlic_powder", "label": "Hvitløkspulver", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "water", "label": "Vann (til kjøttdeigen)", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "tomato", "label": "Tomat, i terninger (til frisk salsa)", "amount": 3, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 1, "sweet": 1 } },
+          { "id": "red_onion", "label": "Rødløk, finhakket (til salsa)", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "lime", "label": "Lime", "amount": 1, "unit": "stk", "role": "acid", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2 } },
+          { "id": "corn", "label": "Mais (hermetisk)", "amount": 1, "unit": "boks", "role": "vegetable", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 200, "removable": true, "taste": { "sweet": 1 } },
+          { "id": "bell_pepper", "label": "Paprika, i strimler", "amount": 1, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "iceberg", "label": "Isbergsalat, strimlet", "amount": 0.5, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true },
+          { "id": "cheese", "label": "Revet ost", "amount": 150, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 700, "removable": true, "allergens": ["dairy"], "taste": { "umami": 1 } },
+          { "id": "sour_cream", "label": "Rømme", "amount": 2, "unit": "dl", "role": "dairy", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 40, "removable": true, "allergens": ["dairy"], "taste": { "sour": 1 } },
+          { "id": "wheat_tortilla", "label": "Hvetetortilla/lefse, små", "amount": 10, "unit": "stk", "role": "starch", "essential": true, "scaling": "linear", "addStage": "serve", "removable": false, "allergens": ["gluten"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Finhakk løk og hvitløk. Varm olje i en panne, og brun kjøttdeigen godt mens du deler den opp. Stek løken med, og ha i hvitløken mot slutten.",
+          "Bland spisskummen, paprikapulver, chilipulver, oregano og hvitløkspulver, og strø over kjøttet. Stek krydderet med et halvt minutt, hell i vannet, og la det putre 3–4 minutter. Smak til med salt.",
+          "Lag en frisk salsa: bland terninger av tomat, finhakket rødløk, en klem lime og en klype salt. Smak til med litt chili om du vil ha varme.",
+          "Sett mais, paprikastrimler, strimlet salat, revet ost, rømme og salsaen i skåler på bordet.",
+          "Varm tortillaene, og la alle bygge sin egen taco. Server med limebåter."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "beef", "label": "Grovkvernet storfe (høyrygg/bog)", "amount": 600, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 } },
+          { "id": "oil", "label": "Nøytral olje (til steking)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
+          { "id": "onion", "label": "Løk, finhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "garlic", "label": "Hvitløk", "amount": 3, "unit": "stk", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "cumin", "label": "Spisskummen (malt)", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false, "taste": { "umami": 1 } },
+          { "id": "paprika_powder", "label": "Røkt paprikapulver", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false, "taste": { "umami": 1 } },
+          { "id": "chili_powder", "label": "Chilipulver / chipotle (etter styrke)", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "heat": 2 } },
+          { "id": "oregano", "label": "Tørket oregano", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "garlic_powder", "label": "Hvitløkspulver", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "tomato_paste", "label": "Tomatpuré", "amount": 1, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 300, "removable": true, "taste": { "umami": 1, "sweet": 1 } },
+          { "id": "water", "label": "Vann eller kraft (til langtidskoking)", "amount": 2, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "tomato", "label": "Tomat, i terninger (til pico de gallo)", "amount": 4, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 1, "sweet": 1 } },
+          { "id": "red_onion", "label": "Rødløk, finhakket (til pico)", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "jalapeno", "label": "Fersk jalapeño, finhakket", "amount": 1, "unit": "stk", "role": "seasoning", "scaling": "nonlinear", "addStage": "serve", "removable": true, "taste": { "heat": 2 } },
+          { "id": "cilantro", "label": "Frisk koriander, grovhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "fixed", "addStage": "serve", "removable": true },
+          { "id": "lime", "label": "Lime", "amount": 2, "unit": "stk", "role": "acid", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2 } },
+          { "id": "avocado", "label": "Avokado (til guacamole)", "amount": 2, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "corn", "label": "Mais (gjerne grillet)", "amount": 1, "unit": "boks", "role": "vegetable", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 200, "removable": true, "taste": { "sweet": 1 } },
+          { "id": "iceberg", "label": "Sprø salat, strimlet", "amount": 0.5, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "serve", "removable": true },
+          { "id": "cheese", "label": "Revet ost (gjerne cheddar)", "amount": 150, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 700, "removable": true, "allergens": ["dairy"], "taste": { "umami": 1 } },
+          { "id": "sour_cream", "label": "Rømme", "amount": 2, "unit": "dl", "role": "dairy", "scaling": "linear", "addStage": "serve", "sodiumPer100g": 40, "removable": true, "allergens": ["dairy"], "taste": { "sour": 1 } },
+          { "id": "wheat_tortilla", "label": "Maistortilla eller hvetetortilla, små", "amount": 12, "unit": "stk", "role": "starch", "essential": true, "scaling": "linear", "addStage": "serve", "removable": false, "allergens": ["gluten"] },
+          { "id": "salt_added", "label": "Salt", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false }
+        ],
+        "steps": [
+          "Finhakk løk og hvitløk. Varm olje i en gryte, og brun kjøttet godt i flere omganger så det får mørk farge. Stek løken med, og ha i hvitløken mot slutten.",
+          "Strø over spisskummen, røkt paprika, chili, oregano og hvitløkspulver, og rør inn tomatpuré. Stek krydderet med et minutt, og spe med vann eller kraft.",
+          "La kjøttet putre på svak varme i 25–40 minutter til det er mørt og smakene har satt seg. Spe med litt mer væske om det blir tørt, og smak til med salt.",
+          "Lag pico de gallo av tomat, rødløk, jalapeño, koriander, lime og en klype salt. Lag guacamole av avokado, lime, salt og litt koriander.",
+          "Sett mais, salat, revet ost og rømme i skåler, og varm tortillaene godt.",
+          "Server alt på bordet, og la alle bygge sin egen taco med det krydrede kjøttet, pico, guacamole og tilbehør. Server med limebåter."
+        ]
+      }
+    }
+  }
+}

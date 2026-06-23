@@ -404,5 +404,15 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - Tomme `tasteMessages`-nøkler (sour/umami: "") fra staging ble strippet i bygg — en akse uten
   budskap bør utelates, ikke settes tom. Verdt en kontrakt-presisering hvis det går igjen.
 
+**taco / fredagstaco (rett #19, pulje)** — **ingen kjernemotorendring.**
+- Andre rett som deler navnerom med en eksisterende (baja-fish-tacos) — løst med eget id-sett
+  (beef/spice_mix/salsa/wheat_tortilla …), null ingrediens-/byttoverlapp. Bekrefter at
+  «distinkt rett, samme tema» trygt kan bygges side om side uten kollisjon i manifest/schema.
+- Største rett så langt: kompleks har 23 ingredienser. Adapter/skalering/diett-filter taklet
+  det uten endring. requireRoles:[] selv om salsa/tomat er syrlig — akseptabelt (taco trenger
+  ikke en tvungen syre-akse slik tomatsaus-retter gjør).
+- Dobbel meieri-bærer (ost + rømme): begge fikk vegansk bytte, så melkefri-filteret er komplett
+  — akkurat fallgruven smør+melk-lærdommen advarte mot. Standardbytte-rutinen fanget det.
+
 
 
