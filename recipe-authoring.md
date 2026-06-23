@@ -480,5 +480,12 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - Tredje deig-søsken (pizza/grovbrød/focaccia) — eget id-sett, distinkt vinkel (luftig
   olivenoljebrød). Søsken-regelen i research-recipe fungerte forebyggende denne gangen.
 
+**grovbrød (rett #26, pulje #3)** — **ingen kjernemotorendring.**
+- Tredje yieldNoun-type: «brød» med `servings:2` — skalerer på antall *brød*, ikke porsjoner/
+  stykker. base-yield=2 spiller fint med generatorens min2/step2. yieldNoun dekker alle tre
+  tellemåter (porsjoner/stykker/brød) nå.
+- Meieri dukker bare opp via et *valgfritt* bytte (olje→smør). Diett-filteret viser dermed dairy
+  fordi et bytte bærer det — riktig (brukeren kan filtrere det bort), og basen er melkefri.
+
 
 

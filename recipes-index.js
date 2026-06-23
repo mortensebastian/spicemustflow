@@ -490,6 +490,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "grovbrod", slug: "grovbrod.html", status: "live",
+    shortName: "Grovbrød", name: "Hjemmelaget grovbrød",
+    tagline: "Saftig, grovt hverdagsbrød med sammalt hvete, havre og frø.",
+    description: "Saftig hjemmelaget grovbrød med sammalt hvete, havregryn og frø. Velg nivå (enkel/medium/kompleks), juster antall brød og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    keywords: "grovbrød, hjemmelaget brød, brød oppskrift, eltefritt grovbrød, saftig grovbrød",
+    recipeYield: "2 brød", times: { prep: "PT20M", cook: "PT40M", total: "PT3H" },
+    search: "grovbrød hjemmelaget brød oppskrift sammalt hvete frø",
+    faq: [
+      { q: "Hvorfor blir grovbrødet mitt kompakt og tungt?", a: "Vanligste årsak er for mye mel eller for kort heving. Grovt mel og frø suger mye væske, så deigen skal være klissete, ikke fast – juster med vann, ikke mel. La brødet heve dobbelt to ganger, og åpne ikke ovnen for tidlig." },
+      { q: "Hvor lenge skal grovbrød heve?", a: "Med vanlig mengde gjær hever deigen til dobbel størrelse på 45–60 minutter, og de formede brødene etterhever 30–45 minutter. Kald langheving i kjøleskap tar 8–12 timer og gir saftigere, mer smaksrikt brød." },
+      { q: "Hvordan lager jeg eltefritt grovbrød?", a: "Rør sammen alt til en våt, klissete deig uten å elte, dekk til og la den heve lenge (gjerne 2–12 timer). Det lange hevet bygger gluten av seg selv. Hell deigen rett i en smurt brødform og stek." },
+      { q: "Kan jeg sette grovbrød til kald langheving over natten?", a: "Ja. Bruk mindre gjær (ca. 5 g fersk per brød), rør deigen om kvelden og sett den kaldt i 8–12 timer. Da rekker den å bygge smak sakte, og du baker ferskt brød om morgenen." },
+      { q: "Hvorfor skal jeg bløtlegge frø og havregryn?", a: "Tørre frø, kjerner og havregryn stjeler fukt fra deigen og kan gi tørt, kompakt brød. Bløtlegg dem i litt av vannet 15–30 minutter (eller over natten) først, så beholder brødet saftigheten." },
+      { q: "Hvor grovt bør grovbrødet være?", a: "En grovhetsgrad på rundt 50 % grovt mel (sammalt hvete, sikta rug, havre) mot 50 % hvetemel gir et saftig brød som fortsatt hever godt. Vil du ha det grovere, øk det grove gradvis – for mye gir et tungt, kompakt brød." },
+      { q: "Kan jeg fryse hjemmelaget brød?", a: "Ja. Avkjøl brødet helt, skjær det gjerne opp, og frys i pose eller boks i opptil 3 måneder. Frosne skiver kan ristes direkte, og et helt brød tines på benken eller varmes kort i ovnen." },
+      { q: "Hvilken vanntemperatur skal jeg bruke til gjæren?", a: "Fingervarmt vann, rundt 37 grader, til vanlig heving – for varmt vann (over ca. 45 grader) dreper gjæren. Til kald langheving bruker du kaldt vann, siden gjæren skal jobbe sakte i kjøleskapet." },
+      { q: "Kan jeg lage glutenfritt grovbrød?", a: "Ja, bytt melet mot en glutenfri brødmiks med bindemiddel. Glutenfritt brød oppfører seg annerledes: deigen blir mer som en tykk røre, hever mindre og trenger lengre stekemtid – følg pakkens væskeforhold." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
