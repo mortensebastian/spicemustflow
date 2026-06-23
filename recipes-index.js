@@ -421,6 +421,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "kanelboller", slug: "kanelboller.html", status: "live",
+    shortName: "Kanelboller", name: "Saftige kanelboller",
+    tagline: "Myke, saftige kanelboller med kardemomme og rikelig kanelfyll – i tre nivåer.",
+    description: "Saftige kanelboller med kanelfyll og kardemomme. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    keywords: "kanelboller, saftige kanelboller, kanelboller oppskrift, kanelsnurrer, kanelboller med kardemomme",
+    recipeYield: "12 kanelboller", times: { prep: "PT30M", cook: "PT12M", total: "PT2H15M" },
+    search: "kanelboller saftige oppskrift kanelfyll kardemomme",
+    faq: [
+      { q: "Hvorfor blir kanelbollene mine tørre og harde?", a: "Som regel for mye mel eller for lang steketid. Mål melet med vekt (ikke desiliter), elt deigen smidig men ikke tilsett mer mel enn nødvendig, og stek bollene kort på god varme – 10–12 minutter ved 220 °C. Ta dem ut så snart de er gylne; ettervarmen tørker dem fort." },
+      { q: "Hvordan får jeg ekstra saftige kanelboller?", a: "Hold deigen litt klissete, bruk rikelig romtemperert smør i fyllet, og ikke oversteik. Et triks er å la bollene heve godt, og eventuelt helle litt kremfløte over rett før steking – den trekker inn og gjør dem myke. Kald langheving over natten gir også mørere, saftigere boller." },
+      { q: "Kan jeg kaldheve kanelbolledeigen i kjøleskapet over natten?", a: "Ja, og det gir best smak og saftighet. Bruk kald melk og omtrent halvparten av gjæren, dekk deigen (eller de ferdig rullede bollene) og sett den kaldt i 8–24 timer. Ta den ut ca. 1 time før steking. Kald deig er dessuten lettere å kjevle og rulle." },
+      { q: "Hvor mye kanel skal jeg ha i fyllet?", a: "Til ca. 12 boller bruker du rundt 2 ss kanel blandet med 100 g romtemperert smør og 1 dl sukker. Liker du kraftig kanelsmak, kan du øke til 3 ss. Bland til en smørbar pasta og smør jevnt utover hele deigen før du ruller." },
+      { q: "Trenger jeg kardemomme i kanelboller?", a: "Det er ikke et must, men kardemomme i deigen gir den klassiske nordiske bollesmaken. Nystøtte kardemommefrø gir mest aroma; ferdigmalt kardemomme fungerer fint i hverdagen. Bruk ca. 1–2 ts til en porsjon på 12 boller." },
+      { q: "Kan jeg fryse kanelboller?", a: "Ja. Frys dem ferdigstekte og avkjølte i tett pose i opptil 3 måneder. Tin i romtemperatur, eller varm dem 3–4 minutter i ovnen på 175 °C så de blir myke igjen. Frys gjerne uten glasur og pensle/glaser etter opptining." },
+      { q: "Perlesukker eller melisglasur på toppen?", a: "Begge er klassiske. Perlesukker pensles på med sammenpisket egg før steking og gir knasende topp. Melisglasur (melis rørt ut med litt vann eller melk) has på etter steking og gir en søtere, blank finish. Velg det du liker best – eller dropp begge for en mildere bolle." },
+      { q: "Hvordan lager jeg melkefrie eller glutenfrie kanelboller?", a: "Melkefritt: bytt melk til havredrikk og smør (både i deig og fyll) til melkefri margarin, og pensle med plantedrikk. Glutenfritt: bruk en glutenfri melblanding med bindemiddel og la deigen hvile litt lenger – glutenfri deig blir klissete og bør håndteres forsiktig." },
+      { q: "Hva er forskjellen på kanelboller og kanelsnurrer?", a: "Smaken er den samme – forskjellen er formen. Kanelboller rulles til en pølse og skjæres i skiver (snurrer/snegler), mens kanelsnurrer ofte brettes og knytes eller tvinnes. Denne deigen og fyllet passer til begge; velg den formingen du foretrekker." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

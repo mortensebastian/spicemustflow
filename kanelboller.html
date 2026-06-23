@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saftige kanelboller – oppskrift med kanelfyll og kardemomme | Velkomponert</title>
+  <meta name="description" content="Saftige kanelboller med kanelfyll og kardemomme. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene – mengdene følger med.">
+  <link rel="canonical" href="https://velkomponert.no/kanelboller.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Saftige kanelboller – oppskrift med kanelfyll og kardemomme">
+  <meta property="og:description" content="Saftige kanelboller med kanelfyll og kardemomme. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene – mengdene følger med.">
+  <meta property="og:url" content="https://velkomponert.no/kanelboller.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/kanelboller.jpg så vises det øverst,
+     sett image i manifestet tilbake til "kanelboller.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/kanelboller.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Saftige kanelboller</h1>
+      <p>Myke, saftige kanelboller med kardemomme i deigen og et generøst kanelfyll – bakt slik at de holder seg myke dagen etter.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du kanelboller</h2>
+      <p class="recipe-intro">Nøkkelen til saftige kanelboller er enkel: ikke pakk inn for mye mel, og ikke oversteik. Mål gjerne melet med vekt og hold deigen litt klissete – det er fristende å tilsette mel til den slipper bollen, men nettopp da blir bollene tørre og kompakte. En velheva deig og en kort, varm steking gir luftige boller med saftig kjerne.</p>
+      <p class="recipe-intro">Fyllet er der kanelbollen blir til seg selv: romtemperert smør rørt med sukker og rikelig kanel, smurt jevnt utover en tynt kjevlet deig før du ruller den stramt sammen og skjærer i snurrer. Kardemomme i deigen løfter det hele med den klassiske nordiske bollesmaken.</p>
+      <p class="recipe-intro">Her får du tre nivåer. Den enkle er en rask gjærdeig for når kanelbollelysten slår til på en søndag; medium er fasiten med kardemomme og ordentlig heving; og den komplekse bruker kald langheving over natten (og gjerne brunet smør i fyllet) for ekstra mør og dyp smak. Juster antall boller og bytt ingredienser fritt – mengdene regner seg om selv.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall kanelboller</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre kanelboller">−</button>
+          <input type="number" id="recipe-scale-input" value="12" min="2" max="24" step="2" data-base-yield="12">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere kanelboller">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="kanelboller-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
