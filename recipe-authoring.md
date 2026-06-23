@@ -448,5 +448,15 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   viser likevel egg (union over nivåer i `relevantFilters`) — riktig: brukeren ser at det fins en
   variant med egg, og byttet/fjerningen gjelder det nivået. Bekrefter union-designet.
 
+**boller (rett #22) + kanelboller (rett #23, pulje #2)** — **ingen kjernemotorendring.**
+- Tredje/fjerde sweet-lever-bakerett (etter vafler) med `yieldNoun` («boller»/«kanelboller»).
+  Generatoren satte skala-etikett + aria-labels riktig fra yieldNoun — yield-noun-fiksen virker
+  ende-til-ende på nye retter.
+- **Søsken-retter på samme grunndeig:** boller og kanelboller deler gjærdeig-base, bygd i samme
+  pulje. Løst som taco/baja: eget id-sett hver (boller: …/raisins/pearl_sugar; kanelboller:
+  …/filling_butter/filling_sugar/cinnamon), distinkte søkeord (rosinboller/grunndeig vs
+  kanelfyll/snurrer). Mønster bekreftet: «felles base, distinkt rett» = separate id-rom + egen
+  SEO-vinkel, aldri delt data.
+
 
 

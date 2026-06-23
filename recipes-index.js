@@ -397,6 +397,30 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "boller", slug: "boller.html", status: "live",
+    shortName: "Boller", name: "Boller (hveteboller)",
+    tagline: "Saftige, luftige hveteboller med kardemomme – grunndeigen all gjærbakst bygger på.",
+    description: "Saftige hveteboller og rosinboller med kardemomme. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    keywords: "boller, hveteboller, rosinboller, saftige boller, gjærbakst grunndeig, boller oppskrift, kardemommeboller",
+    recipeYield: "12 boller", times: { prep: "PT30M", cook: "PT12M", total: "PT2H30M" },
+    search: "boller hveteboller rosinboller saftige kardemomme gjærbakst",
+    faq: [
+      { q: "Hva er hemmeligheten bak saftige boller?", a: "Riktig væskemengde, nok fett (smør), god elting og lang nok heving. Elt deigen smidig så glutenet utvikler seg, ikke spe i for mye mel, og pakk bollene godt inn så snart de er avkjølt så de holder på fuktigheten." },
+      { q: "Hvorfor blir bollene mine flate og harde?", a: "Vanligvis for lite elting, for lite væske eller for lang/varm heving som kollapser. Stek heller ikke for lenge – overstekte boller mister all fuktighet. Elt til deigen er smidig, la den heve til dobbel størrelse, og stek bollene raskt på 200 grader til de så vidt er gylne." },
+      { q: "Hvor varm skal melken være til boller?", a: "Fingervarm, rundt 37 grader – det skal kjennes lunkent, ikke varmt, på innsiden av håndleddet. For varm melk (over ca. 45 grader) dreper gjæren, og da hever ikke deigen. Bruker du tørrgjær kan melken være litt varmere enn for fersk gjær – følg pakken." },
+      { q: "Kan jeg kaldheve bolledeigen over natten?", a: "Ja. Bruk en fjerdedel av gjæren, rør den ut i kald melk, og sett deigen tildekket i kjøleskapet i 8–12 timer. Neste morgen tar du ut deigen, former bollene, lar dem etterheve en liten stund i romtemperatur og steker. Kald langheving gir mer smak og saftigere boller." },
+      { q: "Hvor lenge skal boller heve?", a: "Første heving tar omtrent 45–60 minutter i romtemperatur, til deigen er dobbelt så stor. Etter at du har trillet bollene lar du dem etterheve ferdig formet i 30–45 minutter til før steking. Kald deig hever saktere; gi den god tid." },
+      { q: "Skal jeg ha rosiner i bollene eller ikke?", a: "Det er en smakssak. Rosinboller er klassisk og barnevennlig – bland inn et par never rosiner mot slutten av eltingen. Vil du ha rene hveteboller, dropper du dem. Bløtlegg gjerne rosinene i litt varmt vann først så de blir saftige." },
+      { q: "Kan jeg fryse boller?", a: "Ja, det er den beste måten å ta vare på dem på. Frys bollene godt avkjølt i en tett pose i opptil 3 måneder. Tin dem i romtemperatur, eller varm dem rett fra fryseren i ovnen på 160 grader i 8–10 minutter så de smaker nybakt." },
+      { q: "Kan jeg lage bollene melkefrie eller glutenfrie?", a: "Ja. For melkefrie boller bytter du melk mot plantedrikk og smør mot margarin. For glutenfrie boller bruker du en glutenfri melblanding med bindemiddel; deigen blir litt klissere og hever ikke like mye, så form bollene fuktige og gi dem god etterheving. Egget kan erstattes med plantedrikk-pensling og litt ekstra væske." },
+      { q: "Hvorfor brukes kardemomme i boller?", a: "Kardemomme er den klassiske norske smaken i søt gjærbakst og gir bollene den varme, litt blomstrete aromaen vi forbinder med hjemmebakst. Nystøtte frø gir mest smak; ferdigmalt kardemomme er greit, men bruk gjerne litt rikelig." },
+      { q: "Er dette grunndeigen til kanelboller og skolebrød også?", a: "Ja. Dette er den søte gjærdeigen mange andre kaker bygger på – ruller du den ut med kanelfyll får du kanelboller, fyller du med vaniljekrem får du skolebrød. Behersker du denne bolledeigen, behersker du det meste av norsk søt gjærbakst." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
