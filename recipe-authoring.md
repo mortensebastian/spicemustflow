@@ -396,5 +396,13 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - **Småplukk samtidig:** nøytraliserte «likestilt»-ordlyden i spagetti-vegetarbyttet (var i
   utakt med «stille bytte»-beslutningen).
 
+**vafler (rett #18, første rett-pulje)** — **ingen kjernemotorendring.**
+- Første rett med **kun en sweet-lever** (`levers:[{axis:"sweet",id:"sugar"}]`, `requireRoles:[]`,
+  ingen salt-lever) — motoren håndterte det rett fram. Saltet i røra er marginalt
+  (`removable:false`, ingen sodiumPer100g), så salt-lever ville vært meningsløst. Bekrefter
+  at lever-mekanikken er fullt akse-agnostisk.
+- Tomme `tasteMessages`-nøkler (sour/umami: "") fra staging ble strippet i bygg — en akse uten
+  budskap bør utelates, ikke settes tom. Verdt en kontrakt-presisering hvis det går igjen.
+
 
 

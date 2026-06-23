@@ -306,6 +306,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "vafler", slug: "vafler.html", status: "live",
+    shortName: "Vafler", name: "Vafler (norske hjertevafler)",
+    tagline: "Sprø eller myke hjertevafler – justerbar røre med kardemomme.",
+    description: "Norske hjertevafler i tre nivåer, fra rask hverdagsrøre til kulturmelk og brunet smør. Juster antall og tilpass ingrediensene – også melkefritt og glutenfritt.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    keywords: "vafler, vaffelrøre, norske hjertevafler",
+    recipeYield: "10 vafler", times: { prep: "PT10M", cook: "PT20M", total: "PT40M" },
+    search: "vafler vaffelrøre hjertevafler kardemomme",
+    faq: [
+      { q: "Hvordan får jeg sprø vafler?", a: "Sprø vafler får du med mer fett (smeltet smør) og litt mindre melk i røren, og ved å steke dem litt lenger til de er gyllenbrune. Legg dem enkeltvis på rist – ikke i stabel – så damper de ikke seg myke igjen." },
+      { q: "Hvordan får jeg myke vafler?", a: "Myke vafler vil du ha litt mer melk og litt mindre stekt – ta dem ut når de er lyst gylne. Legg dem oppå hverandre under et klede mens de hviler, så holder de seg myke og bøyelige." },
+      { q: "Hvorfor blir vaflene mine klissete?", a: "Klissete vafler skyldes som regel for tynn røre, for kort steketid eller at jernet ikke er varmt nok. La røren svelle, stek til de slipper jernet lett, og bruk et godt forvarmet vaffeljern." },
+      { q: "Kan vaffelrøren stå og hvile?", a: "Ja, og den blir bedre av det. La gjerne røren hvile 20–30 minutter, eller lag den kvelden før og sett den kaldt – melet sveller og vaflene blir mørere. Rør lett om før steking og spe med litt melk hvis den har tyknet." },
+      { q: "Kan jeg lage vaffelrøre kvelden før?", a: "Ja. Røren holder seg fint i kjøleskapet over natten i en tett bolle. Den tykner litt, så rør om og spe med en skvett melk til ønsket konsistens før du steker." },
+      { q: "Kan jeg lage melkefrie vafler?", a: "Ja – bytt melken mot havredrikk eller annen plantedrikk og smøret mot margarin eller nøytral olje. Røren oppfører seg likt, og vaflene blir like gode." },
+      { q: "Kan jeg lage glutenfrie vafler?", a: "Ja, bytt hvetemelet mot en glutenfri melblanding med bindemiddel. La røren svelle litt lenger, og spe med litt ekstra melk om den blir tykk." },
+      { q: "Hva er forskjellen på kulturmelk og melk i vafler?", a: "Kulturmelk (eller kefir) gir litt syrlige, ekstra møre og luftige vafler fordi syren reagerer med bakepulveret. Vanlig melk gir en mildere, mer nøytral vaffel. Begge fungerer – kulturmelk er det lille ekstra." },
+      { q: "Kan jeg fryse vafler?", a: "Ja. Avkjøl dem helt, legg dem lagvis med bakepapir imellom i en tett pose, og frys i opptil 3 måneder. Varm dem i brødrister eller stekepanne så blir de sprø igjen." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vafler – oppskrift på norske hjertevafler steg for steg | Velkomponert</title>
+  <meta name="description" content="Norske hjertevafler i tre nivåer, fra rask hverdagsrøre til kulturmelk og brunet smør. Juster antall og tilpass ingrediensene – også melkefritt og glutenfritt.">
+  <link rel="canonical" href="https://velkomponert.no/vafler.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Vafler – oppskrift på norske hjertevafler steg for steg">
+  <meta property="og:description" content="Norske hjertevafler i tre nivåer, fra rask hverdagsrøre til kulturmelk og brunet smør. Juster antall og tilpass ingrediensene – også melkefritt og glutenfritt.">
+  <meta property="og:url" content="https://velkomponert.no/vafler.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/vafler.jpg så vises det øverst,
+     sett image i manifestet tilbake til "vafler.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/vafler.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Vafler (norske hjertevafler)</h1>
+      <p>Den norske vaffelen på sitt beste: gyllne hjertevafler med kardemomme, fra rask hverdagsrøre til den litt syrlige kulturmelk-varianten.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <h2 class="section-title">Slik lager du vafler</h2>
+      <p class="recipe-intro">Vaffelrøre er enkel matematikk – mel, egg, melk og litt sukker – men det er detaljene som avgjør om vaflene blir sprø eller myke. Mer fett og lengre steketid gir sprø vafler; mer melk og en lett hånd gir myke. Kardemommen er det som gjør dem umiskjennelig norske, og en hvil på røren lar melet svelle så vaflene blir mørere.</p>
+      <p class="recipe-intro">Vi gir deg tre nivåer. Den enkle er hverdagsrøren du visper sammen på fem minutter. Medium er fasiten – standardvaffelen med kardemomme som de fleste vokste opp med. Den komplekse bytter melken mot kulturmelk eller rømme og rører inn brunet smør, for en syrlig, dyp og ekstra mør vaffel det er verdt å hvile røren til.</p>
+      <p class="recipe-intro">Juster antallet du vil steke, og tilpass ingrediensene fritt – også melkefritt og glutenfritt. Mengdene følger med, så du slipper å regne om selv.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="10" min="2" max="20" step="2" data-base-yield="10">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="vafler-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
