@@ -20,6 +20,18 @@ Mangler den → be brukeren kjøre `/research-recipe <rett>` først.
 **Les `recipes-index.js`, `recipe-schema.js` og en fersk `paella.html` først** så
 du speiler dagens mønster nøyaktig.
 
+## Rask vei – generatoren (anbefalt, deterministisk)
+`build.js` (i denne skill-mappa) gjør Steg 1–4 i én kjøring – serialiserer datafil,
+spleiser manifestoppføring inn før «Kommer snart», støper HTML fra adapter-malen, og
+legger sitemap-linje. Kjør fra **repo-roten**:
+```bash
+node .claude/skills/build-recipe/build.js <slug> "<norsk header-kommentar til datafila>"
+```
+Den setter skala-etiketten fra `recipe.yieldNoun` (default «porsjoner»), stripper tomme
+`tasteMessages`, og er idempotent på manifest/sitemap. **Du må fortsatt:** kjøre Steg 5-
+valideringene, oppdatere lærdom-loggen, arkivere staging og committe. Stegene under
+beskriver hva generatoren gjør (og er fasit hvis du bygger for hånd).
+
 ## Steg 1 – `<slug>-data.js`
 Serialiser `staging.recipe` til `window.RECIPE` (norske kommentarer, engelske
 id-er; feltrekkefølge som i `recipe-authoring.md`). `window.RECIPE.id` MÅ matche
@@ -49,12 +61,12 @@ Endre **kun** Lag 1-feltene:
    fyller den (synlig FAQ + FAQPage-schema) fra `indexEntry.faq` – ikke skriv
    spørsmål/svar eller FAQPage-JSON-LD for hånd.
 
-9. **Skala-etikett + base-yield:** sett `data-base-yield` (og `value`) til `medium`-nivåets
-   `servings`, og `<label for="recipe-scale-input">` til et **rett-spesifikt substantiv** som
-   matcher `recipeYield` – IKKE alltid «Antall porsjoner». Eksempler i repoet: pannekake =
-   «Antall pannekaker», sjokoladekake = «Antall stykker», vafler = «Antall vafler». Porsjons-
-   retter (middag) beholder «Antall porsjoner». (NB: motoren skriver fortsatt « porsjoner» i
-   lagret-variant-etiketten og «juster opp»-panelet – se lærdom-loggen om yield-substantiv.)
+9. **Skala-etikett + base-yield + yieldNoun:** sett `data-base-yield` (og `value`) til
+   `medium`-nivåets `servings`. For ikke-porsjonsretter, sett `recipe.yieldNoun` i staging
+   (f.eks. `"vafler"`, `"stykker"`, `"pannekaker"`) – da bruker BÅDE skala-etiketten («Antall
+   <yieldNoun>») OG motoren (lagret-variant-etikett + «juster opp»-panel) riktig substantiv.
+   Default er «porsjoner» når feltet mangler (middagsretter trenger det ikke). Generatoren
+   leser `yieldNoun` automatisk; bygger du for hånd, sett `<label>` og `aria-label`-ene selv.
 
 **Behold uendret:** alle DOM-kroker (`#complexity-selector`, `#recipe-scale-input`
 med `data-base-yield`, `#diet-filter`, `#precision-toggle`, `#reset-recipe`,

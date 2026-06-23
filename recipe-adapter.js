@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<button type="button" class="panel-remove" data-slot="' + ing.slotId + '">Fjern ingrediens</button>';
       } else {
         html += '<div class="compensate-choice">' +
-          '<span class="panel-label">Juster opp de andre så det rekker til ' + currentServings() + ' porsjoner?</span>' +
+          '<span class="panel-label">Juster opp de andre så det rekker til ' + currentServings() + ' ' + (R.yieldNoun || 'porsjoner') + '?</span>' +
           '<div class="compensate-buttons">' +
             '<button type="button" class="compensate-yes' + (compensate[ing.slotId] ? ' active' : '') + '" data-slot="' + ing.slotId + '">Ja</button>' +
             '<button type="button" class="compensate-no' + (!compensate[ing.slotId] ? ' active' : '') + '" data-slot="' + ing.slotId + '">Nei</button>' +
@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function saveCurrentVariant() {
     var rec = activeRecipe();
     var portions = scaleInput ? scaleInput.value : baseServings();
-    var label = rec.label + ' – ' + portions + ' porsjoner';
+    var label = rec.label + ' – ' + portions + ' ' + (R.yieldNoun || 'porsjoner');
     var entry = {
       id: Date.now(),
       recipeId: R.id,

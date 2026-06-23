@@ -94,6 +94,7 @@ const pannekakeRecipes = {
 /* ===== Config som recipe-adapter.js leser (window.RECIPE) ===== */
 window.RECIPE = {
   id: "pannekake",
+  yieldNoun: "pannekaker",
   recipes: pannekakeRecipes,
   swapOptions: swapOptions,
   servedAcid: null,

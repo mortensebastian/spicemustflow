@@ -66,6 +66,8 @@ Salt-lever = `sodiumPer100g ~38800` + `levers:[{axis:"salt",id:"salt_added"}]`.
 **`recipe.id` MÅ være lik `indexEntry.id`** (schema-generatoren slår opp på den).
 Ta med `tasteMessages` **kun** for akser retten faktisk balanserer – ikke tomme
 strenger for sour/umami «for ordens skyld» (build stripper dem uansett).
+For **ikke-porsjonsretter**, sett `recipe.yieldNoun` (f.eks. `"vafler"`, `"stykker"`,
+`"pannekaker"`) – styrer skala-etikett + motorens variant-/justér-tekst. Default «porsjoner».
 
 ### Standardbytter – basis kokkekunst (vurder ALLTID, ikke bare ad hoc)
 Kuraterte bytter er ikke valgfri pynt. Gå **systematisk** gjennom ingrediensene og
@@ -107,7 +109,7 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
   "serp": { intent, volume, competition, topCompetitors, hasRecipeCarousel, strategy },
   "recipe": { ...window.RECIPE: recipes{enkel,medium,kompleks}, swapOptions,
               servedAcid, density, pieceWeight, unitOptions, bulkRoles, levers,
-              requireRoles, tasteMessages, leverMessages, id }
+              requireRoles, tasteMessages, leverMessages, id, (yieldNoun?) }
 }
 ```
 `indexEntry.image` = `<slug>.jpg` (eller `null` til bildet skaffes).

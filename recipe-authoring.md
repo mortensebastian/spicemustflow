@@ -430,14 +430,15 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   rettet til «Antall vafler», og `build-recipe` Steg 3 fikk et eksplisitt punkt 9.
 - **[KONTRAKT, fikset]** Tomme `tasteMessages`-nøkler: build stripper dem nå (presisert i
   `build-recipe` Steg 1), og `research-recipe` er bedt om ikke å emittere dem.
-- **[MOTOR, venter på svar]** `recipe-adapter.js` hardkoder « porsjoner» i to brukervendte
-  strenger (lagret-variant-etikett ~l.665, «juster opp»-panel ~l.331). Feil for ikke-porsjons-
-  retter (vafler «vafler», sjokoladekake «stykker», pannekake «pannekaker»). Forhåndseksisterende,
-  men puljen blottla det. Forslag: konfigurerbart yield-substantiv (`window.RECIPE.yieldNoun`
-  eller fra manifest), default «porsjoner». Krever kjernemotorendring → spurt bruker.
-- **[PROSESS]** Hele puljen ble bygd med én deterministisk generator (serialiser data + splice
-  manifest + HTML fra mal + sitemap) i stedet for håndredigering — 3 retter, null byggefeil.
-  Verdt å vurdere å formalisere som offisiell `build-recipe`-hjelper.
+- **[MOTOR, fikset — godkjent kjernemotorendring]** `recipe-adapter.js` hardkodet « porsjoner» i
+  to brukervendte strenger (lagret-variant-etikett, «juster opp»-panel) — feil for ikke-porsjons-
+  retter. Løst med nytt konfigurerbart felt **`window.RECIPE.yieldNoun`** (default «porsjoner»);
+  begge strengene bruker det nå. Satt på vafler («vafler»), pannekake («pannekaker»), sjokoladekake
+  («stykker»); resten faller til default. Bruk feltet for alle nye ikke-porsjonsretter.
+- **[PROSESS, fikset]** Hele puljen ble bygd med én deterministisk generator (data + manifest +
+  HTML-mal + sitemap), 3 retter / null byggefeil. Formalisert som `.claude/skills/build-recipe/
+  build.js` og referert fra `build-recipe`-skillet. Den leser `yieldNoun` og stripper tomme
+  tasteMessages automatisk.
 
 
 

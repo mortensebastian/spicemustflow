@@ -6,6 +6,7 @@
 
 window.RECIPE = {
   "id": "vafler",
+  "yieldNoun": "vafler",
   "recipes": {
     "enkel": {
       "label": "Enkel",

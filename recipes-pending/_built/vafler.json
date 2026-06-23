@@ -1,6 +1,5 @@
 {
   "_comment": "Staging-objekt for vafler (norske hjertevafler). build-recipe konsumerer dette.",
-
   "indexEntry": {
     "id": "vafler",
     "slug": "vafler.html",
@@ -10,59 +9,174 @@
     "tagline": "Sprø eller myke hjertevafler – justerbar røre med kardemomme.",
     "description": "Norske hjertevafler i tre nivåer, fra rask hverdagsrøre til kulturmelk og brunet smør. Juster antall og tilpass ingrediensene – også melkefritt og glutenfritt.",
     "image": null,
-    "category": ["baking"],
+    "category": [
+      "baking"
+    ],
     "badge": "3 nivåer",
     "recipeCategory": "Baking",
     "cuisine": "Norsk",
     "keywords": "vafler, vaffelrøre, norske hjertevafler",
     "recipeYield": "10 vafler",
-    "times": { "prep": "PT10M", "cook": "PT20M", "total": "PT40M" },
+    "times": {
+      "prep": "PT10M",
+      "cook": "PT20M",
+      "total": "PT40M"
+    },
     "search": "vafler vaffelrøre hjertevafler kardemomme",
     "faq": [
-      { "q": "Hvordan får jeg sprø vafler?", "a": "Sprø vafler får du med mer fett (smeltet smør) og litt mindre melk i røren, og ved å steke dem litt lenger til de er gyllenbrune. Legg dem enkeltvis på rist – ikke i stabel – så damper de ikke seg myke igjen." },
-      { "q": "Hvordan får jeg myke vafler?", "a": "Myke vafler vil du ha litt mer melk og litt mindre stekt – ta dem ut når de er lyst gylne. Legg dem oppå hverandre under et klede mens de hviler, så holder de seg myke og bøyelige." },
-      { "q": "Hvorfor blir vaflene mine klissete?", "a": "Klissete vafler skyldes som regel for tynn røre, for kort steketid eller at jernet ikke er varmt nok. La røren svelle, stek til de slipper jernet lett, og bruk et godt forvarmet vaffeljern." },
-      { "q": "Kan vaffelrøren stå og hvile?", "a": "Ja, og den blir bedre av det. La gjerne røren hvile 20–30 minutter, eller lag den kvelden før og sett den kaldt – melet sveller og vaflene blir mørere. Rør lett om før steking og spe med litt melk hvis den har tyknet." },
-      { "q": "Kan jeg lage vaffelrøre kvelden før?", "a": "Ja. Røren holder seg fint i kjøleskapet over natten i en tett bolle. Den tykner litt, så rør om og spe med en skvett melk til ønsket konsistens før du steker." },
-      { "q": "Kan jeg lage melkefrie vafler?", "a": "Ja – bytt melken mot havredrikk eller annen plantedrikk og smøret mot margarin eller nøytral olje. Røren oppfører seg likt, og vaflene blir like gode." },
-      { "q": "Kan jeg lage glutenfrie vafler?", "a": "Ja, bytt hvetemelet mot en glutenfri melblanding med bindemiddel. La røren svelle litt lenger, og spe med litt ekstra melk om den blir tykk." },
-      { "q": "Hva er forskjellen på kulturmelk og melk i vafler?", "a": "Kulturmelk (eller kefir) gir litt syrlige, ekstra møre og luftige vafler fordi syren reagerer med bakepulveret. Vanlig melk gir en mildere, mer nøytral vaffel. Begge fungerer – kulturmelk er det lille ekstra." },
-      { "q": "Kan jeg fryse vafler?", "a": "Ja. Avkjøl dem helt, legg dem lagvis med bakepapir imellom i en tett pose, og frys i opptil 3 måneder. Varm dem i brødrister eller stekepanne så blir de sprø igjen." }
+      {
+        "q": "Hvordan får jeg sprø vafler?",
+        "a": "Sprø vafler får du med mer fett (smeltet smør) og litt mindre melk i røren, og ved å steke dem litt lenger til de er gyllenbrune. Legg dem enkeltvis på rist – ikke i stabel – så damper de ikke seg myke igjen."
+      },
+      {
+        "q": "Hvordan får jeg myke vafler?",
+        "a": "Myke vafler vil du ha litt mer melk og litt mindre stekt – ta dem ut når de er lyst gylne. Legg dem oppå hverandre under et klede mens de hviler, så holder de seg myke og bøyelige."
+      },
+      {
+        "q": "Hvorfor blir vaflene mine klissete?",
+        "a": "Klissete vafler skyldes som regel for tynn røre, for kort steketid eller at jernet ikke er varmt nok. La røren svelle, stek til de slipper jernet lett, og bruk et godt forvarmet vaffeljern."
+      },
+      {
+        "q": "Kan vaffelrøren stå og hvile?",
+        "a": "Ja, og den blir bedre av det. La gjerne røren hvile 20–30 minutter, eller lag den kvelden før og sett den kaldt – melet sveller og vaflene blir mørere. Rør lett om før steking og spe med litt melk hvis den har tyknet."
+      },
+      {
+        "q": "Kan jeg lage vaffelrøre kvelden før?",
+        "a": "Ja. Røren holder seg fint i kjøleskapet over natten i en tett bolle. Den tykner litt, så rør om og spe med en skvett melk til ønsket konsistens før du steker."
+      },
+      {
+        "q": "Kan jeg lage melkefrie vafler?",
+        "a": "Ja – bytt melken mot havredrikk eller annen plantedrikk og smøret mot margarin eller nøytral olje. Røren oppfører seg likt, og vaflene blir like gode."
+      },
+      {
+        "q": "Kan jeg lage glutenfrie vafler?",
+        "a": "Ja, bytt hvetemelet mot en glutenfri melblanding med bindemiddel. La røren svelle litt lenger, og spe med litt ekstra melk om den blir tykk."
+      },
+      {
+        "q": "Hva er forskjellen på kulturmelk og melk i vafler?",
+        "a": "Kulturmelk (eller kefir) gir litt syrlige, ekstra møre og luftige vafler fordi syren reagerer med bakepulveret. Vanlig melk gir en mildere, mer nøytral vaffel. Begge fungerer – kulturmelk er det lille ekstra."
+      },
+      {
+        "q": "Kan jeg fryse vafler?",
+        "a": "Ja. Avkjøl dem helt, legg dem lagvis med bakepapir imellom i en tett pose, og frys i opptil 3 måneder. Varm dem i brødrister eller stekepanne så blir de sprø igjen."
+      }
     ]
   },
-
   "seo": {
     "title": "Vafler – oppskrift på norske hjertevafler steg for steg | Velkomponert"
   },
-
   "body": {
     "heroIntro": "Den norske vaffelen på sitt beste: gyllne hjertevafler med kardemomme, fra rask hverdagsrøre til den litt syrlige kulturmelk-varianten.",
     "bodyIntro": "Vaffelrøre er enkel matematikk – mel, egg, melk og litt sukker – men det er detaljene som avgjør om vaflene blir sprø eller myke. Mer fett og lengre steketid gir sprø vafler; mer melk og en lett hånd gir myke. Kardemommen er det som gjør dem umiskjennelig norske, og en hvil på røren lar melet svelle så vaflene blir mørere.\n\nVi gir deg tre nivåer. Den enkle er hverdagsrøren du visper sammen på fem minutter. Medium er fasiten – standardvaffelen med kardemomme som de fleste vokste opp med. Den komplekse bytter melken mot kulturmelk eller rømme og rører inn brunet smør, for en syrlig, dyp og ekstra mør vaffel det er verdt å hvile røren til.\n\nJuster antallet du vil steke, og tilpass ingrediensene fritt – også melkefritt og glutenfritt. Mengdene følger med, så du slipper å regne om selv."
   },
-
   "serp": {
     "intent": "recipe",
     "volume": "høy",
     "competition": "hard",
-    "topCompetitors": ["matprat.no", "tine.no", "godt.no", "matbloggen.no"],
+    "topCompetitors": [
+      "matprat.no",
+      "tine.no",
+      "godt.no",
+      "matbloggen.no"
+    ],
     "hasRecipeCarousel": true,
     "strategy": "Hodeordet «vafler»/«vaffelrøre» er hardt (matprat/tine eier topp-3 med karusell). Angrip long-tail via FAQ-vinkler (sprø vs myke vafler, hvile røren/kvelden før, melkefrie og glutenfrie vafler, kefir vs melk) og den justerbare røra som differensiator; estimater på volum/konkurranse uten eksakte tall."
   },
-
   "recipe": {
     "id": "vafler",
+    "yieldNoun": "vafler",
     "recipes": {
       "enkel": {
         "label": "Enkel",
         "servings": 10,
         "ingredients": [
-          { "id": "flour", "label": "Hvetemel", "amount": 3, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
-          { "id": "milk", "label": "Melk", "amount": 4, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "note": "Spe litt etter litt for en klumpfri røre.", "allergens": ["dairy"] },
-          { "id": "egg", "label": "Egg", "amount": 2, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
-          { "id": "sugar", "label": "Sukker", "amount": 2, "unit": "ss", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
-          { "id": "baking_powder", "label": "Bakepulver", "amount": 1, "unit": "ts", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
-          { "id": "salt", "label": "Salt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
-          { "id": "butter", "label": "Smeltet smør", "amount": 50, "unit": "g", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "note": "Avkjøl litt før du rører det i røren.", "allergens": ["dairy"] }
+          {
+            "id": "flour",
+            "label": "Hvetemel",
+            "amount": 3,
+            "unit": "dl",
+            "role": "bulk",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "gluten"
+            ]
+          },
+          {
+            "id": "milk",
+            "label": "Melk",
+            "amount": 4,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Spe litt etter litt for en klumpfri røre.",
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "egg",
+            "label": "Egg",
+            "amount": 2,
+            "unit": "stk",
+            "role": "binder",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "egg"
+            ]
+          },
+          {
+            "id": "sugar",
+            "label": "Sukker",
+            "amount": 2,
+            "unit": "ss",
+            "role": "sweet",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 2
+            }
+          },
+          {
+            "id": "baking_powder",
+            "label": "Bakepulver",
+            "amount": 1,
+            "unit": "ts",
+            "role": "leavening",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "salt",
+            "label": "Salt",
+            "amount": 0.25,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "butter",
+            "label": "Smeltet smør",
+            "amount": 50,
+            "unit": "g",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Avkjøl litt før du rører det i røren.",
+            "allergens": [
+              "dairy"
+            ]
+          }
         ],
         "steps": [
           "Visp sammen mel, sukker, bakepulver og salt.",
@@ -75,15 +189,119 @@
         "label": "Medium",
         "servings": 10,
         "ingredients": [
-          { "id": "flour", "label": "Hvetemel", "amount": 3, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
-          { "id": "milk", "label": "Melk", "amount": 4, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
-          { "id": "egg", "label": "Egg", "amount": 3, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "note": "Et ekstra egg gir fyldigere vafler.", "allergens": ["egg"] },
-          { "id": "sugar", "label": "Sukker", "amount": 3, "unit": "ss", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
-          { "id": "cardamom", "label": "Malt kardemomme", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 } },
-          { "id": "baking_powder", "label": "Bakepulver", "amount": 1, "unit": "ts", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
-          { "id": "vanilla_sugar", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "salt", "label": "Salt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
-          { "id": "butter", "label": "Smeltet smør", "amount": 75, "unit": "g", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "note": "Avkjøl litt før du rører det i røren.", "allergens": ["dairy"] }
+          {
+            "id": "flour",
+            "label": "Hvetemel",
+            "amount": 3,
+            "unit": "dl",
+            "role": "bulk",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "gluten"
+            ]
+          },
+          {
+            "id": "milk",
+            "label": "Melk",
+            "amount": 4,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "egg",
+            "label": "Egg",
+            "amount": 3,
+            "unit": "stk",
+            "role": "binder",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Et ekstra egg gir fyldigere vafler.",
+            "allergens": [
+              "egg"
+            ]
+          },
+          {
+            "id": "sugar",
+            "label": "Sukker",
+            "amount": 3,
+            "unit": "ss",
+            "role": "sweet",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 2
+            }
+          },
+          {
+            "id": "cardamom",
+            "label": "Malt kardemomme",
+            "amount": 1,
+            "unit": "ts",
+            "role": "aromatic",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "bitter": 1
+            }
+          },
+          {
+            "id": "baking_powder",
+            "label": "Bakepulver",
+            "amount": 1,
+            "unit": "ts",
+            "role": "leavening",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "vanilla_sugar",
+            "label": "Vaniljesukker",
+            "amount": 1,
+            "unit": "ts",
+            "role": "aromatic",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "salt",
+            "label": "Salt",
+            "amount": 0.25,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "butter",
+            "label": "Smeltet smør",
+            "amount": 75,
+            "unit": "g",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Avkjøl litt før du rører det i røren.",
+            "allergens": [
+              "dairy"
+            ]
+          }
         ],
         "steps": [
           "Visp sammen mel, sukker, kardemomme, vaniljesukker, bakepulver og salt.",
@@ -96,16 +314,134 @@
         "label": "Kompleks",
         "servings": 10,
         "ingredients": [
-          { "id": "flour", "label": "Hvetemel", "amount": 3, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
-          { "id": "cultured_milk", "label": "Kulturmelk (eller kefir)", "amount": 3, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "note": "Syren gjør vaflene møre og litt syrlige; reagerer med bakepulveret.", "allergens": ["dairy"] },
-          { "id": "sour_cream", "label": "Rømme", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": true, "note": "Gir fyldige, ekstra møre vafler.", "allergens": ["dairy"] },
-          { "id": "egg", "label": "Egg", "amount": 3, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
-          { "id": "sugar", "label": "Sukker", "amount": 3, "unit": "ss", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
-          { "id": "cardamom", "label": "Nystøtt kardemomme", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "bitter": 1 }, "note": "Nystøtte frø gir mest aroma." },
-          { "id": "baking_powder", "label": "Bakepulver", "amount": 1, "unit": "ts", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
-          { "id": "vanilla_sugar", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "salt", "label": "Salt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false },
-          { "id": "brown_butter", "label": "Brunet smør", "amount": 75, "unit": "g", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "note": "Brun smøret til det dufter nøtteaktig, og avkjøl litt før det røres i.", "allergens": ["dairy"] }
+          {
+            "id": "flour",
+            "label": "Hvetemel",
+            "amount": 3,
+            "unit": "dl",
+            "role": "bulk",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "gluten"
+            ]
+          },
+          {
+            "id": "cultured_milk",
+            "label": "Kulturmelk (eller kefir)",
+            "amount": 3,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Syren gjør vaflene møre og litt syrlige; reagerer med bakepulveret.",
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "sour_cream",
+            "label": "Rømme",
+            "amount": 1,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "note": "Gir fyldige, ekstra møre vafler.",
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "egg",
+            "label": "Egg",
+            "amount": 3,
+            "unit": "stk",
+            "role": "binder",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "egg"
+            ]
+          },
+          {
+            "id": "sugar",
+            "label": "Sukker",
+            "amount": 3,
+            "unit": "ss",
+            "role": "sweet",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 2
+            }
+          },
+          {
+            "id": "cardamom",
+            "label": "Nystøtt kardemomme",
+            "amount": 1,
+            "unit": "ts",
+            "role": "aromatic",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "bitter": 1
+            },
+            "note": "Nystøtte frø gir mest aroma."
+          },
+          {
+            "id": "baking_powder",
+            "label": "Bakepulver",
+            "amount": 1,
+            "unit": "ts",
+            "role": "leavening",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "vanilla_sugar",
+            "label": "Vaniljesukker",
+            "amount": 1,
+            "unit": "ts",
+            "role": "aromatic",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "salt",
+            "label": "Salt",
+            "amount": 0.25,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "brown_butter",
+            "label": "Brunet smør",
+            "amount": 75,
+            "unit": "g",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Brun smøret til det dufter nøtteaktig, og avkjøl litt før det røres i.",
+            "allergens": [
+              "dairy"
+            ]
+          }
         ],
         "steps": [
           "Brun smøret til det er gyllent og nøtteaktig, og avkjøl litt.",
@@ -116,73 +452,243 @@
         ]
       }
     },
-
     "swapOptions": {
       "flour": [
-        { "id": "gf_flour", "label": "Glutenfri melblanding", "amount": 3, "unit": "dl", "note": "Bruk en blanding med bindemiddel; la røren hvile litt lenger og spe med litt mer melk." }
+        {
+          "id": "gf_flour",
+          "label": "Glutenfri melblanding",
+          "amount": 3,
+          "unit": "dl",
+          "note": "Bruk en blanding med bindemiddel; la røren hvile litt lenger og spe med litt mer melk."
+        }
       ],
       "milk": [
-        { "id": "oat_milk", "label": "Havredrikk (melkefri)", "amount": 4, "unit": "dl", "note": "Nøytral, melkefri base." },
-        { "id": "lactosefree_milk", "label": "Laktosefri melk", "amount": 4, "unit": "dl", "allergens": ["dairy"] }
+        {
+          "id": "oat_milk",
+          "label": "Havredrikk (melkefri)",
+          "amount": 4,
+          "unit": "dl",
+          "note": "Nøytral, melkefri base."
+        },
+        {
+          "id": "lactosefree_milk",
+          "label": "Laktosefri melk",
+          "amount": 4,
+          "unit": "dl",
+          "allergens": [
+            "dairy"
+          ]
+        }
       ],
       "cultured_milk": [
-        { "id": "plant_cultured", "label": "Plantebasert kefir/syrnet havredrikk (melkefri)", "amount": 3, "unit": "dl", "note": "Melkefritt; behold syrligheten." },
-        { "id": "milk_lemon", "label": "Melk med en skvett sitron", "amount": 3, "unit": "dl", "note": "Surn melken med 1 ss sitron per dl; ligner kulturmelk.", "allergens": ["dairy"] }
+        {
+          "id": "plant_cultured",
+          "label": "Plantebasert kefir/syrnet havredrikk (melkefri)",
+          "amount": 3,
+          "unit": "dl",
+          "note": "Melkefritt; behold syrligheten."
+        },
+        {
+          "id": "milk_lemon",
+          "label": "Melk med en skvett sitron",
+          "amount": 3,
+          "unit": "dl",
+          "note": "Surn melken med 1 ss sitron per dl; ligner kulturmelk.",
+          "allergens": [
+            "dairy"
+          ]
+        }
       ],
       "sour_cream": [
-        { "id": "plant_creme", "label": "Plantebasert rømme (melkefri)", "amount": 1, "unit": "dl", "note": "Melkefritt alternativ." }
+        {
+          "id": "plant_creme",
+          "label": "Plantebasert rømme (melkefri)",
+          "amount": 1,
+          "unit": "dl",
+          "note": "Melkefritt alternativ."
+        }
       ],
       "egg": [
-        { "id": "extra_baking_powder", "label": "Ekstra bakepulver + 0,5 dl plantedrikk (eggfri)", "amount": 1, "unit": "ts", "note": "Per egg: 0,5 ts ekstra bakepulver og litt mer plantedrikk for binding og luft." }
+        {
+          "id": "extra_baking_powder",
+          "label": "Ekstra bakepulver + 0,5 dl plantedrikk (eggfri)",
+          "amount": 1,
+          "unit": "ts",
+          "note": "Per egg: 0,5 ts ekstra bakepulver og litt mer plantedrikk for binding og luft."
+        }
       ],
       "butter": [
-        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 50, "unit": "g", "note": "Smelt som smør; melkefritt." },
-        { "id": "oil", "label": "Nøytral olje (melkefri)", "amount": 0.5, "unit": "dl", "note": "Raps-/solsikkeolje; melkefri base." }
+        {
+          "id": "margarine",
+          "label": "Margarin (melkefri)",
+          "amount": 50,
+          "unit": "g",
+          "note": "Smelt som smør; melkefritt."
+        },
+        {
+          "id": "oil",
+          "label": "Nøytral olje (melkefri)",
+          "amount": 0.5,
+          "unit": "dl",
+          "note": "Raps-/solsikkeolje; melkefri base."
+        }
       ],
       "brown_butter": [
-        { "id": "margarine_brown", "label": "Margarin (melkefri)", "amount": 75, "unit": "g", "note": "Brunes ikke som smør, men gir fett; melkefritt." },
-        { "id": "oil_complex", "label": "Nøytral olje (melkefri)", "amount": 0.75, "unit": "dl", "note": "Melkefri base for kompleks-røren." }
+        {
+          "id": "margarine_brown",
+          "label": "Margarin (melkefri)",
+          "amount": 75,
+          "unit": "g",
+          "note": "Brunes ikke som smør, men gir fett; melkefritt."
+        },
+        {
+          "id": "oil_complex",
+          "label": "Nøytral olje (melkefri)",
+          "amount": 0.75,
+          "unit": "dl",
+          "note": "Melkefri base for kompleks-røren."
+        }
       ]
     },
-
     "servedAcid": null,
-
     "density": {
-      "flour": 0.55, "gf_flour": 0.55, "extra_baking_powder": 0.9,
-      "milk": 1.03, "oat_milk": 1.03, "lactosefree_milk": 1.03,
-      "cultured_milk": 1.03, "plant_cultured": 1.03, "milk_lemon": 1.03,
-      "sour_cream": 1, "plant_creme": 1,
-      "sugar": 0.85, "cardamom": 0.5, "vanilla_sugar": 0.7,
-      "butter": 0.95, "brown_butter": 0.95, "margarine": 0.95, "margarine_brown": 0.95,
-      "oil": 0.92, "oil_complex": 0.92, "salt": 1.2
+      "flour": 0.55,
+      "gf_flour": 0.55,
+      "extra_baking_powder": 0.9,
+      "milk": 1.03,
+      "oat_milk": 1.03,
+      "lactosefree_milk": 1.03,
+      "cultured_milk": 1.03,
+      "plant_cultured": 1.03,
+      "milk_lemon": 1.03,
+      "sour_cream": 1,
+      "plant_creme": 1,
+      "sugar": 0.85,
+      "cardamom": 0.5,
+      "vanilla_sugar": 0.7,
+      "butter": 0.95,
+      "brown_butter": 0.95,
+      "margarine": 0.95,
+      "margarine_brown": 0.95,
+      "oil": 0.92,
+      "oil_complex": 0.92,
+      "salt": 1.2
     },
-
-    "pieceWeight": { "egg": 55 },
-
+    "pieceWeight": {
+      "egg": 55
+    },
     "unitOptions": {
-      "flour": ["dl", "ml", "g"], "gf_flour": ["dl", "ml", "g"],
-      "extra_baking_powder": ["ts", "g"],
-      "milk": ["dl", "ml", "g"], "oat_milk": ["dl", "ml", "g"], "lactosefree_milk": ["dl", "ml", "g"],
-      "cultured_milk": ["dl", "ml", "g"], "plant_cultured": ["dl", "ml", "g"], "milk_lemon": ["dl", "ml", "g"],
-      "sour_cream": ["dl", "ml", "g"], "plant_creme": ["dl", "ml", "g"],
-      "sugar": ["ss", "ts", "g"], "cardamom": ["ts", "g"], "vanilla_sugar": ["ts", "g"],
-      "butter": ["g"], "brown_butter": ["g"], "margarine": ["g"], "margarine_brown": ["g"],
-      "oil": ["dl", "ml", "g"], "oil_complex": ["dl", "ml", "g"],
-      "salt": ["ts", "g"]
+      "flour": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "gf_flour": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "extra_baking_powder": [
+        "ts",
+        "g"
+      ],
+      "milk": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "oat_milk": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "lactosefree_milk": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "cultured_milk": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "plant_cultured": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "milk_lemon": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "sour_cream": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "plant_creme": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "sugar": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "cardamom": [
+        "ts",
+        "g"
+      ],
+      "vanilla_sugar": [
+        "ts",
+        "g"
+      ],
+      "butter": [
+        "g"
+      ],
+      "brown_butter": [
+        "g"
+      ],
+      "margarine": [
+        "g"
+      ],
+      "margarine_brown": [
+        "g"
+      ],
+      "oil": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "oil_complex": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "salt": [
+        "ts",
+        "g"
+      ]
     },
-
-    "bulkRoles": ["bulk", "liquid", "binder"],
-
-    "levers": [{ "axis": "sweet", "id": "sugar" }],
-
+    "bulkRoles": [
+      "bulk",
+      "liquid",
+      "binder"
+    ],
+    "levers": [
+      {
+        "axis": "sweet",
+        "id": "sugar"
+      }
+    ],
     "requireRoles": [],
-
     "tasteMessages": {
       "sweet": "Vaflene blir mindre søte – server gjerne med syltetøy, brunost eller sukker på toppen.",
       "sour": "",
       "umami": ""
     },
-
     "leverMessages": {
       "sweet": {
         "down": "Røren ble søtere – vi reduserte sukkeret litt for å holde balansen.",
