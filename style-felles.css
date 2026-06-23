@@ -856,6 +856,26 @@ body::before {
   text-align: center;
 }
 
+/* Sammenleggbar intro: teaseren vises alltid, resten gjemmes bak «Les mer».
+   Bygges av initRecipeIntro() i site.js. */
+.recipe-intro-more[hidden] { display: none; }
+.recipe-intro-more .recipe-intro:last-child { margin-bottom: 32px; }
+
+.recipe-intro-toggle {
+  display: block;
+  margin: -12px auto 32px;
+  padding: 4px 4px;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  color: var(--accent, #b5651d);
+  cursor: pointer;
+}
+.recipe-intro-toggle::after { content: " ›"; }
+.recipe-intro-toggle[aria-expanded="true"]::after { content: " ‹"; }
+.recipe-intro-toggle:hover { text-decoration: underline; }
+
 /* Skaler oppskriften: antallsfelt med pluss/minus-knapper, midtstilt
    over videoen. recipe.js regner om alle ingrediensmengdene når
    tallet i feltet endres. */

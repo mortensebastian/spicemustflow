@@ -77,7 +77,6 @@ const scaleNoun = R.yieldNoun || 'porsjoner';
 const ogTitle = staging.seo.title.replace(/\s*\|\s*Velkomponert\s*$/, '');
 const esc = s => s.replace(/"/g, '&quot;');
 const introPs = staging.body.bodyIntro.split(/\n\n+/).map(p => `      <p class="recipe-intro">${p.trim()}</p>`).join('\n');
-const sectionTitle = `Slik lager du ${ie.shortName.toLowerCase()}`;
 const maxY = Math.max(12, base * 2);
 
 const html = `<!DOCTYPE html>
@@ -125,7 +124,6 @@ const html = `<!DOCTYPE html>
 
   <section class="recipe" id="oppskrift">
     <div class="container">
-      <h2 class="section-title">${sectionTitle}</h2>
 ${introPs}
 
       <div class="recipe-complexity">
