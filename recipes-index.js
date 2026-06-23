@@ -78,7 +78,7 @@ window.RECIPES_INDEX = [
     shortName: "Pannekaker", name: "Pannekaker",
     tagline: "Tynne norske pannekaker – fra hverdag til fest.",
     description: "Tynne norske pannekaker, fra enkel grunnrøre til mer forseggjorte varianter med brunet smør.",
-    image: null, category: ["dessert"], badge: "3 nivåer",
+    image: "pannekake.jpg", category: ["dessert"], badge: "3 nivåer",
     recipeCategory: "Dessert", cuisine: "Norsk",
     keywords: "pannekaker, norske pannekaker, tynne pannekaker",
     recipeYield: "12 pannekaker", times: { prep: "PT10M", cook: "PT20M", total: "PT50M" },
