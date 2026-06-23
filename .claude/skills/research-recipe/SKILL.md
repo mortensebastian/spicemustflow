@@ -64,6 +64,8 @@ standard, og det `recipe-schema.js` speiler). Per ingrediens: `id`/`label`/`amou
 `unit`/`role`/`scaling`/`addStage`/`sodiumPer100g`/`taste`/`removable`/`allergens`.
 Salt-lever = `sodiumPer100g ~38800` + `levers:[{axis:"salt",id:"salt_added"}]`.
 **`recipe.id` MÅ være lik `indexEntry.id`** (schema-generatoren slår opp på den).
+Ta med `tasteMessages` **kun** for akser retten faktisk balanserer – ikke tomme
+strenger for sour/umami «for ordens skyld» (build stripper dem uansett).
 
 ### Standardbytter – basis kokkekunst (vurder ALLTID, ikke bare ad hoc)
 Kuraterte bytter er ikke valgfri pynt. Gå **systematisk** gjennom ingrediensene og

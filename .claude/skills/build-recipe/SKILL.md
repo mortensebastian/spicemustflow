@@ -23,7 +23,9 @@ du speiler dagens mønster nøyaktig.
 ## Steg 1 – `<slug>-data.js`
 Serialiser `staging.recipe` til `window.RECIPE` (norske kommentarer, engelske
 id-er; feltrekkefølge som i `recipe-authoring.md`). `window.RECIPE.id` MÅ matche
-`indexEntry.id` – `recipe-schema.js` slår opp på den.
+`indexEntry.id` – `recipe-schema.js` slår opp på den. **Strip tomme
+`tasteMessages`-nøkler** (`sour:""` o.l. fra staging) – en akse uten budskap skal
+utelates, ikke stå tom.
 
 ## Steg 2 – manifestoppføring i `recipes-index.js`
 Splice `staging.indexEntry` inn i `window.RECIPES_INDEX` (blant `status:"live"`,
@@ -46,6 +48,13 @@ Endre **kun** Lag 1-feltene:
    <div id="recipe-faq"></div></div></section>` etter oppskriften. `recipe-schema.js`
    fyller den (synlig FAQ + FAQPage-schema) fra `indexEntry.faq` – ikke skriv
    spørsmål/svar eller FAQPage-JSON-LD for hånd.
+
+9. **Skala-etikett + base-yield:** sett `data-base-yield` (og `value`) til `medium`-nivåets
+   `servings`, og `<label for="recipe-scale-input">` til et **rett-spesifikt substantiv** som
+   matcher `recipeYield` – IKKE alltid «Antall porsjoner». Eksempler i repoet: pannekake =
+   «Antall pannekaker», sjokoladekake = «Antall stykker», vafler = «Antall vafler». Porsjons-
+   retter (middag) beholder «Antall porsjoner». (NB: motoren skriver fortsatt « porsjoner» i
+   lagret-variant-etiketten og «juster opp»-panelet – se lærdom-loggen om yield-substantiv.)
 
 **Behold uendret:** alle DOM-kroker (`#complexity-selector`, `#recipe-scale-input`
 med `data-base-yield`, `#diet-filter`, `#precision-toggle`, `#reset-recipe`,

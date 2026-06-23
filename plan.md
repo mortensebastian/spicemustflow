@@ -162,9 +162,9 @@ Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvol
 > Format: `rett — sesong — belegg`. Safran er nedtonet (eierføring); vekstmotoren
 > er disse høyvolums norske hverdags- og bakeklassikerne.
 - [x] 1. Pannekaker — Hele året — Dokumentert (MatPrat #1)
-- [ ] 2. Vafler / vaffelrøre — Hele året — Dokumentert (topp 10)
-- [ ] 3. Taco (fredagstaco) — Hele året — Estimat, svært høyt — NB: kjøttdeig-fredagstaco, distinkt fra bygde `baja-fish-tacos`
-- [ ] 4. Pizzadeig / pizza — Hele året — Estimat
+- [x] 2. Vafler / vaffelrøre — Hele året — Dokumentert (topp 10)
+- [x] 3. Taco (fredagstaco) — Hele året — Estimat, svært høyt — NB: kjøttdeig-fredagstaco, distinkt fra bygde `baja-fish-tacos`
+- [x] 4. Pizzadeig / pizza — Hele året — Estimat
 - [ ] 5. Lasagne — Hele året — Dokumentert (MatPrat topp)
 - [ ] 6. Kanelboller — Hele året — Estimat
 - [ ] 7. Boller (hvete/kardemomme) — Hele året — Estimat

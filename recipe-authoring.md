@@ -422,7 +422,22 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   med vegansk bytte.
 
 **Pulje-observasjon (alle tre):** ingen av de tre trengte en motorendring — sweet-only-lever,
-23-ingrediensers rett, og teknikk-stige ble alle absorbert av eksisterende motor. Se retrospektiv.
+23-ingrediensers rett, og teknikk-stige ble alle absorbert av eksisterende motor.
+
+**Retrospektiv etter pulje #1 (vafler/taco/pizza):**
+- **[KONTRAKT, fikset]** Skala-etiketten skal være rett-spesifikk («Antall vafler»), ikke alltid
+  «Antall porsjoner» (pannekake/sjokoladekake-konvensjonen). Generatoren satte feil på vafler →
+  rettet til «Antall vafler», og `build-recipe` Steg 3 fikk et eksplisitt punkt 9.
+- **[KONTRAKT, fikset]** Tomme `tasteMessages`-nøkler: build stripper dem nå (presisert i
+  `build-recipe` Steg 1), og `research-recipe` er bedt om ikke å emittere dem.
+- **[MOTOR, venter på svar]** `recipe-adapter.js` hardkoder « porsjoner» i to brukervendte
+  strenger (lagret-variant-etikett ~l.665, «juster opp»-panel ~l.331). Feil for ikke-porsjons-
+  retter (vafler «vafler», sjokoladekake «stykker», pannekake «pannekaker»). Forhåndseksisterende,
+  men puljen blottla det. Forslag: konfigurerbart yield-substantiv (`window.RECIPE.yieldNoun`
+  eller fra manifest), default «porsjoner». Krever kjernemotorendring → spurt bruker.
+- **[PROSESS]** Hele puljen ble bygd med én deterministisk generator (serialiser data + splice
+  manifest + HTML fra mal + sitemap) i stedet for håndredigering — 3 retter, null byggefeil.
+  Verdt å vurdere å formalisere som offisiell `build-recipe`-hjelper.
 
 
 
