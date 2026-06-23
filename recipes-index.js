@@ -374,6 +374,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "lasagne", slug: "lasagne.html", status: "live",
+    shortName: "Lasagne", name: "Lasagne",
+    tagline: "Klassisk italiensk lasagne med kjøttsaus, bechamel og ost.",
+    description: "Klassisk lasagne med kjøttsaus og ekte bechamel. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Italiensk",
+    keywords: "lasagne, lasagne oppskrift, klassisk lasagne med bechamel",
+    recipeYield: "4 porsjoner", times: { prep: "PT25M", cook: "PT45M", total: "PT1H10M" },
+    search: "lasagne kjøttsaus bechamel ost klassisk",
+    faq: [
+      { q: "Må man forkoke lasagneplater?", a: "Vanlige lasagneplater trenger du ikke forkoke – la sausene være litt rikelige og litt løse, så trekker platene til seg nok væske i ovnen. Glutenfrie plater er mer ujevne: forvell dem gjerne et par minutter i lettsaltet vann, eller gjør sausene ekstra fuktige." },
+      { q: "Hvordan lager jeg bechamel uten klumper?", a: "Smelt smøret, rør inn melet og la jevningen surre et par minutter. Ta gryta av varmen og spe med melken litt etter litt mens du visper godt, til sausen er blank før du spe videre. Lar du det koke opp mellom hver omgang, blir den jevn og fin." },
+      { q: "Hvor mange lag skal lasagnen ha?", a: "Sikt på tre til fire lag med plater. Start og slutt med saus så platene ikke tørker ut, og avslutt med bechamel og revet ost på toppen for en gyllen skorpe." },
+      { q: "Kan jeg lage lasagne dagen før?", a: "Ja. Lag kjøttsaus og bechamel dagen før og oppbevar dem kaldt, eller sett sammen hele lasagnen ferdig og dekk den til i kjøleskapet. Bak den rett fra kjøleskap, gjerne 10 minutter ekstra siden den er kald." },
+      { q: "Kan man fryse lasagne?", a: "Ja. Frys den gjerne ferdig sammensatt men ubakt i en form med lokk eller folie i opptil 3 måneder, og bak den fra frossen med litt lengre steketid. Ferdigbakt lasagne kan også fryses i porsjoner." },
+      { q: "Hvordan lager jeg glutenfri lasagne?", a: "Bruk glutenfrie lasagneplater og bytt hvetemelet i bechamelen mot maizena eller glutenfri melblanding. Resten av retten er naturlig glutenfri. Forvell de glutenfrie platene kort eller gjør sausene litt løsere." },
+      { q: "Hvordan lager jeg melkefri lasagne?", a: "Bytt melken i bechamelen mot plantemelk og smøret mot margarin eller olje, og bruk vegansk parmesan og ost. Da blir hele retten melkefri uten at den hvite sausen mister kremen." },
+      { q: "Hvilken ost er best i lasagne?", a: "Nyrevet parmesan eller grana padano gir mest smak, gjerne sammen med revet mozzarella for den seige osteoverflaten. Mozzarella alene blir mildt; parmesan løfter både saus og topp." },
+      { q: "Kan jeg lage vegetarlasagne?", a: "Ja – bytt kjøttdeigen mot finhakket sopp og røde linser eller plantefarse. De gir en fyldig, kjøttaktig saus. Resten av oppskriften er den samme." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

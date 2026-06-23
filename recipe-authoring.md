@@ -440,5 +440,13 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   build.js` og referert fra `build-recipe`-skillet. Den leser `yieldNoun` og stripper tomme
   tasteMessages automatisk.
 
+**lasagne (rett #21, pulje #2)** — **ingen kjernemotorendring.**
+- Flest allergener på én rett så langt: gluten, meieri, egg, selleri. Gluten bæres av TO kilder
+  (plater + bechamel-mel), meieri av flere (smør + melk + crème fraîche + parmesan + mozzarella).
+  Standardbytte-disiplinen dekket alle — ingen «unfixable». Bygd med generatoren på første forsøk.
+- **Allergen kun på ett nivå:** egg finnes bare i kompleks (ferske eggplater). Diett-filteret
+  viser likevel egg (union over nivåer i `relevantFilters`) — riktig: brukeren ser at det fins en
+  variant med egg, og byttet/fjerningen gjelder det nivået. Bekrefter union-designet.
+
 
 
