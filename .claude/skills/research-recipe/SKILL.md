@@ -69,6 +69,11 @@ strenger for sour/umami «for ordens skyld» (build stripper dem uansett).
 For **ikke-porsjonsretter**, sett `recipe.yieldNoun` (f.eks. `"vafler"`, `"stykker"`,
 `"pannekaker"`) – styrer skala-etikett + motorens variant-/justér-tekst. Default «porsjoner».
 
+**Søsken-retter (felles base):** deler retten grunnlag med en eksisterende/parallell rett
+(gjærdeig: boller↔kanelboller; taco: kjøtt↔fisk; ragù: lasagne↔spagetti)? Da MÅ den ha
+**eget id-sett** (ingen delte ingrediens-/bytte-id-er) og en **distinkt søkeord-/FAQ-vinkel**,
+så de ikke kannibaliserer hverandre i SERP. Sjekk `recipes-index.js` for slektninger først.
+
 ### Standardbytter – basis kokkekunst (vurder ALLTID, ikke bare ad hoc)
 Kuraterte bytter er ikke valgfri pynt. Gå **systematisk** gjennom ingrediensene og
 legg inn det opplagte kjøkkenbyttet for hver – en hjemmekokk forventer dem, og det

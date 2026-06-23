@@ -165,9 +165,9 @@ Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvol
 - [x] 2. Vafler / vaffelrøre — Hele året — Dokumentert (topp 10)
 - [x] 3. Taco (fredagstaco) — Hele året — Estimat, svært høyt — NB: kjøttdeig-fredagstaco, distinkt fra bygde `baja-fish-tacos`
 - [x] 4. Pizzadeig / pizza — Hele året — Estimat
-- [ ] 5. Lasagne — Hele året — Dokumentert (MatPrat topp)
-- [ ] 6. Kanelboller — Hele året — Estimat
-- [ ] 7. Boller (hvete/kardemomme) — Hele året — Estimat
+- [x] 5. Lasagne — Hele året — Dokumentert (MatPrat topp)
+- [x] 6. Kanelboller — Hele året — Estimat
+- [x] 7. Boller (hvete/kardemomme) — Hele året — Estimat
 - [x] 8. Kjøttkaker i brun saus — Hele året — Estimat
 - [x] 9. Sjokoladekake — Hele året — Dokumentert (melk #2)
 - [ ] 10. Eplekake — Høst-topp — Dokumentert (melk #1)

@@ -458,5 +458,15 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   kanelfyll/snurrer). Mønster bekreftet: «felles base, distinkt rett» = separate id-rom + egen
   SEO-vinkel, aldri delt data.
 
+**Retrospektiv etter pulje #2 (lasagne/boller/kanelboller):**
+- **[VERIFISERT]** Yield-noun-fiksen fra pulje #1 virket ende-til-ende: generatoren satte «Antall
+  boller»/«Antall kanelboller» + aria-labels automatisk fra `yieldNoun`, og motorens variant-/
+  justér-tekst følger med. Lukket loop bekreftet.
+- **[KONTRAKT, fikset]** «Søsken-retter på felles base» dukket opp 2. gang (boller/kanelboller
+  etter taco/baja). La en eksplisitt sjekk i `research-recipe`: del retten base med en slektning
+  → eget id-sett + distinkt SEO-vinkel, sjekk manifestet først.
+- **Ingen [MOTOR]-funn.** Generatoren bygde alle tre på første forsøk, null byggefeil. To puljer
+  på rad uten motorendring tyder på at motoren nå dekker hverdags-/bakerepertoaret godt.
+
 
 
