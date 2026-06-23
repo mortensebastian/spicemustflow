@@ -474,5 +474,11 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - Første sesong-rett i puljene (`season:"okt"`, høst). Manifest/forside håndterer det uten noe
   ekstra i bygg. Sweet-lever på sukker, yieldNoun «stykker».
 
+**focaccia (rett #25, pulje #3)** — **ingen kjernemotorendring.**
+- Naturlig vegansk/melkefri rett: kun `gluten` som allergen → diett-filteret viser bare gluten.
+  Bekrefter at `relevantFilters` skjuler alt retten ikke har. Salt-lever, yieldNoun «stykker».
+- Tredje deig-søsken (pizza/grovbrød/focaccia) — eget id-sett, distinkt vinkel (luftig
+  olivenoljebrød). Søsken-regelen i research-recipe fungerte forebyggende denne gangen.
+
 
 

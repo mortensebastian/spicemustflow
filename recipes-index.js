@@ -468,6 +468,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "focaccia", slug: "focaccia.html", status: "live",
+    shortName: "Focaccia", name: "Focaccia (italiensk olivenoljebrød)",
+    tagline: "Luftig italiensk focaccia med olivenolje, flaksalt og rosmarin.",
+    description: "Luftig italiensk focaccia med olivenolje, flaksalt og rosmarin. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Italiensk",
+    keywords: "focaccia, luftig focaccia, focaccia oppskrift",
+    recipeYield: "12 stykker", times: { prep: "PT20M", cook: "PT25M", total: "PT3H" },
+    search: "focaccia luftig olivenolje flaksalt rosmarin italiensk brød",
+    faq: [
+      { q: "Hva er hemmeligheten bak luftig focaccia?", a: "To ting: høy hydrering og god heving. En våt, klissete deig (rundt 75–80 % vann) holder på luften, og lang eller dobbel heving gir de store boblene. Ikke kna luften ut – brett deigen forsiktig, og lag fordypninger med fingertuppene rett før steking." },
+      { q: "Hvor mye olivenolje skal i focaccia?", a: "Vær raus. Ha rikelig olje i bunnen av formen (2–3 ss) så bunnen blir nesten frityrstekt og sprø, og ringle 1–2 ss over toppen før steking. Olivenoljen er focacciaens sjel – den gir både smak, sprøhet og den blanke overflaten." },
+      { q: "Kan jeg kaldheve focaccia over natten?", a: "Ja, og mange synes det gir best smak. Bruk lite gjær (2–4 g fersk) og kaldt vann, og la deigen heve tildekket i kjøleskap i 18–24 timer. Ta den ut og la den temperere og etterheve i formen før steking. Lang, kald heving gir mer smak og luftigere krumme." },
+      { q: "Hvor mye vann skal i focaccia (hydrering)?", a: "Focaccia er et brød med høy hydrering – typisk 70–80 % vann i forhold til melvekt. Jo mer vann, desto luftigere og mer åpen krumme, men deigen blir også klissete. Begynn rundt 70 % hvis du er usikker, og øk etter hvert som du blir trygg på den våte deigen." },
+      { q: "Hva er forskjellen på flaksalt og vanlig salt på focaccia?", a: "Salt i deigen smaker du gjennom hele brødet, mens flaksalt (som Maldon) strøs på toppen rett før steking og gir små, sprø saltkrystaller du kjenner i hvert jafs. Bruk fint salt i deigen og flaksalt som topping – ikke bytt dem om, da blir toppen for salt og grov." },
+      { q: "Kan jeg lage glutenfri focaccia?", a: "Ja. Bytt hvetemelet mot en glutenfri brødmiks (gjerne med psylliumfrøskall for struktur), og øk væsken litt siden glutenfritt mel suger mer. Deigen blir mer som en tykk røre enn en deig – bre den ut i formen med en våt slikkepott. Den blir saftig og luftig, men litt tettere enn med hvetemel." },
+      { q: "Hva kan jeg ha på focaccia (topping)?", a: "Klassisk er rosmarin og flaksalt, men focaccia tåler mye: cherrytomater, oliven, tynne løkringer, hvitløk, soltørket tomat, parmesan eller frisk salvie. Trykk toppingen ned i fordypningene så den ikke faller av, og hold deg til litt om gangen så brødet får heve fritt." },
+      { q: "Hvilken form bruker jeg til focaccia?", a: "En langpanne eller en lav, kantet form i metall fungerer best – cirka 30 x 20 cm til denne mengden. Olje formen godt, eller kle den med bakepapir og olje oppå. En tykk metallform gir sprøere bunn enn glass eller silikon." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
