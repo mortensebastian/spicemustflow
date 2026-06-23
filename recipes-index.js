@@ -351,6 +351,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "pizza", slug: "pizza.html", status: "live",
+    shortName: "Pizza", name: "Hjemmelaget pizza",
+    tagline: "Sprø og luftig pizzabunn fra bunnen – deig, saus og topping i tre nivåer.",
+    description: "Hjemmelaget pizza med sprø, luftig bunn. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass deig, saus og topping – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Italiensk",
+    keywords: "pizzadeig, hjemmelaget pizza, pizzadeig oppskrift, kald langheving pizza",
+    recipeYield: "2 pizzaer (4 porsjoner)", times: { prep: "PT25M", cook: "PT12M", total: "PT100M" },
+    search: "pizzadeig hjemmelaget pizza tipo 00 langheving sprø bunn",
+    faq: [
+      { q: "Hvilket mel er best til pizzadeig?", a: "Italiensk tipo 00 gir den mest elastiske deigen og en sprø, luftig bunn fordi det er finmalt og har mye gluten. Vanlig hvetemel fungerer fint til hverdags; tilsett gjerne litt durum/semolina for tygg. Til langheving lønner det seg med tipo 00 med høyt proteininnhold." },
+      { q: "Hvor lenge skal pizzadeig heve?", a: "En samme-dags deig trenger 1–2 timer i romtemperatur til den er dobbelt så stor. Vil du ha mer smak og bedre bunn, kaldhev deigen i kjøleskap i 24–48 timer. Jo lenger heving, desto mindre gjær trenger du og desto mindre gjærsmak får du." },
+      { q: "Hva er kald langheving, og hvorfor gjør man det?", a: "Kald langheving betyr at deigen hever sakte i kjøleskap (4–8 grader) i 24–72 timer i stedet for raskt i romtemperatur. Den langsomme gjæringen utvikler smak og gjør bunnen lettere å fordøye, sprøere utenpå og luftigere inni. Bruk lite gjær og la deigen romtemperere et par timer før utbaking." },
+      { q: "Hvordan får jeg sprø pizzabunn hjemme uten pizzaovn?", a: "Sett ovnen så varm den går (250–275 grader) med en stekestein eller et stekebrett snudd opp ned i ovnen i minst 30–45 minutter først. Bak deigen tynt, ikke ha for mye saus, og stek pizzaen rett på den glohete steinen i 6–10 minutter. Høy bunnvarme er nøkkelen til sprø skorpe." },
+      { q: "Kan jeg lage pizzadeig dagen før?", a: "Ja, det er den enkleste måten å forbedre pizzaen på. Elt deigen kvelden før, dekk bollen og sett den i kjøleskapet. Ta den ut 1–2 timer før du skal bake så den blir romtemperert. Kald deig som har stått over natten er både mer smakfull og lettere å kjevle ut." },
+      { q: "Hvor mye gjær skal jeg ha i pizzadeigen?", a: "Det avhenger av hevetiden. Til en rask samme-dags deig bruker du rikelig (rundt 25 g fersk gjær eller 1 pose tørrgjær per 500 g mel). Til kald langheving over 24–48 timer holder det med en brøkdel – gjerne bare 2–5 g fersk gjær – fordi deigen får god tid på seg." },
+      { q: "Hvordan lager jeg glutenfri pizzadeig?", a: "Bytt hvetemelet mot en ferdig glutenfri pizzamelmiks (de fleste inneholder bindemiddel som psyllium eller xanthan). Deigen blir mer klissete og mindre elastisk, så bre den ut med våte hender eller mellom bakepapir i stedet for å kjevle. Den trenger ikke like lang heving som hvetedeig." },
+      { q: "Hva slags ost er best på pizza?", a: "Klassisk er fersk mozzarella (gjerne fior di latte eller buffelmozzarella) som smelter mykt og mildt. Riv eller skjær den opp, og la litt vann renne av først så pizzaen ikke blir våt. Vil du ha mer smak, kan du blande inn litt revet parmesan." },
+      { q: "På hvilken temperatur skal pizza stekes?", a: "Så varmt som mulig. Hjemmeovner bør stå på maks, vanligvis 250–275 grader, med stekestein eller varmt brett. En tynn pizza er ferdig på 6–10 minutter. Pizzaovner og vedfyrte ovner går mye høyere (400–450 grader) og steker en napolitansk pizza på under to minutter." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

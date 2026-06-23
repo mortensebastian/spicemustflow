@@ -414,5 +414,15 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - Dobbel meieri-bærer (ost + rømme): begge fikk vegansk bytte, så melkefri-filteret er komplett
   — akkurat fallgruven smør+melk-lærdommen advarte mot. Standardbytte-rutinen fanget det.
 
+**pizza / pizzadeig (rett #20, pulje)** — **ingen kjernemotorendring.**
+- «Deig-tung» rett: hodeordet er `pizzadeig`, men siden dekker både deig og hel pizza. Tre nivåer
+  brukt som **teknikk-stige** (samme-dags → 1–2 t heving → kald langheving 24–48 t / tipo 00),
+  ikke bare flere ingredienser. Bekrefter at nivå-aksen tåler «samme rett, ulik teknikk/tid».
+- Salt-lever på deig+saus fungerte rett fram; dobbel meieri-bærer (mozzarella + parmesan) begge
+  med vegansk bytte.
+
+**Pulje-observasjon (alle tre):** ingen av de tre trengte en motorendring — sweet-only-lever,
+23-ingrediensers rett, og teknikk-stige ble alle absorbert av eksisterende motor. Se retrospektiv.
+
 
 

@@ -1,0 +1,184 @@
+{
+  "_comment": "Staging-objekt for hjemmelaget pizza / pizzadeig. research-recipe skriver dette; build-recipe konsumerer det. Søkevolum er relative estimater (eksakte tall er ikke gratis).",
+
+  "indexEntry": {
+    "id": "pizza",
+    "slug": "pizza.html",
+    "status": "live",
+    "shortName": "Pizza",
+    "name": "Hjemmelaget pizza",
+    "tagline": "Sprø og luftig pizzabunn fra bunnen – deig, saus og topping i tre nivåer.",
+    "description": "Hjemmelaget pizza med sprø, luftig bunn. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass deig, saus og topping – mengdene følger med.",
+    "image": null,
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Italiensk",
+    "keywords": "pizzadeig, hjemmelaget pizza, pizzadeig oppskrift, kald langheving pizza",
+    "recipeYield": "2 pizzaer (4 porsjoner)",
+    "times": { "prep": "PT25M", "cook": "PT12M", "total": "PT100M" },
+    "search": "pizzadeig hjemmelaget pizza tipo 00 langheving sprø bunn",
+    "faq": [
+      { "q": "Hvilket mel er best til pizzadeig?", "a": "Italiensk tipo 00 gir den mest elastiske deigen og en sprø, luftig bunn fordi det er finmalt og har mye gluten. Vanlig hvetemel fungerer fint til hverdags; tilsett gjerne litt durum/semolina for tygg. Til langheving lønner det seg med tipo 00 med høyt proteininnhold." },
+      { "q": "Hvor lenge skal pizzadeig heve?", "a": "En samme-dags deig trenger 1–2 timer i romtemperatur til den er dobbelt så stor. Vil du ha mer smak og bedre bunn, kaldhev deigen i kjøleskap i 24–48 timer. Jo lenger heving, desto mindre gjær trenger du og desto mindre gjærsmak får du." },
+      { "q": "Hva er kald langheving, og hvorfor gjør man det?", "a": "Kald langheving betyr at deigen hever sakte i kjøleskap (4–8 grader) i 24–72 timer i stedet for raskt i romtemperatur. Den langsomme gjæringen utvikler smak og gjør bunnen lettere å fordøye, sprøere utenpå og luftigere inni. Bruk lite gjær og la deigen romtemperere et par timer før utbaking." },
+      { "q": "Hvordan får jeg sprø pizzabunn hjemme uten pizzaovn?", "a": "Sett ovnen så varm den går (250–275 grader) med en stekestein eller et stekebrett snudd opp ned i ovnen i minst 30–45 minutter først. Bak deigen tynt, ikke ha for mye saus, og stek pizzaen rett på den glohete steinen i 6–10 minutter. Høy bunnvarme er nøkkelen til sprø skorpe." },
+      { "q": "Kan jeg lage pizzadeig dagen før?", "a": "Ja, det er den enkleste måten å forbedre pizzaen på. Elt deigen kvelden før, dekk bollen og sett den i kjøleskapet. Ta den ut 1–2 timer før du skal bake så den blir romtemperert. Kald deig som har stått over natten er både mer smakfull og lettere å kjevle ut." },
+      { "q": "Hvor mye gjær skal jeg ha i pizzadeigen?", "a": "Det avhenger av hevetiden. Til en rask samme-dags deig bruker du rikelig (rundt 25 g fersk gjær eller 1 pose tørrgjær per 500 g mel). Til kald langheving over 24–48 timer holder det med en brøkdel – gjerne bare 2–5 g fersk gjær – fordi deigen får god tid på seg." },
+      { "q": "Hvordan lager jeg glutenfri pizzadeig?", "a": "Bytt hvetemelet mot en ferdig glutenfri pizzamelmiks (de fleste inneholder bindemiddel som psyllium eller xanthan). Deigen blir mer klissete og mindre elastisk, så bre den ut med våte hender eller mellom bakepapir i stedet for å kjevle. Den trenger ikke like lang heving som hvetedeig." },
+      { "q": "Hva slags ost er best på pizza?", "a": "Klassisk er fersk mozzarella (gjerne fior di latte eller buffelmozzarella) som smelter mykt og mildt. Riv eller skjær den opp, og la litt vann renne av først så pizzaen ikke blir våt. Vil du ha mer smak, kan du blande inn litt revet parmesan." },
+      { "q": "På hvilken temperatur skal pizza stekes?", "a": "Så varmt som mulig. Hjemmeovner bør stå på maks, vanligvis 250–275 grader, med stekestein eller varmt brett. En tynn pizza er ferdig på 6–10 minutter. Pizzaovner og vedfyrte ovner går mye høyere (400–450 grader) og steker en napolitansk pizza på under to minutter." }
+    ]
+  },
+
+  "seo": {
+    "title": "Pizzadeig og hjemmelaget pizza – sprø, luftig bunn steg for steg | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Hjemmelaget pizza fra bunnen av: en sprø, luftig pizzabunn, enkel tomatsaus og fersk mozzarella – fra rask hverdagsdeig til ekte napolitansk langheving.",
+    "bodyIntro": "Hemmeligheten bak en god pizza ligger i deigen. Mel, vann, gjær og salt er alt som skal til, men det er tiden som gjør jobben: en kald langheving i kjøleskapet over ett til to døgn utvikler smak, gir en luftig kant og en bunn som blir sprø utenpå og seig inni. Har du dårlig tid, hever en samme-dags deig fint på et par timer i romtemperatur – den blir god den også.\n\nDen andre nøkkelen er varme. Hjemmeovner blir aldri like varme som en vedfyrt pizzaovn, men med en stekestein eller et glohett brett og ovnen på fullt kommer du langt. Bak bunnen tynt, vær sparsom med saus og topping, og la den glovarme steinen gi bunnen den sprøheten som skiller hjemmelaget pizza fra en bløt fredagspizza.\n\nHer får du tre nivåer – fra rask deig med enkel tomatsaus til en ekte napolitansk versjon med tipo 00 og buffelmozzarella. Juster antall pizzaer og bytt ingredienser fritt: trenger du glutenfritt eller melkefritt, regner oppskriften om mengdene for deg."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "meny.no", "rema.no", "godt.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «pizzadeig» er svært konkurranseutsatt (matprat/meny/rema/baking-bloggere eier topp-3 med karusell). Vinn long-tail først: kald langheving 24–48 t, tipo 00, sprø bunn uten pizzaovn og glutenfri/melkefri – understøttet av justerbar deig og FAQ-vinkler. Ta hodeordet over 6–12 mnd."
+  },
+
+  "recipe": {
+    "id": "pizza",
+    "bulkRoles": ["flour", "liquid"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "umami": "Mindre dybde – litt ekstra revet ost eller en skvett god olivenolje over hjelper.",
+      "sweet": "Mindre rundhet mot tomatsyren – en liten klype sukker i sausen balanserer."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Du la til mer salt fra en annen kilde – vi reduserte tilsatt salt automatisk. Smak til.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Deig og saus trenger salt for smak. Smak til."
+      }
+    },
+
+    "density": {
+      "water": 1,
+      "olive_oil": 0.92,
+      "salt_added": 1.2,
+      "sugar": 0.85,
+      "passata": 1.05,
+      "neutral_oil": 0.92,
+      "gf_flour": 0.55,
+      "dry_yeast": 0.6
+    },
+    "pieceWeight": { "garlic": 5, "fresh_yeast": 50 },
+    "unitOptions": {
+      "water": ["dl", "ml", "g"],
+      "olive_oil": ["ss", "ts", "ml", "g"],
+      "salt_added": ["ts", "g"],
+      "sugar": ["ts", "ss", "g"],
+      "passata": ["dl", "ml", "g"],
+      "neutral_oil": ["ss", "ts", "ml", "g"],
+      "dry_yeast": ["ts", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "flour", "label": "Hvetemel", "amount": 500, "unit": "g", "role": "flour", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "water", "label": "Vann (lunkent)", "amount": 3, "unit": "dl", "role": "liquid", "essential": true, "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "fresh_yeast", "label": "Fersk gjær", "amount": 25, "unit": "g", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "olive_oil", "label": "Olivenolje", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "salt_added", "label": "Salt (i deigen)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "passata", "label": "Hermetiske tomater eller passata (saus)", "amount": 2, "unit": "dl", "role": "acid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 80, "removable": false, "taste": { "sour": 2, "sweet": 1, "umami": 1 } },
+          { "id": "garlic", "label": "Hvitløk (saus)", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "oregano", "label": "Tørket oregano (saus)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "mozzarella", "label": "Revet mozzarella", "amount": 200, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "end", "sodiumPer100g": 600, "removable": true, "allergens": ["dairy"], "taste": { "umami": 1 } }
+        ],
+        "steps": [
+          "Løs opp gjæren i lunkent vann. Bland inn mel, salt og olje, og elt deigen smidig i 8–10 minutter. La den heve tildekket i romtemperatur i 1 time til dobbel størrelse.",
+          "Rør sammen passata med presset hvitløk, oregano og en klype salt til en enkel pizzasaus.",
+          "Sett ovnen på maks (250–275 grader) med et stekebrett eller en stekestein inni.",
+          "Del deigen i to, og kjevle eller dra hver del tynt ut. Bre på et tynt lag saus, og strø over revet mozzarella og ønsket topping.",
+          "Stek pizzaen på det glovarme brettet i 8–12 minutter til kanten er gyllen og bunnen sprø."
+        ]
+      },
+
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "flour", "label": "Hvetemel", "amount": 500, "unit": "g", "role": "flour", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "water", "label": "Vann (lunkent)", "amount": 3, "unit": "dl", "role": "liquid", "essential": true, "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "fresh_yeast", "label": "Fersk gjær", "amount": 15, "unit": "g", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "olive_oil", "label": "Olivenolje", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "sugar", "label": "Sukker eller honning (mater gjæren / saus)", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
+          { "id": "salt_added", "label": "Salt (i deigen)", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "passata", "label": "Passata (siktet tomat, saus)", "amount": 2.5, "unit": "dl", "role": "acid", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 80, "removable": false, "taste": { "sour": 2, "sweet": 1, "umami": 1 } },
+          { "id": "garlic", "label": "Hvitløk (saus)", "amount": 2, "unit": "stk", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "oregano", "label": "Tørket oregano (saus)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "mozzarella", "label": "Fersk mozzarella", "amount": 250, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "end", "sodiumPer100g": 350, "removable": true, "allergens": ["dairy"], "taste": { "umami": 1 } },
+          { "id": "basil", "label": "Fersk basilikum", "amount": 1, "unit": "stk", "role": "garnish", "scaling": "fixed", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Løs opp gjæren i lunkent vann med sukkeret. Bland inn mel, salt og olje, og elt deigen blank og smidig i 10 minutter. La den heve tildekket i 1–2 timer til dobbel størrelse.",
+          "Rør passata med presset hvitløk, oregano, en klype salt og en skvett olivenolje til en pizzasaus. La den gjerne stå og trekke.",
+          "Sett ovnen på maks (250–275 grader) med stekestein eller et brett snudd opp ned inni, minst 30 minutter i forveien.",
+          "Del deigen i to. Dra hver del tynt ut på melet underlag uten å kjevle kanten flat. Bre på et tynt lag saus, og legg på mozzarella i biter.",
+          "Stek pizzaen rett på den glovarme steinen i 8–10 minutter til kanten bobler og bunnen er sprø. Strø over fersk basilikum og litt olivenolje før servering."
+        ]
+      },
+
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "flour", "label": "Tipo 00 pizzamel", "amount": 500, "unit": "g", "role": "flour", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "water", "label": "Vann (kaldt)", "amount": 3.25, "unit": "dl", "role": "liquid", "essential": true, "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "fresh_yeast", "label": "Fersk gjær (lite, til langheving)", "amount": 3, "unit": "g", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "olive_oil", "label": "Ekstra virgin olivenolje", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "salt_added", "label": "Salt (i deigen)", "amount": 2, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
+          { "id": "passata", "label": "San Marzano-tomater, knust (saus)", "amount": 2.5, "unit": "dl", "role": "acid", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 50, "removable": false, "taste": { "sour": 2, "sweet": 1, "umami": 1 } },
+          { "id": "garlic", "label": "Hvitløk (saus)", "amount": 2, "unit": "stk", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "umami": 1 } },
+          { "id": "oregano", "label": "Tørket oregano (saus)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "mozzarella", "label": "Buffelmozzarella (mozzarella di bufala)", "amount": 250, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "end", "sodiumPer100g": 250, "removable": true, "allergens": ["dairy"], "taste": { "umami": 1 } },
+          { "id": "parmesan", "label": "Nyrevet parmesan", "amount": 30, "unit": "g", "role": "dairy", "scaling": "nonlinear", "addStage": "end", "sodiumPer100g": 1500, "removable": true, "allergens": ["dairy"], "taste": { "umami": 2 } },
+          { "id": "basil", "label": "Fersk basilikum", "amount": 1, "unit": "stk", "role": "garnish", "scaling": "fixed", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Løs den lille mengden gjær i kaldt vann. Bland med tipo 00-mel og salt, og elt deigen blank og elastisk i 12–15 minutter (eller bruk eltemaskin). Ha i oljen mot slutten.",
+          "Form deigen til en glatt ball, dekk bollen og kaldhev i kjøleskap i 24–48 timer. Del den i to emner halvveis hvis du vil, og la dem heve videre.",
+          "Ta deigen ut 2 timer før steking så den romtempereres. Knus tomatene med en klype salt, presset hvitløk og oregano til en rå saus.",
+          "Varm ovnen på fullt (275 grader) med stekestein i minst 45 minutter, eller bruk pizzaovn på 400–450 grader.",
+          "Strekk hvert emne forsiktig ut for hånd uten å klemme luften ut av kanten. Bre på et tynt lag saus, og legg på avrent buffelmozzarella i biter.",
+          "Stek pizzaen i 6–8 minutter (eller 1–2 minutter i pizzaovn) til kanten er oppblåst og flekkete. Strø over parmesan, fersk basilikum og en skvett olivenolje før servering."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "flour": [
+        { "id": "gf_flour", "label": "Glutenfri pizzamelmiks", "amount": 500, "unit": "g", "tradition": "non-traditional", "note": "Inneholder som regel bindemiddel; deigen blir klissete – bre den ut med våte hender eller mellom bakepapir." }
+      ],
+      "fresh_yeast": [
+        { "id": "dry_yeast", "label": "Tørrgjær", "amount": 1, "unit": "ts", "tradition": "traditional", "note": "Bland tørrgjær rett i melet. 1 ts tørrgjær ≈ 12–15 g fersk gjær; bruk mindre til langheving." }
+      ],
+      "olive_oil": [
+        { "id": "neutral_oil", "label": "Nøytral olje (raps/solsikke)", "amount": 1, "unit": "ss", "note": "Nøytral smak; fungerer like godt i deigen." }
+      ],
+      "mozzarella": [
+        { "id": "vegan_cheese", "label": "Vegansk pizzaost (melkefri)", "amount": 200, "unit": "g", "sodiumPer100g": 600, "tradition": "non-traditional", "note": "Melkefri; velg en type beregnet på smelting." }
+      ],
+      "parmesan": [
+        { "id": "vegan_parmesan", "label": "Vegansk parmesan (melkefri)", "amount": 30, "unit": "g", "sodiumPer100g": 700, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Melkefri; salt justeres automatisk." }
+      ]
+    }
+  }
+}
