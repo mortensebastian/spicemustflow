@@ -1,0 +1,212 @@
+{
+  "_comment": "Staging-objekt for eplekake (norsk eplekake). Bygd etter research-recipe-kontrakten. Sweet-lever (sugar) som vafler. yieldNoun: stykker (kake). Søkevolum/konkurranse er estimater fra norsk Google-SERP (matprat/tine/meny/kiwi eier hodeordet) – merket som estimat i serp.strategy.",
+
+  "indexEntry": {
+    "id": "eplekake",
+    "slug": "eplekake.html",
+    "status": "live",
+    "shortName": "Eplekake",
+    "name": "Eplekake (saftig norsk eplekake)",
+    "tagline": "Saftig norsk eplekake med kanel – fra rask rørekake til brunet smør og mandel.",
+    "description": "Saftig norsk eplekake med kanel og epler. Velg nivå (enkel/medium/kompleks), juster antall stykker og tilpass ingrediensene – også glutenfritt og melkefritt.",
+    "image": null,
+    "category": ["baking"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Baking",
+    "cuisine": "Norsk",
+    "keywords": "eplekake, saftig eplekake, norsk eplekake, eplekake med kanel",
+    "recipeYield": "12 stykker",
+    "times": { "prep": "PT20M", "cook": "PT40M", "total": "PT60M" },
+    "search": "eplekake saftig norsk eplekake kanel epler rørekake glutenfri melkefri høst",
+    "season": "okt",
+    "faq": [
+      { "q": "Hvilke epler er best til eplekake?", "a": "Litt syrlige, faste epler gir best resultat – de holder formen i steken og balanserer søtheten i røren. Norske høstepler som Aroma, Discovery, Summerred eller en god matpapir-syrlig variant er perfekte. Vil du ha to nyanser i kaka, bland gjerne et grønt (syrlig) og et rødt eple. Unngå veldig melne epler, som koker helt ut og gjør kaka våt." },
+      { "q": "Hvordan får jeg eplekaka saftig?", "a": "Saftigheten kommer av nok smør (eller olje), at du ikke baker kaka for lenge, og av eplene selv som avgir fukt under steking. Pisk smør og sukker luftig, ikke overstek – ta kaka ut når en kakepinne kommer ut med noen fuktige smuler – og legg gjerne rikelig med epler. En klype salt og litt vaniljesukker løfter også smaken." },
+      { "q": "Hvilken form bruker jeg til eplekake?", "a": "En rund springform på 22–24 cm eller en liten langpanne på ca. 20 x 30 cm fungerer begge fint. Springform gir en høyere, mer kakeaktig form; langpanne gir flatere, raskere stekte stykker. Kle bunnen med bakepapir og smør kanten, så slipper kaka lett." },
+      { "q": "Skal eplene oppi røren eller på toppen?", "a": "Begge deler er vanlig. Vender du epleterningene inn i røren, blir hele kaka saftig og fuktig. Legger du eplebåter i et pent mønster på toppen og strør kanelsukker over, får du en penere kake med karamellisert overflate. I oppskriften vår gjør enkel-nivået det raskt med epler på toppen, mens kompleks-nivået legger eplebåter i mønster." },
+      { "q": "Kan jeg lage glutenfri eplekake?", "a": "Ja. Bytt hvetemelet mot en glutenfri melblanding med bindemiddel. Glutenfri røre blir gjerne litt fastere, så la den hvile et par minutter og spe eventuelt med en skvett ekstra melk. Resten av oppskriften er den samme, og kaka blir like saftig av eplene." },
+      { "q": "Kan jeg lage melkefri eplekake?", "a": "Ja. Bytt melken mot havredrikk eller annen plantedrikk, og smøret mot margarin eller nøytral olje. Olje gir faktisk en ekstra saftig kake. Da blir hele kaka melkefri uten at den mister smak eller konsistens." },
+      { "q": "Hvor mye kanel skal i eplekake?", "a": "Kanel og eple hører sammen. Regn cirka 1 ts malt kanel i selve røren til en kake på 12 stykker, og strø gjerne litt kanelsukker (kanel rørt i sukker) over toppen før steking for en søt, krydret skorpe. Liker du mye kanel, kan du trygt øke til 1,5–2 ts – juster etter smak." },
+      { "q": "Kan jeg fryse eplekake?", "a": "Ja, eplekake fryser godt. Avkjøl den helt, pakk den godt inn eller legg den i tett boks, og frys i opptil 3 måneder. Tin i romtemperatur, og varm gjerne stykkene litt i ovnen så de blir friske igjen. Du kan også fryse den i porsjonsstykker." },
+      { "q": "Hva serverer man til eplekake?", "a": "Klassisk er en kule vaniljeis, en klatt lettpisket krem eller en skvett vaniljesaus ved siden av den lune kaka. Gresk yoghurt eller créme fraîche passer også fint hvis du vil ha noe litt syrlig som balanserer søtheten. Et dryss melis på toppen gjør den ekstra pen." }
+    ]
+  },
+
+  "seo": {
+    "title": "Eplekake – saftig norsk eplekake med kanel steg for steg | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Den norske høstkaka over alle: en saftig eplekake med kanel, der eplene gjør halve jobben med å holde kaka fuktig.",
+    "bodyIntro": "Eplekake er noe av det mest takknemlige du kan bake. Røra er en enkel rørekake av smør, sukker, egg og mel, og det er eplene som gjør den til en eplekake – de avgir fukt i ovnen og gjør kaka saftig nesten uansett hvor lett hånd du har. Velger du litt syrlige, faste epler, får du en fin kontrast til søtheten i røren, og en god dose kanel binder det hele sammen til den umiskjennelige høstsmaken.\n\nNøkkelen til en virkelig saftig eplekake er enkel: nok fett, rikelig med epler, og at du ikke baker kaka for lenge. Tar du den ut når kakepinnen har noen fuktige smuler igjen, ettersteker restvarmen den ferdig uten å tørke den ut. Vil du gå et hakk videre, gir brunet smør en nøtteaktig dybde, og noen mandler i bunnen et lite ekstra preg.\n\nHer får du tre nivåer i samme oppskrift: en rask hverdagskake med epler på toppen, en fyldigere fasit med kanel og ordentlig smørmengde, og en forseggjort versjon med brunet smør, mandel og eplebåter lagt i mønster. Juster antall stykker, bytt til glutenfritt eller melkefritt om du trenger det, og mengdene regnes om automatisk."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "tine.no", "meny.no", "kiwi.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «eplekake» er hardt og eies av matprat/tine/meny/kiwi med oppskriftskarusell (volum/konkurranse er estimat fra SERP, ikke målt). Angrip long-tail: «saftig eplekake» + tre nivåer + «glutenfri/melkefri eplekake» + høstsesongen (epler modnes sep–okt), og dekk PAA-vinkler (beste epler, hvilken form, fryse, kanelmengde, vaniljesaus/iskrem) via FAQ. Ta hodeordet over 6–12 mnd."
+  },
+
+  "recipe": {
+    "id": "eplekake",
+    "yieldNoun": "stykker",
+    "bulkRoles": ["bulk", "liquid", "binder", "fruit"],
+    "levers": [{ "axis": "sweet", "id": "sugar" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "sweet": "Kaka blir mindre søt – strø gjerne litt melis eller kanelsukker på toppen, eller server med en søt vaniljesaus."
+    },
+    "leverMessages": {
+      "sweet": {
+        "down": "Røra ble søtere – vi reduserte sukkeret litt for å holde balansen. Smak til.",
+        "up": "Du tok bort noe sødme – vi økte sukkeret litt igjen. Smak til."
+      }
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 12,
+        "ingredients": [
+          { "id": "flour", "label": "Hvetemel", "amount": 3, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "sugar", "label": "Sukker", "amount": 2, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "sweet": 3 } },
+          { "id": "egg", "label": "Egg", "amount": 2, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "butter", "label": "Smeltet smør", "amount": 100, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "note": "Avkjøl litt før det røres i.", "allergens": ["dairy"] },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "baking_powder", "label": "Bakepulver", "amount": 2, "unit": "ts", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false, "note": "Hevemiddel – skaleres med melet." },
+          { "id": "apples", "label": "Epler (skrelt, i båter)", "amount": 3, "unit": "stk", "role": "fruit", "scaling": "linear", "addStage": "early", "removable": false, "note": "Litt syrlige, faste epler – legges på toppen." },
+          { "id": "cinnamon_sugar", "label": "Kanelsukker (til topping)", "amount": 1, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "note": "Kanel rørt i sukker; strøs over toppen.", "taste": { "sweet": 1 } },
+          { "id": "salt", "label": "Salt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false }
+        ],
+        "steps": [
+          "Sett ovnen på 175 °C og kle en springform (22–24 cm) med bakepapir.",
+          "Rør sammen smeltet smør og sukker, og pisk inn eggene.",
+          "Vend inn mel, bakepulver og salt sammen med melken til en jevn røre.",
+          "Hell røra i formen, legg eplebåtene på toppen og strø over kanelsukker.",
+          "Stek midt i ovnen ca. 35–40 minutter til en kakepinne kommer ut med noen fuktige smuler. Avkjøl litt før servering."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 12,
+        "ingredients": [
+          { "id": "flour", "label": "Hvetemel", "amount": 3, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "sugar", "label": "Sukker", "amount": 2, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "sweet": 3 } },
+          { "id": "egg", "label": "Egg", "amount": 3, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "butter", "label": "Smeltet smør", "amount": 150, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "note": "Ordentlig smørmengde gir saftig kake.", "allergens": ["dairy"] },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "baking_powder", "label": "Bakepulver", "amount": 2, "unit": "ts", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "cinnamon", "label": "Malt kanel", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 1 }, "note": "Kanel og eple hører sammen." },
+          { "id": "vanilla_sugar", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "apples", "label": "Epler (skrelt, i terninger og båter)", "amount": 3, "unit": "stk", "role": "fruit", "scaling": "linear", "addStage": "early", "removable": false, "note": "Vend halvparten inn i røra, legg resten i båter på toppen." },
+          { "id": "cinnamon_sugar", "label": "Kanelsukker (til topping)", "amount": 1, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "note": "Strøs over toppen før steking.", "taste": { "sweet": 1 } },
+          { "id": "salt", "label": "Salt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false }
+        ],
+        "steps": [
+          "Sett ovnen på 175 °C og kle en springform (22–24 cm) med bakepapir.",
+          "Rør smeltet smør og sukker sammen, og pisk inn eggene til en luftig røre.",
+          "Bland mel, bakepulver, kanel, vaniljesukker og salt, og vend det inn vekselvis med melken.",
+          "Vend halvparten av eplene (i terninger) inn i røra, hell i formen, og legg resten som båter på toppen. Strø over kanelsukker.",
+          "Stek midt i ovnen ca. 40 minutter til kakepinnen har noen fuktige smuler. Avkjøl litt og server gjerne lun med vaniljeis eller krem."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 12,
+        "ingredients": [
+          { "id": "flour", "label": "Hvetemel", "amount": 3, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "sugar", "label": "Sukker", "amount": 2, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "sweet": 3 } },
+          { "id": "egg", "label": "Egg", "amount": 3, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "brown_butter", "label": "Brunet smør", "amount": 150, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "note": "Brun smøret til det dufter nøtteaktig, og avkjøl litt før det røres i.", "allergens": ["dairy"] },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "baking_powder", "label": "Bakepulver", "amount": 2, "unit": "ts", "role": "leavening", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "almond_flour", "label": "Malte mandler", "amount": 0.5, "unit": "dl", "role": "bulk", "scaling": "linear", "addStage": "early", "removable": true, "note": "Gir fuktig, fyldig bunn med mandelpreg.", "allergens": ["nuts"] },
+          { "id": "cinnamon", "label": "Malt kanel", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "vanilla_sugar", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
+          { "id": "apples", "label": "Epler (skrelt, i tynne båter)", "amount": 4, "unit": "stk", "role": "fruit", "scaling": "linear", "addStage": "early", "removable": false, "note": "Legges i et pent vifteformet mønster på toppen." },
+          { "id": "cinnamon_sugar", "label": "Kanelsukker (til topping)", "amount": 1.5, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "note": "Strøs over eplemønsteret for karamellisert overflate.", "taste": { "sweet": 1 } },
+          { "id": "salt", "label": "Salt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false }
+        ],
+        "steps": [
+          "Brun smøret til det er gyllent og nøtteaktig, og avkjøl litt. Sett ovnen på 170 °C og kle en springform (22–24 cm) med bakepapir.",
+          "Pisk egg og sukker luftig, og rør inn det brunede smøret.",
+          "Bland mel, malte mandler, bakepulver, kanel, vaniljesukker og salt, og vend det inn vekselvis med melken til en jevn røre.",
+          "Hell røra i formen, og legg eplebåtene tett i et vifteformet mønster på toppen. Strø rikelig kanelsukker over.",
+          "Stek midt i ovnen ca. 40–45 minutter til kakepinnen har noen fuktige smuler. Avkjøl litt, dryss på melis, og server lun med vaniljesaus eller iskrem."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "flour": [
+        { "id": "gf_flour", "label": "Glutenfri melblanding", "amount": 3, "unit": "dl", "note": "Bruk en blanding med bindemiddel; la røra hvile litt og spe med en skvett mer melk." }
+      ],
+      "milk": [
+        { "id": "oat_milk", "label": "Havredrikk (melkefri)", "amount": 1, "unit": "dl", "note": "Nøytral, melkefri base." },
+        { "id": "lactosefree_milk", "label": "Laktosefri melk", "amount": 1, "unit": "dl", "allergens": ["dairy"] }
+      ],
+      "butter": [
+        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 100, "unit": "g", "note": "Smelt som smør; melkefritt." },
+        { "id": "oil", "label": "Nøytral olje (melkefri)", "amount": 1, "unit": "dl", "note": "Raps-/solsikkeolje; gir ekstra saftig kake." }
+      ],
+      "brown_butter": [
+        { "id": "margarine_brown", "label": "Margarin (melkefri)", "amount": 150, "unit": "g", "note": "Brunes ikke som smør, men gir fett; melkefritt." },
+        { "id": "oil_complex", "label": "Nøytral olje (melkefri)", "amount": 1.5, "unit": "dl", "note": "Melkefri base for kompleks-røra; gir saftig kake." }
+      ],
+      "egg": [
+        { "id": "extra_baking_powder", "label": "Ekstra bakepulver + litt mer melk (eggfri)", "amount": 1, "unit": "ts", "note": "Per egg: 0,5 ts ekstra bakepulver og litt mer melk/plantedrikk for binding og luft." }
+      ]
+    },
+
+    "density": {
+      "flour": 0.55,
+      "gf_flour": 0.55,
+      "almond_flour": 0.45,
+      "sugar": 0.85,
+      "milk": 1.03,
+      "oat_milk": 1.03,
+      "lactosefree_milk": 1.03,
+      "butter": 0.95,
+      "brown_butter": 0.95,
+      "margarine": 0.95,
+      "margarine_brown": 0.95,
+      "oil": 0.92,
+      "oil_complex": 0.92,
+      "baking_powder": 0.9,
+      "extra_baking_powder": 0.9,
+      "cinnamon": 0.5,
+      "vanilla_sugar": 0.7,
+      "cinnamon_sugar": 0.85,
+      "salt": 1.2
+    },
+    "pieceWeight": {
+      "egg": 55,
+      "apples": 150
+    },
+    "unitOptions": {
+      "flour": ["dl", "ml", "g"],
+      "gf_flour": ["dl", "ml", "g"],
+      "almond_flour": ["dl", "ml", "g"],
+      "sugar": ["dl", "ml", "g"],
+      "milk": ["dl", "ml", "g"],
+      "oat_milk": ["dl", "ml", "g"],
+      "lactosefree_milk": ["dl", "ml", "g"],
+      "butter": ["g"],
+      "brown_butter": ["g"],
+      "margarine": ["g"],
+      "margarine_brown": ["g"],
+      "oil": ["dl", "ml", "g"],
+      "oil_complex": ["dl", "ml", "g"],
+      "baking_powder": ["ts", "g"],
+      "extra_baking_powder": ["ts", "g"],
+      "cinnamon": ["ts", "g"],
+      "vanilla_sugar": ["ts", "g"],
+      "cinnamon_sugar": ["ss", "ts", "g"],
+      "salt": ["ts", "g"]
+    }
+  }
+}

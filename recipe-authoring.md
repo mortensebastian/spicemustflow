@@ -468,5 +468,11 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - **Ingen [MOTOR]-funn.** Generatoren bygde alle tre på første forsøk, null byggefeil. To puljer
   på rad uten motorendring tyder på at motoren nå dekker hverdags-/bakerepertoaret godt.
 
+**eplekake (rett #24, pulje #3)** — **ingen kjernemotorendring.**
+- Første rett med `nuts`-allergen (mandel) — og igjen kun på ett nivå (kompleks), som lasagnes egg.
+  Union-filteret viser nøtter med en gang; byttet (mandel→mer hvetemel) gjelder kompleks. OK.
+- Første sesong-rett i puljene (`season:"okt"`, høst). Manifest/forside håndterer det uten noe
+  ekstra i bygg. Sweet-lever på sukker, yieldNoun «stykker».
+
 
 

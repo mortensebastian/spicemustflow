@@ -444,6 +444,30 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "eplekake", slug: "eplekake.html", status: "live",
+    shortName: "Eplekake", name: "Eplekake (saftig norsk eplekake)",
+    tagline: "Saftig norsk eplekake med kanel – fra rask rørekake til brunet smør og mandel.",
+    description: "Saftig norsk eplekake med kanel og epler. Velg nivå (enkel/medium/kompleks), juster antall stykker og tilpass ingrediensene – også glutenfritt og melkefritt.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    season: "okt",
+    keywords: "eplekake, saftig eplekake, norsk eplekake, eplekake med kanel",
+    recipeYield: "12 stykker", times: { prep: "PT20M", cook: "PT40M", total: "PT60M" },
+    search: "eplekake saftig norsk eplekake kanel epler rørekake glutenfri melkefri høst",
+    faq: [
+      { q: "Hvilke epler er best til eplekake?", a: "Litt syrlige, faste epler gir best resultat – de holder formen i steken og balanserer søtheten i røren. Norske høstepler som Aroma, Discovery, Summerred eller en god matpapir-syrlig variant er perfekte. Vil du ha to nyanser i kaka, bland gjerne et grønt (syrlig) og et rødt eple. Unngå veldig melne epler, som koker helt ut og gjør kaka våt." },
+      { q: "Hvordan får jeg eplekaka saftig?", a: "Saftigheten kommer av nok smør (eller olje), at du ikke baker kaka for lenge, og av eplene selv som avgir fukt under steking. Pisk smør og sukker luftig, ikke overstek – ta kaka ut når en kakepinne kommer ut med noen fuktige smuler – og legg gjerne rikelig med epler. En klype salt og litt vaniljesukker løfter også smaken." },
+      { q: "Hvilken form bruker jeg til eplekake?", a: "En rund springform på 22–24 cm eller en liten langpanne på ca. 20 x 30 cm fungerer begge fint. Springform gir en høyere, mer kakeaktig form; langpanne gir flatere, raskere stekte stykker. Kle bunnen med bakepapir og smør kanten, så slipper kaka lett." },
+      { q: "Skal eplene oppi røren eller på toppen?", a: "Begge deler er vanlig. Vender du epleterningene inn i røren, blir hele kaka saftig og fuktig. Legger du eplebåter i et pent mønster på toppen og strør kanelsukker over, får du en penere kake med karamellisert overflate. I oppskriften vår gjør enkel-nivået det raskt med epler på toppen, mens kompleks-nivået legger eplebåter i mønster." },
+      { q: "Kan jeg lage glutenfri eplekake?", a: "Ja. Bytt hvetemelet mot en glutenfri melblanding med bindemiddel. Glutenfri røre blir gjerne litt fastere, så la den hvile et par minutter og spe eventuelt med en skvett ekstra melk. Resten av oppskriften er den samme, og kaka blir like saftig av eplene." },
+      { q: "Kan jeg lage melkefri eplekake?", a: "Ja. Bytt melken mot havredrikk eller annen plantedrikk, og smøret mot margarin eller nøytral olje. Olje gir faktisk en ekstra saftig kake. Da blir hele kaka melkefri uten at den mister smak eller konsistens." },
+      { q: "Hvor mye kanel skal i eplekake?", a: "Kanel og eple hører sammen. Regn cirka 1 ts malt kanel i selve røren til en kake på 12 stykker, og strø gjerne litt kanelsukker (kanel rørt i sukker) over toppen før steking for en søt, krydret skorpe. Liker du mye kanel, kan du trygt øke til 1,5–2 ts – juster etter smak." },
+      { q: "Kan jeg fryse eplekake?", a: "Ja, eplekake fryser godt. Avkjøl den helt, pakk den godt inn eller legg den i tett boks, og frys i opptil 3 måneder. Tin i romtemperatur, og varm gjerne stykkene litt i ovnen så de blir friske igjen. Du kan også fryse den i porsjonsstykker." },
+      { q: "Hva serverer man til eplekake?", a: "Klassisk er en kule vaniljeis, en klatt lettpisket krem eller en skvett vaniljesaus ved siden av den lune kaka. Gresk yoghurt eller créme fraîche passer også fint hvis du vil ha noe litt syrlig som balanserer søtheten. Et dryss melis på toppen gjør den ekstra pen." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
