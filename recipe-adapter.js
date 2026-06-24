@@ -5,7 +5,7 @@
 
    window.RECIPE = {
      recipes: { enkel, medium, kompleks },   // hver: { label, servings, ingredients[], steps[] }
-     swapOptions: { <slotId>: [ ...bytter ] },
+     swapOptions: { <slotId>: [ ...bytter ] },  // bytter (og ingredienser) kan ha cost: 1|2|3 (rimelig/middels/dyr)
      servedAcid: { tip } | null,             // stående sitron-tips (retter uten syre-ingrediens)
      density:     { <id>: gPerMl },          // for g-omregning
      pieceWeight: { <id>: gramPerStk },      // for «juster opp de andre»
@@ -18,8 +18,9 @@
    }
 
    Funksjoner: kompleksitetsvelger, porsjoner, inline bytt/fjern, «juster opp de
-   andre» (maintain yield, samme rolle først), og automatisk smaksbalanse der
-   hver lever (salt/sur/søt) løses mot rettens mål. Omregning gjenbrukes fra
+   andre» (maintain yield, samme rolle først), budsjett (auto-bytt til billigste
+   passende, kun enkel/medium), og automatisk smaksbalanse der hver lever
+   (salt/sur/søt) løses mot rettens mål. Omregning gjenbrukes fra
    recipe.js (window.RecipeUnits) og balansen fra recipe-balance.js. */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -53,8 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
   let openSlot = null;
   let precise = false;
   const activeAllergens = new Set();
+  let budgetMode = false;            // «Budsjett (rimeligere)» – kun enkel/medium
   const pinned = {};                 // slots brukeren har tatt eksplisitt kontroll over
   let dietActions = { swapped: [], removed: [], unfixable: [] };
+  let budgetActions = { swapped: [] };
 
   function activeRecipe() { return R.recipes[complexity]; }
   function baseServings() { return activeRecipe().servings; }
@@ -101,6 +104,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return ok;
     });
   }
+
+  // Grov kostnads-tier: 1 = rimelig, 2 = middels (standard når uoppgitt), 3 = dyr.
+  // Budsjettmodus bruker dette til å velge billigste passende bytte per ingrediens.
+  function costOf(ing) {
+    var c = ing && ing.cost;
+    return (c === 1 || c === 2 || c === 3) ? c : 2;
+  }
+  function cheapestSwap(list) {
+    if (!list || !list.length) return null;
+    return list.reduce(function (best, o) { return costOf(o) < costOf(best) ? o : best; });
+  }
+  // Budsjett gjelder bare enkel/medium – kompleks er «autentisk», ikke budsjett.
+  function budgetActive() { return budgetMode && complexity !== 'kompleks'; }
 
   function strengthOf(ing, axis) {
     return axis === 'salt' ? (ing.sodiumPer100g || 0) : ((ing.taste && ing.taste[axis]) || 0);
@@ -393,6 +409,12 @@ document.addEventListener('DOMContentLoaded', function () {
         'denne retten passer ikke ved ' + why.toLowerCase() + '-allergi.', strong: true });
     });
 
+    if (budgetActions.swapped.length) {
+      msgs.push({ text: 'Rimeligere valg: ' + budgetActions.swapped.map(function (s) {
+        return s.from + ' → ' + s.to;
+      }).join(', ') + '.', strong: false });
+    }
+
     const lm = R.leverMessages || {};
     Object.keys(balance.levers).forEach(function (id) {
       const lev = balance.levers[id];
@@ -412,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function hasChanges() { return Object.keys(pinned).length > 0; }
 
   function render() {
-    applyDietAdaptations();
+    applyAutoAdaptations();
     const comp = computeCompensation();
     const balance = computeBalance(comp);
     renderIngredients(comp, balance);
@@ -454,28 +476,39 @@ document.addEventListener('DOMContentLoaded', function () {
   // første allergivennlige alternativ, ellers fjern + kompenser, ellers la den
   // stå flagget (essensiell, ingen erstatning). Pinnede slots (brukerens egne
   // valg) røres ikke.
-  function applyDietAdaptations() {
+  function applyAutoAdaptations() {
     dietActions = { swapped: [], removed: [], unfixable: [] };
-    // Rydd vekk forrige rundes filter-drevne (ikke-pinnede) endringer.
+    budgetActions = { swapped: [] };
+    // Rydd vekk forrige rundes filter-/budsjett-drevne (ikke-pinnede) endringer.
     Object.keys(swaps).forEach(function (id) { if (!pinned[id]) delete swaps[id]; });
     Object.keys(removed).forEach(function (id) {
       if (!pinned[id]) { delete removed[id]; delete compensate[id]; }
     });
-    if (activeAllergens.size === 0) return;
+    if (activeAllergens.size === 0 && !budgetActive()) return;
 
     activeRecipe().ingredients.forEach(function (base) {
       if (pinned[base.id]) return;                  // brukeren styrer denne selv
-      if (violations(base).length === 0) return;
-      var compat = compatibleSwaps(base.id);
-      if (compat.length) {
-        swaps[base.id] = compat[0];
-        dietActions.swapped.push({ from: base.label, to: compat[0].label });
-      } else if (base.removable) {
-        removed[base.id] = true;
-        compensate[base.id] = true;
-        dietActions.removed.push(base.label);
-      } else {
-        dietActions.unfixable.push({ label: base.label, why: violations(base) });
+      var compat = compatibleSwaps(base.id);        // allergivennlige bytter
+      if (violations(base).length > 0) {
+        // Allergi tvinger en endring: billigste passende ved budsjett, ellers første.
+        if (compat.length) {
+          var pick = budgetActive() ? cheapestSwap(compat) : compat[0];
+          swaps[base.id] = pick;
+          dietActions.swapped.push({ from: base.label, to: pick.label });
+        } else if (base.removable) {
+          removed[base.id] = true;
+          compensate[base.id] = true;
+          dietActions.removed.push(base.label);
+        } else {
+          dietActions.unfixable.push({ label: base.label, why: violations(base) });
+        }
+      } else if (budgetActive()) {
+        // Ingen allergi-konflikt, men kanskje et rimeligere alternativ enn standard.
+        var cheaper = cheapestSwap(compat.filter(function (o) { return costOf(o) < costOf(base); }));
+        if (cheaper) {
+          swaps[base.id] = cheaper;
+          budgetActions.swapped.push({ from: base.label, to: cheaper.label });
+        }
       }
     });
   }
@@ -522,6 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (scaleInput) scaleInput.value = baseServings();
     buildComplexitySelector();
     buildPrecisionToggle();
+    buildBudgetToggle();
     render();
   }
 
@@ -558,6 +592,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ----- "Budsjett" (rimeligere) - speilbilde av «Nøyaktig», kun enkel/medium ----- */
+  function recipeHasBudgetOption() {
+    return activeRecipe().ingredients.some(function (base) {
+      return compatibleSwaps(base.id).some(function (o) { return costOf(o) < costOf(base); });
+    });
+  }
+  function buildBudgetToggle() {
+    const host = document.getElementById('budget-toggle');
+    if (!host) return;
+    // Kun enkel/medium, og bare når retten faktisk har et rimeligere alternativ
+    // (ellers ville knappen ikke gjort noe).
+    if (complexity === 'kompleks' || !recipeHasBudgetOption()) {
+      host.innerHTML = '';
+      return;
+    }
+    host.innerHTML = '<label class="customize-switch"><input type="checkbox" id="budget-checkbox"' +
+      (budgetMode ? ' checked' : '') + '> Budsjett (rimeligere)</label>';
+    document.getElementById('budget-checkbox').addEventListener('change', function (e) {
+      budgetMode = e.target.checked;
+      render();
+    });
+  }
+
   /* ----- Hendelser ----- */
   const selectorHost = document.getElementById('complexity-selector');
   if (selectorHost) {
@@ -576,6 +633,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!cb) return;
       const id = cb.dataset.filterId;
       if (cb.checked) activeAllergens.add(id); else activeAllergens.delete(id);
+      buildBudgetToggle();
       render();
     });
   }
@@ -673,6 +731,7 @@ document.addEventListener('DOMContentLoaded', function () {
       swaps: JSON.parse(JSON.stringify(swaps)),
       removed: JSON.parse(JSON.stringify(removed)),
       allergens: Array.from(activeAllergens),
+      budget: budgetMode,
       savedAt: new Date().toLocaleDateString('nb-NO')
     };
     var arr = loadSaved();
@@ -686,6 +745,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!entry) return;
     clearCustomizations();
     activeAllergens.clear();
+    budgetMode = !!entry.budget;
     complexity = entry.complexity;
     if (scaleInput) scaleInput.value = entry.portions;
     var s = entry.swaps || {};
@@ -695,6 +755,7 @@ document.addEventListener('DOMContentLoaded', function () {
     (entry.allergens || []).forEach(function (a) { activeAllergens.add(a); });
     buildComplexitySelector();
     buildPrecisionToggle();
+    buildBudgetToggle();
     buildDietFilter();
     buildSavedVariants();
     render();
@@ -741,6 +802,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ----- Start ----- */
   buildComplexitySelector();
   buildPrecisionToggle();
+  buildBudgetToggle();
   buildDietFilter();
   buildSavedVariants();
   buildRecipeNotes();

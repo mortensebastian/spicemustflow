@@ -65,6 +65,17 @@ window.RECIPE = {
 | `onRemove.tip` | tekst som vises inline når en (typisk syre-)ingrediens fjernes |
 | `isPrimaryAcid` | marker rettens innebygde syre |
 | `tradition` | `traditional`/`regional`/`non-traditional` (ærlig merking, vises på bytter) |
+| `cost` | valgfri kostnads-tier: `1` rimelig · `2` middels (standard når uoppgitt) · `3` dyr |
+
+## Budsjett (rimeligere)
+- «Budsjett»-bryteren vises **kun på enkel/medium** (speilbilde av «Nøyaktig», som
+  bare er på kompleks) – og kun når retten faktisk har et rimeligere bytte.
+- Når den er på, byttes hver ingrediens til det **billigste passende** alternativet
+  i `swapOptions` (cost lavere enn ingrediensens egen). Resten rebalanseres som vanlig.
+- Sett `cost: 3` på de dyre ankrene (f.eks. safran, scampi) og `cost: 1` på det
+  billige byttet. Lar du `cost` stå tomt, regnes alt som middels (`2`) og bryteren
+  dukker ikke opp. Komponerer med allergifilteret: er begge på, velges billigste
+  *allergivennlige* bytte.
 
 ## Levere (auto-balanse)
 - En **lever** er en ingrediens som regulerer én grunnsmak. Motoren løser hvor mye
@@ -234,7 +245,8 @@ som skal støtte dette: gå gjennom `kompleks.ingredients`, og for hver med enhe
 **Dette gjelder også hver `swapOptions`-id med volum-enhet** – motoren slår opp på
 `effId` (bytte-id-en), så et bytte uten `density`/`unitOptions` mister enhetsvalg
 og gram-visning idet det velges.
-Husk også `<div id="precision-toggle"></div>` i `.recipe-customize` i HTML-en.
+Husk også `<div id="budget-toggle"></div>` og `<div id="precision-toggle"></div>` i
+`.recipe-customize` i HTML-en (byggemalen legger inn begge automatisk).
 
 Utrullingen til de andre fire: bare data + HTML, ingen motorendring. Nye `g`:
 paella `stock`/`fish_stock`/`veg_stock`; fiskesuppe `stock`/`wine`/`olive_oil`/
