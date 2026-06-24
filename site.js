@@ -211,30 +211,41 @@
     intros.slice(1).forEach(function (p) { p.parentNode.removeChild(p); });
     anchor.textContent = teaser.join(" ");
 
+    // «Les mer» legges inline til slutt i teaser-avsnittet.
+    var lesBtn = document.createElement("button");
+    lesBtn.type = "button";
+    lesBtn.className = "recipe-intro-toggle";
+    lesBtn.textContent = "Les mer";
+    anchor.appendChild(lesBtn);
+
+    // Resten av introen i en skjult beholder rett etter teaser-avsnittet.
     var more = document.createElement("div");
     more.className = "recipe-intro-more";
     more.hidden = true;
-    rest.forEach(function (t) {
+    rest.forEach(function (t, i) {
       var p = document.createElement("p");
       p.className = "recipe-intro";
       p.textContent = t;
+      // «Vis mindre» legges inline til slutt i det siste avsnittet.
+      if (i === rest.length - 1) {
+        var visBtn = document.createElement("button");
+        visBtn.type = "button";
+        visBtn.className = "recipe-intro-toggle";
+        visBtn.textContent = "Vis mindre";
+        visBtn.addEventListener("click", function () {
+          more.hidden = true;
+          lesBtn.hidden = false;
+        });
+        p.appendChild(visBtn);
+      }
       more.appendChild(p);
     });
 
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "recipe-intro-toggle";
-    btn.setAttribute("aria-expanded", "false");
-    btn.textContent = "Les mer";
-
     anchor.parentNode.insertBefore(more, anchor.nextSibling);
-    anchor.parentNode.insertBefore(btn, more);
 
-    btn.addEventListener("click", function () {
-      var open = more.hidden;
-      more.hidden = !open;
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.textContent = open ? "Vis mindre" : "Les mer";
+    lesBtn.addEventListener("click", function () {
+      more.hidden = false;
+      lesBtn.hidden = true;
     });
   }
 

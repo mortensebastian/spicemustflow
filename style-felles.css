@@ -859,22 +859,25 @@ body::before {
 /* Sammenleggbar intro: teaseren vises alltid, resten gjemmes bak «Les mer».
    Bygges av initRecipeIntro() i site.js. */
 .recipe-intro-more[hidden] { display: none; }
-.recipe-intro-more .recipe-intro:last-child { margin-bottom: 32px; }
 
+/* «Les mer» og «Vis mindre» er inline-knapper som henger etter teksten i
+   samme avsnitt. Fargen følger --text (mørk) som hero-ingressen. */
 .recipe-intro-toggle {
-  display: block;
-  margin: -12px auto 32px;
-  padding: 4px 4px;
+  display: inline;
+  margin-left: 0.35em;
+  padding: 0;
   background: none;
   border: none;
   font: inherit;
-  font-weight: 700;
-  color: var(--accent, #b5651d);
+  font-weight: 600;
+  color: var(--text);
   cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--border);
+  white-space: nowrap;
 }
-.recipe-intro-toggle::after { content: " ›"; }
-.recipe-intro-toggle[aria-expanded="true"]::after { content: " ‹"; }
-.recipe-intro-toggle:hover { text-decoration: underline; }
+.recipe-intro-toggle:hover { text-decoration-color: var(--text); }
 
 /* Skaler oppskriften: antallsfelt med pluss/minus-knapper, midtstilt
    over videoen. recipe.js regner om alle ingrediensmengdene når
