@@ -1008,21 +1008,27 @@ body::before {
   font-size: 14px;
 }
 
-/* Nedtrekksmeny for å bytte måleenhet, f.eks. fra "ss" til "g". */
+/* Nedtrekksmeny for å bytte måleenhet, f.eks. fra "ss" til "g".
+   Gjennomsiktig bakgrunn så den smelter inn i kortets flate (ikke hvit boks).
+   Fokus/hover: hvit glød i stedet for oransje. */
 .unit-select {
-  padding: 4px 6px;
+  padding: 2px 4px;
   border: 1px solid var(--border);
   border-radius: 4px;
-  background-color: var(--surface);
+  background: transparent;
   color: var(--text);
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
 }
 
+.unit-select:hover {
+  border-color: var(--text);
+}
+
 .unit-select:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--border);
 }
 
 /* Nummererte steg. Lista får litt innrykk fordi nullstillingen øverst
