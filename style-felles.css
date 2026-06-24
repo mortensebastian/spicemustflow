@@ -848,9 +848,10 @@ body::before {
   padding-bottom: 80px;
 }
 
-/* Kort introtekst, midtstilt over oppskriften. */
+/* Kort introtekst, midtstilt over oppskriften. Mørk tekst (som hero),
+   ikke dempet grå. */
 .recipe-intro {
-  color: var(--muted);
+  color: var(--text);
   max-width: 640px;
   margin: 0 auto 32px;
   text-align: center;
@@ -861,7 +862,7 @@ body::before {
 .recipe-intro-more[hidden] { display: none; }
 
 /* «Les mer» og «Vis mindre» er inline-knapper som henger etter teksten i
-   samme avsnitt. Fargen følger --text (mørk) som hero-ingressen. */
+   samme avsnitt. Mørk blå så de skiller seg ut fra brødteksten. */
 .recipe-intro-toggle {
   display: inline;
   margin-left: 0.35em;
@@ -870,14 +871,14 @@ body::before {
   border: none;
   font: inherit;
   font-weight: 600;
-  color: var(--text);
+  color: #1b3a6b;
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-color: var(--border);
   white-space: nowrap;
 }
-.recipe-intro-toggle:hover { text-decoration-color: var(--text); }
+.recipe-intro-toggle[hidden] { display: none; }
+.recipe-intro-toggle:hover { color: #12284a; }
 
 /* Skaler oppskriften: antallsfelt med pluss/minus-knapper, midtstilt
    over videoen. recipe.js regner om alle ingrediensmengdene når
@@ -892,7 +893,7 @@ body::before {
 }
 
 .recipe-scale label {
-  color: var(--muted);
+  color: var(--text);
   font-size: 15px;
 }
 
@@ -1010,7 +1011,8 @@ body::before {
 
 /* Nedtrekksmeny for å bytte måleenhet, f.eks. fra "ss" til "g".
    Gjennomsiktig bakgrunn så den smelter inn i kortets flate (ikke hvit boks).
-   Fokus/hover: hvit glød i stedet for oransje. */
+   Ingen farge-/bakgrunnsendring ved hover/fokus – nedtrekksmenyen vises
+   uansett siden den er en vanlig <select>. */
 .unit-select {
   padding: 2px 4px;
   border: 1px solid var(--border);
@@ -1022,13 +1024,9 @@ body::before {
   cursor: pointer;
 }
 
-.unit-select:hover {
-  border-color: var(--text);
-}
-
-.unit-select:focus {
+.unit-select:focus,
+.unit-select:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--border);
 }
 
 /* Nummererte steg. Lista får litt innrykk fordi nullstillingen øverst
@@ -1103,7 +1101,7 @@ body::before {
 }
 
 .recipe-complexity-label {
-  color: var(--muted);
+  color: var(--text);
   font-size: 15px;
 }
 
