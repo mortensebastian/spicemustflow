@@ -166,7 +166,90 @@
     }
   }
 
-  function init() { initHub(); initCategoryNav(); initCategoryPage(); }
+  /* ---- Oppskriftsintro: vis de første setningene, gjem resten bak «Les mer» ----
+     Introen (`.recipe-intro`-avsnittene rett under heroen) er ofte tre avsnitt.
+     Vi viser et kort teaser (de første setningene) som en naturlig fortsettelse
+     av heroen, og legger resten i en sammenleggbar boks med en diskré toggle.
+     All tekst blir liggende i DOM-en (bra for søk); vi skjuler bare visuelt.
+     Trygt å kalle på alle sider: gjør ingenting uten `.recipe-intro`. */
+  var INTRO_TEASER_SENTENCES = 2;   // antall setninger som alltid vises
+  var INTRO_MIN_TAIL_CHARS = 80;    // ikke lag toggle for nesten ingenting
+
+  function splitSentences(text) {
+    var m = text.match(/[^.!?]+[.!?]+(?:\s|$)/g);
+    return m ? m.map(function (s) { return s.trim(); }) : [text.trim()];
+  }
+
+  function initRecipeIntro() {
+    var section = document.getElementById("oppskrift");
+    if (!section) return;
+    var intros = Array.prototype.slice.call(section.querySelectorAll(".recipe-intro"));
+    if (!intros.length) return;
+
+    // Samle alle setninger på tvers av avsnittene, men husk avsnittsgrensene.
+    var paras = intros.map(function (p) { return splitSentences(p.textContent); });
+    var total = paras.reduce(function (n, s) { return n + s.length; }, 0);
+
+    // Bygg teaseren av de første setningene (kan gå over i avsnitt nr. 2 ved behov).
+    var teaser = [], rest = [], taken = 0;
+    paras.forEach(function (sentences) {
+      var head = [], tail = [];
+      sentences.forEach(function (s) {
+        if (taken < INTRO_TEASER_SENTENCES) { head.push(s); taken++; }
+        else { tail.push(s); }
+      });
+      if (head.length) teaser.push(head.join(" "));
+      if (tail.length) rest.push(tail.join(" "));
+    });
+
+    var restText = rest.join("\n");
+    // Ingenting (eller nesten ingenting) å skjule → la introen stå som den er.
+    if (total <= INTRO_TEASER_SENTENCES || restText.length < INTRO_MIN_TAIL_CHARS) return;
+
+    // Tøm de opprinnelige avsnittene og bygg teaser + sammenleggbar resten.
+    var anchor = intros[0];
+    intros.slice(1).forEach(function (p) { p.parentNode.removeChild(p); });
+    anchor.textContent = teaser.join(" ");
+
+    // «Les mer» legges inline til slutt i teaser-avsnittet.
+    var lesBtn = document.createElement("button");
+    lesBtn.type = "button";
+    lesBtn.className = "recipe-intro-toggle";
+    lesBtn.textContent = "Les mer";
+    anchor.appendChild(lesBtn);
+
+    // Resten av introen i en skjult beholder rett etter teaser-avsnittet.
+    var more = document.createElement("div");
+    more.className = "recipe-intro-more";
+    more.hidden = true;
+    rest.forEach(function (t, i) {
+      var p = document.createElement("p");
+      p.className = "recipe-intro";
+      p.textContent = t;
+      // «Vis mindre» legges inline til slutt i det siste avsnittet.
+      if (i === rest.length - 1) {
+        var visBtn = document.createElement("button");
+        visBtn.type = "button";
+        visBtn.className = "recipe-intro-toggle";
+        visBtn.textContent = "Vis mindre";
+        visBtn.addEventListener("click", function () {
+          more.hidden = true;
+          lesBtn.hidden = false;
+        });
+        p.appendChild(visBtn);
+      }
+      more.appendChild(p);
+    });
+
+    anchor.parentNode.insertBefore(more, anchor.nextSibling);
+
+    lesBtn.addEventListener("click", function () {
+      more.hidden = false;
+      lesBtn.hidden = true;
+    });
+  }
+
+  function init() { initHub(); initCategoryNav(); initCategoryPage(); initRecipeIntro(); }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

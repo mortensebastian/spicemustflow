@@ -848,13 +848,37 @@ body::before {
   padding-bottom: 80px;
 }
 
-/* Kort introtekst, midtstilt over oppskriften. */
+/* Kort introtekst, midtstilt over oppskriften. Mørk tekst (som hero),
+   ikke dempet grå. */
 .recipe-intro {
-  color: var(--muted);
+  color: var(--text);
   max-width: 640px;
   margin: 0 auto 32px;
   text-align: center;
 }
+
+/* Sammenleggbar intro: teaseren vises alltid, resten gjemmes bak «Les mer».
+   Bygges av initRecipeIntro() i site.js. */
+.recipe-intro-more[hidden] { display: none; }
+
+/* «Les mer» og «Vis mindre» er inline-knapper som henger etter teksten i
+   samme avsnitt. Mørk blå så de skiller seg ut fra brødteksten. */
+.recipe-intro-toggle {
+  display: inline;
+  margin-left: 0.35em;
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  color: #1b3a6b;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.recipe-intro-toggle[hidden] { display: none; }
+.recipe-intro-toggle:hover { color: #12284a; }
 
 /* Skaler oppskriften: antallsfelt med pluss/minus-knapper, midtstilt
    over videoen. recipe.js regner om alle ingrediensmengdene når
@@ -869,7 +893,7 @@ body::before {
 }
 
 .recipe-scale label {
-  color: var(--muted);
+  color: var(--text);
   font-size: 15px;
 }
 
@@ -985,21 +1009,24 @@ body::before {
   font-size: 14px;
 }
 
-/* Nedtrekksmeny for å bytte måleenhet, f.eks. fra "ss" til "g". */
+/* Nedtrekksmeny for å bytte måleenhet, f.eks. fra "ss" til "g".
+   Gjennomsiktig bakgrunn så den smelter inn i kortets flate (ikke hvit boks).
+   Ingen farge-/bakgrunnsendring ved hover/fokus – nedtrekksmenyen vises
+   uansett siden den er en vanlig <select>. */
 .unit-select {
-  padding: 4px 6px;
+  padding: 2px 4px;
   border: 1px solid var(--border);
   border-radius: 4px;
-  background-color: var(--surface);
+  background: transparent;
   color: var(--text);
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
 }
 
-.unit-select:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
+.unit-select:focus,
+.unit-select:focus-visible {
+  outline: none;
 }
 
 /* Nummererte steg. Lista får litt innrykk fordi nullstillingen øverst
@@ -1074,7 +1101,7 @@ body::before {
 }
 
 .recipe-complexity-label {
-  color: var(--muted);
+  color: var(--text);
   font-size: 15px;
 }
 
