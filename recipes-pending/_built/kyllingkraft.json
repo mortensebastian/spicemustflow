@@ -10,7 +10,7 @@
     "tagline": "Gyllen kraft kokt sakte på skrog og bein – grunnmuren i supper, sauser og risotto.",
     "description": "Hjemmelaget kyllingkraft kokt på skrog og bein. Velg nivå (enkel/medium/kompleks), juster mengden og tilpass ingrediensene – mengdene følger med.",
     "image": null,
-    "category": [],
+    "category": ["suppe"],
     "badge": "3 nivåer",
     "recipeCategory": "Tilbehør",
     "cuisine": "Norsk",

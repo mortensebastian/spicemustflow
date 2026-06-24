@@ -518,7 +518,7 @@ window.RECIPES_INDEX = [
     shortName: "Kyllingkraft", name: "Hjemmelaget kyllingkraft",
     tagline: "Gyllen kraft kokt sakte på skrog og bein – grunnmuren i supper, sauser og risotto.",
     description: "Hjemmelaget kyllingkraft kokt på skrog og bein. Velg nivå (enkel/medium/kompleks), juster mengden og tilpass ingrediensene – mengdene følger med.",
-    image: null, category: [], badge: "3 nivåer",
+    image: null, category: ["suppe"], badge: "3 nivåer",
     recipeCategory: "Tilbehør", cuisine: "Norsk",
     keywords: "kyllingkraft, hjemmelaget kyllingkraft, kraft av kyllingbein, kyllingkraft oppskrift, hønsekraft",
     recipeYield: "2 liter", times: { prep: "PT15M", cook: "PT3H", total: "PT3H15M" },
