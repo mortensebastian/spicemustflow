@@ -510,5 +510,29 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   bytte (grovbrød olje→smør) vises i filteret. Det er riktig i dag; hvis det blir forvirrende kan
   man senere skille «iboende» vs «kun-ved-bytte»-allergener. Ingen handling nå.
 
+**kyllingkraft (rett #27, første grunnoppskrift/base)** — **ingen kjernemotorendring.**
+- **Første rett uten kategori (`category: []`).** En kraft er en *grunnoppskrift* man lenker til, ikke
+  en rett man browser etter. Motoren degraderer pent: `recipe-schema.js` hopper over kategori-leddet i
+  breadcrumb (Hjem › Kyllingkraft), `renderRelated` rendrer ingenting (tom kategori → ingen «Relaterte
+  oppskrifter»), og den vises ikke på noen kategoriside. På forsidens hub vises den kun under «Alle»
+  (kategori-filtrene matcher aldri tom `data-kategori`). Kortet får en tom chip – kosmetisk, ikke en feil.
+  `recipeCategory: "Tilbehør"` (kun schema-tekst, fritt felt) holder JSON-LD ærlig.
+- **Fjerde yieldNoun-type: «liter».** Etter porsjoner/stykker/brød skalerer kraft på *liter* (base 2).
+  Motoren har ingen liter-enhet, så vann skrives i `dl` (22–25 dl ≈ 2 L etter inntrekking); yieldNoun er
+  bare skala-etiketten. Generatoren satte «Antall liter» riktig.
+- **Base-rett = `levers: []` + `requireRoles: []` (som safraniskrem).** En kraft auto-balanseres ikke.
+  Salt er bevisst *valgfritt og lavt* (`removable:true`, ingen salt-lever) med note «salt retten, ikke
+  kraften» – riktig matlagings-budskap for noe som ofte kokes inn. Eneste tasteMessage er `umami`.
+- **Tre nivåer som teknikk-stige** (lys hurtigkraft → standard → ovnsstekt/brunet mørk kraft med tomatpuré
+  og vin), ikke bare flere ingredienser – samme mønster som pizza/brød.
+- **Eneste allergen er `celery`** (stilkselleri), løst både via `removable` OG et sellerifritt
+  `fennel`-bytte. Ellers naturlig glutenfri/melkefri/eggfri (SEO-bonus, jf. focaccia/thai-fiskesuppe).
+- **Kryss-lenking til en base-rett uten motorendring:** «Hjemmelaget kyllingkraft» lenkes inn fra
+  `marry-me-chicken.html` sin brødtekst (`<a href="kyllingkraft.html">`) der kompleks-varianten anbefaler
+  hjemmelaget kraft. Ingrediens-/bytte-etiketter i adapteren er ren tekst (ingen `<a>`), så lenking gjøres
+  i prosa. **Mulig fremtidig motorfunksjon** (ikke gjort, ville vært en bevisst kjernemotorendring + lærdom):
+  la manifestet bære en valgfri «relatert grunnoppskrift»-URL som adapteren auto-lenker på en kjent
+  ingrediens-id (f.eks. `stock`/`homemade_stock`). I dag er prosa-lenke det rette, in-scope grepet.
+
 
 
