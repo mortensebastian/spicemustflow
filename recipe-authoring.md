@@ -67,6 +67,57 @@ window.RECIPE = {
 | `tradition` | `traditional`/`regional`/`non-traditional` (ærlig merking, vises på bytter) |
 | `cost` | valgfri kostnads-tier: `1` rimelig · `2` middels (standard når uoppgitt) · `3` dyr |
 
+## Nivå-filosofi: hva skiller enkel / medium / kompleks
+
+> **Kjerneprinsipp:** de tre nivåene klatrer på **én akse – kokkekunst og innsats
+> (teknikk, finsmak, ting laget fra bunnen)**, *ikke* på hvor smal og spesifikk
+> handlelista er. Tilgjengelige ingredienser gjelder på **alle** nivåer; det er
+> teknikken og raffineringen som øker oppover. En «enkel» rett som krever fem
+> enkeltkrydder, spesialvarer (sjalott, mascarpone, carnaroli) eller en
+> roux/temperering er feil bygget – da har vi forvekslet «få komponenter» med
+> «smal handleliste».
+
+| Nivå | Hva det er | Ingredienser & teknikk |
+|---|---|---|
+| **enkel** | Skap-først hverdag | Færrest *aktive* ingredienser, **snarvei-produkter** (ferdig krydderblanding, buljongterning, hermetikk, ferdig saus), **generiske** varer, tilgivende teknikk, færrest steg. Ingen spesialvarer, ingen krydderhylle, ingen roux/temperering. |
+| **medium** | Standard hjemmelaget | Balansert. Litt mer fra bunnen (egen krydderblanding, frisk salsa, surret løk), men fortsatt vanlig hverdagshandel. **Dette er standardnivået schema speiler.** |
+| **kompleks** | Fra bunnen | Spesialvarer (vin, hjemmelaget kraft, mascarpone, sjalott), teknikk-tunge steg, finsmak (deglaze, mørk jevning, sitronskall til slutt). |
+
+### Tilgjengelighets-gate for «enkel» (følg alle seks)
+1. **Snarvei før bunn.** Der medium/kompleks lager noe fra bunnen, bruk
+   ferdigproduktet på enkel (tacokrydder-pose, buljongterning, ferdig salsa,
+   hermetiske tomater, crème fraîche i stedet for béchamel-roux). Snarveien er
+   *poenget* med enkel, ikke et nederlag.
+2. **Generisk før spesifikk i `label`.** «Nøytral olje» (ikke «Rapsolje/solsikke»),
+   «Kjøttdeig» (ikke «grovkvernet høyrygg»), «Potetmel (eller hvetemel)», «Melk
+   eller vann». Spesifisiteten hører hjemme på medium/kompleks.
+3. **Krydder-budsjett:** maks **2 enkeltkrydder utover salt/pepper** på enkel
+   (sukker, parmesan/ost og olje teller ikke som «krydder»). Trenger retten flere,
+   samle dem i én ferdigblanding eller løft dem til medium.
+4. **Merk valgfritt.** Ikke-essensielle smaksingredienser på enkel settes
+   `removable:true` og merkes «(valgfritt)» i `label`, så lista leses kortere.
+5. **Færre komponenter.** Enkel skal ikke kreve flere delretter (pico + guac +
+   krydderkjøtt). Én hovedting + ferdig/utsatt tilbehør.
+6. **Aldri størst.** `enkel.ingredients.length ≤ medium ≤ kompleks`. Enkel skal
+   aldri ha flest ingredienser. (Hard regel – validatoren i `build.js` advarer.)
+
+### Kjerne-budsjett for enkel (per rett-type, foreslått)
+Mål på **kjerne-ingredienser = de du aktivt lager med** (`addStage !== "serve"`),
+og tell ikke rent salt/pepper/olje/vann eller sukker. Tall er retningsgivende
+(validatoren advarer, stopper ikke):
+
+| Rett-type | Kjerne (≤) | Enkeltkrydder (≤) | Merk |
+|---|---|---|---|
+| Hverdagsgryte / panne / wok / pasta-saus | 8 | 2 | Ferdig krydder/buljong oppmuntret |
+| Suppe | 8 | 1 | Ferdig kraft/buljong tillatt |
+| Bakst / dessert | 9 distinkte innkjøp | – | Mål: **0 spesialvarer, 0 spesialteknikker** (ingen mel-sjatteringer, brunet smør, temperering). Mengde-presisjon beholdes – den er funksjonell. |
+| Saus / jevning | – | – | Enkleste jevning (maizena/utrøring eller ferdig base), ev. generisk mel-label |
+| Bygg-selv-rett (taco o.l.) | 7 kjerne | 2 | Mange serveringsboller er greit – de øker ikke kokekompleksiteten |
+
+> **Servering teller mildt.** En taco med 12 ingredienser kan være genuint enkel
+> fordi 6 av dem er pålegg satt i skåler (`addStage:"serve"`). Derfor måler både
+> budsjettet og validatoren på **kjerne (ikke-servering)**, ikke rått totalantall.
+
 ## Budsjett (rimeligere)
 - «Budsjett»-bryteren vises **kun på enkel/medium** (speilbilde av «Nøyaktig», som
   bare er på kompleks) – og kun når retten faktisk har et rimeligere bytte.
@@ -509,6 +560,29 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - **[LOGG]** Mulig fremtidig vurdering (ikke en feil): allergen som bare finnes via et *valgfritt*
   bytte (grovbrød olje→smør) vises i filteret. Det er riktig i dag; hvis det blir forvirrende kan
   man senere skille «iboende» vs «kun-ved-bytte»-allergener. Ingen handling nå.
+
+**Nivå-filosofi + tilgjengelighets-gate (etter eier-tilbakemelding: «enkel/medium
+for avanserte og spesifikke på ingrediensene»)** — **ingen kjernemotorendring.**
+Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av verstingene.
+- **[KONTRAKT]** Lagt til «Nivå-filosofi»-seksjonen over: nivåene klatrer på
+  **teknikk/innsats**, ikke på hvor smal handlelista er. Seks-punkts tilgjengelighets-gate
+  for enkel (snarvei før bunn · generisk før spesifikk · krydder-budsjett ≤2 · merk
+  valgfritt · færre komponenter · aldri størst) + per-type kjerne-budsjett. Speilet i
+  `research-recipe` (mat-research + sjekkliste) og håndhevet av en **soft validator** i
+  `build.js` (`NIVÅ-SJEKK`: monotont antall, krydder-tak ≤2, kjerne-tak ≤9).
+- **[VALIDATOR-AVGRENSNING]** «Generisk før spesifikk i label» håndheves **ikke** av
+  maskinen – spesifisitet er rett-avhengig (arborio er feil i taco, riktig i risotto;
+  soltørket tomat *er* marry-me-chicken; crème fraîche som snarvei-saus er riktig på enkel).
+  En naiv regex ga bare falske positiver. Det forblir en **skjønnsregel for forfatter/review**.
+- **[DATA-FUNN]** Gjennomgang av alle 23 retter: de fleste enkel-nivåene er allerede
+  sunne. «Antall krydder»-heuristikken ga **falske positiver** på spagetti/lasagne fordi
+  den telte *sukker* og *parmesan* som krydder – validatoren ekskluderer dem nå (samt
+  salt/pepper/olje), og måler på **kjerne (ikke-servering)** så bygg-selv-retter som taco
+  (mange serveringsboller) ikke flagges urettferdig.
+- **[RETROFIT, verstinger]** `marry-me-chicken` enkel (13 kjerne → slått sammen olje+smør
+  til «Smør eller olje», fjernet valgfri chiliflak) og `kjottkaker` enkel (fjernet niche
+  muskat-krydder fra enkel, generisk «Potetmel (eller hvetemel)»-label). Medium/kompleks
+  beholder spesialvarene – det er der de hører hjemme.
 
 
 
