@@ -98,8 +98,11 @@ window.RECIPE = {
    `removable:true` og merkes «(valgfritt)» i `label`, så lista leses kortere.
 5. **Færre komponenter.** Enkel skal ikke kreve flere delretter (pico + guac +
    krydderkjøtt). Én hovedting + ferdig/utsatt tilbehør.
-6. **Aldri størst.** `enkel.ingredients.length ≤ medium ≤ kompleks`. Enkel skal
-   aldri ha flest ingredienser. (Hard regel – validatoren i `build.js` advarer.)
+6. **Aldri størst.** `enkel.ingredients.length ≤ medium`. Enkel skal aldri ha
+   flest ingredienser. (Validatoren i `build.js` advarer.) NB: `medium ≤ kompleks`
+   sjekkes *ikke* – kompleks kan ha **færre** linjer fordi den raffinerer ved å
+   *fjerne* (autentisitet), f.eks. risotto alla Milanese som dropper olje+hvitløk
+   og tilsetter beinmarg. Kompleksitet = teknikk, ikke antall.
 
 ### Kjerne-budsjett for enkel (per rett-type, foreslått)
 Mål på **kjerne-ingredienser = de du aktivt lager med** (`addStage !== "serve"`),
@@ -579,10 +582,16 @@ Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av versting
   den telte *sukker* og *parmesan* som krydder – validatoren ekskluderer dem nå (samt
   salt/pepper/olje), og måler på **kjerne (ikke-servering)** så bygg-selv-retter som taco
   (mange serveringsboller) ikke flagges urettferdig.
-- **[RETROFIT, verstinger]** `marry-me-chicken` enkel (13 kjerne → slått sammen olje+smør
-  til «Smør eller olje», fjernet valgfri chiliflak) og `kjottkaker` enkel (fjernet niche
-  muskat-krydder fra enkel, generisk «Potetmel (eller hvetemel)»-label). Medium/kompleks
-  beholder spesialvarene – det er der de hører hjemme.
+- **[RETROFIT, verstinger]** `marry-me-chicken` enkel (13→11: slått sammen olje+smør til
+  «Smør eller olje», fjernet valgfri chiliflak), `kjottkaker` enkel (8→7: fjernet niche
+  muskat, generisk «Potetmel (eller hvetemel)»), `kalruletter` enkel (10→9: samme
+  muskat-/potetmel-fiks som kjøttkake-slektningen), og `taco` **medium** (5→4 krydder:
+  droppet `hvitløkspulver` som er overflødig ved siden av fersk hvitløk i medium).
+  Medium/kompleks beholder spesialvarene – det er der de hører hjemme.
+- **[VALIDATOR-AVGRENSNING 2]** `medium ≤ kompleks` håndheves **ikke**. `safranrisotto`
+  kompleks (Milanese) har *færre* linjer enn medium fordi autentisiteten **fjerner**
+  olje+hvitløk og bare tilsetter beinmarg. En naiv monoton-sjekk ga falsk positiv her –
+  bekrefter prinsippet: kompleksitet er teknikk, ikke antall. Bare `enkel ≤ medium` sjekkes.
 
 
 

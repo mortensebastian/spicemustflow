@@ -74,7 +74,8 @@ tilgjengelighets-gaten:
 - **Krydder-budsjett ≤ 2** enkeltkrydder utover salt/pepper på enkel (sukker/ost/olje
   teller ikke). Flere → samle i én ferdigblanding eller løft til medium.
 - **Merk valgfritt:** ikke-essensielle smaker på enkel = `removable:true` + «(valgfritt)».
-- **Færre komponenter** og **aldri størst:** `enkel ≤ medium ≤ kompleks` i antall.
+- **Færre komponenter** og **aldri størst:** `enkel ≤ medium` i antall (kompleks kan
+  ha færre linjer enn medium hvis den raffinerer ved å fjerne – komplekst = teknikk, ikke antall).
 - **Kjerne-budsjett (ikke-servering):** gryte/panne/pasta ≤ 8, suppe ≤ 8, bygg-selv ≤ 7,
   bakst = 0 spesialvarer/-teknikker. Spesialvarene (sjalott, mascarpone, vin, carnaroli,
   hjemmelaget kraft) hører på medium/kompleks.

@@ -69,8 +69,7 @@ const kalruletterRecipes = {
       { id: "beef",         label: "Kjøttdeig",                 amount: 500, unit: "g", role: "protein", essential: true, scaling: "linear", addStage: "early", sodiumPer100g: 60, removable: false, taste: { umami: 2 } },
       { id: "onion",        label: "Løk, finhakket",            amount: 1, unit: "stk", role: "aromatic", scaling: "linear", addStage: "early", removable: true, taste: { sweet: 1 } },
       { id: "milk",         label: "Melk",                      amount: 1, unit: "dl", role: "liquid", scaling: "linear", addStage: "early", removable: false, allergens: ["dairy"] },
-      { id: "potato_flour", label: "Potetmel",                  amount: 1, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: false, note: "Binder farsen." },
-      { id: "nutmeg",       label: "Revet muskat",              amount: 0.25, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
+      { id: "potato_flour", label: "Potetmel (eller hvetemel)",  amount: 1, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: false, note: "Binder farsen." },
       { id: "salt_added",   label: "Salt",                      amount: 1, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false },
       { id: "butter",       label: "Smør (til bruning)",        amount: 1, unit: "ss", role: "fat", scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] },
       { id: "stock",        label: "Oksekraft (til koking/saus)", amount: 5, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 200, removable: false, taste: { umami: 1 } },
@@ -78,7 +77,7 @@ const kalruletterRecipes = {
     ],
     steps: [
       "Skyll kålbladene og forvell dem 1–2 minutter i lettsaltet, kokende vann til de er myke og bøyelige. Avkjøl, og skjær bort den tykkeste delen av stilken.",
-      "Bland kjøttdeig, løk, melk, potetmel, muskat og salt til en smidig farse. La den gjerne hvile litt.",
+      "Bland kjøttdeig, løk, melk, potetmel og salt til en smidig farse. La den gjerne hvile litt.",
       "Legg en skje farse på hvert kålblad, brett inn sidene og rull sammen til tette pakker. Legg dem med skjøten ned.",
       "Brun rulettene i smør, hell over oksekraft, og la dem trekke under lokk i ca. 20 minutter.",
       "Jevn kraften til en blank brun saus med litt mel utrørt i kaldt vann. Smak til, og server med kokte poteter og tyttebær."

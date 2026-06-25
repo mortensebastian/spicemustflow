@@ -34,11 +34,12 @@ const R = staging.recipe;
 
   const len = l => (recipes[l] ? recipes[l].ingredients.length : null);
   const counts = lv.map(len);
-  // Monoton regel: enkel ≤ medium ≤ kompleks.
+  // Invariant: enkel ≤ medium. (Vi sjekker IKKE medium ≤ kompleks – kompleks kan
+  // ha FÆRRE linjer fordi den raffinerer ved å fjerne, ikke legge til, f.eks.
+  // risotto alla Milanese som dropper olje+hvitløk og tilsetter beinmarg.
+  // Kompleksitet = teknikk, ikke antall.)
   if (counts[0] != null && counts[1] != null && counts[0] > counts[1])
     warns.push(`enkel (${counts[0]}) har FLERE ingredienser enn medium (${counts[1]}) – enkel skal aldri være størst.`);
-  if (counts[1] != null && counts[2] != null && counts[1] > counts[2])
-    warns.push(`medium (${counts[1]}) har flere ingredienser enn kompleks (${counts[2]}).`);
 
   const enkel = recipes.enkel;
   if (enkel) {
