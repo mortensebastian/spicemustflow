@@ -67,6 +67,60 @@ window.RECIPE = {
 | `tradition` | `traditional`/`regional`/`non-traditional` (ærlig merking, vises på bytter) |
 | `cost` | valgfri kostnads-tier: `1` rimelig · `2` middels (standard når uoppgitt) · `3` dyr |
 
+## Nivå-filosofi: hva skiller enkel / medium / kompleks
+
+> **Kjerneprinsipp:** de tre nivåene klatrer på **én akse – kokkekunst og innsats
+> (teknikk, finsmak, ting laget fra bunnen)**, *ikke* på hvor smal og spesifikk
+> handlelista er. Tilgjengelige ingredienser gjelder på **alle** nivåer; det er
+> teknikken og raffineringen som øker oppover. En «enkel» rett som krever fem
+> enkeltkrydder, spesialvarer (sjalott, mascarpone, carnaroli) eller en
+> roux/temperering er feil bygget – da har vi forvekslet «få komponenter» med
+> «smal handleliste».
+
+| Nivå | Hva det er | Ingredienser & teknikk |
+|---|---|---|
+| **enkel** | Skap-først hverdag | Færrest *aktive* ingredienser, **snarvei-produkter** (ferdig krydderblanding, buljongterning, hermetikk, ferdig saus), **generiske** varer, tilgivende teknikk, færrest steg. Ingen spesialvarer, ingen krydderhylle, ingen roux/temperering. |
+| **medium** | Standard hjemmelaget | Balansert. Litt mer fra bunnen (egen krydderblanding, frisk salsa, surret løk), men fortsatt vanlig hverdagshandel. **Dette er standardnivået schema speiler.** |
+| **kompleks** | Fra bunnen | Spesialvarer (vin, hjemmelaget kraft, mascarpone, sjalott), teknikk-tunge steg, finsmak (deglaze, mørk jevning, sitronskall til slutt). |
+
+### Tilgjengelighets-gate for «enkel» (følg alle seks)
+1. **Snarvei før bunn.** Der medium/kompleks lager noe fra bunnen, bruk
+   ferdigproduktet på enkel (tacokrydder-pose, buljongterning, ferdig salsa,
+   hermetiske tomater, crème fraîche i stedet for béchamel-roux). Snarveien er
+   *poenget* med enkel, ikke et nederlag.
+2. **Generisk før spesifikk i `label`.** «Nøytral olje» (ikke «Rapsolje/solsikke»),
+   «Kjøttdeig» (ikke «grovkvernet høyrygg»), «Potetmel (eller hvetemel)», «Melk
+   eller vann». Spesifisiteten hører hjemme på medium/kompleks.
+3. **Krydder-budsjett:** maks **2 enkeltkrydder utover salt/pepper** på enkel
+   (sukker, parmesan/ost og olje teller ikke som «krydder»). Trenger retten flere,
+   samle dem i én ferdigblanding eller løft dem til medium.
+4. **Merk valgfritt.** Ikke-essensielle smaksingredienser på enkel settes
+   `removable:true` og merkes «(valgfritt)» i `label`, så lista leses kortere.
+5. **Færre komponenter.** Enkel skal ikke kreve flere delretter (pico + guac +
+   krydderkjøtt). Én hovedting + ferdig/utsatt tilbehør.
+6. **Aldri størst.** `enkel.ingredients.length ≤ medium`. Enkel skal aldri ha
+   flest ingredienser. (Validatoren i `build.js` advarer.) NB: `medium ≤ kompleks`
+   sjekkes *ikke* – kompleks kan ha **færre** linjer fordi den raffinerer ved å
+   *fjerne* (autentisitet), f.eks. risotto alla Milanese som dropper olje+hvitløk
+   og tilsetter beinmarg. Kompleksitet = teknikk, ikke antall.
+
+### Kjerne-budsjett for enkel (per rett-type, foreslått)
+Mål på **kjerne-ingredienser = de du aktivt lager med** (`addStage !== "serve"`),
+og tell ikke rent salt/pepper/olje/vann eller sukker. Tall er retningsgivende
+(validatoren advarer, stopper ikke):
+
+| Rett-type | Kjerne (≤) | Enkeltkrydder (≤) | Merk |
+|---|---|---|---|
+| Hverdagsgryte / panne / wok / pasta-saus | 8 | 2 | Ferdig krydder/buljong oppmuntret |
+| Suppe | 8 | 1 | Ferdig kraft/buljong tillatt |
+| Bakst / dessert | 9 distinkte innkjøp | – | Mål: **0 spesialvarer, 0 spesialteknikker** (ingen mel-sjatteringer, brunet smør, temperering). Mengde-presisjon beholdes – den er funksjonell. |
+| Saus / jevning | – | – | Enkleste jevning (maizena/utrøring eller ferdig base), ev. generisk mel-label |
+| Bygg-selv-rett (taco o.l.) | 7 kjerne | 2 | Mange serveringsboller er greit – de øker ikke kokekompleksiteten |
+
+> **Servering teller mildt.** En taco med 12 ingredienser kan være genuint enkel
+> fordi 6 av dem er pålegg satt i skåler (`addStage:"serve"`). Derfor måler både
+> budsjettet og validatoren på **kjerne (ikke-servering)**, ikke rått totalantall.
+
 ## Budsjett (rimeligere)
 - «Budsjett»-bryteren vises **kun på enkel/medium** (speilbilde av «Nøyaktig», som
   bare er på kompleks) – og kun når retten faktisk har et rimeligere bytte.
@@ -509,6 +563,60 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
 - **[LOGG]** Mulig fremtidig vurdering (ikke en feil): allergen som bare finnes via et *valgfritt*
   bytte (grovbrød olje→smør) vises i filteret. Det er riktig i dag; hvis det blir forvirrende kan
   man senere skille «iboende» vs «kun-ved-bytte»-allergener. Ingen handling nå.
+
+**Nivå-filosofi + tilgjengelighets-gate (etter eier-tilbakemelding: «enkel/medium
+for avanserte og spesifikke på ingrediensene»)** — **ingen kjernemotorendring.**
+Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av verstingene.
+- **[KONTRAKT]** Lagt til «Nivå-filosofi»-seksjonen over: nivåene klatrer på
+  **teknikk/innsats**, ikke på hvor smal handlelista er. Seks-punkts tilgjengelighets-gate
+  for enkel (snarvei før bunn · generisk før spesifikk · krydder-budsjett ≤2 · merk
+  valgfritt · færre komponenter · aldri størst) + per-type kjerne-budsjett. Speilet i
+  `research-recipe` (mat-research + sjekkliste) og håndhevet av en **soft validator** i
+  `build.js` (`NIVÅ-SJEKK`: monotont antall, krydder-tak ≤2, kjerne-tak ≤9).
+- **[VALIDATOR-AVGRENSNING]** «Generisk før spesifikk i label» håndheves **ikke** av
+  maskinen – spesifisitet er rett-avhengig (arborio er feil i taco, riktig i risotto;
+  soltørket tomat *er* marry-me-chicken; crème fraîche som snarvei-saus er riktig på enkel).
+  En naiv regex ga bare falske positiver. Det forblir en **skjønnsregel for forfatter/review**.
+- **[DATA-FUNN]** Gjennomgang av alle 23 retter: de fleste enkel-nivåene er allerede
+  sunne. «Antall krydder»-heuristikken ga **falske positiver** på spagetti/lasagne fordi
+  den telte *sukker* og *parmesan* som krydder – validatoren ekskluderer dem nå (samt
+  salt/pepper/olje), og måler på **kjerne (ikke-servering)** så bygg-selv-retter som taco
+  (mange serveringsboller) ikke flagges urettferdig.
+- **[RETROFIT, verstinger]** `marry-me-chicken` enkel (13→11), `kjottkaker`
+  (enkel+medium: niche varmkrydder muskat/ingefær flyttet til **kun kompleks**, og
+  «Oksekraft» generisert til «Oksekraft (eller buljongterning + vann)» på enkel+medium),
+  `kalruletter` enkel (samme muskat-/potetmel-fiks som kjøttkake-slektningen), og `taco`
+  **medium** (5→4 krydder). To gjentakende grep krystalliserte seg:
+  - **Kraft/fond som standard skal tilby hverdags-snarveien i selve etiketten** på
+    enkel/medium («(eller buljongterning + vann)»), ikke bare som et skjult bytte.
+    Standardvisningen er medium – den må stå på egne ben uten at brukeren åpner «Tilpass».
+  - **Signaturkrydder hører på kompleks, ikke som standard.** Muskat/ingefær *definerer*
+    kjøttkaker, men de er spesialvarer; standard (medium) klarer seg med salt+pepper, og
+    den fulle krydringen ligger på kompleks for de som vil ha den.
+  Medium/kompleks beholder spesialvarene – det er der de hører hjemme.
+- **[VALIDATOR-AVGRENSNING 2]** `medium ≤ kompleks` håndheves **ikke**. `safranrisotto`
+  kompleks (Milanese) har *færre* linjer enn medium fordi autentisiteten **fjerner**
+  olje+hvitløk og bare tilsetter beinmarg. En naiv monoton-sjekk ga falsk positiv her –
+  bekrefter prinsippet: kompleksitet er teknikk, ikke antall. Bare `enkel ≤ medium` sjekkes.
+
+- **[ENKEL = BARE MINIMUM, runde 2]** Etter eier-tilbakemelding: medium *kan* ha
+  signaturkrydder (muskat/ingefær i kjøttkaker er nå tilbake i medium); det er **enkel**
+  som skal være «bare minimum, men fortsatt god». Trimmet rent garnityr/overflødig fra enkel:
+  baja (koriander+rødløk), marry-me (basilikum + slo salt/pepper sammen), thai (fersk ingefær –
+  currypasta har den alt). **Regel:** på enkel, kutt *fett* (garnityr, dublett-aromater,
+  redundant krydder), men behold billige skap-staples som FORBEDRER retten (tomatpuré i
+  spagetti/lasagne ble stående – det er muskel, ikke fett).
+
+- **[MOTOR-AUDIT, fikset]** Kjørte motoren (`recipe-balance.js`) + en mirror-paritets-sjekk mot
+  alle 23 retter. **Motoren er sunn** (leverGrams ok; `requireRoles:["acid"]`+`servedAcid` gir
+  riktig sitron-tips på nivåer uten syre-ingrediens – ikke en feil), og **alle skill-bygde retter
+  er paritets-rene**. Fant 22 bytte-paritets-hull i de **5 håndskrevne pre-skill-rettene**
+  (fiskekaker/fiskesuppe/pannekake/safraniskrem/sjokoladekake) – et bytte uten `density`/
+  `unitOptions` mister enhetsvalg+gram idet det velges. Fikset væske/mel/fett-byttene (speilet
+  slottens tetthet/enheter). Bevisst utelatt: `vanilla`/`dark_chocolate` – «smak til»-/g-bytter
+  der dl/gram ikke gir mening (slotten burde egentlig ikke vært g-konvertibel; uendret nå).
+  **Lærdom:** mirror-regelen (bytte speiler slottens `unitOptions`) er den rette paritets-testen –
+  strengere enn build-skillets, men uten falske positiver på rene ts-krydder.
 
 **kyllingkraft (rett #27, første grunnoppskrift/base)** — **ingen kjernemotorendring.**
 - **`recipeCategory` kan avvike fra kategori-sluggen.** En kraft er en *grunnoppskrift*, så den ligger i

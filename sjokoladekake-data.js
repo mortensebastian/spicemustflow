@@ -111,8 +111,8 @@ window.RECIPE = {
   },
   pieceWeight: { egg: 55 },
   unitOptions: {
-    flour: ["dl", "ml", "g"], sugar: ["dl", "ml", "g"], cocoa: ["dl", "ml", "g"],
-    milk: ["dl", "ml"], coffee: ["dl", "ml", "g"], oil: ["dl", "ml", "ss"],
+    flour: ["dl", "ml", "g"], gf_flour: ["dl", "ml", "g"], sugar: ["dl", "ml", "g"], cocoa: ["dl", "ml", "g"],
+    milk: ["dl", "ml"], plant_milk: ["dl", "ml"], coffee: ["dl", "ml", "g"], oil: ["dl", "ml", "ss"],
     baking_powder: ["ts", "g"]
   },
   bulkRoles: ["bulk", "liquid", "binder"],

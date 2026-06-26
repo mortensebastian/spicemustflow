@@ -32,7 +32,10 @@ window.RECIPE = {
     "cream": 1,
     "potato_flour": 0.6,
     "salt_added": 1.2,
-    "butter": 0.95
+    "butter": 0.95,
+    "oat_milk": 1.03,
+    "oat_cream": 1,
+    "rapeseed_oil": 0.92
   },
   "pieceWeight": {
     "egg": 55,
@@ -60,6 +63,20 @@ window.RECIPE = {
     ],
     "salt_added": [
       "ts",
+      "g"
+    ],
+    "oat_milk": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "oat_cream": [
+      "dl",
+      "ml",
+      "g"
+    ],
+    "rapeseed_oil": [
+      "ss",
       "g"
     ]
   },

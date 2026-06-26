@@ -17,6 +17,48 @@ const staging = JSON.parse(fs.readFileSync(`recipes-pending/${slug}.json`, 'utf8
 const ie = staging.indexEntry;
 const R = staging.recipe;
 
+/* ---------- 0) NIVÅ-SJEKK (soft – advarer, stopper ikke) ----------
+   Håndhever nivå-filosofien fra recipe-authoring.md: enkel skal være
+   tilgjengelig (snarvei før bunn, generisk før spesifikk, få enkeltkrydder),
+   og aldri ha flest ingredienser. Bare advarsler – mennesket vurderer. */
+(function validateLevels() {
+  const lv = ['enkel', 'medium', 'kompleks'];
+  const recipes = (R && R.recipes) || {};
+  const warns = [];
+  // Ekskluder kondiment-aktige «krydder» og rene base-ingredienser fra tellingen.
+  const isCondiment = i => /salt|pepper|sukker|sugar|olje|\boil\b|parmesan|ost|cheese|mel|flour|vann|water/i.test(`${i.id} ${i.label || ''}`);
+  const isSpice = i => i.role === 'seasoning' && ['ts', 'ss'].includes(i.unit) && !isCondiment(i);
+  // NB: «generisk før spesifikk i label» håndheves IKKE her – spesifisitet er
+  // rett-avhengig (arborio er feil i taco, riktig i risotto; soltørket tomat ER
+  // marry-me-chicken). Det er en skjønnsregel for forfatter/review, ikke maskinsjekk.
+
+  const len = l => (recipes[l] ? recipes[l].ingredients.length : null);
+  const counts = lv.map(len);
+  // Invariant: enkel ≤ medium. (Vi sjekker IKKE medium ≤ kompleks – kompleks kan
+  // ha FÆRRE linjer fordi den raffinerer ved å fjerne, ikke legge til, f.eks.
+  // risotto alla Milanese som dropper olje+hvitløk og tilsetter beinmarg.
+  // Kompleksitet = teknikk, ikke antall.)
+  if (counts[0] != null && counts[1] != null && counts[0] > counts[1])
+    warns.push(`enkel (${counts[0]}) har FLERE ingredienser enn medium (${counts[1]}) – enkel skal aldri være størst.`);
+
+  const enkel = recipes.enkel;
+  if (enkel) {
+    const core = enkel.ingredients.filter(i => i.addStage !== 'serve' && !isCondiment(i));
+    const spices = enkel.ingredients.filter(isSpice);
+    if (spices.length > 2)
+      warns.push(`enkel har ${spices.length} enkeltkrydder (${spices.map(s => s.label).join(', ')}) – budsjett er ≤ 2. Samle i en ferdigblanding eller løft til medium.`);
+    if (core.length > 9)
+      warns.push(`enkel har ${core.length} kjerne-ingredienser (ikke-servering, uten salt/pepper/olje) – vurder om noe er snarvei-bart eller hører på medium.`);
+  }
+
+  if (warns.length) {
+    console.log('NIVÅ-SJEKK: ' + warns.length + ' advarsel(er) (se recipe-authoring.md → Nivå-filosofi):');
+    warns.forEach(w => console.log('  ⚠ ' + w));
+  } else {
+    console.log('NIVÅ-SJEKK: enkel innenfor tilgjengelighets-gaten ✓');
+  }
+})();
+
 /* ---------- 1) <slug>-data.js ---------- */
 // Strip tomme tasteMessages-nøkler (en akse uten budskap skal utelates, ikke stå tom).
 if (R.tasteMessages) {
