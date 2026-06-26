@@ -171,7 +171,7 @@ window.RECIPE = {
         },
         {
           "id": "stock",
-          "label": "Oksekraft (til saus)",
+          "label": "Oksekraft (eller buljongterning + vann)",
           "amount": 4,
           "unit": "dl",
           "role": "liquid",
@@ -312,34 +312,8 @@ window.RECIPE = {
           }
         },
         {
-          "id": "nutmeg",
-          "label": "Revet muskat",
-          "amount": 0.25,
-          "unit": "ts",
-          "role": "seasoning",
-          "scaling": "nonlinear",
-          "addStage": "early",
-          "removable": true,
-          "taste": {
-            "bitter": 1
-          }
-        },
-        {
-          "id": "ginger",
-          "label": "Malt ingefær",
-          "amount": 0.25,
-          "unit": "ts",
-          "role": "seasoning",
-          "scaling": "nonlinear",
-          "addStage": "early",
-          "removable": true,
-          "taste": {
-            "bitter": 1
-          }
-        },
-        {
           "id": "stock",
-          "label": "Oksekraft",
+          "label": "Oksekraft (eller buljongterning + vann)",
           "amount": 5,
           "unit": "dl",
           "role": "liquid",
@@ -391,7 +365,7 @@ window.RECIPE = {
       ],
       "steps": [
         "Surr løken myk og blank i litt smør, og avkjøl.",
-        "Arbeid salt inn i okse- og svinedeigen til farsen blir seig. Bland inn egg, potetmel, muskat, ingefær og pepper.",
+        "Arbeid salt inn i okse- og svinedeigen til farsen blir seig. Bland inn egg, potetmel og litt pepper.",
         "Spe med melk litt om gangen, vend inn den avkjølte løken, og la farsen hvile 10 minutter.",
         "Form kaker, og brun dem i smør til gyllen skorpe. Ta dem opp.",
         "Lag en gyllen smørjevning av smøret og hvetemelet, spe med varm kraft til blank saus.",

@@ -582,11 +582,17 @@ Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av versting
   den telte *sukker* og *parmesan* som krydder – validatoren ekskluderer dem nå (samt
   salt/pepper/olje), og måler på **kjerne (ikke-servering)** så bygg-selv-retter som taco
   (mange serveringsboller) ikke flagges urettferdig.
-- **[RETROFIT, verstinger]** `marry-me-chicken` enkel (13→11: slått sammen olje+smør til
-  «Smør eller olje», fjernet valgfri chiliflak), `kjottkaker` enkel (8→7: fjernet niche
-  muskat, generisk «Potetmel (eller hvetemel)»), `kalruletter` enkel (10→9: samme
-  muskat-/potetmel-fiks som kjøttkake-slektningen), og `taco` **medium** (5→4 krydder:
-  droppet `hvitløkspulver` som er overflødig ved siden av fersk hvitløk i medium).
+- **[RETROFIT, verstinger]** `marry-me-chicken` enkel (13→11), `kjottkaker`
+  (enkel+medium: niche varmkrydder muskat/ingefær flyttet til **kun kompleks**, og
+  «Oksekraft» generisert til «Oksekraft (eller buljongterning + vann)» på enkel+medium),
+  `kalruletter` enkel (samme muskat-/potetmel-fiks som kjøttkake-slektningen), og `taco`
+  **medium** (5→4 krydder). To gjentakende grep krystalliserte seg:
+  - **Kraft/fond som standard skal tilby hverdags-snarveien i selve etiketten** på
+    enkel/medium («(eller buljongterning + vann)»), ikke bare som et skjult bytte.
+    Standardvisningen er medium – den må stå på egne ben uten at brukeren åpner «Tilpass».
+  - **Signaturkrydder hører på kompleks, ikke som standard.** Muskat/ingefær *definerer*
+    kjøttkaker, men de er spesialvarer; standard (medium) klarer seg med salt+pepper, og
+    den fulle krydringen ligger på kompleks for de som vil ha den.
   Medium/kompleks beholder spesialvarene – det er der de hører hjemme.
 - **[VALIDATOR-AVGRENSNING 2]** `medium ≤ kompleks` håndheves **ikke**. `safranrisotto`
   kompleks (Milanese) har *færre* linjer enn medium fordi autentisiteten **fjerner**
