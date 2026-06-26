@@ -108,6 +108,7 @@ window.RECIPE = {
   pieceWeight: { egg_yolk: 18 },
   unitOptions: {
     cream: ["dl", "ml", "g"], milk: ["dl", "ml", "g"], condensed_milk: ["dl", "ml"],
+    coconut_cream: ["dl", "ml", "g"], coconut_milk: ["dl", "ml", "g"],
     sugar: ["dl", "ml", "g"], cardamom: ["ts", "g"], rosewater: ["ss", "g"], salep: ["ss", "g"]
   },
   bulkRoles: ["fat", "liquid"],

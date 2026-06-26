@@ -599,5 +599,24 @@ Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av versting
   olje+hvitløk og bare tilsetter beinmarg. En naiv monoton-sjekk ga falsk positiv her –
   bekrefter prinsippet: kompleksitet er teknikk, ikke antall. Bare `enkel ≤ medium` sjekkes.
 
+- **[ENKEL = BARE MINIMUM, runde 2]** Etter eier-tilbakemelding: medium *kan* ha
+  signaturkrydder (muskat/ingefær i kjøttkaker er nå tilbake i medium); det er **enkel**
+  som skal være «bare minimum, men fortsatt god». Trimmet rent garnityr/overflødig fra enkel:
+  baja (koriander+rødløk), marry-me (basilikum + slo salt/pepper sammen), thai (fersk ingefær –
+  currypasta har den alt). **Regel:** på enkel, kutt *fett* (garnityr, dublett-aromater,
+  redundant krydder), men behold billige skap-staples som FORBEDRER retten (tomatpuré i
+  spagetti/lasagne ble stående – det er muskel, ikke fett).
+
+- **[MOTOR-AUDIT, fikset]** Kjørte motoren (`recipe-balance.js`) + en mirror-paritets-sjekk mot
+  alle 23 retter. **Motoren er sunn** (leverGrams ok; `requireRoles:["acid"]`+`servedAcid` gir
+  riktig sitron-tips på nivåer uten syre-ingrediens – ikke en feil), og **alle skill-bygde retter
+  er paritets-rene**. Fant 22 bytte-paritets-hull i de **5 håndskrevne pre-skill-rettene**
+  (fiskekaker/fiskesuppe/pannekake/safraniskrem/sjokoladekake) – et bytte uten `density`/
+  `unitOptions` mister enhetsvalg+gram idet det velges. Fikset væske/mel/fett-byttene (speilet
+  slottens tetthet/enheter). Bevisst utelatt: `vanilla`/`dark_chocolate` – «smak til»-/g-bytter
+  der dl/gram ikke gir mening (slotten burde egentlig ikke vært g-konvertibel; uendret nå).
+  **Lærdom:** mirror-regelen (bytte speiler slottens `unitOptions`) er den rette paritets-testen –
+  strengere enn build-skillets, men uten falske positiver på rene ts-krydder.
+
 
 
