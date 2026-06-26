@@ -72,7 +72,7 @@ const kalruletterRecipes = {
       { id: "potato_flour", label: "Potetmel (eller hvetemel)",  amount: 1, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: false, note: "Binder farsen." },
       { id: "salt_added",   label: "Salt",                      amount: 1, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false },
       { id: "butter",       label: "Smør (til bruning)",        amount: 1, unit: "ss", role: "fat", scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] },
-      { id: "stock",        label: "Oksekraft (til koking/saus)", amount: 5, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 200, removable: false, taste: { umami: 1 } },
+      { id: "stock",        label: "Oksekraft (eller buljongterning + vann)", amount: 5, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 200, removable: false, taste: { umami: 1 } },
       { id: "flour",        label: "Hvetemel (til jevning)",    amount: 1, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "end", removable: true, allergens: ["gluten"], note: "Jevner kraften til brun saus." }
     ],
     steps: [

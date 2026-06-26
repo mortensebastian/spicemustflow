@@ -62,16 +62,14 @@ const marryMeChickenRecipes = {
       { id: "stock", label: "Kyllingkraft", amount: 1.5, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 200, removable: false, taste: {"umami":1} },
       { id: "cream", label: "Matfløte/kremfløte", amount: 3, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", removable: false, allergens: ["dairy"] },
       { id: "parmesan", label: "Nyrevet parmesan", amount: 50, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], taste: {"umami":2} },
-      { id: "salt_added", label: "Salt", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false },
-      { id: "pepper", label: "Pepper", amount: 0.25, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
-      { id: "fresh_basil", label: "Frisk basilikum, til servering", amount: 10, unit: "blader", role: "aromatic", scaling: "fixed", addStage: "end", removable: true }
+      { id: "salt_added", label: "Salt og pepper", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false }
     ],
     steps: [
       "Krydre kyllingbitene med salt og pepper. Varm smør eller olje i en vid panne, og brun bitene raskt på alle sider til de er gylne. Ta dem eventuelt ut mens du lager sausen.",
       "Stek hvitløk og soltørkede tomater i samme panne et minutt, og rør inn oregano.",
       "Hell i kyllingkraften og la den koke inn et par minutter. Tilsett fløten, og la sausen småkoke til den tykner litt.",
       "Rør inn parmesan utenfor sterkeste varmen til sausen blir blank. Legg kyllingen tilbake og varm gjennom.",
-      "Smak til, dryss over frisk basilikum, og server med pasta, poteter eller godt brød."
+      "Smak til, og server med pasta, poteter eller godt brød (gjerne med frisk basilikum over)."
     ]
   },
 
