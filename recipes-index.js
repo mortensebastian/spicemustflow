@@ -513,6 +513,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "kyllingkraft", slug: "kyllingkraft.html", status: "live",
+    shortName: "Kyllingkraft", name: "Hjemmelaget kyllingkraft",
+    tagline: "Gyllen kraft kokt sakte på skrog og bein – grunnmuren i supper, sauser og risotto.",
+    description: "Hjemmelaget kyllingkraft kokt på skrog og bein. Velg nivå (enkel/medium/kompleks), juster mengden og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["suppe"], badge: "3 nivåer",
+    recipeCategory: "Tilbehør", cuisine: "Norsk",
+    keywords: "kyllingkraft, hjemmelaget kyllingkraft, kraft av kyllingbein, kyllingkraft oppskrift, hønsekraft",
+    recipeYield: "2 liter", times: { prep: "PT15M", cook: "PT3H", total: "PT3H15M" },
+    search: "kyllingkraft hjemmelaget kraft kyllingbein skrog hønsekraft buljong fond suppe saus risotto",
+    faq: [
+      { q: "Hvor lenge skal kyllingkraft koke?", a: "La kraften så vidt syde i minst 3–4 timer for full smak og gelatin – gjerne lenger om du har tid. En rask hverdagskraft på ett skrog blir likevel god etter halvannen til to timer. Jo lenger den trekker på svak varme, desto mer smak og kropp får du ut av beina." },
+      { q: "Skal jeg ha salt i kyllingkraften?", a: "Helst ikke, eller bare en liten klype. Kraft kokes ofte inn senere, og salter du den nå, blir den fort for salt når du reduserer den i en saus. Lag kraften nesten saltfri, og salt heller den ferdige retten du bruker kraften i. Derfor er saltet her valgfritt og holdt lavt." },
+      { q: "Hva er forskjellen på kraft, buljong og fond?", a: "Kraft kokes på bein i flere timer og trekker ut naturlig gelatin – det gir kropp og dybde nesten uten salt. Buljong er som regel et ferdigprodukt (terning eller pulver) og er ofte saltere og enklere. Fond er kraft kokt kraftig inn til en konsentrert, nesten sirupsaktig væske. Hjemmelaget kraft havner et godt stykke over terningen i smak." },
+      { q: "Hvorfor blir kyllingkraften min grumsete og uklar?", a: "Nesten alltid fordi den har kokt for hardt. Hard fosskoking pisker fett og partikler inn i væsken, og kraften blir grå og uklar. La den i stedet bare så vidt syde – med små bobler – og skum av skummet og fettet som legger seg på toppen de første minuttene. Da blir kraften gyllen og klar." },
+      { q: "Må jeg brune eller steke beina først?", a: "Nei, ikke for en lys, mild kraft – da legger du beina rett i kaldt vann. Vil du ha en mørkere, rikere kraft med mer farge og dybde, steker du skrog og grønnsaker gyllenbrune i ovnen først (slik vårt kompleks-nivå gjør). Begge deler er riktig; det avhenger av hva du skal bruke kraften til." },
+      { q: "Kan jeg lage kyllingkraft på skroget etter en grillet eller stekt kylling?", a: "Ja, det er en av de beste måtene å utnytte en hel kylling på. Når kjøttet er spist, legger du skroget og alle beina i gryta og koker kraft på dem. Den stekte kyllingen gir en ekstra dyp, rik kraft helt gratis. Frys gjerne skrog til du har nok til en stor sats." },
+      { q: "Kan jeg fryse kyllingkraft?", a: "Ja, kraft fryser utmerket. Avkjøl den, fordel i porsjonsbokser, og frys i 3–6 måneder. Et smart triks er å fryse kraft i isbitform – da kan du slippe en eller to terninger rett i gryta når en saus eller risotto trenger et løft, uten å tine en hel boks." },
+      { q: "Hvor lenge holder hjemmelaget kyllingkraft i kjøleskapet?", a: "Sil og avkjøl kraften raskt, og den holder seg 3–4 dager i kjøleskapet. Lar du fettlaget ligge som et lokk på toppen, holder den enda litt lenger – fettet stenger luften ute. Skal du oppbevare den lenger, er frysing det tryggeste." },
+      { q: "Hva kan jeg bruke kyllingkraft til?", a: "Kraft er grunnmuren i utrolig mye: kremede supper og kyllingsuppe, alle slags sauser og jus, risotto og paella, gryteretter, og til å koke ris, couscous eller grøt i for ekstra smak. Bytt vannet mot kraft neste gang du koker noe salt, så merker du forskjellen." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
