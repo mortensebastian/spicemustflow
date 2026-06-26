@@ -39,13 +39,13 @@ window.RECIPE = {
   id: "<rett>",
   recipes: { enkel, medium, kompleks },  // hver: { label, servings, ingredients[], steps[] }
   swapOptions: { <slotId>: [ ...bytter ] },
-  servedAcid: { tip } | null,            // stående sitron-tips KUN for retter uten syre-ingrediens
+  servedAcid: { tip } | null,            // stående sitron-tips – KREVER requireRoles:["acid"] for å vises (se under)
   density:     { <id>: gPerMl },         // for g-omregning (volum↔vekt)
   pieceWeight: { <id>: gramPerStk },     // for «juster opp de andre» når enhet er stk
   unitOptions: { <id>: [enheter] },      // hvilke enheter man kan bytte mellom (volum↔volum gratis; g krever density)
   bulkRoles:   [ ...roller som teller som «mengde mat» ],
   levers:      [ { axis, id } ],         // selvjusterende balanse-ingredienser (kan være tom)
-  requireRoles:[ ...roller retten må ha ],// f.eks. ['acid']; kan være tom []
+  requireRoles:[ ...roller retten må ha ],// f.eks. ['acid']; kan være tom []. MÅ inneholde "acid" for at servedAcid/acid-onRemove-tips skal vises
   tasteMessages: { sour, umami, sweet }, // inline-tips ved fjerning
   leverMessages: { <axis>: { down, up } }// melding når en lever justeres
 };
@@ -687,6 +687,27 @@ formen. Naturlig glutenfri/melkefri/eggfri på enkel/medium (meieri kun via remo
   uavhengig av om slotten er g-konvertibel. **Mirror-regelen** (bytte speiler slottens g-konvertibilitet)
   er grønn – det er den rette testen. Spagetti #14-lærdommen advarte mot dette for «alle ingredienser»-
   varianten; her tripper det den offisielle swapOptions-snutten fordi ts-krydderet *har* et bytte.
+
+**Retrospektiv etter pulje #4 (pasta carbonara / gulrotkake / kylling i ovn):**
+- **[KONTRAKT, fikset]** `servedAcid` og acid-`onRemove`-tips er DØD DATA uten `requireRoles:["acid"]` –
+  `acidMessage()` returnerer null med en gang ellers. Kylling-i-ovn hadde gjennomtenkt syre-data men
+  `requireRoles:[]`, så alt var inert til vi satte `["acid"]`. Presisert i kontrakten (`window.RECIPE`-
+  skjema: `servedAcid`/`requireRoles`-kommentarene) og lagt en eksplisitt sjekk i `research-recipe`-
+  sjekklista. Mønster: enkel uten syre + medium/kompleks med sitron ⇒ `requireRoles:["acid"]` + myke
+  `onRemove`-tips gir riktig oppførsel (stående tips på enkel, stille ellers, ingen hard advarsel).
+- **[VALIDERING, fikset]** Bytte-paritet-snutten i `build-recipe` ga falsk positiv på ts-krydder-bytter
+  (`chicken_spice→single_spices`): den sjekket *enhver* `ts`-bytte uten å se på om slotten var
+  g-konvertibel. Erstattet med **mirror-regelen** (flagg kun hvis slotten selv står i `unitOptions`).
+  Verifisert: grønn på kylling-i-ovn, fanger fortsatt et ekte hull (g-konv slot + bytte uten density).
+- **[LOGG] Kompleksitet/nivå-skillet (det justerte) holdt på tre svært ulike format.** Carbonara
+  (emulsjons-teknikk), gulrotkake (bake-innsats) og kylling i ovn (steke-/saltingsteknikk) passerte alle
+  `NIVÅ-SJEKK` på **første forsøk** med 0 advarsler, og `enkel ≤ medium` overalt. Teknikk-stige-framingen
+  («enkel = snarvei/tilgjengelig, kompleks = teknikk, ikke smalere handleliste») produserer rene, godt
+  graderte nivåer uten manuell justering. Nivå-kontrakten + soft-validatoren fra forrige runde virker.
+- **Ingen [MOTOR]-fiks gjort.** Mulig fremtidig motor-nicety (ikke gjort, ville vært bevisst
+  kjernemotorendring): koble `servedAcid` fra `requireRoles:["acid"]` så en stående syre-tips kan vises
+  uten å «kreve» syre. I dag er kontrakt-presiseringen tilstrekkelig; en frakobling risikerer å endre
+  oppførsel for eksisterende retter (baja m.fl.) og bør bare gjøres etter eksplisitt ja.
 
 
 

@@ -143,6 +143,10 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
 - [ ] 5–10 **ekte** FAQ-spørsmål fra PAA/autocomplete (ikke oppfunnet)
 - [ ] `season` satt kun hvis retten faktisk har en topp
 - [ ] Tre nivåer; `medium` finnes; salt-lever har `sodiumPer100g ~38800` der den brukes
+- [ ] **`servedAcid`/acid-`onRemove`-tips ⇒ `requireRoles:["acid"]`.** Setter du en stående sitron-tips
+      (`servedAcid`) eller myke `onRemove`-tips på en `role:"acid"`-ingrediens, MÅ `requireRoles` inneholde
+      `"acid"` – ellers er hele syre-bevisstheten død data (adapterens `acidMessage()` returnerer null).
+      Typisk for retter der enkel mangler syre, men medium/kompleks har sitron (jf. kylling-i-ovn).
 - [ ] **Enkel følger tilgjengelighets-gaten:** snarvei-produkter, generiske labels,
       ≤ 2 enkeltkrydder, kjerne (ikke-servering) innen budsjett, `enkel ≤ medium ≤ kompleks`,
       ingen spesialvarer/-teknikk (de hører på medium/kompleks)
