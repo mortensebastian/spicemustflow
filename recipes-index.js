@@ -581,6 +581,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "kylling-i-ovn", slug: "kylling-i-ovn.html", status: "live",
+    shortName: "Kylling i ovn", name: "Kylling i ovn (kyllingfilet i ovn)",
+    tagline: "Saftig kyllingfilet i ovn med grønnsaker i samme form – riktig grader og kjernetemperatur.",
+    description: "Saftig kylling i ovn med kyllingfilet, grønnsaker og enkel marinade. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    keywords: "kylling i ovn, kyllingfilet i ovn, ovnsbakt kylling, saftig kylling i ovn, kylling i ovn med grønnsaker",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT30M", total: "PT45M" },
+    search: "kylling i ovn kyllingfilet ovnsbakt saftig grader kjernetemperatur marinade grønnsaker rotgrønnsaker kyllinglår",
+    faq: [
+      { q: "Hvor lenge skal kyllingfilet steke i ovnen?", a: "Regn 18–25 minutter på 200 °C for vanlige kyllingfileter, avhengig av tykkelse. Tynne fileter er ferdige etter rundt 18 minutter, tykke kan trenge 25. Det sikreste er å steke etter kjernetemperatur, ikke klokka – stikk inn et steketermometer i den tykkeste delen." },
+      { q: "Hvor mange grader skal kylling stekes på i ovn?", a: "200 °C over- og undervarme er en god allround-temperatur for kyllingfilet – varmt nok til litt farge, men skånsomt nok til at kjøttet ikke tørker ut. Steker du hel kylling eller kyllinglår, senk til 175–180 °C og gi dem lengre tid." },
+      { q: "Hva er riktig kjernetemperatur på kylling?", a: "Ta kyllingen ut av ovnen ved 68–70 °C i den tykkeste delen, og la den hvile noen minutter – ettervarmen løfter den de siste gradene. Da er kyllingen trygg og fortsatt saftig. Steker du forbi 72–75 °C, blir fileten lett tørr." },
+      { q: "Hvordan får jeg saftig kyllingfilet i ovnen?", a: "Tre grep gjør mest: salt kyllingen godt en stund før steking (gjerne 30–60 minutter, eller over natten – det er en lett tørrsalting som holder på saften), bruk steketermometer så du ikke oversteker, og la fileten hvile 5 minutter før du skjærer i den. Et lite lag olje hindrer at overflaten tørker ut." },
+      { q: "Kan jeg steke kylling og grønnsaker i samme form?", a: "Ja, det er selve poenget med en ovnsmiddag. Skjær grønnsakene i jevne biter, vend dem i olje og salt, og legg kyllingen oppå eller ved siden. Bruk grønnsaker som tåler samme tid – paprika, squash, løk og cherrytomater passer til filet; faste rotgrønnsaker (gulrot, potet, sellerirot) bør gjerne få et lite forsprang eller skjæres mindre." },
+      { q: "Bør jeg bruke kyllingfilet eller kyllinglår i ovnen?", a: "Begge fungerer. Kyllingfilet (bryst) er magert og raskt, men tilgir mindre – pass på kjernetemperaturen. Kyllinglår med skinn er saftigere og mer smaksrikt og tåler lengre steketid uten å bli tørt, men trenger høyere kjernetemperatur (rundt 75 °C) for å bli mørt. I oppskriften vår ligger kyllinglår klart som bytte." },
+      { q: "Hvor lenge kan kylling ligge i marinade?", a: "En enkel olje- og krydermarinade gir smak allerede etter 30 minutter, men kyllingen blir bedre av et par timer – og helst over natten i kjøleskapet. Inneholder marinaden mye syre (sitron, eddik), bør du ikke marinere lenger enn et par timer, da kan overflaten bli melen. Salt kan derimot gjerne ligge på over natten." },
+      { q: "Hvordan unngår jeg tørr kylling i ovnen?", a: "Tørr kylling skyldes nesten alltid for høy kjernetemperatur. Bruk termometer og ta fileten ut ved 68–70 °C. Hjelper det fortsatt ikke, prøv å salte tidligere (tørrsalting), pensle med litt olje eller smør, og dekk formen løst med folie de første minuttene om ovnen er veldig varm. La alltid kyllingen hvile før servering." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

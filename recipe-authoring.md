@@ -669,5 +669,24 @@ nøtter, ananas/kokos for fukt og brunet-smør-ostekrem. Lærdom:
 - **Allergen kun på ett nivå igjen:** nøtter (valnøtter) er standard fra medium; union-filteret viser
   nøtter med en gang (som lasagnes egg / eplekakes mandel). Riktig.
 
+**kylling i ovn (rett #30, pulje #4)** — **ingen kjernemotorendring**, men to fanget friksjoner ved review.
+Teknikk-stige rundt saftighet/kjernetemperatur: enkel = olje + salt/pepper + ferdig kyllingkrydder,
+medium = enkel marinade + rotgrønnsaker, kompleks = tørrsalting + urtesmør under skinnet + vin/kraft i
+formen. Naturlig glutenfri/melkefri/eggfri på enkel/medium (meieri kun via removable urtesmør i kompleks).
+- **`servedAcid` + acid-`onRemove`-tips er DØD DATA uten `requireRoles:["acid"]`.** Research satte en
+  gjennomtenkt stående sitron-tips, removable `isPrimaryAcid`-sitron i medium/kompleks med myke
+  `onRemove`-tips, MEN `requireRoles:[]` – og `acidMessage()` i adapteren returnerer null med en gang
+  med mindre `requireRoles` inneholder `"acid"`. Hele syre-bevisstheten var inert. Fiks: `requireRoles:["acid"]`.
+  Da vises den stående tipsen på **enkel** (ingen syre), er stille på medium/kompleks (sitron til stede),
+  og fordi sitronen har `onRemove.tip` får man den **myke** inline-tipsen ved fjerning, ikke den harde
+  «flat og tung»-advarselen. Dette er det dokumenterte mønsteret (jf. MOTOR-AUDIT-lærdommen). **Kontrakt-
+  presisering nødvendig:** `servedAcid` virker kun sammen med `requireRoles:["acid"]`.
+- **Bytte-paritet-snutten gir falsk positiv på ts-krydder-bytter.** `chicken_spice` er et `nonlinear`
+  «smak til»-ferdigkrydder uten `density`/`unitOptions` (riktig, som `herbs`/`pepper` i spagetti/marry-me),
+  men byttet `single_spices` (også `ts`) ble flagget fordi den offisielle snutten sjekker *enhver* `ts`-bytte
+  uavhengig av om slotten er g-konvertibel. **Mirror-regelen** (bytte speiler slottens g-konvertibilitet)
+  er grønn – det er den rette testen. Spagetti #14-lærdommen advarte mot dette for «alle ingredienser»-
+  varianten; her tripper det den offisielle swapOptions-snutten fordi ts-krydderet *har* et bytte.
+
 
 
