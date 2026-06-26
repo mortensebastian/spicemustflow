@@ -642,5 +642,19 @@ Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av versting
   la manifestet bære en valgfri «relatert grunnoppskrift»-URL som adapteren auto-lenker på en kjent
   ingrediens-id (f.eks. `stock`/`homemade_stock`). I dag er prosa-lenke det rette, in-scope grepet.
 
+**pasta carbonara (rett #28, pulje #4)** — **ingen kjernemotorendring.** Nivåene er en ren
+teknikk-stige rundt «ekte vs fløte»-debatten: enkel bruker bacon + hele egg + generisk «revet ost»
+og en valgfri liten skvett fløte som ærlig snarvei-trygghet mot eggerøre; medium er den autentiske
+romerske retten UTEN fløte (guanciale, egg + eggeplomme, pecorino, emulsjon av pastavann); kompleks
+raffinerer (tørrsaltet guanciale, pecorino+parmigiano 60/40, bare eggeplommer, temperering). Lærdom:
+- **Egg som strukturelt «unfixable» allergen er riktig, ikke en mangel.** Carbonara *er* egg + ost +
+  svin + pasta; en eggfri «carbonara» er en annen rett. Som fisk i fiskesuppe lot vi egg stå ærlig
+  flagget framfor å oppfinne en falsk eggfri løsning. Gluten (→GF-pasta) og meieri (→vegansk hardost
+  på hver ost-bærer) er derimot fullt løsbare.
+- **Salt-lever kan være `removable:true`/liten når saltet i hovedsak kommer fra ingrediensene selv**
+  (ost + guanciale + pastavann). `salt_added` beholdes som lever for å treffe mål-natrium ved
+  skalering/bytte, men den er ikke rettens primære saltkilde – beslektet med thai-fiskesuppe der
+  fiskesaus var salt-leveren. `requireRoles:[]`, `servedAcid:null` (carbonara har ingen syre-akse).
+
 
 

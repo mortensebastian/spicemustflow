@@ -536,6 +536,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "pasta-carbonara", slug: "pasta-carbonara.html", status: "live",
+    shortName: "Pasta carbonara", name: "Pasta carbonara",
+    tagline: "Den romerske klassikeren: silkemyk egg- og ostesaus uten fløte.",
+    description: "Ekte pasta carbonara uten fløte – silkemyk saus av egg, ost og pastavann. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Italiensk",
+    keywords: "pasta carbonara, carbonara oppskrift, carbonara uten fløte, ekte italiensk carbonara, spaghetti carbonara",
+    recipeYield: "4 porsjoner", times: { prep: "PT10M", cook: "PT15M", total: "PT25M" },
+    search: "pasta carbonara carbonara oppskrift uten fløte ekte italiensk spaghetti guanciale pancetta egg pecorino parmesan svart pepper romersk",
+    faq: [
+      { q: "Skal det være fløte i carbonara?", a: "Nei. Ekte romersk carbonara inneholder ikke fløte. Kremen kommer fra en emulsjon av egg, revet ost og litt av det stivelsesrike pastavannet, som piskes sammen og blandes inn i den varme pastaen utenfor varmen. Mange norske varianter har fløte for å gjøre sausen tryggere og mer tilgivende, men det er ikke nødvendig når teknikken sitter." },
+      { q: "Hvilken ost bruker man i carbonara?", a: "Tradisjonelt Pecorino Romano, en salt og skarp sauemelksost. Mange synes ren pecorino blir vel salt og blander den med parmesan (parmigiano), gjerne rundt 60/40, for en rundere smak. Bruker du bare parmesan blir det mildere – da kan du trenge litt mer salt. Riv osten fint så den smelter jevnt inn i sausen." },
+      { q: "Hvorfor blir carbonaraen min til eggerøre?", a: "Da har eggene fått for mye varme. Skru av platen og ta panna av varmen før eggeblandingen går i, og rør raskt og kontinuerlig. Varmen fra pastaen alene er nok til å tykne eggene til en silkeglatt saus. Tipser du eggemassen først med en skje varmt pastavann (temperering), tåler den varmen bedre uten å koagulere." },
+      { q: "Kan jeg bruke bacon i stedet for guanciale?", a: "Ja, men det endrer smaken. Guanciale (saltet svinekjebbe) er det autentiske valget og gir mye smeltende fett. Pancetta er nest best og litt mildere. Vanlig bacon fungerer i en knipe, men det er røkt, så smaken blir mer røykfylt og mindre rund enn originalen. Bruker du bacon, velg en mild, ikke for tynn variant." },
+      { q: "Skal jeg bruke hele egg eller bare eggeplommer?", a: "Begge deler fungerer. Hele egg gir en lettere saus og er enklest å få til. Bare eggeplommer (eller en blanding av hele egg og ekstra plommer) gir en rikere, mer fløyelsmyk og dypgul saus, men er litt mer ømfintlig for varme. En vanlig fordeling er ett helt egg per person pluss én ekstra eggeplomme til retten." },
+      { q: "Hva er forskjellen på carbonara og cacio e pepe?", a: "Begge er romerske pastaretter med pecorino og rikelig svart pepper, men carbonara har i tillegg egg og guanciale. Cacio e pepe er kun ost, pepper og pastavann. Carbonara er altså en rikere, mer mettende slektning – det er eggene og det sprøstekte svinefettet som skiller dem." },
+      { q: "Hvilken pasta passer best til carbonara?", a: "Spaghetti er det vanligste og det de fleste forbinder med retten. I Roma brukes også rigatoni og tonnarelli. Velg en pasta med litt overflate eller tyngde som sausen kan feste seg til. Det viktigste er at du koker den al dente og tar vare på litt av kokevannet til emulsjonen." },
+      { q: "Hvor mye svart pepper skal i carbonara?", a: "Rikelig – pepper er en hovedsmak, ikke bare pynt. Bruk grovt nykvernet svart pepper, gjerne 1 ts eller mer til fire porsjoner. For mest smak kan du riste pepperen kort i det varme guanciale-fettet før du vender inn pasta og egg." },
+      { q: "Kan jeg lage carbonara glutenfri?", a: "Ja. Selve eggesausen er naturlig glutenfri – bytt bare ut den vanlige pastaen med glutenfri pasta. Kok den etter anvisning, gjerne litt kortere, og ta vare på kokevannet som vanlig. Da er hele retten trygg ved cøliaki." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
