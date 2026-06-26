@@ -559,6 +559,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "gulrotkake", slug: "gulrotkake.html", status: "live",
+    shortName: "Gulrotkake", name: "Saftig gulrotkake med ostekrem",
+    tagline: "Saftig norsk gulrotkake i langpanne med silkemyk ostekrem.",
+    description: "Saftig norsk gulrotkake med ostekrem. Velg nivå (enkel/medium/kompleks), juster antall stykker og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    keywords: "gulrotkake, saftig gulrotkake, gulrotkake med ostekrem",
+    recipeYield: "12 stykker", times: { prep: "PT20M", cook: "PT40M", total: "PT1H10M" },
+    search: "gulrotkake saftig ostekrem langpanne valnøtter",
+    faq: [
+      { q: "Hvorfor blir gulrotkake saftig?", a: "Olje er hemmeligheten – den holder kaka saftig mye lenger enn smør alene. Bruk nyrevne gulrøtter (ferdigrevne er tørrere), og la gjerne kaka stå en dag før servering; den blir bare saftigere." },
+      { q: "Skal det nøtter i gulrotkake?", a: "Det er valgfritt. Mange liker valnøtter eller pekannøtter for crunch og nøttesmak, men kaka blir like god uten – da får du en mild, ren gulrot- og kanelsmak. I oppskriften kan du slå nøttene av eller på." },
+      { q: "Hvordan lager jeg ostekrem til gulrotkake?", a: "Pisk romtemperert smør med melis og vaniljesukker til luftig, og rør så inn romtemperert kremost litt om gangen til kremen er glatt. Ikke pisk for lenge etter at osten er i, da kan den bli for løs." },
+      { q: "Hvorfor blir ostekremen min for løs?", a: "Som regel fordi kremosten er for varm, eller du pisker for lenge. Bruk kald, fast kremost (naturell, ikke lett), rør den forsiktig inn til slutt, og sett kaka kaldt så kremen stivner før servering." },
+      { q: "Kan jeg lage gulrotkake i langpanne?", a: "Ja, det er den vanligste måten. Bruk en liten langpanne og stek på 175–180 °C i 35–45 minutter til en kakepinne kommer ut med noen fuktige smuler. Skjær i passe stykker etter at den er avkjølt." },
+      { q: "Hvor lenge holder gulrotkake seg?", a: "Med ostekrem holder den seg 3–5 dager i kjøleskapet i tett boks – og den blir faktisk saftigere de første dagene. Uten krem holder bunnen seg enda lenger." },
+      { q: "Kan jeg fryse gulrotkake?", a: "Ja. Frys helst bunnen uten krem i opptil 3 måneder. Ostekrem kan bli litt kornete av frysing, så et godt triks er å fryse kaka naken og smøre på fersk ostekrem etter at den er tint." },
+      { q: "Trenger jeg både bakepulver og natron i gulrotkake?", a: "Bakepulver gjør det meste av hevejobben. Litt natron kan brukes i tillegg fordi det reagerer med syren i brunt sukker, men kaka blir fin med bakepulver alene." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

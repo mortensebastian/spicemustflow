@@ -656,5 +656,18 @@ raffinerer (tørrsaltet guanciale, pecorino+parmigiano 60/40, bare eggeplommer, 
   skalering/bytte, men den er ikke rettens primære saltkilde – beslektet med thai-fiskesuppe der
   fiskesaus var salt-leveren. `requireRoles:[]`, `servedAcid:null` (carbonara har ingen syre-akse).
 
+**gulrotkake (rett #29, pulje #4)** — **ingen kjernemotorendring.** Bakst-stige med `yieldNoun:"stykker"`:
+enkel = rør-sammen langpanne med snarvei-topping («Ferdig ostekrem (eller melisglasur)»), medium =
+saftig kake med valnøtter (valgfri) + hjemmelaget ostekrem, kompleks = full krydderprofil, ristede
+nøtter, ananas/kokos for fukt og brunet-smør-ostekrem. Lærdom:
+- **Meieri på fire ostekrem-bærere, alle løst.** Frosting, kremost, smør og brunet smør bærer alle
+  meieri; hver fikk melkefritt bytte eller er `removable` serve-topping. Største meieri-fanout så langt –
+  standardbytte-disiplinen dekket alt (ingen «unfixable»), som lasagne-lærdommen krevde.
+- **Sweet-lever på batter-`sugar`, ikke frostings-melis.** Sukkeret i røra er strukturelt og auto-
+  balanseres; melis i ostekremen er serve-stage og holdes utenfor leveren (samme skille som
+  eplekake). Bekrefter at sweet-lever på bakesukker (vafler/boller-mønsteret) også passer kaker.
+- **Allergen kun på ett nivå igjen:** nøtter (valnøtter) er standard fra medium; union-filteret viser
+  nøtter med en gang (som lasagnes egg / eplekakes mandel). Riktig.
+
 
 
