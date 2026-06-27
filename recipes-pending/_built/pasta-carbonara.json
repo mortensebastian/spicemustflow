@@ -1,0 +1,167 @@
+{
+  "_comment": "Staging-objekt for Pasta carbonara. research-recipe skrev dette; build-recipe konsumerer det. Eget id-sett (pasta/guanciale/eggs/egg_yolk/pecorino/parmigiano/black_pepper/pasta_water/salt_added) for ikke å kollidere med søsken spagetti-kjottsaus (spaghetti/beef/parmesan).",
+
+  "indexEntry": {
+    "id": "pasta-carbonara",
+    "slug": "pasta-carbonara.html",
+    "status": "live",
+    "shortName": "Pasta carbonara",
+    "name": "Pasta carbonara",
+    "tagline": "Den romerske klassikeren: silkemyk egg- og ostesaus uten fløte.",
+    "description": "Ekte pasta carbonara uten fløte – silkemyk saus av egg, ost og pastavann. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    "image": null,
+    "category": ["middag"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Italiensk",
+    "keywords": "pasta carbonara, carbonara oppskrift, carbonara uten fløte, ekte italiensk carbonara, spaghetti carbonara",
+    "recipeYield": "4 porsjoner",
+    "times": { "prep": "PT10M", "cook": "PT15M", "total": "PT25M" },
+    "search": "pasta carbonara carbonara oppskrift uten fløte ekte italiensk spaghetti guanciale pancetta egg pecorino parmesan svart pepper romersk",
+    "faq": [
+      { "q": "Skal det være fløte i carbonara?", "a": "Nei. Ekte romersk carbonara inneholder ikke fløte. Kremen kommer fra en emulsjon av egg, revet ost og litt av det stivelsesrike pastavannet, som piskes sammen og blandes inn i den varme pastaen utenfor varmen. Mange norske varianter har fløte for å gjøre sausen tryggere og mer tilgivende, men det er ikke nødvendig når teknikken sitter." },
+      { "q": "Hvilken ost bruker man i carbonara?", "a": "Tradisjonelt Pecorino Romano, en salt og skarp sauemelksost. Mange synes ren pecorino blir vel salt og blander den med parmesan (parmigiano), gjerne rundt 60/40, for en rundere smak. Bruker du bare parmesan blir det mildere – da kan du trenge litt mer salt. Riv osten fint så den smelter jevnt inn i sausen." },
+      { "q": "Hvorfor blir carbonaraen min til eggerøre?", "a": "Da har eggene fått for mye varme. Skru av platen og ta panna av varmen før eggeblandingen går i, og rør raskt og kontinuerlig. Varmen fra pastaen alene er nok til å tykne eggene til en silkeglatt saus. Tipser du eggemassen først med en skje varmt pastavann (temperering), tåler den varmen bedre uten å koagulere." },
+      { "q": "Kan jeg bruke bacon i stedet for guanciale?", "a": "Ja, men det endrer smaken. Guanciale (saltet svinekjebbe) er det autentiske valget og gir mye smeltende fett. Pancetta er nest best og litt mildere. Vanlig bacon fungerer i en knipe, men det er røkt, så smaken blir mer røykfylt og mindre rund enn originalen. Bruker du bacon, velg en mild, ikke for tynn variant." },
+      { "q": "Skal jeg bruke hele egg eller bare eggeplommer?", "a": "Begge deler fungerer. Hele egg gir en lettere saus og er enklest å få til. Bare eggeplommer (eller en blanding av hele egg og ekstra plommer) gir en rikere, mer fløyelsmyk og dypgul saus, men er litt mer ømfintlig for varme. En vanlig fordeling er ett helt egg per person pluss én ekstra eggeplomme til retten." },
+      { "q": "Hva er forskjellen på carbonara og cacio e pepe?", "a": "Begge er romerske pastaretter med pecorino og rikelig svart pepper, men carbonara har i tillegg egg og guanciale. Cacio e pepe er kun ost, pepper og pastavann. Carbonara er altså en rikere, mer mettende slektning – det er eggene og det sprøstekte svinefettet som skiller dem." },
+      { "q": "Hvilken pasta passer best til carbonara?", "a": "Spaghetti er det vanligste og det de fleste forbinder med retten. I Roma brukes også rigatoni og tonnarelli. Velg en pasta med litt overflate eller tyngde som sausen kan feste seg til. Det viktigste er at du koker den al dente og tar vare på litt av kokevannet til emulsjonen." },
+      { "q": "Hvor mye svart pepper skal i carbonara?", "a": "Rikelig – pepper er en hovedsmak, ikke bare pynt. Bruk grovt nykvernet svart pepper, gjerne 1 ts eller mer til fire porsjoner. For mest smak kan du riste pepperen kort i det varme guanciale-fettet før du vender inn pasta og egg." },
+      { "q": "Kan jeg lage carbonara glutenfri?", "a": "Ja. Selve eggesausen er naturlig glutenfri – bytt bare ut den vanlige pastaen med glutenfri pasta. Kok den etter anvisning, gjerne litt kortere, og ta vare på kokevannet som vanlig. Da er hele retten trygg ved cøliaki." }
+    ]
+  },
+
+  "seo": {
+    "title": "Pasta carbonara – ekte oppskrift uten fløte | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Den romerske klassikeren slik den egentlig er: en silkemyk saus av egg, ost og pastavann – helt uten fløte.",
+    "bodyIntro": "Ekte carbonara har bare en håndfull ingredienser, men de må behandles riktig. Hemmeligheten er ikke fløte, men en emulsjon: råe egg og fint revet ost piskes sammen og bindes til en blank, kremet saus av varmen fra pastaen og litt av det stivelsesrike kokevannet. Får du den teknikken til, trenger du verken fløte eller jevning – kremen er der allerede.\n\nNøkkelen er temperaturen. Eggeblandingen skal aldri møte direkte varme, ellers stivner den og blir til eggerøre. Du tar panna av platen, lar pastaen kjøle seg et øyeblikk, og vender inn egg og ost mens du rører raskt. En skje varmt pastavann rørt inn i eggemassen først – temperering – gjør sausen enda mer tilgivende og silkeglatt. Det sprøstekte fettet fra guanciale binder det hele sammen og gir den dype, salte smaken retten er kjent for.\n\nVår versjon lar deg klatre fra hverdag til finsmak. På det enkle nivået bruker vi bacon eller terninger, hele egg og generisk revet ost, med en liten skvett fløte som trygt sikkerhetsnett mot eggerøre. Medium er den autentiske romerske retten uten fløte, med guanciale eller pancetta og ekte emulsjon. Kompleks går hele veien: tørrsaltet guanciale, en blanding av pecorino og parmigiano, ekstra eggeplommer og pepper ristet i fettet.\n\nUansett nivå kan du justere antall porsjoner og bytte ingredienser fritt – mengdene regnes om automatisk, og du får hjelp til å holde balansen mellom salt ost, salt svinekjøtt og salt pastavann."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": ["matprat.no", "trinesmatblogg.no", "godt.no", "barilla.com"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «pasta carbonara» er hardt (matprat/matbloggere/Barilla eier topp-3 med karusell). Angrip long-tail først: «carbonara uten fløte», «ekte italiensk carbonara», «hvorfor blir carbonara eggerøre», «bacon vs guanciale», «pecorino eller parmesan» – alt dekket i FAQ. Vår vinkel er den ærlige teknikk-stigen (fløte-snarvei → autentisk emulsjon → finsmak) som skiller oss fra fløte-vs-ekte-krigen. Ta hodeordet over 6–12 mnd."
+  },
+
+  "recipe": {
+    "id": "pasta-carbonara",
+    "bulkRoles": ["protein", "starch", "dairy"],
+    "levers": [{ "axis": "salt", "id": "salt_added" }],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "umami": "Retten blir mindre fyldig – litt ekstra ost eller guanciale gir tilbake dybden."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Du la til noe salt (ost/guanciale) – vi reduserte tilsatt salt automatisk. Husk at osten og kjøttet allerede salter mye; smak til.",
+        "up": "Du tok bort noe salt (ost/guanciale) – vi økte tilsatt salt litt. Smak til."
+      }
+    },
+    "density": { "cream": 1.01, "salt_added": 1.2, "plant_cream": 1 },
+    "pieceWeight": { "eggs": 55, "egg_yolk": 18 },
+    "unitOptions": {
+      "cream": ["dl", "ss", "ml", "g"],
+      "salt_added": ["ts", "g"],
+      "plant_cream": ["dl", "ss", "ml", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          { "id": "pasta", "label": "Spaghetti", "amount": 350, "unit": "g", "role": "starch", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "bacon", "label": "Bacon eller baconterninger", "amount": 150, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 1300, "removable": false, "taste": { "umami": 2 } },
+          { "id": "eggs", "label": "Egg", "amount": 3, "unit": "stk", "role": "protein", "essential": true, "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["egg"] },
+          { "id": "cheese", "label": "Revet ost (parmesan eller hvitost)", "amount": 60, "unit": "g", "role": "dairy", "essential": true, "scaling": "linear", "addStage": "end", "sodiumPer100g": 1200, "removable": false, "allergens": ["dairy"], "taste": { "umami": 2 } },
+          { "id": "cream", "label": "Litt fløte (valgfritt, trygt mot eggerøre)", "amount": 0.5, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "end", "removable": true, "allergens": ["dairy"], "note": "Snarvei-trygghet: gjør sausen mer tilgivende. Sløyf den for en mer autentisk carbonara." },
+          { "id": "black_pepper", "label": "Nykvernet svart pepper", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "removable": false },
+          { "id": "salt_added", "label": "Salt (til pastavannet)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": true }
+        ],
+        "steps": [
+          "Kok pastaen al dente i godt saltet vann. Ta vare på en kopp av kokevannet før du heller av.",
+          "Stek bacon eller baconterninger sprøtt i en stor panne. Skru ned varmen.",
+          "Visp sammen egg, revet ost, rikelig svart pepper og eventuelt en skvett fløte i en bolle.",
+          "Ta panna av varmen. Vend den nykokte pastaen inn i baconet, og hell over eggeblandingen mens du rører raskt. Spe med litt pastavann til sausen blir blank og kremet. Server straks med mer pepper."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          { "id": "pasta", "label": "Spaghetti", "amount": 400, "unit": "g", "role": "starch", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "guanciale", "label": "Guanciale eller pancetta", "amount": 150, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 1500, "removable": false, "taste": { "umami": 3 } },
+          { "id": "eggs", "label": "Egg", "amount": 2, "unit": "stk", "role": "protein", "essential": true, "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["egg"] },
+          { "id": "egg_yolk", "label": "Eggeplomme (ekstra)", "amount": 2, "unit": "stk", "role": "protein", "scaling": "linear", "addStage": "end", "removable": true, "allergens": ["egg"], "note": "Ekstra plommer gir rikere, mer fløyelsmyk saus." },
+          { "id": "pecorino", "label": "Pecorino Romano, fint revet", "amount": 70, "unit": "g", "role": "dairy", "essential": true, "scaling": "linear", "addStage": "end", "sodiumPer100g": 1800, "removable": false, "allergens": ["dairy"], "taste": { "umami": 3 } },
+          { "id": "black_pepper", "label": "Nykvernet svart pepper", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "end", "removable": false },
+          { "id": "salt_added", "label": "Salt (til pastavannet)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": true }
+        ],
+        "steps": [
+          "Skjær guanciale i staver eller terninger. Kok pastaen al dente i godt saltet vann, og ta vare på rikelig kokevann.",
+          "Stek guanciale på middels varme til fettet er smeltet og kjøttet sprøtt og gyllent. Ta panna av varmen.",
+          "Visp egg, ekstra eggeplommer, fint revet pecorino og rikelig svart pepper til en jevn masse. Rør inn en skje varmt pastavann for å temperere.",
+          "Vend den nykokte pastaen inn i det varme guanciale-fettet. Ta panna helt av varmen, hell over eggeblandingen, og rør raskt og kontinuerlig.",
+          "Spe med litt pastavann til sausen blir silkeblank og kremet. Smak til og server straks med mer pecorino og pepper."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          { "id": "pasta", "label": "Spaghetti eller tonnarelli", "amount": 400, "unit": "g", "role": "starch", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["gluten"] },
+          { "id": "guanciale", "label": "Tørrsaltet guanciale", "amount": 180, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 1500, "removable": false, "taste": { "umami": 3 } },
+          { "id": "egg_yolk", "label": "Eggeplommer", "amount": 5, "unit": "stk", "role": "protein", "essential": true, "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["egg"], "note": "Bare plommer gir den dypeste, mest fløyelsmyke sausen." },
+          { "id": "eggs", "label": "Helt egg", "amount": 1, "unit": "stk", "role": "protein", "scaling": "linear", "addStage": "end", "removable": true, "allergens": ["egg"], "note": "Ett helt egg gir litt mer volum og binding sammen med plommene." },
+          { "id": "pecorino", "label": "Pecorino Romano, fint revet", "amount": 50, "unit": "g", "role": "dairy", "essential": true, "scaling": "linear", "addStage": "end", "sodiumPer100g": 1800, "removable": false, "allergens": ["dairy"], "taste": { "umami": 3 } },
+          { "id": "parmigiano", "label": "Parmigiano Reggiano, fint revet", "amount": 30, "unit": "g", "role": "dairy", "scaling": "linear", "addStage": "end", "sodiumPer100g": 1500, "removable": true, "allergens": ["dairy"], "taste": { "umami": 2 }, "note": "Blanding pecorino/parmigiano (ca. 60/40) runder av saltet fra pecorinoen." },
+          { "id": "black_pepper", "label": "Grovt nykvernet svart pepper", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": false, "note": "Ristes kort i guanciale-fettet for dypere smak." },
+          { "id": "salt_added", "label": "Salt (til pastavannet)", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": true }
+        ],
+        "steps": [
+          "Skjær guanciale i tykke staver. Stek den langsomt på middels-lav varme til fettet er klart og kjøttet sprøtt; ta opp litt av den sprøeste biten til pynt.",
+          "Rist grovt nykvernet pepper kort i det varme fettet for å løse ut aromaen. Ta panna av varmen.",
+          "Kok pastaen al dente i lett saltet vann (osten og guanciale salter mye). Ta vare på rikelig stivelsesrikt kokevann.",
+          "Visp eggeplommer, eventuelt det hele egget, fint revet pecorino og parmigiano til en tykk, glatt masse. Temperer med et par skjeer varmt pastavann mens du visper.",
+          "Vend pastaen inn i det peprede fettet utenfor varmen. Hell over eggemassen og rør kraftig og raskt, og spe med pastavann til emulsjonen blir silkeblank uten å skille seg.",
+          "Server straks med den sprøstekte guanciale-pynten, ekstra revet ost og mer pepper."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "pasta": [
+        { "id": "gf_pasta", "label": "Glutenfri pasta", "amount": 350, "unit": "g", "note": "Mais-/risbasert; kok etter pakken, gjerne litt kortere. Ta vare på kokevannet til emulsjonen." }
+      ],
+      "bacon": [
+        { "id": "pancetta_swap", "label": "Pancetta (mildere, uten røyk)", "amount": 150, "unit": "g", "sodiumPer100g": 1500, "allergens": [], "taste": { "umami": 2 }, "tradition": "traditional", "note": "Nærmere originalen enn bacon – mildere og ikke røkt." },
+        { "id": "guanciale_swap", "label": "Guanciale (autentisk)", "amount": 150, "unit": "g", "sodiumPer100g": 1500, "allergens": [], "taste": { "umami": 3 }, "tradition": "traditional", "note": "Det ekte romerske valget; mye smeltende fett." }
+      ],
+      "guanciale": [
+        { "id": "pancetta_alt", "label": "Pancetta (lettere å få tak i)", "amount": 150, "unit": "g", "sodiumPer100g": 1500, "allergens": [], "taste": { "umami": 2 }, "tradition": "traditional", "note": "Nest beste valg; litt mildere og mindre fett enn guanciale." },
+        { "id": "bacon_alt", "label": "Bacon (i en knipe)", "amount": 150, "unit": "g", "sodiumPer100g": 1300, "allergens": [], "taste": { "umami": 2 }, "tradition": "non-traditional", "note": "Røkt smak; velg en mild variant. Avviker fra den romerske originalen." }
+      ],
+      "cheese": [
+        { "id": "pecorino_swap", "label": "Pecorino Romano (autentisk)", "amount": 60, "unit": "g", "sodiumPer100g": 1800, "allergens": ["dairy"], "taste": { "umami": 3 }, "tradition": "traditional", "note": "Salt og skarp sauemelksost – den originale." },
+        { "id": "vegan_parmesan", "label": "Vegansk parmesan (melkefri)", "amount": 60, "unit": "g", "sodiumPer100g": 700, "allergens": [], "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Melkefri; salt justeres automatisk." }
+      ],
+      "pecorino": [
+        { "id": "parmesan_swap", "label": "Parmesan (mildere)", "amount": 70, "unit": "g", "sodiumPer100g": 1500, "allergens": ["dairy"], "taste": { "umami": 2 }, "tradition": "regional", "note": "Mildere og mindre salt enn pecorino; vanlig kompromiss." },
+        { "id": "vegan_pecorino", "label": "Vegansk hardost (melkefri)", "amount": 70, "unit": "g", "sodiumPer100g": 700, "allergens": [], "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Melkefri; salt justeres automatisk." }
+      ],
+      "parmigiano": [
+        { "id": "vegan_parmigiano", "label": "Vegansk parmesan (melkefri)", "amount": 30, "unit": "g", "sodiumPer100g": 700, "allergens": [], "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Melkefri; salt justeres automatisk." }
+      ],
+      "cream": [
+        { "id": "plant_cream", "label": "Plantefløte (melkefri)", "amount": 0.5, "unit": "dl", "allergens": [], "tradition": "non-traditional", "note": "Melkefritt sikkerhetsnett mot eggerøre." }
+      ]
+    }
+  }
+}

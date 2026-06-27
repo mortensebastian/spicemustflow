@@ -39,13 +39,13 @@ window.RECIPE = {
   id: "<rett>",
   recipes: { enkel, medium, kompleks },  // hver: { label, servings, ingredients[], steps[] }
   swapOptions: { <slotId>: [ ...bytter ] },
-  servedAcid: { tip } | null,            // stående sitron-tips KUN for retter uten syre-ingrediens
+  servedAcid: { tip } | null,            // stående sitron-tips – KREVER requireRoles:["acid"] for å vises (se under)
   density:     { <id>: gPerMl },         // for g-omregning (volum↔vekt)
   pieceWeight: { <id>: gramPerStk },     // for «juster opp de andre» når enhet er stk
   unitOptions: { <id>: [enheter] },      // hvilke enheter man kan bytte mellom (volum↔volum gratis; g krever density)
   bulkRoles:   [ ...roller som teller som «mengde mat» ],
   levers:      [ { axis, id } ],         // selvjusterende balanse-ingredienser (kan være tom)
-  requireRoles:[ ...roller retten må ha ],// f.eks. ['acid']; kan være tom []
+  requireRoles:[ ...roller retten må ha ],// f.eks. ['acid']; kan være tom []. MÅ inneholde "acid" for at servedAcid/acid-onRemove-tips skal vises
   tasteMessages: { sour, umami, sweet }, // inline-tips ved fjerning
   leverMessages: { <axis>: { down, up } }// melding når en lever justeres
 };
@@ -641,6 +641,73 @@ Kontrakt-presisering som gjelder alle **nye** retter, pluss retrofit av versting
   i prosa. **Mulig fremtidig motorfunksjon** (ikke gjort, ville vært en bevisst kjernemotorendring + lærdom):
   la manifestet bære en valgfri «relatert grunnoppskrift»-URL som adapteren auto-lenker på en kjent
   ingrediens-id (f.eks. `stock`/`homemade_stock`). I dag er prosa-lenke det rette, in-scope grepet.
+
+**pasta carbonara (rett #28, pulje #4)** — **ingen kjernemotorendring.** Nivåene er en ren
+teknikk-stige rundt «ekte vs fløte»-debatten: enkel bruker bacon + hele egg + generisk «revet ost»
+og en valgfri liten skvett fløte som ærlig snarvei-trygghet mot eggerøre; medium er den autentiske
+romerske retten UTEN fløte (guanciale, egg + eggeplomme, pecorino, emulsjon av pastavann); kompleks
+raffinerer (tørrsaltet guanciale, pecorino+parmigiano 60/40, bare eggeplommer, temperering). Lærdom:
+- **Egg som strukturelt «unfixable» allergen er riktig, ikke en mangel.** Carbonara *er* egg + ost +
+  svin + pasta; en eggfri «carbonara» er en annen rett. Som fisk i fiskesuppe lot vi egg stå ærlig
+  flagget framfor å oppfinne en falsk eggfri løsning. Gluten (→GF-pasta) og meieri (→vegansk hardost
+  på hver ost-bærer) er derimot fullt løsbare.
+- **Salt-lever kan være `removable:true`/liten når saltet i hovedsak kommer fra ingrediensene selv**
+  (ost + guanciale + pastavann). `salt_added` beholdes som lever for å treffe mål-natrium ved
+  skalering/bytte, men den er ikke rettens primære saltkilde – beslektet med thai-fiskesuppe der
+  fiskesaus var salt-leveren. `requireRoles:[]`, `servedAcid:null` (carbonara har ingen syre-akse).
+
+**gulrotkake (rett #29, pulje #4)** — **ingen kjernemotorendring.** Bakst-stige med `yieldNoun:"stykker"`:
+enkel = rør-sammen langpanne med snarvei-topping («Ferdig ostekrem (eller melisglasur)»), medium =
+saftig kake med valnøtter (valgfri) + hjemmelaget ostekrem, kompleks = full krydderprofil, ristede
+nøtter, ananas/kokos for fukt og brunet-smør-ostekrem. Lærdom:
+- **Meieri på fire ostekrem-bærere, alle løst.** Frosting, kremost, smør og brunet smør bærer alle
+  meieri; hver fikk melkefritt bytte eller er `removable` serve-topping. Største meieri-fanout så langt –
+  standardbytte-disiplinen dekket alt (ingen «unfixable»), som lasagne-lærdommen krevde.
+- **Sweet-lever på batter-`sugar`, ikke frostings-melis.** Sukkeret i røra er strukturelt og auto-
+  balanseres; melis i ostekremen er serve-stage og holdes utenfor leveren (samme skille som
+  eplekake). Bekrefter at sweet-lever på bakesukker (vafler/boller-mønsteret) også passer kaker.
+- **Allergen kun på ett nivå igjen:** nøtter (valnøtter) er standard fra medium; union-filteret viser
+  nøtter med en gang (som lasagnes egg / eplekakes mandel). Riktig.
+
+**kylling i ovn (rett #30, pulje #4)** — **ingen kjernemotorendring**, men to fanget friksjoner ved review.
+Teknikk-stige rundt saftighet/kjernetemperatur: enkel = olje + salt/pepper + ferdig kyllingkrydder,
+medium = enkel marinade + rotgrønnsaker, kompleks = tørrsalting + urtesmør under skinnet + vin/kraft i
+formen. Naturlig glutenfri/melkefri/eggfri på enkel/medium (meieri kun via removable urtesmør i kompleks).
+- **`servedAcid` + acid-`onRemove`-tips er DØD DATA uten `requireRoles:["acid"]`.** Research satte en
+  gjennomtenkt stående sitron-tips, removable `isPrimaryAcid`-sitron i medium/kompleks med myke
+  `onRemove`-tips, MEN `requireRoles:[]` – og `acidMessage()` i adapteren returnerer null med en gang
+  med mindre `requireRoles` inneholder `"acid"`. Hele syre-bevisstheten var inert. Fiks: `requireRoles:["acid"]`.
+  Da vises den stående tipsen på **enkel** (ingen syre), er stille på medium/kompleks (sitron til stede),
+  og fordi sitronen har `onRemove.tip` får man den **myke** inline-tipsen ved fjerning, ikke den harde
+  «flat og tung»-advarselen. Dette er det dokumenterte mønsteret (jf. MOTOR-AUDIT-lærdommen). **Kontrakt-
+  presisering nødvendig:** `servedAcid` virker kun sammen med `requireRoles:["acid"]`.
+- **Bytte-paritet-snutten gir falsk positiv på ts-krydder-bytter.** `chicken_spice` er et `nonlinear`
+  «smak til»-ferdigkrydder uten `density`/`unitOptions` (riktig, som `herbs`/`pepper` i spagetti/marry-me),
+  men byttet `single_spices` (også `ts`) ble flagget fordi den offisielle snutten sjekker *enhver* `ts`-bytte
+  uavhengig av om slotten er g-konvertibel. **Mirror-regelen** (bytte speiler slottens g-konvertibilitet)
+  er grønn – det er den rette testen. Spagetti #14-lærdommen advarte mot dette for «alle ingredienser»-
+  varianten; her tripper det den offisielle swapOptions-snutten fordi ts-krydderet *har* et bytte.
+
+**Retrospektiv etter pulje #4 (pasta carbonara / gulrotkake / kylling i ovn):**
+- **[KONTRAKT, fikset]** `servedAcid` og acid-`onRemove`-tips er DØD DATA uten `requireRoles:["acid"]` –
+  `acidMessage()` returnerer null med en gang ellers. Kylling-i-ovn hadde gjennomtenkt syre-data men
+  `requireRoles:[]`, så alt var inert til vi satte `["acid"]`. Presisert i kontrakten (`window.RECIPE`-
+  skjema: `servedAcid`/`requireRoles`-kommentarene) og lagt en eksplisitt sjekk i `research-recipe`-
+  sjekklista. Mønster: enkel uten syre + medium/kompleks med sitron ⇒ `requireRoles:["acid"]` + myke
+  `onRemove`-tips gir riktig oppførsel (stående tips på enkel, stille ellers, ingen hard advarsel).
+- **[VALIDERING, fikset]** Bytte-paritet-snutten i `build-recipe` ga falsk positiv på ts-krydder-bytter
+  (`chicken_spice→single_spices`): den sjekket *enhver* `ts`-bytte uten å se på om slotten var
+  g-konvertibel. Erstattet med **mirror-regelen** (flagg kun hvis slotten selv står i `unitOptions`).
+  Verifisert: grønn på kylling-i-ovn, fanger fortsatt et ekte hull (g-konv slot + bytte uten density).
+- **[LOGG] Kompleksitet/nivå-skillet (det justerte) holdt på tre svært ulike format.** Carbonara
+  (emulsjons-teknikk), gulrotkake (bake-innsats) og kylling i ovn (steke-/saltingsteknikk) passerte alle
+  `NIVÅ-SJEKK` på **første forsøk** med 0 advarsler, og `enkel ≤ medium` overalt. Teknikk-stige-framingen
+  («enkel = snarvei/tilgjengelig, kompleks = teknikk, ikke smalere handleliste») produserer rene, godt
+  graderte nivåer uten manuell justering. Nivå-kontrakten + soft-validatoren fra forrige runde virker.
+- **Ingen [MOTOR]-fiks gjort.** Mulig fremtidig motor-nicety (ikke gjort, ville vært bevisst
+  kjernemotorendring): koble `servedAcid` fra `requireRoles:["acid"]` så en stående syre-tips kan vises
+  uten å «kreve» syre. I dag er kontrakt-presiseringen tilstrekkelig; en frakobling risikerer å endre
+  oppførsel for eksisterende retter (baja m.fl.) og bør bare gjøres etter eksplisitt ja.
 
 
 

@@ -108,12 +108,18 @@ Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</las
 - [ ] Bilde i `bilder/<slug>.jpg` (ellers flagg – `image:null` til det skaffes)
 
 **Bytte-paritet (kjør denne – fanger den vanligste byggefeilen):**
+Mirror-regel: et bytte trenger `density`/`unitOptions` HVIS OG BARE HVIS **slotten det erstatter**
+er g-konvertibel (dvs. slotten selv står i `unitOptions`). Et `nonlinear` «smak til»-ts-krydder
+(`herbs`/`pepper`/`chicken_spice`) er bevisst IKKE g-konvertibelt – da skal byttet heller ikke være
+det, og en ren «alle ts-bytter må ha density»-sjekk gir falsk positiv (jf. kylling-i-ovn / spagetti #14).
 ```bash
 node -e 'global.window={};require("./<slug>-data.js");var R=window.RECIPE,V=["dl","ml","ss","ts"],bad=[];
-Object.keys(R.swapOptions||{}).forEach(function(s){(R.swapOptions[s]||[]).forEach(function(o){
-if(V.indexOf(o.unit)<0)return;
+Object.keys(R.swapOptions||{}).forEach(function(s){
+var slotG=!!(R.unitOptions&&R.unitOptions[s]); /* speiler slotten: ikke g-konv slot => bytte trenger det ikke */
+(R.swapOptions[s]||[]).forEach(function(o){
+if(V.indexOf(o.unit)<0||!slotG)return;
 if(!(R.density&&R.density[o.id]!=null)||!(R.unitOptions&&R.unitOptions[o.id]))bad.push(s+"->"+o.id);});});
-console.log(bad.length?"MANGLER density/unitOptions for bytte-id: "+bad.join(", "):"bytte-paritet OK");'
+console.log(bad.length?"MANGLER density/unitOptions for bytte-id: "+bad.join(", "):"bytte-paritet OK (mirror-regel)");'
 ```
 
 **Allergi-dekning (ingen essensiell ingrediens skal bli «unfixable»):** for hvert

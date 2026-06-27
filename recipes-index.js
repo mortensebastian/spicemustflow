@@ -536,6 +536,73 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "pasta-carbonara", slug: "pasta-carbonara.html", status: "live",
+    shortName: "Pasta carbonara", name: "Pasta carbonara",
+    tagline: "Den romerske klassikeren: silkemyk egg- og ostesaus uten fløte.",
+    description: "Ekte pasta carbonara uten fløte – silkemyk saus av egg, ost og pastavann. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Italiensk",
+    keywords: "pasta carbonara, carbonara oppskrift, carbonara uten fløte, ekte italiensk carbonara, spaghetti carbonara",
+    recipeYield: "4 porsjoner", times: { prep: "PT10M", cook: "PT15M", total: "PT25M" },
+    search: "pasta carbonara carbonara oppskrift uten fløte ekte italiensk spaghetti guanciale pancetta egg pecorino parmesan svart pepper romersk",
+    faq: [
+      { q: "Skal det være fløte i carbonara?", a: "Nei. Ekte romersk carbonara inneholder ikke fløte. Kremen kommer fra en emulsjon av egg, revet ost og litt av det stivelsesrike pastavannet, som piskes sammen og blandes inn i den varme pastaen utenfor varmen. Mange norske varianter har fløte for å gjøre sausen tryggere og mer tilgivende, men det er ikke nødvendig når teknikken sitter." },
+      { q: "Hvilken ost bruker man i carbonara?", a: "Tradisjonelt Pecorino Romano, en salt og skarp sauemelksost. Mange synes ren pecorino blir vel salt og blander den med parmesan (parmigiano), gjerne rundt 60/40, for en rundere smak. Bruker du bare parmesan blir det mildere – da kan du trenge litt mer salt. Riv osten fint så den smelter jevnt inn i sausen." },
+      { q: "Hvorfor blir carbonaraen min til eggerøre?", a: "Da har eggene fått for mye varme. Skru av platen og ta panna av varmen før eggeblandingen går i, og rør raskt og kontinuerlig. Varmen fra pastaen alene er nok til å tykne eggene til en silkeglatt saus. Tipser du eggemassen først med en skje varmt pastavann (temperering), tåler den varmen bedre uten å koagulere." },
+      { q: "Kan jeg bruke bacon i stedet for guanciale?", a: "Ja, men det endrer smaken. Guanciale (saltet svinekjebbe) er det autentiske valget og gir mye smeltende fett. Pancetta er nest best og litt mildere. Vanlig bacon fungerer i en knipe, men det er røkt, så smaken blir mer røykfylt og mindre rund enn originalen. Bruker du bacon, velg en mild, ikke for tynn variant." },
+      { q: "Skal jeg bruke hele egg eller bare eggeplommer?", a: "Begge deler fungerer. Hele egg gir en lettere saus og er enklest å få til. Bare eggeplommer (eller en blanding av hele egg og ekstra plommer) gir en rikere, mer fløyelsmyk og dypgul saus, men er litt mer ømfintlig for varme. En vanlig fordeling er ett helt egg per person pluss én ekstra eggeplomme til retten." },
+      { q: "Hva er forskjellen på carbonara og cacio e pepe?", a: "Begge er romerske pastaretter med pecorino og rikelig svart pepper, men carbonara har i tillegg egg og guanciale. Cacio e pepe er kun ost, pepper og pastavann. Carbonara er altså en rikere, mer mettende slektning – det er eggene og det sprøstekte svinefettet som skiller dem." },
+      { q: "Hvilken pasta passer best til carbonara?", a: "Spaghetti er det vanligste og det de fleste forbinder med retten. I Roma brukes også rigatoni og tonnarelli. Velg en pasta med litt overflate eller tyngde som sausen kan feste seg til. Det viktigste er at du koker den al dente og tar vare på litt av kokevannet til emulsjonen." },
+      { q: "Hvor mye svart pepper skal i carbonara?", a: "Rikelig – pepper er en hovedsmak, ikke bare pynt. Bruk grovt nykvernet svart pepper, gjerne 1 ts eller mer til fire porsjoner. For mest smak kan du riste pepperen kort i det varme guanciale-fettet før du vender inn pasta og egg." },
+      { q: "Kan jeg lage carbonara glutenfri?", a: "Ja. Selve eggesausen er naturlig glutenfri – bytt bare ut den vanlige pastaen med glutenfri pasta. Kok den etter anvisning, gjerne litt kortere, og ta vare på kokevannet som vanlig. Da er hele retten trygg ved cøliaki." }
+    ]
+  },
+
+  {
+    id: "gulrotkake", slug: "gulrotkake.html", status: "live",
+    shortName: "Gulrotkake", name: "Saftig gulrotkake med ostekrem",
+    tagline: "Saftig norsk gulrotkake i langpanne med silkemyk ostekrem.",
+    description: "Saftig norsk gulrotkake med ostekrem. Velg nivå (enkel/medium/kompleks), juster antall stykker og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk",
+    keywords: "gulrotkake, saftig gulrotkake, gulrotkake med ostekrem",
+    recipeYield: "12 stykker", times: { prep: "PT20M", cook: "PT40M", total: "PT1H10M" },
+    search: "gulrotkake saftig ostekrem langpanne valnøtter",
+    faq: [
+      { q: "Hvorfor blir gulrotkake saftig?", a: "Olje er hemmeligheten – den holder kaka saftig mye lenger enn smør alene. Bruk nyrevne gulrøtter (ferdigrevne er tørrere), og la gjerne kaka stå en dag før servering; den blir bare saftigere." },
+      { q: "Skal det nøtter i gulrotkake?", a: "Det er valgfritt. Mange liker valnøtter eller pekannøtter for crunch og nøttesmak, men kaka blir like god uten – da får du en mild, ren gulrot- og kanelsmak. I oppskriften kan du slå nøttene av eller på." },
+      { q: "Hvordan lager jeg ostekrem til gulrotkake?", a: "Pisk romtemperert smør med melis og vaniljesukker til luftig, og rør så inn romtemperert kremost litt om gangen til kremen er glatt. Ikke pisk for lenge etter at osten er i, da kan den bli for løs." },
+      { q: "Hvorfor blir ostekremen min for løs?", a: "Som regel fordi kremosten er for varm, eller du pisker for lenge. Bruk kald, fast kremost (naturell, ikke lett), rør den forsiktig inn til slutt, og sett kaka kaldt så kremen stivner før servering." },
+      { q: "Kan jeg lage gulrotkake i langpanne?", a: "Ja, det er den vanligste måten. Bruk en liten langpanne og stek på 175–180 °C i 35–45 minutter til en kakepinne kommer ut med noen fuktige smuler. Skjær i passe stykker etter at den er avkjølt." },
+      { q: "Hvor lenge holder gulrotkake seg?", a: "Med ostekrem holder den seg 3–5 dager i kjøleskapet i tett boks – og den blir faktisk saftigere de første dagene. Uten krem holder bunnen seg enda lenger." },
+      { q: "Kan jeg fryse gulrotkake?", a: "Ja. Frys helst bunnen uten krem i opptil 3 måneder. Ostekrem kan bli litt kornete av frysing, så et godt triks er å fryse kaka naken og smøre på fersk ostekrem etter at den er tint." },
+      { q: "Trenger jeg både bakepulver og natron i gulrotkake?", a: "Bakepulver gjør det meste av hevejobben. Litt natron kan brukes i tillegg fordi det reagerer med syren i brunt sukker, men kaka blir fin med bakepulver alene." }
+    ]
+  },
+
+  {
+    id: "kylling-i-ovn", slug: "kylling-i-ovn.html", status: "live",
+    shortName: "Kylling i ovn", name: "Kylling i ovn (kyllingfilet i ovn)",
+    tagline: "Saftig kyllingfilet i ovn med grønnsaker i samme form – riktig grader og kjernetemperatur.",
+    description: "Saftig kylling i ovn med kyllingfilet, grønnsaker og enkel marinade. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    keywords: "kylling i ovn, kyllingfilet i ovn, ovnsbakt kylling, saftig kylling i ovn, kylling i ovn med grønnsaker",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT30M", total: "PT45M" },
+    search: "kylling i ovn kyllingfilet ovnsbakt saftig grader kjernetemperatur marinade grønnsaker rotgrønnsaker kyllinglår",
+    faq: [
+      { q: "Hvor lenge skal kyllingfilet steke i ovnen?", a: "Regn 18–25 minutter på 200 °C for vanlige kyllingfileter, avhengig av tykkelse. Tynne fileter er ferdige etter rundt 18 minutter, tykke kan trenge 25. Det sikreste er å steke etter kjernetemperatur, ikke klokka – stikk inn et steketermometer i den tykkeste delen." },
+      { q: "Hvor mange grader skal kylling stekes på i ovn?", a: "200 °C over- og undervarme er en god allround-temperatur for kyllingfilet – varmt nok til litt farge, men skånsomt nok til at kjøttet ikke tørker ut. Steker du hel kylling eller kyllinglår, senk til 175–180 °C og gi dem lengre tid." },
+      { q: "Hva er riktig kjernetemperatur på kylling?", a: "Ta kyllingen ut av ovnen ved 68–70 °C i den tykkeste delen, og la den hvile noen minutter – ettervarmen løfter den de siste gradene. Da er kyllingen trygg og fortsatt saftig. Steker du forbi 72–75 °C, blir fileten lett tørr." },
+      { q: "Hvordan får jeg saftig kyllingfilet i ovnen?", a: "Tre grep gjør mest: salt kyllingen godt en stund før steking (gjerne 30–60 minutter, eller over natten – det er en lett tørrsalting som holder på saften), bruk steketermometer så du ikke oversteker, og la fileten hvile 5 minutter før du skjærer i den. Et lite lag olje hindrer at overflaten tørker ut." },
+      { q: "Kan jeg steke kylling og grønnsaker i samme form?", a: "Ja, det er selve poenget med en ovnsmiddag. Skjær grønnsakene i jevne biter, vend dem i olje og salt, og legg kyllingen oppå eller ved siden. Bruk grønnsaker som tåler samme tid – paprika, squash, løk og cherrytomater passer til filet; faste rotgrønnsaker (gulrot, potet, sellerirot) bør gjerne få et lite forsprang eller skjæres mindre." },
+      { q: "Bør jeg bruke kyllingfilet eller kyllinglår i ovnen?", a: "Begge fungerer. Kyllingfilet (bryst) er magert og raskt, men tilgir mindre – pass på kjernetemperaturen. Kyllinglår med skinn er saftigere og mer smaksrikt og tåler lengre steketid uten å bli tørt, men trenger høyere kjernetemperatur (rundt 75 °C) for å bli mørt. I oppskriften vår ligger kyllinglår klart som bytte." },
+      { q: "Hvor lenge kan kylling ligge i marinade?", a: "En enkel olje- og krydermarinade gir smak allerede etter 30 minutter, men kyllingen blir bedre av et par timer – og helst over natten i kjøleskapet. Inneholder marinaden mye syre (sitron, eddik), bør du ikke marinere lenger enn et par timer, da kan overflaten bli melen. Salt kan derimot gjerne ligge på over natten." },
+      { q: "Hvordan unngår jeg tørr kylling i ovnen?", a: "Tørr kylling skyldes nesten alltid for høy kjernetemperatur. Bruk termometer og ta fileten ut ved 68–70 °C. Hjelper det fortsatt ikke, prøv å salte tidligere (tørrsalting), pensle med litt olje eller smør, og dekk formen løst med folie de første minuttene om ovnen er veldig varm. La alltid kyllingen hvile før servering." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

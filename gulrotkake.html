@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gulrotkake med ostekrem – saftig oppskrift steg for steg | Velkomponert</title>
+  <meta name="description" content="Saftig norsk gulrotkake med ostekrem. Velg nivå (enkel/medium/kompleks), juster antall stykker og tilpass ingrediensene – mengdene følger med.">
+  <link rel="canonical" href="https://velkomponert.no/gulrotkake.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Gulrotkake med ostekrem – saftig oppskrift steg for steg">
+  <meta property="og:description" content="Saftig norsk gulrotkake med ostekrem. Velg nivå (enkel/medium/kompleks), juster antall stykker og tilpass ingrediensene – mengdene følger med.">
+  <meta property="og:url" content="https://velkomponert.no/gulrotkake.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/gulrotkake.jpg så vises det øverst,
+     sett image i manifestet tilbake til "gulrotkake.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/gulrotkake.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Saftig gulrotkake med ostekrem</h1>
+      <p>Den norske kakeklassikeren på sitt saftigste: myk gulrotkake med kanel og en silkemyk ostekrem på toppen.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <p class="recipe-intro">Hemmeligheten bak en virkelig saftig gulrotkake er olje, ikke smør. Olje holder krummen myk i flere dager der smør gjør kaka tørrere over tid, og sammen med nyrevne gulrøtter – som slipper fra seg fuktighet under stekingen – gir det den tette, saftige konsistensen vi er ute etter. Riv gulrøttene selv rett før du baker; ferdigrevne er tørrere og stjeler nettopp den saftigheten.</p>
+      <p class="recipe-intro">Den andre nøkkelen er hviletid. Gulrotkake blir bedre dagen etter: smaken setter seg, kanelen runder av, og krummen blir enda fuktigere. Baker du den til en anledning, lag den gjerne dagen før og la den hvile kaldt før du smører på ostekremen.</p>
+      <p class="recipe-intro">Ostekremen lever av temperatur. Pisk romtemperert smør luftig med melis, og rør så kald, fast kremost forsiktig inn til slutt – pisker du for hardt eller bruker for varm ost, blir kremen løs. Sett kaka kaldt så toppen stivner pent før servering.</p>
+      <p class="recipe-intro">Vår versjon gir deg tre nivåer: en rask rør-sammen langpannekake, en standard saftig kake med valnøtter og hjemmelaget ostekrem, og en kompleks variant med full krydderprofil, ristede nøtter og litt ananas for ekstra fukt. Juster antall stykker og bytt ingredienser fritt – mengdene regnes om av seg selv.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall stykker</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre stykker">−</button>
+          <input type="number" id="recipe-scale-input" value="12" min="2" max="24" step="2" data-base-yield="12">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere stykker">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="budget-toggle"></div>
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="gulrotkake-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
