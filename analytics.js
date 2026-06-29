@@ -18,7 +18,7 @@
 (function () {
   "use strict";
 
-  var GA4_ID = "G-XXXXXXXXXX"; // ← bytt til din ekte måle-ID fra GA4
+  var GA4_ID = "G-C95QG66G5S"; // ← bytt til din ekte måle-ID fra GA4
 
   // Gjør ingenting så lenge ID-en er plassholderen (eller mangler/ugyldig).
   if (!GA4_ID || GA4_ID.indexOf("G-") !== 0 || GA4_ID === "G-XXXXXXXXXX") return;
