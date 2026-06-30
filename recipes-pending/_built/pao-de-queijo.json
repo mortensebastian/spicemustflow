@@ -1,0 +1,142 @@
+{
+  "_comment": "VM-rett 4 (Norge–Brasil). Naturlig glutenfri (tapiokamel) – sterk SEO-vinkel, ingen gluten å dekke. Norsk ost (Norvegia) som broen. yieldNoun=boller.",
+
+  "indexEntry": {
+    "id": "pao-de-queijo",
+    "slug": "pao-de-queijo.html",
+    "status": "live",
+    "shortName": "Pão de queijo",
+    "name": "Pão de queijo med Norvegia – brasiliansk ostebrød",
+    "tagline": "Seige, luftige brasilianske ostebrød bakt med norsk Norvegia – naturlig glutenfri VM-snacks rett fra ovnen.",
+    "description": "Pão de queijo – brasiliansk, glutenfritt ostebrød på tapiokamel, bakt med norsk Norvegia. Velg nivå, juster antall boller og tilpass ingrediensene.",
+    "image": null,
+    "category": ["baking"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Baking",
+    "cuisine": "Norsk-brasiliansk",
+    "keywords": "pao de queijo oppskrift, brasiliansk ostebrød, glutenfri ostebrød, ostebrød oppskrift, VM-snacks",
+    "recipeYield": "ca. 16 boller",
+    "times": { "prep": "PT20M", "cook": "PT25M", "total": "PT45M" },
+    "search": "pao de queijo brasiliansk ostebrød glutenfri tapiokamel norvegia ost VM snacks norge brasil osteboller",
+    "faq": [
+      { "q": "Er pão de queijo glutenfri?", "a": "Ja, helt naturlig. Ostebrødene bakes på tapiokamel – stivelse fra maniokroten (cassava) – og inneholder verken hvete eller annet glutenkorn. Så lenge osten og resten av ingrediensene er glutenfrie (det er de fleste rene oster), er pão de queijo trygt ved cøliaki. Det er nettopp derfor de har blitt så populære som glutenfri snacks." },
+      { "q": "Hva er tapiokamel, og hvor får jeg tak i det?", "a": "Tapiokamel (også kalt tapiokastivelse eller cassava-/maniokmel) er en fin, hvit stivelse utvunnet fra maniokroten. Det er det som gir pão de queijo den karakteristiske seige, litt elastiske konsistensen, og kan ikke byttes 1:1 med potetmel eller maizena. Du finner det i велassorterte dagligvarebutikker, i asiatiske og latinamerikanske matbutikker, og på nett." },
+      { "q": "Hvilken ost passer best i pão de queijo?", "a": "I Brasil brukes en fersk, lett syrlig ost (queijo minas), men en god, fast norsk gulost som Norvegia fungerer utmerket og gir den norske vrien. Vil du ha kraftigere smak, kan du blande inn litt lagret ost eller revet parmesan. Riv osten selv for best smelting – ferdigrevet ost har ofte antiklumpemiddel som gjør røren litt grynete." },
+      { "q": "Hvorfor blir ostebrødene mine flate eller harde?", "a": "Som regel handler det om forholdet væske/mel eller for hard steking. Røren skal være tykk og litt klissete, ikke rennende – spe med tapiokamel om den er for løs. Bak på god varme (200 °C) til de er pufne og gylne, og server dem helst rykende ferske; de er på sitt beste rett fra ovnen og blir seigere når de kjølner." },
+      { "q": "Hvordan får jeg dem seige og luftige inni?", "a": "Den seige, luftige kjernen kommer av tapiokamelet og av eggene som gir struktur. Bruker du skåldemetoden – der du heller kokende melk og olje over melet før du tilsetter egg og ost – får du den mest autentiske, seige konsistensen. Ikke overbak dem; de skal være gylne utenpå og fortsatt myke og seige inni." },
+      { "q": "Kan jeg lage pão de queijo melkefri?", "a": "Delvis. Bytt melken mot plantedrikk og smør/olje er allerede melkefritt, men osten er kjernen i retten. Bruker du en fast, smeltende vegansk ost i stedet for Norvegia, kan du lage en melkefri variant – smaken blir litt annerledes, men konsistensen holder. I oppskriften ligger byttene klare." },
+      { "q": "Kan jeg fryse pão de queijo og bake fra frossen?", "a": "Ja, og det er den store fordelen med dem. Trill rå deigkuler, frys dem på et brett, og legg dem så i pose. Du kan bake dem rett fra frossen – legg på et par minutter ekstra steketid – og ha alltid ferske, varme ostebrød klare. Da kan du bake nykker etter behov gjennom hele kampen." },
+      { "q": "Hvordan serverer jeg pão de queijo til VM?", "a": "Server dem rykende varme i en kurv eller skål så hele gjengen kan forsyne seg under kampen – de forsvinner fort. De er gode som de er, men passer også med en dipp eller litt smør. Vil du ha full Norge–Brasil-stemning, skyll dem ned med en kald brasiliansk guaraná-brus eller en norsk pils, og sett ut noe i rødt, hvitt og blått ved siden av." }
+    ]
+  },
+
+  "seo": {
+    "title": "Pão de queijo med Norvegia – glutenfritt brasiliansk ostebrød | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Seige, luftige brasilianske ostebrød på tapiokamel, bakt med norsk Norvegia – naturlig glutenfri VM-snacks som forsvinner rett fra ovnen.",
+    "bodyIntro": "Pão de queijo er Brasils elskede ostebrød: små, gylne kuler som er sprø utenpå og seige og luftige inni, med en smak av ost i hver bit. De bakes på tapiokamel i stedet for hvetemel, og er derfor helt naturlig glutenfrie – en av grunnene til at de har blitt en favoritt langt utenfor Brasil. Best av alt: de er kjappe å lage og umulige å slutte å spise.\n\nHemmeligheten ligger i tapiokamelet, som gir den karakteristiske seige, litt elastiske konsistensen du ikke får med vanlig mel. Den mest autentiske metoden er å skålde melet med kokende melk og olje før du rører inn egg og ost – det gir den seigeste kjernen. Har du dårlig tid, kan du i stedet kjøre alt i en blender og helle røren rett i en muffinsform. Begge deler gir varme, ostefylte boller på under en time.\n\nDen norske vrien er osten. I stedet for den ferske brasilianske queijo minas bruker vi en god, fast Norvegia, som smelter fint og gir bollene en mild, norsk ostesmak – broen mellom Brasil og Norge i denne VM-utgaven. Her får du tre nivåer: den enkle er rask blender-metode, medium er den klassiske skåldede deigen med Norvegia, og den komplekse løfter med en blanding av Norvegia og litt lagret ost for ekstra futt. Juster antall boller fritt; mengdene følger med."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "middels",
+    "competition": "lav",
+    "topCompetitors": ["matprat.no", "sorze4.com"],
+    "hasRecipeCarousel": false,
+    "strategy": "«Naturlig glutenfri» er hovedvinkelen – treffer «glutenfri ostebrød» og «pao de queijo oppskrift» i et tynt konkurransefelt. Norvegia-vrien åpner long-tail «brasiliansk ostebrød» + «VM-snacks». FAQ dekker ekte PAA: hva er tapiokamel, hvilken ost, fryse/bake fra frossen."
+  },
+
+  "recipe": {
+    "id": "pao-de-queijo",
+    "yieldNoun": "boller",
+    "bulkRoles": ["bulk", "liquid", "binder"],
+    "levers": [],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "umami": "Bollene blir mildere – mer Norvegia eller litt lagret ost gir kraftigere ostesmak."
+    },
+    "leverMessages": {},
+    "density": { "tapioca_flour": 0.6, "milk": 1.03, "plant_milk": 1.03, "oil": 0.92 },
+    "pieceWeight": { "egg": 55 },
+    "unitOptions": {
+      "tapioca_flour": ["dl", "ml", "g"], "milk": ["dl", "ml", "g"], "plant_milk": ["dl", "ml", "g"],
+      "oil": ["dl", "ml", "ss", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 16,
+        "ingredients": [
+          { "id": "tapioca_flour", "label": "Tapiokamel", "amount": 3, "unit": "dl", "role": "bulk", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "note": "Glutenfritt – gir den seige konsistensen. Kan ikke byttes med potetmel/maizena." },
+          { "id": "milk", "label": "Melk", "amount": 1, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "oil", "label": "Nøytral olje", "amount": 0.5, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "egg", "label": "Egg", "amount": 2, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "cheese", "label": "Norvegia, revet", "amount": 150, "unit": "g", "role": "cheese", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"], "sodiumPer100g": 600, "taste": { "umami": 2 } },
+          { "id": "salt", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "sodiumPer100g": 38800 }
+        ],
+        "steps": [
+          "Sett ovnen på 200 °C, og smør en muffinsform.",
+          "Ha tapiokamel, melk, olje, egg og salt i en blender, og kjør til en glatt, tynn røre.",
+          "Tilsett mesteparten av den revne osten og puls kort så den blandes inn.",
+          "Fordel røren i muffinsformene til ca. 2/3 fulle, og strø resten av osten på toppen.",
+          "Stek 20–25 minutter til bollene er pufne og gylne. Server rykende ferske."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 16,
+        "ingredients": [
+          { "id": "tapioca_flour", "label": "Tapiokamel", "amount": 4, "unit": "dl", "role": "bulk", "essential": true, "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1.5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "oil", "label": "Nøytral olje", "amount": 0.5, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "salt", "label": "Salt", "amount": 0.75, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "sodiumPer100g": 38800 },
+          { "id": "egg", "label": "Egg", "amount": 2, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["egg"] },
+          { "id": "cheese", "label": "Norvegia, revet", "amount": 200, "unit": "g", "role": "cheese", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["dairy"], "sodiumPer100g": 600, "taste": { "umami": 2 } }
+        ],
+        "steps": [
+          "Sett ovnen på 200 °C, og kle et stekebrett med bakepapir.",
+          "Kok opp melk, olje og salt i en kjele. Ta kjelen av varmen og rør inn alt tapiokamelet på én gang – massen blir klumpete og litt rar, det er som det skal.",
+          "La massen kjølne til håndvarm, og rør så inn eggene ett om gangen til en glatt, seig deig.",
+          "Rør inn den revne osten. Trill deigen til ca. 16 kuler med tapiokamel-dryssede hender, og sett dem på brettet.",
+          "Stek 20–25 minutter til bollene er pufne og gylne. Server rykende ferske."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 16,
+        "ingredients": [
+          { "id": "tapioca_flour", "label": "Tapiokamel", "amount": 4, "unit": "dl", "role": "bulk", "essential": true, "scaling": "linear", "addStage": "early", "removable": false },
+          { "id": "milk", "label": "Melk", "amount": 1.5, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "butter", "label": "Smør", "amount": 50, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"], "note": "Gir rikere smak enn olje." },
+          { "id": "salt", "label": "Salt", "amount": 0.75, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "sodiumPer100g": 38800 },
+          { "id": "egg", "label": "Egg", "amount": 2, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["egg"] },
+          { "id": "cheese", "label": "Norvegia, revet", "amount": 175, "unit": "g", "role": "cheese", "scaling": "linear", "addStage": "end", "removable": false, "allergens": ["dairy"], "sodiumPer100g": 600, "taste": { "umami": 2 } },
+          { "id": "hard_cheese", "label": "Lagret ost / litt parmesan, revet", "amount": 75, "unit": "g", "role": "cheese", "scaling": "linear", "addStage": "end", "removable": true, "allergens": ["dairy"], "sodiumPer100g": 700, "taste": { "umami": 3 }, "note": "Gir kraftigere, mer voksen ostesmak." }
+        ],
+        "steps": [
+          "Sett ovnen på 200 °C, og kle et stekebrett med bakepapir.",
+          "Kok opp melk, smør og salt i en kjele. Ta av varmen og rør inn alt tapiokamelet på én gang til en klumpete masse.",
+          "La massen kjølne til håndvarm, og rør så inn eggene ett om gangen til en glatt, seig deig.",
+          "Rør inn begge ostene. Trill deigen til ca. 16 kuler med tapiokamel-dryssede hender.",
+          "Stek 22–27 minutter til bollene er gylne og sprø utenpå, seige inni. Server rykende ferske, gjerne i en kurv foran kampen."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "milk": [
+        { "id": "plant_milk", "label": "Havredrikk (melkefri)", "amount": 1.5, "unit": "dl", "tradition": "non-traditional", "note": "Melkefri væske; smaker likt i ferdige boller." }
+      ],
+      "cheese": [
+        { "id": "vegan_cheese", "label": "Fast vegansk ost (melkefri)", "amount": 175, "unit": "g", "tradition": "non-traditional", "note": "Velg en som smelter; gir melkefrie ostebrød med litt annen smak.", "taste": { "umami": 1 } }
+      ],
+      "butter": [
+        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 50, "unit": "g", "tradition": "non-traditional", "note": "Melkefritt alternativ til smøret." }
+      ]
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "_comment": "VM-rett 3 (Norge–Brasil). Slug 'brigadeiro' eier hodeordet; enkel = klassisk autentisk brigadeiro (tjener «brigadeiro oppskrift»), brunost-fusjonen er VM-vrien i medium/kompleks. Ingen plan.md-konflikt.",
+
+  "indexEntry": {
+    "id": "brigadeiro",
+    "slug": "brigadeiro.html",
+    "status": "live",
+    "shortName": "Brigadeiro med brunost",
+    "name": "Brigadeiro med brunost – brasilianske sjokoladekuler",
+    "tagline": "Brasils klissete sjokoladekuler møter norsk brunost – det søteste landslaget på fatet, perfekt VM-godteri.",
+    "description": "Brigadeiro – brasilianske sjokoladekuler kokt på kondensert melk og kakao, med en norsk brunost-vri. Velg nivå, juster antall kuler og tilpass ingrediensene.",
+    "image": null,
+    "category": ["dessert"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Dessert",
+    "cuisine": "Norsk-brasiliansk",
+    "keywords": "brigadeiro oppskrift, brasilianske sjokoladekuler, brunost dessert, VM-godteri, sjokoladekuler",
+    "recipeYield": "ca. 20 kuler",
+    "times": { "prep": "PT20M", "cook": "PT10M", "total": "PT2H30M" },
+    "search": "brigadeiro brunost brasilianske sjokoladekuler kondensert melk kakao VM godteri norge brasil sjokoladetrøffel",
+    "faq": [
+      { "q": "Hvor lenge skal brigadeiro-massen koke?", "a": "Regn 8–10 minutter på svak til middels varme under stadig omrøring. Massen er ferdig når den er tykk og slipper bunnen – det vil si at du så vidt ser bunnen av kjelen når du drar slikkepotten over. Koker du for kort, blir kulene for løse til å trille; koker du for lenge, blir de harde og seige." },
+      { "q": "Hva er forskjellen på søtet kondensert melk og vikingmelk?", "a": "Dette er den vanligste fellen. Søtet kondensert melk (på boks) er tilsatt sukker, og er søtere, brunere og mye tykkere – det er denne du skal ha i brigadeiro. Vikingmelk (evaporated milk) er usøtet og tynnere, og gir ikke samme søte, seige masse. Sjekk at det står «søtet/sweetened» på boksen." },
+      { "q": "Hvorfor brunost i brigadeiro?", "a": "Brunost gir den klissete sjokolademassen en karamellaktig, lett salt dybde som passer overraskende godt til den søte kakaoen – nesten som en norsk dulce de leche. Det er den lekne broen mellom Brasil og Norge i denne VM-utgaven. Riv brunosten fint så den smelter jevnt inn i massen mens den koker." },
+      { "q": "Hvordan triller jeg kulene uten at alt klisser seg fast?", "a": "To ting: la massen bli helt kald først (gjerne i kjøleskap et par timer eller over natten), og smør hendene med litt smør eller nøytral olje før du triller. Ta små klatter med en teskje, trill raskt til kuler, og rull dem i pynt med en gang. Klisser det likevel, fukt eller smør hendene på nytt underveis." },
+      { "q": "Kan jeg lage brigadeiro melkefri?", "a": "Ja. Bytt den søtede kondenserte melken mot en kokosbasert variant (finnes melkefri på boks) og smøret mot margarin. Da må du droppe brunosten, som ikke finnes melkefri – men du sitter igjen med en klassisk, melkefri sjokoladekule. I oppskriften ligger byttene klare, og mengdene justeres automatisk." },
+      { "q": "Hvordan pynter jeg brigadeiro i landslagsfarger til VM?", "a": "Rull kulene i forskjellig pynt og lag et «landslag» på fatet: rødt og hvitt strøssel, blå dragé- eller sukkerperler, og kokos for det hvite. Vil du lage en ekte landskamp, kan du rulle halvparten i klassisk mørkt sjokoladestrøssel (Brasil) og halvparten i rødt, hvitt og blått (Norge). Sett dem i små papirformer så de er lette å dele ut foran skjermen." },
+      { "q": "Hvor lenge holder brigadeiro, og hvordan oppbevarer jeg dem?", "a": "Ferdige brigadeiro holder seg 4–5 dager i en tett boks i kjøleskapet. Ta dem gjerne ut en liten stund før servering, så de mykner litt og blir mest mulig kremete. Skal du lage dem i forveien, kan du koke massen og oppbevare den kaldt, og så trille og pynte kulene samme dag som de skal serveres." },
+      { "q": "Kan jeg fryse brigadeiro?", "a": "Ja. Legg de ferdige kulene i en tett boks med bakepapir mellom lagene, og frys i opptil 3 måneder. Tin dem i kjøleskapet før servering. Konsistensen blir aller best på ferske kuler, men frysing fungerer fint når du vil forberede en stor sats til kampkvelden." }
+    ]
+  },
+
+  "seo": {
+    "title": "Brigadeiro med brunost – brasilianske sjokoladekuler | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "Brasils nasjonalgodteri brigadeiro – klissete, søte sjokoladekuler – får en norsk vri med brunost. Det søteste landslaget du kan sette på bordet til VM.",
+    "bodyIntro": "Brigadeiro er Brasils svar på trøffelen: en enkel, klissete sjokolademasse kokt på søtet kondensert melk, kakao og smør, trillet til kuler og rullet i strøssel. Den dukker opp på hver eneste bursdag og fest i Brasil, og er omtrent umulig å mislykkes med. Alt du trenger er én kjele, fire ingredienser og litt tålmodighet til å røre.\n\nHemmeligheten ligger i kokingen. Massen skal røres på svak til middels varme til den tykner og slipper bunnen av kjelen – da vet du at den er passe fast til å trilles når den er avkjølt. Bruk søtet kondensert melk (ikke usøtet vikingmelk), og sikt kakaoen så massen blir helt glatt. La den så bli skikkelig kald før du smører hendene og triller kulene.\n\nDen norske vrien er brunost. Finrevet og smeltet inn i massen gir den en karamellaktig, lett salt dybde – nesten som en norsk dulce de leche – som kler den søte kakaoen overraskende godt. Her får du tre nivåer: den enkle er klassisk brigadeiro slik brasilianerne lager den, medium smelter inn brunost for den norske broen, og den komplekse løfter med mørk sjokolade og kuler rullet i landslagsfarger. Juster antallet kuler fritt; mengdene følger med."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "lav",
+    "competition": "lav",
+    "topCompetitors": ["nrk.no", "godt.no", "detsoteliv.no"],
+    "hasRecipeCarousel": false,
+    "strategy": "Lavt volum, lav konkurranse – lett å rangere. Enkel-nivå dekker hodeordet «brigadeiro oppskrift» autentisk, mens brunost-vrien åpner long-tail «brunost dessert» og «VM-godteri». Brunost-fusjonen er også delbart/sosialt innhold som kan trekke lenker."
+  },
+
+  "recipe": {
+    "id": "brigadeiro",
+    "yieldNoun": "kuler",
+    "bulkRoles": ["bulk"],
+    "levers": [],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "bitter": "Kulene blir søtere og mindre sjokoladeintense – øk gjerne kakaoen litt."
+    },
+    "leverMessages": {},
+    "density": { "cocoa": 0.45, "sprinkles": 0.6, "cream": 1 },
+    "unitOptions": {
+      "cocoa": ["ss", "ts", "g"], "sprinkles": ["dl", "ml", "g"], "cream": ["dl", "ml", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 20,
+        "ingredients": [
+          { "id": "condensed_milk", "label": "Søtet kondensert melk (1 boks)", "amount": 400, "unit": "g", "role": "bulk", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"], "taste": { "sweet": 3 } },
+          { "id": "cocoa", "label": "Kakao, siktet", "amount": 4, "unit": "ss", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "bitter": 2 } },
+          { "id": "butter", "label": "Smør", "amount": 30, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "salt", "label": "Flaksalt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "note": "Løfter sjokoladesmaken." },
+          { "id": "sprinkles", "label": "Sjokoladestrøssel (til rulling)", "amount": 1, "unit": "dl", "role": "topping", "scaling": "linear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Ha kondensert melk, siktet kakao og smør i en tykkbunnet kjele.",
+          "Kok på svak til middels varme under stadig omrøring i 8–10 minutter, til massen er tykk og slipper bunnen når du drar slikkepotten over.",
+          "Hell massen over på en smurt tallerken, og avkjøl helt – gjerne et par timer i kjøleskap eller over natten.",
+          "Smør hendene med litt smør, ta små klatter med en teskje, og trill til ca. 20 kuler.",
+          "Rull kulene i sjokoladestrøssel med en gang, og sett dem kaldt minst 1 time før servering."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 20,
+        "ingredients": [
+          { "id": "condensed_milk", "label": "Søtet kondensert melk (1 boks)", "amount": 400, "unit": "g", "role": "bulk", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"], "taste": { "sweet": 3 } },
+          { "id": "cocoa", "label": "Kakao, siktet", "amount": 3, "unit": "ss", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "bitter": 2 } },
+          { "id": "butter", "label": "Smør", "amount": 25, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "brown_cheese", "label": "Brunost, finrevet", "amount": 75, "unit": "g", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "allergens": ["dairy"], "taste": { "sweet": 1, "umami": 1 }, "note": "Den norske vrien – smelter inn til karamell-dybde." },
+          { "id": "salt", "label": "Flaksalt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "sprinkles", "label": "Sjokoladestrøssel (til rulling)", "amount": 1, "unit": "dl", "role": "topping", "scaling": "linear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Ha kondensert melk, siktet kakao, smør og finrevet brunost i en tykkbunnet kjele.",
+          "Kok på svak til middels varme under stadig omrøring i 8–10 minutter, til brunosten er smeltet inn og massen slipper bunnen.",
+          "Hell massen over på en smurt tallerken, og avkjøl helt.",
+          "Smør hendene, og trill massen til ca. 20 kuler.",
+          "Rull kulene i sjokoladestrøssel, og sett dem kaldt minst 1 time før servering."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 20,
+        "ingredients": [
+          { "id": "condensed_milk", "label": "Søtet kondensert melk (1 boks)", "amount": 400, "unit": "g", "role": "bulk", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"], "taste": { "sweet": 3 } },
+          { "id": "cocoa", "label": "Kakao, siktet", "amount": 2, "unit": "ss", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "bitter": 2 } },
+          { "id": "dark_chocolate", "label": "Mørk sjokolade, hakket", "amount": 50, "unit": "g", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "bitter": 2 }, "note": "Gir rikere, mer voksen sjokoladesmak." },
+          { "id": "butter", "label": "Smør", "amount": 25, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
+          { "id": "brown_cheese", "label": "Brunost, finrevet", "amount": 100, "unit": "g", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "allergens": ["dairy"], "taste": { "sweet": 1, "umami": 1 }, "note": "Den norske vrien." },
+          { "id": "cream", "label": "Kremfløte", "amount": 0.5, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "early", "removable": true, "allergens": ["dairy"], "note": "Gjør kulene ekstra kremete (fudge-aktige)." },
+          { "id": "salt", "label": "Flaksalt", "amount": 0.25, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "sprinkles", "label": "Strøssel i landslagsfarger (til rulling)", "amount": 1.5, "unit": "dl", "role": "topping", "scaling": "linear", "addStage": "serve", "removable": true, "note": "Rødt, hvitt og blått strøssel/perler – og gjerne kokos for det hvite." }
+        ],
+        "steps": [
+          "Ha kondensert melk, siktet kakao, hakket sjokolade, smør, brunost og fløte i en tykkbunnet kjele.",
+          "Kok på svak til middels varme under stadig omrøring i 9–11 minutter, til massen er blank og slipper bunnen.",
+          "Hell massen på en smurt tallerken, og avkjøl helt – gjerne over natten for fastest masse.",
+          "Smør hendene, og trill massen til ca. 20 kuler. Sett dem i små papirformer.",
+          "VM-tips: lag en landskamp på fatet – rull halvparten i mørkt sjokoladestrøssel (Brasil) og halvparten i rødt, hvitt og blått (Norge). Sett kaldt minst 1 time før servering."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "condensed_milk": [
+        { "id": "coconut_condensed", "label": "Kokosbasert kondensert melk (melkefri)", "amount": 400, "unit": "g", "tradition": "non-traditional", "taste": { "sweet": 3 }, "note": "Melkefri base; dropp brunosten for en helt melkefri kule." }
+      ],
+      "butter": [
+        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 30, "unit": "g", "tradition": "non-traditional", "note": "Melkefritt alternativ til smøret." }
+      ]
+    }
+  }
+}

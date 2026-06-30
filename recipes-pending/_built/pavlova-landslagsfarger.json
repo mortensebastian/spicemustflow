@@ -1,0 +1,159 @@
+{
+  "_comment": "VM-rett 1 (Norge–Brasil). Egen tematisk slug (pavlova-landslagsfarger) for ikke å kannibalisere en framtidig generisk pavlova. Evergreen-ramme: landslagsfarger + maracujá, VM løftet i tagline/ingress/FAQ.",
+
+  "indexEntry": {
+    "id": "pavlova-landslagsfarger",
+    "slug": "pavlova-landslagsfarger.html",
+    "status": "live",
+    "shortName": "Pavlova i landslagsfarger",
+    "name": "Pavlova i landslagsfarger med pasjonsfrukt",
+    "tagline": "Sprø pavlova pyntet i rødt, hvitt og blått med syrlig pasjonsfrukt – VM-desserten foran skjermen.",
+    "description": "Festlig pavlova i landslagsfarger med kremtopp, friske bær og pasjonsfrukt. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    "image": null,
+    "category": ["dessert"],
+    "badge": "3 nivåer",
+    "recipeCategory": "Dessert",
+    "cuisine": "Norsk-brasiliansk",
+    "keywords": "pavlova oppskrift, pavlova i landslagsfarger, pasjonsfrukt pavlova, VM-dessert, norsk dessert",
+    "recipeYield": "8 porsjoner",
+    "times": { "prep": "PT30M", "cook": "PT1H30M", "total": "PT3H" },
+    "search": "pavlova landslagsfarger pasjonsfrukt maracuja marengs krem bær VM dessert norge brasil fest",
+    "faq": [
+      { "q": "Hvorfor sprekker pavlovaen min?", "a": "Litt sprekker hører pavlova til og er helt normalt – det er nettopp slik den skal se ut. Store sprekker og kollaps kommer som regel av at marengsen er overpisket etter at sukkeret er i, eller at ovnen er for varm. Pisk til marengsen er blank og stiv (ikke tørr og kornete), stek på lav varme, og la pavlovaen kjølne sakte i ovnen med døren på gløtt." },
+      { "q": "Hvordan får jeg sprø marengs på utsiden og seig kjerne?", "a": "Tre triks: pisk eggehvitene i en helt ren, tørr og fettfri bolle, tilsett sukkeret litt om gangen til marengsen er blank og stiv, og vend inn en teskje eddik og litt maizena – det gir den klassiske marshmallow-kjernen. Stek lavt og lenge (rundt 120 °C), og la pavlovaen tørke ferdig i avslått ovn med døren på gløtt." },
+      { "q": "Hvordan pynter jeg pavlova i landslagsfarger til VM?", "a": "Tenk rødt, hvitt og blått: røde jordbær og bringebær, snøhvit krem og et dryss melis, og blåbær for det blå. Skje så det gule, syrlige fruktkjøttet fra pasjonsfrukt (maracujá) over på toppen – det er den grønn-gule broen til Brasil. Vil du gjøre det ekstra tydelig, legg bærene i felter eller striper som et flagg." },
+      { "q": "Hva er pasjonsfrukt (maracujá), og kan jeg bytte den ut?", "a": "Maracujá er den brasilianske pasjonsfrukten – rynkete skall, og inni et aromatisk, syrlig-søtt gult fruktkjøtt med spiselige frø. Syren er perfekt motvekt til den søte marengsen. Får du ikke tak i fersk, kan du bruke frossen pasjonsfruktpuré, eller toppe med mango og litt limesaft for en liknende tropisk friskhet." },
+      { "q": "Kan jeg lage pavlova i forveien?", "a": "Ja, og det er smart når du skal samle gjengen foran kampen. Stek marengsbunnen dagen før og oppbevar den helt tørt og lufttett i romtemperatur – aldri i kjøleskap, der trekker den fukt og blir seig. Pisk kremen og pynt med bær og pasjonsfrukt først helt rett før servering, ellers mykner bunnen." },
+      { "q": "Kan jeg lage pavlova melkefri?", "a": "Ja. Selve marengsbunnen er naturlig melkefri – det er bare kremtoppen som inneholder melk. Bytt kremfløten mot en pisket plantefløte (kokos- eller havrebasert), så blir hele desserten melkefri. Velg en plantefløte merket for pisking, og pisk den godt kald." },
+      { "q": "Hvor lenge holder en ferdig pyntet pavlova?", "a": "En pyntet pavlova bør spises samme dag – helst innen et par timer – for da er bunnen fortsatt sprø og kremen fast. Etter hvert trekker fukt fra krem og frukt inn i marengsen og gjør den seig. Rester kan stå kaldt til neste dag; de smaker fortsatt godt, men teksturen blir mykere." },
+      { "q": "Kan jeg bruke frosne bær?", "a": "Til pynt er friske bær best, fordi frosne bær slipper mye væske når de tiner og farger kremen. Vil du likevel bruke frosne, la dem tine på litt kjøkkenpapir og legg dem på helt rett før servering. Frosne bær egner seg bedre til en bærsaus du skjer ved siden av enn som topping." }
+    ]
+  },
+
+  "seo": {
+    "title": "Pavlova i landslagsfarger med pasjonsfrukt – VM-dessert | Velkomponert"
+  },
+
+  "body": {
+    "heroIntro": "En sprø pavlova i rødt, hvitt og blått, kronet med krem, friske bær og syrlig pasjonsfrukt – VM-desserten som får hele stua til å heie.",
+    "bodyIntro": "Pavlova er den perfekte festdesserten: en sprø marengsbunn med seig, marshmallow-aktig kjerne, et lokk av lett pisket krem, og friske bær på toppen. Den ser overdådig ut, men er egentlig lettlaget – og den lar seg pynte i akkurat de fargene du vil. Til en Norge–Brasil-kamp betyr det rødt, hvitt og blått fra norske bær og krem, med et syrlig, gult drag av brasiliansk pasjonsfrukt som den smakfulle broen mellom de to landene.\n\nNøkkelen til en vellykket pavlova ligger i marengsen. Pisk eggehvitene i en helt ren og tørr bolle, tilsett sukkeret gradvis til massen er blank og stiv, og vend inn en liten skvett eddik og litt maizena – det er hemmeligheten bak den seige kjernen. Stek den lavt og lenge, og la den så tørke ferdig i avslått ovn med døren på gløtt, så den ikke sprekker av temperatursjokk. Da sitter du igjen med en bunn som er sprø utenpå og myk inni.\n\nHer får du tre nivåer av samme idé. Den enkle er én stor pavlova med krem, bær og pasjonsfrukt rett over. Medium løfter desserten med en hjemmelaget, syrlig pasjonsfrukt-curd mellom krem og bær. Den komplekse er små, individuelle pavlovaer pyntet hver for seg i landslagsfarger – perfekt å dele ut foran skjermen. Juster antall porsjoner fritt; mengdene følger med."
+  },
+
+  "serp": {
+    "intent": "recipe",
+    "volume": "middels",
+    "competition": "middels",
+    "topCompetitors": ["matprat.no", "detsoteliv.no", "aperitif.no"],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «pavlova oppskrift» er etablert (matprat m.fl.). Egen tematisk slug treffer long-tail «pavlova i landslagsfarger», «pasjonsfrukt pavlova» og «VM-dessert» uten å kannibalisere en framtidig generisk pavlova. FAQ dekker ekte PAA: sprekking, sprø marengs, lage i forveien, melkefri."
+  },
+
+  "recipe": {
+    "id": "pavlova-landslagsfarger",
+    "bulkRoles": ["binder", "fat"],
+    "levers": [],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "sour": "Desserten blir mindre frisk – mer bær eller en ekstra pasjonsfrukt balanserer den søte marengsen."
+    },
+    "leverMessages": {},
+    "density": { "sugar": 0.85, "cream": 1, "plant_cream": 1, "vinegar": 1, "curd_sugar": 0.85 },
+    "pieceWeight": { "egg_white": 33, "egg_yolk": 18, "passionfruit": 40 },
+    "unitOptions": {
+      "sugar": ["dl", "ml", "g"], "cream": ["dl", "ml", "g"], "plant_cream": ["dl", "ml", "g"],
+      "vinegar": ["ts", "ss", "ml"], "curd_sugar": ["dl", "ml", "g"]
+    },
+
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 8,
+        "ingredients": [
+          { "id": "egg_white", "label": "Eggehviter (romtemperert)", "amount": 4, "unit": "stk", "role": "binder", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "sugar", "label": "Sukker", "amount": 2.5, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "sweet": 3 } },
+          { "id": "vinegar", "label": "Eplecidereddik", "amount": 1, "unit": "ts", "role": "acid", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sour": 2 }, "note": "Stabiliserer marengsen og gir seig kjerne." },
+          { "id": "cornstarch", "label": "Maizena", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "note": "Gir den seige marshmallow-kjernen." },
+          { "id": "vanilla", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "cream", "label": "Kremfløte (til topp)", "amount": 3, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "serve", "removable": false, "allergens": ["dairy"] },
+          { "id": "berries_red", "label": "Jordbær og bringebær (rødt)", "amount": 200, "unit": "g", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 1 } },
+          { "id": "blueberries", "label": "Blåbær (blått)", "amount": 100, "unit": "g", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true },
+          { "id": "passionfruit", "label": "Pasjonsfrukt / maracujá", "amount": 2, "unit": "stk", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2 }, "note": "Den grønn-gule broen til Brasil – skjes over på toppen." },
+          { "id": "powdered_sugar", "label": "Melis (hvitt, til pynt)", "amount": 1, "unit": "ss", "role": "sweet", "scaling": "nonlinear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Sett ovnen på 120 °C (over- og undervarme). Tegn en sirkel på ca. 24 cm på et bakepapir og snu det ned på stekebrettet.",
+          "Pisk eggehvitene til stive topper i en helt ren, tørr bolle. Tilsett sukkeret én spiseskje om gangen, og pisk til marengsen er blank og stiv.",
+          "Vend forsiktig inn eddik, maizena og vanilje med en slikkepott.",
+          "Form marengsen innenfor sirkelen med en liten fordypning i midten. Stek 75–90 minutter til overflaten er tørr og slipper papiret. Skru av ovnen og la pavlovaen kjølne helt med døren på gløtt.",
+          "Pisk kremfløten til den så vidt holder formen, og fordel den i fordypningen på den avkjølte bunnen.",
+          "VM-tips: pynt i landslagsfarger – røde bær, blåbær og et dryss melis – og skje pasjonsfrukt over. Server straks."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 8,
+        "ingredients": [
+          { "id": "egg_white", "label": "Eggehviter (romtemperert)", "amount": 5, "unit": "stk", "role": "binder", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "sugar", "label": "Sukker", "amount": 3, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "sweet": 3 } },
+          { "id": "vinegar", "label": "Eplecidereddik", "amount": 1, "unit": "ts", "role": "acid", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sour": 2 }, "note": "Stabiliserer marengsen." },
+          { "id": "cornstarch", "label": "Maizena", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "vanilla", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "egg_yolk", "label": "Eggeplommer (til pasjonsfrukt-curd)", "amount": 3, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "serve", "removable": true, "allergens": ["egg"] },
+          { "id": "curd_sugar", "label": "Sukker (til curd)", "amount": 1, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sweet": 2 } },
+          { "id": "curd_butter", "label": "Smør (til curd)", "amount": 50, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "serve", "removable": true, "allergens": ["dairy"] },
+          { "id": "cream", "label": "Kremfløte (til topp)", "amount": 3, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "serve", "removable": false, "allergens": ["dairy"] },
+          { "id": "berries_red", "label": "Jordbær og bringebær (rødt)", "amount": 250, "unit": "g", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 1 } },
+          { "id": "blueberries", "label": "Blåbær (blått)", "amount": 100, "unit": "g", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true },
+          { "id": "passionfruit", "label": "Pasjonsfrukt / maracujá", "amount": 4, "unit": "stk", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2 }, "note": "Til curd og pynt." },
+          { "id": "powdered_sugar", "label": "Melis (hvitt, til pynt)", "amount": 1, "unit": "ss", "role": "sweet", "scaling": "nonlinear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Sett ovnen på 120 °C. Tegn en sirkel på ca. 24 cm på bakepapir.",
+          "Pisk eggehvitene stive, tilsett sukkeret gradvis til marengsen er blank og stiv, og vend inn eddik, maizena og vanilje.",
+          "Form marengsen til en sirkel med fordypning i midten, og stek 75–90 minutter. La den kjølne i avslått ovn med døren på gløtt.",
+          "Pasjonsfrukt-curd: visp eggeplommer, sukker og fruktkjøtt fra pasjonsfrukten over vannbad til det tykner. Rør inn smøret til en blank curd, og avkjøl.",
+          "Pisk kremfløten. Fordel kremen på den avkjølte bunnen, og skje curden over i et virvlende mønster.",
+          "VM-tips: pynt i landslagsfarger med røde bær, blåbær og melis, og skje resten av pasjonsfrukten over. Server straks."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 8,
+        "ingredients": [
+          { "id": "egg_white", "label": "Eggehviter (romtemperert)", "amount": 5, "unit": "stk", "role": "binder", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "allergens": ["egg"] },
+          { "id": "sugar", "label": "Sukker", "amount": 3, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "early", "removable": false, "taste": { "sweet": 3 } },
+          { "id": "vinegar", "label": "Eplecidereddik", "amount": 1, "unit": "ts", "role": "acid", "scaling": "nonlinear", "addStage": "early", "removable": true, "taste": { "sour": 2 } },
+          { "id": "cornstarch", "label": "Maizena", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "vanilla", "label": "Vaniljesukker", "amount": 1, "unit": "ts", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true },
+          { "id": "egg_yolk", "label": "Eggeplommer (til pasjonsfrukt-curd)", "amount": 3, "unit": "stk", "role": "binder", "scaling": "linear", "addStage": "serve", "removable": true, "allergens": ["egg"] },
+          { "id": "curd_sugar", "label": "Sukker (til curd)", "amount": 1, "unit": "dl", "role": "sweet", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sweet": 2 } },
+          { "id": "curd_butter", "label": "Smør (til curd)", "amount": 50, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "serve", "removable": true, "allergens": ["dairy"] },
+          { "id": "cream", "label": "Kremfløte (til topp)", "amount": 3, "unit": "dl", "role": "fat", "scaling": "linear", "addStage": "serve", "removable": false, "allergens": ["dairy"] },
+          { "id": "mascarpone", "label": "Mascarpone (i kremen)", "amount": 100, "unit": "g", "role": "fat", "scaling": "linear", "addStage": "serve", "removable": true, "allergens": ["dairy"], "note": "Gjør kremen fastere og rikere; fint til individuelle pavlovaer." },
+          { "id": "berries_red", "label": "Jordbær og bringebær (rødt)", "amount": 250, "unit": "g", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 1 } },
+          { "id": "blueberries", "label": "Blåbær (blått)", "amount": 125, "unit": "g", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true },
+          { "id": "passionfruit", "label": "Pasjonsfrukt / maracujá", "amount": 4, "unit": "stk", "role": "fruit", "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2 } },
+          { "id": "powdered_sugar", "label": "Melis (hvitt, til pynt)", "amount": 1, "unit": "ss", "role": "sweet", "scaling": "nonlinear", "addStage": "serve", "removable": true }
+        ],
+        "steps": [
+          "Sett ovnen på 120 °C. Tegn 8 sirkler på ca. 9 cm på bakepapir til individuelle pavlovaer.",
+          "Pisk eggehvitene stive, tilsett sukkeret gradvis til blank og stiv marengs, og vend inn eddik, maizena og vanilje.",
+          "Sprøyt eller form marengsen til små reir med fordypning i midten. Stek 60–75 minutter, og la dem kjølne i avslått ovn med døren på gløtt.",
+          "Pasjonsfrukt-curd: visp eggeplommer, sukker og pasjonsfruktkjøtt over vannbad til det tykner, rør inn smøret, og avkjøl.",
+          "Pisk kremfløten med mascarpone til en fast, rik krem. Fyll hvert reir med krem og en klatt curd.",
+          "VM-tips: pynt hver pavlova i landslagsfarger – røde bær, blåbær, melis og en skje pasjonsfrukt – og del dem ut foran skjermen."
+        ]
+      }
+    },
+
+    "swapOptions": {
+      "cream": [
+        { "id": "plant_cream", "label": "Pisket plantefløte (melkefri)", "amount": 3, "unit": "dl", "tradition": "non-traditional", "note": "Kokos- eller havrebasert fløte merket for pisking; gjør hele desserten melkefri." }
+      ],
+      "berries_red": [
+        { "id": "strawberries_only", "label": "Bare jordbær", "amount": 250, "unit": "g", "tradition": "regional", "note": "Rendyrket rødt; fint hvis bringebær er dyrt eller utilgjengelig." }
+      ]
+    }
+  }
+}

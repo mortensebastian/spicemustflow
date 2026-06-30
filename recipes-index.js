@@ -536,6 +536,72 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "pavlova-landslagsfarger", slug: "pavlova-landslagsfarger.html", status: "live",
+    shortName: "Pavlova i landslagsfarger", name: "Pavlova i landslagsfarger med pasjonsfrukt",
+    tagline: "Sprø pavlova pyntet i rødt, hvitt og blått med syrlig pasjonsfrukt – VM-desserten foran skjermen.",
+    description: "Festlig pavlova i landslagsfarger med kremtopp, friske bær og pasjonsfrukt. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    image: null, category: ["dessert"], badge: "3 nivåer",
+    recipeCategory: "Dessert", cuisine: "Norsk-brasiliansk",
+    keywords: "pavlova oppskrift, pavlova i landslagsfarger, pasjonsfrukt pavlova, VM-dessert, norsk dessert",
+    recipeYield: "8 porsjoner", times: { prep: "PT30M", cook: "PT1H30M", total: "PT3H" },
+    search: "pavlova landslagsfarger pasjonsfrukt maracuja marengs krem bær VM dessert norge brasil fest",
+    faq: [
+      { q: "Hvorfor sprekker pavlovaen min?", a: "Litt sprekker hører pavlova til og er helt normalt – det er nettopp slik den skal se ut. Store sprekker og kollaps kommer som regel av at marengsen er overpisket etter at sukkeret er i, eller at ovnen er for varm. Pisk til marengsen er blank og stiv (ikke tørr og kornete), stek på lav varme, og la pavlovaen kjølne sakte i ovnen med døren på gløtt." },
+      { q: "Hvordan får jeg sprø marengs på utsiden og seig kjerne?", a: "Tre triks: pisk eggehvitene i en helt ren, tørr og fettfri bolle, tilsett sukkeret litt om gangen til marengsen er blank og stiv, og vend inn en teskje eddik og litt maizena – det gir den klassiske marshmallow-kjernen. Stek lavt og lenge (rundt 120 °C), og la pavlovaen tørke ferdig i avslått ovn med døren på gløtt." },
+      { q: "Hvordan pynter jeg pavlova i landslagsfarger til VM?", a: "Tenk rødt, hvitt og blått: røde jordbær og bringebær, snøhvit krem og et dryss melis, og blåbær for det blå. Skje så det gule, syrlige fruktkjøttet fra pasjonsfrukt (maracujá) over på toppen – det er den grønn-gule broen til Brasil. Vil du gjøre det ekstra tydelig, legg bærene i felter eller striper som et flagg." },
+      { q: "Hva er pasjonsfrukt (maracujá), og kan jeg bytte den ut?", a: "Maracujá er den brasilianske pasjonsfrukten – rynkete skall, og inni et aromatisk, syrlig-søtt gult fruktkjøtt med spiselige frø. Syren er perfekt motvekt til den søte marengsen. Får du ikke tak i fersk, kan du bruke frossen pasjonsfruktpuré, eller toppe med mango og litt limesaft for en liknende tropisk friskhet." },
+      { q: "Kan jeg lage pavlova i forveien?", a: "Ja, og det er smart når du skal samle gjengen foran kampen. Stek marengsbunnen dagen før og oppbevar den helt tørt og lufttett i romtemperatur – aldri i kjøleskap, der trekker den fukt og blir seig. Pisk kremen og pynt med bær og pasjonsfrukt først helt rett før servering, ellers mykner bunnen." },
+      { q: "Kan jeg lage pavlova melkefri?", a: "Ja. Selve marengsbunnen er naturlig melkefri – det er bare kremtoppen som inneholder melk. Bytt kremfløten mot en pisket plantefløte (kokos- eller havrebasert), så blir hele desserten melkefri. Velg en plantefløte merket for pisking, og pisk den godt kald." },
+      { q: "Hvor lenge holder en ferdig pyntet pavlova?", a: "En pyntet pavlova bør spises samme dag – helst innen et par timer – for da er bunnen fortsatt sprø og kremen fast. Etter hvert trekker fukt fra krem og frukt inn i marengsen og gjør den seig. Rester kan stå kaldt til neste dag; de smaker fortsatt godt, men teksturen blir mykere." },
+      { q: "Kan jeg bruke frosne bær?", a: "Til pynt er friske bær best, fordi frosne bær slipper mye væske når de tiner og farger kremen. Vil du likevel bruke frosne, la dem tine på litt kjøkkenpapir og legg dem på helt rett før servering. Frosne bær egner seg bedre til en bærsaus du skjer ved siden av enn som topping." }
+    ]
+  },
+
+  {
+    id: "brigadeiro", slug: "brigadeiro.html", status: "live",
+    shortName: "Brigadeiro med brunost", name: "Brigadeiro med brunost – brasilianske sjokoladekuler",
+    tagline: "Brasils klissete sjokoladekuler møter norsk brunost – det søteste landslaget på fatet, perfekt VM-godteri.",
+    description: "Brigadeiro – brasilianske sjokoladekuler kokt på kondensert melk og kakao, med en norsk brunost-vri. Velg nivå, juster antall kuler og tilpass ingrediensene.",
+    image: null, category: ["dessert"], badge: "3 nivåer",
+    recipeCategory: "Dessert", cuisine: "Norsk-brasiliansk",
+    keywords: "brigadeiro oppskrift, brasilianske sjokoladekuler, brunost dessert, VM-godteri, sjokoladekuler",
+    recipeYield: "ca. 20 kuler", times: { prep: "PT20M", cook: "PT10M", total: "PT2H30M" },
+    search: "brigadeiro brunost brasilianske sjokoladekuler kondensert melk kakao VM godteri norge brasil sjokoladetrøffel",
+    faq: [
+      { q: "Hvor lenge skal brigadeiro-massen koke?", a: "Regn 8–10 minutter på svak til middels varme under stadig omrøring. Massen er ferdig når den er tykk og slipper bunnen – det vil si at du så vidt ser bunnen av kjelen når du drar slikkepotten over. Koker du for kort, blir kulene for løse til å trille; koker du for lenge, blir de harde og seige." },
+      { q: "Hva er forskjellen på søtet kondensert melk og vikingmelk?", a: "Dette er den vanligste fellen. Søtet kondensert melk (på boks) er tilsatt sukker, og er søtere, brunere og mye tykkere – det er denne du skal ha i brigadeiro. Vikingmelk (evaporated milk) er usøtet og tynnere, og gir ikke samme søte, seige masse. Sjekk at det står «søtet/sweetened» på boksen." },
+      { q: "Hvorfor brunost i brigadeiro?", a: "Brunost gir den klissete sjokolademassen en karamellaktig, lett salt dybde som passer overraskende godt til den søte kakaoen – nesten som en norsk dulce de leche. Det er den lekne broen mellom Brasil og Norge i denne VM-utgaven. Riv brunosten fint så den smelter jevnt inn i massen mens den koker." },
+      { q: "Hvordan triller jeg kulene uten at alt klisser seg fast?", a: "To ting: la massen bli helt kald først (gjerne i kjøleskap et par timer eller over natten), og smør hendene med litt smør eller nøytral olje før du triller. Ta små klatter med en teskje, trill raskt til kuler, og rull dem i pynt med en gang. Klisser det likevel, fukt eller smør hendene på nytt underveis." },
+      { q: "Kan jeg lage brigadeiro melkefri?", a: "Ja. Bytt den søtede kondenserte melken mot en kokosbasert variant (finnes melkefri på boks) og smøret mot margarin. Da må du droppe brunosten, som ikke finnes melkefri – men du sitter igjen med en klassisk, melkefri sjokoladekule. I oppskriften ligger byttene klare, og mengdene justeres automatisk." },
+      { q: "Hvordan pynter jeg brigadeiro i landslagsfarger til VM?", a: "Rull kulene i forskjellig pynt og lag et «landslag» på fatet: rødt og hvitt strøssel, blå dragé- eller sukkerperler, og kokos for det hvite. Vil du lage en ekte landskamp, kan du rulle halvparten i klassisk mørkt sjokoladestrøssel (Brasil) og halvparten i rødt, hvitt og blått (Norge). Sett dem i små papirformer så de er lette å dele ut foran skjermen." },
+      { q: "Hvor lenge holder brigadeiro, og hvordan oppbevarer jeg dem?", a: "Ferdige brigadeiro holder seg 4–5 dager i en tett boks i kjøleskapet. Ta dem gjerne ut en liten stund før servering, så de mykner litt og blir mest mulig kremete. Skal du lage dem i forveien, kan du koke massen og oppbevare den kaldt, og så trille og pynte kulene samme dag som de skal serveres." },
+      { q: "Kan jeg fryse brigadeiro?", a: "Ja. Legg de ferdige kulene i en tett boks med bakepapir mellom lagene, og frys i opptil 3 måneder. Tin dem i kjøleskapet før servering. Konsistensen blir aller best på ferske kuler, men frysing fungerer fint når du vil forberede en stor sats til kampkvelden." }
+    ]
+  },
+
+  {
+    id: "pao-de-queijo", slug: "pao-de-queijo.html", status: "live",
+    shortName: "Pão de queijo", name: "Pão de queijo med Norvegia – brasiliansk ostebrød",
+    tagline: "Seige, luftige brasilianske ostebrød bakt med norsk Norvegia – naturlig glutenfri VM-snacks rett fra ovnen.",
+    description: "Pão de queijo – brasiliansk, glutenfritt ostebrød på tapiokamel, bakt med norsk Norvegia. Velg nivå, juster antall boller og tilpass ingrediensene.",
+    image: null, category: ["baking"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Norsk-brasiliansk",
+    keywords: "pao de queijo oppskrift, brasiliansk ostebrød, glutenfri ostebrød, ostebrød oppskrift, VM-snacks",
+    recipeYield: "ca. 16 boller", times: { prep: "PT20M", cook: "PT25M", total: "PT45M" },
+    search: "pao de queijo brasiliansk ostebrød glutenfri tapiokamel norvegia ost VM snacks norge brasil osteboller",
+    faq: [
+      { q: "Er pão de queijo glutenfri?", a: "Ja, helt naturlig. Ostebrødene bakes på tapiokamel – stivelse fra maniokroten (cassava) – og inneholder verken hvete eller annet glutenkorn. Så lenge osten og resten av ingrediensene er glutenfrie (det er de fleste rene oster), er pão de queijo trygt ved cøliaki. Det er nettopp derfor de har blitt så populære som glutenfri snacks." },
+      { q: "Hva er tapiokamel, og hvor får jeg tak i det?", a: "Tapiokamel (også kalt tapiokastivelse eller cassava-/maniokmel) er en fin, hvit stivelse utvunnet fra maniokroten. Det er det som gir pão de queijo den karakteristiske seige, litt elastiske konsistensen, og kan ikke byttes 1:1 med potetmel eller maizena. Du finner det i велassorterte dagligvarebutikker, i asiatiske og latinamerikanske matbutikker, og på nett." },
+      { q: "Hvilken ost passer best i pão de queijo?", a: "I Brasil brukes en fersk, lett syrlig ost (queijo minas), men en god, fast norsk gulost som Norvegia fungerer utmerket og gir den norske vrien. Vil du ha kraftigere smak, kan du blande inn litt lagret ost eller revet parmesan. Riv osten selv for best smelting – ferdigrevet ost har ofte antiklumpemiddel som gjør røren litt grynete." },
+      { q: "Hvorfor blir ostebrødene mine flate eller harde?", a: "Som regel handler det om forholdet væske/mel eller for hard steking. Røren skal være tykk og litt klissete, ikke rennende – spe med tapiokamel om den er for løs. Bak på god varme (200 °C) til de er pufne og gylne, og server dem helst rykende ferske; de er på sitt beste rett fra ovnen og blir seigere når de kjølner." },
+      { q: "Hvordan får jeg dem seige og luftige inni?", a: "Den seige, luftige kjernen kommer av tapiokamelet og av eggene som gir struktur. Bruker du skåldemetoden – der du heller kokende melk og olje over melet før du tilsetter egg og ost – får du den mest autentiske, seige konsistensen. Ikke overbak dem; de skal være gylne utenpå og fortsatt myke og seige inni." },
+      { q: "Kan jeg lage pão de queijo melkefri?", a: "Delvis. Bytt melken mot plantedrikk og smør/olje er allerede melkefritt, men osten er kjernen i retten. Bruker du en fast, smeltende vegansk ost i stedet for Norvegia, kan du lage en melkefri variant – smaken blir litt annerledes, men konsistensen holder. I oppskriften ligger byttene klare." },
+      { q: "Kan jeg fryse pão de queijo og bake fra frossen?", a: "Ja, og det er den store fordelen med dem. Trill rå deigkuler, frys dem på et brett, og legg dem så i pose. Du kan bake dem rett fra frossen – legg på et par minutter ekstra steketid – og ha alltid ferske, varme ostebrød klare. Da kan du bake nykker etter behov gjennom hele kampen." },
+      { q: "Hvordan serverer jeg pão de queijo til VM?", a: "Server dem rykende varme i en kurv eller skål så hele gjengen kan forsyne seg under kampen – de forsvinner fort. De er gode som de er, men passer også med en dipp eller litt smør. Vil du ha full Norge–Brasil-stemning, skyll dem ned med en kald brasiliansk guaraná-brus eller en norsk pils, og sett ut noe i rødt, hvitt og blått ved siden av." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

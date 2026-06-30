@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brigadeiro med brunost – brasilianske sjokoladekuler | Velkomponert</title>
+  <meta name="description" content="Brigadeiro – brasilianske sjokoladekuler kokt på kondensert melk og kakao, med en norsk brunost-vri. Velg nivå, juster antall kuler og tilpass ingrediensene.">
+  <link rel="canonical" href="https://velkomponert.no/brigadeiro.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Brigadeiro med brunost – brasilianske sjokoladekuler">
+  <meta property="og:description" content="Brigadeiro – brasilianske sjokoladekuler kokt på kondensert melk og kakao, med en norsk brunost-vri. Velg nivå, juster antall kuler og tilpass ingrediensene.">
+  <meta property="og:url" content="https://velkomponert.no/brigadeiro.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/brigadeiro.jpg så vises det øverst,
+     sett image i manifestet tilbake til "brigadeiro.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/brigadeiro.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Brigadeiro med brunost – brasilianske sjokoladekuler</h1>
+      <p>Brasils nasjonalgodteri brigadeiro – klissete, søte sjokoladekuler – får en norsk vri med brunost. Det søteste landslaget du kan sette på bordet til VM.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <p class="recipe-intro">Brigadeiro er Brasils svar på trøffelen: en enkel, klissete sjokolademasse kokt på søtet kondensert melk, kakao og smør, trillet til kuler og rullet i strøssel. Den dukker opp på hver eneste bursdag og fest i Brasil, og er omtrent umulig å mislykkes med. Alt du trenger er én kjele, fire ingredienser og litt tålmodighet til å røre.</p>
+      <p class="recipe-intro">Hemmeligheten ligger i kokingen. Massen skal røres på svak til middels varme til den tykner og slipper bunnen av kjelen – da vet du at den er passe fast til å trilles når den er avkjølt. Bruk søtet kondensert melk (ikke usøtet vikingmelk), og sikt kakaoen så massen blir helt glatt. La den så bli skikkelig kald før du smører hendene og triller kulene.</p>
+      <p class="recipe-intro">Den norske vrien er brunost. Finrevet og smeltet inn i massen gir den en karamellaktig, lett salt dybde – nesten som en norsk dulce de leche – som kler den søte kakaoen overraskende godt. Her får du tre nivåer: den enkle er klassisk brigadeiro slik brasilianerne lager den, medium smelter inn brunost for den norske broen, og den komplekse løfter med mørk sjokolade og kuler rullet i landslagsfarger. Juster antallet kuler fritt; mengdene følger med.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall kuler</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre kuler">−</button>
+          <input type="number" id="recipe-scale-input" value="20" min="2" max="40" step="2" data-base-yield="20">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere kuler">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="budget-toggle"></div>
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="brigadeiro-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>

@@ -534,5 +534,30 @@ Tre nivåer fra rask hverdagssaus til langtidskokt ragù. Lærdom:
   la manifestet bære en valgfri «relatert grunnoppskrift»-URL som adapteren auto-lenker på en kjent
   ingrediens-id (f.eks. `stock`/`homemade_stock`). I dag er prosa-lenke det rette, in-scope grepet.
 
+**VM-pulje «Norge–Brasil» (retter #28–30: pavlova-landslagsfarger, brigadeiro, pao-de-queijo)** —
+**ingen kjernemotorendring.** Tre lekne fusjonsretter bygget i én økt via build.js. Lærdom:
+- **Tematisk slug for å unngå kannibalisering:** plan.md hadde en planlagt generisk «pavlova», så
+  VM-utgaven fikk slug `pavlova-landslagsfarger` (ikke `pavlova`) – tematisk long-tail som lar
+  hodeordet stå fritt til en evergreen pavlova senere. Søsken-/kannibaliseringsregelen gjelder også
+  mot *planlagte* (ikke bare bygde) retter. Brigadeiro tok derimot hodeordet `brigadeiro` fordi
+  enkel-nivået er autentisk klassisk (tjener «brigadeiro oppskrift»), og brunost-fusjonen er vrien i
+  medium/kompleks – ingen plan-konflikt.
+- **Evergreen-ramme på tidsbundet tema:** navn/ingress er tidløse (landslagsfarger, brunost, Norvegia),
+  VM løftes i tagline + ingress + et **«VM-tips» lagt som siste steg** (servering/landslagsfarger).
+  Da råtner ikke innholdet når turneringen er over. «VM-tips» som steg (ikke egen seksjon) krevde ingen
+  malendring – det er bare et vanlig `steps`-element.
+- **Honest-flagging av strukturelt allergen i flere nye format:** egg er `removable:false` uten bytte i
+  både marengs (pavlova) og tapiokadeig (pao de queijo) – samme ærlige «passer ikke ved egg-allergi» som
+  fisk i fiskesuppe. Bekreftet at regelen «hver allergi løsbar» har et legitimt unntak: når allergenet ER
+  retten. Meieri er derimot alltid løst (plantefløte, kokosbasert kondensert melk, vegansk ost, margarin).
+- **Naturlig glutenfri som hovedvinkel:** pao de queijo (tapiokamel) har null gluten å dekke – diett-
+  filteret viser bare meieri/egg. Sterk SEO-vinkel, jf. focaccia/thai-fiskesuppe. `tapioca_flour` er
+  `removable:false` med note om at det IKKE kan byttes med potetmel/maizena (teksturbærer, ikke bytte).
+- **Fjerde/femte yieldNoun-type:** «kuler» (brigadeiro) og «boller» (pao de queijo) – generatoren satte
+  skala-etikett + aria-labels rett fra `yieldNoun`. Pavlova falt til default «porsjoner». Alle base-yield
+  var partall (8/20/16) så scale-steget (min2/step2) lander rent.
+- **Ny rolle `cheese` og `topping`** lagt i datafilene uten kodeendring – roller er bare grupperingstekst.
+  `cheese` holdt utenfor `bulkRoles` så «juster opp de andre» ikke skalerer osten når den byttes.
+
 
 
