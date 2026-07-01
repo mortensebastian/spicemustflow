@@ -541,7 +541,7 @@ window.RECIPES_INDEX = [
     shortName: "Pavlova i landslagsfarger", name: "Pavlova i landslagsfarger med pasjonsfrukt",
     tagline: "Sprø pavlova pyntet i rødt, hvitt og blått med syrlig pasjonsfrukt – VM-desserten foran skjermen.",
     description: "Festlig pavlova i landslagsfarger med kremtopp, friske bær og pasjonsfrukt. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
-    image: null, category: ["dessert"], badge: "3 nivåer",
+    image: "pavlova-landslagsfarger.jpg", category: ["dessert"], badge: "3 nivåer",
     recipeCategory: "Dessert", cuisine: "Norsk-brasiliansk",
     keywords: "pavlova oppskrift, pavlova i landslagsfarger, pasjonsfrukt pavlova, VM-dessert, norsk dessert",
     recipeYield: "8 porsjoner", times: { prep: "PT30M", cook: "PT1H30M", total: "PT3H" },
