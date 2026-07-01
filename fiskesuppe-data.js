@@ -159,14 +159,14 @@ window.RECIPE = {
   density: {
     stock: 1, cream: 1, creme_fraiche: 1, coconut: 1, olive_oil: 0.92,
     wine: 0.99, vinegar: 1, sugar: 0.85, salt_added: 1.2, butter: 0.95,
-    flour: 0.55, tomato: 1, tomato_paste: 1.1
+    flour: 0.55, tomato: 1, tomato_paste: 1.1, lemon: 1, extra_stock: 1
   },
   pieceWeight: { carrot: 70, leek: 150, onion: 110, garlic: 5, fennel: 250, lemon: 100 },
   unitOptions: {
     stock: ["dl", "ml", "g"], cream: ["dl", "ml"], creme_fraiche: ["dl", "ml"], coconut: ["dl", "ml"],
     wine: ["dl", "ml", "g"], olive_oil: ["ss", "ts", "ml", "g"], vinegar: ["ts", "ss", "ml"],
     sugar: ["ts", "ss", "g"], salt_added: ["ts", "g"], butter: ["ss", "g"], flour: ["ss", "g"],
-    tomato_paste: ["ss", "g"]
+    tomato_paste: ["ss", "g"], lemon: ["ts", "ss", "ml"], extra_stock: ["dl", "ml", "g"]
   },
   bulkRoles: ["liquid", "protein", "seafood", "vegetable"],
   // Tre selvjusterende levere; sur/søt hoppes over i kompleks (mangler eddik/sukker).

@@ -285,19 +285,6 @@ window.RECIPE = {
           "removable": true
         },
         {
-          "id": "garlic_powder",
-          "label": "Hvitløkspulver",
-          "amount": 1,
-          "unit": "ts",
-          "role": "seasoning",
-          "scaling": "nonlinear",
-          "addStage": "early",
-          "removable": true,
-          "taste": {
-            "umami": 1
-          }
-        },
-        {
           "id": "water",
           "label": "Vann (til kjøttdeigen)",
           "amount": 1,
@@ -446,7 +433,7 @@ window.RECIPE = {
       ],
       "steps": [
         "Finhakk løk og hvitløk. Varm olje i en panne, og brun kjøttdeigen godt mens du deler den opp. Stek løken med, og ha i hvitløken mot slutten.",
-        "Bland spisskummen, paprikapulver, chilipulver, oregano og hvitløkspulver, og strø over kjøttet. Stek krydderet med et halvt minutt, hell i vannet, og la det putre 3–4 minutter. Smak til med salt.",
+        "Bland spisskummen, paprikapulver, chilipulver og oregano, og strø over kjøttet. Stek krydderet med et halvt minutt, hell i vannet, og la det putre 3–4 minutter. Smak til med salt.",
         "Lag en frisk salsa: bland terninger av tomat, finhakket rødløk, en klem lime og en klype salt. Smak til med litt chili om du vil ha varme.",
         "Sett mais, paprikastrimler, strimlet salat, revet ost, rømme og salsaen i skåler på bordet.",
         "Varm tortillaene, og la alle bygge sin egen taco. Server med limebåter."

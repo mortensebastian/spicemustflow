@@ -148,7 +148,7 @@ window.RECIPE = {
         },
         {
           "id": "potato_flour",
-          "label": "Potetmel",
+          "label": "Potetmel (eller hvetemel)",
           "amount": 1.5,
           "unit": "ss",
           "role": "seasoning",
@@ -170,21 +170,8 @@ window.RECIPE = {
           ]
         },
         {
-          "id": "nutmeg",
-          "label": "Revet muskat",
-          "amount": 0.25,
-          "unit": "ts",
-          "role": "seasoning",
-          "scaling": "nonlinear",
-          "addStage": "early",
-          "removable": true,
-          "taste": {
-            "bitter": 1
-          }
-        },
-        {
           "id": "stock",
-          "label": "Oksekraft (til saus)",
+          "label": "Oksekraft (eller buljongterning + vann)",
           "amount": 4,
           "unit": "dl",
           "role": "liquid",
@@ -235,7 +222,7 @@ window.RECIPE = {
         }
       ],
       "steps": [
-        "Arbeid salt godt inn i kjøttdeigen til den blir seig. Bland inn potetmel, muskat og litt pepper.",
+        "Arbeid salt godt inn i kjøttdeigen til den blir seig. Bland inn potetmel og litt pepper.",
         "Spe med melk litt om gangen, og arbeid farsen jevn og smidig. La hvile 10 minutter.",
         "Form kaker, og brun dem i smør 2–3 minutter på hver side. Ta dem opp.",
         "Lag en lys smørjevning av smøret og hvetemelet, spe med varm kraft til blank saus.",
@@ -352,7 +339,7 @@ window.RECIPE = {
         },
         {
           "id": "stock",
-          "label": "Oksekraft",
+          "label": "Oksekraft (eller buljongterning + vann)",
           "amount": 5,
           "unit": "dl",
           "role": "liquid",

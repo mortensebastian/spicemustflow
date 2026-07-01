@@ -62,6 +62,23 @@ genereres av `recipe-schema.js` + `site.js` fra `<rett>-data.js` + manifestet.
 Følg `recipe-authoring.md`. Tre nivåer `enkel`/`medium`/`kompleks` (`medium` =
 standard, og det `recipe-schema.js` speiler). Per ingrediens: `id`/`label`/`amount`/
 `unit`/`role`/`scaling`/`addStage`/`sodiumPer100g`/`taste`/`removable`/`allergens`.
+
+### Nivå-filosofi (les `recipe-authoring.md` → «Nivå-filosofi» – KRITISK)
+Nivåene klatrer på **teknikk og innsats**, ikke på hvor smal handlelista er.
+Tilgjengelige ingredienser gjelder på alle nivåer. Bygg **enkel** etter
+tilgjengelighets-gaten:
+- **Snarvei før bunn:** ferdig krydderblanding/buljong/hermetikk/ferdig saus der
+  medium/kompleks lager det fra bunnen. Snarveien er poenget, ikke et nederlag.
+- **Generisk før spesifikk i `label`:** «Nøytral olje» (ikke «rapsolje»),
+  «Kjøttdeig» (ikke «grovkvernet høyrygg»), «Potetmel (eller hvetemel)», «Melk eller vann».
+- **Krydder-budsjett ≤ 2** enkeltkrydder utover salt/pepper på enkel (sukker/ost/olje
+  teller ikke). Flere → samle i én ferdigblanding eller løft til medium.
+- **Merk valgfritt:** ikke-essensielle smaker på enkel = `removable:true` + «(valgfritt)».
+- **Færre komponenter** og **aldri størst:** `enkel ≤ medium` i antall (kompleks kan
+  ha færre linjer enn medium hvis den raffinerer ved å fjerne – komplekst = teknikk, ikke antall).
+- **Kjerne-budsjett (ikke-servering):** gryte/panne/pasta ≤ 8, suppe ≤ 8, bygg-selv ≤ 7,
+  bakst = 0 spesialvarer/-teknikker. Spesialvarene (sjalott, mascarpone, vin, carnaroli,
+  hjemmelaget kraft) hører på medium/kompleks.
 Salt-lever = `sodiumPer100g ~38800` + `levers:[{axis:"salt",id:"salt_added"}]`.
 **`recipe.id` MÅ være lik `indexEntry.id`** (schema-generatoren slår opp på den).
 Ta med `tasteMessages` **kun** for akser retten faktisk balanserer – ikke tomme
@@ -126,6 +143,13 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
 - [ ] 5–10 **ekte** FAQ-spørsmål fra PAA/autocomplete (ikke oppfunnet)
 - [ ] `season` satt kun hvis retten faktisk har en topp
 - [ ] Tre nivåer; `medium` finnes; salt-lever har `sodiumPer100g ~38800` der den brukes
+- [ ] **`servedAcid`/acid-`onRemove`-tips ⇒ `requireRoles:["acid"]`.** Setter du en stående sitron-tips
+      (`servedAcid`) eller myke `onRemove`-tips på en `role:"acid"`-ingrediens, MÅ `requireRoles` inneholde
+      `"acid"` – ellers er hele syre-bevisstheten død data (adapterens `acidMessage()` returnerer null).
+      Typisk for retter der enkel mangler syre, men medium/kompleks har sitron (jf. kylling-i-ovn).
+- [ ] **Enkel følger tilgjengelighets-gaten:** snarvei-produkter, generiske labels,
+      ≤ 2 enkeltkrydder, kjerne (ikke-servering) innen budsjett, `enkel ≤ medium ≤ kompleks`,
+      ingen spesialvarer/-teknikk (de hører på medium/kompleks)
 - [ ] Standardbytter vurdert (kraft↔buljong, smør↔margarin/olje, melk↔plantedrikk,
       hvetemel↔potetmel, egg↔bindemiddel, ost↔alternativ) – se Standardbytter over
 - [ ] Hver allergi retten kan ha (meieri/gluten/egg) er løsbar (bytte ELLER fjerning)

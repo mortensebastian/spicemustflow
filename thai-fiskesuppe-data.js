@@ -86,8 +86,7 @@ const thaiFiskesuppeRecipes = {
     ingredients: [
       { id: "fish_stock",      label: "Fiskekraft",                 amount: 5, unit: "dl", role: "liquid",  scaling: "linear",    addStage: "early", sodiumPer100g: 300, removable: false, taste: { umami: 1 }, allergens: ["fish"] },
       { id: "coconut_milk",    label: "Kokosmelk",                  amount: 4, unit: "dl", role: "liquid",  scaling: "linear",    addStage: "early", removable: false, taste: { sweet: 1 }, note: "Gir den kremede basen – naturlig melkefri. La aldri suppa fosskoke etter kokosmelken." },
-      { id: "red_curry_paste", label: "Rød currypaste",             amount: 2, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 2000, removable: false, taste: { umami: 1 }, allergens: ["shellfish"], note: "Mange pastaer inneholder rekepasta (skalldyr) – velg en rekefri variant om suppa skal være skalldyrfri." },
-      { id: "ginger",          label: "Frisk ingefær, revet",       amount: 1, unit: "ss", role: "aromatic", scaling: "nonlinear", addStage: "early", removable: true },
+      { id: "red_curry_paste", label: "Rød currypaste",             amount: 2, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 2000, removable: false, taste: { umami: 1 }, allergens: ["shellfish"], note: "Mange pastaer inneholder rekepasta (skalldyr) – velg en rekefri variant om suppa skal være skalldyrfri. Bærer allerede ingefær/galangal, så enkel-versjonen trenger ikke fersk ingefær i tillegg." },
       { id: "salmon",          label: "Laks i terninger",           amount: 400, unit: "g", role: "protein", scaling: "linear",   addStage: "end",   sodiumPer100g: 60, removable: false, taste: { umami: 2 }, allergens: ["fish"], note: "Trekkes mot slutten, ikke kok." },
       { id: "fish_sauce",      label: "Fiskesaus",                  amount: 1, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "end",   sodiumPer100g: 7800, removable: false, taste: { umami: 2 }, allergens: ["fish"], note: "Rettens salt – justeres automatisk. Smak til på slutten." },
       { id: "lime",            label: "Limesaft",                   amount: 1, unit: "ss", role: "acid",     scaling: "nonlinear", addStage: "serve", removable: true, taste: { sour: 3 },
@@ -96,7 +95,7 @@ const thaiFiskesuppeRecipes = {
       { id: "coriander",       label: "Frisk koriander",            amount: 1, unit: "ss", role: "aromatic", scaling: "linear",   addStage: "serve", removable: true }
     ],
     steps: [
-      "Kok opp fiskekraften, rør inn currypaste og revet ingefær, og la det småkoke et par minutter til det dufter.",
+      "Kok opp fiskekraften, rør inn currypaste, og la det småkoke et par minutter til det dufter.",
       "Hell i kokosmelken og varm opp til så vidt småkoking – ikke fosskok.",
       "Skru ned varmen, legg i laksen og la den trekke 3–4 minutter til den så vidt er gjennom – ikke kok.",
       "Ta gryta av varmen og smak til med fiskesaus, limesaft og litt sukker til en balanse mellom salt, surt, søtt og sterkt.",

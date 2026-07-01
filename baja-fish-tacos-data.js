@@ -62,8 +62,6 @@ const bajaFishTacosRecipes = {
       { id: "lime", label: "Lime", amount: 2, unit: "stk", role: "acid", essential: true, scaling: "linear", addStage: "end", removable: false, taste: {"sour":2} },
       { id: "mayo", label: "Majones", amount: 3, unit: "ss", role: "fat", scaling: "linear", addStage: "end", removable: false, allergens: ["egg"] },
       { id: "chipotle_adobo", label: "Chipotlepasta (eller røkt paprika)", amount: 1, unit: "ss", role: "seasoning", scaling: "nonlinear", addStage: "end", removable: true, taste: {"heat":2,"umami":1} },
-      { id: "red_onion", label: "Rødløk, tynt skåret", amount: 1, unit: "stk", role: "aromatic", scaling: "linear", addStage: "end", removable: true, taste: {"sweet":1} },
-      { id: "cilantro", label: "Frisk koriander, grovhakket", amount: 1, unit: "stk", role: "aromatic", scaling: "fixed", addStage: "end", removable: true },
       { id: "wheat_tortilla", label: "Hvetetortilla, små", amount: 8, unit: "stk", role: "starch", essential: true, scaling: "linear", addStage: "end", removable: false, allergens: ["gluten"] },
       { id: "salt_added", label: "Salt", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false }
     ],
@@ -71,7 +69,7 @@ const bajaFishTacosRecipes = {
       "Bland hvetemel, tacokrydder og salt på en tallerken. Klapp fiskestrimlene tørre, og vend dem i melet.",
       "Stek fisken sprø og gyllen i olje, 2–3 minutter på hver side. Legg på litt kjøkkenpapir.",
       "Strimle kålen fint, og bland med en klem lime og litt salt. Rør sammen majones, chipotle og litt limesaft til en krem.",
-      "Varm tortillaene i tørr panne. Fyll med kålslaw, fisk, chipotlekrem, rødløk og koriander, og server med limebåter."
+      "Varm tortillaene i tørr panne. Fyll med kålslaw, fisk og chipotlekrem, og server med limebåter."
     ]
   },
 
