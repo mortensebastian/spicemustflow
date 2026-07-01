@@ -540,12 +540,12 @@ window.RECIPES_INDEX = [
     id: "pavlova-landslagsfarger", slug: "pavlova-landslagsfarger.html", status: "live",
     shortName: "Pavlova i landslagsfarger", name: "Pavlova i landslagsfarger med pasjonsfrukt",
     tagline: "Sprø pavlova pyntet i rødt, hvitt og blått med syrlig pasjonsfrukt – VM-desserten foran skjermen.",
-    description: "Festlig pavlova i landslagsfarger med kremtopp, friske bær og pasjonsfrukt. Velg nivå, juster porsjoner og tilpass ingrediensene – mengdene følger med.",
+    description: "Festlig pavlova i landslagsfarger – den perfekte VM-kaken til Norge–Brasil, med kremtopp, friske bær og syrlig pasjonsfrukt. Velg nivå og juster porsjoner.",
     image: "pavlova-landslagsfarger.jpg", category: ["dessert"], badge: "3 nivåer",
     recipeCategory: "Dessert", cuisine: "Norsk-brasiliansk",
-    keywords: "pavlova oppskrift, pavlova i landslagsfarger, pasjonsfrukt pavlova, VM-dessert, norsk dessert",
+    keywords: "pavlova oppskrift, pavlovakake, VM-kake, Norge–Brasil-kake, pavlova i landslagsfarger, VM-dessert, pasjonsfrukt pavlova, kake i landslagsfarger, fotballfest dessert",
     recipeYield: "8 porsjoner", times: { prep: "PT30M", cook: "PT1H30M", total: "PT3H" },
-    search: "pavlova landslagsfarger pasjonsfrukt maracuja marengs krem bær VM dessert norge brasil fest",
+    search: "pavlova landslagsfarger pasjonsfrukt maracuja marengs krem bær VM dessert VM kake norge brasil kake pavlovakake fotballfest landskamp 17 mai fest",
     faq: [
       { q: "Hvorfor sprekker pavlovaen min?", a: "Litt sprekker hører pavlova til og er helt normalt – det er nettopp slik den skal se ut. Store sprekker og kollaps kommer som regel av at marengsen er overpisket etter at sukkeret er i, eller at ovnen er for varm. Pisk til marengsen er blank og stiv (ikke tørr og kornete), stek på lav varme, og la pavlovaen kjølne sakte i ovnen med døren på gløtt." },
       { q: "Hvordan får jeg sprø marengs på utsiden og seig kjerne?", a: "Tre triks: pisk eggehvitene i en helt ren, tørr og fettfri bolle, tilsett sukkeret litt om gangen til marengsen er blank og stiv, og vend inn en teskje eddik og litt maizena – det gir den klassiske marshmallow-kjernen. Stek lavt og lenge (rundt 120 °C), og la pavlovaen tørke ferdig i avslått ovn med døren på gløtt." },
@@ -554,7 +554,8 @@ window.RECIPES_INDEX = [
       { q: "Kan jeg lage pavlova i forveien?", a: "Ja, og det er smart når du skal samle gjengen foran kampen. Stek marengsbunnen dagen før og oppbevar den helt tørt og lufttett i romtemperatur – aldri i kjøleskap, der trekker den fukt og blir seig. Pisk kremen og pynt med bær og pasjonsfrukt først helt rett før servering, ellers mykner bunnen." },
       { q: "Kan jeg lage pavlova melkefri?", a: "Ja. Selve marengsbunnen er naturlig melkefri – det er bare kremtoppen som inneholder melk. Bytt kremfløten mot en pisket plantefløte (kokos- eller havrebasert), så blir hele desserten melkefri. Velg en plantefløte merket for pisking, og pisk den godt kald." },
       { q: "Hvor lenge holder en ferdig pyntet pavlova?", a: "En pyntet pavlova bør spises samme dag – helst innen et par timer – for da er bunnen fortsatt sprø og kremen fast. Etter hvert trekker fukt fra krem og frukt inn i marengsen og gjør den seig. Rester kan stå kaldt til neste dag; de smaker fortsatt godt, men teksturen blir mykere." },
-      { q: "Kan jeg bruke frosne bær?", a: "Til pynt er friske bær best, fordi frosne bær slipper mye væske når de tiner og farger kremen. Vil du likevel bruke frosne, la dem tine på litt kjøkkenpapir og legg dem på helt rett før servering. Frosne bær egner seg bedre til en bærsaus du skjer ved siden av enn som topping." }
+      { q: "Kan jeg bruke frosne bær?", a: "Til pynt er friske bær best, fordi frosne bær slipper mye væske når de tiner og farger kremen. Vil du likevel bruke frosne, la dem tine på litt kjøkkenpapir og legg dem på helt rett før servering. Frosne bær egner seg bedre til en bærsaus du skjer ved siden av enn som topping." },
+      { q: "Er dette en VM-kake / Norge–Brasil-kake?", a: "Ja! Pavlova kalles ofte pavlovakake, og pyntet i rødt, hvitt og blått med et gult drag av brasiliansk pasjonsfrukt blir den en perfekt VM-kake til en Norge–Brasil-kamp. Den er festlig og lettlaget, kan lages i forveien, og skaleres enkelt opp til hele heiagjengen foran skjermen." }
     ]
   },
 
@@ -588,9 +589,9 @@ window.RECIPES_INDEX = [
     description: "Brigadeiro – brasilianske sjokoladekuler kokt på kondensert melk og kakao, med en norsk brunost-vri. Velg nivå, juster antall kuler og tilpass ingrediensene.",
     image: "brigadeiro.jpg", category: ["dessert"], badge: "3 nivåer",
     recipeCategory: "Dessert", cuisine: "Norsk-brasiliansk",
-    keywords: "brigadeiro oppskrift, brasilianske sjokoladekuler, brunost dessert, VM-godteri, sjokoladekuler",
+    keywords: "brigadeiro oppskrift, brasilianske sjokoladekuler, brunost dessert, VM-godteri, VM-mat, VM-snacks, Norge–Brasil, fotballfest, sjokoladekuler",
     recipeYield: "ca. 20 kuler", times: { prep: "PT20M", cook: "PT10M", total: "PT2H30M" },
-    search: "brigadeiro brunost brasilianske sjokoladekuler kondensert melk kakao VM godteri norge brasil sjokoladetrøffel",
+    search: "brigadeiro brunost brasilianske sjokoladekuler kondensert melk kakao VM godteri VM mat norge brasil fotballfest heiamat landskamp sjokoladetrøffel",
     faq: [
       { q: "Hvor lenge skal brigadeiro-massen koke?", a: "Regn 8–10 minutter på svak til middels varme under stadig omrøring. Massen er ferdig når den er tykk og slipper bunnen – det vil si at du så vidt ser bunnen av kjelen når du drar slikkepotten over. Koker du for kort, blir kulene for løse til å trille; koker du for lenge, blir de harde og seige." },
       { q: "Hva er forskjellen på søtet kondensert melk og vikingmelk?", a: "Dette er den vanligste fellen. Søtet kondensert melk (på boks) er tilsatt sukker, og er søtere, brunere og mye tykkere – det er denne du skal ha i brigadeiro. Vikingmelk (evaporated milk) er usøtet og tynnere, og gir ikke samme søte, seige masse. Sjekk at det står «søtet/sweetened» på boksen." },
@@ -632,9 +633,9 @@ window.RECIPES_INDEX = [
     description: "Pão de queijo – brasiliansk, glutenfritt ostebrød på tapiokamel, bakt med norsk Norvegia. Velg nivå, juster antall boller og tilpass ingrediensene.",
     image: "pao-de-queijo.jpg", category: ["baking"], badge: "3 nivåer",
     recipeCategory: "Baking", cuisine: "Norsk-brasiliansk",
-    keywords: "pao de queijo oppskrift, brasiliansk ostebrød, glutenfri ostebrød, ostebrød oppskrift, VM-snacks",
+    keywords: "pao de queijo oppskrift, brasiliansk ostebrød, glutenfri ostebrød, VM-snacks, VM-mat, Norge–Brasil, fotballfest, ostebrød oppskrift",
     recipeYield: "ca. 16 boller", times: { prep: "PT20M", cook: "PT25M", total: "PT45M" },
-    search: "pao de queijo brasiliansk ostebrød glutenfri tapiokamel norvegia ost VM snacks norge brasil osteboller",
+    search: "pao de queijo brasiliansk ostebrød glutenfri tapiokamel norvegia ost VM snacks VM mat norge brasil fotballfest heiamat landskamp osteboller",
     faq: [
       { q: "Er pão de queijo glutenfri?", a: "Ja, helt naturlig. Ostebrødene bakes på tapiokamel – stivelse fra maniokroten (cassava) – og inneholder verken hvete eller annet glutenkorn. Så lenge osten og resten av ingrediensene er glutenfrie (det er de fleste rene oster), er pão de queijo trygt ved cøliaki. Det er nettopp derfor de har blitt så populære som glutenfri snacks." },
       { q: "Hva er tapiokamel, og hvor får jeg tak i det?", a: "Tapiokamel (også kalt tapiokastivelse eller cassava-/maniokmel) er en fin, hvit stivelse utvunnet fra maniokroten. Det er det som gir pão de queijo den karakteristiske seige, litt elastiske konsistensen, og kan ikke byttes 1:1 med potetmel eller maizena. Du finner det i велassorterte dagligvarebutikker, i asiatiske og latinamerikanske matbutikker, og på nett." },

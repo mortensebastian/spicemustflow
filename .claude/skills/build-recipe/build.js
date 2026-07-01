@@ -128,6 +128,7 @@ const html = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${staging.seo.title}</title>
   <meta name="description" content="${esc(ie.description)}">
+  <meta name="keywords" content="${esc(ie.keywords)}">
   <link rel="canonical" href="https://velkomponert.no/${slug}.html">
 
   <!-- Open Graph / deling -->
