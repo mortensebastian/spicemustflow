@@ -97,9 +97,6 @@
     </div>
   </div>
 
-  <!-- Kategorisider (intern lenking) -->
-  <nav class="hub-category-links" id="hub-category-links" aria-label="Kategorier"></nav>
-
   <!-- ===== Oppskriftsrutenett =====
        Hvert kort har data-kategori (mellomromseparert) og data-navn for
        filtrering/søk. Live-oppskrifter er <a>; «kommer snart» er <div>. -->
@@ -113,6 +110,8 @@
   <!-- ===== Bunntekst ===== -->
   <footer class="site-footer">
     <div class="container">
+      <!-- Kategorisider (intern lenking, fylles fra recipes-index.js av site.js) -->
+      <nav class="hub-category-links footer-categories" id="hub-category-links" aria-label="Kategorier"></nav>
       <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
     </div>
   </footer>
