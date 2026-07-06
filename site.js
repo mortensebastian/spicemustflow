@@ -82,11 +82,20 @@
     return boosted.concat(entries.filter(function (r) { return !inSeason(r); }));
   }
 
+  /* Retter uten bilde synker alltid til bunnen av rutenettet – nye retter som
+     ennå ikke har fått et foto skal ikke ligge øverst. Stabil: rekkefølgen
+     innenfor «med bilde» og «uten bilde» beholdes (så sesong-løftet står ved lag). */
+  function imageOrdered(entries) {
+    var withImg = entries.filter(function (r) { return !!r.image; });
+    var noImg = entries.filter(function (r) { return !r.image; });
+    return withImg.concat(noImg);
+  }
+
   /* ---- Forsidens rutenett: render fra manifest + søk/kategorifilter ---- */
   function initHub() {
     var grid = document.getElementById("hub-grid");
     if (!grid || !window.RECIPES_INDEX) return;
-    renderGrid(grid, seasonOrdered(window.RECIPES_INDEX));
+    renderGrid(grid, imageOrdered(seasonOrdered(window.RECIPES_INDEX)));
 
     var cards = Array.prototype.slice.call(grid.querySelectorAll(".recipe-card"));
     var catBtns = document.querySelectorAll(".hub-cat-btn");
@@ -135,7 +144,7 @@
     if (!grid || !window.RecipesIndex) return;
     var slug = grid.getAttribute("data-cat");
     var cat = window.RecipesIndex.categoryBySlug(slug);
-    var entries = window.RecipesIndex.byCategory(slug);
+    var entries = imageOrdered(window.RecipesIndex.byCategory(slug));
     renderGrid(grid, entries);
 
     if (cat) {

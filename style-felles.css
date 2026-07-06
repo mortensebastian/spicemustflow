@@ -1699,6 +1699,8 @@ details.diet-filter[open] > .diet-filter-summary::after {
   font-weight: 500;
 }
 .hub-cat-link:hover { border-color: var(--accent); }
+/* Kategori-lenkene i bunnteksten på forsiden. */
+.footer-categories { margin-bottom: 18px; }
 
 /* ===== Brødsmuler (kategorisider) ===== */
 .breadcrumb {
