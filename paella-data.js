@@ -8,7 +8,7 @@
    cost (valgfri): 1 = rimelig, 2 = middels (standard når uoppgitt), 3 = dyr.
    «Budsjett (rimeligere)» bytter dyre ingredienser til billigste passende bytte
    (kun enkel/medium). I paella: safran → gurkemeie+paprika, reker → blekksprut,
-   kraft → grønnsakskraft.
+   kraft → buljong.
 
    Smaksbalanse (recipe-balance.js):
    - SALT balanseres kvantitativt via sodiumPer100g. salt_added er «leveren» og
@@ -52,7 +52,9 @@ const swapOptions = {
       sodiumPer100g: 200, taste: { umami: 1 }, note: "Passer sjømatversjon.",
       allergens: ["fish", "shellfish"] },
     { id: "veg_stock", label: "Grønnsakskraft", amount: 6, unit: "dl",
-      sodiumPer100g: 150, taste: { umami: 1 }, cost: 1, note: "Passer vegetar; gi sofritoen ekstra smak." }
+      sodiumPer100g: 150, taste: { umami: 1 }, note: "Passer vegetar; gi sofritoen ekstra smak." },
+    { id: "bouillon", label: "Buljong (terning/pulver)", amount: 6, unit: "dl",
+      sodiumPer100g: 300, taste: { umami: 1 }, cost: 1, note: "Løs opp i 6 dl vann; buljong er saltere, så tilsatt salt justeres ned automatisk." }
   ],
 
   saffron: [
