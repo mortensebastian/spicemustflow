@@ -10,7 +10,11 @@
    Ingen syre-lever (ingen ren syre-ingrediens; hvitvin/sitron er valgfrie i kompleks).
    Retten er naturlig glutenfri. Eneste allergen er meieri (smør, fløte, parmesan,
    mascarpone) – hver bærer har melkefritt bytte eller er fjernbar, så melkefri
-   dekning er komplett. */
+   dekning er komplett.
+
+   cost (valgfri): 1 = rimelig, 2 = middels (standard), 3 = dyr. «Budsjett
+   (rimeligere)» (kun enkel/medium) bytter dyre ankre til billigste passende bytte:
+   parmesan → Grana Padano, kraft → buljong, soltørket tomat → rød pesto. */
 
 /* ===== Godkjente bytter (kuratert, etter rolle/teksturklasse) ===== */
 const swapOptions = {
@@ -28,15 +32,15 @@ const swapOptions = {
     { id: "matfloete", label: "Matfløte (lettere)", amount: 3, unit: "dl", allergens: ["dairy"], note: "Lettere saus; kok forsiktig så den ikke skiller seg." }
   ],
   parmesan: [
-    { id: "grana_padano", label: "Grana Padano", amount: 50, unit: "g", sodiumPer100g: 600, allergens: ["dairy"], taste: {"umami":2}, note: "Mildere, rimeligere hardost." },
+    { id: "grana_padano", label: "Grana Padano", amount: 50, unit: "g", sodiumPer100g: 600, allergens: ["dairy"], taste: {"umami":2}, cost: 1, note: "Mildere, rimeligere hardost." },
     { id: "vegan_parmesan", label: "Vegansk parmesan (melkefri)", amount: 50, unit: "g", sodiumPer100g: 700, taste: {"umami":1}, note: "Melkefri; salt – salt justeres automatisk." }
   ],
   stock: [
-    { id: "bouillon", label: "Kyllingbuljong (terning)", amount: 1.5, unit: "dl", sodiumPer100g: 350, taste: {"umami":1}, note: "Raskere; saltere – salt justeres automatisk." },
+    { id: "bouillon", label: "Kyllingbuljong (terning)", amount: 1.5, unit: "dl", sodiumPer100g: 350, taste: {"umami":1}, cost: 1, note: "Raskere; saltere – salt justeres automatisk." },
     { id: "homemade_stock", label: "Hjemmelaget kyllingkraft", amount: 1.5, unit: "dl", sodiumPer100g: 120, taste: {"umami":2}, note: "Mer dybde og rundere smak." }
   ],
   sun_dried_tomato: [
-    { id: "red_pesto", label: "Rød pesto (snarvei)", amount: 3, unit: "ss", sodiumPer100g: 700, allergens: ["dairy","nuts"], taste: {"umami":1,"sweet":1}, note: "Rask smaksbombe; inneholder ofte ost og pinjekjerner." }
+    { id: "red_pesto", label: "Rød pesto (snarvei)", amount: 3, unit: "ss", sodiumPer100g: 700, allergens: ["dairy","nuts"], taste: {"umami":1,"sweet":1}, cost: 1, note: "Rask smaksbombe; inneholder ofte ost og pinjekjerner." }
   ],
   onion: [
     { id: "shallot", label: "Sjalottløk (mildere)", amount: 2, unit: "stk", taste: {"sweet":1}, note: "Mildere og søtere enn vanlig løk." }
@@ -57,11 +61,11 @@ const marryMeChickenRecipes = {
       { id: "chicken_breast", label: "Kyllingfilet, i biter", amount: 600, unit: "g", role: "protein", essential: true, scaling: "linear", addStage: "early", sodiumPer100g: 60, removable: false, taste: {"umami":1}, note: "Skjær i jevne biter for rask steking." },
       { id: "butter", label: "Smør eller olje (til steking)", amount: 2, unit: "ss", role: "fat", scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] },
       { id: "garlic", label: "Hvitløk", amount: 2, unit: "fedd", role: "aromatic", scaling: "linear", addStage: "early", removable: true },
-      { id: "sun_dried_tomato", label: "Soltørkede tomater, i strimler", amount: 75, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: false, taste: {"umami":1,"sweet":1} },
+      { id: "sun_dried_tomato", label: "Soltørkede tomater, i strimler", amount: 75, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: false, cost: 3, taste: {"umami":1,"sweet":1} },
       { id: "italian_herbs", label: "Tørket oregano/italiensk krydder", amount: 1, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
       { id: "stock", label: "Kyllingkraft", amount: 1.5, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 200, removable: false, taste: {"umami":1} },
       { id: "cream", label: "Matfløte/kremfløte", amount: 3, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", removable: false, allergens: ["dairy"] },
-      { id: "parmesan", label: "Nyrevet parmesan", amount: 50, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], taste: {"umami":2} },
+      { id: "parmesan", label: "Nyrevet parmesan", amount: 50, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], cost: 3, taste: {"umami":2} },
       { id: "salt_added", label: "Salt og pepper", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false }
     ],
     steps: [
@@ -82,13 +86,13 @@ const marryMeChickenRecipes = {
       { id: "butter", label: "Smør", amount: 1, unit: "ss", role: "fat", scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] },
       { id: "onion", label: "Løk, finhakket", amount: 1, unit: "stk", role: "aromatic", scaling: "linear", addStage: "early", removable: true, taste: {"sweet":1} },
       { id: "garlic", label: "Hvitløk", amount: 3, unit: "fedd", role: "aromatic", scaling: "linear", addStage: "early", removable: true },
-      { id: "sun_dried_tomato", label: "Soltørkede tomater, i strimler", amount: 100, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: false, taste: {"umami":1,"sweet":1} },
+      { id: "sun_dried_tomato", label: "Soltørkede tomater, i strimler", amount: 100, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: false, cost: 3, taste: {"umami":1,"sweet":1} },
       { id: "italian_herbs", label: "Tørket oregano/italiensk krydder", amount: 1.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
       { id: "thyme", label: "Timian", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
       { id: "chili_flakes", label: "Chiliflak", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
       { id: "stock", label: "Kyllingkraft", amount: 2, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 200, removable: false, taste: {"umami":1} },
       { id: "cream", label: "Kremfløte", amount: 3, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", removable: false, allergens: ["dairy"] },
-      { id: "parmesan", label: "Nyrevet parmesan", amount: 60, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], taste: {"umami":2} },
+      { id: "parmesan", label: "Nyrevet parmesan", amount: 60, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], cost: 3, taste: {"umami":2} },
       { id: "salt_added", label: "Salt", amount: 0.75, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", sodiumPer100g: 38800, removable: false },
       { id: "pepper", label: "Pepper", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
       { id: "fresh_basil", label: "Frisk basilikum, til servering", amount: 15, unit: "blader", role: "aromatic", scaling: "fixed", addStage: "end", removable: true }
@@ -111,12 +115,12 @@ const marryMeChickenRecipes = {
       { id: "butter", label: "Smør", amount: 2, unit: "ss", role: "fat", scaling: "nonlinear", addStage: "early", removable: false, allergens: ["dairy"] },
       { id: "shallot", label: "Sjalottløk, finhakket", amount: 2, unit: "stk", role: "aromatic", scaling: "linear", addStage: "early", removable: true, taste: {"sweet":1} },
       { id: "garlic", label: "Hvitløk", amount: 4, unit: "fedd", role: "aromatic", scaling: "linear", addStage: "early", removable: true },
-      { id: "sun_dried_tomato", label: "Soltørkede tomater, i strimler", amount: 120, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: false, taste: {"umami":1,"sweet":1} },
+      { id: "sun_dried_tomato", label: "Soltørkede tomater, i strimler", amount: 120, unit: "g", role: "vegetable", scaling: "linear", addStage: "early", removable: false, cost: 3, taste: {"umami":1,"sweet":1} },
       { id: "white_wine", label: "Hvitvin", amount: 1, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", removable: true, note: "Koker ut alkoholen og gir syrlig dybde." },
       { id: "stock", label: "Hjemmelaget kyllingkraft", amount: 2, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", sodiumPer100g: 150, removable: false, taste: {"umami":2} },
       { id: "cream", label: "Kremfløte", amount: 3, unit: "dl", role: "liquid", scaling: "linear", addStage: "end", removable: false, allergens: ["dairy"] },
       { id: "mascarpone", label: "Mascarpone", amount: 1, unit: "ss", role: "fat", scaling: "nonlinear", addStage: "end", removable: true, allergens: ["dairy"], note: "Gir en ekstra fyldig, silkemyk saus." },
-      { id: "parmesan", label: "Nyrevet parmesan", amount: 75, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], taste: {"umami":2} },
+      { id: "parmesan", label: "Nyrevet parmesan", amount: 75, unit: "g", role: "seasoning", scaling: "nonlinear", addStage: "end", sodiumPer100g: 1500, removable: true, allergens: ["dairy"], cost: 3, taste: {"umami":2} },
       { id: "italian_herbs", label: "Tørket oregano/italiensk krydder", amount: 1, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
       { id: "thyme", label: "Frisk timian", amount: 1, unit: "kvist", role: "seasoning", scaling: "fixed", addStage: "early", removable: true },
       { id: "chili_flakes", label: "Chiliflak", amount: 0.5, unit: "ts", role: "seasoning", scaling: "nonlinear", addStage: "early", removable: true },
