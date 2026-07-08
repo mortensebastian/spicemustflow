@@ -59,6 +59,33 @@ const R = staging.recipe;
   }
 })();
 
+/* ---------- 0b) BUDSJETT-SJEKK (soft – informativ) ----------
+   Speiler motorens budsjett-logikk (recipe-adapter.js): «Budsjett (rimeligere)»
+   vises kun på enkel/medium, og bytter hvert anker til billigste passende bytte
+   med lavere cost. Rapporterer hva bryteren vil gjøre – eller at den skjules. */
+(function budgetCheck() {
+  const recipes = (R && R.recipes) || {};
+  const swaps = R.swapOptions || {};
+  const costOf = i => ([1, 2, 3].includes(i && i.cost) ? i.cost : 2);
+  const lines = [];
+  ['enkel', 'medium'].forEach(l => {
+    const rec = recipes[l];
+    if (!rec) return;
+    rec.ingredients.forEach(base => {
+      const cheaper = (swaps[base.id] || [])
+        .filter(o => costOf(o) < costOf(base))
+        .sort((a, b) => costOf(a) - costOf(b))[0];
+      if (cheaper) lines.push(`  ${l}: ${base.label} → ${cheaper.label}`);
+    });
+  });
+  if (lines.length) {
+    console.log('BUDSJETT-SJEKK: bryteren vises på enkel/medium med byttene:');
+    lines.forEach(w => console.log(w));
+  } else {
+    console.log('BUDSJETT-SJEKK: ingen cost-tier satt – budsjett-bryteren skjules (ok for billige hverdagsretter).');
+  }
+})();
+
 /* ---------- 1) <slug>-data.js ---------- */
 // Strip tomme tasteMessages-nøkler (en akse uten budskap skal utelates, ikke stå tom).
 if (R.tasteMessages) {

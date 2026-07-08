@@ -61,7 +61,8 @@ genereres av `recipe-schema.js` + `site.js` fra `<rett>-data.js` + manifestet.
 ## Mat-research → `recipe` (window.RECIPE-data)
 Følg `recipe-authoring.md`. Tre nivåer `enkel`/`medium`/`kompleks` (`medium` =
 standard, og det `recipe-schema.js` speiler). Per ingrediens: `id`/`label`/`amount`/
-`unit`/`role`/`scaling`/`addStage`/`sodiumPer100g`/`taste`/`removable`/`allergens`.
+`unit`/`role`/`scaling`/`addStage`/`sodiumPer100g`/`taste`/`removable`/`allergens`
+(+ valgfri `cost`, se «Budsjett (cost-tier)» under).
 
 ### Nivå-filosofi (les `recipe-authoring.md` → «Nivå-filosofi» – KRITISK)
 Nivåene klatrer på **teknikk og innsats**, ikke på hvor smal handlelista er.
@@ -102,6 +103,27 @@ er disse som gjør allergifilteret komplett. Minimumssett å vurdere per rolle:
 - **Egg (binding)** ↔ ekstra bindemiddel (eggfri).
 - **Hard ost (parmesan)** ↔ grana padano / vegansk parmesan.
 - **Ris/korn/protein** ↔ nære slektninger (arborio↔carnaroli, okse↔vilt/kylling, …).
+
+### Budsjett (cost-tier) – rimeligere-bytter
+Motoren har en «Budsjett (rimeligere)»-bryter som **kun vises på enkel/medium**
+(speilbilde av «Nøyaktig», som bare er på kompleks). Slår brukeren den på, byttes
+hvert dyrt anker automatisk til det **billigste passende** byttet, og resten
+rebalanserer seg (salt-leveren m.m.). Sett `cost` der det er meningsfullt:
+- `cost: 3` på de få **dyre ankrene** (safran, scampi, parmesan, soltørket tomat, vin).
+- `cost: 1` på det **rimelige byttet** for dem (buljong, grana padano, blekksprut, rød pesto).
+- Alt annet lar du stå – uten `cost` regnes ingrediensen som middels (`2`).
+
+Retningslinjer:
+- **Rimeligere, ikke billigst mulig.** Velg ett ærlig, gjenkjennelig rimeligere
+  alternativ som *fortsatt gir retten* – ikke den absolutt billigste veien som gjør
+  den til en annen rett. Behold hovedidentiteten (paella beholder kyllingen; marry me
+  chicken beholder fløten). Bytt luksus-ingrediensene, ikke sjelen i retten.
+- Budsjett-byttene er som regel de **samme** du la inn under Standardbytter over
+  (kraft→buljong, ost→grana padano) – du markerer bare `cost` på dem.
+- Er retten allerede en billig hverdagsrett (ingen dyrt anker), lar du `cost` stå
+  tomt overalt; da dukker ikke bryteren opp – helt greit.
+- `cost` følger objektet rått gjennom build – ingen andre felt kreves. `build.js`
+  skriver en «BUDSJETT-SJEKK»-linje som viser hvilke bytter budsjett vil gi.
 
 **Allergi-dekningsregel:** hver allergi retten *kan* inneholde (meieri/gluten/egg/
 …) skal kunne løses ENTEN via et trygt bytte ELLER via fjerning på **HVER**
@@ -152,6 +174,8 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
       ingen spesialvarer/-teknikk (de hører på medium/kompleks)
 - [ ] Standardbytter vurdert (kraft↔buljong, smør↔margarin/olje, melk↔plantedrikk,
       hvetemel↔potetmel, egg↔bindemiddel, ost↔alternativ) – se Standardbytter over
+- [ ] `cost`-tier vurdert: dyre ankre `cost:3` + ett rimeligere bytte `cost:1`
+      (budsjett-bryter enkel/medium). Billig hverdagsrett uten dyrt anker → la stå tomt
 - [ ] Hver allergi retten kan ha (meieri/gluten/egg) er løsbar (bytte ELLER fjerning)
       på HVER ingrediens som bærer den – ingen essensiell ingrediens blir «unfixable»
 - [ ] Hver `swapOptions`-oppføring har `sodiumPer100g` + `allergens` (der relevant)

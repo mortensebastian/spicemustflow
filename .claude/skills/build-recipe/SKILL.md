@@ -97,6 +97,8 @@ Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</las
 - [ ] `requireRoles:["acid"]` ⇒ en ingrediens har `role:"acid"`; ellers `servedAcid`/`null`
 - [ ] Hver g-omregnbar id – ingredienser **og alle bytte-id-er** med `dl/ml/ss/ts` – i
       både `density` og `unitOptions` (`stk`/`kvist` utenfor). Kjør bytte-snutten under.
+- [ ] `cost`-tier: dyre ankre `cost:3` + rimelig bytte `cost:1` (eller bevisst utelatt
+      for billig hverdagsrett). Bekreft mot «BUDSJETT-SJEKK»-linja i build-utskriften.
 - [ ] Allergener tagget på ingredienser **og** bytter; hver allergi retten kan ha er
       løsbar (bytte/fjerning) på HVER bærende ingrediens – ingen essensiell «unfixable»
 - [ ] **Hvert allergen-id finnes i motorens `ALLERGENS`-liste** (`recipe-adapter.js`). Ellers

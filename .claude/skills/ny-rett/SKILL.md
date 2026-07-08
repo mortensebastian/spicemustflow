@@ -16,7 +16,8 @@ manifestet og SEO-kontrakten alt bygger på.
    - *Hold hovedkonteksten ren?* Research er nettsøk-tung – send den til en
      **subagent** (`Agent`), som returnerer bare staging-stien + oppsummering.
 2. **Review (stopp her)** – vis slug, navn, topp-3 søkeord, FAQ-spørsmålene,
-   ingredienser per nivå, sesong og SERP-strategi. Bruk `AskUserQuestion` ved ekte
+   ingredienser per nivå, budsjett-bytter (om `cost` er satt), sesong og
+   SERP-strategi. Bruk `AskUserQuestion` ved ekte
    valg (hodeord/slug, kategori, eller om en egen guide-side trengs). **Ikke bygg
    før brukeren har sett over staging-objektet.**
 3. **Bygg** – kjør `build-recipe` for `<slug>`: datafil + manifestoppføring + HTML

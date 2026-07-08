@@ -1,6 +1,8 @@
 {
   "_comment": "Eksempel staging-objekt (kjøttkaker). research-recipe skriver dette til recipes-pending/<slug>.json; build-recipe splicer indexEntry inn i recipes-index.js og lager resten. Tallene er illustrative.",
 
+  "_comment_cost": "Budsjett (valgfri cost-tier): sett cost:3 på dyre ankre (safran/scampi/parmesan/soltørket tomat) og cost:1 på det rimelige byttet (buljong/grana padano/blekksprut/rød pesto) i recipe.recipes.*.ingredients og recipe.swapOptions. «Budsjett (rimeligere)»-bryteren (kun enkel/medium) bytter da hvert anker til billigste passende bytte. Uten cost = middels (2). Denne retten (kjøttkaker) er en billig hverdagsrett uten dyrt anker, så cost er utelatt og bryteren skjules – helt greit. cost følger objektet rått gjennom build; ingen andre felt kreves. Kommentar-nøkler (_comment*) ligger på topp-nivå så de ikke havner i generert data.",
+
   "indexEntry": {
     "id": "kjottkaker",
     "slug": "kjottkaker.html",
