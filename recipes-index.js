@@ -670,6 +670,28 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "tomatsuppe-med-makaroni", slug: "tomatsuppe-med-makaroni.html", status: "live",
+    shortName: "Tomatsuppe med makaroni", name: "Tomatsuppe med makaroni",
+    tagline: "Barndommens favoritt laget fra bunnen – mild, kremet tomatsuppe med makaroni og egg.",
+    description: "Hjemmelaget tomatsuppe med makaroni og egg – mild og kremet, laget fra bunnen. Velg nivå, juster porsjoner og tilpass ingrediensene; mengdene følger med.",
+    image: "tomatsuppe-med-makaroni.jpg", category: ["suppe","middag"], badge: "3 nivåer",
+    recipeCategory: "Suppe", cuisine: "Norsk",
+    keywords: "tomatsuppe med makaroni, hjemmelaget tomatsuppe, tomatsuppe med egg, tomatsuppe fra bunnen, tomatsuppe med makaroni og egg",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT25M", total: "PT40M" },
+    search: "tomatsuppe med makaroni hjemmelaget egg pølser barnas favoritt fra bunnen hermetiske tomater passata fløte kremet mild suppe",
+    faq: [
+      { q: "Kan jeg koke makaronien rett i suppa, eller må den kokes for seg?", a: "Begge deler går. Koker du makaronien rett i suppa de siste 6–8 minuttene, blir det minst oppvask og en litt fyldigere, stivelsesrik suppe – men pastaen fortsetter å svelle og suge væske, så spe med litt vann og server ganske raskt. Vil du ha mer kontroll, og unngå at rester blir grøtete, koker du makaronien for seg al dente og har den i ved servering." },
+      { q: "Hvorfor blir tomatsuppa mi for sur, og hvordan runder jeg av smaken?", a: "Tomat er naturlig syrlig, særlig på boks. Det klassiske norske grepet er å runde av med en klype sukker og en skvett melk eller fløte – da blir suppa mild og kremet, slik mange husker den. Litt surret løk og gulrot gir også naturlig sødme. I oppskriften vår justeres sukkeret automatisk når du endrer porsjoner eller nivå, så balansen mot tomatsyren holder seg." },
+      { q: "Hva trenger jeg for å lage tomatsuppe fra bunnen?", a: "Grunnoppskriften er løk, tomatpuré, hermetiske tomater (eller passata), litt kraft eller buljong, sukker og salt – og så makaroni. Vil du ha den kremet, tilsetter du en skvett melk eller fløte mot slutten. Det er alt som skal til for en hjemmelaget tomatsuppe som slår posesuppa, og du styrer selv hvor mild og fyldig den blir." },
+      { q: "Hva har man oppi tomatsuppe med makaroni?", a: "Det klassiske følget er makaroni og et kokt egg delt i to, og for mange også pølsebiter – «barnas favoritt». Noen har også revet ost, litt rømme eller et stykke brød til. Egg og pølser gjør suppa til et mettende måltid, mens makaronien er den nostalgiske kjernen." },
+      { q: "Kan jeg lage tomatsuppe med makaroni uten melk og fløte (melkefri)?", a: "Ja. Kremetheten kommer fra en liten skvett meieri, men du kan bytte melk og fløte mot havredrikk eller plantefløte, og smør mot margarin eller nøytral olje. Da blir hele suppa melkefri uten å miste rundheten. I oppskriften vår ligger disse byttene klare, og mengdene justeres automatisk." },
+      { q: "Kan jeg lage tomatsuppe med makaroni glutenfri?", a: "Ja. Selve suppa er naturlig glutenfri – bytt bare makaronien mot glutenfri pasta og sjekk at buljongen ikke inneholder hvete. Kok den glutenfrie pastaen for seg og ha den i ved servering, siden glutenfri pasta lettere blir grøtete hvis den koker lenge i suppa." },
+      { q: "Kan jeg fryse tomatsuppe med makaroni?", a: "Frys heller suppebasen uten makaroni og egg. Pasta blir lett grøtete og melen etter en runde i fryseren, og kokt egg egner seg ikke til frysing. Frys den ferdige tomatsuppa i porsjoner i opptil 3 måneder, varm den forsiktig opp, og kok fersk makaroni når du skal servere." },
+      { q: "Hvordan får jeg tomatsuppa kremet og fyldig?", a: "Tre grep gjør mest: surr løk (og gjerne gulrot) myk for naturlig sødme, tilsett en skvett fløte eller melk mot slutten, og la suppa småkoke så smakene samler seg. En skje tomatpuré gir også dybde og farge. Vil du ha den helt glatt, kan du kjøre suppebasen med stavmikser før du har i makaronien." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

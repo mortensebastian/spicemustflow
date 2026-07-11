@@ -734,5 +734,24 @@ formen. Naturlig glutenfri/melkefri/eggfri på enkel/medium (meieri kun via remo
 - **Ny rolle `cheese` og `topping`** lagt i datafilene uten kodeendring – roller er bare grupperingstekst.
   `cheese` holdt utenfor `bulkRoles` så «juster opp de andre» ikke skalerer osten når den byttes.
 
+**tomatsuppe med makaroni (rett #34)** — **ingen kjernemotorendring.** Barndomsklassikeren fra bunnen,
+bygd på spagetti-kjøttsaus-mønsteret (tomat-syre + salt- og sweet-lever, `requireRoles:["acid"]`). Lærdom:
+- **Snarvei-suppa er poenget på enkel – men ikke posesuppa.** Den ærlige hverdags-snarveien er
+  hermetiske tomater + tomatpuré + buljongterning + sukker + makaroni, IKKE en Toro-pose (som ikke er
+  «en oppskrift»). Enkel = fra-bunnen med skap-varer; medium legger til surret gulrot/hvitløk + fløte;
+  kompleks ovnsbaker friske tomater + soffritto med selleri + balsamico. Hele SEO-vinkelen er
+  «hjemmelaget/fra bunnen» mot pose- og produktsidene som eier hodeordet (Toro topper SERP).
+- **Sweet-lever på `sugar` mot tomatsyren, andre gang (etter spagetti #14).** Sukkeret auto-balanseres
+  ved skalering/nivåbytte; `tasteMessages` dekker `sour/sweet/umami`, `leverMessages` `salt/sweet`.
+  Bekrefter at tomat-baserte retter deler dette lever-oppsettet uavhengig av format (saus vs suppe).
+- **Egg + makaroni som serve-følge, pølser bevisst kun i FAQ/brødtekst.** «Med pølser – barnas favoritt»
+  er en sterk long-tail, men løftet i prosa/FAQ (ikke som ingrediens) for å holde hodeordet «med makaroni
+  og egg» rent – samme «stille vinkel»-valg som spagetti-vegetar. Egg er `removable` serve-protein, så
+  egg-allergi løses ved fjerning (som taco/spagetti).
+- **Naturlig full allergi-dekning:** meieri (smør/melk/fløte/parmesan – hver med melkefritt bytte),
+  gluten (makaroni→GF-pasta), egg (fjernbar serve), selleri (fjernbar soffritto). Billig hverdagsrett
+  uten dyrt anker → `cost` utelatt, budsjett-bryteren skjult. Generatoren bygde på første forsøk;
+  `NIVÅ-SJEKK` grønn, bytte-paritet grønn (mirror-regel), allergen-id-er alle i motorens `ALLERGENS`.
+
 
 
