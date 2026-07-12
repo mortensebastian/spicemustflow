@@ -1,0 +1,25 @@
+# Kjører når en rett (eller sitemap/manifest) merges til main.
+# Formål: validere at sitemap.xml er i synk med oppskriftsmanifestet, så en ny
+# rett aldri publiseres med manglende/død sitemap-lenke. INGEN eksterne kall –
+# Google henter sitemapet selv på egen timeplan (ingen "ping" finnes lenger).
+name: Publish check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "sitemap.xml"
+      - "recipes-index.js"
+  workflow_dispatch: {}
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Valider sitemap ↔ manifest
+        run: node .github/scripts/check-sitemap.js
