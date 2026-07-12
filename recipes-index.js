@@ -697,7 +697,7 @@ window.RECIPES_INDEX = [
     shortName: "Helstekt kalkun", name: "Helstekt kalkun",
     tagline: "Saftig helstekt kalkun til jul og nyttår – riktig kjernetemperatur, sprøtt skinn og fyldig saus av kraften.",
     description: "Helstekt kalkun i ovn som blir saftig – med riktig kjernetemperatur og fyldig saus av kraften. Velg nivå, juster porsjoner og tilpass ingrediensene.",
-    image: null, category: ["middag","jul"], badge: "3 nivåer",
+    image: "helstekt-kalkun.jpg", category: ["middag","jul"], badge: "3 nivåer",
     recipeCategory: "Hovedrett", cuisine: "Norsk",
     season: "des",
     keywords: "helstekt kalkun, kalkun i ovn, hel kalkun oppskrift, helstekt kalkun kjernetemperatur, saftig kalkun",
