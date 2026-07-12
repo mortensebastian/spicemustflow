@@ -692,6 +692,30 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "helstekt-kalkun", slug: "helstekt-kalkun.html", status: "live",
+    shortName: "Helstekt kalkun", name: "Helstekt kalkun",
+    tagline: "Saftig helstekt kalkun til jul og nyttår – riktig kjernetemperatur, sprøtt skinn og fyldig saus av kraften.",
+    description: "Helstekt kalkun i ovn som blir saftig – med riktig kjernetemperatur og fyldig saus av kraften. Velg nivå, juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag","jul"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    season: "des",
+    keywords: "helstekt kalkun, kalkun i ovn, hel kalkun oppskrift, helstekt kalkun kjernetemperatur, saftig kalkun",
+    recipeYield: "8 porsjoner", times: { prep: "PT30M", cook: "PT2H30M", total: "PT3H30M" },
+    search: "helstekt kalkun kalkun i ovn hel kalkun oppskrift kjernetemperatur per kilo saltlake brining saftig kalkun saus av kraften jul nyttår tine frossen kalkun hvile",
+    faq: [
+      { q: "Hvor lenge skal kalkunen steke per kilo?", a: "En vanlig tommelfingerregel er cirka 30–35 minutter per kilo på 160–175 °C. En kalkun på 4–5 kilo tar da rundt 2 til 2,5 timer. Har kalkunen fyll (stuffing), regner du gjerne en halvtime ekstra. Steketiden er bare et anslag – styr alltid etter kjernetemperaturen, ikke etter klokka, siden fugler varierer i form og tetthet." },
+      { q: "Hvilken kjernetemperatur skal helstekt kalkun ha?", a: "Ta kalkunen ut av ovnen når steketermometeret viser 65–68 °C i den tykkeste delen av låret, uten å treffe beinet. Under hvilingen stiger temperaturen noen grader videre til rundt 68–70 °C, og da er kjøttet trygt og fortsatt saftig. Steker du langt forbi 72–75 °C, blir særlig brystkjøttet tørt og trevlete." },
+      { q: "Hvor stor kalkun trenger jeg per person?", a: "Regn omtrent 500 gram rå kalkun per person. Er gjestene sultne, eller vil du ha rikelig med rester til dagen derpå, øker du til 600 gram per person. Til åtte personer passer altså en kalkun på cirka 4–5 kilo. Husk at en større fugl gir forholdsvis mer kjøtt, så det er sjelden dumt å ta litt i overkant." },
+      { q: "Hvordan unngår jeg tørr kalkun?", a: "Tørr kalkun skyldes nesten alltid for høy kjernetemperatur. De viktigste grepene: bruk steketermometer og ta fuglen ut ved 65–68 °C, smør et lag mykt smør (gjerne urtesmør) inn under skinnet på brystet, øs stekesjyen over kalkunen underveis, og la den hvile godt før du skjærer. Vil du ha en ekstra trygg saftighet, legger du kalkunen i saltlake dagen før." },
+      { q: "Må jeg legge kalkunen i saltlake?", a: "Nei, men det er det enkleste trikset for saftig kalkun. Saltlaken hjelper kjøttet å holde på fuktighet og gir en jevn, gjennomgående smak. Bland cirka 3 spiseskjeer fint salt per liter kaldt vann, nok til å dekke kalkunen, og la den ligge kaldt i 12–24 timer. Skyll og tørk den godt før steking, og vær forsiktig med ekstra salt etterpå siden kjøttet allerede er saltet." },
+      { q: "Hvordan lager jeg saus av kraften?", a: "Sjyen i bunnen av langpannen er gull. Sil den av og skum bort mest mulig fett, kok den opp sammen med kalkun- eller kyllingkraft, og jevn med litt hvetemel utrørt i kaldt vann (eller maizena for glutenfri saus). La sausen småkoke noen minutter så melsmaken forsvinner. Vil du ha en rikere festsaus, rører du inn en skvett fløte og eventuelt litt portvin på slutten." },
+      { q: "Hvor lenge må en frossen kalkun tine?", a: "Beregn god tid: en frossen kalkun bør tine sakte i kjøleskap, og det tar cirka 2–3 døgn for en fugl på 4–5 kilo. Tar du den ut for sent, er den fortsatt frossen i midten på stekedagen. Ha den på et fat eller brett så tinevæsken samles opp, og la den stå kaldt. Tørk kalkunen godt før den krydres og stekes." },
+      { q: "Hvor lenge skal kalkunen hvile før servering?", a: "La kalkunen hvile minst 20–30 minutter etter steking, gjerne opptil en time. Løft den over på et fat, dekk løst med folie, og la kjøttsaften sette seg i kjøttet igjen. Skjærer du for tidlig, renner saften ut på fjøla og kjøttet blir tørt. Den lange hviletiden er dessuten praktisk – du får god tid til å lage saus og gjøre klart tilbehøret." },
+      { q: "Hva serverer man til helstekt kalkun?", a: "Klassisk tilbehør er ovnsbakte eller most poteter, en fyldig brun saus av kraften, og noe syrlig-søtt ved siden av – tyttebær eller tranebærsaus (cranberry). Rosenkål, glaserte gulrøtter, waldorfsalat og et fyll (stuffing) med brød, løk og urter hører også til den store høytidsmiddagen. Til nyttår og jul er kalkunen gjerne midtpunktet på et rikt koldtbord." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
