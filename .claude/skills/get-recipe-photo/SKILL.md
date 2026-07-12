@@ -60,6 +60,26 @@ file "bilder/<slug>.jpg"   # MÅ si «JPEG image data …»; ellers fikk du en 4
 Får du `ASCII text`/«Host not in allowlist» → verten er ikke allowlistet, stopp og
 meld fra. Sjekk at dimensjonene passer retten (portrett/landskap stemmer med motivet).
 
+## Steg 2b – optimaliser (obligatorisk, ikke commit råfila)
+Pexels/Unsplash-originalen er gjerne 6000–7000 px / 3–4 MB. `ny-rett`-kontrakten
+(og Core Web Vitals) krever **1920 px lang side, < 400 KB, EXIF strippet** – samme
+konvensjon som de øvrige bildene i `bilder/`. Last ned originalen til
+**scratchpad**, optimaliser, og kopier først den ferdige fila til `bilder/<slug>.jpg`.
+
+**Verktøy-fallback:** miljøet har ofte verken `convert`/ImageMagick, `cwebp` eller
+`vips` (sjekk med `which convert magick cwebp vips`), og PIL/`sharp` er ikke
+forhåndsinstallert. Da: `npm install sharp` **i scratchpad-mappa** (ikke i repoet –
+det skal være dependency-fritt; `registry.npmjs.org` er i `noProxy` så det går uten
+allowlisting), og kjør:
+```bash
+node -e 'const s=require("sharp");s("<scratchpad>/raw.jpg").rotate()
+  .resize({width:1920,withoutEnlargement:true}).jpeg({quality:82,mozjpeg:true})
+  .toFile("<scratchpad>/opt.jpg").then(i=>console.log(i.width+"x"+i.height));'
+```
+`.rotate()` (uten arg) baker inn EXIF-orientering før metadata strippes; `sharp`
+dropper EXIF/ICC automatisk. Verifiser < 400 KB og gyldig JPEG, kopier så til
+`bilder/<slug>.jpg`. (~211 KB på første kalkun-forsøk.)
+
 ## Steg 3 – kreditering (diskret, samme mønster som i dag)
 I `<slug>.html`, i footeren rett etter
 `<p>Velkomponert – gode oppskrifter, trinn for trinn.</p>`, legg:
@@ -72,6 +92,7 @@ til `https://velkomponert.no/bilder/<slug>.jpg` hvis de mangler. Sett
 
 ## Steg 4 – valider
 - [ ] `file bilder/<slug>.jpg` = gyldig JPEG (ikke HTML/feilmelding)
+- [ ] Optimalisert (Steg 2b): ~1920 px lang side, **< 400 KB**, EXIF strippet
 - [ ] Motivet er **riktig rett** og bildet er skarpt/høyoppløst
 - [ ] Lisens tillater kommersiell bruk (Pexels/Unsplash: ja) – krediter likevel diskret
 - [ ] Footer-kreditt lagt til; `og:image` peker på fila; `indexEntry.image` satt
@@ -79,5 +100,5 @@ til `https://velkomponert.no/bilder/<slug>.jpg` hvis de mangler. Sett
 
 ## Etterpå
 Oppsummer: hvilken rett, fotograf/kilde, filsti, og om `og:image`/`indexEntry.image`
-ble oppdatert. Commit + push. Stort originalbilde er greit som bakgrunn, men nevn at
-en optimalisert web-versjon (~2560 px) gir bedre sidehastighet/SEO uten synlig tap.
+ble oppdatert. Commit + push. Bildet i `bilder/` skal være den optimaliserte
+web-versjonen fra Steg 2b (1920 px, < 400 KB) – commit aldri fleremegabyte-råfila.

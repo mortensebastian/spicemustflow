@@ -753,5 +753,23 @@ bygd på spagetti-kjøttsaus-mønsteret (tomat-syre + salt- og sweet-lever, `req
   uten dyrt anker → `cost` utelatt, budsjett-bryteren skjult. Generatoren bygde på første forsøk;
   `NIVÅ-SJEKK` grønn, bytte-paritet grønn (mirror-regel), allergen-id-er alle i motorens `ALLERGENS`.
 
+**helstekt kalkun (rett #35)** — **ingen kjernemotorendring.** Hel fugl til jul/nyttår (`season:"des"`,
+middag+jul). Teknikk-stige på en stor, mager fugl der temperatur er alt. Lærdom:
+- **Kalkunen holdes utenfor gram-konvertering (kg-mønsteret).** Hovedråvaren står i `kg` (lesbart for en
+  hel fugl), og `kg` er ukjent for motorens `toGrams` (returnerer tallet rått). Derfor er `turkey` og
+  bytte-id-en `turkey_breast` bevisst UTELATT fra `density`/`unitOptions` – samme grep som `stk`/`kvist`.
+  Dokumentert i `_comment_units`. Bytte-paritetssjekken (mirror-regel) er grønn nettopp fordi slotten selv
+  ikke er g-konvertibel, så byttet trenger det heller ikke.
+- **`servedAcid` + `requireRoles:["acid"]` med sitron kun på medium/kompleks (kylling-i-ovn-mønsteret).**
+  Enkel mangler syre, men sitron i kaviteten (`role:"acid"`, `isPrimaryAcid`, `removable`, `onRemove`-tips)
+  på medium/kompleks + `requireRoles:["acid"]` gjør at både `servedAcid`-tipsen (tyttebær/sitron) og de
+  myke `onRemove`-tipsene faktisk vises. Uten `requireRoles` hadde `acidMessage()` returnert null.
+- **Sesong-hodeord + long-tail-forsvar.** Hardt, sesongstyrt hodeord (matprat/meny/godt eier topp-3 med
+  karusell) → hele SEO-vinkelen er FAQ-long-tail folk faktisk søker: «per kilo», «kjernetemperatur»,
+  «per person», «unngå tørr», «saltlake», «saus av kraften», «tine frossen», «hvile». 9 ekte PAA-spørsmål.
+- **Full allergi-dekning på par-bærere:** meieri på TRE bærere (smør→margarin/olje, urtesmør→urtolje/
+  -margarin, fløte→plantefløte) og gluten (mel→maizena/potetmel, dessuten `removable`). Budsjett: dyre
+  ankre `cost:3` (hjemmelaget kalkunkraft, hvitvin) med rimelig bytte `cost:1` (buljong, ekstra kraft);
+  bryteren slår ut på medium (kraft→buljong), stille på enkel som allerede bruker buljong.
 
 
