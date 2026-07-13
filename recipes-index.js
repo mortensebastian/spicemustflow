@@ -721,7 +721,7 @@ window.RECIPES_INDEX = [
     shortName: "Kyllingsuppe", name: "Kremet kyllingsuppe",
     tagline: "Fyldig, kremet kyllingsuppe med grønnsaker – den norske hverdagsklassikeren.",
     description: "Kremet kyllingsuppe med kylling, grønnsaker og fløte – enkel og fyldig. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
-    image: null, category: ["suppe","middag"], badge: "3 nivåer",
+    image: "kyllingsuppe.jpg", category: ["suppe","middag"], badge: "3 nivåer",
     recipeCategory: "Suppe", cuisine: "Norsk",
     keywords: "kyllingsuppe, kremet kyllingsuppe, kyllingsuppe med grønnsaker, kyllingsuppe med karri, kyllingsuppe med rester av kylling",
     recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT30M", total: "PT50M" },
