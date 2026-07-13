@@ -772,4 +772,17 @@ middag+jul). Teknikk-stige på en stor, mager fugl der temperatur er alt. Lærdo
   ankre `cost:3` (hjemmelaget kalkunkraft, hvitvin) med rimelig bytte `cost:1` (buljong, ekstra kraft);
   bryteren slår ut på medium (kraft→buljong), stille på enkel som allerede bruker buljong.
 
+**kyllingsuppe (rett #36)** — **ingen kjernemotorendring.** Kremet norsk kyllingsuppe (suppe+middag),
+teknikk-stige fra buljongterning til hjemmelaget kraft + eggeplomme-legering. Lærdom:
+- **Søsken-avgrensning mot `kyllingkraft`:** kraften er en egen bygd rett; suppa *bruker* den (byttet
+  `stock→hjemmelaget kyllingkraft` og kraft-nivået i kompleks) men har eget id-sett og en distinkt
+  suppe-vinkel i navn/keywords/FAQ, så de ikke kannibaliserer hverandre i SERP. Sjekk alltid slektninger
+  i manifestet før id-er og hodeord låses.
+- **Kun umami-`tasteMessages` + salt-lever, ingen syre-akse.** Kremet kyllingsuppe balanserer ikke på
+  syre, så `requireRoles:[]`, `servedAcid:null` og ingen tom acid-data (ville vært død – `acidMessage()`
+  returnerer null uten `requireRoles:["acid"]`). Salt-leveren er standard bordsalt (`salt_added`, 38800).
+- **Full meieri/gluten/egg/selleri-dekning ut av standardbytte-lista:** smør→margarin/rapsolje,
+  fløte→plantefløte/crème fraîche, hvetemel-jevning→maizena/potetmel (+ `removable`), eggeplomme-legering
+  `removable`, sellerirot→fennikel (+ `removable`). Billig hverdagsrett uten dyrt anker → `cost` utelatt,
+  budsjett-bryteren skjult. Generatoren bygde på første forsøk; alle steg 5-snutter grønne.
 

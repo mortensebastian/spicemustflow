@@ -716,6 +716,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "kyllingsuppe", slug: "kyllingsuppe.html", status: "live",
+    shortName: "Kyllingsuppe", name: "Kremet kyllingsuppe",
+    tagline: "Fyldig, kremet kyllingsuppe med grønnsaker – den norske hverdagsklassikeren.",
+    description: "Kremet kyllingsuppe med kylling, grønnsaker og fløte – enkel og fyldig. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["suppe","middag"], badge: "3 nivåer",
+    recipeCategory: "Suppe", cuisine: "Norsk",
+    keywords: "kyllingsuppe, kremet kyllingsuppe, kyllingsuppe med grønnsaker, kyllingsuppe med karri, kyllingsuppe med rester av kylling",
+    recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT30M", total: "PT50M" },
+    search: "kyllingsuppe kremet norsk kylling grønnsaker purre gulrot sopp fløte crème fraîche karri buljong kraft rester hverdagsmiddag",
+    faq: [
+      { q: "Hvordan lager man kremet kyllingsuppe?", a: "Fres kylling og grønnsaker som purre, gulrot og sopp i litt smør, tilsett hønsebuljong eller kraft, og la det småkoke til kyllingen er gjennomkokt. Rør inn fløte eller crème fraîche mot slutten – da blir suppa kremet – og smak til med salt, pepper og gjerne litt karri. En liten skje hvetemel eller maizena rørt inn gir en litt tykkere suppe. Strø over frisk persille før servering." },
+      { q: "Hvilke grønnsaker passer i kyllingsuppe?", a: "De klassiske er purre, gulrot, løk og sopp – de gir mild sødme og god fylde. Vil du ha mer, passer også sellerirot, fennikel, paprika, blomkål eller mais godt. Grønnsaker med naturlig sødme (gulrot, purre, løk) balanserer suppa fint, mens sopp og sellerirot gir dybde. Skjær dem i jevne biter så de blir møre samtidig." },
+      { q: "Kan man fryse kyllingsuppe?", a: "Ja, men det kommer an på innholdet. En kremet, fløtebasert suppe kan skille seg litt etter frysing – rør godt når du varmer den opp igjen, så samler den seg. Aller best er det å fryse selve suppebasen uten fløten (og uten pasta/ris), og røre inn fersk fløte når du varmer den opp. Frys i porsjoner i opptil 3 måneder, og varm forsiktig uten å fosskoke." },
+      { q: "Hvordan kan jeg tykne kyllingsuppa?", a: "Det vanligste grepet er en jevning: rør ut litt hvetemel, maizena eller potetmel i kaldt vann og visp det inn i den kokende suppa, eller lag en smørjevning før du sper med kraft. Fløte og crème fraîche gir også kropp. Vil du ha den fyldig uten mel, kan du kjøre en del av grønnsakene glatt med stavmikser – den stivelsen tykner suppa naturlig." },
+      { q: "Kan jeg bruke rester av stekt kylling i kyllingsuppe?", a: "Ja, det er en av de beste måtene å bruke opp kyllingrester på. Plukk kjøttet i biter og rør det inn helt mot slutten – det trenger bare å varmes gjennom, ikke kokes, ellers blir det tørt. Har du skroget igjen, kan du koke en rask kraft på det først og bruke den som base i suppa, så får du enda mer smak nesten gratis." },
+      { q: "Hvilken kylling er best i kyllingsuppe – filet eller lår?", a: "Begge deler fungerer. Kyllingfilet er magrest og raskest, men blir lettere tørr om den koker for lenge – legg den i mot slutten. Kyllinglårfilet er saftigere og tåler lengre koketid uten å bli tørr, og gir litt mer smak til suppa. Skal kyllingen trekke lenge, velg lår; skal det gå fort, er filet fint. Rester av stekt kylling går også utmerket." },
+      { q: "Hvor lenge holder kyllingsuppe seg i kjøleskapet?", a: "Avkjøl suppa raskt og sett den kaldt, så holder den seg 3–4 dager i kjøleskapet i en tett boks. Kremede supper med fløte og kylling er litt mer bedervelige enn klare kraftsupper, så hold god kjøkkenhygiene og varm bare opp den porsjonen du skal spise. Skal du oppbevare den lenger, er frysing tryggere." },
+      { q: "Kan jeg lage kyllingsuppe uten fløte (melkefri)?", a: "Ja. Kremetheten kommer fra fløte eller crème fraîche, men du kan bytte til plantefløte (havre- eller soyabasert) og bruke margarin eller nøytral olje i stedet for smør. Da blir hele suppa melkefri uten å miste rundheten. I oppskriften vår ligger de melkefrie byttene klare, og mengdene justeres automatisk." },
+      { q: "Er kyllingsuppe sunt, og hjelper det mot forkjølelse?", a: "Kyllingsuppe er både næringsrikt og lett fordøyelig, med protein fra kyllingen og vitaminer fra grønnsakene. Den varme kraften og dampen kjennes lindrende når man er forkjølet, og en næringsrik, varm suppe er lett å få i seg selv med dårlig matlyst. Vil du ha den lettere, kan du bruke mindre fløte eller bytte den mot en skvett melk eller plantefløte." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

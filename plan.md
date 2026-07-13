@@ -137,7 +137,7 @@ splitte SEO-styrken.
 
 ### Oppskrifter å bygge
 
-Ferdige (17 — fasit er `recipes-index.js`, denne lista speiler den):
+Ferdige (18 — fasit er `recipes-index.js`, denne lista speiler den):
 - [x] Lussekatter
 - [x] Paella
 - [x] Fiskesuppe
@@ -155,6 +155,7 @@ Ferdige (17 — fasit er `recipes-index.js`, denne lista speiler den):
 - [x] Spagetti med kjøttsaus
 - [x] Bouillabaisse
 - [x] Persisk safranris og safrankylling
+- [x] Kremet kyllingsuppe
 
 Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvolum):
 > **Slik leses lista:** rekkefølgen = prioritet. `/rett-pulje` plukker de tre
