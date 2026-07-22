@@ -205,7 +205,7 @@ ${introPs}
         <label for="recipe-scale-input">Antall ${scaleNoun}</label>
         <div class="scale-controls">
           <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre ${scaleNoun}">−</button>
-          <input type="number" id="recipe-scale-input" value="${base}" min="2" max="${maxY}" step="2" data-base-yield="${base}">
+          <input type="number" id="recipe-scale-input" value="${base}" min="2" max="${maxY}" step="1" data-base-yield="${base}">
           <button type="button" class="scale-button" id="scale-increase" aria-label="Flere ${scaleNoun}">+</button>
         </div>
       </div>
