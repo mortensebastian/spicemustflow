@@ -762,6 +762,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "engelske-muffins", slug: "engelske-muffins.html", status: "live",
+    shortName: "Engelske muffins", name: "Engelske muffins (hjemmelaget)",
+    tagline: "Luftige, hjemmelagde engelske muffins med sprø skorpe og alle de små hullene – stekt i panne, ikke i ovn.",
+    description: "Hjemmelagde engelske muffins stekt i panne, med luftige hull og sprø skorpe. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene.",
+    image: "engelske-muffins.jpg", category: ["baking","frokost"], badge: "3 nivåer",
+    recipeCategory: "Baking", cuisine: "Britisk",
+    keywords: "engelske muffins, engelske muffins oppskrift, hjemmelagde engelske muffins, english muffins",
+    recipeYield: "8 muffins", times: { prep: "PT30M", cook: "PT15M", total: "PT2H" },
+    search: "engelske muffins hjemmelaget english muffins panne semulegryn gjærbakst frokost eggs benedict nooks crannies glutenfri melkefri",
+    faq: [
+      { q: "Hva er engelske muffins?", a: "Engelske muffins er en flat, rund gjærbakst som stekes i tørr stekepanne, ikke i ovn. De har en luftig, litt seig krumme full av små hull, og en sprø, melet skorpe. Du deler dem på midten, rister dem, og spiser dem med smør, syltetøy eller egg – de er ikke søte kakemuffins." },
+      { q: "Hva er forskjellen på engelske muffins og vanlige muffins?", a: "Det er to helt ulike ting. Vanlige muffins er en søt, luftig kakebakst som røres sammen og bakes i form i ovnen. Engelske muffins er et gjærbrød som eltes, heves og stekes flatt i panne, og som er nøytralt i smaken. Navnelikheten er tilfeldig." },
+      { q: "Hvorfor stekes engelske muffins i panne og ikke i ovn?", a: "Panna er hele poenget. Den jevne, moderate varmen fra bunnen gjør at muffinsene holder den flate, runde formen og får den karakteristiske melet-sprø skorpen, mens dampen inni bygger de luftige hullene. Steker du dem bare i ovn, hever de seg mer som vanlige rundstykker og mister formen. Er du usikker på om de er gjennomstekte, kan du ettersteke dem noen minutter i ovnen." },
+      { q: "Hvordan får jeg de karakteristiske hullene (nooks and crannies)?", a: "To ting avgjør: en litt løs, godt eltet deig som bygger seigt gluten, og at du deler muffinsen med en gaffel i stedet for kniv. En litt fuktig deig gir mer damp og dermed flere luftlommer under stekingen, og gaffelen river opp den grove, ujevne innsiden som smøret renner ned i." },
+      { q: "Skal jeg dele engelske muffins med kniv eller gaffel?", a: "Alltid gaffel. Stikk gaffelen inn rundt hele kanten og vipp muffinsen forsiktig fra hverandre. Da beholder du den grove, ujevne innsiden med alle hullene – deler du med kniv, får du to glatte, kjedelige flater i stedet." },
+      { q: "Hva bruker man engelske muffins til?", a: "Klassisk er de frokost- og brunsjbrød: delt, ristet og smurt med smør og syltetøy, marmelade eller honning. De er også selve bunnen i eggs benedict og i varme frokostsmørbrød med egg, ost og bacon. Ristet med litt ost på toppen er de en rask lunsj." },
+      { q: "Kan jeg lage engelske muffins uten spesialformer eller ringer?", a: "Ja. Ringer gir jevne, høye muffins, men du kan like gjerne trykke ut runde emner for hånd eller stikke dem ut med et glass eller en kopp. Formen blir litt mer rustikk, men smak og struktur er den samme." },
+      { q: "Kan jeg fryse engelske muffins?", a: "Ja, de egner seg godt til frysing. Avkjøl dem helt, del dem gjerne først, og frys dem i en tett pose i opptil 3 måneder. Rist dem rett fra fryseren, så er de som nystekte." },
+      { q: "Kan jeg lage glutenfrie eller melkefrie engelske muffins?", a: "Ja. For glutenfrie bytter du hvetemelet til en glutenfri melblanding (gjerne med litt psylliumfrøskall for struktur) og bruker maismel i stedet for semulegryn til strøing. For melkefrie bytter du melken til havredrikk eller vann og smøret til margarin. I oppskriften vår ligger byttene klare, og mengdene justeres automatisk." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",
