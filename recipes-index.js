@@ -739,6 +739,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "eggs-benedict", slug: "eggs-benedict.html", status: "live",
+    shortName: "Eggs Benedict", name: "Eggs Benedict",
+    tagline: "Brunsjklassikeren: posjert egg og fyldig hollandaise på ristet brød.",
+    description: "Eggs Benedict med posjert egg, bacon og hjemmelaget hollandaise. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: "eggs-benedict.jpg", category: ["frokost"], badge: "3 nivåer",
+    recipeCategory: "Frokost", cuisine: "Amerikansk",
+    keywords: "eggs benedict, eggs benedict oppskrift, hollandaise, posjert egg, egg benedict",
+    recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT20M", total: "PT35M" },
+    search: "eggs benedict egg benedict posjert egg hollandaise bacon skinke røkt laks eggs royale engelske muffins brunsj frokost eggs florentine",
+    faq: [
+      { q: "Hva er eggs benedict?", a: "Eggs benedict er en amerikansk brunsjklassiker: en halv ristet engelsk muffins (eller toast) med bacon eller kokt skinke, et bløtt posjert egg på toppen og rikelig med fyldig, sitrusfrisk hollandaisesaus over. Kombinasjonen av sprøtt brød, salt kjøtt, rennende eggeplomme og den varme, smørrike sausen er det som gjør retten så populær." },
+      { q: "Hvordan posjerer jeg egg perfekt?", a: "Bruk ferske, kalde egg – da holder eggehviten seg best samlet. Kok opp vann, skru ned til det så vidt småkoker, og tilsett en spiseskje eddik som hjelper hviten å stivne. Rør opp en virvel i vannet med en skje, knekk egget forsiktig ned i midten ett om gangen, og la det trekke i cirka 3 minutter. Løft opp med hullsleiv og la renne av på litt kjøkkenpapir." },
+      { q: "Hvorfor skiller hollandaisen seg, og hvordan redder jeg den?", a: "Hollandaise skiller seg som regel fordi den ble for varm, eller fordi smøret ble spedd i for fort. Hold vannbadet lunkent (aldri kokende) og spe smøret i en tynn stråle under stadig visping. Skiller sausen seg likevel, kan du redde den ved å piske en fersk eggeplomme (eller en skvett kaldt vann) i en ren bolle og spe den skilte sausen inn litt om gangen til den samler seg igjen." },
+      { q: "Kan jeg lage hollandaise på forhånd?", a: "Hollandaise er best nylaget, men den kan holdes lunken i opptil en times tid – sett bollen over en kjele med håndvarmt (ikke kokende) vann og rør innimellom. Ikke varm den opp igjen på sterk varme, for da skiller den seg. Vil du ha en saus som tåler mer, er snarvei-varianten med crème fraîche (enkel-nivået her) mer stabil og lettere å varme forsiktig opp igjen." },
+      { q: "Hva kan jeg bruke i stedet for engelske muffins?", a: "Engelske muffins er tradisjonelt, men du kan trygt bruke det du har: en tykk skive ristet loff eller toastbrød, en bagel, en skive surdeigsbrød eller en focaccia. Poenget er en fast, ristet base som suger opp litt hollandaise uten å bli bløt. Vil du ha den glutenfri, bruker du et glutenfritt brød eller glutenfrie muffins." },
+      { q: "Kan jeg lage eggs benedict med laks?", a: "Ja, og da har retten et eget navn: eggs royale. Bytt baconet mot skiver røkt laks – gjerne med litt frisk dill i eller ved siden av hollandaisen for en nordisk vri. Alt det andre er likt: ristet muffins, posjert egg og hollandaise. I oppskriften vår ligger røkt laks klar som bytte for baconet, og mengdene justeres automatisk." },
+      { q: "Kan jeg posjere egg på forhånd?", a: "Ja. Posjer eggene som vanlig, men ta dem opp et lite hakk før de er ferdige, og legg dem rett i isvann for å stoppe kokingen. Oppbevar dem i vannet i kjøleskapet i opptil et par dager. Når du skal servere, varmer du dem forsiktig i cirka ett minutt i lettsaltet, varmt (ikke kokende) vann. Slik kan du posjere til mange gjester uten stress i siste liten." },
+      { q: "Hva er forskjellen på eggs benedict, florentine og royale?", a: "Alle tre er samme grunnrett – posjert egg og hollandaise på ristet brød – men med ulikt pålegg. Klassisk benedict har bacon eller kokt skinke, eggs florentine har spinat i stedet for kjøtt (vegetarisk), og eggs royale har røkt laks. Du velger altså variant ved å bytte pålegget; her kan du fjerne baconet og legge på spinat for florentine, eller bytte til laks for royale." },
+      { q: "Kan jeg lage hollandaise uten smør eller melkefri?", a: "Ja. Bytt smøret mot margarin, så blir hollandaisen melkefri – teknikken er nøyaktig den samme. På enkel-nivået lager vi en snarvei-hollandaise med crème fraîche; den kan du bytte mot plantefløte for en melkefri variant. Eggeplommene trengs uansett for å binde sausen, så en helt eggfri hollandaise blir en annen saus." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

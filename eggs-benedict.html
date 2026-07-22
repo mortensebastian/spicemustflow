@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eggs Benedict – posjert egg og hollandaise steg for steg | Velkomponert</title>
+  <meta name="description" content="Eggs Benedict med posjert egg, bacon og hjemmelaget hollandaise. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.">
+  <meta name="keywords" content="eggs benedict, eggs benedict oppskrift, hollandaise, posjert egg, egg benedict">
+  <link rel="canonical" href="https://velkomponert.no/eggs-benedict.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Eggs Benedict – posjert egg og hollandaise steg for steg">
+  <meta property="og:description" content="Eggs Benedict med posjert egg, bacon og hjemmelaget hollandaise. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.">
+  <meta property="og:url" content="https://velkomponert.no/eggs-benedict.html">
+  <meta property="og:image" content="https://velkomponert.no/bilder/eggs-benedict.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://velkomponert.no/bilder/eggs-benedict.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/eggs-benedict.jpg så vises det øverst,
+     sett image i manifestet tilbake til "eggs-benedict.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/eggs-benedict.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Eggs Benedict</h1>
+      <p>Restaurantfrokosten du kan lage hjemme: sprøtt ristet brød, salt bacon, silkemykt posjert egg og en fyldig, sitrusfrisk hollandaise.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <p class="recipe-intro">Eggs benedict lever av kontraster. Den sprø, ristede muffinsen møter det salte baconet, den rennende eggeplommen renner sammen med den varme, smørrike hollandaisen, og en klem sitron i sausen holder det hele friskt så det aldri blir tungt. Det er en rett som ser mer avansert ut enn den er – to teknikker er alt du trenger å beherske.</p>
+      <p class="recipe-intro">Den første er posjeringen. Bruk ferske, kalde egg, la vannet så vidt småkoke med en skvett eddik, og virvle opp en liten malstrøm før du slipper egget ned i midten – da legger hviten seg pent rundt plommen. Den andre er hollandaisen: en varm emulsjon av eggeplomme og smør som står og faller på temperatur. Hold varmen lav og spe smøret sakte, så blir sausen blank og tykk hver gang.</p>
+      <p class="recipe-intro">Her får du tre nivåer på samme rett. Enkel bruker en snarvei-hollandaise med crème fraîche som nesten ikke kan skille seg, medium er den klassiske vispede hollandaisen på smeltet smør, og kompleks bygger dybde med en sjalott-og-eddikreduksjon og klaret smør. Juster porsjoner fritt, og bytt pålegget som du vil – kokt skinke for den originale Benedict, røkt laks for eggs royale, eller bare spinat for en vegetarisk florentine. Mengdene følger med automatisk.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="4" min="2" max="12" step="2" data-base-yield="4">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="budget-toggle"></div>
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+      <p class="photo-credit">Foto: K (Pexels)</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="eggs-benedict-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
