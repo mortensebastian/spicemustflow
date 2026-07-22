@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engelske muffins – hjemmelaget oppskrift stekt i panne | Velkomponert</title>
+  <meta name="description" content="Hjemmelagde engelske muffins stekt i panne, med luftige hull og sprø skorpe. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene.">
+  <meta name="keywords" content="engelske muffins, engelske muffins oppskrift, hjemmelagde engelske muffins, english muffins">
+  <link rel="canonical" href="https://velkomponert.no/engelske-muffins.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Engelske muffins – hjemmelaget oppskrift stekt i panne">
+  <meta property="og:description" content="Hjemmelagde engelske muffins stekt i panne, med luftige hull og sprø skorpe. Velg nivå (enkel/medium/kompleks), juster antall og tilpass ingrediensene.">
+  <meta property="og:url" content="https://velkomponert.no/engelske-muffins.html">
+  <meta property="og:image" content="https://velkomponert.no/bilder/engelske-muffins.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://velkomponert.no/bilder/engelske-muffins.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/engelske-muffins.jpg så vises det øverst,
+     sett image i manifestet tilbake til "engelske-muffins.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/engelske-muffins.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Engelske muffins (hjemmelaget)</h1>
+      <p>Ekte engelske muffins lager du i stekepanna, ikke i ovnen – luftige inni, med sprø skorpe og alle de små hullene som smøret og syltetøyet renner ned i.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <p class="recipe-intro">Engelske muffins er ikke de søte kakemuffinsene, men et flatt, rundt gjærbrød som stekes i tørr panne. Resultatet er en muffins som er seig og luftig inni, melet og sprø utenpå, og helt nøytral i smaken – laget for å deles, ristes og fylles. Det er brødet under et eggs benedict og bunnen i det beste frokostsmørbrødet, og hjemmelaget slår kjøpevarianten hver gang.</p>
+      <p class="recipe-intro">Hemmeligheten ligger i to grep. Det første er deigen: en litt løs, godt eltet gjærdeig bygger det seige glutenet som gir den luftige, hullete krummen. Det andre er stekingen. En tørr stekepanne på moderat varme steker muffinsene flate og gyllne, mens dampen inni bygger de karakteristiske hullene – «nooks and crannies». Strør du semulegryn på utsiden, får du den ekte, lett knasende skorpen.</p>
+      <p class="recipe-intro">En ting til: del dem alltid med en gaffel, aldri kniv. Gaffelen river opp den grove innsiden så smøret får noe å sette seg i. Her får du tre nivåer på samme brød – fra en rask hverdagsdeig med tørrgjær, via den klassiske pannestekte versjonen med semulegryn, til en kald langhevet deig med brunet smør som gir enda dypere smak og flere hull. Juster antallet muffins fritt, og bytt til glutenfritt eller melkefritt ved behov; resten regner seg selv.</p>
+
+      <aside class="recipe-recommend">
+        <span class="recipe-recommend-label">Anbefalt</span>
+        <a href="eggs-benedict.html">Prøv en eggs benedict →</a>
+        <p>Den klassiske bruken: posjert egg og hjemmelaget hollandaise på en ristet muffins.</p>
+      </aside>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall muffins</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre muffins">−</button>
+          <input type="number" id="recipe-scale-input" value="8" min="2" max="16" step="2" data-base-yield="8">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere muffins">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="budget-toggle"></div>
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+      <p class="photo-credit">Foto: RDNE Stock project (Pexels)</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="engelske-muffins-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>

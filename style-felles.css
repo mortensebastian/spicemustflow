@@ -1041,6 +1041,40 @@ body::before {
 }
 
 /* Kjøp-safran-oppfordring nederst på hver oppskrift (driver salget). */
+/* Anbefalt rett – redaksjonell kryss-anbefaling i oppskriftsintroen. */
+.recipe-recommend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin: 28px 0 4px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+.recipe-recommend-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.recipe-recommend a {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+.recipe-recommend a:hover { color: var(--accent); }
+.recipe-recommend p {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
 .recipe-cta {
   margin-top: 48px;
   padding: 28px;
