@@ -786,3 +786,21 @@ teknikk-stige fra buljongterning til hjemmelaget kraft + eggeplomme-legering. L�
   `removable`, sellerirot→fennikel (+ `removable`). Billig hverdagsrett uten dyrt anker → `cost` utelatt,
   budsjett-bryteren skjult. Generatoren bygde på første forsøk; alle steg 5-snutter grønne.
 
+
+**eggs benedict (rett #37)** — **ingen kjernemotorendring.** Første frokost-/brunsjrett. Lærdom:
+- **Ny kategori uten nav-knapp (eier-valg):** retten fikk `category:["frokost"]`, men `frokost` ble
+  bevisst IKKE lagt i `RECIPE_CATEGORIES` ennå («ikke lag en knapp for det enda»). Konsekvens: ingen
+  hub-knapp (`initCategoryNav` itererer over `RECIPE_CATEGORIES`), ingen `frokost.html`-kategoriside, og
+  breadcrumb-schema hopper trygt over den manglende mellom-krummen (`buildBreadcrumbLd` har `if (category)`).
+  Forsidekortet vises uansett (kort genereres fra `RECIPES_INDEX`, ikke fra kategoriene). Fravik fra
+  build-sjekklista «category-slug finnes i RECIPE_CATEGORIES» er her tilsiktet – generatoren håndhever det
+  ikke. Når knappen ønskes senere: legg `frokost` i `RECIPE_CATEGORIES` + lag `frokost.html`.
+- **Egg bevisst «unfixable» (som fisk i fiskesuppe):** posjert egg *er* retten, så `eggs` (+ hollandaise-
+  `egg_yolk`) er `removable:false` uten eggfritt bytte – eggallergi flagges ærlig. Meieri (crème fraîche→
+  plantefløte, smør→margarin) og gluten (brød→glutenfritt) er derimot fullt løsbare. Fisk finnes kun via
+  laks-byttet (eggs royale), så ingen «unfixable» fisk-bærer.
+- **Nivå-stigen på teknikk, ikke handleliste:** enkel = snarvei-hollandaise (crème fraîche + maizena, nær
+  skille-sikker), medium = klassisk vispet emulsjon på smeltet smør, kompleks = sjalott/eddik-reduksjon +
+  klaret smør + cayenne. Kjerne 8/10/12 (monoton), krydder-budsjett holdt. Salt-lever mot bacon/skinke-
+  saltet (`leverMessages` forklarer at pålegget salter). Byttene bærer variantnavnene (florentine/royale)
+  som long-tail. Billig hverdagsrett uten dyrt anker → `cost` utelatt.
