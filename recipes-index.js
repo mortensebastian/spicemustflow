@@ -744,7 +744,7 @@ window.RECIPES_INDEX = [
     shortName: "Eggs Benedict", name: "Eggs Benedict",
     tagline: "Brunsjklassikeren: posjert egg og fyldig hollandaise på ristet brød.",
     description: "Eggs Benedict med posjert egg, bacon og hjemmelaget hollandaise. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
-    image: null, category: ["frokost"], badge: "3 nivåer",
+    image: "eggs-benedict.jpg", category: ["frokost"], badge: "3 nivåer",
     recipeCategory: "Frokost", cuisine: "Amerikansk",
     keywords: "eggs benedict, eggs benedict oppskrift, hollandaise, posjert egg, egg benedict",
     recipeYield: "4 porsjoner", times: { prep: "PT15M", cook: "PT20M", total: "PT35M" },
