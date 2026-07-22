@@ -820,3 +820,18 @@ teknikk-stige fra buljongterning til hjemmelaget kraft + eggeplomme-legering. L�
   (klassisk engelske muffins er eggfrie) → ren allergen-profil. Billig hverdagsbrød, `cost` utelatt.
 - **yieldNoun «muffins»** styrte skala-etikett + variant-/justér-tekst; salt-lever i deigen (bread trenger
   salt), sweet-melding på valgfritt sukker (mater gjæren). Alle steg 5-snutter grønne, generator på 1. forsøk.
+
+**Kryss-anbefaling eggs benedict ↔ engelske muffins (etter #38)** — **liten, generell tillegg (ny UI-komponent, ikke motorendring).**
+- **Behov:** eier ville ha de to frokost-rettene til å anbefale hverandre eksplisitt. Den automatiske
+  «Relaterte oppskrifter»-gridden (`renderRelated` i `recipe-schema.js`) bruker **kun primærkategorien**
+  (`category[0]`) og fyller 3 plasser etter manifest-rekkefølge. engelske-muffins har `baking` som primær,
+  og baking er så stor at eggs-benedict (kun `frokost`) aldri når topp-3 – union over alle kategorier
+  hjelper ikke (baking fyller plassene uansett). Den kategori-drevne gridden kan altså ikke garantere et
+  **bestemt** rett-par.
+- **Løsning:** en redaksjonell «Anbefalt»-callout (`<aside class="recipe-recommend">`) i oppskriftsintroen
+  på begge sider, med lenke til den andre. Ny CSS-komponent `.recipe-recommend` i `style-felles.css`
+  (accent venstrekant, liten versal-label, lenke + kort undertekst). Ligger etter intro-avsnittene og før
+  `.recipe-complexity` → alltid synlig (utenfor `.recipe-intro`, så `site.js` sin «Les mer»-kollaps rører
+  den ikke). Lærdom: for et **kuratert** rett-par (ikke bare «samme kategori») er en eksplisitt callout
+  riktig verktøy – den auto-genererte gridden er popularitets-/rekkefølge-drevet og ikke ment for å feste
+  et spesifikt par. Malen/generatoren er uendret; dette er en manuell, side-spesifikk redaksjonell lenke.
