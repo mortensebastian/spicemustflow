@@ -137,25 +137,20 @@ splitte SEO-styrken.
 
 ### Oppskrifter å bygge
 
-Ferdige (18 — fasit er `recipes-index.js`, denne lista speiler den):
-- [x] Lussekatter
-- [x] Paella
-- [x] Fiskesuppe
-- [x] Safraniskrem
-- [x] Pannekaker
-- [x] Sjokoladekake
-- [x] Safranrisotto (Risotto alla Milanese)
-- [x] Kjøttkaker i brun saus
-- [x] Fiskekaker
-- [x] Risgrøt
-- [x] Thai fiskesuppe
-- [x] Kålruletter
-- [x] Marry Me Chicken
-- [x] Baja fish tacos
-- [x] Spagetti med kjøttsaus
-- [x] Bouillabaisse
-- [x] Persisk safranris og safrankylling
-- [x] Kremet kyllingsuppe
+Ferdige (36 sider live — fasit er `recipes-index.js`, denne lista speiler den):
+- [x] Lussekatter, Paella, Fiskesuppe, Safraniskrem, Pannekaker, Sjokoladekake
+- [x] Safranrisotto (Risotto alla Milanese), Kjøttkaker i brun saus, Fiskekaker
+- [x] Risgrøt, Thai fiskesuppe, Kålruletter, Marry Me Chicken, Baja fish tacos
+- [x] Spagetti med kjøttsaus, Kremet kyllingsuppe, Vafler, Taco (fredagstaco)
+- [x] Pizza, Lasagne, Boller, Kanelboller, Eplekake, Focaccia, Grovbrød
+- [x] Kyllingkraft, Pavlova i landslagsfarger, Pasta carbonara, Brigadeiro
+- [x] Gulrotkake, Pão de queijo, Kylling i ovn, Tomatsuppe med makaroni
+- [x] Helstekt kalkun, Eggs Benedict, Engelske muffins
+
+> **Rettelse (aug. 2026):** *Bouillabaisse* og *Persisk safranris og safrankylling*
+> sto tidligere som ferdige, men har `status: "soon"` i manifestet og ingen
+> `-data.js`/`.html`-fil. De er altså **ikke bygd**. De er safranretter (nedtonet
+> per eierføring), så de holdes utenfor prioritetslista inntil videre.
 
 Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvolum):
 > **Slik leses lista:** rekkefølgen = prioritet. `/rett-pulje` plukker de tre
@@ -178,42 +173,173 @@ Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvol
 - [x] 14. Gulrotkake — Hele året — Estimat
 - [x] 15. Kyllingfilet / kylling i ovn — Hele året — Estimat
 - [x] 16. Fiskekaker — Hele året — Estimat
-- [ ] 17. Muffins — Hele året — Estimat
-- [ ] 18. Brownie — Hele året — Estimat
-- [ ] 19. Banankake — Hele året — Dokumentert (melk #3)
-- [ ] 20. Kjøttdeiggryte / gryterett — Hele året — Estimat
-- [ ] 21. Scones — Hele året — Estimat
-- [ ] 22. Kyllingwok — Hele året — Estimat
-- [ ] 23. Tomatsuppe / suppe — Vinter-topp — Estimat
-- [ ] 24. Chili con carne — Hele året — Dokumentert (MatPrat nevnt)
-- [ ] 25. Fiskegrateng — Hele året — Estimat
-- [ ] 26. Ostekake (cheesecake) — Hele året — Estimat
-- [ ] 27. Pulled pork — Hele året — Estimat
-- [ ] 28. Hjemmelaget burger — Sommer-topp — Estimat
-- [ ] 29. Kylling tikka masala / curry — Hele året — Estimat
-- [ ] 30. Pavlova — Fest — Estimat
-- [ ] 31. Risotto — Hele året — Estimat — NB: generisk risotto, distinkt fra bygde `safranrisotto`
-- [ ] 32. Verdens beste (kvæfjordkake) — 17. mai/fest — Estimat
-- [ ] 33. Bløtkake — Fest/17. mai — Estimat
-- [ ] 34. Sjokoladekake i langpanne — Hele året — Estimat
-- [ ] 35. Kremet kyllingpasta — Hele året — Estimat
-- [ ] 36. Ribbe — Jul — Dokumentert (MatPrat #5)
-- [ ] 37. Pinnekjøtt — Jul — Estimat, høyt i sesong
-- [ ] 38. Fårikål — Høst — Dokumentert (MatPrat nevnt)
-- [ ] 39. Lammelår — Påske — Dokumentert (Google 2025 #1-trend)
-- [ ] 40. Pepperkaker — Jul — Estimat
-- [x] 41. Lussekatter — Jul/Lucia — Estimat, relevant for deg
-- [ ] 42. Julekaker (7 slag) — Jul — Estimat
-- [ ] 43. Riskrem — Jul — Estimat — NB: kald dessert, distinkt fra bygde `risgrot`
-- [ ] 44. Kransekake — Jul/17. mai/fest — Estimat
-- [ ] 45. Marsipankake — Jul/fest — Estimat
-- [ ] 46. Fastelavnsboller — Februar — Dokumentert (Google 2025-trend)
-- [ ] 47. Lutefisk — Jul — Estimat
-- [ ] 48. Rabarbrasaft / -kompott — Vår/sommer — Dokumentert (Google 2025-trend)
-- [ ] 49. Jordbærkake — Sommer/17. mai — Estimat
+- [ ] 17. Fårikål — Høst (topp 24. sept 2026) — Dokumentert (MatPrat nevnt) — 🍲 **sesongfrist**
+- [ ] 18. Lapskaus (brun/lys) — Høst/vinter — Estimat, høyt — 🍲
+- [ ] 19. Chili con carne — Hele året — Dokumentert (MatPrat nevnt) — 🍲
+- [ ] 20. Muffins — Hele året — Estimat — NB: bakemuffins, distinkt fra bygde `engelske-muffins`
+- [ ] 21. Kremet kyllingpasta (one-pot pasta) — Hele året — Estimat — 🍲
+- [ ] 22. Kylling tikka masala / curry — Hele året — Estimat — 🍲*
+- [ ] 23. Brownie — Hele året — Estimat
+- [ ] 24. Kylling og ris (one-pot) — Hele året — Estimat — 🍲
+- [ ] 25. Gulasj — Høst/vinter — Estimat — 🍲
+- [ ] 26. Banankake — Hele året — Dokumentert (melk #3)
+- [ ] 27. Risotto — Hele året — Estimat — 🍲 — NB: generisk risotto, distinkt fra bygde `safranrisotto`
+- [ ] 28. Kjøttsuppe / betasuppe — Vinter-topp — Estimat — 🍲
+- [ ] 29. Biffgryte (hverdagsgryte med okse) — Vinter — Estimat — 🍲
+- [ ] 30. Shakshuka — Hele året — Estimat, stigende — 🍲
+- [ ] 31. Linsegryte / dahl — Hele året — Estimat, stigende — 🍲
+- [ ] 32. One-pot mac and cheese — Hele året — Estimat — 🍲
+- [ ] 33. Nudelsuppe / one-pot ramen — Hele året — Estimat, stigende — 🍲
+- [ ] 34. Kjøttdeiggryte / gryterett — Hele året — Estimat — NB: overlapper chili (19) og lapskaus (18); vurder å droppe eller vinkle som «rask kjøttdeiggryte»
+- [ ] 35. Scones — Hele året — Estimat
+- [ ] 36. Kyllingwok — Hele året — Estimat
+- [x] 37. Tomatsuppe / suppe — Vinter-topp — bygd som `tomatsuppe-med-makaroni`
+- [ ] 38. Fiskegrateng — Hele året — Estimat
+- [ ] 39. Ostekake (cheesecake) — Hele året — Estimat
+- [ ] 40. Pulled pork — Hele året — Estimat
+- [ ] 41. Hjemmelaget burger — Sommer-topp — Estimat
+- [x] 42. Pavlova — Fest — bygd som `pavlova-landslagsfarger`
+- [ ] 43. Verdens beste (kvæfjordkake) — 17. mai/fest — Estimat
+- [ ] 44. Bløtkake — Fest/17. mai — Estimat
+- [ ] 45. Sjokoladekake i langpanne — Hele året — Estimat
+- [ ] 46. Ribbe — Jul — Dokumentert (MatPrat #5) — ⚠ bygg i okt., ikke des.
+- [ ] 47. Pinnekjøtt — Jul — Estimat, høyt i sesong — ⚠ bygg i okt.
+- [ ] 48. Lammelår — Påske — Dokumentert (Google 2025 #1-trend)
+- [ ] 49. Pepperkaker — Jul — Estimat
+- [x] 50. Lussekatter — Jul/Lucia — Estimat, relevant for deg
+- [ ] 51. Julekaker (7 slag) — Jul — Estimat
+- [ ] 52. Riskrem — Jul — Estimat — NB: kald dessert, distinkt fra bygde `risgrot`
+- [ ] 53. Kransekake — Jul/17. mai/fest — Estimat
+- [ ] 54. Marsipankake — Jul/fest — Estimat
+- [ ] 55. Fastelavnsboller — Februar — Dokumentert (Google 2025-trend)
+- [ ] 56. Lutefisk — Jul — Estimat
+- [ ] 57. Rabarbrasaft / -kompott — Vår/sommer — Dokumentert (Google 2025-trend)
+- [ ] 58. Jordbærkake — Sommer/17. mai — Estimat
+- [ ] 59. One-pot pølse og orzo — Hele året — Estimat, lavt i Norge — 🍲
+- [ ] 60. Jambalaya — Hele året — Estimat, lavt i Norge — 🍲
+- [ ] 61. One-pot tacopasta — Hele året — Estimat, lavt — 🍲 — NB: distinkt fra bygde `taco`
+
+🍲 = del av **one-pot-serien** (se egen seksjon under). 🍲* = «strekker
+definisjonen» (tilbehør kokes separat) — skal si det ærlig i brødteksten.
 
 Restkandidat fra forrige plan (lavkonkurranse-bonus, ikke prioritert):
 - [ ] Tagine med safran
+
+---
+
+## One-pot-serien (plan, august 2026)
+
+Kilde: intern research «De 20 mest populære one-pot-rettene» (aug. 2026).
+Målet er å ta en **hel trendkategori** – «én gryte, minimal oppvask» – i stedet for
+løsrevne retter, og binde den sammen med en kolleksjonsside som samler
+internlenkene (jf. SEO-planen §2: kategorisidene er pilarene).
+
+**Hvorfor denne serien er verdt plassen i køen:**
+- Rettene er hverdagsmiddager med **høyt norsk søkevolum** (chili con carne,
+  lapskaus, gulasj, risotto, tikka masala, kjøttsuppe) – samme profil som
+  vekstmotoren i SEO-planen §6.
+- To av dem har **sesongfrist i høst** (fårikål, lapskaus) – de må bygges nå.
+- Kategorien passer motoren vår usedvanlig godt: gryter har ekte
+  enkel/medium/kompleks-nivåer, tydelige bytter (kjøtt, kraft, bønner) og
+  reelle smaksakser (salt/surt/søtt/umami). Ingen motorendring skal trenges.
+- Vi har allerede 4 av de 20 – serien fyller et hull vi er halvveis inn i.
+
+### Dekningskart – de 20 rettene mot det vi har
+
+| # | Rett | Status |
+|---|------|--------|
+| 1 | Kremet one-pot-pasta | Ny → nr. 21 i køen |
+| 2 | Kylling og ris | Ny → nr. 24 |
+| 3 | Chili con carne | Ny → nr. 19 |
+| 4 | One-pot mac and cheese | Ny → nr. 32 |
+| 5 | Marry Me Chicken | ✅ bygd (`marry-me-chicken`) |
+| 6 | Taco / tacopasta | ✅ taco bygd; tacopasta → nr. 61 (valgfri) |
+| 7 | Kremet fiskesuppe | ✅ bygd (`fiskesuppe`) |
+| 8 | Risotto (generisk) | Ny → nr. 27 (distinkt fra `safranrisotto`) |
+| 9 | Jambalaya | Ny → nr. 60 (lav prio) |
+| 10 | Lapskaus | Ny → nr. 18 |
+| 11 | Biffgryte | Ny → nr. 29 |
+| 12 | Gulasj | Ny → nr. 25 |
+| 13 | Pølse og orzo | Ny → nr. 59 (lav prio) |
+| 14 | Curry / tikka masala | Ny → nr. 22 |
+| 15 | One-pot ramen / nudelsuppe | Ny → nr. 33 |
+| 16 | Paella | ✅ bygd (`paella`) |
+| 17 | Fårikål | Ny → nr. 17 (sesongfrist) |
+| 18 | Shakshuka | Ny → nr. 30 |
+| 19 | Linsegryte / dahl | Ny → nr. 31 |
+| 20 | Betasuppe / kjøttsuppe | Ny → nr. 28 |
+
+**Sum: 4 bygd, 17 nye å bygge** (tacopasta talt som egen rett).
+
+> **Prioriteringen er norsk, ikke global.** Researchens rangering er
+> globale signaler (Google Year in Search, amerikanske «most saved»-lister).
+> Køen over er sortert etter *norsk* søkevolum og sesong: fårikål og lapskaus
+> går foran mac and cheese og jambalaya, selv om det motsatte gjelder globalt.
+> Volumene er estimater – verifiser i Keyword Planner (geo = Norge) før du
+> flytter noe langt opp.
+
+### Puljeplan (`/rett-pulje` = 3 retter per kjøring)
+
+Hver pulje = én kjøring av `/rett-pulje` (research i subagent → bygg → lærdom →
+retrospektiv → merge-port). Puljene plukker automatisk de tre øverste ubygde i
+lista over, så **rekkefølgen under følger av køen** – du trenger ikke oppgi retter.
+
+| Pulje | Retter | Når | Hvorfor akkurat nå |
+|-------|--------|-----|--------------------|
+| **1** | Fårikål, Lapskaus, Chili con carne | **August (nå)** | Fårikål-toppen er 24. sept – siden må være indeksert 4–6 uker før. Lapskaus følger samme høstkurve. |
+| **2** | Muffins, Kremet kyllingpasta, Tikka masala | Aug/sept | Evergreen høyvolum; muffins var allerede øverst i køen og beholder plassen. |
+| **3** | Brownie, Kylling og ris, Gulasj | Sept | Gulasj inn før kuldetoppen. |
+| **4** | Banankake, Risotto, Kjøttsuppe/betasuppe | Sept/okt | ⚠ **Sesongvakt:** vurder å skyte inn Ribbe + Pinnekjøtt her i stedet – de må publiseres i oktober for å rekke desember-toppen. |
+| **5** | Biffgryte, Shakshuka, Linsegryte/dahl | Okt/nov | Vinter-comfort + de billige plantebaserte som stiger. |
+| **6** | Mac and cheese, Nudelsuppe/ramen, (+1 fra køen) | Nov | Trendretter, lavere norsk volum – tas til slutt. |
+
+Restpost (`pølse og orzo`, `jambalaya`, `tacopasta`) ligger nederst i køen med
+vilje: lavt norsk volum. Bygg dem bare hvis kolleksjonssiden trenger fylde.
+
+**Enkeltretter utenom pulje:** bruk `/ny-rett <navn>` når noe haster (typisk en
+sesongrett du oppdager for sent) eller når du vil ha review-stoppet mellom
+research og bygging. `/rett-pulje` hopper over det stoppet med vilje.
+
+### Kolleksjonsside «Én gryte» (gjøres når pulje 2 er ferdig)
+
+Ikke en pulje-oppgave – en liten manuell jobb som gir serien SEO-effekt:
+1. Legg `{ slug: "en-gryte", label: "Én gryte", … }` i `RECIPE_CATEGORIES`
+   (`recipes-index.js`), tittel f.eks. «Middag i én gryte – enkle
+   one-pot-oppskrifter».
+2. Kopier `middag.html` → `en-gryte.html`, endre tittel/meta/H1/breadcrumb og
+   `data-cat="en-gryte"`. Rutenettet renderes av `site.js`; ingen JS-endring.
+3. Legg `"en-gryte"` som **sekundær** kategori (`category: ["middag","en-gryte"]`)
+   på de aktuelle rettene. Breadcrumb og schema bruker `category[0]`, så
+   primærkategorien – og dermed eksisterende URL-logikk – er urørt.
+4. Lenke fra forsidens kategorinav + `sitemap.xml`.
+5. Brødtekst på siden bør ta researchens skille **«ekte one-pot vs. strekker
+   definisjonen»** – det er ærlig, og det er akkurat den typen spørsmål folk
+   søker på («kan man koke pasta i sausen?»). Bra FAQ-mat.
+
+### Redaksjonelle føringer for disse rettene
+
+- **Ekte one-pot merkes ærlig.** Retter der pasta/ris koker i sausen sier det;
+  curry og Marry Me Chicken sier at risen kokes ved siden av. Ikke overselg
+  «én gryte» – det gir skuffede lesere og dårlige signaler.
+- **Væskeforhold hører hjemme i dataene**, ikke bare i teksten: ~2 deler væske
+  per del tørr pasta, 1 del ris : 2 deler væske. Dette er informasjon
+  skaleringen skal håndtere riktig når porsjonene endres.
+- **Anti-svidd-bunn-notater** på alle fløte-/stivelsesretter (samme mønster som
+  anti-curdle-notatene i fiskesuppe).
+- **Overlapp-sjekk før research:** lapskaus vs. biffgryte vs. gulasj vs.
+  kjøttdeiggryte er fire nære retter. Hver må ha eget primærsøkeord og egen
+  vinkel, ellers kannibaliserer de hverandre. Blir de for like, slå sammen.
+- **Bilder:** `/get-recipe-photo <slug>` per rett, og husk at bildet må ligge på
+  `main` før retten regnes som live (jf. `ny-rett` steg 4).
+
+### Suksesskriterium
+
+Etter pulje 1–4 (~12 nye retter, inkl. 9 fra denne serien) skal
+`en-gryte`-kolleksjonen ha nok innhold til å rangere på «middag i én gryte» /
+«one pot oppskrifter», og fårikål-siden skal ha impressions i Search Console
+i uke 38–40. Ingen av rettene skal ha krevd endringer i `recipe.js`,
+`recipe-balance.js` eller `recipe-adapter.js` – trenger de det, er det et
+`[MOTOR]`-funn for retrospektivet, ikke en snarvei.
 
 ---
 
