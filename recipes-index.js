@@ -835,6 +835,29 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "chili-con-carne", slug: "chili-con-carne.html", status: "live",
+    shortName: "Chili con carne", name: "Chili con carne",
+    tagline: "Tex-mex-klassikeren i én gryte – kjøtt, bønner, tomat og akkurat passe styrke.",
+    description: "Klassisk chili con carne i én gryte med kjøtt, bønner og tomat. Velg nivå (enkel/medium/kompleks), juster porsjoner og styrke – mengdene følger med.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Tex-mex",
+    keywords: "chili con carne, chili con carne oppskrift, chili con carne med kjøttdeig, chiligryte, gryterett med kjøttdeig og bønner",
+    recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT40M", total: "PT60M" },
+    search: "chili con carne kjøttdeig kidneybønner chiligryte gryterett tex-mex sterk mild chilikrydder tacokrydder chipotle mørk sjokolade langtidskokt rømme nachos ris",
+    faq: [
+      { q: "Hva serverer man til chili con carne?", a: "Det vanligste er kokt ris eller nachos (tortillachips), med en klatt rømme eller crème fraîche og gjerne revet ost på toppen. Limebåter, frisk koriander og syltet jalapeño gir friskhet og styrke etter smak. Chilien selv er én gryte, men tilbehøret lages ved siden av – kok risen mens gryta putrer. Andre gode varianter er bakt potet med chili oppi, grovt brød, eller chilien som fyll i tortillalefser." },
+      { q: "Hvor lenge skal chili con carne koke?", a: "Med kjøttdeig holder det med 20–40 minutter på svak varme – smakene runder seg av, og gryta tykner. Bruker du kjøtt i terninger (høyrygg eller bog), trenger den 2–3 timer før kjøttet faller fra hverandre; da kan du også sette gryta i ovnen på 150 °C. Regelen er enkel: jo grovere kjøtt, jo lengre koketid. Chili blir uansett bedre av tid, og aller best dagen etter." },
+      { q: "Kan man fryse chili con carne?", a: "Ja, chili con carne er en av de beste rettene å fryse. Avkjøl den, fordel i porsjonsbokser og frys i opptil 3 måneder. Tin i kjøleskapet og varm forsiktig opp igjen med en skvett vann om den har tyknet. Skal du fryse en stor gryte, kan du gjerne ta ut det du skal fryse før du har i bønnene – de blir litt mykere av en runde i fryseren. Ris, rømme og nachos lager du ferskt ved servering." },
+      { q: "Hva gjør jeg hvis chili con carne blir for sterk?", a: "Meieriprodukter demper styrken raskest: rør inn en skvett fløte eller rømme, eller server en solid klatt rømme til. Litt sukker roer også chilismaken – ha i en teskje av gangen og smak deg fram. Hjelper ikke det, strekker du gryta med mer tomat, bønner, mais eller revet gulrot, slik at styrken fordeles på mer mat. Ris eller nachos til demper også opplevelsen." },
+      { q: "Hvilke bønner skal man ha i chili con carne?", a: "Kidneybønner er det klassiske valget – de holder formen og har en mild, litt søtlig smak. Sorte bønner er like vanlig og gir en mørkere, mer meksikansk gryte, og kikerter eller en blanding av bønner fungerer også fint. Det finnes ingen fasit, så bruk det du har. Skyll alltid hermetiske bønner godt før bruk; da blir gryta mindre salt og lettere å fordøye." },
+      { q: "Skal det være bønner i ekte chili con carne?", a: "Nei, ikke i den opprinnelige texanske. Ekte «Texas red» er kjøtt, chili og krydder – uten bønner og ofte uten tomat. Bønner (og tomat) kom med da retten ble hverdagsmat, og i Norge er chili con carne med kidneybønner det de aller fleste mener med navnet. Vil du prøve den texanske veien, dropper du bønnene og bruker kjøtt i terninger i stedet for kjøttdeig – i vår oppskrift kan du fjerne bønnene med ett klikk." },
+      { q: "Hvorfor har man mørk sjokolade i chili con carne?", a: "Mørk sjokolade gjør ikke gryta søt – den gir bitterhet og dybde som binder sammen chili, tomat og kjøtt, litt som i en meksikansk mole. Bruk 20–30 g sjokolade med minst 70 % kakao, eller en spiseskje usøtet kakao, og rør den inn helt på slutten. Sterk kaffe gjør noe av det samme. Begge deler er triks fra langtidskokt chili, og du merker dem som rundhet, ikke som sjokolade eller kaffe." },
+      { q: "Hva betyr chili con carne?", a: "Chili con carne er spansk og betyr rett og slett «chili med kjøtt». Retten stammer fra Texas og grenselandet mot Mexico – den regnes som tex-mex, ikke som meksikansk mat – og ble spredt av arbeidere og «chili queens» i San Antonio på 1800-tallet. I dag betegner navnet en krydret gryte av kjøtt, chili og som regel tomat og bønner." },
+      { q: "Hvor mye kjøttdeig trenger jeg per person til chili con carne?", a: "Regn rundt 125 g kjøttdeig per voksen, altså cirka 500 g til fire porsjoner. Med bønner i gryta blir retten mettende, så 100 g per person holder fint hvis du serverer ris eller brød til. Bruker du kjøtt i terninger til den langtidskokte varianten, regner du litt mer – rundt 200 g per person – siden kjøttet trekker seg sammen under kokingen." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

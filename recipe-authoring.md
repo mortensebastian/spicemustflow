@@ -879,3 +879,26 @@ Rett 2 i one-pot-serien. Lærdom:
   en reell begrensning for platå-sesongretter – noter hvis flere treffer den.
 - **`cost` utelatt:** høyrygg/bog *er* den rimelige biten, ingen dyrt anker. Meieri/gluten/selleri alle
   løsbare via bytte + `removable`. Alle steg 5-snutter grønne, generator på 1. forsøk.
+
+**chili con carne (rett #41)** — **ingen kjernemotorendring (men ett motor-funn, se under).**
+Tex-mex-gryte, rett 3 i one-pot-serien. Lærdom:
+- **`taste.bitter` er inert for meldinger.** `recipe-balance.js` dokumenterer fire kvalitative akser
+  («søtt/surt/bittert/umami») og plan.md beskriver de fem grunnsmakene, men `removedTip()` i
+  `recipe-adapter.js` leser kun `sour` → `umami` → `sweet`. En `bitter`-melding i `tasteMessages` ville
+  aldri blitt vist. Chili er nettopp retten der bitter bærer noe (kaffe, mørk sjokolade, brente tørkede
+  chili), så research måtte legge budskapet i `onRemove`-tips på `coffee` og `dark_chocolate` i stedet.
+  Det virker, men er en omvei rundt en akse motoren utgir seg for å ha. Samme form som `celery`-funnet
+  (tagg dokumentert, men inert i motoren) → løftet som `[MOTOR]` i puljens retrospektiv.
+- **To aktive levere i samme rett (salt + sweet).** Første rett med `levers` for både `salt_added` og
+  `sugar`. Fungerte rett ut av boksen – motoren løser hver akse mot sitt eget mål. Salt-leveren gjør noe
+  synlig her fordi natrium spriker kraftig mellom bytter: ferdig chilikrydder 9000, buljongterning 400,
+  hjemmeblandet krydder 200 mg/100 g. Det er den slags spredning som gjør leveren pedagogisk.
+- **Ferdigkrydder som ærlig snarvei på enkel.** Enkel bruker tacokrydder/chilikrydder og kommer ned i
+  1 enkeltkrydder; medium blander selv (spisskummen, paprika, oregano, chili = 4, innenfor taco-presedensen).
+  Bekrefter tilgjengelighets-gaten: snarveien er poenget, ikke et nederlag – men natriumet MÅ settes riktig
+  på snarvei-produktet, ellers blir saltbudsjettet feil for hele enkel-nivået.
+- **Bevisst utelatt øl-bytte på kaffen.** Porter er autentisk i chili, men ville innført gluten i en ellers
+  naturlig glutenfri rett og gjort diett-filteret støyende for en marginal gevinst. Generell regel:
+  et autentisk bytte som forurenser allergen-profilen er ikke gratis – vei det mot filterets verdi.
+- **One-pot-ærlighet i data, ikke bare prosa:** ris/nachos/rømme ligger som `addStage:"serve"`, og både
+  siste steg og FAQ sier at tilbehøret lages ved siden av. Alle steg 5-snutter grønne, generator på 1. forsøk.
