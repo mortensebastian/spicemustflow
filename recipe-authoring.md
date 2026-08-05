@@ -47,7 +47,7 @@ window.RECIPE = {
   levers:      [ { axis, id } ],         // selvjusterende balanse-ingredienser (kan være tom)
   requireRoles:[ ...roller retten må ha ],// f.eks. ['acid']; kan være tom []. MÅ inneholde "acid" for at servedAcid/acid-onRemove-tips skal vises
                                          // MEN: en ingrediens med role:"acid" betyr IKKE at retten har en syre-akse (se «Syre-akse» under)
-  tasteMessages: { sour, umami, sweet }, // inline-tips ved fjerning – KREVER en removable bærer (se «Taste-meldinger» under)
+  tasteMessages: { sour, umami, sweet, bitter },// inline-tips ved fjerning – KREVER en removable bærer (se «Taste-meldinger» under)
   leverMessages: { <axis>: { down, up } }// melding når en lever justeres
 };
 ```
@@ -133,8 +133,14 @@ enkel forfatter-regel som er lett å bomme på:
 Er alle bærerne av aksen `removable: false`, kan meldingen aldri utløses – da er den
 død data, uansett hvor riktig den er faglig. Eksempel: fårikål (#39) har tung umami i
 kjøtt og kraft, men begge er essensielle og ikke fjernbare → ingen umami-melding.
-Adapteren leser dessuten kun `sour`, `umami` og `sweet`; `bitter` rendres ikke (legg
-budskapet i et `onRemove.tip` på ingrediensen i stedet).
+Adapteren leser fire akser, i denne prioriteten: `sour` → `umami` → `sweet` → `bitter`.
+Bærer en ingrediens flere akser ≥ 2, vinner den første i rekkefølgen. `salt` hører ikke
+hjemme her – den har en lever og auto-justeres (se «Levere»).
+
+> **`bitter` ble lagt til i august 2026** (godkjent motorendring etter one-pot-puljen).
+> Tidligere kontrakt sa «ta bitter-nøkkelen ut, den er død data» – den regelen gjelder
+> ikke lenger. Bruk aksen der bitterhet faktisk bærer retten (kaffe, mørk sjokolade,
+> brente/tørkede chili, øl, sikori), og husk removable-kravet over.
 
 ## Syre-akse: en `role:"acid"`-ingrediens er ikke det samme som en syre-akse
 `requireRoles:["acid"]` slår på syre-bevisstheten (stående `servedAcid`-tips når syren
@@ -362,6 +368,8 @@ PAA-spørsmål (sprekking, melk vs vann, vs karbonader, uten egg). Lærdom:
 - **Hold `tasteMessages` til nøklene adapteren faktisk leser** (`sour`/`umami`/
   `sweet`, og bare ved `taste.*>=2`). Tomme `""`-felt eller en ubrukt `bitter`-
   nøkkel er død data – ta dem ut. Build-skillet luket dem ut etter serialisering.
+  > **Delvis foreldet (aug. 2026):** `bitter` leses nå av adapteren og er en gyldig
+  > nøkkel. Resten av regelen (bare akser med reell bærer, ingen tomme strenger) står.
 - Jevning med to ingredienser (smør `role:"fat"` + hvetemel `role:"seasoning"`,
   `addStage:"end"`) modellerer brun saus fint; hvetemel tagget `allergens:["gluten"]`
   med et glutenfritt potetmel-bytte, slik at allergenfilteret og bytter henger sammen.
@@ -964,11 +972,24 @@ Tex-mex-gryte, rett 3 i one-pot-serien. Lærdom:
 - **[KONTRAKT, fikset]** `cost` utelates helt når **det eneste dyre ankeret ER rettens identitet**
   (fårikål → svinekål). Presisert i «Budsjett»-seksjonen, med varsel om at ribbe, pinnekjøtt og
   lammelår treffer samme grensetilfelle.
-- **[MOTOR, venter på svar]** `taste.bitter` rendres ikke — `removedTip()` leser kun
-  `sour`/`umami`/`sweet`. Kjent siden kjøttkaker (#7), der konklusjonen var «ta nøkkelen ut».
-  Chili (#41) er første rett der bitter er *bærende* (kaffe, mørk sjokolade, brente tørkede chili),
-  så omveien koster noe: budskapet måtte inn som `onRemove`-tips per ingrediens i stedet.
-  Forslag lagt fram for eier — ikke implementert.
+- **[MOTOR, fikset — godkjent kjernemotorendring]** `taste.bitter` rendres nå. `removedTip()` i
+  `recipe-adapter.js` fikk en fjerde gren (`else if ((t.bitter||0) >= 2) text = m.bitter`), så
+  prioriteten er `sour` → `umami` → `sweet` → `bitter`. Kjent siden kjøttkaker (#7), der
+  konklusjonen var «ta nøkkelen ut»; chili (#41) var første rett der bitter er *bærende*.
+  - **Beviset på at hullet var reelt:** en skanning av alle datafiler viste at
+    `brigadeiro-data.js` **allerede hadde** en `tasteMessages.bitter` («Kulene blir søtere og
+    mindre sjokoladeintense – øk gjerne kakaoen litt»). Den har vært død data siden retten ble
+    bygd, og virker nå. Research fortsetter altså å skrive bitter-meldinger fordi kontraktens
+    fem-smaks-modell impliserer at de skal virke – det er motoren som har vært ute av takt.
+  - **Atferdsendring for eksisterende retter:** kun brigadeiro (meldingen vises nå ved fjerning av
+    mørk sjokolade på kompleks). `sjokoladekake:kompleks:cocoa` er en bitter-bærer uten melding →
+    fortsatt ingen tips (kandidat til å få en). De øvrige 8 bitter-bærerne har enten `onRemove`-tips
+    eller en annen akse ≥ 2 som vinner prioriteten. Ingen utilsiktede endringer.
+  - **Chili beholdt sine `onRemove`-tips** og fikk *ikke* en `tasteMessages.bitter`. Begge
+    bitter-bærerne (`coffee`, `dark_chocolate`) har ingrediens-spesifikke tips som er bedre enn en
+    delt akse-melding, og `onRemove` vinner over `tasteMessages` i `removedTip()` – en bitter-melding
+    ville derfor vært død data og brutt removable-bærer-regelen over. Generelt: **`onRemove` når
+    budskapet er ingrediens-spesifikt, `tasteMessages` når det er akse-generisk.**
 - **[LOGG]** `season` tar én måned. Lapskaus har et bredt okt–feb-platå uten skarp dato (ulikt
   fårikål/lussekatter), så «nov» er et kompromiss. Treffer flere platå-sesongretter dette, er det
   en kandidat til å utvide feltet.

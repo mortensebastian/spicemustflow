@@ -13,7 +13,7 @@
      bulkRoles:   [ ...roller som teller som «mengde mat» ],
      levers:      [ { axis, id } ],          // selvjusterende balanse-ingredienser
      requireRoles:[ ...roller retten må ha (f.eks. 'acid') ],
-     tasteMessages: { sour, umami, sweet },  // inline-tips ved fjerning
+     tasteMessages: { sour, umami, sweet, bitter }, // inline-tips ved fjerning
      leverMessages: { <axis>: { down, up } } // melding når en lever justeres
    }
 
@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if ((t.sour || 0) >= 2) text = m.sour;
       else if ((t.umami || 0) >= 2) text = m.umami;
       else if ((t.sweet || 0) >= 2) text = m.sweet;
+      else if ((t.bitter || 0) >= 2) text = m.bitter;
     }
     if (!text) return '';
     return '<span class="ingredient-removed-tip">' + text + '</span>';
