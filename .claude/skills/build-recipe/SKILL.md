@@ -106,6 +106,8 @@ Legg til `<url><loc>https://velkomponert.no/<slug>.html</loc><lastmod>I-DAG</las
       Trenger retten et allergen som mangler, er det en bevisst kjernemotorendring + lærdom.
 - [ ] HTML: alle DOM-kroker, `#related-recipes`, riktig script-rekkefølge, **ingen inline JSON-LD**
 - [ ] canonical + OG + `<title>` (primærsøkeord først + `| Velkomponert`)
+- [ ] **`<title>` ≤ 60 tegn** – generatoren advarer, men stopper ikke. Over 60 kuttes halen
+      i SERP-en. Er staging-tittelen for lang, kort den ned her framfor å publisere den lang.
 - [ ] sitemap-linje lagt til
 - [ ] Bilde i `bilder/<slug>.jpg` (ellers flagg – `image:null` til det skaffes)
 

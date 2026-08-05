@@ -162,6 +162,11 @@ Se `manifest.example.json` for et komplett, utfylt eksempel. Topp-nivå:
 - [ ] `id` er ASCII (ingen æøå); `indexEntry.slug` = `<id>.html`; `recipe.id` = `id`
 - [ ] `category`-slugs finnes i `RECIPE_CATEGORIES`; `recipeCategory` er schema-label
 - [ ] `description` ~155 tegn; `seo.title` har primærsøkeord først + `| Velkomponert`
+- [ ] **`seo.title` ≤ 60 tegn inkludert `| Velkomponert`** (SEO-plan §4). Google kutter
+      rundt 580–600 px ≈ 55–60 tegn – alt etter det faller bort i SERP-en. Suffikset spiser
+      15 tegn, så du har ~45 til primærsøkeord + kvalifikator. Kutt kvalifikatoren, ikke
+      søkeordet: «Lapskaus – brun og lys, tradisjonell oppskrift i én gryte | Velkomponert»
+      (72) → «Lapskaus – brun og lys | Velkomponert» (38). Tell tegnene før du skriver fila.
 - [ ] 5–10 **ekte** FAQ-spørsmål fra PAA/autocomplete (ikke oppfunnet)
 - [ ] `season` satt kun hvis retten faktisk har en topp
 - [ ] Tre nivåer; `medium` finnes; salt-lever har `sodiumPer100g ~38800` der den brukes

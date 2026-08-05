@@ -2,7 +2,6 @@
   "_comment": "Staging-objekt for lapskaus. research-recipe skrev dette; build-recipe splicer indexEntry inn i recipes-index.js og lager datafil + HTML + sitemap. Sentral redaksjonell avgjørelse: hodeordet er «lapskaus», men den dominerende kvalifiserte varianten i SERP er «brun lapskaus» (matprat/gilde/godt.no titulerer alle brunt). Alle tre nivåene er derfor brune, og LYS lapskaus dekkes av (a) byttet stew_meat→salted_pork («Lettsaltet svinekjøtt – lys lapskaus»), (b) at melstøvingen (flour) er removable, og (c) eksplisitt forklaring i brødtekst + FAQ. Ingen kannibalisering mot planlagte biffgryte/gulasj/kjøttsuppe: eget id-sett, og vinkelen er den norske tradisjonsgryta som TYKNES AV POTETEN (jf. SNL: lapskaus er tyknet, til forskjell fra kjøttsuppe/sodd) + restemat-arven.",
   "_comment_cost": "Billig hverdagsrett uten dyrt anker (høyrygg/bog er allerede den rimelige kjøttbiten, rotgrønnsaker er blant de billigste varene i butikken) → cost er utelatt overalt, og «Budsjett (rimeligere)»-bryteren skjules. Kraft↔buljongterning↔vann ligger uansett som vanlige bytter, så den rimelige veien er tilgjengelig uten cost-tier.",
   "_comment_units": "Bevisst utelatt fra density/unitOptions: pepper og allspice (ts, rene «smak til»-krydder – jf. herbs/pepper i spagetti og chicken_spice i kylling-i-ovn), thyme (kvist), bay_leaf (stk), samt lingonberry/rowan_jelly (ss, serverings-kondiment ved siden av gryta). Mirror-regelen er grønn: ingen av disse slotene står selv i unitOptions, så byttene trenger det heller ikke.",
-
   "indexEntry": {
     "id": "lapskaus",
     "slug": "lapskaus.html",
@@ -12,52 +11,102 @@
     "tagline": "Norsk tradisjonsgryte der poteten koker seg mør og tykner hele retten – brun eller lys, alt i én gryte.",
     "description": "Tradisjonell lapskaus med mørt kjøtt og rotgrønnsaker i én gryte. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
     "image": null,
-    "category": ["middag"],
+    "category": [
+      "middag"
+    ],
     "badge": "3 nivåer",
     "recipeCategory": "Hovedrett",
     "cuisine": "Norsk",
     "keywords": "lapskaus, brun lapskaus, lys lapskaus, lapskaus oppskrift, lapskaus med kjøttdeig",
     "recipeYield": "4 porsjoner",
-    "times": { "prep": "PT25M", "cook": "PT1H30M", "total": "PT1H55M" },
+    "times": {
+      "prep": "PT25M",
+      "cook": "PT1H30M",
+      "total": "PT1H55M"
+    },
     "search": "lapskaus brun lapskaus lys lapskaus tradisjonell norsk gryte høyrygg bog storfe lettsaltet svinekjøtt kålrot gulrot potet purre sellerirot oksekraft buljong rester pinnekjøtt pølselapskaus jukselapskaus kjøttdeig flatbrød tyttebær én gryte one pot høst vinter husmannskost",
     "season": "nov",
     "faq": [
-      { "q": "Hva er forskjellen på brun og lys lapskaus?", "a": "Forskjellen ligger i hvordan kjøttet behandles. I brun lapskaus brunes kjøttet (og gjerne løken) godt i gryta først, ofte med et dryss mel, og den brune stekeskorpen farger og smaksetter hele retten. I lys lapskaus kokes kjøttet i stedet – tradisjonelt lettsaltet svinekjøtt – uten bruning og uten mel, så gryta forblir lys og mild. Historisk var brun lapskaus regnet som den «finere» varianten fordi den ble laget på bedre storfebiter, mens lys lapskaus kunne lages på rimeligere kjøtt, saltet flesk eller helt uten kjøtt. Grønnsakene og teknikken ellers er den samme. I oppskriften vår er alle tre nivåene brune; vil du ha lys lapskaus, bytter du kjøttet til lettsaltet svinekjøtt, hopper over bruningen og fjerner melet – da justeres mengdene og saltet automatisk." },
-      { "q": "Hvilket kjøtt bruker man i lapskaus?", "a": "Klassisk brun lapskaus lages på høyrygg eller bog av storfe – seige, smaksrike biter med mye bindevev som blir møre og saftige av lang, rolig koking. Til lys lapskaus er lettsaltet svinekjøtt det tradisjonelle valget. Lam fungerer også godt og gir en rundere smak. Skal det gå fort på en hverdag, kan du bruke kjøttdeig eller middagspølser, og har du rester av kokt kjøtt – pinnekjøtt, stek eller juleribbe – er det egentlig den mest tradisjonelle lapskausen av alle. Unngå helt magre biter som indrefilet; de blir tørre av koketiden." },
-      { "q": "Hvor lenge må lapskaus koke?", "a": "Det avhenger av kjøttet. Storfe i terninger (høyrygg, bog) trenger cirka 1 til 1,5 time med rolig småkoking før det er mørt – gryta skal så vidt boble, ikke fosskoke, ellers blir kjøttet tørt og trevlete. Svinekjøtt går raskere, cirka 40–50 minutter. Først når kjøttet er mørt legger du i rotgrønnsakene, som trenger 20–25 minutter til. Bruker du kjøttdeig, pølse eller ferdig kokt kjøtt, er hele retten klar på 25–30 minutter, siden det bare er potetene og grønnsakene som skal bli møre." },
-      { "q": "Hvordan blir lapskausen passe tykk?", "a": "Det er selve poenget med lapskaus: den tykner av seg selv fordi poteten koker i gryta. Bruk melne poteter, som Beate eller Kerrs Pink, og rør godt mot slutten – noen av potetbitene mases ut og gir stivelsen som binder kraften. Det er nettopp dette som skiller lapskaus fra en kjøttsuppe, som forblir tynn. Vil du ha den tykkere, koker du den noen minutter til uten lokk, eller moser flere potetbiter mot grytekanten. Vil du ha den tynnere, sper du med litt kraft eller vann. Bruker du faste poteter, som holder formen, må du regne med å tykne litt med mel, maizena eller potetmel i stedet." },
-      { "q": "Kan man fryse lapskaus?", "a": "Ja, lapskaus fryser overraskende godt og er perfekt å lage stor porsjon av. Avkjøl den raskt, frys den i porsjonsbokser eller -poser, og bruk den innen cirka 3 måneder. Potetene kan bli litt mykere i konsistensen etter frysing, men siden retten allerede er mosete er det knapt merkbart. Tin i kjøleskapet over natten og varm den forsiktig opp igjen under omrøring, gjerne med en skvett vann eller kraft hvis den har tyknet for mye. Lapskaus smaker som kjent enda bedre dagen etter." },
-      { "q": "Hvor lenge holder lapskaus seg i kjøleskapet?", "a": "Avkjøl gryta raskt og sett den kaldt, så holder lapskausen seg 3–4 dager i kjøleskapet i en tett boks. Kok den godt opp igjen før servering, ikke bare lunk den. La aldri gryta stå og avkjøles på kjøkkenbenken i flere timer – kokt kjøtt og poteter er nettopp den typen mat bakterier trives i. Skal du ta vare på den lenger, er frysing det tryggeste." },
-      { "q": "Hva serveres til lapskaus?", "a": "Det klassiske tilbehøret er flatbrød og smør, og rørte tyttebær eller tyttebærsyltetøy ved siden av. Syren og sødmen i tyttebærene skjærer gjennom det fete kjøttet og løfter hele gryta – derfor er den lille skjeen ved siden av mer enn pynt. Rognebærgelé eller ripsgelé gjør samme nytten. Ellers trenger lapskaus ingenting: poteter, grønnsaker og kjøtt ligger allerede i samme gryte." },
-      { "q": "Kan jeg lage lapskaus av rester?", "a": "Ja – det er faktisk lapskausens opprinnelige idé. Retten oppsto som en måte å bruke opp kokt kjøtt, kraft og rotgrønnsaker på, og den er fortsatt en av de beste måtene å redde julerester på. Rester av pinnekjøtt, ribbe, juleskinke, vossakorv eller kalkun plukkes i biter og røres inn helt mot slutten – kjøttet er ferdig kokt og trenger bare å bli varmt. Har du kraften fra pinnekjøttet eller steken, bruker du den som væske; da får du en dyp, ferdig smaksatt gryte nesten gratis. Husk å smake til saltet til slutt, for saltet kjøtt salter også gryta." },
-      { "q": "Kan man lage lapskaus med kjøttdeig?", "a": "Ja. Lapskaus med kjøttdeig kalles gjerne jukselapskaus, og er hverdagsversjonen som er ferdig på under en halvtime. Du bruner kjøttdeigen først, har i løk, poteter og gulrot, sper med buljong og koker til potetene er møre og begynner å falle fra hverandre. Smaken blir litt mildere enn med kjøtt i terninger, men konsistensen og prinsippet er det samme – og det er nettopp denne varianten som er enkel-nivået i oppskriften vår. Middagspølser i skiver fungerer like godt og er ofte barnas favoritt." },
-      { "q": "Hvorfor heter det lapskaus?", "a": "Navnet kommer etter alt å dømme fra sjømannsspråket. I en engelsk ordbok fra 1795 er ordet «lobscouse» eller «lob's course» oppført om en klumpete matrett, og retten var billig, mettende skipskost som spredte seg langs kysten. På dansk heter den skipperlabskovs, og i havnebyen Liverpool ble den så vanlig at innbyggerne fortsatt kalles «scousers». I norsk dagligtale har ordet dessuten fått en overført betydning: en lapskaus er også noe som er rotete blandet sammen." }
+      {
+        "q": "Hva er forskjellen på brun og lys lapskaus?",
+        "a": "Forskjellen ligger i hvordan kjøttet behandles. I brun lapskaus brunes kjøttet (og gjerne løken) godt i gryta først, ofte med et dryss mel, og den brune stekeskorpen farger og smaksetter hele retten. I lys lapskaus kokes kjøttet i stedet – tradisjonelt lettsaltet svinekjøtt – uten bruning og uten mel, så gryta forblir lys og mild. Historisk var brun lapskaus regnet som den «finere» varianten fordi den ble laget på bedre storfebiter, mens lys lapskaus kunne lages på rimeligere kjøtt, saltet flesk eller helt uten kjøtt. Grønnsakene og teknikken ellers er den samme. I oppskriften vår er alle tre nivåene brune; vil du ha lys lapskaus, bytter du kjøttet til lettsaltet svinekjøtt, hopper over bruningen og fjerner melet – da justeres mengdene og saltet automatisk."
+      },
+      {
+        "q": "Hvilket kjøtt bruker man i lapskaus?",
+        "a": "Klassisk brun lapskaus lages på høyrygg eller bog av storfe – seige, smaksrike biter med mye bindevev som blir møre og saftige av lang, rolig koking. Til lys lapskaus er lettsaltet svinekjøtt det tradisjonelle valget. Lam fungerer også godt og gir en rundere smak. Skal det gå fort på en hverdag, kan du bruke kjøttdeig eller middagspølser, og har du rester av kokt kjøtt – pinnekjøtt, stek eller juleribbe – er det egentlig den mest tradisjonelle lapskausen av alle. Unngå helt magre biter som indrefilet; de blir tørre av koketiden."
+      },
+      {
+        "q": "Hvor lenge må lapskaus koke?",
+        "a": "Det avhenger av kjøttet. Storfe i terninger (høyrygg, bog) trenger cirka 1 til 1,5 time med rolig småkoking før det er mørt – gryta skal så vidt boble, ikke fosskoke, ellers blir kjøttet tørt og trevlete. Svinekjøtt går raskere, cirka 40–50 minutter. Først når kjøttet er mørt legger du i rotgrønnsakene, som trenger 20–25 minutter til. Bruker du kjøttdeig, pølse eller ferdig kokt kjøtt, er hele retten klar på 25–30 minutter, siden det bare er potetene og grønnsakene som skal bli møre."
+      },
+      {
+        "q": "Hvordan blir lapskausen passe tykk?",
+        "a": "Det er selve poenget med lapskaus: den tykner av seg selv fordi poteten koker i gryta. Bruk melne poteter, som Beate eller Kerrs Pink, og rør godt mot slutten – noen av potetbitene mases ut og gir stivelsen som binder kraften. Det er nettopp dette som skiller lapskaus fra en kjøttsuppe, som forblir tynn. Vil du ha den tykkere, koker du den noen minutter til uten lokk, eller moser flere potetbiter mot grytekanten. Vil du ha den tynnere, sper du med litt kraft eller vann. Bruker du faste poteter, som holder formen, må du regne med å tykne litt med mel, maizena eller potetmel i stedet."
+      },
+      {
+        "q": "Kan man fryse lapskaus?",
+        "a": "Ja, lapskaus fryser overraskende godt og er perfekt å lage stor porsjon av. Avkjøl den raskt, frys den i porsjonsbokser eller -poser, og bruk den innen cirka 3 måneder. Potetene kan bli litt mykere i konsistensen etter frysing, men siden retten allerede er mosete er det knapt merkbart. Tin i kjøleskapet over natten og varm den forsiktig opp igjen under omrøring, gjerne med en skvett vann eller kraft hvis den har tyknet for mye. Lapskaus smaker som kjent enda bedre dagen etter."
+      },
+      {
+        "q": "Hvor lenge holder lapskaus seg i kjøleskapet?",
+        "a": "Avkjøl gryta raskt og sett den kaldt, så holder lapskausen seg 3–4 dager i kjøleskapet i en tett boks. Kok den godt opp igjen før servering, ikke bare lunk den. La aldri gryta stå og avkjøles på kjøkkenbenken i flere timer – kokt kjøtt og poteter er nettopp den typen mat bakterier trives i. Skal du ta vare på den lenger, er frysing det tryggeste."
+      },
+      {
+        "q": "Hva serveres til lapskaus?",
+        "a": "Det klassiske tilbehøret er flatbrød og smør, og rørte tyttebær eller tyttebærsyltetøy ved siden av. Syren og sødmen i tyttebærene skjærer gjennom det fete kjøttet og løfter hele gryta – derfor er den lille skjeen ved siden av mer enn pynt. Rognebærgelé eller ripsgelé gjør samme nytten. Ellers trenger lapskaus ingenting: poteter, grønnsaker og kjøtt ligger allerede i samme gryte."
+      },
+      {
+        "q": "Kan jeg lage lapskaus av rester?",
+        "a": "Ja – det er faktisk lapskausens opprinnelige idé. Retten oppsto som en måte å bruke opp kokt kjøtt, kraft og rotgrønnsaker på, og den er fortsatt en av de beste måtene å redde julerester på. Rester av pinnekjøtt, ribbe, juleskinke, vossakorv eller kalkun plukkes i biter og røres inn helt mot slutten – kjøttet er ferdig kokt og trenger bare å bli varmt. Har du kraften fra pinnekjøttet eller steken, bruker du den som væske; da får du en dyp, ferdig smaksatt gryte nesten gratis. Husk å smake til saltet til slutt, for saltet kjøtt salter også gryta."
+      },
+      {
+        "q": "Kan man lage lapskaus med kjøttdeig?",
+        "a": "Ja. Lapskaus med kjøttdeig kalles gjerne jukselapskaus, og er hverdagsversjonen som er ferdig på under en halvtime. Du bruner kjøttdeigen først, har i løk, poteter og gulrot, sper med buljong og koker til potetene er møre og begynner å falle fra hverandre. Smaken blir litt mildere enn med kjøtt i terninger, men konsistensen og prinsippet er det samme – og det er nettopp denne varianten som er enkel-nivået i oppskriften vår. Middagspølser i skiver fungerer like godt og er ofte barnas favoritt."
+      },
+      {
+        "q": "Hvorfor heter det lapskaus?",
+        "a": "Navnet kommer etter alt å dømme fra sjømannsspråket. I en engelsk ordbok fra 1795 er ordet «lobscouse» eller «lob's course» oppført om en klumpete matrett, og retten var billig, mettende skipskost som spredte seg langs kysten. På dansk heter den skipperlabskovs, og i havnebyen Liverpool ble den så vanlig at innbyggerne fortsatt kalles «scousers». I norsk dagligtale har ordet dessuten fått en overført betydning: en lapskaus er også noe som er rotete blandet sammen."
+      }
     ]
   },
-
   "seo": {
-    "title": "Lapskaus – brun og lys, tradisjonell oppskrift i én gryte | Velkomponert"
+    "title": "Lapskaus – tradisjonell brun og lys | Velkomponert"
   },
-
   "body": {
     "heroIntro": "Den norske tradisjonsgryta der alt koker i samme kjele: mørt kjøtt, poteter og rotgrønnsaker som tykner seg selv til en fyldig, mettende lapskaus.",
     "bodyIntro": "Lapskaus er ekte én-gryte-mat, og teknikken er selve retten. Poteten kokes ikke ved siden av og legges oppi – den koker i gryta, og mot slutten mases noen av bitene ut og gir fra seg stivelsen som binder kraften. Det er nettopp derfor lapskaus er tyknet, mens en kjøttsuppe eller sodd forblir tynn med de samme ingrediensene. Bruk melne poteter som Beate eller Kerrs Pink, rør godt de siste minuttene, og la gryta koke uten lokk til den så vidt renner av skjeen. Vil du ha tydelige terninger i stedet, bytter du til faste poteter – men da må du hjelpe til med litt jevning.\n\nDen andre avgjørelsen er brun eller lys. Brun lapskaus får farge og dybde av at kjøttet, og gjerne løken, brunes hardt i gryta først, ofte med et dryss mel som både farger og binder. Lys lapskaus kokes i stedet: kjøttet – tradisjonelt lettsaltet svinekjøtt – legges rått i kraften uten bruning og uten mel, og gryta forblir blek og mild. Historisk var brun lapskaus den «finere» varianten, laget på bedre storfebiter, mens den lyse kunne lages på rimeligere flesk, avskjær eller helt uten kjøtt. Her er alle tre nivåene brune, men vil du ha lys lapskaus, bytter du kjøttet til lettsaltet svinekjøtt, hopper over bruningen og fjerner melet – resten av oppskriften balanserer seg selv.\n\nLapskaus var opprinnelig restemat, og det er fortsatt den beste utgaven. Kokt kjøtt fra en stek, pinnekjøtt eller juleribbe plukkes i biter og røres inn mot slutten, og har du kraften fra kokingen, bruker du den som væske. Da får du en gryte med lang smak nesten uten arbeid. Har du ingen rester, gjør en god oksekraft eller en buljongterning nytten – forskjellen ligger i dybden, ikke i om det blir lapskaus.\n\nDe tre nivåene her klatrer på teknikk, ikke på handlelista. Enkel er hverdagslapskausen på under en halvtime, med kjøttdeig eller ferdig kokt kjøtt, poteter, gulrot og buljongterning. Medium er standarden: kjøtt i terninger av høyrygg eller bog, brunet i smør, kokt mørt i oksekraft før kålrot, gulrot, purre og poteter legges i. Kompleks er helgeversjonen med hard bruning i flere omganger, mørk jevning, hjemmelaget kraft, laurbær, timian og allehånde, og en gryte som får trekke i to timer. Juster porsjoner og bytt ingredienser fritt – glutenfri og melkefri variant ligger klar, og mengdene følger med."
   },
-
   "serp": {
     "intent": "recipe",
     "volume": "høy",
     "competition": "hard",
-    "topCompetitors": ["matprat.no", "gilde.no", "godt.no", "tine.no", "meny.no", "nrk.no"],
+    "topCompetitors": [
+      "matprat.no",
+      "gilde.no",
+      "godt.no",
+      "tine.no",
+      "meny.no",
+      "nrk.no"
+    ],
     "hasRecipeCarousel": true,
     "strategy": "Hodeordet «lapskaus» er høyt volum og hardt: MatPrat, Gilde, Godt.no, Tine og Meny eier topp-3 med oppskriftskarusell, og MatPrat rangerer på både «lapskaus» og «lys lapskaus» med separate sider. Vi tar hodeordet på sluggen, men angriper long-tail først via ekte PAA-vinkler: «forskjellen på brun og lys lapskaus» (det klart sterkeste informasjonsspørsmålet – flere Q&A-sider rangerer bare på det), «hvilket kjøtt», «hvor lenge koke», «tykne», «fryse/holdbarhet», «hva serveres til», «lapskaus av rester/pinnekjøtt», «lapskaus med kjøttdeig (jukselapskaus)» og «hvorfor heter det lapskaus». Differensiatoren er det justerbare 3-nivå-formatet med automatisk salt-balanse og allergibytter, og at ÉN side dekker både brun og lys (konkurrentene splitter dem i to tynne sider). Avgrensning mot køen: lapskaus eier «tyknet av poteten, én gryte, norsk tradisjons-/restemat» – biffgryte tar «hverdagsgryte med okse i saus», gulasj tar paprika/ungarsk, kjøttsuppe/betasuppe tar den tynne, klare kraftsuppa, og kjøttdeiggryte tar den raske kjøttdeig-vinkelen. Eget id-sett, ingen delte ingrediens- eller bytte-id-er."
   },
-
   "recipe": {
     "id": "lapskaus",
-    "bulkRoles": ["protein", "vegetable", "liquid"],
-    "levers": [{ "axis": "salt", "id": "salt_added" }],
-    "requireRoles": ["acid"],
+    "bulkRoles": [
+      "protein",
+      "vegetable",
+      "liquid"
+    ],
+    "levers": [
+      {
+        "axis": "salt",
+        "id": "salt_added"
+      }
+    ],
+    "requireRoles": [
+      "acid"
+    ],
     "servedAcid": {
       "tip": "Server gjerne rørte tyttebær ved siden av – syren skjærer gjennom det fete kjøttet og løfter hele gryta."
     },
@@ -73,33 +122,185 @@
       }
     },
     "density": {
-      "neutral_oil": 0.92, "butter": 0.95, "margarine": 0.95, "rapeseed_oil": 0.92,
-      "bouillon": 1, "stock": 1, "water": 1,
-      "flour": 0.55, "potato_flour": 0.6, "cornstarch": 0.55,
+      "neutral_oil": 0.92,
+      "butter": 0.95,
+      "margarine": 0.95,
+      "rapeseed_oil": 0.92,
+      "bouillon": 1,
+      "stock": 1,
+      "water": 1,
+      "flour": 0.55,
+      "potato_flour": 0.6,
+      "cornstarch": 0.55,
       "salt_added": 1.2
     },
-    "pieceWeight": { "onion": 110, "carrot": 70, "leek": 150 },
-    "unitOptions": {
-      "neutral_oil": ["ss", "ts", "ml", "g"], "butter": ["ss", "ts", "g"],
-      "margarine": ["ss", "ts", "g"], "rapeseed_oil": ["ss", "ts", "ml", "g"],
-      "bouillon": ["dl", "ml", "g"], "stock": ["dl", "ml", "g"], "water": ["dl", "ml", "g"],
-      "flour": ["ss", "ts", "g"], "potato_flour": ["ss", "ts", "g"], "cornstarch": ["ss", "ts", "g"],
-      "salt_added": ["ts", "g"]
+    "pieceWeight": {
+      "onion": 110,
+      "carrot": 70,
+      "leek": 150
     },
-
+    "unitOptions": {
+      "neutral_oil": [
+        "ss",
+        "ts",
+        "ml",
+        "g"
+      ],
+      "butter": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "margarine": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "rapeseed_oil": [
+        "ss",
+        "ts",
+        "ml",
+        "g"
+      ],
+      "bouillon": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "stock": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "water": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "flour": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "potato_flour": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "cornstarch": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "salt_added": [
+        "ts",
+        "g"
+      ]
+    },
     "recipes": {
       "enkel": {
         "label": "Enkel",
         "servings": 4,
         "ingredients": [
-          { "id": "neutral_oil", "label": "Nøytral olje (eller smør)", "amount": 1, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false },
-          { "id": "minced_beef", "label": "Kjøttdeig (eller ferdig kokt kjøtt i biter)", "amount": 400, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 60, "removable": false, "taste": { "umami": 2 }, "note": "Bruker du ferdig kokt kjøtt eller rester, rører du det inn helt mot slutten – det skal bare varmes gjennom." },
-          { "id": "onion", "label": "Løk, i terninger", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "potato", "label": "Poteter, gjerne melne, i terninger", "amount": 700, "unit": "g", "role": "vegetable", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "note": "Melne poteter faller litt fra hverandre og tykner gryta – det er hele poenget med lapskaus." },
-          { "id": "carrot", "label": "Gulrot i terninger", "amount": 2, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
-          { "id": "bouillon", "label": "Oksebuljong (buljongterning + vann)", "amount": 7, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 300, "removable": false, "taste": { "umami": 2 } },
-          { "id": "salt_added", "label": "Salt", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
-          { "id": "pepper", "label": "Pepper", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true }
+          {
+            "id": "neutral_oil",
+            "label": "Nøytral olje (eller smør)",
+            "amount": 1,
+            "unit": "ss",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "minced_beef",
+            "label": "Kjøttdeig (eller ferdig kokt kjøtt i biter)",
+            "amount": 400,
+            "unit": "g",
+            "role": "protein",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 60,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            },
+            "note": "Bruker du ferdig kokt kjøtt eller rester, rører du det inn helt mot slutten – det skal bare varmes gjennom."
+          },
+          {
+            "id": "onion",
+            "label": "Løk, i terninger",
+            "amount": 1,
+            "unit": "stk",
+            "role": "aromatic",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "potato",
+            "label": "Poteter, gjerne melne, i terninger",
+            "amount": 700,
+            "unit": "g",
+            "role": "vegetable",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Melne poteter faller litt fra hverandre og tykner gryta – det er hele poenget med lapskaus."
+          },
+          {
+            "id": "carrot",
+            "label": "Gulrot i terninger",
+            "amount": 2,
+            "unit": "stk",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 2
+            }
+          },
+          {
+            "id": "bouillon",
+            "label": "Oksebuljong (buljongterning + vann)",
+            "amount": 7,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 300,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "salt_added",
+            "label": "Salt",
+            "amount": 0.5,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "sodiumPer100g": 38800,
+            "removable": false
+          },
+          {
+            "id": "pepper",
+            "label": "Pepper",
+            "amount": 0.5,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true
+          }
         ],
         "steps": [
           "Skrell og skjær poteter, gulrot og løk i terninger på cirka 1,5 cm, så alt blir mørt samtidig.",
@@ -113,19 +314,179 @@
         "label": "Medium",
         "servings": 4,
         "ingredients": [
-          { "id": "butter", "label": "Smør (til bruning)", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
-          { "id": "stew_meat", "label": "Høyrygg eller bog av storfe, i terninger", "amount": 600, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 55, "removable": false, "taste": { "umami": 2 }, "note": "Seige biter med mye bindevev blir møre og saftige av rolig koking – unngå magre steikebiter." },
-          { "id": "onion", "label": "Løk, grovhakket", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "flour", "label": "Hvetemel (til melstøving)", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "allergens": ["gluten"], "note": "Melet gir brun farge og binder kraften. Vil du ha LYS lapskaus, fjerner du melet og hopper over bruningen." },
-          { "id": "stock", "label": "Oksekraft (eller buljongterning + vann)", "amount": 9, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 200, "removable": false, "taste": { "umami": 2 } },
-          { "id": "bay_leaf", "label": "Laurbærblad", "amount": 1, "unit": "stk", "role": "aromatic", "scaling": "fixed", "addStage": "early", "removable": true },
-          { "id": "potato", "label": "Poteter, melne (Beate, Kerrs Pink), i terninger", "amount": 700, "unit": "g", "role": "vegetable", "essential": true, "scaling": "linear", "addStage": "early", "removable": false, "note": "Legges i sist av grønnsakene – stivelsen fra potetene er det som tykner lapskausen." },
-          { "id": "carrot", "label": "Gulrot i terninger", "amount": 2, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
-          { "id": "swede", "label": "Kålrot i terninger", "amount": 250, "unit": "g", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1, "bitter": 1 }, "note": "Kålrot trenger lengst tid av grønnsakene – legg den i først." },
-          { "id": "leek", "label": "Purre i ringer", "amount": 1, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "salt_added", "label": "Salt", "amount": 1, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
-          { "id": "pepper", "label": "Pepper", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
-          { "id": "lingonberry", "label": "Rørte tyttebær (til servering)", "amount": 4, "unit": "ss", "role": "acid", "isPrimaryAcid": true, "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2, "sweet": 2 }, "tradition": "traditional", "onRemove": { "tip": "Uten tyttebær mister lapskausen den friske motvekten til det fete kjøttet – rognebærgelé eller litt sylteagurk ved siden av gjør samme nytten." } }
+          {
+            "id": "butter",
+            "label": "Smør (til bruning)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "stew_meat",
+            "label": "Høyrygg eller bog av storfe, i terninger",
+            "amount": 600,
+            "unit": "g",
+            "role": "protein",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 55,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            },
+            "note": "Seige biter med mye bindevev blir møre og saftige av rolig koking – unngå magre steikebiter."
+          },
+          {
+            "id": "onion",
+            "label": "Løk, grovhakket",
+            "amount": 1,
+            "unit": "stk",
+            "role": "aromatic",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "flour",
+            "label": "Hvetemel (til melstøving)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "gluten"
+            ],
+            "note": "Melet gir brun farge og binder kraften. Vil du ha LYS lapskaus, fjerner du melet og hopper over bruningen."
+          },
+          {
+            "id": "stock",
+            "label": "Oksekraft (eller buljongterning + vann)",
+            "amount": 9,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 200,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "bay_leaf",
+            "label": "Laurbærblad",
+            "amount": 1,
+            "unit": "stk",
+            "role": "aromatic",
+            "scaling": "fixed",
+            "addStage": "early",
+            "removable": true
+          },
+          {
+            "id": "potato",
+            "label": "Poteter, melne (Beate, Kerrs Pink), i terninger",
+            "amount": 700,
+            "unit": "g",
+            "role": "vegetable",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "note": "Legges i sist av grønnsakene – stivelsen fra potetene er det som tykner lapskausen."
+          },
+          {
+            "id": "carrot",
+            "label": "Gulrot i terninger",
+            "amount": 2,
+            "unit": "stk",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 2
+            }
+          },
+          {
+            "id": "swede",
+            "label": "Kålrot i terninger",
+            "amount": 250,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1,
+              "bitter": 1
+            },
+            "note": "Kålrot trenger lengst tid av grønnsakene – legg den i først."
+          },
+          {
+            "id": "leek",
+            "label": "Purre i ringer",
+            "amount": 1,
+            "unit": "stk",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "salt_added",
+            "label": "Salt",
+            "amount": 1,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "sodiumPer100g": 38800,
+            "removable": false
+          },
+          {
+            "id": "pepper",
+            "label": "Pepper",
+            "amount": 0.5,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true
+          },
+          {
+            "id": "lingonberry",
+            "label": "Rørte tyttebær (til servering)",
+            "amount": 4,
+            "unit": "ss",
+            "role": "acid",
+            "isPrimaryAcid": true,
+            "scaling": "linear",
+            "addStage": "serve",
+            "removable": true,
+            "taste": {
+              "sour": 2,
+              "sweet": 2
+            },
+            "tradition": "traditional",
+            "onRemove": {
+              "tip": "Uten tyttebær mister lapskausen den friske motvekten til det fete kjøttet – rognebærgelé eller litt sylteagurk ved siden av gjør samme nytten."
+            }
+          }
         ],
         "steps": [
           "Skjær kjøttet i terninger på cirka 2 cm og tørk dem godt av. Brun dem i smør i en romslig gryte, i flere omganger så de ikke koker i egen kraft – det er bruningen som gjør lapskausen brun.",
@@ -140,22 +501,215 @@
         "label": "Kompleks",
         "servings": 4,
         "ingredients": [
-          { "id": "butter", "label": "Smør (til bruning og jevning)", "amount": 2, "unit": "ss", "role": "fat", "scaling": "nonlinear", "addStage": "early", "removable": false, "allergens": ["dairy"] },
-          { "id": "stew_meat", "label": "Høyrygg av storfe, i terninger på 2 cm", "amount": 700, "unit": "g", "role": "protein", "essential": true, "scaling": "linear", "addStage": "early", "sodiumPer100g": 55, "removable": false, "taste": { "umami": 2 } },
-          { "id": "onion", "label": "Løk, grovhakket", "amount": 2, "unit": "stk", "role": "aromatic", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "flour", "label": "Hvetemel (til mørk jevning)", "amount": 2, "unit": "ss", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "allergens": ["gluten"], "note": "Brunes til den dufter nøttete – en mørk jevning gir både farge og dybde." },
-          { "id": "stock", "label": "Hjemmelaget oksekraft", "amount": 10, "unit": "dl", "role": "liquid", "scaling": "linear", "addStage": "early", "sodiumPer100g": 120, "removable": false, "taste": { "umami": 2 }, "note": "Egen kraft løfter gryta mest av alt. Har du kraft fra pinnekjøtt eller en stek, er den enda bedre – men da salter du forsiktig." },
-          { "id": "bay_leaf", "label": "Laurbærblad", "amount": 2, "unit": "stk", "role": "aromatic", "scaling": "fixed", "addStage": "early", "removable": true },
-          { "id": "thyme", "label": "Frisk timian", "amount": 2, "unit": "kvist", "role": "aromatic", "scaling": "nonlinear", "addStage": "early", "removable": true },
-          { "id": "allspice", "label": "Allehånde, malt eller hel", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true, "tradition": "traditional", "note": "Det klassiske varmkrydderet i norske brune gryter – litt er nok." },
-          { "id": "potato", "label": "Poteter, melne (Beate, Kerrs Pink), i terninger", "amount": 800, "unit": "g", "role": "vegetable", "essential": true, "scaling": "linear", "addStage": "early", "removable": false },
-          { "id": "carrot", "label": "Gulrot i terninger", "amount": 3, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 2 } },
-          { "id": "swede", "label": "Kålrot i terninger", "amount": 300, "unit": "g", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1, "bitter": 1 } },
-          { "id": "celeriac", "label": "Sellerirot i terninger", "amount": 150, "unit": "g", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "allergens": ["celery"], "taste": { "umami": 1 } },
-          { "id": "leek", "label": "Purre i ringer", "amount": 1, "unit": "stk", "role": "vegetable", "scaling": "linear", "addStage": "early", "removable": true, "taste": { "sweet": 1 } },
-          { "id": "salt_added", "label": "Salt", "amount": 1.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "sodiumPer100g": 38800, "removable": false },
-          { "id": "pepper", "label": "Pepper, nykvernet", "amount": 0.5, "unit": "ts", "role": "seasoning", "scaling": "nonlinear", "addStage": "early", "removable": true },
-          { "id": "lingonberry", "label": "Rørte tyttebær (til servering)", "amount": 4, "unit": "ss", "role": "acid", "isPrimaryAcid": true, "scaling": "linear", "addStage": "serve", "removable": true, "taste": { "sour": 2, "sweet": 2 }, "tradition": "traditional", "onRemove": { "tip": "Uten tyttebær mister lapskausen den friske motvekten til det fete kjøttet – rognebærgelé eller litt sylteagurk ved siden av gjør samme nytten." } }
+          {
+            "id": "butter",
+            "label": "Smør (til bruning og jevning)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false,
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "stew_meat",
+            "label": "Høyrygg av storfe, i terninger på 2 cm",
+            "amount": 700,
+            "unit": "g",
+            "role": "protein",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 55,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "onion",
+            "label": "Løk, grovhakket",
+            "amount": 2,
+            "unit": "stk",
+            "role": "aromatic",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "flour",
+            "label": "Hvetemel (til mørk jevning)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "gluten"
+            ],
+            "note": "Brunes til den dufter nøttete – en mørk jevning gir både farge og dybde."
+          },
+          {
+            "id": "stock",
+            "label": "Hjemmelaget oksekraft",
+            "amount": 10,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 120,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            },
+            "note": "Egen kraft løfter gryta mest av alt. Har du kraft fra pinnekjøtt eller en stek, er den enda bedre – men da salter du forsiktig."
+          },
+          {
+            "id": "bay_leaf",
+            "label": "Laurbærblad",
+            "amount": 2,
+            "unit": "stk",
+            "role": "aromatic",
+            "scaling": "fixed",
+            "addStage": "early",
+            "removable": true
+          },
+          {
+            "id": "thyme",
+            "label": "Frisk timian",
+            "amount": 2,
+            "unit": "kvist",
+            "role": "aromatic",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true
+          },
+          {
+            "id": "allspice",
+            "label": "Allehånde, malt eller hel",
+            "amount": 0.5,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "tradition": "traditional",
+            "note": "Det klassiske varmkrydderet i norske brune gryter – litt er nok."
+          },
+          {
+            "id": "potato",
+            "label": "Poteter, melne (Beate, Kerrs Pink), i terninger",
+            "amount": 800,
+            "unit": "g",
+            "role": "vegetable",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "carrot",
+            "label": "Gulrot i terninger",
+            "amount": 3,
+            "unit": "stk",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 2
+            }
+          },
+          {
+            "id": "swede",
+            "label": "Kålrot i terninger",
+            "amount": 300,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1,
+              "bitter": 1
+            }
+          },
+          {
+            "id": "celeriac",
+            "label": "Sellerirot i terninger",
+            "amount": 150,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "celery"
+            ],
+            "taste": {
+              "umami": 1
+            }
+          },
+          {
+            "id": "leek",
+            "label": "Purre i ringer",
+            "amount": 1,
+            "unit": "stk",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "salt_added",
+            "label": "Salt",
+            "amount": 1.5,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "sodiumPer100g": 38800,
+            "removable": false
+          },
+          {
+            "id": "pepper",
+            "label": "Pepper, nykvernet",
+            "amount": 0.5,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true
+          },
+          {
+            "id": "lingonberry",
+            "label": "Rørte tyttebær (til servering)",
+            "amount": 4,
+            "unit": "ss",
+            "role": "acid",
+            "isPrimaryAcid": true,
+            "scaling": "linear",
+            "addStage": "serve",
+            "removable": true,
+            "taste": {
+              "sour": 2,
+              "sweet": 2
+            },
+            "tradition": "traditional",
+            "onRemove": {
+              "tip": "Uten tyttebær mister lapskausen den friske motvekten til det fete kjøttet – rognebærgelé eller litt sylteagurk ved siden av gjør samme nytten."
+            }
+          }
         ],
         "steps": [
           "Tørk kjøttterningene godt og brun dem hardt i smør i flere små omganger, til de har en mørk skorpe. Legg dem over i en bolle etter hvert.",
@@ -168,54 +722,287 @@
         ]
       }
     },
-
     "swapOptions": {
       "neutral_oil": [
-        { "id": "butter", "label": "Smør (rundere smak)", "amount": 1, "unit": "ss", "allergens": ["dairy"], "tradition": "traditional", "note": "Gir mer smak til bruningen, men tåler litt lavere varme." },
-        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 1, "unit": "ss", "note": "Melkefri bruning – oppfører seg som smør." }
+        {
+          "id": "butter",
+          "label": "Smør (rundere smak)",
+          "amount": 1,
+          "unit": "ss",
+          "allergens": [
+            "dairy"
+          ],
+          "tradition": "traditional",
+          "note": "Gir mer smak til bruningen, men tåler litt lavere varme."
+        },
+        {
+          "id": "margarine",
+          "label": "Margarin (melkefri)",
+          "amount": 1,
+          "unit": "ss",
+          "note": "Melkefri bruning – oppfører seg som smør."
+        }
       ],
       "butter": [
-        { "id": "margarine", "label": "Margarin (melkefri)", "amount": 2, "unit": "ss", "note": "Melkefri bruning – oppfører seg som smør." },
-        { "id": "rapeseed_oil", "label": "Nøytral olje (melkefri)", "amount": 2, "unit": "ss", "note": "Tåler høyere varme, så kjøttet bruner seg lettere hardt." }
+        {
+          "id": "margarine",
+          "label": "Margarin (melkefri)",
+          "amount": 2,
+          "unit": "ss",
+          "note": "Melkefri bruning – oppfører seg som smør."
+        },
+        {
+          "id": "rapeseed_oil",
+          "label": "Nøytral olje (melkefri)",
+          "amount": 2,
+          "unit": "ss",
+          "note": "Tåler høyere varme, så kjøttet bruner seg lettere hardt."
+        }
       ],
       "minced_beef": [
-        { "id": "sausage", "label": "Middagspølser i skiver (pølselapskaus)", "amount": 400, "unit": "g", "sodiumPer100g": 800, "taste": { "umami": 2 }, "tradition": "regional", "note": "Barnas favoritt. Legges i mot slutten – pølsene skal bare varmes gjennom. Salt justeres automatisk." },
-        { "id": "leftover_meat", "label": "Rester av kokt kjøtt (pinnekjøtt, stek, ribbe)", "amount": 350, "unit": "g", "sodiumPer100g": 700, "taste": { "umami": 2 }, "tradition": "traditional", "note": "Den originale restemat-lapskausen. Kjøttet er ferdig kokt – rør det inn helt til slutt." },
-        { "id": "minced_chicken", "label": "Kyllingdeig (lettere)", "amount": 400, "unit": "g", "sodiumPer100g": 70, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Mildere og magrere; bruner seg raskere, så pass på at den ikke blir tørr." }
+        {
+          "id": "sausage",
+          "label": "Middagspølser i skiver (pølselapskaus)",
+          "amount": 400,
+          "unit": "g",
+          "sodiumPer100g": 800,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "regional",
+          "note": "Barnas favoritt. Legges i mot slutten – pølsene skal bare varmes gjennom. Salt justeres automatisk."
+        },
+        {
+          "id": "leftover_meat",
+          "label": "Rester av kokt kjøtt (pinnekjøtt, stek, ribbe)",
+          "amount": 350,
+          "unit": "g",
+          "sodiumPer100g": 700,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "traditional",
+          "note": "Den originale restemat-lapskausen. Kjøttet er ferdig kokt – rør det inn helt til slutt."
+        },
+        {
+          "id": "minced_chicken",
+          "label": "Kyllingdeig (lettere)",
+          "amount": 400,
+          "unit": "g",
+          "sodiumPer100g": 70,
+          "taste": {
+            "umami": 1
+          },
+          "tradition": "non-traditional",
+          "note": "Mildere og magrere; bruner seg raskere, så pass på at den ikke blir tørr."
+        }
       ],
       "stew_meat": [
-        { "id": "salted_pork", "label": "Lettsaltet svinekjøtt i terninger (lys lapskaus)", "amount": 600, "unit": "g", "sodiumPer100g": 900, "taste": { "umami": 2 }, "tradition": "traditional", "note": "Den klassiske LYSE lapskausen: kok kjøttet i stedet for å brune det, og fjern melet. Kortere koketid (40–50 min), og saltet justeres automatisk." },
-        { "id": "lamb_shoulder", "label": "Lammebog i terninger", "amount": 600, "unit": "g", "sodiumPer100g": 60, "taste": { "umami": 2 }, "tradition": "regional", "note": "Rundere og litt søtere smak; omtrent samme koketid som storfe." },
-        { "id": "chicken_thigh", "label": "Kyllinglårfilet i biter", "amount": 600, "unit": "g", "sodiumPer100g": 60, "taste": { "umami": 1 }, "tradition": "non-traditional", "note": "Mye kortere koketid – legg kyllingen i sammen med rotgrønnsakene, ikke før." },
-        { "id": "leftover_meat", "label": "Rester av kokt kjøtt (pinnekjøtt, stek, ribbe)", "amount": 350, "unit": "g", "sodiumPer100g": 700, "taste": { "umami": 2 }, "tradition": "traditional", "note": "Da hopper du over koketiden helt: kok grønnsakene møre i kraften og rør inn kjøttet til slutt." },
-        { "id": "sausage", "label": "Middagspølser i skiver (pølselapskaus)", "amount": 400, "unit": "g", "sodiumPer100g": 800, "taste": { "umami": 2 }, "tradition": "regional", "note": "Hverdagsvarianten – legges i de siste minuttene." }
+        {
+          "id": "salted_pork",
+          "label": "Lettsaltet svinekjøtt i terninger (lys lapskaus)",
+          "amount": 600,
+          "unit": "g",
+          "sodiumPer100g": 900,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "traditional",
+          "note": "Den klassiske LYSE lapskausen: kok kjøttet i stedet for å brune det, og fjern melet. Kortere koketid (40–50 min), og saltet justeres automatisk."
+        },
+        {
+          "id": "lamb_shoulder",
+          "label": "Lammebog i terninger",
+          "amount": 600,
+          "unit": "g",
+          "sodiumPer100g": 60,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "regional",
+          "note": "Rundere og litt søtere smak; omtrent samme koketid som storfe."
+        },
+        {
+          "id": "chicken_thigh",
+          "label": "Kyllinglårfilet i biter",
+          "amount": 600,
+          "unit": "g",
+          "sodiumPer100g": 60,
+          "taste": {
+            "umami": 1
+          },
+          "tradition": "non-traditional",
+          "note": "Mye kortere koketid – legg kyllingen i sammen med rotgrønnsakene, ikke før."
+        },
+        {
+          "id": "leftover_meat",
+          "label": "Rester av kokt kjøtt (pinnekjøtt, stek, ribbe)",
+          "amount": 350,
+          "unit": "g",
+          "sodiumPer100g": 700,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "traditional",
+          "note": "Da hopper du over koketiden helt: kok grønnsakene møre i kraften og rør inn kjøttet til slutt."
+        },
+        {
+          "id": "sausage",
+          "label": "Middagspølser i skiver (pølselapskaus)",
+          "amount": 400,
+          "unit": "g",
+          "sodiumPer100g": 800,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "regional",
+          "note": "Hverdagsvarianten – legges i de siste minuttene."
+        }
       ],
       "potato": [
-        { "id": "firm_potato", "label": "Faste poteter (Asterix, Folva)", "amount": 700, "unit": "g", "tradition": "non-traditional", "note": "Holder formen og gir tydelige terninger – men da tykner ikke gryta av seg selv. Kok litt lenger uten lokk, eller tykne med mel/maizena." }
+        {
+          "id": "firm_potato",
+          "label": "Faste poteter (Asterix, Folva)",
+          "amount": 700,
+          "unit": "g",
+          "tradition": "non-traditional",
+          "note": "Holder formen og gir tydelige terninger – men da tykner ikke gryta av seg selv. Kok litt lenger uten lokk, eller tykne med mel/maizena."
+        }
       ],
       "swede": [
-        { "id": "celeriac", "label": "Sellerirot i terninger", "amount": 250, "unit": "g", "allergens": ["celery"], "taste": { "umami": 1 }, "tradition": "regional", "note": "Litt mer aromatisk og nøttete enn kålrot." },
-        { "id": "parsnip", "label": "Pastinakk i terninger", "amount": 250, "unit": "g", "taste": { "sweet": 2 }, "tradition": "regional", "note": "Søtere og mykere; koker fortere enn kålrot, så legg den i litt senere." },
-        { "id": "extra_carrot", "label": "Mer gulrot (i stedet for kålrot)", "amount": 250, "unit": "g", "taste": { "sweet": 2 }, "tradition": "non-traditional", "note": "Mildere og søtere – fin for dem som ikke liker kålrot." }
+        {
+          "id": "celeriac",
+          "label": "Sellerirot i terninger",
+          "amount": 250,
+          "unit": "g",
+          "allergens": [
+            "celery"
+          ],
+          "taste": {
+            "umami": 1
+          },
+          "tradition": "regional",
+          "note": "Litt mer aromatisk og nøttete enn kålrot."
+        },
+        {
+          "id": "parsnip",
+          "label": "Pastinakk i terninger",
+          "amount": 250,
+          "unit": "g",
+          "taste": {
+            "sweet": 2
+          },
+          "tradition": "regional",
+          "note": "Søtere og mykere; koker fortere enn kålrot, så legg den i litt senere."
+        },
+        {
+          "id": "extra_carrot",
+          "label": "Mer gulrot (i stedet for kålrot)",
+          "amount": 250,
+          "unit": "g",
+          "taste": {
+            "sweet": 2
+          },
+          "tradition": "non-traditional",
+          "note": "Mildere og søtere – fin for dem som ikke liker kålrot."
+        }
       ],
       "celeriac": [
-        { "id": "fennel", "label": "Fennikel i terninger (sellerifri)", "amount": 150, "unit": "g", "taste": { "sweet": 1 }, "tradition": "non-traditional", "note": "Sellerifritt alternativ med en mild, søtlig anistone." },
-        { "id": "parsnip", "label": "Pastinakk i terninger (sellerifri)", "amount": 150, "unit": "g", "taste": { "sweet": 2 }, "tradition": "regional", "note": "Sellerifri og søtere; koker raskt, så legg den i mot slutten." }
+        {
+          "id": "fennel",
+          "label": "Fennikel i terninger (sellerifri)",
+          "amount": 150,
+          "unit": "g",
+          "taste": {
+            "sweet": 1
+          },
+          "tradition": "non-traditional",
+          "note": "Sellerifritt alternativ med en mild, søtlig anistone."
+        },
+        {
+          "id": "parsnip",
+          "label": "Pastinakk i terninger (sellerifri)",
+          "amount": 150,
+          "unit": "g",
+          "taste": {
+            "sweet": 2
+          },
+          "tradition": "regional",
+          "note": "Sellerifri og søtere; koker raskt, så legg den i mot slutten."
+        }
       ],
       "bouillon": [
-        { "id": "stock", "label": "Oksekraft (mer smak)", "amount": 7, "unit": "dl", "sodiumPer100g": 200, "taste": { "umami": 2 }, "tradition": "traditional", "note": "Gir dypere smak enn terning – salt justeres automatisk." },
-        { "id": "water", "label": "Vann (usaltet)", "amount": 7, "unit": "dl", "sodiumPer100g": 0, "note": "Uten buljong blir gryta mildere; kjøttet og rotgrønnsakene får bære smaken. Salt justeres automatisk." }
+        {
+          "id": "stock",
+          "label": "Oksekraft (mer smak)",
+          "amount": 7,
+          "unit": "dl",
+          "sodiumPer100g": 200,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "traditional",
+          "note": "Gir dypere smak enn terning – salt justeres automatisk."
+        },
+        {
+          "id": "water",
+          "label": "Vann (usaltet)",
+          "amount": 7,
+          "unit": "dl",
+          "sodiumPer100g": 0,
+          "note": "Uten buljong blir gryta mildere; kjøttet og rotgrønnsakene får bære smaken. Salt justeres automatisk."
+        }
       ],
       "stock": [
-        { "id": "bouillon", "label": "Buljongterning + vann (raskere)", "amount": 9, "unit": "dl", "sodiumPer100g": 300, "taste": { "umami": 1 }, "note": "Hverdagssnarveien – saltere, så tilsatt salt justeres automatisk." },
-        { "id": "water", "label": "Vann (usaltet)", "amount": 9, "unit": "dl", "sodiumPer100g": 0, "note": "Mildere gryte; smak ekstra godt til på slutten." }
+        {
+          "id": "bouillon",
+          "label": "Buljongterning + vann (raskere)",
+          "amount": 9,
+          "unit": "dl",
+          "sodiumPer100g": 300,
+          "taste": {
+            "umami": 1
+          },
+          "note": "Hverdagssnarveien – saltere, så tilsatt salt justeres automatisk."
+        },
+        {
+          "id": "water",
+          "label": "Vann (usaltet)",
+          "amount": 9,
+          "unit": "dl",
+          "sodiumPer100g": 0,
+          "note": "Mildere gryte; smak ekstra godt til på slutten."
+        }
       ],
       "flour": [
-        { "id": "potato_flour", "label": "Potetmel (glutenfri)", "amount": 1, "unit": "ss", "note": "Rør ut i litt kaldt vann og visp inn mot slutten – tykner raskt, så bruk lite." },
-        { "id": "cornstarch", "label": "Maizena (glutenfri)", "amount": 1, "unit": "ss", "note": "Rør ut i kaldt vann og visp inn i den kokende gryta." }
+        {
+          "id": "potato_flour",
+          "label": "Potetmel (glutenfri)",
+          "amount": 1,
+          "unit": "ss",
+          "note": "Rør ut i litt kaldt vann og visp inn mot slutten – tykner raskt, så bruk lite."
+        },
+        {
+          "id": "cornstarch",
+          "label": "Maizena (glutenfri)",
+          "amount": 1,
+          "unit": "ss",
+          "note": "Rør ut i kaldt vann og visp inn i den kokende gryta."
+        }
       ],
       "lingonberry": [
-        { "id": "rowan_jelly", "label": "Rognebærgelé", "amount": 4, "unit": "ss", "taste": { "sour": 2, "sweet": 2 }, "tradition": "traditional", "note": "Litt mer bitter og voksen enn tyttebær – klassisk til brune gryter." }
+        {
+          "id": "rowan_jelly",
+          "label": "Rognebærgelé",
+          "amount": 4,
+          "unit": "ss",
+          "taste": {
+            "sour": 2,
+            "sweet": 2
+          },
+          "tradition": "traditional",
+          "note": "Litt mer bitter og voksen enn tyttebær – klassisk til brune gryter."
+        }
       ]
     }
   }

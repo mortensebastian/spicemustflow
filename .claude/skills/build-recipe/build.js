@@ -86,6 +86,23 @@ const R = staging.recipe;
   }
 })();
 
+/* ---------- 0c) TITTEL-SJEKK (soft – advarer, stopper ikke) ----------
+   SEO-plan §4: <title> ≤ ~60 tegn. Google kutter rundt 580–600 px ≈ 55–60 tegn,
+   så halen faller bort i SERP-en. Retrospektiv etter one-pot-puljen: 3 av 3 retter
+   lå over, og 12+ eldre sider ligger over 75 (opptil 90) – ingen sjekk fanget det. */
+(function titleCheck() {
+  const t = (staging.seo && staging.seo.title) || '';
+  const LIMIT = 60;
+  if (!t) { console.log('TITTEL-SJEKK: seo.title mangler i staging!'); return; }
+  if (t.length > LIMIT) {
+    console.log(`TITTEL-SJEKK: ${t.length} tegn – over grensen på ${LIMIT}. Halen kuttes i SERP-en.`);
+    console.log(`  «${t}»`);
+    console.log('  Kort ned kvalifikatoren (ikke primærsøkeordet) før du publiserer.');
+  } else {
+    console.log(`TITTEL-SJEKK: ${t.length}/${LIMIT} tegn ✓`);
+  }
+})();
+
 /* ---------- 1) <slug>-data.js ---------- */
 // Strip tomme tasteMessages-nøkler (en akse uten budskap skal utelates, ikke stå tom).
 if (R.tasteMessages) {

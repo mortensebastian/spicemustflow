@@ -46,7 +46,8 @@ window.RECIPE = {
   bulkRoles:   [ ...roller som teller som «mengde mat» ],
   levers:      [ { axis, id } ],         // selvjusterende balanse-ingredienser (kan være tom)
   requireRoles:[ ...roller retten må ha ],// f.eks. ['acid']; kan være tom []. MÅ inneholde "acid" for at servedAcid/acid-onRemove-tips skal vises
-  tasteMessages: { sour, umami, sweet }, // inline-tips ved fjerning
+                                         // MEN: en ingrediens med role:"acid" betyr IKKE at retten har en syre-akse (se «Syre-akse» under)
+  tasteMessages: { sour, umami, sweet }, // inline-tips ved fjerning – KREVER en removable bærer (se «Taste-meldinger» under)
   leverMessages: { <axis>: { down, up } }// melding når en lever justeres
 };
 ```
@@ -121,6 +122,34 @@ og tell ikke rent salt/pepper/olje/vann eller sukker. Tall er retningsgivende
 > fordi 6 av dem er pålegg satt i skåler (`addStage:"serve"`). Derfor måler både
 > budsjettet og validatoren på **kjerne (ikke-servering)**, ikke rått totalantall.
 
+## Taste-meldinger (krever en removable bærer)
+`tasteMessages` vises **kun når brukeren fjerner en ingrediens** (`removedTip()` i
+`recipe-adapter.js`), og kun for ingredienser med `taste.<akse> >= 2`. Følgen er en
+enkel forfatter-regel som er lett å bomme på:
+
+> Skriv bare en `tasteMessages`-melding for en akse som har **minst én
+> `removable: true`-ingrediens med `taste.<akse> >= 2`.**
+
+Er alle bærerne av aksen `removable: false`, kan meldingen aldri utløses – da er den
+død data, uansett hvor riktig den er faglig. Eksempel: fårikål (#39) har tung umami i
+kjøtt og kraft, men begge er essensielle og ikke fjernbare → ingen umami-melding.
+Adapteren leser dessuten kun `sour`, `umami` og `sweet`; `bitter` rendres ikke (legg
+budskapet i et `onRemove.tip` på ingrediensen i stedet).
+
+## Syre-akse: en `role:"acid"`-ingrediens er ikke det samme som en syre-akse
+`requireRoles:["acid"]` slår på syre-bevisstheten (stående `servedAcid`-tips når syren
+mangler, myke tips ved fjerning). Begge retningene er feilbare:
+
+- **Sett den** når retten *balanseres* av syre og syren kan mangle på et nivå –
+  f.eks. lapskaus (#40), der tyttebær finnes på medium/kompleks men ikke på enkel, og
+  kylling-i-ovn (#15) med sitron. Uten `requireRoles` er hele syre-dataen død.
+- **Ikke sett den** bare fordi en ingrediens har `role:"acid"`. Fårikål (#39) har eddik
+  på kompleks, men tradisjonell fårikål har ingen syrebalanse – `requireRoles:["acid"]`
+  ville gitt et stående, feilaktig «mangler syre»-tips på enkel og medium.
+
+Spør: *ville en kokk sagt at retten smaker flatt uten syre?* Ja → sett den. Nei → la den
+stå tom, selv om en syrlig ingrediens finnes.
+
 ## Budsjett (rimeligere)
 - «Budsjett»-bryteren vises **kun på enkel/medium** (speilbilde av «Nøyaktig», som
   bare er på kompleks) – og kun når retten faktisk har et rimeligere bytte.
@@ -130,6 +159,12 @@ og tell ikke rent salt/pepper/olje/vann eller sukker. Tall er retningsgivende
   billige byttet. Lar du `cost` stå tomt, regnes alt som middels (`2`) og bryteren
   dukker ikke opp. Komponerer med allergifilteret: er begge på, velges billigste
   *allergivennlige* bytte.
+- **Er det eneste dyre ankeret selve rettens identitet, la `cost` stå tomt overalt.**
+  Regelen «bytt luksusen, ikke sjelen» har et grensetilfelle der de to er samme
+  ingrediens: `cost:3` lam + `cost:1` svin ville latt budsjett-bryteren gjøre fårikål
+  (#39) om til svinekål. Da er riktig svar å skjule bryteren helt – de rimeligere
+  byttene finnes fortsatt manuelt under «Tilpass». Gjelder også ribbe, pinnekjøtt og
+  lammelår når de bygges.
 
 ## Levere (auto-balanse)
 - En **lever** er en ingrediens som regulerer én grunnsmak. Motoren løser hvor mye
@@ -882,13 +917,14 @@ Rett 2 i one-pot-serien. Lærdom:
 
 **chili con carne (rett #41)** — **ingen kjernemotorendring (men ett motor-funn, se under).**
 Tex-mex-gryte, rett 3 i one-pot-serien. Lærdom:
-- **`taste.bitter` er inert for meldinger.** `recipe-balance.js` dokumenterer fire kvalitative akser
-  («søtt/surt/bittert/umami») og plan.md beskriver de fem grunnsmakene, men `removedTip()` i
-  `recipe-adapter.js` leser kun `sour` → `umami` → `sweet`. En `bitter`-melding i `tasteMessages` ville
-  aldri blitt vist. Chili er nettopp retten der bitter bærer noe (kaffe, mørk sjokolade, brente tørkede
-  chili), så research måtte legge budskapet i `onRemove`-tips på `coffee` og `dark_chocolate` i stedet.
-  Det virker, men er en omvei rundt en akse motoren utgir seg for å ha. Samme form som `celery`-funnet
-  (tagg dokumentert, men inert i motoren) → løftet som `[MOTOR]` i puljens retrospektiv.
+- **`taste.bitter` er fortsatt inert for meldinger — nå med en rett som faktisk trenger den.**
+  Kjent siden kjøttkaker (#7), der kontrakten konkluderte «ubrukt `bitter`-nøkkel er død data – ta den ut».
+  `recipe-balance.js` dokumenterer fire kvalitative akser («søtt/surt/bittert/umami») og plan.md §B de fem
+  grunnsmakene, men `removedTip()` i `recipe-adapter.js` leser kun `sour` → `umami` → `sweet`.
+  Forskjellen nå: chili er den første retten der bitter er *bærende* (kaffe, mørk sjokolade, brente
+  tørkede chili), så «ta den ut» koster noe. Research måtte legge budskapet i `onRemove`-tips på
+  `coffee` og `dark_chocolate`. Det virker, men er en omvei rundt en akse motoren utgir seg for å ha.
+  Gjentakelse over to retter + reell kostnad → løftet som `[MOTOR]` i puljens retrospektiv.
 - **To aktive levere i samme rett (salt + sweet).** Første rett med `levers` for både `salt_added` og
   `sugar`. Fungerte rett ut av boksen – motoren løser hver akse mot sitt eget mål. Salt-leveren gjør noe
   synlig her fordi natrium spriker kraftig mellom bytter: ferdig chilikrydder 9000, buljongterning 400,
@@ -902,3 +938,40 @@ Tex-mex-gryte, rett 3 i one-pot-serien. Lærdom:
   et autentisk bytte som forurenser allergen-profilen er ikke gratis – vei det mot filterets verdi.
 - **One-pot-ærlighet i data, ikke bare prosa:** ris/nachos/rømme ligger som `addStage:"serve"`, og både
   siste steg og FAQ sier at tilbehøret lages ved siden av. Alle steg 5-snutter grønne, generator på 1. forsøk.
+
+**Retrospektiv etter one-pot-puljen (fårikål/lapskaus/chili con carne, #39–41):**
+- **[RESEARCH + VALIDERING, fikset]** `<title>` over lengdegrensen — **3 av 3 retter**, og ved
+  måling av hele siden: **32 av 48 sider ligger over 60 tegn**, opptil 88 (`kylling-i-ovn`).
+  SEO-plan §4 har alltid sagt «≤ ~60 tegn», men ingen skill sjekket det, så drifta har fått løpe
+  siden rett #1. Google kutter rundt 580–600 px ≈ 55–60 tegn, så halen forsvinner i SERP-en.
+  Fikset tre steder: (1) `research-recipe`-sjekklista har nå et eksplisitt tegn-tellings-punkt med
+  regneeksempel («suffikset spiser 15 tegn, kutt kvalifikatoren – ikke søkeordet»), (2) `build.js`
+  har en **TITTEL-SJEKK** som advarer over 60 og skriver ut tittelen, (3) `build-recipe` Steg 5 har
+  fått et sjekkpunkt. Puljens egne tre titler ble kortet ned før publisering (67→59, 72→50, 62→53).
+  *Gjenstår (ikke auto-fikset, redaksjonell jobb):* de 29 eldre sidene over grensen.
+  **NB for måling:** tell tegn i Node (`s.length`), ikke med `${#t}` i bash — æøå og – er
+  flerbyte i UTF-8, så shell-tellingen overdriver med ~4–8 per tittel.
+- **[KONTRAKT, fikset]** `tasteMessages` krever en **`removable: true`-bærer** med
+  `taste.<akse> >= 2`. Meldingene vises kun ved fjerning, så en akse der alle bærerne er
+  essensielle er død data uansett hvor faglig riktig meldingen er (fårikål: umami i kjøtt + kraft,
+  begge `removable:false`). Ny seksjon «Taste-meldinger» i kontrakten.
+- **[KONTRAKT, fikset]** **Syre-akse er ikke det samme som en `role:"acid"`-ingrediens.** Begge
+  retninger ble truffet i samme pulje: lapskaus MÅTTE ha `requireRoles:["acid"]` (tyttebær finnes
+  på medium/kompleks, mangler på enkel → stående tips), fårikål måtte IKKE ha den (eddik finnes på
+  kompleks, men retten har ingen syrebalanse → ville gitt feilaktig «mangler syre» på enkel/medium).
+  Kontrakten dekket bare den positive retningen. Ny seksjon «Syre-akse» med testspørsmålet:
+  *ville en kokk sagt at retten smaker flatt uten syre?*
+- **[KONTRAKT, fikset]** `cost` utelates helt når **det eneste dyre ankeret ER rettens identitet**
+  (fårikål → svinekål). Presisert i «Budsjett»-seksjonen, med varsel om at ribbe, pinnekjøtt og
+  lammelår treffer samme grensetilfelle.
+- **[MOTOR, venter på svar]** `taste.bitter` rendres ikke — `removedTip()` leser kun
+  `sour`/`umami`/`sweet`. Kjent siden kjøttkaker (#7), der konklusjonen var «ta nøkkelen ut».
+  Chili (#41) er første rett der bitter er *bærende* (kaffe, mørk sjokolade, brente tørkede chili),
+  så omveien koster noe: budskapet måtte inn som `onRemove`-tips per ingrediens i stedet.
+  Forslag lagt fram for eier — ikke implementert.
+- **[LOGG]** `season` tar én måned. Lapskaus har et bredt okt–feb-platå uten skarp dato (ulikt
+  fårikål/lussekatter), så «nov» er et kompromiss. Treffer flere platå-sesongretter dette, er det
+  en kandidat til å utvide feltet.
+- **Pulje-observasjon:** ingen av de tre trengte motorendring for å bli bygd. To aktive levere
+  (salt + sweet) på chili, 16- og 21-ingrediensers nivåer på lapskaus/chili, og en sesongrett med
+  `season` — alt absorbert av eksisterende motor. Generatoren traff på 1. forsøk alle tre ganger.

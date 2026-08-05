@@ -173,9 +173,9 @@ Neste (prioritert etter norsk søkevolum og sesong — topp 50, estimert årsvol
 - [x] 14. Gulrotkake — Hele året — Estimat
 - [x] 15. Kyllingfilet / kylling i ovn — Hele året — Estimat
 - [x] 16. Fiskekaker — Hele året — Estimat
-- [ ] 17. Fårikål — Høst (topp 24. sept 2026) — Dokumentert (MatPrat nevnt) — 🍲 **sesongfrist**
-- [ ] 18. Lapskaus (brun/lys) — Høst/vinter — Estimat, høyt — 🍲
-- [ ] 19. Chili con carne — Hele året — Dokumentert (MatPrat nevnt) — 🍲
+- [x] 17. Fårikål — Høst (topp 24. sept 2026) — Dokumentert (MatPrat nevnt) — 🍲 **sesongfrist**
+- [x] 18. Lapskaus (brun/lys) — Høst/vinter — Estimat, høyt — 🍲
+- [x] 19. Chili con carne — Hele året — Dokumentert (MatPrat nevnt) — 🍲
 - [ ] 20. Muffins — Hele året — Estimat — NB: bakemuffins, distinkt fra bygde `engelske-muffins`
 - [ ] 21. Kremet kyllingpasta (one-pot pasta) — Hele året — Estimat — 🍲
 - [ ] 22. Kylling tikka masala / curry — Hele året — Estimat — 🍲*
