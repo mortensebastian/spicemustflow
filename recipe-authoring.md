@@ -855,3 +855,27 @@ mørt i egen kraft. Første rett i «one-pot-serien» (plan.md). Lærdom:
   holdt utenfor `density`/`unitOptions` som nonlinear «smak til» (samme mønster som spagetti #14), så
   mirror-regelen er grønn. Gluten (jevningsmel) løst via `removable` + potetmel/maizena; meieri (smør på
   kompleks) via `removable` + margarin/olje. Alle steg 5-snutter grønne, generator på 1. forsøk.
+
+**lapskaus (rett #40)** — **ingen kjernemotorendring.** Norsk tradisjonsgryte, tyknet av poteten.
+Rett 2 i one-pot-serien. Lærdom:
+- **To varianter på én side i stedet for to tynne sider.** Konkurrentene splitter «brun lapskaus» og
+  «lys lapskaus» i hver sin tynne oppskrift. Vi tar hodeordet `lapskaus` som slug, bygger alle tre
+  nivåene brune, og gjør *lys* operativ på tre steder samtidig: et bytte (`stew_meat → salted_pork`
+  med kok-i-stedet-for-brun-note), `flour` som `removable` med note «fjern melet og hopp over
+  bruningen for lys lapskaus», og FAQ #1. Mønsteret er generelt: når en rett har to folkelige
+  varianter, er et **bytte + en removable-note** bedre enn en egen side – det unngår
+  kannibalisering og gjør varianten synlig i selve ingredienslista, ikke bare i prosaen.
+- **`removable`-noten er et redaksjonelt virkemiddel, ikke bare en advarsel.** Her bærer den
+  variant-instruksjonen. Verdt å huske for andre retter med en «uten X blir det en annen kjent rett».
+- **Syre som serverings-følge (`servedAcid` + `requireRoles:["acid"]`).** Tyttebær er modellert som
+  rettens syre på medium/kompleks (`isPrimaryAcid`, `addStage:"serve"`), mens enkel mangler den →
+  stående tyttebær-tips på enkel, stille på medium/kompleks, myk tips ved fjerning. Samme mønster som
+  kylling-i-ovn (#15) og motsatt av fårikål (#39), der syre-aksen ikke finnes i det hele tatt.
+- **Avgrensning mot slektningene er skrevet inn i `serp.strategy`** så framtidige retter arver den:
+  lapskaus = tyknet av poteten (SNL: tyknet, i motsetning til kjøttsuppe/sodd), biffgryte = okse i saus,
+  gulasj = paprika/ungarsk, kjøttsuppe = tynn klar kraft. Eget id-sett, ingen delte bytte-id-er.
+- **`season:"nov"`** er et kompromiss: retten har et bredt okt–feb-platå uten skarp dato (ulikt fårikål),
+  og sesongfeltet tar bare én måned. November valgt som mest representative. Feltets én-måneds-form er
+  en reell begrensning for platå-sesongretter – noter hvis flere treffer den.
+- **`cost` utelatt:** høyrygg/bog *er* den rimelige biten, ingen dyrt anker. Meieri/gluten/selleri alle
+  løsbare via bytte + `removable`. Alle steg 5-snutter grønne, generator på 1. forsøk.

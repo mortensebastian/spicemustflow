@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lapskaus – brun og lys, tradisjonell oppskrift i én gryte | Velkomponert</title>
+  <meta name="description" content="Tradisjonell lapskaus med mørt kjøtt og rotgrønnsaker i én gryte. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.">
+  <meta name="keywords" content="lapskaus, brun lapskaus, lys lapskaus, lapskaus oppskrift, lapskaus med kjøttdeig">
+  <link rel="canonical" href="https://velkomponert.no/lapskaus.html">
+
+  <!-- Open Graph / deling -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Velkomponert">
+  <meta property="og:title" content="Lapskaus – brun og lys, tradisjonell oppskrift i én gryte">
+  <meta property="og:description" content="Tradisjonell lapskaus med mørt kjøtt og rotgrønnsaker i én gryte. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.">
+  <meta property="og:url" content="https://velkomponert.no/lapskaus.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-felles.css">
+
+</head>
+
+<!-- --recipe-image: legg et foto på bilder/lapskaus.jpg så vises det øverst,
+     sett image i manifestet tilbake til "lapskaus.jpg", og krediter i footeren. -->
+<body class="recipe-page" style="--recipe-image: url('bilder/lapskaus.jpg');">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Velkomponert</a>
+      <nav class="nav-links">
+        <a href="index.html">Alle oppskrifter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Lapskaus (brun og lys)</h1>
+      <p>Den norske tradisjonsgryta der alt koker i samme kjele: mørt kjøtt, poteter og rotgrønnsaker som tykner seg selv til en fyldig, mettende lapskaus.</p>
+    </div>
+  </section>
+
+  <section class="recipe" id="oppskrift">
+    <div class="container">
+      <p class="recipe-intro">Lapskaus er ekte én-gryte-mat, og teknikken er selve retten. Poteten kokes ikke ved siden av og legges oppi – den koker i gryta, og mot slutten mases noen av bitene ut og gir fra seg stivelsen som binder kraften. Det er nettopp derfor lapskaus er tyknet, mens en kjøttsuppe eller sodd forblir tynn med de samme ingrediensene. Bruk melne poteter som Beate eller Kerrs Pink, rør godt de siste minuttene, og la gryta koke uten lokk til den så vidt renner av skjeen. Vil du ha tydelige terninger i stedet, bytter du til faste poteter – men da må du hjelpe til med litt jevning.</p>
+      <p class="recipe-intro">Den andre avgjørelsen er brun eller lys. Brun lapskaus får farge og dybde av at kjøttet, og gjerne løken, brunes hardt i gryta først, ofte med et dryss mel som både farger og binder. Lys lapskaus kokes i stedet: kjøttet – tradisjonelt lettsaltet svinekjøtt – legges rått i kraften uten bruning og uten mel, og gryta forblir blek og mild. Historisk var brun lapskaus den «finere» varianten, laget på bedre storfebiter, mens den lyse kunne lages på rimeligere flesk, avskjær eller helt uten kjøtt. Her er alle tre nivåene brune, men vil du ha lys lapskaus, bytter du kjøttet til lettsaltet svinekjøtt, hopper over bruningen og fjerner melet – resten av oppskriften balanserer seg selv.</p>
+      <p class="recipe-intro">Lapskaus var opprinnelig restemat, og det er fortsatt den beste utgaven. Kokt kjøtt fra en stek, pinnekjøtt eller juleribbe plukkes i biter og røres inn mot slutten, og har du kraften fra kokingen, bruker du den som væske. Da får du en gryte med lang smak nesten uten arbeid. Har du ingen rester, gjør en god oksekraft eller en buljongterning nytten – forskjellen ligger i dybden, ikke i om det blir lapskaus.</p>
+      <p class="recipe-intro">De tre nivåene her klatrer på teknikk, ikke på handlelista. Enkel er hverdagslapskausen på under en halvtime, med kjøttdeig eller ferdig kokt kjøtt, poteter, gulrot og buljongterning. Medium er standarden: kjøtt i terninger av høyrygg eller bog, brunet i smør, kokt mørt i oksekraft før kålrot, gulrot, purre og poteter legges i. Kompleks er helgeversjonen med hard bruning i flere omganger, mørk jevning, hjemmelaget kraft, laurbær, timian og allehånde, og en gryte som får trekke i to timer. Juster porsjoner og bytt ingredienser fritt – glutenfri og melkefri variant ligger klar, og mengdene følger med.</p>
+
+      <div class="recipe-complexity">
+        <span class="recipe-complexity-label">Nivå</span>
+        <div id="complexity-selector" class="complexity-selector"></div>
+      </div>
+
+      <div class="recipe-scale">
+        <label for="recipe-scale-input">Antall porsjoner</label>
+        <div class="scale-controls">
+          <button type="button" class="scale-button" id="scale-decrease" aria-label="Færre porsjoner">−</button>
+          <input type="number" id="recipe-scale-input" value="4" min="2" max="12" step="1" data-base-yield="4">
+          <button type="button" class="scale-button" id="scale-increase" aria-label="Flere porsjoner">+</button>
+        </div>
+      </div>
+
+      <div id="diet-filter"></div>
+
+      <div class="recipe-customize">
+        <div id="budget-toggle"></div>
+        <div id="precision-toggle"></div>
+        <button type="button" id="reset-recipe" class="reset-recipe" style="display: none;">Tilbakestill</button>
+      </div>
+
+      <div id="recipe-messages" class="recipe-messages"></div>
+
+      <div class="recipe-layout">
+        <div>
+          <h3>Ingredienser</h3>
+          <ul class="recipe-ingredients" id="ingredient-list"></ul>
+        </div>
+        <div>
+          <h3>Slik gjør du</h3>
+          <ol class="recipe-steps" id="step-list"></ol>
+        </div>
+      </div>
+
+      <div class="recipe-cta">
+        <a class="recipe-cta-link" href="index.html">← Se alle oppskrifter</a>
+      </div>
+
+      <div id="saved-variants"></div>
+      <div id="recipe-notes"></div>
+
+    </div>
+  </section>
+
+  <!-- Vanlige spørsmål (rendres av recipe-schema.js fra manifestets faq). -->
+  <section class="recipe-faq">
+    <div class="container"><div id="recipe-faq"></div></div>
+  </section>
+
+  <!-- Relaterte oppskrifter (fra manifestet). -->
+  <section class="related-section">
+    <div class="container"><div id="related-recipes"></div></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Velkomponert – gode oppskrifter, trinn for trinn.</p>
+    </div>
+  </footer>
+
+  <!-- Rekkefølge: data → omregning (RecipeUnits) → balanse (RecipeBalance) → adapter. -->
+  <script src="lapskaus-data.js"></script>
+  <script src="recipe.js"></script>
+  <script src="recipe-balance.js"></script>
+  <script src="recipe-adapter.js"></script>
+  <!-- Manifest + delte hjelpere + schema-generator (Recipe/BreadcrumbList/FAQPage). -->
+  <script src="recipes-index.js"></script>
+  <script src="site.js"></script>
+  <script src="recipe-schema.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
