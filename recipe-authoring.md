@@ -835,3 +835,23 @@ teknikk-stige fra buljongterning til hjemmelaget kraft + eggeplomme-legering. L�
   den ikke). Lærdom: for et **kuratert** rett-par (ikke bare «samme kategori») er en eksplisitt callout
   riktig verktøy – den auto-genererte gridden er popularitets-/rekkefølge-drevet og ikke ment for å feste
   et spesifikt par. Malen/generatoren er uendret; dette er en manuell, side-spesifikk redaksjonell lenke.
+
+**fårikål (rett #39)** — **ingen kjernemotorendring.** Norges nasjonalrett: lam/får og kål lagvis, kokt
+mørt i egen kraft. Første rett i «one-pot-serien» (plan.md). Lærdom:
+- **Når det eneste dyre ankeret ER retten, utelat `cost`.** Kjøttet er den eneste `cost:3`-kandidaten,
+  men `cost:3` lam + `cost:1` svin/kalkun ville latt budsjett-bryteren gjøre fårikål om til *svinekål*.
+  Retningslinjen «bytt luksusen, ikke sjelen» har altså et grensetilfelle: er det dyre ankeret selve
+  rettens identitet, skal `cost` stå tomt og bryteren skjules – de rimeligere kjøttbyttene finnes
+  fortsatt manuelt under «Tilpass». Samme vurdering vil treffe pinnekjøtt, ribbe og lammelår.
+- **`tasteMessages` krever en fjernbar bærer for aksen.** Motoren viser taste-tips kun ved *fjerning*.
+  Fårikål har tung umami i kjøtt + kraft, men begge er `removable:false` → en umami-melding ville vært
+  død data. Kun `sour` (eddiken på kompleks, eneste fjernbare ingrediens med taste ≥ 2) fikk melding.
+  Generell regel: sjekk at aksen har minst én `removable:true`-bærer før du skriver meldingen.
+- **`requireRoles:["acid"]` er feil for retter uten syre-akse.** Eddik finnes på kompleks som `role:"acid"`,
+  men tradisjonell fårikål *har* ingen syrebalanse – `requireRoles:["acid"]` ville gitt en stående,
+  feilaktig «mangler syre»-tips på enkel og medium. Motsatt tilfelle av kylling-i-ovn (#15), der syren
+  fantes på medium/kompleks og tipset var riktig. Syre-bevissthet er en rett-egenskap, ikke en default.
+- **Sesongrett med `season:"sep"`** (fårikålens festdag, siste torsdag i september). Hel pepper/enebær
+  holdt utenfor `density`/`unitOptions` som nonlinear «smak til» (samme mønster som spagetti #14), så
+  mirror-regelen er grønn. Gluten (jevningsmel) løst via `removable` + potetmel/maizena; meieri (smør på
+  kompleks) via `removable` + margarin/olje. Alle steg 5-snutter grønne, generator på 1. forsøk.

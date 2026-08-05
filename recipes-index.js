@@ -785,6 +785,31 @@ window.RECIPES_INDEX = [
     ]
   },
 
+  {
+    id: "farikal", slug: "farikal.html", status: "live",
+    shortName: "Fårikål", name: "Fårikål (Norges nasjonalrett)",
+    tagline: "Norges nasjonalrett i én gryte – fårikålkjøtt, hodekål og hel pepper som koker seg møre sammen.",
+    description: "Tradisjonell fårikål med fårikålkjøtt, hodekål og hel pepper – alt i én gryte. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    image: null, category: ["middag"], badge: "3 nivåer",
+    recipeCategory: "Hovedrett", cuisine: "Norsk",
+    season: "sep",
+    keywords: "fårikål, fårikål oppskrift, tradisjonell fårikål, fårikål koketid, fårikålens festdag, fårikålkjøtt",
+    recipeYield: "4 porsjoner", times: { prep: "PT20M", cook: "PT2H30M", total: "PT2H50M" },
+    search: "fårikål oppskrift tradisjonell norges nasjonalrett fårikålkjøtt lam får hodekål hel pepper koketid hvor lenge koke fårikålens festdag september trykkoker dagen etter én gryte per person mel jevning",
+    faq: [
+      { q: "Hvor lenge skal fårikål koke?", a: "Regn 2,5–3 timer på lav varme. Fårikålen er ferdig når kjøttet er så mørt at det nesten slipper beinet av seg selv – klokka er bare en pekepinn. Bruker du fårekjøtt av voksen sau, eller kjøtt med mye fett og bein, kan du trygt legge på ytterligere en halvtime til en time. Det er lettere å koke fårikål litt for lenge enn litt for kort, men la den småkoke rolig under lokk i stedet for å fosskoke, og la være å røre i gryta – da faller kålen fra hverandre." },
+      { q: "Når er fårikålens festdag?", a: "Fårikålens festdag markeres den siste torsdagen i september hvert år. I 2026 faller den på 24. september, og i 2027 på 30. september. Dagen ble innstiftet for å feire Norges uoffisielle nasjonalrett, og faller sammen med at årets fårikålkjøtt kommer i butikkene etter at sauene er tatt ned fra fjellbeite. Mange samles i «fårikållag» – man går rett og slett sammen om én stor gryte." },
+      { q: "Hvilket kjøtt bruker man til fårikål?", a: "Bruk fårikålkjøtt: bog, nakke, bryst og slagside av lam eller får, skåret i biter med bein og godt med fett. Beina er ikke til pynt – de koker ut kraften som gjør retten. Magert, beinfritt kjøtt gir tørr fårikål og tynn kraft. Kjøttet skal være ferskt eller frossent, aldri salt, røkt eller tørket. Legg de feteste bitene i bunnen med fettsiden ned, så smelter fettet oppover gjennom kålen." },
+      { q: "Hvor mye fårikålkjøtt trenger jeg per person?", a: "Beregn 350–400 gram rått fårikålkjøtt per voksen. Det høres mye ut, men en stor del av vekten er bein og fett som koker bort eller blir igjen på tallerkenen. Til fire personer trenger du altså cirka 1,4–1,6 kilo kjøtt og omtrent like mye hodekål – forholdet 1:1 mellom kjøtt og kål er den klassiske tommelfingerregelen. Vil du ha rester til dagen etter, som mange mener er det beste med fårikål, øker du med et par hundre gram." },
+      { q: "Skal det mel i fårikål?", a: "Det er valgfritt, og folk er uenige. Strør du 1–2 spiseskjeer hvetemel mellom lagene, blir kraften tykkere og mer sausaktig. Dropper du melet, får du en tynnere, klar kraft som smaker rent av kjøtt og kål – slik den mest purististiske varianten er. Vil du ha jevning uten gluten, lar du melet ligge og rører i stedet ut litt potetmel eller maizena i kaldt vann som du visper inn i kraften helt til slutt." },
+      { q: "Blir fårikål bedre dagen etter?", a: "Ja, de fleste mener det. Kraften trekker seg sammen, fettet fordeler seg, og smaken blir rundere og mer konsentrert når retten får hvile et døgn. Avkjøl fårikålen raskt og uten lokk, sett den kaldt så snart den er romtemperert, og varm den forsiktig opp igjen uten å røre. Da holder kålbåtene formen. Mange lager derfor fårikålen dagen før gjestene kommer – både fordi den smaker bedre og fordi det frigjør kjøkkenet på selve dagen." },
+      { q: "Kan man fryse fårikål?", a: "Ja. Avkjøl den helt, fordel den i tette bokser og frys i opptil tre måneder. Kålen blir noe mykere etter tining, så la den tine sakte i kjøleskapet og varm den forsiktig opp uten å koke hardt eller røre mye. Har du mye kraft, kan du fryse kjøtt og kål med rikelig kraft rundt – det beskytter mot fryseskade. Fårikål er en av rettene som tåler frysing best, nettopp fordi den allerede er langkokt." },
+      { q: "Kan jeg lage fårikål i trykkoker?", a: "Ja, og det er en god snarvei på en hverdag. I trykkoker er fårikålen ferdig på 25–35 minutter under trykk i stedet for tre timer. Vil du unngå at kålen koker helt i stykker, kan du dele koketiden: kjør kjøttet alene i cirka 10–15 minutter først, slipp ut trykket, legg i kålen og kjør 15–20 minutter til. Bruk mindre væske enn i vanlig gryte – trykkokeren fordamper nesten ingenting." },
+      { q: "Hva er forskjellen på lam og får i fårikål?", a: "Lam er dyr under ett år og gir mildt, lyst og mørt kjøtt som blir ferdig på 2,5 time. Får er voksen sau, har kraftigere og mer utpreget smak, mer fett og trenger lengre koketid – gjerne 3–4 timer. Navnet «får i kål» peker på fårekjøttet, og mange kokker foretrekker fortsatt får fordi retten får mer karakter. I butikken selges det meste som «fårikålkjøtt» av lam, så vil du ha ekte får, må du som regel be slakteren." },
+      { q: "Hva serverer man til fårikål?", a: "Kokte poteter er obligatorisk – gjerne mandelpoteter – og de kokes ved siden av, ikke i gryta. Ellers holder det med flatbrød og kanskje litt tyttebær eller sennep til dem som vil ha noe syrlig ved siden av. Til drikke er mørkt øl og en akevitt den tradisjonelle kombinasjonen; akevitten sies å hjelpe på det fete lammekjøttet. Server fårikålen rykende varm rett fra gryta, med rikelig kraft over potetene." }
+    ]
+  },
+
   /* ── Kommer snart ── */
   {
     id: "bouillabaisse", slug: "bouillabaisse.html", status: "soon",

@@ -1,0 +1,670 @@
+{
+  "_comment": "Staging-objekt for fårikål (research-recipe). build-recipe splicer indexEntry inn i recipes-index.js og genererer farikal-data.js + farikal.html + sitemap-linje.",
+  "_comment_cost": "cost er bevisst utelatt overalt. Fårikål er en rimelig sesongrett uten dyrt luksusanker, og det eneste «dyre» valget (hjemmelaget kraft på kompleks) ligger på et nivå der budsjett-bryteren uansett ikke vises. Å sette cost:3 på lammekjøttet med cost:1 på svin/kalkun ville latt budsjett-bryteren gjøre fårikål om til svinekål – det bytter sjelen i retten, ikke luksusen, og bryter retningslinjen. Budsjett-bryteren skjules dermed; de rimeligere kjøttbyttene ligger fortsatt i «Tilpass».",
+  "_comment_units": "peppercorns, juniper og vinegar er «smak til»-krydder (nonlinear) og holdes med vilje utenfor density/unitOptions, som herbs/pepper i spagetti og marry-me-chicken. Slotene er dermed ikke g-konvertible, og byttet ground_pepper trenger heller ikke density/unitOptions (mirror-regelen er grønn). lamb/cabbage/carrot og deres bytter står allerede i g.",
+  "indexEntry": {
+    "id": "farikal",
+    "slug": "farikal.html",
+    "status": "live",
+    "shortName": "Fårikål",
+    "name": "Fårikål (Norges nasjonalrett)",
+    "tagline": "Norges nasjonalrett i én gryte – fårikålkjøtt, hodekål og hel pepper som koker seg møre sammen.",
+    "description": "Tradisjonell fårikål med fårikålkjøtt, hodekål og hel pepper – alt i én gryte. Velg nivå (enkel/medium/kompleks), juster porsjoner og tilpass ingrediensene.",
+    "image": null,
+    "category": [
+      "middag"
+    ],
+    "badge": "3 nivåer",
+    "recipeCategory": "Hovedrett",
+    "cuisine": "Norsk",
+    "season": "sep",
+    "keywords": "fårikål, fårikål oppskrift, tradisjonell fårikål, fårikål koketid, fårikålens festdag, fårikålkjøtt",
+    "recipeYield": "4 porsjoner",
+    "times": {
+      "prep": "PT20M",
+      "cook": "PT2H30M",
+      "total": "PT2H50M"
+    },
+    "search": "fårikål oppskrift tradisjonell norges nasjonalrett fårikålkjøtt lam får hodekål hel pepper koketid hvor lenge koke fårikålens festdag september trykkoker dagen etter én gryte per person mel jevning",
+    "faq": [
+      {
+        "q": "Hvor lenge skal fårikål koke?",
+        "a": "Regn 2,5–3 timer på lav varme. Fårikålen er ferdig når kjøttet er så mørt at det nesten slipper beinet av seg selv – klokka er bare en pekepinn. Bruker du fårekjøtt av voksen sau, eller kjøtt med mye fett og bein, kan du trygt legge på ytterligere en halvtime til en time. Det er lettere å koke fårikål litt for lenge enn litt for kort, men la den småkoke rolig under lokk i stedet for å fosskoke, og la være å røre i gryta – da faller kålen fra hverandre."
+      },
+      {
+        "q": "Når er fårikålens festdag?",
+        "a": "Fårikålens festdag markeres den siste torsdagen i september hvert år. I 2026 faller den på 24. september, og i 2027 på 30. september. Dagen ble innstiftet for å feire Norges uoffisielle nasjonalrett, og faller sammen med at årets fårikålkjøtt kommer i butikkene etter at sauene er tatt ned fra fjellbeite. Mange samles i «fårikållag» – man går rett og slett sammen om én stor gryte."
+      },
+      {
+        "q": "Hvilket kjøtt bruker man til fårikål?",
+        "a": "Bruk fårikålkjøtt: bog, nakke, bryst og slagside av lam eller får, skåret i biter med bein og godt med fett. Beina er ikke til pynt – de koker ut kraften som gjør retten. Magert, beinfritt kjøtt gir tørr fårikål og tynn kraft. Kjøttet skal være ferskt eller frossent, aldri salt, røkt eller tørket. Legg de feteste bitene i bunnen med fettsiden ned, så smelter fettet oppover gjennom kålen."
+      },
+      {
+        "q": "Hvor mye fårikålkjøtt trenger jeg per person?",
+        "a": "Beregn 350–400 gram rått fårikålkjøtt per voksen. Det høres mye ut, men en stor del av vekten er bein og fett som koker bort eller blir igjen på tallerkenen. Til fire personer trenger du altså cirka 1,4–1,6 kilo kjøtt og omtrent like mye hodekål – forholdet 1:1 mellom kjøtt og kål er den klassiske tommelfingerregelen. Vil du ha rester til dagen etter, som mange mener er det beste med fårikål, øker du med et par hundre gram."
+      },
+      {
+        "q": "Skal det mel i fårikål?",
+        "a": "Det er valgfritt, og folk er uenige. Strør du 1–2 spiseskjeer hvetemel mellom lagene, blir kraften tykkere og mer sausaktig. Dropper du melet, får du en tynnere, klar kraft som smaker rent av kjøtt og kål – slik den mest purististiske varianten er. Vil du ha jevning uten gluten, lar du melet ligge og rører i stedet ut litt potetmel eller maizena i kaldt vann som du visper inn i kraften helt til slutt."
+      },
+      {
+        "q": "Blir fårikål bedre dagen etter?",
+        "a": "Ja, de fleste mener det. Kraften trekker seg sammen, fettet fordeler seg, og smaken blir rundere og mer konsentrert når retten får hvile et døgn. Avkjøl fårikålen raskt og uten lokk, sett den kaldt så snart den er romtemperert, og varm den forsiktig opp igjen uten å røre. Da holder kålbåtene formen. Mange lager derfor fårikålen dagen før gjestene kommer – både fordi den smaker bedre og fordi det frigjør kjøkkenet på selve dagen."
+      },
+      {
+        "q": "Kan man fryse fårikål?",
+        "a": "Ja. Avkjøl den helt, fordel den i tette bokser og frys i opptil tre måneder. Kålen blir noe mykere etter tining, så la den tine sakte i kjøleskapet og varm den forsiktig opp uten å koke hardt eller røre mye. Har du mye kraft, kan du fryse kjøtt og kål med rikelig kraft rundt – det beskytter mot fryseskade. Fårikål er en av rettene som tåler frysing best, nettopp fordi den allerede er langkokt."
+      },
+      {
+        "q": "Kan jeg lage fårikål i trykkoker?",
+        "a": "Ja, og det er en god snarvei på en hverdag. I trykkoker er fårikålen ferdig på 25–35 minutter under trykk i stedet for tre timer. Vil du unngå at kålen koker helt i stykker, kan du dele koketiden: kjør kjøttet alene i cirka 10–15 minutter først, slipp ut trykket, legg i kålen og kjør 15–20 minutter til. Bruk mindre væske enn i vanlig gryte – trykkokeren fordamper nesten ingenting."
+      },
+      {
+        "q": "Hva er forskjellen på lam og får i fårikål?",
+        "a": "Lam er dyr under ett år og gir mildt, lyst og mørt kjøtt som blir ferdig på 2,5 time. Får er voksen sau, har kraftigere og mer utpreget smak, mer fett og trenger lengre koketid – gjerne 3–4 timer. Navnet «får i kål» peker på fårekjøttet, og mange kokker foretrekker fortsatt får fordi retten får mer karakter. I butikken selges det meste som «fårikålkjøtt» av lam, så vil du ha ekte får, må du som regel be slakteren."
+      },
+      {
+        "q": "Hva serverer man til fårikål?",
+        "a": "Kokte poteter er obligatorisk – gjerne mandelpoteter – og de kokes ved siden av, ikke i gryta. Ellers holder det med flatbrød og kanskje litt tyttebær eller sennep til dem som vil ha noe syrlig ved siden av. Til drikke er mørkt øl og en akevitt den tradisjonelle kombinasjonen; akevitten sies å hjelpe på det fete lammekjøttet. Server fårikålen rykende varm rett fra gryta, med rikelig kraft over potetene."
+      }
+    ]
+  },
+  "seo": {
+    "title": "Fårikål – tradisjonell oppskrift med koketid og tips | Velkomponert"
+  },
+  "body": {
+    "heroIntro": "Norges nasjonalrett i sin enkleste form: fårikålkjøtt, hodekål og hel pepper som koker seg møre i én og samme gryte – klar til fårikålens festdag siste torsdag i september.",
+    "bodyIntro": "Fårikål er beviset på at fire ingredienser kan bli en hel middag. Kjøtt med bein, hodekål, hel pepper og salt legges lagvis i gryta, og så gjør tid og lav varme resten: fettet smelter nedenfra og oppover, kålen faller sammen og gir fra seg vann, og beina koker ut en kraft ingen buljongterning kommer i nærheten av. Derfor trenger retten knapt væske – bare nok til at bunnen ikke tørrkoker.\n\nNøkkelen ligger i kjøttvalget og i tålmodigheten. Velg fårikålkjøtt av bog og nakke, med bein og synlig fett; magert, beinfritt kjøtt gir tørr fårikål og tynn kraft. La gryta småkoke rolig i to og en halv til tre timer, til kjøttet nesten slipper beinet – og la være å røre underveis. Rører du, faller kålbåtene fra hverandre og retten blir grøt. Vil du ha tykkere kraft, strør du et par spiseskjeer mel mellom lagene, men det er valgfritt, og mange dropper det med vilje.\n\nDette er ekte én gryte-mat: alt koker sammen i samme kjele, og du trenger verken stekepanne eller ovn. Potetene kokes riktignok ved siden av – de hører hjemme på tallerkenen, ikke i gryta – men selve retten er ferdig når du løfter av lokket.\n\nHer får du tre nivåer av samme rett. Enkel er hverdagsversjonen med fårikålkjøtt, kål, hel pepper og buljong. Medium er standarden: riktig kjøttstykke med bein, pepperkornene i en pose så de er lette å unngå ved bordet, og lengre koketid. Kompleks bruner kjøttet først, bruker hjemmelaget kraft, enebær og noen dråper eddik til slutt – og lar gryta hvile til dagen etter, som mange mener er når fårikål smaker aller best. Juster porsjoner og bytt ingredienser fritt: trenger du den glutenfri eller vil bruke får i stedet for lam, ligger byttene klare og mengdene følger med."
+  },
+  "serp": {
+    "intent": "recipe",
+    "volume": "høy",
+    "competition": "hard",
+    "topCompetitors": [
+      "matprat.no",
+      "meny.no",
+      "gilde.no",
+      "aperitif.no",
+      "nytnorge.no"
+    ],
+    "hasRecipeCarousel": true,
+    "strategy": "Hodeordet «fårikål» er hardt og skarpt sesongstyrt (matprat/meny/gilde eier topp-3 med oppskriftskarusell, og volumet eksploderer i uke 36–40 rundt fårikålens festdag siste torsdag i september). Siden må derfor være indeksert i august, 4–6 uker før toppen. Angrip long-tail først via ekte PAA-vinkler – «hvor lenge skal fårikål koke», «når er fårikålens festdag», «hvilket kjøtt», «hvor mye per person», «mel i fårikål», «dagen etter», «trykkoker», «fryse», «lam vs får» – der de store aktørene har tynne eller spredte svar. Differensiatoren er det justerbare 3-nivå-formatet (buljong-snarvei → hjemmelaget kraft, bruning og hviletid) med automatisk saltbalanse og glutenfrie jevningsbytter, pluss en ærlig «én gryte»-vinkel som mater den kommende en-gryte-kolleksjonen. Distinkt fra kjottkaker/kalruletter (kjøttfarse + brun saus) og fra lapskaus (terninger, rotgrønnsaker, ingen bein) – eget id-sett og egen søkeordvinkel, ingen kannibalisering."
+  },
+  "recipe": {
+    "id": "farikal",
+    "bulkRoles": [
+      "protein",
+      "vegetable",
+      "liquid"
+    ],
+    "levers": [
+      {
+        "axis": "salt",
+        "id": "salt_added"
+      }
+    ],
+    "requireRoles": [],
+    "servedAcid": null,
+    "tasteMessages": {
+      "sour": "Uten syren blir retten rundere, men også litt tyngre og fetere – en liten skvett eddik eller litt tyttebær ved siden av gjør samme nytten."
+    },
+    "leverMessages": {
+      "salt": {
+        "down": "Retten ble saltere – vi reduserte tilsatt salt automatisk. Smak alltid til kraften helt til slutt.",
+        "up": "Du tok bort noe salt – vi økte tilsatt salt litt. Smak til på slutten, når kraften har kokt inn."
+      }
+    },
+    "density": {
+      "stock": 1,
+      "water": 1,
+      "bouillon": 1,
+      "homemade_stock": 1,
+      "flour": 0.55,
+      "potato_flour": 0.6,
+      "cornstarch": 0.55,
+      "butter": 0.95,
+      "margarine": 0.95,
+      "rapeseed_oil": 0.92,
+      "salt_added": 1.2
+    },
+    "pieceWeight": {},
+    "unitOptions": {
+      "stock": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "water": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "bouillon": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "homemade_stock": [
+        "dl",
+        "ml",
+        "g"
+      ],
+      "flour": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "potato_flour": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "cornstarch": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "butter": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "margarine": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "rapeseed_oil": [
+        "ss",
+        "ts",
+        "g"
+      ],
+      "salt_added": [
+        "ts",
+        "g"
+      ]
+    },
+    "recipes": {
+      "enkel": {
+        "label": "Enkel",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "lamb",
+            "label": "Fårikålkjøtt av lam (med bein)",
+            "amount": 1200,
+            "unit": "g",
+            "role": "protein",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 60,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "cabbage",
+            "label": "Hodekål i grove båter",
+            "amount": 1200,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "peppercorns",
+            "label": "Hel sort pepper",
+            "amount": 1,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "salt_added",
+            "label": "Salt",
+            "amount": 2,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "sodiumPer100g": 38800,
+            "removable": false
+          },
+          {
+            "id": "stock",
+            "label": "Kjøttbuljong (buljongterning + vann)",
+            "amount": 4,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 300,
+            "removable": false,
+            "taste": {
+              "umami": 1
+            }
+          },
+          {
+            "id": "flour",
+            "label": "Hvetemel til jevning (valgfritt)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "gluten"
+            ]
+          }
+        ],
+        "steps": [
+          "Legg kjøttet med fettsiden ned i bunnen av en tykkbunnet gryte. Legg så kål og kjøtt lagvis oppover, og strø salt, hel pepper og eventuelt litt hvetemel mellom lagene.",
+          "Hell over buljong til det står omtrent halvveis opp i gryta. Kok opp uten lokk, og skum av om det trengs.",
+          "Legg på lokk, skru ned varmen, og la fårikålen småkoke rolig i 2–2,5 timer til kjøttet er mørt og nesten slipper beinet. Ikke rør i gryta underveis – da faller kålen fra hverandre.",
+          "Smak til med salt, og server rykende varm rett fra gryta med kokte poteter ved siden av."
+        ]
+      },
+      "medium": {
+        "label": "Medium",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "lamb",
+            "label": "Fårikålkjøtt av lam, bog og nakke med bein",
+            "amount": 1400,
+            "unit": "g",
+            "role": "protein",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 60,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "cabbage",
+            "label": "Hodekål i båter, med litt av stilken igjen",
+            "amount": 1400,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "peppercorns",
+            "label": "Hel sort pepper (gjerne i en tepose eller pepperpose)",
+            "amount": 1,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "salt_added",
+            "label": "Salt",
+            "amount": 2,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "sodiumPer100g": 38800,
+            "removable": false
+          },
+          {
+            "id": "stock",
+            "label": "Kjøttkraft (eller buljongterning + vann)",
+            "amount": 5,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 250,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "flour",
+            "label": "Hvetemel mellom lagene (valgfritt)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "gluten"
+            ]
+          },
+          {
+            "id": "carrot",
+            "label": "Gulrot i grove staver (valgfritt)",
+            "amount": 200,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "sweet": 1
+            },
+            "tradition": "regional"
+          }
+        ],
+        "steps": [
+          "Velg fårikålkjøtt med bein og synlig fett – bog og nakke gir mest smak og saftigst resultat. Skjær kålen i båter og la litt av stilken sitte igjen, så holder båtene formen gjennom kokingen.",
+          "Legg de feteste kjøttbitene i bunnen med fettsiden ned. Bygg videre lagvis med kål og kjøtt, og strø salt og eventuelt litt hvetemel mellom lagene. Legg pepperkornene i en tepose og ned i gryta, så slipper du dem i munnen ved bordet.",
+          "Legg gulrotstavene inn mellom lagene om du vil ha dem med. Hell over kraft til det står halvveis opp, kok opp, og skum av.",
+          "Legg på lokk og la fårikålen småkoke rolig i 2,5–3 timer. Den skal putre så vidt, ikke fosskoke, og du skal la være å røre.",
+          "Kjøttet er ferdig når det slipper beinet av seg selv. Smak til kraften med salt, og server med kokte poteter og gjerne flatbrød."
+        ]
+      },
+      "kompleks": {
+        "label": "Kompleks",
+        "servings": 4,
+        "ingredients": [
+          {
+            "id": "lamb",
+            "label": "Fårikålkjøtt av får (voksen sau), bog og nakke med bein",
+            "amount": 1400,
+            "unit": "g",
+            "role": "protein",
+            "essential": true,
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 60,
+            "removable": false,
+            "taste": {
+              "umami": 3
+            },
+            "tradition": "traditional"
+          },
+          {
+            "id": "cabbage",
+            "label": "Hodekål i båter",
+            "amount": 1400,
+            "unit": "g",
+            "role": "vegetable",
+            "scaling": "linear",
+            "addStage": "early",
+            "removable": false,
+            "taste": {
+              "sweet": 1
+            }
+          },
+          {
+            "id": "butter",
+            "label": "Smør til bruning",
+            "amount": 2,
+            "unit": "ss",
+            "role": "fat",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "dairy"
+            ]
+          },
+          {
+            "id": "peppercorns",
+            "label": "Hel sort pepper",
+            "amount": 1.5,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": false
+          },
+          {
+            "id": "juniper",
+            "label": "Enebær, lett knust",
+            "amount": 1,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "taste": {
+              "bitter": 1
+            },
+            "tradition": "regional"
+          },
+          {
+            "id": "stock",
+            "label": "Hjemmelaget lamme- eller kjøttkraft",
+            "amount": 5,
+            "unit": "dl",
+            "role": "liquid",
+            "scaling": "linear",
+            "addStage": "early",
+            "sodiumPer100g": 100,
+            "removable": false,
+            "taste": {
+              "umami": 2
+            }
+          },
+          {
+            "id": "flour",
+            "label": "Hvetemel mellom lagene (valgfritt)",
+            "amount": 2,
+            "unit": "ss",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "removable": true,
+            "allergens": [
+              "gluten"
+            ]
+          },
+          {
+            "id": "salt_added",
+            "label": "Salt",
+            "amount": 2,
+            "unit": "ts",
+            "role": "seasoning",
+            "scaling": "nonlinear",
+            "addStage": "early",
+            "sodiumPer100g": 38800,
+            "removable": false
+          },
+          {
+            "id": "vinegar",
+            "label": "Eddik 7 % (til slutt, valgfritt)",
+            "amount": 1,
+            "unit": "ts",
+            "role": "acid",
+            "scaling": "nonlinear",
+            "addStage": "end",
+            "removable": true,
+            "taste": {
+              "sour": 3
+            },
+            "tradition": "regional"
+          }
+        ],
+        "steps": [
+          "Brun kjøttbitene raskt i smør i gryta, noen få om gangen, til de får farge på alle sider. Ta dem opp underveis. Bruningen er ikke tradisjonell, men gir en mørkere og rundere kraft.",
+          "Legg de feteste bitene tilbake i bunnen med fettsiden ned, og bygg lagvis med kål og kjøtt. Strø salt og litt hvetemel mellom lagene, og fordel hel pepper og knuste enebær utover.",
+          "Hell over hjemmelaget kraft til det står halvveis opp i gryta. Kok opp, skum grundig av, og legg gjerne en rist eller en tallerken i bunnen som forsikring mot at det svir seg.",
+          "Legg på lokk og la fårikålen trekke på lavest mulig varme i 3–4 timer. Den skal knapt boble. Ikke rør – flytt heller på gryta hvis du må.",
+          "Når kjøttet slipper beinet, tar du gryta av platen og smaker til med salt og noen dråper eddik. Syren løfter fettet og gjør kraften klarere i smaken.",
+          "Avkjøl fårikålen og sett den kaldt over natten. Varm den forsiktig opp igjen dagen etter uten å røre, og server med mandelpoteter, flatbrød og et glass øl eller akevitt."
+        ]
+      }
+    },
+    "swapOptions": {
+      "lamb": [
+        {
+          "id": "mutton",
+          "label": "Fårekjøtt av voksen sau (mer smak)",
+          "amount": 1400,
+          "unit": "g",
+          "sodiumPer100g": 60,
+          "taste": {
+            "umami": 3
+          },
+          "tradition": "traditional",
+          "note": "Kraftigere og mer «villsmak». Beregn 30–60 minutter lengre koketid."
+        },
+        {
+          "id": "pork_neck",
+          "label": "Svinenakke med bein (rimeligere)",
+          "amount": 1300,
+          "unit": "g",
+          "sodiumPer100g": 60,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "non-traditional",
+          "note": "Mildere og billigere «svinekål». Koker fortere – regn 1,5–2 timer."
+        },
+        {
+          "id": "turkey_thigh",
+          "label": "Kalkunlår i biter (magrere og rimeligere)",
+          "amount": 1200,
+          "unit": "g",
+          "sodiumPer100g": 60,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "non-traditional",
+          "note": "Magert, så kraften blir tynnere. Kok kortere, ca. 1,5 time, og tilsett gjerne litt smør eller olje."
+        }
+      ],
+      "cabbage": [
+        {
+          "id": "savoy_cabbage",
+          "label": "Savoykål (mildere og mørere)",
+          "amount": 1300,
+          "unit": "g",
+          "taste": {
+            "sweet": 1
+          },
+          "tradition": "regional",
+          "note": "Løsere blader som koker fortere – legg dem i siste time."
+        },
+        {
+          "id": "pointed_cabbage",
+          "label": "Spisskål (finere og raskere)",
+          "amount": 1200,
+          "unit": "g",
+          "taste": {
+            "sweet": 1
+          },
+          "tradition": "regional",
+          "note": "Søtere og mer delikat, men koker fort i stykker. Legg den i mot slutten."
+        }
+      ],
+      "stock": [
+        {
+          "id": "water",
+          "label": "Bare vann (kjøttet lager kraften selv)",
+          "amount": 4,
+          "unit": "dl",
+          "sodiumPer100g": 0,
+          "tradition": "traditional",
+          "note": "Det mest tradisjonelle. Kål og bein gir kraft nok – smak til med litt ekstra salt."
+        },
+        {
+          "id": "bouillon",
+          "label": "Buljongterning + vann (raskere)",
+          "amount": 5,
+          "unit": "dl",
+          "sodiumPer100g": 300,
+          "taste": {
+            "umami": 1
+          },
+          "tradition": "non-traditional",
+          "note": "Hverdagssnarveien. Terningen salter godt, så vent med saltet til slutt."
+        },
+        {
+          "id": "homemade_stock",
+          "label": "Hjemmelaget lamme- eller kjøttkraft",
+          "amount": 5,
+          "unit": "dl",
+          "sodiumPer100g": 100,
+          "taste": {
+            "umami": 2
+          },
+          "tradition": "traditional",
+          "note": "Mest dybde og minst salt. Kok gjerne kraft av bein fra kjøttet dagen før."
+        }
+      ],
+      "flour": [
+        {
+          "id": "potato_flour",
+          "label": "Potetmel (glutenfri jevning)",
+          "amount": 1,
+          "unit": "ss",
+          "tradition": "regional",
+          "note": "Rør ut i litt kaldt vann og visp inn i kraften til slutt – ikke mellom lagene."
+        },
+        {
+          "id": "cornstarch",
+          "label": "Maizena (glutenfri jevning)",
+          "amount": 1,
+          "unit": "ss",
+          "tradition": "non-traditional",
+          "note": "Samme fremgangsmåte: rør ut kaldt og visp inn i den kokende kraften."
+        }
+      ],
+      "butter": [
+        {
+          "id": "margarine",
+          "label": "Margarin (melkefri)",
+          "amount": 2,
+          "unit": "ss",
+          "note": "Melkefri bruning – oppfører seg som smør."
+        },
+        {
+          "id": "rapeseed_oil",
+          "label": "Nøytral olje (melkefri)",
+          "amount": 2,
+          "unit": "ss",
+          "note": "Tåler høyere varme enn smør og gir kraftigere bruning."
+        }
+      ],
+      "peppercorns": [
+        {
+          "id": "ground_pepper",
+          "label": "Grovmalt sort pepper",
+          "amount": 1,
+          "unit": "ts",
+          "tradition": "non-traditional",
+          "note": "Enklere å spise, men gir en skarpere og mindre rund peppersmak. Bruk mindre enn av hel pepper."
+        }
+      ],
+      "carrot": [
+        {
+          "id": "rutabaga",
+          "label": "Kålrot i grove terninger",
+          "amount": 250,
+          "unit": "g",
+          "taste": {
+            "sweet": 1
+          },
+          "tradition": "regional",
+          "note": "Mer norsk enn gulrot og tåler lang koking uten å bli grøt."
+        }
+      ]
+    }
+  },
+  "_comment_taste": "tasteMessages inneholder kun `sour`. Motoren viser taste-tips KUN ved fjerning (removedTip), og den eneste fjernbare ingrediensen med taste >= 2 er eddiken (sour 3). En umami-melding ville vært død data siden kjøtt og kraft er removable:false."
+}
